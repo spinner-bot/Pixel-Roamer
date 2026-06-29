@@ -202,7 +202,10 @@ class Creature:
 
     # ----- 采样：仅自身矩形微扩 0.01，不做整格扩展 -----
     def _sample_contact_tiles(self, grect: GameRect, world):
-        """返回所有接触到的方块ID集合（不负责边界方块）"""
+        """返回所有接触到的方块ID集合（不负责边界方块）。
+
+        优化：使用 get_block_type_by_coord 跳过冗余的浮点→整数转换。
+        """
         expanded_rect = GameRect(
             grect.x - 0.01,
             grect.y - 0.01,
@@ -214,10 +217,18 @@ class Creature:
         max_gx = math.floor(expanded_rect.x + expanded_rect.w - 1e-9)
         min_gy = math.floor(expanded_rect.y)
         max_gy = math.floor(expanded_rect.y + expanded_rect.h - 1e-9)
+        _wrap = world._wrap_grid_coord
+        _default_id = world.default_tile.type_id
         for gx in range(min_gx, max_gx + 1):
             for gy in range(min_gy, max_gy + 1):
-                bt = world.get_block_type(gx + 0.5, gy + 0.5)
-                if bt.id != 0:
+                coord = _wrap(gx, gy)
+                if coord is None:
+                    # 越界处若为实心边界则视为 ID=1
+                    if world.edge_behavior == "solid":
+                        tiles.add(1)
+                    continue
+                bt = world.get_block_type_by_coord(coord[0], coord[1])
+                if bt.id != _default_id:
                     tiles.add(bt.id)
         return tiles
 

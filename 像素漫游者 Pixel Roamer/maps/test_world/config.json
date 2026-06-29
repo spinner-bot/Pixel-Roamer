@@ -1,0 +1,11 @@
+{
+  "world": {
+    "gravity": -6.5,
+    "view_blocks_h": 15.0
+  },
+  "player": {
+    "hp_max": 150.0,
+    "v_max": 10.5,
+    "v_jump": 6.5
+  }
+}

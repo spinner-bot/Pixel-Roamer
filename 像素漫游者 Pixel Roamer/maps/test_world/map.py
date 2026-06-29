@@ -6,6 +6,8 @@ from world import World
 MAP_ID = 1
 world = World(map_id=MAP_ID, name="探索测试地图", w=64, h=36, gravity=-6.5, view_blocks_h=15, spawn_points=(4, 25))
 
+world.begin_bulk_load()
+
 # ---------- 底层基石（y=0~1） ----------
 for x in range(64):
     for y in range(2):
@@ -125,3 +127,5 @@ world.set_tile(3, 24, 2)
 world.set_tile(4, 24, 2)
 world.set_tile(5, 24, 2)
 world.set_tile(4, 28, 56)  # 雕刻石砖标记
+
+world.end_bulk_load()

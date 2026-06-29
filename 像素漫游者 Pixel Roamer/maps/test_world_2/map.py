@@ -9,6 +9,8 @@ world = World(map_id=MAP_ID, name="主题大地图", w=650, h=80,
               gravity=-6.5, view_blocks_h=20, spawn_points=(10, 55),
               default_block_id=11)  # 默认背景设为夜晚空气，凸显主题
 
+world.begin_bulk_load()
+
 
 def generate(world):
     """生成 650x80 的多主题区域地图"""
@@ -201,3 +203,5 @@ def generate(world):
 
 # 调用生成
 generate(world)
+
+world.end_bulk_load()

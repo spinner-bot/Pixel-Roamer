@@ -144,17 +144,38 @@ def launch_world(map_id: int):
     sp_x, sp_y = _current_map.spawn_points
 
     # 读取玩家配置（若有）
-    player_cfg = getattr(_current_map, 'player_config', {})
-    hp_max = player_cfg.get("hp_max", 150)
-    v_max = player_cfg.get("v_max", 36.5)
-    v_jump = player_cfg.get("v_jump", 26.5)
+    cfg = getattr(_current_map, 'player_config', {})
 
-    player1 = Player(player_id=0, player_name="玩家1", spawn_x=float(sp_x), spawn_y=float(sp_y),
-                     key_bind=p1_keys, hp_max=hp_max)
-    player1.v_max = v_max
-    player1.v_jump = v_jump
+    def _cfg(key, default):
+        return cfg.get(key, default)
+
+    player1 = Player(
+        player_id=0, player_name="玩家1",
+        spawn_x=float(sp_x), spawn_y=float(sp_y),
+        key_bind=p1_keys,
+        hp_max=_cfg("hp_max", 150),
+        w=_cfg("w", 0.8),
+        h=_cfg("h", 1.8),
+        v_max=_cfg("v_max", 36.5),
+        v_jump=_cfg("v_jump", 26.5),
+        f_x=_cfg("f_x", 0.985),
+        f_y=_cfg("f_y", 0.98),
+        phys_atk=_cfg("phys_atk", 10),
+        magic_atk=_cfg("magic_atk", 0),
+        phys_res=_cfg("phys_res", 0),
+        magic_res=_cfg("magic_res", 0),
+        phys_pen=_cfg("phys_pen", 0),
+        magic_pen=_cfg("magic_pen", 0),
+        k_res=_cfg("k_res", 150),
+        dr=_cfg("dr", 0),
+        shield=_cfg("shield", 0),
+    )
+    player1.stamina_max = _cfg("stamina_max", 100)
+    player1.stamina = player1.stamina_max
     _world_initialized = True
     print(f"已加载地图：{_current_map.name}（{_current_map.width}x{_current_map.height}）")
+    if cfg:
+        print(f"  玩家配置已应用: {cfg}")
 
 
 def launch_setting(from_page: int = PAGE_WORLD):
@@ -441,35 +462,81 @@ def handle_setting_input(event):
 
 
 # ===================== Dev 页面 =====================
-# 可编辑字段定义：(属性路径, 显示名, 类型, 默认值, 步进)
+# 可编辑字段定义：(属性路径, 显示名, 类型, 默认值, 步进/选项)
+# type: "float" | "int" | "bool" | "str"
+# 对于 str 类型，步进字段为选项列表
 _EDITABLE_FIELDS = [
-    # world 属性
-    ("world.gravity", "重力", float, -6.5, 0.5),
-    ("world.view_blocks_h", "视野(格高)", float, 15.0, 1.0),
-    # player 属性
-    ("player.hp_max", "玩家最大血量", float, 150.0, 10.0),
-    ("player.v_max", "玩家最大速度", float, 36.5, 1.0),
-    ("player.v_jump", "玩家跳跃速度", float, 26.5, 1.0),
+    # ---- World 属性 ----
+    ("world.gravity",        "重力",               "float", -6.5,    0.5),
+    ("world.mode",           "游戏模式",           "str",   "adventure", ["adventure", "creative", "spectator"]),
+    ("world.loop_x",         "X轴循环",            "bool",  False,    None),
+    ("world.loop_y",         "Y轴循环",            "bool",  False,    None),
+    ("world.edge_behavior",  "边界行为",           "str",   "solid",  ["solid", "void"]),
+    ("world.view_blocks_h",  "视野(格高)",         "float", 15.0,     1.0),
+    ("world.void_limit",     "虚空边界距离",       "int",   20,       5),
+    ("world.default_block_id","默认方块ID",        "int",   0,        1),
+    # ---- Player 属性 ----
+    ("player.hp_max",        "最大血量",           "float", 150.0,    10.0),
+    ("player.v_max",         "最大速度",           "float", 36.5,     1.0),
+    ("player.v_jump",        "跳跃速度",           "float", 26.5,     1.0),
+    ("player.stamina_max",   "最大体力",           "float", 100.0,    10.0),
+    ("player.phys_atk",      "物理攻击",           "float", 10.0,     5.0),
+    ("player.magic_atk",     "魔法攻击",           "float", 0.0,      5.0),
+    ("player.phys_res",      "物理抗性",           "float", 0.0,      5.0),
+    ("player.magic_res",     "魔法抗性",           "float", 0.0,      5.0),
+    ("player.phys_pen",      "物理穿透",           "float", 0.0,      5.0),
+    ("player.magic_pen",     "魔法穿透",           "float", 0.0,      5.0),
+    ("player.k_res",         "抗性系数",           "float", 150.0,    10.0),
+    ("player.dr",            "减伤率",             "float", 0.0,      0.05),
+    ("player.f_x",           "X轴摩擦系数",        "float", 0.985,    0.005),
+    ("player.f_y",           "Y轴摩擦系数",        "float", 0.98,     0.005),
+    ("player.shield",        "初始护盾",           "float", 0.0,      5.0),
+    ("player.w",             "玩家宽度",           "float", 0.8,      0.1),
+    ("player.h",             "玩家高度",           "float", 1.8,      0.1),
 ]
+
+# 精确输入状态
+_dev_inputting = False       # 是否处于精确输入模式
+_dev_input_text = ""         # 输入缓冲区
 
 
 def _get_edit_config(map_id: int) -> dict:
-    """获取地图的当前配置（合并默认与已保存）。"""
+    """获取地图的当前配置（合并 World 实例默认值与已保存配置）。"""
     saved = load_map_config(map_id)
     config = {"world": {}, "player": {}}
-    # 从地图实例读取当前 world 值作为默认
+
+    # 从 World 实例读取所有可编辑属性的当前值作为默认
     try:
         m = get_map(map_id)
         config["world"]["gravity"] = m.gravity
+        config["world"]["mode"] = m.mode
+        config["world"]["loop_x"] = m.loop_x
+        config["world"]["loop_y"] = m.loop_y
+        config["world"]["edge_behavior"] = m.edge_behavior
         config["world"]["view_blocks_h"] = m.view_blocks_h
+        config["world"]["void_limit"] = m.void_limit
+        config["world"]["default_block_id"] = m.default_tile.type_id
     except Exception:
         config["world"]["gravity"] = -6.5
+        config["world"]["mode"] = "adventure"
+        config["world"]["loop_x"] = False
+        config["world"]["loop_y"] = False
+        config["world"]["edge_behavior"] = "solid"
         config["world"]["view_blocks_h"] = 15.0
-    # 合并已保存的玩家配置
+        config["world"]["void_limit"] = 20
+        config["world"]["default_block_id"] = 0
+
+    # Player 默认值
+    defaults = {
+        "hp_max": 150.0, "v_max": 36.5, "v_jump": 26.5, "stamina_max": 100.0,
+        "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
+        "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
+        "f_x": 0.985, "f_y": 0.98, "shield": 0.0, "w": 0.8, "h": 1.8,
+    }
     saved_player = saved.get("player", {})
-    config["player"]["hp_max"] = saved_player.get("hp_max", 150.0)
-    config["player"]["v_max"] = saved_player.get("v_max", 36.5)
-    config["player"]["v_jump"] = saved_player.get("v_jump", 26.5)
+    for key, default_val in defaults.items():
+        config["player"][key] = saved_player.get(key, default_val)
+
     # 已保存的 world 配置覆盖
     saved_world = saved.get("world", {})
     config["world"].update(saved_world)
@@ -494,9 +561,22 @@ def _set_field_value(config: dict, field_path: str, value):
     obj[parts[-1]] = value
 
 
+def _get_map_type_label(m) -> str:
+    """获取地图类型标签。"""
+    if m.loop_x and m.loop_y:
+        return "循环XY"
+    elif m.loop_x:
+        return "循环X"
+    elif m.loop_y:
+        return "循环Y"
+    else:
+        return "有限"
+
+
 def run_dev_page(dt: float):
     """开发者界面：查询地图、选择地图、编辑属性、启动游戏。"""
     global _dev_edit_mode, _dev_edit_field_idx, _dev_edit_dirty, _dev_edit_config
+    global _dev_inputting, _dev_input_text
 
     logic_surface.fill((20, 20, 40))
 
@@ -512,29 +592,76 @@ def run_dev_page(dt: float):
     if _dev_edit_mode and _dev_selected_id is not None:
         # ========== 编辑模式 ==========
         y = draw_text_center(logic_surface, FONT34, f"编辑地图属性 — ID={_dev_selected_id}", y, (100, 255, 150)) + 8
-        y = draw_text_center(logic_surface, FONT20, "↑↓ 选择字段  ← → 调整数值  S 保存  Esc 返回", y, (180, 180, 180)) + 20
 
-        for i, (field_path, label, ftype, default, step) in enumerate(_EDITABLE_FIELDS):
+        if _dev_inputting:
+            hint = "输入数值后 Enter 确认  Esc 取消"
+        else:
+            hint = "↑↓ 选择  ← → 快速调整  Enter 精确输入  S 保存  Esc 返回"
+        y = draw_text_center(logic_surface, FONT20, hint, y, (180, 180, 180)) + 16
+
+        # 可见行数
+        visible_start = max(0, _dev_edit_field_idx - 8)
+        visible_end = min(len(_EDITABLE_FIELDS), visible_start + 18)
+        # 确保当前选中在可见范围内
+        if _dev_edit_field_idx < visible_start:
+            visible_start = _dev_edit_field_idx
+            visible_end = min(len(_EDITABLE_FIELDS), visible_start + 18)
+        elif _dev_edit_field_idx >= visible_end:
+            visible_end = min(len(_EDITABLE_FIELDS), _dev_edit_field_idx + 1)
+            visible_start = max(0, visible_end - 18)
+
+        # 滚动指示
+        if visible_start > 0:
+            draw_text_center(logic_surface, FONT20, "▲ 更多 ↑", y - 6, (100, 100, 120))
+
+        for i in range(visible_start, visible_end):
+            field_path, label, ftype, default, step = _EDITABLE_FIELDS[i]
             val = _get_field_value(_dev_edit_config, field_path)
             is_sel = (i == _dev_edit_field_idx)
 
-            row_h = 42
+            row_h = 36
             row_y = y
             # 行背景
             if is_sel:
-                pygame.draw.rect(logic_surface, (50, 50, 90), (300, row_y - 2, LOGIC_WIDTH - 600, row_h))
-                pygame.draw.rect(logic_surface, (100, 255, 150), (300, row_y - 2, LOGIC_WIDTH - 600, row_h), 2)
+                highlight_color = (100, 200, 255) if not _dev_inputting else (255, 200, 50)
+                pygame.draw.rect(logic_surface, (50, 50, 90), (200, row_y - 1, LOGIC_WIDTH - 400, row_h))
+                pygame.draw.rect(logic_surface, highlight_color, (200, row_y - 1, LOGIC_WIDTH - 400, row_h), 2)
 
-            draw_text_left(logic_surface, FONT28 if is_sel else FONT24,
-                           f"{label}:", 330, row_y + 6,
+            # 字段名和类型标签
+            type_tag = {"float": "F", "int": "I", "bool": "B", "str": "S"}.get(ftype, "?")
+            type_color = {"float": (150,200,255), "int": (255,200,150), "bool": (200,255,150), "str": (255,200,255)}.get(ftype, (150,150,150))
+            label_text = f"{label}"
+            draw_text_left(logic_surface, FONT24 if is_sel else FONT20,
+                           label_text, 220, row_y + 6,
                            (255, 255, 180) if is_sel else (200, 200, 200))
-            draw_text_right(logic_surface, FONT28 if is_sel else FONT24,
-                            f"{val:.1f}" if isinstance(val, float) else str(val),
-                            LOGIC_WIDTH - 330, row_y + 6,
-                            (100, 255, 150) if is_sel else (150, 220, 150))
-            y += row_h + 4
+            # 类型小标签
+            type_surf = FONT20.render(type_tag, True, type_color)
+            logic_surface.blit(type_surf, (540, row_y + 8))
 
-        y += 20
+            # 值显示
+            if is_sel and _dev_inputting:
+                # 精确输入模式：显示光标
+                display_text = _dev_input_text + "▌"
+                val_color = (255, 255, 100)
+            else:
+                if ftype == "bool":
+                    display_text = "是" if val else "否"
+                elif ftype == "float":
+                    display_text = f"{val:.3f}".rstrip("0").rstrip(".")
+                elif ftype == "int":
+                    display_text = str(int(val))
+                else:
+                    display_text = str(val)
+                val_color = (100, 255, 150) if is_sel else (150, 220, 150)
+
+            draw_text_right(logic_surface, FONT24 if is_sel else FONT20,
+                            display_text, LOGIC_WIDTH - 220, row_y + 6, val_color)
+            y += row_h + 2
+
+        if visible_end < len(_EDITABLE_FIELDS):
+            draw_text_center(logic_surface, FONT20, "▼ 更多 ↓", y + 4, (100, 100, 120))
+
+        y = LOGIC_HEIGHT - 70
         status_color = (100, 255, 100) if _dev_edit_dirty else (150, 150, 150)
         draw_text_center(logic_surface, FONT20,
                          "已修改，按 S 保存" if _dev_edit_dirty else "无修改",
@@ -545,64 +672,99 @@ def run_dev_page(dt: float):
         y = draw_text_center(logic_surface, FONT24, "↑↓ 选择  Enter 启动  E 编辑属性  R 刷新", y, (180, 180, 180)) + 30
 
         # 表头
-        col_x_id = 120
-        col_x_name = 220
-        col_x_size = 550
-        col_x_grav = 730
+        col_x_id = 80
+        col_x_name = 160
+        col_x_type = 420
+        col_x_size = 560
+        col_x_grav = 700
+        col_x_players = 820
         header_y = y
-        pygame.draw.rect(logic_surface, (30, 30, 55), (80, y - 2, LOGIC_WIDTH - 160, 32))
-        draw_text_left(logic_surface, FONT24, "ID", col_x_id, y, (150, 150, 150))
-        draw_text_left(logic_surface, FONT24, "地图名称", col_x_name, y, (150, 150, 150))
-        draw_text_left(logic_surface, FONT24, "尺寸", col_x_size, y, (150, 150, 150))
-        draw_text_left(logic_surface, FONT24, "重力", col_x_grav, y, (150, 150, 150))
-        y = header_y + 36
+        pygame.draw.rect(logic_surface, (30, 30, 55), (40, y - 2, LOGIC_WIDTH - 80, 30))
+        draw_text_left(logic_surface, FONT20, "ID", col_x_id, y + 2, (150, 150, 150))
+        draw_text_left(logic_surface, FONT20, "地图名称", col_x_name, y + 2, (150, 150, 150))
+        draw_text_left(logic_surface, FONT20, "类型", col_x_type, y + 2, (150, 150, 150))
+        draw_text_left(logic_surface, FONT20, "尺寸", col_x_size, y + 2, (150, 150, 150))
+        draw_text_left(logic_surface, FONT20, "重力", col_x_grav, y + 2, (150, 150, 150))
+        draw_text_left(logic_surface, FONT20, "人数", col_x_players, y + 2, (150, 150, 150))
+        y = header_y + 34
 
         for mid in map_ids:
             name = maps_dict[mid]
             try:
                 m = get_map(mid)
-                info_size = f"{m.width} x {m.height}"
-                info_grav = str(m.gravity)
+                info_size = f"{m.width}×{m.height}"
+                info_grav = f"{m.gravity:.1f}"
+                info_type = _get_map_type_label(m)
+                info_players = "1人"
             except Exception:
                 info_size = "?"
                 info_grav = "?"
+                info_type = "?"
+                info_players = "?"
 
             is_selected = (mid == _dev_selected_id)
-            row_h = 38
+            row_h = 36
             if is_selected:
-                pygame.draw.rect(logic_surface, (50, 50, 90), (80, y - 2, LOGIC_WIDTH - 160, row_h))
-                pygame.draw.rect(logic_surface, (100, 200, 255), (80, y - 2, LOGIC_WIDTH - 160, row_h), 2)
+                pygame.draw.rect(logic_surface, (50, 50, 90), (40, y - 1, LOGIC_WIDTH - 80, row_h))
+                pygame.draw.rect(logic_surface, (100, 200, 255), (40, y - 1, LOGIC_WIDTH - 80, row_h), 2)
 
-            draw_text_left(logic_surface, FONT28 if is_selected else FONT24,
-                           str(mid), col_x_id, y + 4,
-                           (255, 255, 180) if is_selected else (200, 200, 200))
-            draw_text_left(logic_surface, FONT28 if is_selected else FONT24,
-                           name, col_x_name, y + 4,
-                           (255, 255, 180) if is_selected else (200, 200, 200))
-            draw_text_left(logic_surface, FONT28 if is_selected else FONT24,
-                           info_size, col_x_size, y + 4,
-                           (255, 255, 180) if is_selected else (200, 200, 200))
-            draw_text_left(logic_surface, FONT28 if is_selected else FONT24,
-                           info_grav, col_x_grav, y + 4,
-                           (255, 255, 180) if is_selected else (200, 200, 200))
+            font = FONT28 if is_selected else FONT24
+            sel_color = (255, 255, 180)
+            norm_color = (200, 200, 200)
+            c = lambda b: sel_color if b and is_selected else norm_color
+
+            draw_text_left(logic_surface, font, str(mid), col_x_id, y + 3, c(True))
+            draw_text_left(logic_surface, font, name, col_x_name, y + 3, c(True))
+            # 类型用不同颜色标注
+            type_color_map = {"有限": (180, 200, 220), "循环X": (150, 255, 200),
+                              "循环Y": (150, 200, 255), "循环XY": (255, 200, 150)}
+            tc = type_color_map.get(info_type, (200, 200, 200))
+            if not is_selected:
+                tc = tuple(int(c * 0.75) for c in tc)
+            draw_text_left(logic_surface, font, info_type, col_x_type, y + 3, tc)
+            draw_text_left(logic_surface, font, info_size, col_x_size, y + 3, c(False))
+            draw_text_left(logic_surface, font, info_grav, col_x_grav, y + 3, c(False))
+            draw_text_left(logic_surface, font, info_players, col_x_players, y + 3, c(False))
             y += row_h
 
     # 底部
     if _dev_selected_id is not None:
         if _dev_edit_mode:
             draw_text_center(logic_surface, FONT20,
-                             "S: 保存到硬盘  |  Esc: 返回列表",
-                             LOGIC_HEIGHT - 40, (140, 180, 255))
+                             "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
+                             LOGIC_HEIGHT - 24, (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
                              f"当前选中: ID={_dev_selected_id}  |  Enter 启动  E 编辑属性",
                              LOGIC_HEIGHT - 50, (140, 180, 255))
 
 
+def _parse_input_value(text: str, ftype: str):
+    """解析输入文本为对应类型的值，失败返回 None。"""
+    try:
+        if ftype == "float":
+            return float(text)
+        elif ftype == "int":
+            return int(text)
+        elif ftype == "bool":
+            t = text.strip().lower()
+            if t in ("true", "1", "是", "yes", "y"):
+                return True
+            elif t in ("false", "0", "否", "no", "n"):
+                return False
+            return None
+        elif ftype == "str":
+            return text.strip()
+    except (ValueError, TypeError):
+        return None
+    return None
+
+
 def handle_dev_input(event):
     """处理 dev 页面的键盘事件。"""
     global _dev_selected_id, _dev_edit_mode, _dev_edit_field_idx
     global _dev_edit_dirty, _dev_edit_config
+    global _dev_inputting, _dev_input_text
 
     if event.type != pygame.KEYDOWN:
         return
@@ -614,6 +776,47 @@ def handle_dev_input(event):
 
     # ========== 编辑模式按键 ==========
     if _dev_edit_mode and _dev_selected_id is not None:
+        field_path, label, ftype, default, step = _EDITABLE_FIELDS[_dev_edit_field_idx]
+
+        # ---- 精确输入模式 ----
+        if _dev_inputting:
+            if event.key == pygame.K_ESCAPE:
+                # 取消输入
+                _dev_inputting = False
+                _dev_input_text = ""
+            elif event.key == pygame.K_RETURN:
+                # 确认输入
+                val = _parse_input_value(_dev_input_text, ftype)
+                if val is not None:
+                    # 对 str 类型校验选项
+                    if ftype == "str" and isinstance(step, list) and val not in step:
+                        pass  # 无效选项，忽略
+                    else:
+                        _set_field_value(_dev_edit_config, field_path, val)
+                        _dev_edit_dirty = True
+                _dev_inputting = False
+                _dev_input_text = ""
+            elif event.key == pygame.K_BACKSPACE:
+                _dev_input_text = _dev_input_text[:-1]
+            elif event.key == pygame.K_DELETE:
+                _dev_input_text = ""
+            elif event.unicode and len(event.unicode) > 0:
+                # 过滤控制字符
+                ch = event.unicode
+                if ch.isprintable() and ord(ch) >= 32:
+                    # bool 类型特殊处理：允许输入 true/false/是/否 等
+                    if ftype == "bool":
+                        if ch.isalpha():
+                            _dev_input_text += ch
+                    elif ftype == "str":
+                        _dev_input_text += ch
+                    else:
+                        # 数字类型：允许数字、负号、小数点
+                        if ch.isdigit() or ch in ".-":
+                            _dev_input_text += ch
+            return
+
+        # ---- 常规编辑模式按键 ----
         if event.key == pygame.K_ESCAPE:
             _dev_edit_mode = False
             _dev_edit_dirty = False
@@ -621,17 +824,49 @@ def handle_dev_input(event):
             _dev_edit_field_idx = (_dev_edit_field_idx - 1) % len(_EDITABLE_FIELDS)
         elif event.key == pygame.K_DOWN:
             _dev_edit_field_idx = (_dev_edit_field_idx + 1) % len(_EDITABLE_FIELDS)
-        elif event.key == pygame.K_LEFT:
-            field_path, label, ftype, default, step = _EDITABLE_FIELDS[_dev_edit_field_idx]
+        elif event.key == pygame.K_RETURN:
+            # 进入精确输入模式
             val = _get_field_value(_dev_edit_config, field_path)
-            val -= step
-            _set_field_value(_dev_edit_config, field_path, ftype(val))
+            if ftype == "bool":
+                _dev_input_text = "true" if val else "false"
+            elif ftype == "str":
+                _dev_input_text = str(val)
+            elif ftype == "int":
+                _dev_input_text = str(int(val))
+            else:
+                _dev_input_text = f"{val:.3f}".rstrip("0").rstrip(".")
+            _dev_inputting = True
+        elif event.key == pygame.K_LEFT:
+            if ftype == "bool":
+                _set_field_value(_dev_edit_config, field_path, False)
+            elif ftype == "str" and isinstance(step, list):
+                cur = _get_field_value(_dev_edit_config, field_path)
+                try:
+                    idx = step.index(cur)
+                    idx = (idx - 1) % len(step)
+                    _set_field_value(_dev_edit_config, field_path, step[idx])
+                except ValueError:
+                    _set_field_value(_dev_edit_config, field_path, step[0])
+            elif ftype in ("float", "int"):
+                val = _get_field_value(_dev_edit_config, field_path)
+                val -= step
+                _set_field_value(_dev_edit_config, field_path, ftype(val))
             _dev_edit_dirty = True
         elif event.key == pygame.K_RIGHT:
-            field_path, label, ftype, default, step = _EDITABLE_FIELDS[_dev_edit_field_idx]
-            val = _get_field_value(_dev_edit_config, field_path)
-            val += step
-            _set_field_value(_dev_edit_config, field_path, ftype(val))
+            if ftype == "bool":
+                _set_field_value(_dev_edit_config, field_path, True)
+            elif ftype == "str" and isinstance(step, list):
+                cur = _get_field_value(_dev_edit_config, field_path)
+                try:
+                    idx = step.index(cur)
+                    idx = (idx + 1) % len(step)
+                    _set_field_value(_dev_edit_config, field_path, step[idx])
+                except ValueError:
+                    _set_field_value(_dev_edit_config, field_path, step[0])
+            elif ftype in ("float", "int"):
+                val = _get_field_value(_dev_edit_config, field_path)
+                val += step
+                _set_field_value(_dev_edit_config, field_path, ftype(val))
             _dev_edit_dirty = True
         elif event.key == pygame.K_s:
             # 保存到硬盘
@@ -709,6 +944,8 @@ while running:
             win_w, win_h = event.w, event.h
             win_surface = pygame.display.set_mode((win_w, win_h), pygame.RESIZABLE)
             update_scale_param()
+            if _current_map is not None:
+                _current_map.invalidate_chunks()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F1:
                 current_fps = min(current_fps + 10, MAX_FPS)
