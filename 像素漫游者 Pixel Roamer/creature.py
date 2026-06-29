@@ -78,6 +78,8 @@ class Creature:
 
         self.contact_pool = set()       # 自动去重
         self.stand_pool = None
+        self.score = 0                 # 玩家积分
+        self._reached_end = False      # 是否触碰终点
 
     # ----- 游戏矩形 -----
     def get_game_rect(self) -> GameRect:
@@ -190,9 +192,11 @@ class Creature:
         # 飞行模式：完全跳过物理
         if getattr(self, 'fly_mode', False):
             return
-        # 攀爬中：无重力，仅保留手动设置的 v_y
+        # 攀爬中：无重力，加速度归零防止残余滑动
         if self.is_climbing:
-            self.v_y += self.a_y * dt  # 不含 gravity
+            self.a_x = 0.0
+            self.a_y = 0.0
+            self.v_x = 0.0
             self.clamp_velocity()
             return
         self.v_x += self.a_x * dt
@@ -435,6 +439,24 @@ class Creature:
                     self.v_max = self._base_v_max * float(bt.special_data)
                 elif bt.special == "jump" and bt.special_data is not None:
                     self.v_jump = self._base_v_jump * float(bt.special_data)
+                elif bt.special == "score" and bt.special_data is not None:
+                    # 积分方块：得分并替换为消耗态
+                    pts = int(bt.special_data)
+                    self.score += pts
+                    # 在接触池中找到该方块并替换为消耗态（ID+10）
+                    consumed_id = bt.id + 10
+                    grect = self.get_game_rect()
+                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
+                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+                            coord = world._wrap_grid_coord(gx, gy)
+                            if coord is None:
+                                continue
+                            tile = world.grid.get(coord)
+                            if tile is not None and tile.type_id == bt.id:
+                                world.set_tile(gx, gy, consumed_id)
+                elif bt.special == "end_point":
+                    # 终点：触发通关（由 main.py 检测）
+                    self._reached_end = True
                 elif bt.special == "explosive":
                     # 破坏时爆炸（由方块破坏逻辑处理）
                     pass
@@ -468,6 +490,8 @@ class Creature:
         self.fly_mode = False
         self.contact_pool = set()
         self.stand_pool = None
+        self.score = 0
+        self._reached_end = False
 
 
 # ===================== 玩家 =====================
@@ -523,13 +547,16 @@ class Player(Creature):
         self.stamina_max = stamina_max
         self.fly_mode = False
         self.fly_speed = 8.0
+        self.costume_id = 1      # 默认时装ID
         # 存储基础值，供 speed/jump 特效临时修改后恢复
         self._base_v_max = v_max
         self._base_v_jump = v_jump
 
     def on_death(self):
         super().on_death()
+        saved_score = self.score       # 保留分数
         self.reset(*self.spawn_pos)
+        self.score = saved_score
         self.stamina = self.stamina_max
 
     def consume_stamina(self, cost: float) -> bool:
@@ -545,12 +572,34 @@ class Player(Creature):
         self.a_x = dir_x * self.v_max
 
     # ----- 攀爬控制 -----
-    def try_start_climbing(self) -> bool:
-        """若可攀爬则进入攀爬中状态，返回是否成功。"""
+    def try_start_climbing(self, world=None) -> bool:
+        """若可攀爬则进入攀爬中状态，强制居中防止卡墙。"""
         if self.can_climb and not self.is_climbing and self.alive:
             self.is_climbing = True
             self.v_x = 0.0
             self.v_y = 0.0
+            self.a_x = 0.0
+            self.a_y = 0.0
+            # 强制居中到最近的 climbable 方块中心
+            if world is not None:
+                grect = self.get_game_rect()
+                cx = grect.x + grect.w / 2
+                best_x = None
+                best_dist = 999.0
+                for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
+                    for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+                        coord = world._wrap_grid_coord(gx, gy)
+                        if coord is None:
+                            continue
+                        bt = world.get_block_type_by_coord(coord[0], coord[1])
+                        if bt.climbable:
+                            block_cx = gx + 0.5
+                            dist = abs(cx - block_cx)
+                            if dist < best_dist:
+                                best_dist = dist
+                                best_x = block_cx
+                if best_x is not None:
+                    self._x = best_x
             return True
         return False
 

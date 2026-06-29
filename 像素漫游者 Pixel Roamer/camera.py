@@ -19,22 +19,24 @@ class Camera:
         self.y = 0.0   # 相机中心游戏 y
 
     def follow(self, target_x: float, target_y: float):
-        """跟随目标点（游戏坐标），自动边界钳制"""
+        """跟随目标点（游戏坐标），循环世界不钳制边界"""
         self.x = target_x
         self.y = target_y
 
         half_world_w = (self.logic_width / self.scale) / 2
         half_world_h = (self.logic_height / self.scale) / 2
 
-        if self.x - half_world_w < 0:
-            self.x = half_world_w
-        if self.x + half_world_w > self.world.width:
-            self.x = self.world.width - half_world_w
+        if not self.world.loop_x:
+            if self.x - half_world_w < 0:
+                self.x = half_world_w
+            if self.x + half_world_w > self.world.width:
+                self.x = self.world.width - half_world_w
 
-        if self.y - half_world_h < 0:
-            self.y = half_world_h
-        if self.y + half_world_h > self.world.height:
-            self.y = self.world.height - half_world_h
+        if not self.world.loop_y:
+            if self.y - half_world_h < 0:
+                self.y = half_world_h
+            if self.y + half_world_h > self.world.height:
+                self.y = self.world.height - half_world_h
 
     def world_to_screen(self, wx: float, wy: float) -> Tuple[float, float]:
         """游戏坐标（x右y上）→ 逻辑画布像素坐标（y下）"""

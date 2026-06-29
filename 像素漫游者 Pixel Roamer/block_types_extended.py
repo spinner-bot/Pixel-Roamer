@@ -1115,3 +1115,57 @@ BLOCK_TYPES[302] = BlockType(302, "checkpoint_shrine", "重生祭坛", is_solid=
         ("circle", 5, 2, 1, (255, 255, 255)),
         ("circle", 11, 2, 1, (255, 255, 255)),
     ]))
+
+# ========================================================================
+# 终点方块 (303)
+# ========================================================================
+BLOCK_TYPES[303] = BlockType(303, "end_beacon", "终点信标", is_solid=True, break_hp=999, break_level=99,
+    light_level=15, special="end_point", color=(255, 255, 200),
+    pattern=("vector", (16, 16), [
+        ("fill", (20, 20, 40)),
+        ("circle", 8, 8, 6, (40, 40, 80)),
+        ("circle", 8, 8, 4, (255, 220, 50)),
+        ("circle", 8, 8, 2, (255, 255, 255)),
+        ("rect", 0, 7, 16, 2, (255, 200, 30)),
+        ("rect", 7, 0, 2, 16, (255, 200, 30)),
+        ("circle", 8, 8, 1, (255, 100, 0)),
+    ]))
+
+# ========================================================================
+# 积分方块 (310-319 激活态, 320-329 消耗态)
+# ========================================================================
+_SCORE_BLOCKS = [
+    # (id_active, id_used, name, name2, points, color, pattern_desc)
+    (310, 320, "gold_coin", "金币", 10, (255, 215, 0)),
+    (311, 321, "silver_coin", "银币", 5, (210, 210, 210)),
+    (312, 322, "ruby_gem", "红宝石", 25, (255, 50, 50)),
+    (313, 323, "sapphire_gem", "蓝宝石", 25, (50, 50, 255)),
+    (314, 324, "diamond_crystal_score", "钻石水晶", 50, (100, 240, 255)),
+    (315, 325, "emerald_score", "翡翠碎片", 30, (40, 200, 100)),
+    (316, 326, "star_coin", "星币", 15, (255, 240, 100)),
+    (317, 327, "void_orb", "虚空宝珠", 40, (150, 50, 220)),
+    (318, 328, "sun_token", "日之徽记", 20, (255, 180, 50)),
+    (319, 329, "moon_token", "月之徽记", 20, (180, 200, 240)),
+]
+
+for aid, uid, name, name2, pts, color in _SCORE_BLOCKS:
+    BLOCK_TYPES[aid] = BlockType(aid, name, name2,
+        is_solid=False, break_hp=1, break_level=0, light_level=4,
+        special="score", special_data=pts, color=color,
+        pattern=("vector", (16, 16), [
+            ("fill", (0, 0, 0)),
+            ("circle", 8, 8, 5, color),
+            ("circle", 8, 8, 3, tuple(min(255, c + 60) for c in color)),
+            ("circle", 8, 8, 1, (255, 255, 255)),
+        ]))
+    # 消耗态：灰色无特效
+    ucolor = tuple(int(c * 0.35) for c in color)
+    BLOCK_TYPES[uid] = BlockType(uid, name + "_used", name2 + "(已消耗)",
+        is_solid=False, break_hp=1, break_level=0,
+        special=None, special_data=None, color=ucolor,
+        pattern=("vector", (16, 16), [
+            ("fill", (0, 0, 0)),
+            ("circle", 8, 8, 5, ucolor),
+            ("circle", 8, 8, 3, tuple(int(c * 0.5) for c in ucolor)),
+            ("circle", 8, 8, 1, (80, 80, 80)),
+        ]))

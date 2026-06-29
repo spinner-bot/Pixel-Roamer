@@ -95,6 +95,28 @@ def _apply_config(world, map_name: str):
     world.player_config = config.get("player", {})
 
 
+def rename_map(map_id: int, new_name: str) -> bool:
+    """彻底重命名地图：文件夹名、World.name 一起改。返回是否成功。"""
+    import shutil
+    maps_dir = os.path.dirname(__file__)
+    for name in _discover_folders():
+        module = _load_map(name)
+        if module.MAP_ID == map_id:
+            old_path = os.path.join(maps_dir, name)
+            new_path = os.path.join(maps_dir, new_name)
+            if name == new_name:
+                return True
+            if os.path.exists(new_path):
+                return False
+            try:
+                shutil.move(old_path, new_path)
+                module.world.name = new_name
+                return True
+            except OSError:
+                return False
+    return False
+
+
 def _discover_folders() -> list:
     """扫描 maps/ 下所有合法的地图子文件夹。"""
     maps_dir = os.path.dirname(__file__)
