@@ -362,6 +362,12 @@ class Creature:
             self.is_climbing = False
             self.v_y = 0.0
 
+        # 重置速度/跳跃为基础值（speed/jump 特效会重新修改）
+        if hasattr(self, '_base_v_max'):
+            self.v_max = self._base_v_max
+        if hasattr(self, '_base_v_jump'):
+            self.v_jump = self._base_v_jump
+
         ax_add, ay_add = 0.0, 0.0
         for bt in types:
             kx, ky = bt.accel_k
@@ -388,12 +394,56 @@ class Creature:
         for bt in types:
             if bt.special is not None:
                 if bt.special == "teleport" and bt.special_data is not None:
+                    # 支持 meta 覆盖目标坐标
                     tx, ty = bt.special_data
+                    # 在接触池中找到该方块对应的 Tile 实例（若有 meta 则覆盖）
+                    for bid in all_ids:
+                        if bid == bt.id:
+                            # 从 world 中查找接触到的该类型方块
+                            grect = self.get_game_rect()
+                            min_gx = int(grect.x) - 1
+                            max_gx = int(grect.x + grect.w) + 1
+                            min_gy = int(grect.y) - 1
+                            max_gy = int(grect.y + grect.h) + 1
+                            for gx in range(min_gx, max_gx + 1):
+                                for gy in range(min_gy, max_gy + 1):
+                                    coord = world._wrap_grid_coord(gx, gy)
+                                    if coord is None:
+                                        continue
+                                    tile = world.grid.get(coord)
+                                    if tile is not None and tile.type_id == bt.id and tile.meta is not None:
+                                        if isinstance(tile.meta, dict):
+                                            tx = tile.meta.get("tp_x", tx)
+                                            ty = tile.meta.get("tp_y", ty)
+                                        break
                     self._x = float(tx)
                     self._y = float(ty)
                 elif bt.special == "checkpoint":
                     if hasattr(self, "spawn_pos"):
                         self.spawn_pos = (self._x, self._y)
+                elif bt.special == "heal" and bt.special_data is not None:
+                    self.heal(float(bt.special_data) * dt)
+                elif bt.special == "shield" and bt.special_data is not None:
+                    if isinstance(bt.special_data, dict):
+                        amt = float(bt.special_data.get("amount", 0))
+                        mx = bt.special_data.get("max", None)
+                        self.add_shield(amt * dt, mx)
+                    else:
+                        self.add_shield(float(bt.special_data) * dt, None)
+                elif bt.special == "speed" and bt.special_data is not None:
+                    # 临时速度倍率（持续接触期间）
+                    self.v_max = self._base_v_max * float(bt.special_data)
+                elif bt.special == "jump" and bt.special_data is not None:
+                    self.v_jump = self._base_v_jump * float(bt.special_data)
+                elif bt.special == "explosive":
+                    # 破坏时爆炸（由方块破坏逻辑处理）
+                    pass
+                elif bt.special == "ender" and bt.special_data is not None:
+                    # 随机传送：special_data = (x_range, y_range) 最大偏移
+                    import random
+                    rx, ry = bt.special_data
+                    self._x += random.uniform(-rx, rx)
+                    self._y += random.uniform(-ry, ry)
 
     # ----- 工具 -----
     def get_center(self) -> Tuple[float, float]:
@@ -422,35 +472,60 @@ class Creature:
 
 # ===================== 玩家 =====================
 class Player(Creature):
-    def __init__(self, player_id: int, player_name: str, spawn_x: float, spawn_y: float, key_bind: dict, hp_max: float=100):
+    def __init__(self,
+                 player_id: int, player_name: str,
+                 spawn_x: float, spawn_y: float,
+                 key_bind: dict,
+                 hp_max: float = 100,
+                 shield: float = 0.0,
+                 w: float = 0.8,
+                 h: float = 1.8,
+                 v_max: float = 36.5,
+                 v_jump: float = 26.5,
+                 f_x: float = 0.985,
+                 f_y: float = 0.98,
+                 phys_atk: float = 10,
+                 magic_atk: float = 0,
+                 phys_res: float = 0,
+                 magic_res: float = 0,
+                 phys_pen: float = 0,
+                 magic_pen: float = 0,
+                 k_res: float = 150,
+                 dr: float = 0,
+                 stamina_max: float = 100.0):
         super().__init__(
             x=spawn_x,
             y=spawn_y,
-            w=0.8,
-            h=1.8,
+            w=w,
+            h=h,
             hp_max=hp_max,
-            v_max=36.5,
-            v_jump=26.5,         # 正数向上
+            shield=shield,
+            v_max=v_max,
+            v_jump=v_jump,
             a_x=0.0,
             a_y=0.0,
-            f_x=0.985,
-            f_y=0.98,
-            phys_atk=10,
-            magic_atk=0,
-            phys_res=0,
-            magic_res=0,
-            phys_pen=0,
-            magic_pen=0,
-            dr=0
+            f_x=f_x,
+            f_y=f_y,
+            phys_atk=phys_atk,
+            magic_atk=magic_atk,
+            phys_res=phys_res,
+            magic_res=magic_res,
+            phys_pen=phys_pen,
+            magic_pen=magic_pen,
+            k_res=k_res,
+            dr=dr,
         )
         self.player_id = player_id
         self.player_name = player_name
         self.spawn_pos = (spawn_x, spawn_y)
         self.key_bind = key_bind
-        self.stamina = 100.0
-        self.stamina_max = 100.0
+        self.stamina = stamina_max
+        self.stamina_max = stamina_max
         self.fly_mode = False
         self.fly_speed = 8.0
+        # 存储基础值，供 speed/jump 特效临时修改后恢复
+        self._base_v_max = v_max
+        self._base_v_jump = v_jump
 
     def on_death(self):
         super().on_death()

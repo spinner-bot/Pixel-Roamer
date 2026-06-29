@@ -14,8 +14,8 @@ BLOCK_TYPES = {
                      ("rect", 11, 12, 4, 2, (80, 80, 80)),
                      ("rect", 1, 13, 3, 1, (80, 80, 80)),
                      ("rect", 7, 3, 2, 2, (140, 140, 140)),
-                     ("rect", 13, 8, 2, 1, (140, 140, 140))
-                 ])),
+                                          ("rect", 13, 8, 2, 1, (140, 140, 140)),
+                                                                    ])),
     3: BlockType(3, "ice", "冰", is_solid=True, surface_f=1.05, color=(60, 220, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (60, 220, 255)),
@@ -25,9 +25,9 @@ BLOCK_TYPES = {
                      ("circle", 12, 3, 2, (255, 255, 255)),
                      ("rect", 6, 1, 1, 4, (200, 250, 255)),
                      ("rect", 10, 8, 2, 2, (200, 250, 255)),
-                     ("rect", 0, 14, 3, 1, (220, 250, 255))
-                 ])),
-    4: BlockType(4, "clay", "黏土", is_solid=True, surface_f=0.85, k_stamina=1.5, color=(135, 90, 45),
+                                          ("rect", 0, 14, 3, 1, (220, 250, 255)),
+                                                                    ])),
+    4: BlockType(4, "clay", "黏土", is_solid=True, surface_f=0.925, k_stamina=1.5, color=(135, 90, 45),
                  pattern=("vector", (16, 16), [
                      ("fill", (135, 90, 45)),
                      ("circle", 4, 4, 1, (100, 70, 35)),
@@ -37,8 +37,8 @@ BLOCK_TYPES = {
                      ("circle", 2, 10, 2, (100, 70, 35)),
                      ("rect", 5, 7, 3, 2, (120, 80, 40)),
                      ("rect", 11, 1, 4, 1, (120, 80, 40)),
-                     ("rect", 1, 14, 6, 1, (120, 80, 40))
-                 ])),
+                                          ("rect", 1, 14, 6, 1, (120, 80, 40)),
+                                                                    ])),
     5: BlockType(5, "sand", "沙", is_solid=True, surface_f=0.925, k_stamina=1.3, color=(239, 204, 135),
                  pattern=("vector", (16, 16), [
                      ("fill", (239, 204, 135)),
@@ -54,8 +54,8 @@ BLOCK_TYPES = {
                      ("circle", 10, 1, 1, (220, 180, 100)),
                      ("circle", 3, 5, 1, (220, 180, 100)),
                      ("circle", 6, 8, 1, (255, 230, 180)),
-                     ("circle", 12, 13, 1, (255, 230, 180))
-                 ])),
+                                          ("circle", 12, 13, 1, (255, 230, 180)),
+                                                                    ])),
     6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, color=(235, 80, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (235, 80, 0)),
@@ -64,8 +64,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 12, 16, 4, (255, 120, 0)),
                      ("rect", 2, 4, 5, 1, (255, 200, 50)),
                      ("rect", 10, 9, 6, 1, (255, 200, 50)),
-                     ("rect", 4, 14, 8, 1, (255, 200, 50))
-                 ])),
+                                          ("rect", 4, 14, 8, 1, (255, 200, 50)),
+                                                                    ])),
     7: BlockType(7, "water", "水", is_solid=False, space_f=0.985, color=(0, 100, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 100, 255)),
@@ -74,8 +74,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 13, 16, 1, (50, 150, 255)),
                      ("rect", 2, 5, 3, 2, (100, 200, 255)),
                      ("rect", 12, 10, 4, 1, (100, 200, 255)),
-                     ("rect", 6, 14, 5, 1, (100, 200, 255))
-                 ])),
+                                          ("rect", 6, 14, 5, 1, (100, 200, 255)),
+                                                                    ])),
     8: BlockType(8, "honey", "蜂蜜", is_solid=False, space_f=0.965, color=(255, 200, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 200, 0)),
@@ -85,24 +85,24 @@ BLOCK_TYPES = {
                      ("rect", 0, 14, 16, 1, (220, 170, 0)),
                      ("circle", 4, 4, 1, (255, 230, 80)),
                      ("circle", 12, 8, 1, (255, 230, 80)),
-                     ("circle", 8, 13, 1, (255, 230, 80))
-                 ])),
+                                          ("circle", 8, 13, 1, (255, 230, 80)),
+                                                                    ])),
     9: BlockType(9, "ladder", "梯子", is_solid=False, climbable=True, color=(160, 100, 60),
                  pattern=("vector", (16, 16), [
                      ("rect", 4, 0, 3, 16, (120, 70, 30)),
                      ("rect", 9, 0, 3, 16, (120, 70, 30)),
                      ("rect", 0, 2, 16, 2, (120, 70, 30)),
                      ("rect", 0, 7, 16, 2, (120, 70, 30)),
-                     ("rect", 0, 12, 16, 2, (120, 70, 30))
-                 ])),
+                                          ("rect", 0, 12, 16, 2, (120, 70, 30)),
+                                                                    ])),
     10: BlockType(10, "vine", "藤蔓", is_solid=False, climbable=True, damage_ps=5, color=(34, 139, 34),
                   pattern=("vector", (16, 16), [
                       ("rect", 5, 0, 6, 16, (0, 100, 0)),
                       ("circle", 4, 4, 2, (0, 80, 0)),
                       ("circle", 12, 6, 2, (0, 80, 0)),
                       ("circle", 5, 12, 2, (0, 80, 0)),
-                      ("circle", 11, 13, 2, (0, 80, 0))
-                  ])),
+                                            ("circle", 11, 13, 2, (0, 80, 0)),
+                                                                        ])),
     11: BlockType(11, "air_night", "空气（夜晚）", is_solid=False, color=(11, 20, 147)),
     12: BlockType(12, "air_dark", "空气（黑暗）", is_solid=False, color=(0, 0, 0)),
     13: BlockType(13, "air_block", "空气墙", is_solid=True, color=(135, 255, 255)),
@@ -116,24 +116,24 @@ BLOCK_TYPES = {
                      ("circle", 5, 4, 1, (100, 80, 60)),
                      ("circle", 11, 9, 1, (100, 80, 60)),
                      ("circle", 3, 12, 1, (100, 80, 60)),
-                     ("circle", 14, 3, 1, (100, 80, 60))
-                 ])),
+                                          ("circle", 14, 3, 1, (100, 80, 60)),
+                                                                    ])),
     17: BlockType(17, "grass", "草地", is_solid=True, break_hp=3, break_level=0, color=(34, 139, 34),
                  pattern=("vector", (16, 16), [
                      ("fill", (34, 139, 34)),
                      ("rect", 0, 8, 16, 8, (139, 115, 85)),
                      ("circle", 2, 14, 2, (20, 100, 20)),
                      ("circle", 8, 12, 1, (20, 100, 20)),
-                     ("circle", 13, 15, 2, (20, 100, 20))
-                 ])),
+                                          ("circle", 13, 15, 2, (20, 100, 20)),
+                                                                    ])),
     18: BlockType(18, "oak_log", "橡木原木", is_solid=True, break_hp=5, break_level=0, color=(160, 120, 60),
                  pattern=("vector", (16, 16), [
                      ("fill", (160, 120, 60)),
                      ("rect", 0, 4, 16, 2, (120, 80, 40)),
                      ("rect", 0, 10, 16, 2, (120, 80, 40)),
                      ("circle", 6, 7, 1, (100, 60, 30)),
-                     ("circle", 10, 13, 1, (100, 60, 30))
-                 ])),
+                                          ("circle", 10, 13, 1, (100, 60, 30)),
+                                                                    ])),
     19: BlockType(19, "planks", "木板", is_solid=True, break_hp=4, break_level=0, color=(205, 170, 110),
                  pattern=("vector", (16, 16), [
                      ("fill", (205, 170, 110)),
@@ -142,8 +142,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 6, 16, 1, (180, 140, 80)),
                      ("rect", 0, 9, 16, 1, (180, 140, 80)),
                      ("rect", 0, 12, 16, 1, (180, 140, 80)),
-                     ("rect", 0, 15, 16, 1, (180, 140, 80))
-                 ])),
+                                          ("rect", 0, 15, 16, 1, (180, 140, 80)),
+                                                                    ])),
     20: BlockType(20, "bricks", "砖块", is_solid=True, break_hp=6, break_level=0, color=(178, 100, 80),
                  pattern=("vector", (16, 16), [
                      ("fill", (178, 100, 80)),
@@ -154,8 +154,8 @@ BLOCK_TYPES = {
                      ("rect", 9, 7, 7, 3, (140, 80, 60)),
                      ("rect", 0, 11, 16, 2, (200, 120, 100)),
                      ("rect", 0, 14, 7, 3, (140, 80, 60)),
-                     ("rect", 9, 14, 7, 3, (140, 80, 60))
-                 ])),
+                                          ("rect", 9, 14, 7, 3, (140, 80, 60)),
+                                                                    ])),
     21: BlockType(21, "glass", "玻璃", is_solid=True, break_hp=2, break_level=0, color=(200, 230, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 230, 255)),
@@ -164,8 +164,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 0, 1, 16, (220, 240, 255)),
                      ("rect", 15, 0, 1, 16, (220, 240, 255)),
                      ("circle", 5, 5, 1, (255, 255, 255)),
-                     ("circle", 11, 10, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 11, 10, 1, (255, 255, 255)),
+                                                                    ])),
     22: BlockType(22, "leaves", "树叶", is_solid=True, break_hp=2, break_level=0, color=(0, 130, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 130, 0)),
@@ -173,32 +173,32 @@ BLOCK_TYPES = {
                      ("circle", 12, 4, 2, (0, 100, 0)),
                      ("circle", 7, 10, 2, (0, 100, 0)),
                      ("circle", 2, 13, 2, (0, 100, 0)),
-                     ("circle", 14, 12, 2, (0, 100, 0))
-                 ])),
+                                          ("circle", 14, 12, 2, (0, 100, 0)),
+                                                                    ])),
     23: BlockType(23, "snow", "雪块", is_solid=True, break_hp=2, break_level=0, surface_f=0.8, color=(250, 250, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (250, 250, 255)),
                      ("rect", 0, 8, 16, 2, (230, 240, 255)),
                      ("circle", 3, 4, 1, (255, 255, 255)),
                      ("circle", 12, 6, 1, (255, 255, 255)),
-                     ("circle", 8, 12, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 8, 12, 1, (255, 255, 255)),
+                                                                    ])),
     24: BlockType(24, "sandstone", "砂岩", is_solid=True, break_hp=4, break_level=0, color=(222, 190, 115),
                  pattern=("vector", (16, 16), [
                      ("fill", (222, 190, 115)),
                      ("rect", 0, 3, 16, 1, (190, 150, 80)),
                      ("rect", 0, 7, 16, 1, (190, 150, 80)),
                      ("rect", 0, 11, 16, 1, (190, 150, 80)),
-                     ("rect", 0, 15, 16, 1, (190, 150, 80))
-                 ])),
+                                          ("rect", 0, 15, 16, 1, (190, 150, 80)),
+                                                                    ])),
     25: BlockType(25, "cobblestone", "圆石", is_solid=True, break_hp=6, break_level=0, color=(130, 130, 130),
                  pattern=("vector", (16, 16), [
                      ("fill", (130, 130, 130)),
                      ("circle", 3, 4, 2, (100, 100, 100)),
                      ("circle", 12, 5, 2, (100, 100, 100)),
                      ("circle", 6, 10, 2, (100, 100, 100)),
-                     ("circle", 14, 12, 2, (100, 100, 100))
-                 ])),
+                                          ("circle", 14, 12, 2, (100, 100, 100)),
+                                                                    ])),
     26: BlockType(26, "mossy_cobble", "苔石", is_solid=True, break_hp=6, break_level=0, color=(110, 130, 80),
                  pattern=("vector", (16, 16), [
                      ("fill", (110, 130, 80)),
@@ -206,22 +206,22 @@ BLOCK_TYPES = {
                      ("circle", 12, 4, 2, (80, 100, 60)),
                      ("circle", 3, 12, 2, (80, 100, 60)),
                      ("circle", 13, 12, 2, (80, 100, 60)),
-                     ("rect", 0, 7, 16, 2, (90, 110, 70))
-                 ])),
+                                          ("rect", 0, 7, 16, 2, (90, 110, 70)),
+                                                                    ])),
     27: BlockType(27, "obsidian", "黑曜石", is_solid=True, break_hp=25, break_level=0, color=(20, 20, 30),
                  pattern=("vector", (16, 16), [
                      ("fill", (20, 20, 30)),
                      ("rect", 2, 2, 12, 3, (40, 40, 50)),
                      ("rect", 1, 7, 14, 2, (40, 40, 50)),
-                     ("rect", 3, 11, 10, 3, (40, 40, 50))
-                 ])),
+                                          ("rect", 3, 11, 10, 3, (40, 40, 50)),
+                                                                    ])),
     28: BlockType(28, "tnt", "炸药", is_solid=True, break_hp=1, special="explosive", special_data=5, color=(200, 0, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 0, 0)),
                      ("rect", 2, 2, 12, 12, (255, 255, 255)),
                      ("rect", 5, 5, 6, 6, (200, 0, 0)),
-                     ("rect", 7, 7, 2, 2, (255, 255, 255))
-                 ])),
+                                          ("rect", 7, 7, 2, 2, (255, 255, 255)),
+                                                                    ])),
     29: BlockType(29, "bookshelf", "书架", is_solid=True, break_hp=3, break_level=0, color=(180, 150, 110),
                  pattern=("vector", (16, 16), [
                      ("fill", (180, 150, 110)),
@@ -230,44 +230,44 @@ BLOCK_TYPES = {
                      ("rect", 0, 2, 16, 2, (200, 170, 130)),
                      ("rect", 0, 6, 16, 2, (200, 170, 130)),
                      ("rect", 0, 10, 16, 2, (200, 170, 130)),
-                     ("rect", 0, 14, 16, 2, (200, 170, 130))
-                 ])),
+                                          ("rect", 0, 14, 16, 2, (200, 170, 130)),
+                                                                    ])),
     30: BlockType(30, "lantern", "灯笼", is_solid=True, break_hp=1, light_level=12, color=(255, 230, 150),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 230, 150)),
                      ("rect", 5, 0, 6, 16, (255, 200, 50)),
                      ("rect", 3, 2, 10, 12, (255, 255, 200)),
-                     ("rect", 6, 4, 4, 8, (255, 150, 0))
-                 ])),
+                                          ("rect", 6, 4, 4, 8, (255, 150, 0)),
+                                                                    ])),
     31: BlockType(31, "rope", "绳索", is_solid=False, climbable=True, break_hp=1, break_level=0, color=(180, 150, 100),
                  pattern=("vector", (16, 16), [
                      ("fill", (180, 150, 100)),
                      ("rect", 7, 0, 2, 16, (140, 110, 70)),
                      ("rect", 6, 3, 4, 1, (120, 90, 50)),
                      ("rect", 6, 8, 4, 1, (120, 90, 50)),
-                     ("rect", 6, 13, 4, 1, (120, 90, 50))
-                 ])),
+                                          ("rect", 6, 13, 4, 1, (120, 90, 50)),
+                                                                    ])),
     32: BlockType(32, "spike", "尖刺", is_solid=True, damage_ps=21.5, break_hp=3, break_level=0, color=(180, 180, 180),
                  pattern=("vector", (16, 16), [
                      ("fill", (180, 180, 180)),
                      ("circle", 8, 3, 2, (255, 0, 0)),
                      ("circle", 8, 8, 2, (255, 0, 0)),
-                     ("circle", 8, 13, 2, (255, 0, 0))
-                 ])),
+                                          ("circle", 8, 13, 2, (255, 0, 0)),
+                                                                    ])),
     33: BlockType(33, "cloud", "云块", is_solid=True, break_hp=1, color=(255, 255, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 255, 255)),
                      ("circle", 5, 5, 3, (230, 240, 255)),
                      ("circle", 11, 6, 3, (230, 240, 255)),
-                     ("circle", 8, 10, 3, (230, 240, 255))
-                 ])),
+                                          ("circle", 8, 10, 3, (230, 240, 255)),
+                                                                    ])),
     34: BlockType(34, "marble", "大理石", is_solid=True, break_hp=8, break_level=0, color=(230, 230, 230),
                  pattern=("vector", (16, 16), [
                      ("fill", (230, 230, 230)),
                      ("rect", 0, 2, 16, 2, (200, 200, 200)),
                      ("rect", 0, 7, 16, 1, (200, 200, 200)),
-                     ("rect", 0, 12, 16, 2, (200, 200, 200))
-                 ])),
+                                          ("rect", 0, 12, 16, 2, (200, 200, 200)),
+                                                                    ])),
     35: BlockType(35, "gravel", "砂砾", is_solid=True, break_hp=3, break_level=0, surface_f=0.95, color=(160, 150, 140),
                  pattern=("vector", (16, 16), [
                      ("fill", (160, 150, 140)),
@@ -276,85 +276,85 @@ BLOCK_TYPES = {
                      ("circle", 6, 11, 1, (140, 130, 120)),
                      ("circle", 13, 13, 1, (140, 130, 120)),
                      ("circle", 2, 2, 1, (180, 170, 160)),
-                     ("circle", 12, 9, 1, (180, 170, 160))
-                 ])),
+                                          ("circle", 12, 9, 1, (180, 170, 160)),
+                                                                    ])),
     36: BlockType(36, "coal_ore", "煤矿", is_solid=True, break_hp=5, break_level=0, color=(80, 80, 80),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
                      ("circle", 4, 5, 2, (80, 80, 80)),
                      ("circle", 11, 8, 2, (80, 80, 80)),
                      ("circle", 7, 12, 2, (80, 80, 80)),
-                     ("circle", 2, 14, 2, (80, 80, 80))
-                 ])),
+                                          ("circle", 2, 14, 2, (80, 80, 80)),
+                                                                    ])),
     37: BlockType(37, "iron_ore", "铁矿", is_solid=True, break_hp=6, break_level=0, color=(200, 180, 150),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
                      ("circle", 5, 5, 2, (200, 180, 150)),
                      ("circle", 12, 8, 2, (200, 180, 150)),
                      ("circle", 8, 12, 2, (200, 180, 150)),
-                     ("circle", 3, 14, 2, (200, 180, 150))
-                 ])),
+                                          ("circle", 3, 14, 2, (200, 180, 150)),
+                                                                    ])),
     38: BlockType(38, "gold_ore", "金矿", is_solid=True, break_hp=6, break_level=0, color=(255, 215, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
                      ("circle", 4, 6, 2, (255, 215, 0)),
                      ("circle", 11, 7, 2, (255, 215, 0)),
                      ("circle", 7, 12, 2, (255, 215, 0)),
-                     ("circle", 3, 14, 2, (255, 215, 0))
-                 ])),
+                                          ("circle", 3, 14, 2, (255, 215, 0)),
+                                                                    ])),
     39: BlockType(39, "diamond_ore", "钻石矿", is_solid=True, break_hp=8, break_level=0, color=(100, 255, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
                      ("circle", 5, 5, 2, (100, 255, 255)),
                      ("circle", 12, 8, 2, (100, 255, 255)),
                      ("circle", 8, 12, 2, (100, 255, 255)),
-                     ("circle", 3, 14, 2, (100, 255, 255))
-                 ])),
+                                          ("circle", 3, 14, 2, (100, 255, 255)),
+                                                                    ])),
     40: BlockType(40, "crafting_table", "工作台", is_solid=True, break_hp=4, break_level=0, color=(160, 110, 70),
                  pattern=("vector", (16, 16), [
                      ("fill", (160, 110, 70)),
                      ("rect", 0, 0, 16, 4, (120, 80, 50)),
                      ("rect", 2, 4, 4, 8, (120, 80, 50)),
                      ("rect", 10, 4, 4, 8, (120, 80, 50)),
-                     ("rect", 0, 12, 16, 4, (200, 160, 110))
-                 ])),
+                                          ("rect", 0, 12, 16, 4, (200, 160, 110)),
+                                                                    ])),
     41: BlockType(41, "furnace", "熔炉", is_solid=True, break_hp=5, break_level=0, color=(120, 120, 120),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
                      ("rect", 2, 2, 12, 12, (80, 80, 80)),
                      ("rect", 5, 5, 6, 6, (255, 150, 0)),
-                     ("rect", 7, 7, 2, 2, (200, 0, 0))
-                 ])),
+                                          ("rect", 7, 7, 2, 2, (200, 0, 0)),
+                                                                    ])),
     42: BlockType(42, "chest", "箱子", is_solid=True, break_hp=4, break_level=0, color=(180, 130, 70),
                  pattern=("vector", (16, 16), [
                      ("fill", (180, 130, 70)),
                      ("rect", 0, 2, 16, 12, (140, 100, 50)),
                      ("rect", 4, 6, 8, 4, (200, 160, 100)),
-                     ("circle", 8, 8, 2, (80, 60, 30))
-                 ])),
+                                          ("circle", 8, 8, 2, (80, 60, 30)),
+                                                                    ])),
     43: BlockType(43, "torch", "火把", is_solid=False, light_level=14, break_hp=1, color=(255, 200, 50),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 7, 0, 2, 10, (180, 150, 100)),
                      ("circle", 8, 12, 2, (255, 200, 50)),
-                     ("circle", 8, 12, 3, (255, 255, 100))
-                 ])),
+                                          ("circle", 8, 12, 3, (255, 255, 100)),
+                                                                    ])),
     44: BlockType(44, "slab_stone", "石台阶", is_solid=True, break_hp=3, break_level=0, color=(120, 120, 120),
                  pattern=("vector", (16, 16), [
                      ("fill", (120, 120, 120)),
-                     ("rect", 0, 0, 16, 8, (100, 100, 100))
-                 ])),
+                                          ("rect", 0, 0, 16, 8, (100, 100, 100)),
+                                                                    ])),
     45: BlockType(45, "slab_wood", "木台阶", is_solid=True, break_hp=3, break_level=0, color=(160, 110, 70),
                  pattern=("vector", (16, 16), [
                      ("fill", (160, 110, 70)),
-                     ("rect", 0, 0, 16, 8, (130, 90, 60))
-                 ])),
+                                          ("rect", 0, 0, 16, 8, (130, 90, 60)),
+                                                                    ])),
     46: BlockType(46, "stair_stone", "石楼梯", is_solid=True, break_hp=4, break_level=0, color=(100, 100, 100),
                  pattern=("vector", (16, 16), [
                      ("fill", (100, 100, 100)),
                      ("rect", 0, 0, 16, 8, (80, 80, 80)),
-                     ("rect", 8, 8, 8, 8, (80, 80, 80))
-                 ])),
+                                          ("rect", 8, 8, 8, 8, (80, 80, 80)),
+                                                                    ])),
     47: BlockType(47, "wool_white", "白色羊毛", is_solid=True, break_hp=2, break_level=0, color=(240, 240, 240),
                  pattern=("vector", (16, 16), [
                      ("fill", (240, 240, 240)),
@@ -362,8 +362,8 @@ BLOCK_TYPES = {
                      ("circle", 12, 6, 1, (255, 255, 255)),
                      ("circle", 7, 10, 1, (255, 255, 255)),
                      ("circle", 3, 13, 1, (255, 255, 255)),
-                     ("circle", 14, 12, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 14, 12, 1, (255, 255, 255)),
+                                                                    ])),
     48: BlockType(48, "wool_red", "红色羊毛", is_solid=True, break_hp=2, break_level=0, color=(200, 50, 50),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 50, 50)),
@@ -371,8 +371,8 @@ BLOCK_TYPES = {
                      ("circle", 12, 6, 1, (255, 100, 100)),
                      ("circle", 7, 10, 1, (255, 100, 100)),
                      ("circle", 3, 13, 1, (255, 100, 100)),
-                     ("circle", 14, 12, 1, (255, 100, 100))
-                 ])),
+                                          ("circle", 14, 12, 1, (255, 100, 100)),
+                                                                    ])),
     49: BlockType(49, "wool_blue", "蓝色羊毛", is_solid=True, break_hp=2, break_level=0, color=(50, 50, 200),
                  pattern=("vector", (16, 16), [
                      ("fill", (50, 50, 200)),
@@ -380,53 +380,53 @@ BLOCK_TYPES = {
                      ("circle", 12, 6, 1, (100, 100, 255)),
                      ("circle", 7, 10, 1, (100, 100, 255)),
                      ("circle", 3, 13, 1, (100, 100, 255)),
-                     ("circle", 14, 12, 1, (100, 100, 255))
-                 ])),
+                                          ("circle", 14, 12, 1, (100, 100, 255)),
+                                                                    ])),
     50: BlockType(50, "flower_red", "红花", is_solid=False, break_hp=1, color=(255, 100, 100),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 7, 0, 2, 8, (0, 150, 0)),
                      ("circle", 8, 10, 3, (255, 50, 50)),
-                     ("circle", 8, 10, 1, (255, 255, 0))
-                 ])),
+                                          ("circle", 8, 10, 1, (255, 255, 0)),
+                                                                    ])),
     51: BlockType(51, "flower_yellow", "黄花", is_solid=False, break_hp=1, color=(255, 255, 100),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 7, 0, 2, 8, (0, 150, 0)),
                      ("circle", 8, 10, 3, (255, 255, 0)),
-                     ("circle", 8, 10, 1, (255, 200, 0))
-                 ])),
+                                          ("circle", 8, 10, 1, (255, 200, 0)),
+                                                                    ])),
     52: BlockType(52, "mushroom_red", "红蘑菇", is_solid=False, break_hp=1, color=(200, 50, 50),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 7, 0, 2, 6, (180, 180, 180)),
                      ("circle", 8, 7, 4, (200, 50, 50)),
                      ("circle", 5, 6, 1, (255, 255, 255)),
-                     ("circle", 11, 6, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 11, 6, 1, (255, 255, 255)),
+                                                                    ])),
     53: BlockType(53, "mushroom_brown", "棕蘑菇", is_solid=False, break_hp=1, color=(160, 120, 60),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 7, 0, 2, 6, (180, 180, 180)),
                      ("circle", 8, 7, 4, (160, 120, 60)),
                      ("circle", 5, 6, 1, (255, 255, 255)),
-                     ("circle", 11, 6, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 11, 6, 1, (255, 255, 255)),
+                                                                    ])),
     54: BlockType(54, "dead_bush", "枯灌木", is_solid=False, break_hp=1, color=(140, 110, 70),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 0, 0)),
                      ("rect", 6, 0, 4, 12, (140, 110, 70)),
                      ("rect", 4, 3, 2, 4, (100, 80, 50)),
-                     ("rect", 10, 6, 2, 4, (100, 80, 50))
-                 ])),
+                                          ("rect", 10, 6, 2, 4, (100, 80, 50)),
+                                                                    ])),
     55: BlockType(55, "cactus", "仙人掌", is_solid=True, damage_ps=2, break_hp=3, break_level=0, color=(50, 150, 50),
                  pattern=("vector", (16, 16), [
                      ("fill", (50, 150, 50)),
                      ("rect", 5, 0, 6, 16, (30, 130, 30)),
                      ("rect", 3, 3, 3, 2, (30, 130, 30)),
                      ("rect", 11, 9, 3, 2, (30, 130, 30)),
-                     ("rect", 4, 13, 3, 2, (30, 130, 30))
-                 ])),
+                                          ("rect", 4, 13, 3, 2, (30, 130, 30)),
+                                                                    ])),
 
     # ===================== 进阶装饰与特效方块（56-80） =====================
     56: BlockType(56, "carved_stone", "雕刻石砖", is_solid=True, break_hp=8, break_level=0, color=(160, 160, 160),
@@ -460,7 +460,7 @@ BLOCK_TYPES = {
                      [(160,160,160)]*2 + [(140,140,140)]*28 + [(160,160,160)]*2,
                      [(160,160,160)]*2 + [(140,140,140)]*28 + [(160,160,160)]*2,
                      [(140,140,140)]*32,
-                 ])),
+                                                                    ])),
     57: BlockType(57, "stained_glass_red", "红色彩绘玻璃", is_solid=True, break_hp=2, break_level=0, light_level=5, color=(200, 0, 0),
                  pattern=("texture", "checkerboard", {"size":4, "color1":(200,0,0), "color2":(255,100,100)})),
     58: BlockType(58, "stained_glass_blue", "蓝色彩绘玻璃", is_solid=True, break_hp=2, break_level=0, light_level=5, color=(0, 0, 200),
@@ -474,8 +474,8 @@ BLOCK_TYPES = {
                      ("circle", 12, 4, 2, (255, 255, 255)),
                      ("circle", 8, 8, 4, (255, 255, 255)),
                      ("circle", 4, 12, 3, (255, 255, 255)),
-                     ("circle", 12, 12, 2, (255, 255, 255))
-                 ])),
+                                          ("circle", 12, 12, 2, (255, 255, 255)),
+                                                                    ])),
     61: BlockType(61, "magma_brick", "岩浆砖", is_solid=True, damage_ps=8, break_hp=12, break_level=0, light_level=6, color=(200, 80, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 80, 0)),
@@ -485,8 +485,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 14, 16, 2, (150, 50, 0)),
                      ("rect", 4, 2, 2, 3, (255, 120, 0)),
                      ("rect", 10, 7, 2, 3, (255, 120, 0)),
-                     ("rect", 6, 12, 2, 2, (255, 120, 0))
-                 ])),
+                                          ("rect", 6, 12, 2, 2, (255, 120, 0)),
+                                                                    ])),
     62: BlockType(62, "end_stone", "末地石", is_solid=True, break_hp=10, break_level=0, color=(220, 220, 180),
                  pattern=("vector", (16, 16), [
                      ("fill", (220, 220, 180)),
@@ -495,8 +495,8 @@ BLOCK_TYPES = {
                      ("circle", 12, 4, 1, (200, 200, 160)),
                      ("circle", 8, 8, 2, (200, 200, 160)),
                      ("circle", 4, 12, 1, (200, 200, 160)),
-                     ("circle", 12, 12, 1, (200, 200, 160))
-                 ])),
+                                          ("circle", 12, 12, 1, (200, 200, 160)),
+                                                                    ])),
     63: BlockType(63, "nether_brick", "下界砖", is_solid=True, break_hp=10, break_level=0, color=(100, 30, 30),
                  pattern=("vector", (16, 16), [
                      ("fill", (100, 30, 30)),
@@ -505,8 +505,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 8, 8, 8, (120, 40, 40)),
                      ("rect", 8, 0, 8, 8, (120, 40, 40)),
                      ("rect", 4, 4, 2, 2, (60, 10, 10)),
-                     ("rect", 12, 12, 2, 2, (60, 10, 10))
-                 ])),
+                                          ("rect", 12, 12, 2, 2, (60, 10, 10)),
+                                                                    ])),
     64: BlockType(64, "prismarine", "海晶石", is_solid=True, break_hp=8, break_level=0, color=(100, 200, 150),
                  pattern=("vector", (16, 16), [
                      ("fill", (100, 200, 150)),
@@ -515,24 +515,24 @@ BLOCK_TYPES = {
                      ("rect", 8, 8, 4, 4, (70, 170, 120)),
                      ("rect", 12, 12, 4, 4, (130, 230, 180)),
                      ("rect", 4, 8, 4, 4, (130, 230, 180)),
-                     ("rect", 8, 4, 4, 4, (70, 170, 120))
-                 ])),
+                                          ("rect", 8, 4, 4, 4, (70, 170, 120)),
+                                                                    ])),
     65: BlockType(65, "dark_prismarine", "暗海晶石", is_solid=True, break_hp=8, break_level=0, color=(50, 100, 70),
                  pattern=("vector", (16, 16), [
                      ("fill", (50, 100, 70)),
                      ("rect", 0, 0, 8, 8, (40, 80, 55)),
                      ("rect", 8, 8, 8, 8, (40, 80, 55)),
                      ("rect", 0, 8, 8, 8, (60, 120, 85)),
-                     ("rect", 8, 0, 8, 8, (60, 120, 85))
-                 ])),
+                                          ("rect", 8, 0, 8, 8, (60, 120, 85)),
+                                                                    ])),
     66: BlockType(66, "sea_lantern", "海灯", is_solid=True, break_hp=4, break_level=0, light_level=15, color=(200, 240, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 240, 255)),
                      ("circle", 8, 8, 4, (255, 255, 255)),
                      ("circle", 8, 8, 6, (220, 250, 255)),
                      ("rect", 6, 3, 4, 10, (180, 230, 255)),
-                     ("rect", 3, 6, 10, 4, (180, 230, 255))
-                 ])),
+                                          ("rect", 3, 6, 10, 4, (180, 230, 255)),
+                                                                    ])),
     67: BlockType(67, "basalt", "玄武岩", is_solid=True, break_hp=8, break_level=0, color=(50, 50, 55),
                  pattern=("vector", (16, 16), [
                      ("fill", (50, 50, 55)),
@@ -540,8 +540,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 4, 16, 2, (70, 70, 75)),
                      ("rect", 0, 8, 16, 2, (70, 70, 75)),
                      ("rect", 0, 12, 16, 2, (70, 70, 75)),
-                     ("rect", 0, 14, 16, 2, (70, 70, 75))
-                 ])),
+                                          ("rect", 0, 14, 16, 2, (70, 70, 75)),
+                                                                    ])),
     68: BlockType(68, "bedrock", "基岩", is_solid=True, break_hp=1000000, break_level=99, color=(50, 50, 50),
                  pattern=("vector", (16, 16), [
                      ("fill", (50, 50, 50)),
@@ -549,8 +549,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 7, 16, 2, (30, 30, 30)),
                      ("rect", 0, 14, 16, 2, (30, 30, 30)),
                      ("rect", 7, 2, 2, 5, (30, 30, 30)),
-                     ("rect", 7, 9, 2, 5, (30, 30, 30))
-                 ])),
+                                          ("rect", 7, 9, 2, 5, (30, 30, 30)),
+                                                                    ])),
     69: BlockType(69, "glowstone", "萤石", is_solid=True, break_hp=3, break_level=0, light_level=15, color=(255, 230, 130),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 230, 130)),
@@ -559,8 +559,8 @@ BLOCK_TYPES = {
                      ("circle", 5, 12, 2, (255, 255, 150)),
                      ("circle", 12, 12, 2, (255, 255, 150)),
                      ("rect", 7, 3, 2, 10, (255, 200, 100)),
-                     ("rect", 3, 7, 10, 2, (255, 200, 100))
-                 ])),
+                                          ("rect", 3, 7, 10, 2, (255, 200, 100)),
+                                                                    ])),
     70: BlockType(70, "soul_sand", "灵魂沙", is_solid=True, break_hp=3, break_level=0, surface_f=0.7, space_f=0.85, damage_ps=1, color=(70, 50, 40),
                  pattern=("vector", (16, 16), [
                      ("fill", (70, 50, 40)),
@@ -569,8 +569,8 @@ BLOCK_TYPES = {
                      ("circle", 7, 8, 2, (60, 40, 30)),
                      ("circle", 3, 12, 2, (60, 40, 30)),
                      ("circle", 13, 12, 2, (60, 40, 30)),
-                     ("rect", 0, 6, 16, 4, (50, 30, 20))
-                 ])),
+                                          ("rect", 0, 6, 16, 4, (50, 30, 20)),
+                                                                    ])),
     71: BlockType(71, "slime", "黏液块", is_solid=True, bounce=(0, 8), break_hp=3, break_level=0, color=(80, 220, 80),
                  pattern=("vector", (16, 16), [
                      ("fill", (80, 220, 80)),
@@ -578,8 +578,8 @@ BLOCK_TYPES = {
                      ("circle", 5, 5, 2, (150, 255, 150)),
                      ("circle", 11, 5, 2, (150, 255, 150)),
                      ("circle", 5, 11, 2, (150, 255, 150)),
-                     ("circle", 11, 11, 2, (150, 255, 150))
-                 ])),
+                                          ("circle", 11, 11, 2, (150, 255, 150)),
+                                                                    ])),
     72: BlockType(72, "honey_block", "蜂蜜块", is_solid=True, break_hp=4, break_level=0, space_f=0.8, surface_f=0.6, color=(255, 180, 30),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 180, 30)),
@@ -587,8 +587,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 5, 16, 2, (230, 150, 20)),
                      ("rect", 0, 10, 16, 2, (230, 150, 20)),
                      ("rect", 0, 14, 16, 2, (230, 150, 20)),
-                     ("circle", 8, 8, 2, (255, 220, 100))
-                 ])),
+                                          ("circle", 8, 8, 2, (255, 220, 100)),
+                                                                    ])),
     73: BlockType(73, "bubble_column", "气泡柱", is_solid=False, space_f=1.2, climbable=True, break_hp=0, color=(200, 240, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 240, 255)),
@@ -597,23 +597,23 @@ BLOCK_TYPES = {
                      ("circle", 8, 7, 1, (255, 255, 255)),
                      ("circle", 4, 10, 1, (255, 255, 255)),
                      ("circle", 14, 12, 1, (255, 255, 255)),
-                     ("circle", 7, 14, 1, (255, 255, 255))
-                 ])),
+                                          ("circle", 7, 14, 1, (255, 255, 255)),
+                                                                    ])),
     74: BlockType(74, "terracotta", "陶瓦", is_solid=True, break_hp=5, break_level=0, color=(180, 130, 100),
                  pattern=("vector", (16, 16), [
                      ("fill", (180, 130, 100)),
                      ("rect", 0, 0, 8, 8, (160, 110, 80)),
                      ("rect", 8, 8, 8, 8, (160, 110, 80)),
                      ("rect", 0, 8, 8, 8, (200, 150, 120)),
-                     ("rect", 8, 0, 8, 8, (200, 150, 120))
-                 ])),
+                                          ("rect", 8, 0, 8, 8, (200, 150, 120)),
+                                                                    ])),
     75: BlockType(75, "packed_ice", "浮冰", is_solid=True, break_hp=5, break_level=0, surface_f=1.5, color=(150, 220, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (150, 220, 255)),
                      ("rect", 0, 0, 16, 3, (200, 240, 255)),
                      ("rect", 0, 6, 16, 2, (200, 240, 255)),
-                     ("rect", 0, 12, 16, 3, (200, 240, 255))
-                 ])),
+                                          ("rect", 0, 12, 16, 3, (200, 240, 255)),
+                                                                    ])),
     76: BlockType(76, "amethyst_block", "紫水晶块", is_solid=True, break_hp=8, break_level=0, light_level=4, color=(200, 150, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (200, 150, 255)),
@@ -621,32 +621,32 @@ BLOCK_TYPES = {
                      ("circle", 12, 4, 2, (230, 200, 255)),
                      ("circle", 8, 8, 3, (230, 200, 255)),
                      ("circle", 4, 12, 2, (230, 200, 255)),
-                     ("circle", 12, 12, 2, (230, 200, 255))
-                 ])),
+                                          ("circle", 12, 12, 2, (230, 200, 255)),
+                                                                    ])),
     77: BlockType(77, "coal_block", "煤炭块", is_solid=True, break_hp=6, break_level=0, color=(40, 40, 40),
                  pattern=("vector", (16, 16), [
                      ("fill", (40, 40, 40)),
                      ("rect", 0, 0, 8, 8, (30, 30, 30)),
                      ("rect", 8, 8, 8, 8, (30, 30, 30)),
                      ("rect", 0, 8, 8, 8, (50, 50, 50)),
-                     ("rect", 8, 0, 8, 8, (50, 50, 50))
-                 ])),
+                                          ("rect", 8, 0, 8, 8, (50, 50, 50)),
+                                                                    ])),
     78: BlockType(78, "iron_block", "铁块", is_solid=True, break_hp=8, break_level=0, color=(220, 220, 220),
                  pattern=("vector", (16, 16), [
                      ("fill", (220, 220, 220)),
                      ("rect", 0, 0, 16, 2, (200, 200, 200)),
                      ("rect", 0, 7, 16, 2, (200, 200, 200)),
                      ("rect", 0, 14, 16, 2, (200, 200, 200)),
-                     ("rect", 7, 0, 2, 16, (200, 200, 200))
-                 ])),
+                                          ("rect", 7, 0, 2, 16, (200, 200, 200)),
+                                                                    ])),
     79: BlockType(79, "gold_block", "金块", is_solid=True, break_hp=8, break_level=0, color=(255, 210, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 210, 0)),
                      ("rect", 0, 0, 16, 2, (240, 190, 0)),
                      ("rect", 0, 7, 16, 2, (240, 190, 0)),
                      ("rect", 0, 14, 16, 2, (240, 190, 0)),
-                     ("rect", 7, 0, 2, 16, (240, 190, 0))
-                 ])),
+                                          ("rect", 7, 0, 2, 16, (240, 190, 0)),
+                                                                    ])),
     80: BlockType(80, "diamond_block", "钻石块", is_solid=True, break_hp=10, break_level=0, color=(100, 240, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (100, 240, 255)),
@@ -654,8 +654,8 @@ BLOCK_TYPES = {
                      ("rect", 0, 7, 16, 2, (80, 220, 240)),
                      ("rect", 0, 14, 16, 2, (80, 220, 240)),
                      ("rect", 7, 0, 2, 16, (80, 220, 240)),
-                     ("circle", 8, 8, 2, (255, 255, 255))
-                 ])),
+                                          ("circle", 8, 8, 2, (255, 255, 255)),
+                                                                    ])),
 
 # ===================== 精致装饰与特效方块（81-100） =====================
 81: BlockType(81, "chiseled_stone", "錾制石砖", is_solid=True, break_hp=8, break_level=0, color=(180, 180, 180),
@@ -692,7 +692,7 @@ BLOCK_TYPES = {
                  [(180,180,180)]*32,
                  [(180,180,180)]*32,
                  [(180,180,180)]*32,
-             ])),
+                                                    ])),
 82: BlockType(82, "ornate_wood", "华丽木板", is_solid=True, break_hp=5, break_level=0, color=(160, 120, 60),
              pattern=("bitmap", 32, [
                  [(160,120,60)]*32,
@@ -727,7 +727,7 @@ BLOCK_TYPES = {
                  [(180,140,80)]*32,
                  [(180,140,80)]*32,
                  [(180,140,80)]*32,
-             ])),
+                                                    ])),
 83: BlockType(83, "mosaic_tile", "马赛克瓷砖", is_solid=True, break_hp=4, break_level=0, color=(200, 180, 160),
              pattern=("bitmap", 16, [
                  [(200,180,160), (160,130,110), (200,180,160), (160,130,110), (200,180,160), (160,130,110), (200,180,160), (160,130,110),
@@ -762,7 +762,7 @@ BLOCK_TYPES = {
                   (200,180,160), (160,130,110), (200,180,160), (160,130,110), (120,90,70), (200,180,160), (160,130,110), (200,180,160)],
                  [(200,180,160), (160,130,110), (200,180,160), (160,130,110), (120,90,70), (200,180,160), (160,130,110), (200,180,160),
                   (160,130,110), (200,180,160), (160,130,110), (200,180,160), (160,130,110), (120,90,70), (200,180,160), (160,130,110)],
-             ])),
+                                                    ])),
 84: BlockType(84, "stained_glass_mosaic", "彩绘玻璃马赛克", is_solid=True, break_hp=2, break_level=0, light_level=7, color=(255, 255, 255),
              pattern=("bitmap", 16, [
                  [(255,100,100), (255,255,100), (100,255,100), (100,255,255), (100,100,255), (255,100,255)] * 3,
@@ -814,7 +814,7 @@ BLOCK_TYPES = {
                  [(220,240,255)]*32,
                  [(220,240,255)]*32,
                  [(220,240,255)]*32,
-             ])),
+                                                    ])),
 87: BlockType(87, "smooth_quartz", "平滑石英", is_solid=True, break_hp=6, break_level=0, color=(235, 230, 225),
              pattern=("vector", (16, 16), [
                  ("fill", (235, 230, 225)),
@@ -822,7 +822,7 @@ BLOCK_TYPES = {
                  ("rect", 0, 14, 16, 2, (255, 255, 255)),
                  ("rect", 0, 0, 2, 16, (255, 255, 255)),
                  ("rect", 14, 0, 2, 16, (255, 255, 255)),
-             ])),
+                                                    ])),
 88: BlockType(88, "bone_block", "骨块", is_solid=True, break_hp=4, break_level=0, color=(230, 220, 200),
              pattern=("bitmap", 32, [
                  [(230,220,200)]*32,
@@ -858,7 +858,7 @@ BLOCK_TYPES = {
                  [(210,200,180)]*32,
                  [(210,200,180)]*32,
                  [(210,200,180)]*32,
-             ])),
+                                                    ])),
 89: BlockType(89, "nether_wart_block", "下界疣块", is_solid=True, break_hp=5, break_level=0, color=(140, 30, 30),
              pattern=("vector", (16, 16), [
                  ("fill", (140, 30, 30)),
@@ -869,7 +869,7 @@ BLOCK_TYPES = {
                  ("circle", 14, 13, 3, (160, 40, 40)),
                  ("rect", 5, 0, 2, 16, (120, 20, 20)),
                  ("rect", 10, 0, 2, 16, (120, 20, 20)),
-             ])),
+                                                    ])),
 90: BlockType(90, "shroomlight", "菌光体", is_solid=True, break_hp=3, break_level=0, light_level=15, color=(255, 180, 80),
              pattern=("vector", (16, 16), [
                  ("fill", (255, 180, 80)),
@@ -880,7 +880,7 @@ BLOCK_TYPES = {
                  ("circle", 11, 11, 2, (255, 255, 180)),
                  ("rect", 7, 3, 2, 10, (255, 200, 100)),
                  ("rect", 3, 7, 10, 2, (255, 200, 100)),
-             ])),
+                                                    ])),
 91: BlockType(91, "crying_obsidian", "哭泣的黑曜石", is_solid=True, break_hp=25, break_level=0, light_level=4, color=(30, 10, 50),
              pattern=("texture", "gradient_h", ((20, 0, 40), (60, 20, 80)))),
 92: BlockType(92, "chiseled_nether_bricks", "錾制下界砖", is_solid=True, break_hp=12, break_level=0, color=(120, 30, 30),
@@ -918,7 +918,7 @@ BLOCK_TYPES = {
                  [(140,40,40)]*32,
                  [(140,40,40)]*32,
                  [(140,40,40)]*32,
-             ])),
+                                                    ])),
 93: BlockType(93, "purpur_pillar", "紫珀柱", is_solid=True, break_hp=6, break_level=0, color=(200, 180, 220),
              pattern=("vector", (16, 16), [
                  ("fill", (200, 180, 220)),
@@ -929,7 +929,7 @@ BLOCK_TYPES = {
                  ("rect", 10, 4, 2, 2, (240, 230, 250)),
                  ("rect", 4, 10, 2, 2, (240, 230, 250)),
                  ("rect", 10, 10, 2, 2, (240, 230, 250)),
-             ])),
+                                                    ])),
 94: BlockType(94, "prismarine_bricks", "海晶石砖", is_solid=True, break_hp=8, break_level=0, color=(90, 190, 140),
              pattern=("vector", (16, 16), [
                  ("fill", (90, 190, 140)),
@@ -941,7 +941,7 @@ BLOCK_TYPES = {
                  ("rect", 12, 4, 2, 2, (255, 255, 255)),
                  ("rect", 4, 12, 2, 2, (255, 255, 255)),
                  ("rect", 12, 12, 2, 2, (255, 255, 255)),
-             ])),
+                                                    ])),
 95: BlockType(95, "dark_prismarine_bricks", "暗海晶石砖", is_solid=True, break_hp=8, break_level=0, color=(40, 90, 60),
              pattern=("vector", (16, 16), [
                  ("fill", (40, 90, 60)),
@@ -953,14 +953,14 @@ BLOCK_TYPES = {
                  ("rect", 11, 3, 2, 2, (20, 50, 30)),
                  ("rect", 3, 11, 2, 2, (20, 50, 30)),
                  ("rect", 11, 11, 2, 2, (20, 50, 30)),
-             ])),
+                                                    ])),
 96: BlockType(96, "end_rod", "末地烛", is_solid=False, break_hp=2, light_level=14, color=(255, 255, 200),
              pattern=("vector", (16, 16), [
                  ("fill", (0, 0, 0)),
                  ("rect", 7, 0, 2, 12, (220, 220, 220)),
                  ("rect", 5, 12, 6, 4, (255, 255, 200)),
                  ("circle", 8, 12, 3, (255, 255, 255)),
-             ])),
+                                                    ])),
 97: BlockType(97, "lodestone", "磁石", is_solid=True, break_hp=12, break_level=0, color=(100, 100, 110),
              pattern=("bitmap", 32, [
                  [(100,100,110)]*32,
@@ -996,7 +996,7 @@ BLOCK_TYPES = {
                  [(120,120,130)]*32,
                  [(120,120,130)]*32,
                  [(120,120,130)]*32,
-             ])),
+                                                    ])),
 98: BlockType(98, "sculk", "潜声方块", is_solid=True, break_hp=4, break_level=0, color=(20, 30, 40),
              pattern=("vector", (16, 16), [
                  ("fill", (20, 30, 40)),
@@ -1010,7 +1010,7 @@ BLOCK_TYPES = {
                  ("circle", 6, 6, 1, (0, 240, 240)),
                  ("circle", 11, 7, 1, (0, 240, 240)),
                  ("circle", 7, 11, 1, (0, 240, 240)),
-             ])),
+                                                    ])),
 99: BlockType(99, "sculk_catalyst", "潜声催化器", is_solid=True, break_hp=6, break_level=0, light_level=8, color=(10, 20, 30),
              pattern=("bitmap", 32, [
                  [(10,20,30)]*32,
@@ -1046,7 +1046,7 @@ BLOCK_TYPES = {
                  [(15,25,35)]*32,
                  [(15,25,35)]*32,
                  [(15,25,35)]*32,
-             ])),
+                                                    ])),
 100: BlockType(100, "rainbow_block", "彩虹块", is_solid=True, break_hp=3, break_level=0, light_level=10, color=(255, 255, 255),
               pattern=("texture", "gradient_h", ((255,0,0), (255,255,0)))),
 }
@@ -1129,3 +1129,6 @@ for _src_id, _new_id in _VOID_SOURCES:
         color=_src.color,
         pattern=_src.pattern,
     )
+
+# 加载扩展方块库（ID 200-302）
+from block_types_extended import BLOCK_TYPES as _ext

@@ -143,35 +143,30 @@ def launch_world(map_id: int):
     camera = Camera(LOGIC_WIDTH, LOGIC_HEIGHT, _current_map)
     sp_x, sp_y = _current_map.spawn_points
 
-    # 读取玩家配置（若有）
+    # 读取玩家配置（若有），全部传入 Player 构造函数
     cfg = getattr(_current_map, 'player_config', {})
-
-    def _cfg(key, default):
-        return cfg.get(key, default)
-
     player1 = Player(
         player_id=0, player_name="玩家1",
         spawn_x=float(sp_x), spawn_y=float(sp_y),
         key_bind=p1_keys,
-        hp_max=_cfg("hp_max", 150),
-        w=_cfg("w", 0.8),
-        h=_cfg("h", 1.8),
-        v_max=_cfg("v_max", 36.5),
-        v_jump=_cfg("v_jump", 26.5),
-        f_x=_cfg("f_x", 0.985),
-        f_y=_cfg("f_y", 0.98),
-        phys_atk=_cfg("phys_atk", 10),
-        magic_atk=_cfg("magic_atk", 0),
-        phys_res=_cfg("phys_res", 0),
-        magic_res=_cfg("magic_res", 0),
-        phys_pen=_cfg("phys_pen", 0),
-        magic_pen=_cfg("magic_pen", 0),
-        k_res=_cfg("k_res", 150),
-        dr=_cfg("dr", 0),
-        shield=_cfg("shield", 0),
+        hp_max=cfg.get("hp_max", 150),
+        shield=cfg.get("shield", 0),
+        w=cfg.get("w", 0.8),
+        h=cfg.get("h", 1.8),
+        v_max=cfg.get("v_max", 36.5),
+        v_jump=cfg.get("v_jump", 26.5),
+        f_x=cfg.get("f_x", 0.985),
+        f_y=cfg.get("f_y", 0.98),
+        phys_atk=cfg.get("phys_atk", 10),
+        magic_atk=cfg.get("magic_atk", 0),
+        phys_res=cfg.get("phys_res", 0),
+        magic_res=cfg.get("magic_res", 0),
+        phys_pen=cfg.get("phys_pen", 0),
+        magic_pen=cfg.get("magic_pen", 0),
+        k_res=cfg.get("k_res", 150),
+        dr=cfg.get("dr", 0),
+        stamina_max=cfg.get("stamina_max", 100),
     )
-    player1.stamina_max = _cfg("stamina_max", 100)
-    player1.stamina = player1.stamina_max
     _world_initialized = True
     print(f"已加载地图：{_current_map.name}（{_current_map.width}x{_current_map.height}）")
     if cfg:
@@ -218,7 +213,7 @@ _prev_hp = None                 # 上一帧血量（用于检测受伤）
 
 
 def draw_hp_bar(surf, player, dt: float):
-    """在逻辑画布左上角绘制精美血条。"""
+    """在逻辑画布左上角绘制精美血条（含护盾显示）。"""
     global _damage_flash_timer, _prev_hp
 
     # 检测受伤
@@ -233,25 +228,46 @@ def draw_hp_bar(surf, player, dt: float):
     BAR_X, BAR_Y = 24, 24
     BAR_W, BAR_H = 280, 34
     BORDER_R = 7
+    PAD = 4  # 内边距
+
+    hp = player.hp
+    hp_max = player.hp_max
+    shield = getattr(player, 'shield', 0.0)
+
+    # 计算扩展宽度（护盾部分可能需要超出 BAR_W）
+    has_shield = shield > 0
+    total_effective = hp + shield
+    if has_shield:
+        total_bar_w = int(BAR_W * total_effective / hp_max)
+        total_bar_w = max(BAR_W, total_bar_w)  # 至少保留基础宽度
+        # 限制最大宽度，防止超出屏幕
+        total_bar_w = min(total_bar_w, 700)
+    else:
+        total_bar_w = BAR_W
 
     # 背景阴影
-    shadow_rect = pygame.Rect(BAR_X + 2, BAR_Y + 2, BAR_W, BAR_H)
+    shadow_rect = pygame.Rect(BAR_X + 2, BAR_Y + 2, total_bar_w, BAR_H)
     pygame.draw.rect(surf, (0, 0, 0, 160), shadow_rect, border_radius=BORDER_R)
 
     # 主背景（深色）
-    bg_rect = pygame.Rect(BAR_X, BAR_Y, BAR_W, BAR_H)
+    bg_rect = pygame.Rect(BAR_X, BAR_Y, total_bar_w, BAR_H)
     pygame.draw.rect(surf, (25, 25, 35), bg_rect, border_radius=BORDER_R)
 
-    # 血量条填充
-    hp_ratio = max(0.0, min(1.0, player.hp / player.hp_max))
-    fill_w = int((BAR_W - 8) * hp_ratio)
-    if fill_w > 0:
-        fill_rect = pygame.Rect(BAR_X + 4, BAR_Y + 4, fill_w, BAR_H - 8)
+    # ---- HP 填充 ----
+    hp_ratio = max(0.0, min(1.0, hp / hp_max))
+    # HP 填充宽度：若有护盾且超出上限，HP 按比例压缩
+    if has_shield and total_effective > hp_max:
+        hp_fill_w = int((total_bar_w - PAD * 2) * hp / total_effective)
+    else:
+        hp_fill_w = int((BAR_W - PAD * 2) * hp_ratio)
+    hp_fill_w = max(0, min(hp_fill_w, total_bar_w - PAD * 2))
+
+    if hp_fill_w > 0:
+        fill_rect = pygame.Rect(BAR_X + PAD, BAR_Y + PAD, hp_fill_w, BAR_H - PAD * 2)
 
         # 受伤闪烁时用黄色覆盖
         if _damage_flash_timer > 0:
             flash_alpha = _damage_flash_timer / _damage_flash_duration
-            # 主色从红色渐变到黄色
             r = int(220 - 120 * flash_alpha)
             g = int(60 + 140 * flash_alpha)
             b = int(50 + 100 * flash_alpha)
@@ -269,11 +285,32 @@ def draw_hp_bar(surf, player, dt: float):
         pygame.draw.rect(surf, bar_color, fill_rect, border_radius=BORDER_R - 2)
 
         # 血量高光（顶部亮带）
-        if fill_w > 16:
-            highlight_rect = pygame.Rect(BAR_X + 4, BAR_Y + 4, fill_w, (BAR_H - 8) // 2)
-            hl_surf = pygame.Surface((fill_w, (BAR_H - 8) // 2), pygame.SRCALPHA)
+        if hp_fill_w > 16:
+            highlight_rect = pygame.Rect(BAR_X + PAD, BAR_Y + PAD, hp_fill_w, (BAR_H - PAD * 2) // 2)
+            hl_surf = pygame.Surface((hp_fill_w, (BAR_H - PAD * 2) // 2), pygame.SRCALPHA)
             hl_surf.fill((255, 255, 255, 50))
             surf.blit(hl_surf, highlight_rect)
+
+    # ---- 护盾填充（白色）----
+    if has_shield:
+        if total_effective <= hp_max:
+            # 护盾在标准血条内，HP 右侧
+            shield_fill_w = int((BAR_W - PAD * 2) * shield / hp_max)
+        else:
+            # 护盾部分超出标准血条
+            shield_fill_w = int((total_bar_w - PAD * 2) * shield / total_effective)
+        shield_fill_w = max(1, min(shield_fill_w, total_bar_w - PAD * 2 - hp_fill_w))
+
+        shield_start_x = BAR_X + PAD + hp_fill_w
+        shield_rect = pygame.Rect(shield_start_x, BAR_Y + PAD, shield_fill_w, BAR_H - PAD * 2)
+        pygame.draw.rect(surf, (220, 230, 255), shield_rect, border_radius=BORDER_R - 2)
+
+        # 护盾高光
+        if shield_fill_w > 8:
+            sh_hl = pygame.Rect(shield_start_x, BAR_Y + PAD, shield_fill_w, (BAR_H - PAD * 2) // 2)
+            sh_hl_surf = pygame.Surface((shield_fill_w, (BAR_H - PAD * 2) // 2), pygame.SRCALPHA)
+            sh_hl_surf.fill((255, 255, 255, 60))
+            surf.blit(sh_hl_surf, sh_hl)
 
     # 边框
     pygame.draw.rect(surf, (80, 80, 100), bg_rect, 2, border_radius=BORDER_R)
@@ -290,8 +327,11 @@ def draw_hp_bar(surf, player, dt: float):
     pygame.draw.polygon(surf, heart_color, pts)
     pygame.draw.polygon(surf, (180, 30, 20), pts, 1)
 
-    # 文字：HP数值
-    hp_text = f"{int(player.hp)} / {int(player.hp_max)}"
+    # 文字：HP数值（含护盾）
+    if has_shield:
+        hp_text = f"{int(hp)} / {int(hp_max)} ({int(shield)})"
+    else:
+        hp_text = f"{int(hp)} / {int(hp_max)}"
     text_img = FONT20.render(hp_text, True, (255, 255, 255))
     text_x = BAR_X + BAR_W // 2 - text_img.get_width() // 2
     text_y = BAR_Y + BAR_H // 2 - text_img.get_height() // 2
@@ -548,7 +588,11 @@ def _get_field_value(config: dict, field_path: str):
     parts = field_path.split(".")
     val = config
     for p in parts:
-        val = val[p]
+        if not isinstance(val, dict):
+            return None
+        val = val.get(p)
+        if val is None:
+            return None
     return val
 
 
@@ -557,6 +601,8 @@ def _set_field_value(config: dict, field_path: str, value):
     parts = field_path.split(".")
     obj = config
     for p in parts[:-1]:
+        if p not in obj:
+            obj[p] = {}
         obj = obj[p]
     obj[parts[-1]] = value
 
@@ -800,6 +846,33 @@ def handle_dev_input(event):
                 _dev_input_text = _dev_input_text[:-1]
             elif event.key == pygame.K_DELETE:
                 _dev_input_text = ""
+            # ==== 小键盘支持 ====
+            elif event.key == pygame.K_KP0:
+                _dev_input_text += "0"
+            elif event.key == pygame.K_KP1:
+                _dev_input_text += "1"
+            elif event.key == pygame.K_KP2:
+                _dev_input_text += "2"
+            elif event.key == pygame.K_KP3:
+                _dev_input_text += "3"
+            elif event.key == pygame.K_KP4:
+                _dev_input_text += "4"
+            elif event.key == pygame.K_KP5:
+                _dev_input_text += "5"
+            elif event.key == pygame.K_KP6:
+                _dev_input_text += "6"
+            elif event.key == pygame.K_KP7:
+                _dev_input_text += "7"
+            elif event.key == pygame.K_KP8:
+                _dev_input_text += "8"
+            elif event.key == pygame.K_KP9:
+                _dev_input_text += "9"
+            elif event.key == pygame.K_KP_PERIOD:
+                if ftype in ("float", "int"):
+                    _dev_input_text += "."
+            elif event.key == pygame.K_KP_MINUS:
+                if ftype in ("float", "int"):
+                    _dev_input_text += "-"
             elif event.unicode and len(event.unicode) > 0:
                 # 过滤控制字符
                 ch = event.unicode
@@ -837,37 +910,59 @@ def handle_dev_input(event):
                 _dev_input_text = f"{val:.3f}".rstrip("0").rstrip(".")
             _dev_inputting = True
         elif event.key == pygame.K_LEFT:
-            if ftype == "bool":
-                _set_field_value(_dev_edit_config, field_path, False)
-            elif ftype == "str" and isinstance(step, list):
-                cur = _get_field_value(_dev_edit_config, field_path)
-                try:
-                    idx = step.index(cur)
-                    idx = (idx - 1) % len(step)
-                    _set_field_value(_dev_edit_config, field_path, step[idx])
-                except ValueError:
-                    _set_field_value(_dev_edit_config, field_path, step[0])
-            elif ftype in ("float", "int"):
-                val = _get_field_value(_dev_edit_config, field_path)
-                val -= step
-                _set_field_value(_dev_edit_config, field_path, ftype(val))
-            _dev_edit_dirty = True
+            try:
+                if ftype == "bool":
+                    _set_field_value(_dev_edit_config, field_path, False)
+                elif ftype == "str":
+                    cur = _get_field_value(_dev_edit_config, field_path)
+                    if isinstance(step, list) and step:
+                        try:
+                            idx = step.index(cur)
+                        except ValueError:
+                            idx = 0
+                        idx = (idx - 1) % len(step)
+                        _set_field_value(_dev_edit_config, field_path, step[idx])
+                    # str 无有效选项列表时不操作
+                elif ftype == "float":
+                    val = _get_field_value(_dev_edit_config, field_path)
+                    if val is not None and isinstance(step, (int, float)):
+                        val = float(val) - float(step)
+                        _set_field_value(_dev_edit_config, field_path, val)
+                elif ftype == "int":
+                    val = _get_field_value(_dev_edit_config, field_path)
+                    if val is not None and isinstance(step, (int, float)):
+                        val = int(val) - int(step)
+                        _set_field_value(_dev_edit_config, field_path, val)
+                _dev_edit_dirty = True
+            except Exception as e:
+                print(f"[dev] LEFT 调整失败 ({label}): {e}")
         elif event.key == pygame.K_RIGHT:
-            if ftype == "bool":
-                _set_field_value(_dev_edit_config, field_path, True)
-            elif ftype == "str" and isinstance(step, list):
-                cur = _get_field_value(_dev_edit_config, field_path)
-                try:
-                    idx = step.index(cur)
-                    idx = (idx + 1) % len(step)
-                    _set_field_value(_dev_edit_config, field_path, step[idx])
-                except ValueError:
-                    _set_field_value(_dev_edit_config, field_path, step[0])
-            elif ftype in ("float", "int"):
-                val = _get_field_value(_dev_edit_config, field_path)
-                val += step
-                _set_field_value(_dev_edit_config, field_path, ftype(val))
-            _dev_edit_dirty = True
+            try:
+                if ftype == "bool":
+                    _set_field_value(_dev_edit_config, field_path, True)
+                elif ftype == "str":
+                    cur = _get_field_value(_dev_edit_config, field_path)
+                    if isinstance(step, list) and step:
+                        try:
+                            idx = step.index(cur)
+                        except ValueError:
+                            idx = -1
+                        idx = (idx + 1) % len(step)
+                        _set_field_value(_dev_edit_config, field_path, step[idx])
+                    # str 无有效选项列表时不操作
+                elif ftype == "float":
+                    val = _get_field_value(_dev_edit_config, field_path)
+                    if val is not None and isinstance(step, (int, float)):
+                        val = float(val) + float(step)
+                        _set_field_value(_dev_edit_config, field_path, val)
+                elif ftype == "int":
+                    val = _get_field_value(_dev_edit_config, field_path)
+                    if val is not None and isinstance(step, (int, float)):
+                        val = int(val) + int(step)
+                        _set_field_value(_dev_edit_config, field_path, val)
+                _dev_edit_dirty = True
+            except Exception as e:
+                print(f"[dev] RIGHT 调整失败 ({label}): {e}")
         elif event.key == pygame.K_s:
             # 保存到硬盘
             save_map_config(_dev_selected_id, _dev_edit_config)
@@ -978,6 +1073,7 @@ while running:
                     player1.v_x = 0.0
                     player1.v_y = 0.0
                     player1.is_climbing = False
+                    jump_pressed = False
                     print(f"飞行模式: {'开启' if player1.fly_mode else '关闭'}")
                 elif event.key == player1.key_bind["up"]:
                     # W键：可攀爬时进入攀爬，攀爬中向上
@@ -1082,7 +1178,7 @@ while running:
                            else ("可攀爬" if player1.can_climb
                                  else ("地面" if player1.on_ground else "浮空"))))
         print(f"【{f}】{state_str}, v_x={player1.v_x:.2f} v_y={player1.v_y:.2f}")
-        print(f"hp={player1.hp:.0f}, fly={player1.fly_mode} | climb={'Y' if player1.is_climbing else ('can' if player1.can_climb else 'N')}")
+        print(f"hp={player1.hp:.0f}, shield={player1.shield:.0f}, fly={player1.fly_mode} | climb={'Y' if player1.is_climbing else ('can' if player1.can_climb else 'N')}")
         if not player1.fly_mode:
             print(player1.contact_pool, "###", player1.stand_pool)
 
