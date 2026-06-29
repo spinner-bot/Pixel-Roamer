@@ -810,6 +810,10 @@ while running:
             player1.update_physics(dt, _current_map)
             player1.collide_with_world(_current_map, dt)
 
+            # 攀爬中着陆或离开可攀爬方块：自动解除
+            if player1.is_climbing and (player1.on_ground or not player1.can_climb):
+                player1.is_climbing = False
+
         px, py = player1.get_center()
         camera.follow(px, py)
 

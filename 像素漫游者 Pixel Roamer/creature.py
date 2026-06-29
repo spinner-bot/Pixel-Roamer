@@ -479,6 +479,3 @@ class Player(Creature):
         if self.is_climbing:
             self.v_y = dy * speed
             self.v_x = 0.0
-        else:
-            # 未在攀爬中但接触可攀爬方块：W键向上爬升
-            pass
