@@ -675,14 +675,21 @@ _EDITABLE_FIELDS = [
 _dev_inputting = False       # 是否处于精确输入模式
 _dev_input_text = ""         # 输入缓冲区
 
-# ===================== 方块浏览器状态 =====================
-_dev_block_browser = False        # 是否处于方块浏览模式
-_dev_block_browser_mode = "grid"  # "grid" | "list"
-_dev_block_browser_cursor = 0     # 当前光标索引
-_dev_block_browser_scroll = 0     # 列表滚动偏移
-_dev_block_browser_show_name2 = False  # True=显示name2, False=显示name
-_dev_block_detail_id = None       # 查看详情的方块ID，None=不在详情页
-_dev_block_page_offset = 0        # 列表模式页码偏移（用于快速翻页）
+# ===================== 方块/ Buff 预览器状态 =====================
+_dev_block_browser = False        # 是否处于方块预览模式
+_dev_block_browser_mode = "grid"
+_dev_block_browser_cursor = 0
+_dev_block_browser_scroll = 0
+_dev_block_browser_show_name2 = False
+_dev_block_detail_id = None
+_dev_block_page_offset = 0
+
+_dev_buff_browser = False         # 是否处于 Buff 预览模式
+_dev_buff_browser_mode = "grid"
+_dev_buff_browser_cursor = 0
+_dev_buff_browser_scroll = 0
+_dev_buff_browser_show_name2 = False
+_dev_buff_detail_id = None
 
 
 # ---- 方块亮点选择器（算法自动匹配，非预存）----
@@ -756,24 +763,24 @@ def _run_block_browser(logic_surface, dt):
         return
 
     # 标题
-    title = f"方块浏览器 [{_dev_block_browser_mode.upper()}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
-                        (255, 255, 200), "mono", shadow=True, center_x=True)
+    title = f"方块预览器 [{_dev_block_browser_mode.upper()}]"
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 12, 28,
+                        (255, 255, 200), "sans", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  B/Esc:返回"
-    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
-                        (140, 160, 200), "mono", shadow=True, center_x=True)
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+                        (140, 160, 200), "sans", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
     cursor = _dev_block_browser_cursor
 
     if _dev_block_browser_mode == "grid":
         # 网格模式
-        COLS = 10
-        cell_w = 140
-        cell_h = 120
-        preview_size = 64
+        COLS = 8
+        cell_w = 170
+        cell_h = 150
+        preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
-        start_y = 56
+        start_y = 50
         rows = (len(all_ids) + COLS - 1) // COLS
 
         visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // cell_h)
@@ -807,14 +814,14 @@ def _run_block_browser(logic_surface, dt):
                 # 编号和名称
                 label = f"{bid}.{getattr(bt, name_key, bt.name)}"
                 gt.draw(logic_surface, label, cx + cell_w // 2 - 2,
-                                    cy + preview_size + 8, 12, (220, 220, 220),
-                                    "mono", shadow=True, center_x=True)
+                                    cy + preview_size + 8, 16, (220, 220, 220),
+                                    "sans", shadow=True, center_x=True)
 
     else:
         # 列表模式
-        row_h = 64
-        preview_size = 48
-        start_y = 56
+        row_h = 80
+        preview_size = 60
+        start_y = 50
         visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // row_h)
 
         if cursor < _dev_block_browser_scroll:
@@ -839,8 +846,8 @@ def _run_block_browser(logic_surface, dt):
 
             # 第一行：id, name, 基础属性
             name_text = f"{bid}. {getattr(bt, name_key, bt.name)}"
-            gt.draw(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 13,
-                                (255, 255, 200), "mono", shadow=True)
+            gt.draw(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 18,
+                                (255, 255, 200), "sans", shadow=True)
             # 基础属性标签
             tags = []
             if bt.is_solid: tags.append("实体")
@@ -849,120 +856,106 @@ def _run_block_browser(logic_surface, dt):
             if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
             tag_str = " | ".join(tags) if tags else "无特殊"
             gt.draw(logic_surface, tag_str,
-                                56 + preview_size + 16, cy + 24, 11, (150, 180, 210), "mono", shadow=True)
+                                56 + preview_size + 16, cy + 28, 16, (150, 180, 210), "sans", shadow=True)
 
             # 第二行：亮点
             highlights = _get_block_highlights(bt)
             if highlights:
-                hl_text = " · ".join(highlights[:4])  # 最多4个
+                hl_text = " · ".join(highlights[:4])
                 gt.draw(logic_surface, hl_text,
-                                    56 + preview_size + 16, cy + 40, 11, (200, 200, 230), "mono", shadow=True)
+                                    56 + preview_size + 16, cy + 48, 16, (200, 200, 230), "sans", shadow=True)
 
 
 def _run_block_detail(logic_surface, dt):
-    """方块详情页：展示该方块所有属性。"""
+    """方块详情页：全屏展示所有属性。"""
     from block_types_data import BLOCK_TYPES
     bid = _dev_block_detail_id
     if bid is None:
         return
     bt = BLOCK_TYPES.get(bid)
     if bt is None:
-        gt.draw(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 18,
-                            (255, 100, 100), "mono", center_x=True)
+        gt.draw(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 22,
+                            (255, 100, 100), "sans", center_x=True)
         return
 
-    title = f"方块详情 #{bid}"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
-                        (255, 255, 200), "mono", shadow=True, center_x=True)
+    title = f"方块详情 #{bid}  —  {bt.name} / {bt.name2}"
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 10, 26,
+                        (255, 255, 200), "sans", shadow=True, center_x=True)
 
-    # 左侧预览
-    preview_size = 96
-    _draw_block_preview(logic_surface, bt, 60, 56, preview_size)
+    # 大预览图
+    preview_size = 140
+    px = 100
+    py = 50
+    _draw_block_preview(logic_surface, bt, px, py, preview_size)
 
-    # 名称
-    gt.draw(logic_surface, f"{bt.name} / {bt.name2}",
-                        60 + preview_size + 20, 56, 16, (255, 255, 255), "mono", shadow=True)
+    info_x = px + preview_size + 30
+    gt.draw(logic_surface, f"ID: {bt.id}", info_x, py, 20, (255, 255, 240), "sans")
+    gt.draw(logic_surface, f"EN: {bt.name}", info_x, py + 28, 18, (200, 210, 230), "sans")
+    gt.draw(logic_surface, f"CN: {bt.name2}", info_x, py + 50, 18, (200, 210, 230), "sans")
+    gt.draw(logic_surface, f"颜色: {bt.color}", info_x, py + 72, 16, (180, 190, 210), "sans")
 
-    # 右侧属性列表（2列）
+    # 属性网格（3列布局，覆盖全屏）
     attrs = [
-        ("ID", str(bt.id)), ("name", bt.name), ("name2", bt.name2),
-        ("is_solid", str(bt.is_solid)), ("one_way", str(bt.one_way)),
-        ("climbable", str(bt.climbable)),
-        ("swim_f", f"{bt.swim_f:.2f}" if hasattr(bt, 'swim_f') else "0.00"),
-        ("surface_f", f"{bt.surface_f:.3f}"), ("space_f", f"{bt.space_f:.3f}"),
-        ("bounce", str(bt.bounce)), ("accel_k", str(bt.accel_k)),
-        ("accel_b", str(bt.accel_b)), ("damage_ps", f"{bt.damage_ps:.2f}"),
-        ("k_stamina", f"{bt.k_stamina:.2f}"), ("special", str(bt.special)),
-        ("special_data", str(bt.special_data)),
-        ("break_level", str(bt.break_level)), ("break_hp", f"{bt.break_hp:.1f}"),
-        ("break_special", str(bt.break_special)),
-        ("drops_item_id", str(bt.drops_item_id)),
-        ("light_level", str(bt.light_level)),
-        ("color", str(bt.color)),
+        ("实体", str(bt.is_solid), "单向", str(bt.one_way)),
+        ("可攀爬", str(bt.climbable), "浮力", f"{bt.swim_f:.2f}" if hasattr(bt, 'swim_f') else "-"),
+        ("表面摩擦", f"{bt.surface_f:.3f}", "空间阻力", f"{bt.space_f:.3f}"),
+        ("弹跳", str(bt.bounce), "加速系数k", str(bt.accel_k)),
+        ("加速系数b", str(bt.accel_b), "伤害/s", f"{bt.damage_ps:.2f}"),
+        ("体力倍率", f"{bt.k_stamina:.2f}", "光照", str(bt.light_level)),
+        ("特殊效果", str(bt.special), "效果数据", str(bt.special_data)[:40]),
+        ("破坏等级", str(bt.break_level), "破坏血量", f"{bt.break_hp:.1f}"),
+        ("破坏特效", str(bt.break_special), "掉落物", str(bt.drops_item_id)),
     ]
 
-    col_w = 380
-    start_y = 170
-    row_h = 22
-    for i, (attr, val) in enumerate(attrs):
-        col = i % 2
-        row = i // 2
-        ax = 60 + col * col_w
-        ay = start_y + row * row_h
-        if ay > LOGIC_HEIGHT - 100:
-            break
-        attr_text = f"{attr}:"
-        gt.draw(logic_surface, attr_text, ax, ay, 12, (140, 180, 220), "mono", shadow=True)
-        gt.draw(logic_surface, val, ax + 140, ay, 12, (255, 255, 255), "mono", shadow=True)
+    grid_x = 60
+    grid_y = 220
+    col_gap = 500
+    row_h = 32
 
-    # 底部外观数据展示
-    appearance_y = LOGIC_HEIGHT - 120
-    gt.draw(logic_surface, "--- 外观数据 ---", 60, appearance_y, 14,
-                        (200, 200, 255), "mono", shadow=True)
+    for i, (lbl1, val1, lbl2, val2) in enumerate(attrs):
+        gy = grid_y + i * row_h
+        if gy > LOGIC_HEIGHT - 140: break
+        gt.draw(logic_surface, f"{lbl1}:", grid_x, gy, 17, (140, 180, 220), "sans", shadow=True)
+        gt.draw(logic_surface, val1, grid_x + 170, gy, 17, (255, 255, 255), "sans")
+        gt.draw(logic_surface, f"{lbl2}:", grid_x + col_gap, gy, 17, (140, 180, 220), "sans", shadow=True)
+        gt.draw(logic_surface, val2, grid_x + col_gap + 170, gy, 17, (255, 255, 255), "sans")
+
+    # 底部外观数据
+    app_y = LOGIC_HEIGHT - 130
+    gt.draw(logic_surface, "——— 外观数据 ———", LOGIC_WIDTH // 2, app_y, 20,
+                        (200, 200, 255), "sans", shadow=True, center_x=True)
 
     if bt.pattern is not None:
         ptype = bt.pattern[0]
         if ptype == "bitmap":
-            # 位图格式: ("bitmap", w, h, data)
-            w, h = bt.pattern[1], bt.pattern[2]
+            pw, ph = bt.pattern[1], bt.pattern[2]
             data = bt.pattern[3] if len(bt.pattern) > 3 else []
-            gt.draw(logic_surface, f"位图 {w}x{h}, {len(data)}条数据",
-                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
-        elif ptype == "preset":
-            # 纹理预设: ("preset", w, h, preset_name)
+            gt.draw(logic_surface, f"位图 {pw}x{ph}, {len(data)}条数据",
+                                LOGIC_WIDTH // 2, app_y + 26, 17, (180, 200, 220), "sans", center_x=True)
+        elif ptype in ("preset", "texture"):
             preset = bt.pattern[3] if len(bt.pattern) > 3 else "?"
-            w, h = bt.pattern[1], bt.pattern[2]
-            gt.draw(logic_surface, f"纹理预设 {preset} ({w}x{h})",
-                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
+            pw, ph = bt.pattern[1], bt.pattern[2]
+            gt.draw(logic_surface, f"纹理 {preset} ({pw}x{ph})",
+                                LOGIC_WIDTH // 2, app_y + 26, 17, (180, 200, 220), "sans", center_x=True)
         elif ptype == "vector":
-            # 矢量指令: ("vector", (w, h), [指令...])
-            w, h = bt.pattern[1]
+            pw, ph = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
-            gt.draw(logic_surface, f"矢量 {w}x{h}, {len(cmds)}条指令:",
-                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
-            # 列出指令类型
+            gt.draw(logic_surface, f"矢量 {pw}x{ph}, {len(cmds)}条指令:",
+                                LOGIC_WIDTH // 2, app_y + 26, 17, (180, 200, 220), "sans", center_x=True)
             cmd_types = []
-            for cmd in cmds[:12]:  # 最多显示12条
+            for cmd in cmds[:16]:
                 ctype = cmd[0] if cmd else "?"
-                if ctype == "fill":
-                    cmd_types.append(f"填充{cmd[1]}")
-                elif ctype == "rect":
-                    cmd_types.append(f"矩形({cmd[1]},{cmd[2]})")
-                elif ctype == "circle":
-                    cmd_types.append(f"圆({cmd[1]},{cmd[2]})")
-                else:
-                    cmd_types.append(ctype)
-            if len(cmds) > 12:
-                cmd_types.append(f"...+{len(cmds)-12}")
+                cmd_types.append({"fill":"填充","rect":"矩形","circle":"圆"}.get(ctype, ctype))
+            if len(cmds) > 16: cmd_types.append(f"...+{len(cmds)-16}")
             gt.draw(logic_surface, " | ".join(cmd_types),
-                                60, appearance_y + 36, 11, (160, 180, 200), "mono", shadow=True)
+                                LOGIC_WIDTH // 2, app_y + 48, 15, (160, 180, 200), "sans", center_x=True)
     else:
         gt.draw(logic_surface, "纯色底色 (无图案)",
-                            60, appearance_y + 20, 12, (160, 180, 200), "mono", shadow=True)
+                            LOGIC_WIDTH // 2, app_y + 26, 17, (160, 180, 200), "sans", center_x=True)
 
     hint = "B/Esc: 返回列表"
-    gt.draw(logic_surface, hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
-                        (140, 160, 200), "mono", shadow=True, center_x=True)
+    gt.draw(logic_surface, hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+                        (140, 160, 200), "sans", shadow=True, center_x=True)
 
 
 def _handle_block_browser_input(event):
@@ -1034,6 +1027,159 @@ def _handle_block_browser_input(event):
             _dev_block_browser_scroll = min(
                 max(0, len(all_ids) - visible_rows),
                 _dev_block_browser_scroll + visible_rows)
+
+
+# ===================== Buff 预览器 =====================
+def _run_buff_browser(logic_surface, dt):
+    """Buff 预览器渲染。"""
+    from buff_data import BUFF_TYPES
+    all_ids = sorted(BUFF_TYPES.keys())
+    if not all_ids:
+        return
+
+    if _dev_buff_detail_id is not None:
+        _run_buff_detail(logic_surface, dt)
+        return
+
+    title = f"Buff 预览器 [{_dev_buff_browser_mode.upper()}]"
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 12, 28,
+                        (255, 255, 200), "sans", shadow=True, center_x=True)
+    mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  U/Esc:返回"
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+                        (140, 160, 200), "sans", shadow=True, center_x=True)
+
+    name_key = "name2" if _dev_buff_browser_show_name2 else "name"
+    cursor = _dev_buff_browser_cursor
+
+    if _dev_buff_browser_mode == "grid":
+        COLS = 8
+        cell_w = 170
+        cell_h = 150
+        preview_size = 80
+        start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
+        start_y = 50
+        rows = (len(all_ids) + COLS - 1) // COLS
+
+        for row in range(len(all_ids) // COLS + 1):
+            for col in range(COLS):
+                idx = row * COLS + col
+                if idx >= len(all_ids): break
+                bid = all_ids[idx]
+                bt = BUFF_TYPES[bid]
+                cx = start_x + col * cell_w
+                cy = start_y + row * cell_h
+                if idx == cursor:
+                    pygame.draw.rect(logic_surface, (80, 140, 255),
+                                    (cx - 3, cy - 3, cell_w - 4, cell_h - 4), 2, border_radius=4)
+                px = cx + (cell_w - preview_size) // 2
+                _draw_buff_icon(logic_surface, bt, px, cy + 4, preview_size)
+                label = f"{bid}.{getattr(bt, name_key, bt.name)}"
+                gt.draw(logic_surface, label, cx + cell_w // 2, cy + preview_size + 8, 16,
+                                    (220, 220, 220), "sans", shadow=True, center_x=True)
+    else:
+        row_h = 80; preview_size = 60; start_y = 50
+        for i, idx in enumerate(all_ids):
+            bid = all_ids[idx] if isinstance(idx, int) else idx
+            bt = BUFF_TYPES[bid]
+            cy = start_y + i * row_h
+            if cy > LOGIC_HEIGHT - 60: break
+            if i == cursor:
+                pygame.draw.rect(logic_surface, (60, 60, 100), (40, cy, LOGIC_WIDTH - 80, row_h))
+                pygame.draw.rect(logic_surface, (100, 200, 255), (40, cy, LOGIC_WIDTH - 80, row_h), 2)
+            _draw_buff_icon(logic_surface, bt, 56, cy + (row_h - preview_size) // 2, preview_size)
+            cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
+            cat_str = cat_names.get(bt.category, bt.category)
+            txt = f"{bid}. {getattr(bt, name_key, bt.name)}  [{cat_str}]"
+            gt.draw(logic_surface, txt, 56 + preview_size + 16, cy + 8, 18, (255, 255, 200), "sans", shadow=True)
+            gt.draw(logic_surface, bt.desc, 56 + preview_size + 16, cy + 34, 16, (160, 180, 210), "sans", shadow=True)
+
+
+def _run_buff_detail(logic_surface, dt):
+    """Buff 详情页。"""
+    from buff_data import BUFF_TYPES
+    bid = _dev_buff_detail_id
+    if bid is None: return
+    bt = BUFF_TYPES.get(bid)
+    if bt is None:
+        gt.draw(logic_surface, f"Buff {bid} 不存在", LOGIC_WIDTH // 2, 100, 22, (255, 100, 100), "sans", center_x=True)
+        return
+
+    cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
+    title = f"Buff #{bid}  —  {bt.name} / {bt.name2}  [{cat_names.get(bt.category, bt.category)}]"
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 10, 26, (255, 255, 200), "sans", shadow=True, center_x=True)
+
+    # 大图标
+    preview_size = 140
+    px, py = 100, 50
+    _draw_buff_icon(logic_surface, bt, px, py, preview_size)
+
+    info_x = px + preview_size + 30
+    gt.draw(logic_surface, f"ID: {bt.id}   类别: {cat_names.get(bt.category, bt.category)}", info_x, py, 20, (255, 255, 240), "sans")
+    gt.draw(logic_surface, f"EN: {bt.name}", info_x, py + 28, 18, (200, 210, 230), "sans")
+    gt.draw(logic_surface, f"CN: {bt.name2}", info_x, py + 50, 18, (200, 210, 230), "sans")
+    gt.draw(logic_surface, f"描述: {bt.desc}", info_x, py + 78, 18, (220, 220, 200), "sans")
+    gt.draw(logic_surface, f"最大叠层: {bt.max_stacks}   冲突: {bt.conflicts}", info_x, py + 100, 16, (180, 190, 210), "sans")
+
+    gt.draw(logic_surface, "U/Esc: 返回列表", LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+                        (140, 160, 200), "sans", shadow=True, center_x=True)
+
+
+def _draw_buff_icon(surf, bt, x, y, size):
+    """绘制 buff 图标。"""
+    from pattern import _draw_vector, _draw_bitmap
+    preview = pygame.Surface((size, size))
+    if bt.icon is not None:
+        icon = bt.icon
+        fmt = icon[0]
+        # 根据格式渲染
+        if fmt == "vector":
+            pattern_surf = _draw_vector(icon, size, size)
+            preview.blit(pattern_surf, (0, 0))
+        elif fmt == "bitmap":
+            pattern_surf = _draw_bitmap(icon, size, size)
+            preview.blit(pattern_surf, (0, 0))
+        else:
+            preview.fill((80, 80, 100))
+    else:
+        preview.fill((80, 80, 100))
+    surf.blit(preview, (x, y))
+    pygame.draw.rect(surf, (100, 100, 120), (x, y, size, size), 1)
+
+
+def _handle_buff_browser_input(event):
+    """处理 Buff 预览器的键盘事件。"""
+    global _dev_buff_browser, _dev_buff_browser_mode, _dev_buff_browser_cursor
+    global _dev_buff_browser_scroll, _dev_buff_browser_show_name2, _dev_buff_detail_id
+    from buff_data import BUFF_TYPES
+
+    if event.type != pygame.KEYDOWN: return
+    all_ids = sorted(BUFF_TYPES.keys())
+    if not all_ids: return
+
+    if _dev_buff_detail_id is not None:
+        if event.key in (pygame.K_ESCAPE, pygame.K_u):
+            _dev_buff_detail_id = None
+        return
+
+    if event.key in (pygame.K_ESCAPE, pygame.K_u):
+        _dev_buff_browser = False
+        _dev_buff_browser_cursor = 0
+        return
+
+    if event.key == pygame.K_TAB:
+        _dev_buff_browser_mode = "list" if _dev_buff_browser_mode == "grid" else "grid"
+    elif event.key == pygame.K_n:
+        _dev_buff_browser_show_name2 = not _dev_buff_browser_show_name2
+    elif event.key == pygame.K_RETURN:
+        _dev_buff_detail_id = all_ids[_dev_buff_browser_cursor]
+    elif event.key == pygame.K_UP:
+        _dev_buff_browser_cursor = max(0, _dev_buff_browser_cursor - (8 if _dev_buff_browser_mode == "grid" else 1))
+    elif event.key == pygame.K_DOWN:
+        _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + (8 if _dev_buff_browser_mode == "grid" else 1))
+    elif event.key == pygame.K_LEFT:
+        _dev_buff_browser_cursor = max(0, _dev_buff_browser_cursor - 1)
+    elif event.key == pygame.K_RIGHT:
+        _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + 1)
 
 
 def _get_edit_config(map_id: int) -> dict:
@@ -1121,15 +1267,19 @@ def _get_map_type_label(m) -> str:
 
 
 def run_dev_page(dt: float):
-    """开发者界面：查询地图、选择地图、编辑属性、启动游戏、方块浏览器。"""
+    """开发者界面：查询地图、选择地图、编辑属性、启动游戏、预览器。"""
     global _dev_edit_mode, _dev_edit_field_idx, _dev_edit_dirty, _dev_edit_config
     global _dev_inputting, _dev_input_text
-    global _dev_block_browser
+    global _dev_block_browser, _dev_buff_browser
 
-    # 方块浏览器模式
+    # 方块/ Buff 预览器模式
     if _dev_block_browser:
         logic_surface.fill((20, 20, 40))
         _run_block_browser(logic_surface, dt)
+        return
+    if _dev_buff_browser:
+        logic_surface.fill((20, 20, 40))
+        _run_buff_browser(logic_surface, dt)
         return
 
     logic_surface.fill((20, 20, 40))
@@ -1305,7 +1455,7 @@ def run_dev_page(dt: float):
                              LOGIC_HEIGHT - 24, (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
-                             f"当前选中: ID={_dev_selected_id}  |  Enter 启动  E 编辑  B 方块浏览器",
+                             f"当前选中: ID={_dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览",
                              LOGIC_HEIGHT - 50, (140, 180, 255))
 
 
@@ -1335,14 +1485,16 @@ def handle_dev_input(event):
     global _dev_selected_id, _dev_edit_mode, _dev_edit_field_idx
     global _dev_edit_dirty, _dev_edit_config
     global _dev_inputting, _dev_input_text
-    global _dev_block_browser
+    global _dev_block_browser, _dev_buff_browser
 
     if event.type != pygame.KEYDOWN:
         return
 
-    # ========== 方块浏览器模式 ==========
     if _dev_block_browser:
         _handle_block_browser_input(event)
+        return
+    if _dev_buff_browser:
+        _handle_buff_browser_input(event)
         return
 
     maps_dict = list_maps()
@@ -1350,9 +1502,12 @@ def handle_dev_input(event):
     if not ids:
         return
 
-    # ========== B键进入方块浏览器 ==========
+    # ========== B键方块预览器 / U键Buff预览器 ==========
     if event.key == pygame.K_b and not _dev_edit_mode and not _dev_inputting:
         _dev_block_browser = True
+        return
+    if event.key == pygame.K_u and not _dev_edit_mode and not _dev_inputting:
+        _dev_buff_browser = True
         return
 
     # ========== 编辑模式按键 ==========
