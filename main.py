@@ -896,12 +896,12 @@ def _run_block_detail(logic_surface, dt):
         pygame.draw.line(logic_surface, (80, 80, 120), (sep_x, CONTENT_TOP), (sep_x, CONTENT_BOT), 1)
 
     # -- 左栏：预览 + 基本信息 --
-    preview_size = min(cw - 20, 150)
+    preview_size = min(cw - 20, 280)
     _draw_block_preview(logic_surface, bt, col1_x + (cw - preview_size) // 2, CONTENT_TOP + 10, preview_size)
 
     ly = CONTENT_TOP + preview_size + 20
-    lh = 45  # x180%
-    FS = 32  # x180%
+    lh = 32
+    FS = 22
     linfos = [
         f"ID: {bt.id}",
         f"实体: {bt.is_solid}",
@@ -916,7 +916,7 @@ def _run_block_detail(logic_surface, dt):
 
     # -- 中栏：物理/战斗属性 --
     my = CONTENT_TOP + 10
-    mh = 45  # x180%
+    mh = 32
     mid_attrs = [
         f"表面摩擦: {bt.surface_f:.3f}",
         f"空间阻力: {bt.space_f:.3f}",
@@ -965,23 +965,23 @@ def _run_block_detail(logic_surface, dt):
             params = bt.pattern[2] if len(bt.pattern) > 2 else {}
             preset_names = {"checkerboard": "棋盘格", "gradient": "渐变", "noise": "噪点",
                            "brick": "砖墙", "wood": "木纹", "stone": "石纹"}
-            gt.draw(logic_surface, f"编码: 预设图案", col3_x + 6, ry, 19, (200, 210, 240), "sans")
+            gt.draw(logic_surface, f"编码: 预设图案", col3_x + 6, ry, 28, (200, 210, 240), "sans")
             gt.draw(logic_surface, f"代码: {code} ({preset_names.get(code, code)})",
-                                col3_x + 6, ry + 26, 18, (180, 190, 220), "sans")
-            show_y = ry + 50
+                                col3_x + 6, ry + 32, 27, (180, 190, 220), "sans")
+            show_y = ry + 60
             if isinstance(params, dict):
                 for k, v in params.items():
                     if show_y > CONTENT_BOT - 16: break
                     gt.draw(logic_surface, f"{k}: {v}",
-                                        col3_x + 6, show_y, 15, (150, 170, 200), "sans")
-                    show_y += 19
+                                        col3_x + 6, show_y, 22, (150, 170, 200), "sans")
+                    show_y += 28
         elif ptype == "vector":
             vw, vh = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
             gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}",
-                                col3_x + 6, ry, 19, (200, 210, 240), "sans")
+                                col3_x + 6, ry, 28, (200, 210, 240), "sans")
             for j, cmd in enumerate(cmds):
-                cy2 = ry + 24 + j * 18
+                cy2 = ry + 30 + j * 26
                 if cy2 > CONTENT_BOT - 16: break
                 ctype = cmd[0]
                 if ctype == "fill":
@@ -993,7 +993,7 @@ def _run_block_detail(logic_surface, dt):
                     text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})"
                 else:
                     text = str(cmd)
-                gt.draw(logic_surface, text, col3_x + 6, cy2, 14, (150, 170, 210), "sans")
+                gt.draw(logic_surface, text, col3_x + 6, cy2, 21, (150, 170, 210), "sans")
     else:
         gt.draw(logic_surface, f"编码: 无  底色: {bt.color}",
                             col3_x + 6, ry, 19, (160, 180, 200), "sans")
