@@ -9,6 +9,22 @@ F = lambda r,g,b: ("fill",(r,g,b))
 R = lambda x,y,w,h,c: ("rect",x,y,w,h,c)
 C = lambda x,y,r,c: ("circle",x,y,r,c)
 
+# 精致图案工具 — 边框、高光、纹理层次
+def border(pat, c, w=1):
+    """给图案加边框"""
+    pat.append(R(0,0,G,w,c)); pat.append(R(0,G-w,G,w,c))
+    pat.append(R(0,0,w,G,c)); pat.append(R(G-w,0,w,G,c))
+    return pat
+def hl(cx,cy,pat,c=(255,255,255)):
+    """高光点"""
+    pat.append(C(cx,cy,1,c))
+    return pat
+def speckle(pat, c, n=4):
+    """散布小斑点增加纹理"""
+    import random; r=random.Random(42)
+    for _ in range(n): pat.append(R(r.randint(1,G-3),r.randint(1,G-3),1,1,c))
+    return pat
+
 BUFF_BLOCKS = {}
 _n = 360
 def add(bt):
@@ -19,12 +35,19 @@ def add(bt):
 
 # ═══════════════════════════════════════════════════════
 # 恢复/庇护类 — 关卡前后的安全区、奖励房
+# 图案均为精致多层设计，边框+纹理+高光
+# ═══════════════════════════════════════════════════════
 # ═══════════════════════════════════════════════════════
 
 add(BlockType(0, "life_spring", "生命之泉", is_solid=True, light_level=6,
     color=(80,180,220),
-    pattern=("vector",(G,G),[F(80,180,220),C(8,9,5,(130,210,240)),C(8,9,3,(180,240,255)),
-             R(6,6,4,6,(140,210,245)),C(8,6,2,(255,255,255))]),
+    pattern=("vector",(G,G),[
+        F(60,160,200),R(1,1,14,14,(80,180,220)),R(2,2,12,12,(100,195,235)),
+        C(8,9,6,(130,210,240)),C(8,9,4,(170,230,250)),C(8,9,2,(220,245,255)),
+        R(6,6,4,6,(140,210,245)),R(3,3,10,8,(90,190,230)),
+        C(8,6,2,(255,255,255)),C(5,10,1,(200,240,255)),C(11,10,1,(200,240,255)),
+        R(1,0,14,1,(100,195,235)),R(0,1,1,14,(100,195,235)),R(15,1,1,14,(100,195,235)),
+    ]),
     buff_ids=(1,), buff_params_list=((8,),), buff_durations=(6.0,), break_hp=80))
 
 add(BlockType(0, "guardian_flower", "护佑花", is_solid=False, light_level=4,
