@@ -867,22 +867,61 @@ def _run_block_browser(logic_surface, dt):
             gt.draw(logic_surface, line1, 56 + preview_size + 16, cy + 10, 20,
                                 (255, 255, 210), "sans", shadow=True)
 
-            # 第2行：标签 · 亮点（合并为一行），右侧留空
-            tags = []
-            if bt.is_solid: tags.append("实体")
-            if bt.climbable: tags.append("攀爬")
-            if getattr(bt, 'swim_f', 0.0) > 0: tags.append("游泳")
-            if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
-            if bt.one_way: tags.append("单向")
+            # 第2行：标签 · 亮点（合并为一行），逐个绘制以支持分类着色
+            line2_x = 56 + preview_size + 16
+            line2_y = cy + 42
+            FS2 = 17
+            SEP = "  |  "
+            DEFAULT_C2 = (170, 190, 220)
+
+            # 构建带类型标记的条目列表: (text, type)
+            # type: "tag" | "hl" | "buff_pos" | "buff_neu" | "buff_neg"
+            items = []
+            if bt.is_solid: items.append(("实体", "tag"))
+            if bt.climbable: items.append(("攀爬", "tag"))
+            if getattr(bt, 'swim_f', 0.0) > 0: items.append(("游泳", "tag"))
+            if bt.damage_ps > 0: items.append((f"伤{bt.damage_ps:.0f}", "tag"))
+            if bt.one_way: items.append(("单向", "tag"))
+
+            # Buff 条目 — 每个 buff 单独着色
             buff_ids = getattr(bt, 'buff_ids', ())
-            if buff_ids: tags.append(f"Buff×{len(buff_ids)}")
+            if buff_ids:
+                from buff_system import BUFF_TYPES
+                cat_colors_buff = {"positive": (100, 255, 100), "neutral": (100, 200, 255), "negative": (255, 100, 100)}
+                for bid in buff_ids:
+                    btype = BUFF_TYPES.get(bid)
+                    bname = (btype.name2 or btype.name) if btype else f"B{bid}"
+                    cat = btype.category if btype else "neutral"
+                    items.append((bname, f"buff_{cat}"))
+
+            # 非buff亮点
             highlights = _get_block_highlights(bt)
-            # 筛选非buff类亮点（buff已在上方标签体现），合并最多4项
             non_buff_hl = [hl for hl in highlights if not hl.startswith("增益:")]
-            combined = tags + non_buff_hl[:4]
-            line2 = "  |  ".join(combined) if combined else "—"
-            gt.draw(logic_surface, line2, 56 + preview_size + 16, cy + 42, 17,
-                                (170, 190, 220), "sans", shadow=True)
+            for hl in non_buff_hl[:4]:
+                items.append((hl, "hl"))
+
+            if not items:
+                gt.draw(logic_surface, "—", line2_x, line2_y, FS2, DEFAULT_C2, "sans", shadow=True)
+            else:
+                cur_x = line2_x
+                for idx, (text, kind) in enumerate(items):
+                    if idx > 0:
+                        sep_w, _ = gt.draw(logic_surface, SEP, cur_x, line2_y, FS2, (100, 110, 140), "sans")
+                        cur_x += sep_w
+                    if kind == "tag":
+                        c = DEFAULT_C2
+                    elif kind == "hl":
+                        c = (190, 200, 230)
+                    elif kind == "buff_positive":
+                        c = (100, 255, 100)
+                    elif kind == "buff_neutral":
+                        c = (100, 200, 255)
+                    elif kind == "buff_negative":
+                        c = (255, 100, 100)
+                    else:
+                        c = DEFAULT_C2
+                    tw, _ = gt.draw(logic_surface, text, cur_x, line2_y, FS2, c, "sans", shadow=True)
+                    cur_x += tw
 
 
 def _run_block_detail(logic_surface, dt):
