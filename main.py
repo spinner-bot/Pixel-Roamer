@@ -785,7 +785,7 @@ def _run_block_browser(logic_surface, dt):
         start_y = CONTENT_TOP2
         rows = (len(all_ids) + COLS - 1) // COLS
 
-        visible_rows = max(1, (LOGIC_HEIGHT * 0.68) // cell_h)
+        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // cell_h)
         cursor_row = cursor // COLS
         if cursor_row < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor_row
@@ -1108,7 +1108,7 @@ def _run_buff_browser(logic_surface, dt):
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
         start_y = CONTENT_TOP2
         rows = (len(all_ids) + COLS - 1) // COLS
-        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // cell_h)
+        visible_rows = max(1, intint(LOGIC_HEIGHT * 0.68) // cell_h)
 
         cursor_row = cursor // COLS
         if cursor_row < _dev_buff_browser_scroll:
