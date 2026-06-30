@@ -764,10 +764,10 @@ def _run_block_browser(logic_surface, dt):
 
     # 标题
     title = f"方块预览器 [{_dev_block_browser_mode.upper()}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 12, 28,
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 8, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  B/Esc:返回"
-    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 20, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
@@ -777,14 +777,13 @@ def _run_block_browser(logic_surface, dt):
         # 网格模式
         COLS = 8
         cell_w = 170
-        cell_h = 150
+        cell_h = 170
         preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
-        start_y = 50
+        start_y = 62
         rows = (len(all_ids) + COLS - 1) // COLS
 
         visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // cell_h)
-        # 自动滚动使光标可见
         cursor_row = cursor // COLS
         if cursor_row < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor_row
@@ -802,26 +801,25 @@ def _run_block_browser(logic_surface, dt):
                 cx = start_x + col * cell_w
                 cy = start_y + (row - _dev_block_browser_scroll) * cell_h
 
-                # 选中高亮
                 if idx == cursor:
                     pygame.draw.rect(logic_surface, (80, 140, 255),
                                     (cx - 3, cy - 3, cell_w - 4, cell_h - 4), 2, border_radius=4)
 
                 # 预览图
-                px = cx + (cell_w - 2 - preview_size) // 2
+                px = cx + (cell_w - preview_size) // 2
                 _draw_block_preview(logic_surface, bt, px, cy + 4, preview_size)
 
-                # 编号和名称
+                # 名称（在两行预览图间隙中间靠上位置）
                 label = f"{bid}.{getattr(bt, name_key, bt.name)}"
-                gt.draw(logic_surface, label, cx + cell_w // 2 - 2,
-                                    cy + preview_size + 8, 16, (220, 220, 220),
+                gt.draw(logic_surface, label, cx + cell_w // 2,
+                                    cy + preview_size + 22, 20, (220, 220, 220),
                                     "sans", shadow=True, center_x=True)
 
     else:
-        # 列表模式
-        row_h = 80
+        # 列表模式 — 2行布局
+        row_h = 90
         preview_size = 60
-        start_y = 50
+        start_y = 64
         visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // row_h)
 
         if cursor < _dev_block_browser_scroll:
@@ -844,26 +842,22 @@ def _run_block_browser(logic_surface, dt):
             # 左侧预览
             _draw_block_preview(logic_surface, bt, 56, cy + (row_h - preview_size) // 2, preview_size)
 
-            # 第一行：id, name, 基础属性
-            name_text = f"{bid}. {getattr(bt, name_key, bt.name)}"
-            gt.draw(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 18,
-                                (255, 255, 200), "sans", shadow=True)
-            # 基础属性标签
+            # 第1行：【ID】英文名 | 中文名  （大字，粗体感）
+            line1 = f"[{bid}] {bt.name}  |  {bt.name2}"
+            gt.draw(logic_surface, line1, 56 + preview_size + 16, cy + 10, 20,
+                                (255, 255, 210), "sans", shadow=True)
+
+            # 第2行：标签 · 亮点（合并为一行），右侧留空
             tags = []
             if bt.is_solid: tags.append("实体")
             if bt.climbable: tags.append("攀爬")
             if getattr(bt, 'swim_f', 0.0) > 0: tags.append("游泳")
             if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
-            tag_str = " | ".join(tags) if tags else "无特殊"
-            gt.draw(logic_surface, tag_str,
-                                56 + preview_size + 16, cy + 28, 16, (150, 180, 210), "sans", shadow=True)
-
-            # 第二行：亮点
             highlights = _get_block_highlights(bt)
-            if highlights:
-                hl_text = " · ".join(highlights[:4])
-                gt.draw(logic_surface, hl_text,
-                                    56 + preview_size + 16, cy + 48, 16, (200, 200, 230), "sans", shadow=True)
+            combined = tags + highlights[:3]
+            line2 = "  |  ".join(combined) if combined else "—"
+            gt.draw(logic_surface, line2, 56 + preview_size + 16, cy + 42, 17,
+                                (170, 190, 220), "sans", shadow=True)
 
 
 def _run_block_detail(logic_surface, dt):
@@ -997,14 +991,14 @@ def _handle_block_browser_input(event):
 
     elif event.key == pygame.K_UP:
         if _dev_block_browser_mode == "grid":
-            COLS = 10
+            COLS = 8
             _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - COLS)
         else:
             _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - 1)
 
     elif event.key == pygame.K_DOWN:
         if _dev_block_browser_mode == "grid":
-            COLS = 10
+            COLS = 8
             _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + COLS)
         else:
             _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + 1)
@@ -1032,7 +1026,7 @@ def _handle_block_browser_input(event):
 # ===================== Buff 预览器 =====================
 def _run_buff_browser(logic_surface, dt):
     """Buff 预览器渲染。"""
-    from buff_data import BUFF_TYPES
+    from buff_system import BUFF_TYPES
     all_ids = sorted(BUFF_TYPES.keys())
     if not all_ids:
         return
@@ -1042,10 +1036,10 @@ def _run_buff_browser(logic_surface, dt):
         return
 
     title = f"Buff 预览器 [{_dev_buff_browser_mode.upper()}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 12, 28,
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 8, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  U/Esc:返回"
-    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 20, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_buff_browser_show_name2 else "name"
@@ -1054,13 +1048,12 @@ def _run_buff_browser(logic_surface, dt):
     if _dev_buff_browser_mode == "grid":
         COLS = 8
         cell_w = 170
-        cell_h = 150
+        cell_h = 170
         preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
-        start_y = 50
-        rows = (len(all_ids) + COLS - 1) // COLS
+        start_y = 62
 
-        for row in range(len(all_ids) // COLS + 1):
+        for row in range((len(all_ids) + COLS - 1) // COLS):
             for col in range(COLS):
                 idx = row * COLS + col
                 if idx >= len(all_ids): break
@@ -1074,29 +1067,34 @@ def _run_buff_browser(logic_surface, dt):
                 px = cx + (cell_w - preview_size) // 2
                 _draw_buff_icon(logic_surface, bt, px, cy + 4, preview_size)
                 label = f"{bid}.{getattr(bt, name_key, bt.name)}"
-                gt.draw(logic_surface, label, cx + cell_w // 2, cy + preview_size + 8, 16,
+                gt.draw(logic_surface, label, cx + cell_w // 2, cy + preview_size + 22, 20,
                                     (220, 220, 220), "sans", shadow=True, center_x=True)
     else:
-        row_h = 80; preview_size = 60; start_y = 50
-        for i, idx in enumerate(all_ids):
-            bid = all_ids[idx] if isinstance(idx, int) else idx
-            bt = BUFF_TYPES[bid]
+        row_h = 90; preview_size = 60; start_y = 64
+        cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
+        for i in range(min(len(all_ids), (LOGIC_HEIGHT - start_y - 50) // row_h + 1)):
+            if i >= len(all_ids): break
+            idx = all_ids[i]
+            bt = BUFF_TYPES[idx]
             cy = start_y + i * row_h
             if cy > LOGIC_HEIGHT - 60: break
             if i == cursor:
                 pygame.draw.rect(logic_surface, (60, 60, 100), (40, cy, LOGIC_WIDTH - 80, row_h))
                 pygame.draw.rect(logic_surface, (100, 200, 255), (40, cy, LOGIC_WIDTH - 80, row_h), 2)
             _draw_buff_icon(logic_surface, bt, 56, cy + (row_h - preview_size) // 2, preview_size)
-            cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
+            # 第1行：完整名称 + 类别标签
             cat_str = cat_names.get(bt.category, bt.category)
-            txt = f"{bid}. {getattr(bt, name_key, bt.name)}  [{cat_str}]"
-            gt.draw(logic_surface, txt, 56 + preview_size + 16, cy + 8, 18, (255, 255, 200), "sans", shadow=True)
-            gt.draw(logic_surface, bt.desc, 56 + preview_size + 16, cy + 34, 16, (160, 180, 210), "sans", shadow=True)
+            line1 = f"[{bt.id}] {bt.name}  |  {bt.name2}  [{cat_str}]"
+            gt.draw(logic_surface, line1, 56 + preview_size + 16, cy + 10, 20,
+                                (255, 255, 210), "sans", shadow=True)
+            # 第2行：描述
+            gt.draw(logic_surface, bt.desc, 56 + preview_size + 16, cy + 42, 17,
+                                (170, 190, 220), "sans", shadow=True)
 
 
 def _run_buff_detail(logic_surface, dt):
     """Buff 详情页。"""
-    from buff_data import BUFF_TYPES
+    from buff_system import BUFF_TYPES
     bid = _dev_buff_detail_id
     if bid is None: return
     bt = BUFF_TYPES.get(bid)
@@ -1150,7 +1148,7 @@ def _handle_buff_browser_input(event):
     """处理 Buff 预览器的键盘事件。"""
     global _dev_buff_browser, _dev_buff_browser_mode, _dev_buff_browser_cursor
     global _dev_buff_browser_scroll, _dev_buff_browser_show_name2, _dev_buff_detail_id
-    from buff_data import BUFF_TYPES
+    from buff_system import BUFF_TYPES
 
     if event.type != pygame.KEYDOWN: return
     all_ids = sorted(BUFF_TYPES.keys())
