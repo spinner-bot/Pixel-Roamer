@@ -1,0 +1,12 @@
+{
+  "world": {
+    "mode": "explore",
+    "lives": 5,
+    "fill_color": [20, 15, 30],
+    "music": ""
+  },
+  "player": {
+    "hp_max": 150,
+    "stamina_max": 100
+  }
+}

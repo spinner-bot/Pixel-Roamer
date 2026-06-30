@@ -7,7 +7,7 @@ from creature import Player
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
 from costumes import COSTUMES, DEFAULT_COSTUME_ID, list_costumes, render_costume_direct
 import sfx
-import pixel_font as pxf
+import game_text as gt
 
 # ===================== 游戏元信息 =====================
 GAME_NAME_CN = "像素漫游者"
@@ -47,24 +47,13 @@ def update_scale_param():
 
 update_scale_param()
 
-# ===================== 中文字体加载 =====================
-def _load_cn_font(size: int):
-    """加载中文字体，优先使用黑体（simhei.ttf）。"""
-    try:
-        return pygame.font.Font("C:/Windows/Fonts/simhei.ttf", size)
-    except Exception:
-        try:
-            return pygame.font.Font("C:/Windows/Fonts/msyh.ttc", size)
-        except Exception:
-            return pygame.font.Font(None, size)
-
-
-FONT56 = _load_cn_font(56)
-FONT40 = _load_cn_font(40)
-FONT34 = _load_cn_font(34)
-FONT28 = _load_cn_font(28)
-FONT24 = _load_cn_font(24)
-FONT20 = _load_cn_font(20)
+# ===================== 字体尺寸常量 =====================
+FONT56 = 56
+FONT40 = 40
+FONT34 = 34
+FONT28 = 28
+FONT24 = 24
+FONT20 = 20
 
 # ===================== 页面管理 =====================
 PAGE_DEV = 0
@@ -226,25 +215,24 @@ def launch_default(page_id: int):
 
 
 # ===================== 绘图辅助 =====================
-def draw_text_center(surf, font, text, y, color=(255, 255, 255)):
-    img = font.render(text, True, color)
-    x = (LOGIC_WIDTH - img.get_width()) // 2
-    surf.blit(img, (x, y))
-    return y + img.get_height()
+def draw_text_center(surf, font_size, text, y, color=(255,255,255), shadow=False):
+    """居中绘制（game_text），返回下一行的 y 坐标。"""
+    _, h = gt.draw(surf, text, LOGIC_WIDTH // 2, y, font_size, color,
+                   "sans", center_x=True, shadow=shadow)
+    return y + h + 4
 
 
-def draw_text_left(surf, font, text, x, y, color=(255, 255, 255)):
-    img = font.render(text, True, color)
-    surf.blit(img, (x, y))
-    return y + img.get_height()
+def draw_text_left(surf, font_size, text, x, y, color=(255,255,255), shadow=False):
+    """左对齐绘制，返回下一行的 y 坐标。"""
+    _, h = gt.draw(surf, text, x, y, font_size, color, "sans", shadow=shadow)
+    return y + h + 4
 
 
-def draw_text_right(surf, font, text, x_right, y, color=(255, 255, 255)):
+def draw_text_right(surf, font_size, text, x_right, y, color=(255,255,255), shadow=False):
     """右对齐绘制，x_right 为文字右边缘的 x 坐标。"""
-    img = font.render(text, True, color)
-    x = x_right - img.get_width()
-    surf.blit(img, (x, y))
-    return y + img.get_height()
+    _, h = gt.draw(surf, text, x_right, y, font_size, color, "sans",
+                   right_x=True, shadow=shadow)
+    return y + h + 4
 
 
 # ===================== HP / 体力条 / 坐标 绘制 =====================
@@ -258,7 +246,7 @@ _death_played = False           # 死亡音效是否已播放
 
 BAR_X, BAR_Y = 24, 16
 BAR_W, BAR_H = 280, 32
-BAR_TEXT_H = 18                  # 像素文字高度
+BAR_TEXT_H = 22                  # 文字高度（用于垂直居中）
 BORDER_R = 6
 PAD = 4
 BAR_GAP = 5                     # 血条与体力条间距
@@ -398,11 +386,11 @@ def draw_hp_bar(surf, player, dt: float):
         txt = f"{int(hp)}/{int(hp_max)} +{int(shield)}"
     else:
         txt = f"{int(hp)}/{int(hp_max)}"
-    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W // 2, BAR_Y + BAR_H // 2 - BAR_TEXT_H // 2,
-                         BAR_TEXT_H, (255, 255, 255), shadow=True, center_x=True)
+    gt.draw(surf, txt, BAR_X + BAR_W // 2, BAR_Y + BAR_H // 2 - BAR_TEXT_H // 2,
+                         BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
 
     # HP 图标标签
-    pxf.draw_pixel_text(surf, "HP", BAR_X + BAR_W + 10, BAR_Y + 4, 14, (255, 255, 255), shadow=True)
+    gt.draw(surf, "HP", BAR_X + BAR_W + 10, BAR_Y + 4, 18, (255, 255, 255), "mono", shadow=True)
 
 
 def draw_stamina_bar(surf, player, dt: float):
@@ -440,9 +428,9 @@ def draw_stamina_bar(surf, player, dt: float):
 
     # 像素文字
     txt = f"{int(stamina)}/{int(stamina_max)}"
-    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
-                         BAR_TEXT_H, (255, 255, 255), shadow=True, center_x=True)
-    pxf.draw_pixel_text(surf, "SP", BAR_X + BAR_W + 10, stam_y + 4, 14, (255, 255, 255), shadow=True)
+    gt.draw(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
+                         BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
+    gt.draw(surf, "SP", BAR_X + BAR_W + 10, stam_y + 4, 18, (255, 255, 255), "mono", shadow=True)
 
 
 def draw_player_info(surf, player, dt: float):
@@ -451,7 +439,7 @@ def draw_player_info(surf, player, dt: float):
     info_y = stam_y + BAR_H + 6
     px, py = player.get_center()
     txt = f"({px:.1f}, {py:.1f})"
-    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W + 10, info_y, 15, (200, 210, 230), shadow=True)
+    gt.draw(surf, txt, BAR_X + BAR_W + 10, info_y, 20, (200, 210, 230), "mono", shadow=True)
 
 
 # ===================== 濒死滤镜 =====================
@@ -769,11 +757,11 @@ def _run_block_browser(logic_surface, dt):
 
     # 标题
     title = f"方块浏览器 [{_dev_block_browser_mode.upper()}]"
-    pxf.draw_pixel_text(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
-                        (255, 255, 200), shadow=True, center_x=True)
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
+                        (255, 255, 200), "mono", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  B/Esc:返回"
-    pxf.draw_pixel_text(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
-                        (140, 160, 200), shadow=True, center_x=True)
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
+                        (140, 160, 200), "mono", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
     cursor = _dev_block_browser_cursor
@@ -818,9 +806,9 @@ def _run_block_browser(logic_surface, dt):
 
                 # 编号和名称
                 label = f"{bid}.{getattr(bt, name_key, bt.name)}"
-                pxf.draw_pixel_text(logic_surface, label, cx + cell_w // 2 - 2,
+                gt.draw(logic_surface, label, cx + cell_w // 2 - 2,
                                     cy + preview_size + 8, 12, (220, 220, 220),
-                                    shadow=True, center_x=True)
+                                    "mono", shadow=True, center_x=True)
 
     else:
         # 列表模式
@@ -851,8 +839,8 @@ def _run_block_browser(logic_surface, dt):
 
             # 第一行：id, name, 基础属性
             name_text = f"{bid}. {getattr(bt, name_key, bt.name)}"
-            pxf.draw_pixel_text(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 13,
-                                (255, 255, 200), shadow=True)
+            gt.draw(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 13,
+                                (255, 255, 200), "mono", shadow=True)
             # 基础属性标签
             tags = []
             if bt.is_solid: tags.append("实体")
@@ -860,15 +848,15 @@ def _run_block_browser(logic_surface, dt):
             if getattr(bt, 'swim_f', 0.0) > 0: tags.append("游泳")
             if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
             tag_str = " | ".join(tags) if tags else "无特殊"
-            pxf.draw_pixel_text(logic_surface, tag_str,
-                                56 + preview_size + 16, cy + 24, 11, (150, 180, 210), shadow=True)
+            gt.draw(logic_surface, tag_str,
+                                56 + preview_size + 16, cy + 24, 11, (150, 180, 210), "mono", shadow=True)
 
             # 第二行：亮点
             highlights = _get_block_highlights(bt)
             if highlights:
                 hl_text = " · ".join(highlights[:4])  # 最多4个
-                pxf.draw_pixel_text(logic_surface, hl_text,
-                                    56 + preview_size + 16, cy + 40, 11, (200, 200, 230), shadow=True)
+                gt.draw(logic_surface, hl_text,
+                                    56 + preview_size + 16, cy + 40, 11, (200, 200, 230), "mono", shadow=True)
 
 
 def _run_block_detail(logic_surface, dt):
@@ -879,21 +867,21 @@ def _run_block_detail(logic_surface, dt):
         return
     bt = BLOCK_TYPES.get(bid)
     if bt is None:
-        pxf.draw_pixel_text(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 18,
-                            (255, 100, 100), center_x=True)
+        gt.draw(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 18,
+                            (255, 100, 100), "mono", center_x=True)
         return
 
     title = f"方块详情 #{bid}"
-    pxf.draw_pixel_text(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
-                        (255, 255, 200), shadow=True, center_x=True)
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
+                        (255, 255, 200), "mono", shadow=True, center_x=True)
 
     # 左侧预览
     preview_size = 96
     _draw_block_preview(logic_surface, bt, 60, 56, preview_size)
 
     # 名称
-    pxf.draw_pixel_text(logic_surface, f"{bt.name} / {bt.name2}",
-                        60 + preview_size + 20, 56, 16, (255, 255, 255), shadow=True)
+    gt.draw(logic_surface, f"{bt.name} / {bt.name2}",
+                        60 + preview_size + 20, 56, 16, (255, 255, 255), "mono", shadow=True)
 
     # 右侧属性列表（2列）
     attrs = [
@@ -924,13 +912,13 @@ def _run_block_detail(logic_surface, dt):
         if ay > LOGIC_HEIGHT - 100:
             break
         attr_text = f"{attr}:"
-        pxf.draw_pixel_text(logic_surface, attr_text, ax, ay, 12, (140, 180, 220), shadow=True)
-        pxf.draw_pixel_text(logic_surface, val, ax + 140, ay, 12, (255, 255, 255), shadow=True)
+        gt.draw(logic_surface, attr_text, ax, ay, 12, (140, 180, 220), "mono", shadow=True)
+        gt.draw(logic_surface, val, ax + 140, ay, 12, (255, 255, 255), "mono", shadow=True)
 
     # 底部外观数据展示
     appearance_y = LOGIC_HEIGHT - 120
-    pxf.draw_pixel_text(logic_surface, "--- 外观数据 ---", 60, appearance_y, 14,
-                        (200, 200, 255), shadow=True)
+    gt.draw(logic_surface, "--- 外观数据 ---", 60, appearance_y, 14,
+                        (200, 200, 255), "mono", shadow=True)
 
     if bt.pattern is not None:
         ptype = bt.pattern[0]
@@ -938,20 +926,20 @@ def _run_block_detail(logic_surface, dt):
             # 位图格式: ("bitmap", w, h, data)
             w, h = bt.pattern[1], bt.pattern[2]
             data = bt.pattern[3] if len(bt.pattern) > 3 else []
-            pxf.draw_pixel_text(logic_surface, f"位图 {w}x{h}, {len(data)}条数据",
-                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+            gt.draw(logic_surface, f"位图 {w}x{h}, {len(data)}条数据",
+                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
         elif ptype == "preset":
             # 纹理预设: ("preset", w, h, preset_name)
             preset = bt.pattern[3] if len(bt.pattern) > 3 else "?"
             w, h = bt.pattern[1], bt.pattern[2]
-            pxf.draw_pixel_text(logic_surface, f"纹理预设 {preset} ({w}x{h})",
-                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+            gt.draw(logic_surface, f"纹理预设 {preset} ({w}x{h})",
+                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
         elif ptype == "vector":
             # 矢量指令: ("vector", (w, h), [指令...])
             w, h = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
-            pxf.draw_pixel_text(logic_surface, f"矢量 {w}x{h}, {len(cmds)}条指令:",
-                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+            gt.draw(logic_surface, f"矢量 {w}x{h}, {len(cmds)}条指令:",
+                                60, appearance_y + 20, 12, (180, 200, 220), "mono", shadow=True)
             # 列出指令类型
             cmd_types = []
             for cmd in cmds[:12]:  # 最多显示12条
@@ -966,15 +954,15 @@ def _run_block_detail(logic_surface, dt):
                     cmd_types.append(ctype)
             if len(cmds) > 12:
                 cmd_types.append(f"...+{len(cmds)-12}")
-            pxf.draw_pixel_text(logic_surface, " | ".join(cmd_types),
-                                60, appearance_y + 36, 11, (160, 180, 200), shadow=True)
+            gt.draw(logic_surface, " | ".join(cmd_types),
+                                60, appearance_y + 36, 11, (160, 180, 200), "mono", shadow=True)
     else:
-        pxf.draw_pixel_text(logic_surface, "纯色底色 (无图案)",
-                            60, appearance_y + 20, 12, (160, 180, 200), shadow=True)
+        gt.draw(logic_surface, "纯色底色 (无图案)",
+                            60, appearance_y + 20, 12, (160, 180, 200), "mono", shadow=True)
 
     hint = "B/Esc: 返回列表"
-    pxf.draw_pixel_text(logic_surface, hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
-                        (140, 160, 200), shadow=True, center_x=True)
+    gt.draw(logic_surface, hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
+                        (140, 160, 200), "mono", shadow=True, center_x=True)
 
 
 def _handle_block_browser_input(event):
@@ -1046,6 +1034,9 @@ def _handle_block_browser_input(event):
             _dev_block_browser_scroll = min(
                 max(0, len(all_ids) - visible_rows),
                 _dev_block_browser_scroll + visible_rows)
+
+
+def _get_edit_config(map_id: int) -> dict:
     """获取地图的当前配置（合并 World 实例默认值与已保存配置）。"""
     saved = load_map_config(map_id)
     config = {"world": {}, "player": {}}
@@ -1211,8 +1202,7 @@ def run_dev_page(dt: float):
                            label_text, 220, row_y + 6,
                            (255, 255, 180) if is_sel else (200, 200, 200))
             # 类型小标签
-            type_surf = FONT20.render(type_tag, True, type_color)
-            logic_surface.blit(type_surf, (540, row_y + 8))
+            gt.draw(logic_surface, type_tag, 540, row_y + 8, FONT20, type_color, "sans")
 
             # 值显示
             if is_sel and _dev_inputting:
@@ -1842,9 +1832,9 @@ while running:
 
         # ---- 积分显示（顶部居中）----
         score_text = f"* {player1.score}"
-        pxf.draw_pixel_text(logic_surface, score_text,
+        gt.draw(logic_surface, score_text,
                            LOGIC_WIDTH // 2, 16, 22,
-                           (255, 220, 80), shadow=True, center_x=True)
+                           (255, 220, 80), "mono", shadow=True, center_x=True)
 
         # ---- 计时器（积分限时模式）----
         wmode = _current_map.mode if _current_map else "free"
@@ -1853,17 +1843,17 @@ while running:
             remaining = max(0, time_limit - _game_timer)
             timer_text = f"{int(remaining // 60):02d}:{int(remaining % 60):02d}"
             timer_color = (255, 80, 80) if remaining < 30 else (255, 255, 255)
-            pxf.draw_pixel_text(logic_surface, timer_text,
+            gt.draw(logic_surface, timer_text,
                                LOGIC_WIDTH // 2, 42, 20,
-                               timer_color, shadow=True, center_x=True)
+                               timer_color, "mono", shadow=True, center_x=True)
 
         # ---- 积分目标进度（积分目标模式）----
         score_goal = getattr(_current_map, 'score_goal', 0)
         if wmode == "score_target" and score_goal > 0:
             goal_text = f"Goal: {score_goal} ({int(player1.score / max(1, score_goal) * 100)}%)"
-            pxf.draw_pixel_text(logic_surface, goal_text,
+            gt.draw(logic_surface, goal_text,
                                LOGIC_WIDTH // 2, 42, 15,
-                               (200, 220, 255), shadow=True, center_x=True)
+                               (200, 220, 255), "mono", shadow=True, center_x=True)
 
         # ---- 爱心（复活次数）----
         if _player_lives_left > 0:
@@ -1871,9 +1861,9 @@ while running:
                 heart_text = "H " * _player_lives_left
             else:
                 heart_text = f"H x{_player_lives_left}"
-            pxf.draw_pixel_text(logic_surface, heart_text.strip(),
+            gt.draw(logic_surface, heart_text.strip(),
                                LOGIC_WIDTH - 24, 16, 18,
-                               (255, 60, 60), shadow=True, right_x=True)
+                               (255, 60, 60), "mono", shadow=True, right_x=True)
 
         # ---- 游戏结束/胜利叠加层 ----
         if _game_over:
@@ -1897,15 +1887,15 @@ while running:
 
         # 右上角 FPS
         fps_text = f"FPS {int(clock.get_fps())}"
-        pxf.draw_pixel_text(logic_surface, fps_text,
+        gt.draw(logic_surface, fps_text,
                            LOGIC_WIDTH - 16, 8, 18,
-                           (255, 255, 255), shadow=True, right_x=True)
+                           (255, 255, 255), "mono", shadow=True, right_x=True)
 
         # 飞行模式指示
         if player1.fly_mode:
-            pxf.draw_pixel_text(logic_surface, "[FLY]",
+            gt.draw(logic_surface, "[FLY]",
                                LOGIC_WIDTH // 2, LOGIC_HEIGHT - 36, 15,
-                               (100, 255, 200), shadow=True, center_x=True)
+                               (100, 255, 200), "mono", shadow=True, center_x=True)
 
         f += 1
         state_str = ("飞行" if player1.fly_mode
