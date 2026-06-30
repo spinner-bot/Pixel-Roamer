@@ -129,16 +129,25 @@ def _draw_bitmap(pattern: Tuple, w: float, h: float) -> Optional[pygame.Surface]
     try:
         _, size, pixels = pattern
         src = pygame.Surface((size, size))
+        # 用第一行第一列颜色填充，避免未初始化区域显示黑色
+        bg_color = (128, 128, 128)
+        if len(pixels) > 0 and len(pixels[0]) > 0:
+            c = pixels[0][0]
+            if isinstance(c, (tuple, list)):
+                bg_color = tuple(c[:3])
+        src.fill(bg_color)
+
         for row in range(size):
             if row >= len(pixels):
-                break
+                # 用上一行（或背景色）继续，不中断
+                continue
             row_data = pixels[row]
             row_len = len(row_data)
             for col in range(size):
                 if col < row_len:
                     color = row_data[col]
                 elif row_len > 0:
-                    color = row_data[-1]  # 用行尾颜色填充不足
+                    color = row_data[-1]
                 else:
                     continue
                 if isinstance(color, (tuple, list)):
