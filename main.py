@@ -1155,42 +1155,138 @@ def _run_buff_browser(logic_surface, dt):
                 pygame.draw.rect(logic_surface, (100, 200, 255), (40, cy, LOGIC_WIDTH - 80, row_h), 2)
             _draw_buff_icon(logic_surface, bt, 56, cy + (row_h - preview_size) // 2, preview_size)
             cat_str = cat_names.get(bt.category, bt.category)
-            line1 = f"[{bt.id}] {bt.name}  |  {bt.name2}  [{cat_str}]"
+            cat_colors = {"positive": (100, 220, 100), "neutral": (100, 180, 240), "negative": (240, 100, 100)}
+            cat_color = cat_colors.get(bt.category, (170, 170, 170))
+            line1 = f"[{bt.id}] {bt.name}  |  {bt.name2}"
             gt.draw(logic_surface, line1, 56 + preview_size + 16, cy + 10, 20,
                                 (255, 255, 210), "sans", shadow=True)
-            gt.draw(logic_surface, bt.desc, 56 + preview_size + 16, cy + 42, 17,
-                                (170, 190, 220), "sans", shadow=True)
+            line2 = f"[{cat_str}]  {bt.desc}"
+            gt.draw(logic_surface, line2, 56 + preview_size + 16, cy + 42, 17,
+                                cat_color, "sans", shadow=True)
 
 
 def _run_buff_detail(logic_surface, dt):
-    """Buff 详情页。"""
+    """Buff 详情页：3栏布局，参照方块详情。"""
     import buff_data
     from buff_system import BUFF_TYPES
     bid = _dev_buff_detail_id
     if bid is None: return
     bt = BUFF_TYPES.get(bid)
     if bt is None:
-        gt.draw(logic_surface, f"Buff {bid} 不存在", LOGIC_WIDTH // 2, 100, 22, (255, 100, 100), "sans", center_x=True)
+        gt.draw(logic_surface, f"Buff {bid} 不存在", LOGIC_WIDTH // 2, 100, 24, (255,100,100), "sans", center_x=True)
         return
 
+    M = 0.05
+    ML = int(LOGIC_WIDTH * M)
+    MR = int(LOGIC_WIDTH * (1-M))
+    MT = int(LOGIC_HEIGHT * M)
+    CONTENT_TOP = int(LOGIC_HEIGHT * 0.12)
+    CONTENT_BOT = int(LOGIC_HEIGHT * 0.97)
+    HINT_TOP = int(LOGIC_HEIGHT * 0.975)
     cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
-    title = f"Buff #{bid}  —  {bt.name} / {bt.name2}  [{cat_names.get(bt.category, bt.category)}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 10, 26, (255, 255, 200), "sans", shadow=True, center_x=True)
+    cat_colors = {"positive": (100, 220, 100), "neutral": (100, 180, 240), "negative": (240, 100, 100)}
+    cat_str = cat_names.get(bt.category, bt.category)
 
-    # 大图标
-    preview_size = 140
-    px, py = 100, 50
-    _draw_buff_icon(logic_surface, bt, px, py, preview_size)
+    # ==== 标题 ====
+    title = f"[{bt.id}] {bt.name}  |  {bt.name2}  [{cat_str}]"
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, MT + 20, 36,
+                        cat_colors.get(bt.category, (255, 255, 200)), "sans", shadow=True, center_x=True)
 
-    info_x = px + preview_size + 30
-    gt.draw(logic_surface, f"ID: {bt.id}   类别: {cat_names.get(bt.category, bt.category)}", info_x, py, 20, (255, 255, 240), "sans")
-    gt.draw(logic_surface, f"EN: {bt.name}", info_x, py + 28, 18, (200, 210, 230), "sans")
-    gt.draw(logic_surface, f"CN: {bt.name2}", info_x, py + 50, 18, (200, 210, 230), "sans")
-    gt.draw(logic_surface, f"描述: {bt.desc}", info_x, py + 78, 18, (220, 220, 200), "sans")
-    gt.draw(logic_surface, f"最大叠层: {bt.max_stacks}   冲突: {bt.conflicts}", info_x, py + 100, 16, (180, 190, 210), "sans")
+    # ==== 中区：左中右3栏 ====
+    cw = (MR - ML) // 3
+    col1_x = ML
+    col2_x = ML + cw
+    col3_x = ML + cw * 2
 
-    gt.draw(logic_surface, "U/Esc: 返回列表", LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+    for sep_x in [col2_x - 2, col3_x - 2]:
+        pygame.draw.line(logic_surface, (80, 80, 120), (sep_x, CONTENT_TOP), (sep_x, CONTENT_BOT), 1)
+
+    # -- 左栏：大图标 + 基本信息 --
+    preview_size = min(cw - 20, 200)
+    _draw_buff_icon(logic_surface, bt, col1_x + (cw - preview_size) // 2, CONTENT_TOP + 10, preview_size)
+
+    FS = 22
+    ly = CONTENT_TOP + preview_size + 20
+    lh = 32
+    linfos = [
+        f"ID: {bt.id}",
+        f"类别: {cat_str}",
+        f"EN: {bt.name}",
+        f"CN: {bt.name2}",
+        f"最大叠层: {bt.max_stacks}",
+    ]
+    for i, inf in enumerate(linfos):
+        if ly + i * lh > CONTENT_BOT - 10: break
+        gt.draw(logic_surface, inf, col1_x + 6, ly + i * lh, FS, (210, 220, 250), "sans", shadow=True)
+
+    # -- 中栏：效果描述 + 规则 --
+    my = CONTENT_TOP + 10
+    mh = 32
+    mid_attrs = [
+        f"描述: {bt.desc}",
+        f"Tick: {bt.tick}",
+        f"冲突: {bt.conflicts}",
+        f"被清除: {bt.cleanup_by}",
+        f"应用效果: {bt.on_apply}",
+        f"移除效果: {bt.on_remove}",
+    ]
+    for i, attr in enumerate(mid_attrs):
+        if my + i * mh > CONTENT_BOT - 10: break
+        gt.draw(logic_surface, attr, col2_x + 6, my + i * mh, FS, (210, 220, 250), "sans", shadow=True)
+
+    # -- 右栏：图标编码 --
+    ry = CONTENT_TOP + 8
+    sep_text = "======== 图标编码 ========"
+    gt.draw(logic_surface, sep_text, col3_x + cw // 2, ry, 22,
+                        (190, 200, 240), "sans", shadow=True, center_x=True)
+    ry += 32
+
+    if bt.icon is not None:
+        ptype = bt.icon[0]
+        if ptype == "bitmap":
+            size = bt.icon[1] if len(bt.icon) > 1 else "?"
+            pixels = bt.icon[2] if len(bt.icon) > 2 else []
+            gt.draw(logic_surface, f"编码: 位图", col3_x + 6, ry, 19, (200, 210, 240), "sans")
+            gt.draw(logic_surface, f"尺寸: {size}x{size}", col3_x + 6, ry + 26, 19, (180, 190, 220), "sans")
+            flat = "[" + ", ".join(str(row) for row in pixels[:16]) + (", ..." if len(pixels) > 16 else "") + "]"
+            chars_per_line = (cw - 20) // 7
+            bj = 0
+            while bj < len(flat):
+                chunk = flat[bj:bj + chars_per_line]
+                if ry + 52 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
+                gt.draw(logic_surface, chunk, col3_x + 6, ry + 52 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
+                bj += chars_per_line
+        elif ptype == "texture":
+            code = bt.icon[1] if len(bt.icon) > 1 else "?"
+            params = bt.icon[2] if len(bt.icon) > 2 else {}
+            gt.draw(logic_surface, f"编码: 预设", col3_x + 6, ry, 28, (200, 210, 240), "sans")
+            gt.draw(logic_surface, f"代码: {code}", col3_x + 6, ry + 32, 27, (180, 190, 220), "sans")
+            show_y = ry + 60
+            if isinstance(params, dict):
+                for k, v in params.items():
+                    if show_y > CONTENT_BOT - 16: break
+                    gt.draw(logic_surface, f"{k}: {v}", col3_x + 6, show_y, 22, (150, 170, 200), "sans")
+                    show_y += 28
+        elif ptype == "vector":
+            vw, vh = bt.icon[1]
+            cmds = bt.icon[2] if len(bt.icon) > 2 else []
+            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}", col3_x + 6, ry, 28, (200, 210, 240), "sans")
+            for j, cmd in enumerate(cmds):
+                cy2 = ry + 30 + j * 26
+                if cy2 > CONTENT_BOT - 16: break
+                ctype = cmd[0]
+                if ctype == "fill": c1 = cmd[1]; text = f"fill({c1[0]},{c1[1]},{c1[2]})"
+                elif ctype == "rect": text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},{cmd[5]})"
+                elif ctype == "circle": text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})"
+                else: text = str(cmd)
+                gt.draw(logic_surface, text, col3_x + 6, cy2, 21, (150, 170, 210), "sans")
+    else:
+        gt.draw(logic_surface, f"编码: 无  纯色图标", col3_x + 6, ry, 19, (160, 180, 200), "sans")
+
+    # ==== 下区 ====
+    gt.draw(logic_surface, "U / Esc  返回列表", LOGIC_WIDTH // 2, HINT_TOP + 4, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
+
 
 
 def _draw_buff_icon(surf, bt, x, y, size):
