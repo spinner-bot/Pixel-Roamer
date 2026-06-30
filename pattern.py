@@ -130,10 +130,21 @@ def _draw_bitmap(pattern: Tuple, w: float, h: float) -> Optional[pygame.Surface]
         _, size, pixels = pattern
         src = pygame.Surface((size, size))
         for row in range(size):
-            row_data = pixels[row] if row < len(pixels) else [(0,0,0)]*size
+            if row >= len(pixels):
+                break
+            row_data = pixels[row]
+            row_len = len(row_data)
             for col in range(size):
-                color = row_data[col] if col < len(row_data) else (0,0,0)
-                src.set_at((col, row), color[:3])
+                if col < row_len:
+                    color = row_data[col]
+                elif row_len > 0:
+                    color = row_data[-1]  # 用行尾颜色填充不足
+                else:
+                    continue
+                if isinstance(color, (tuple, list)):
+                    src.set_at((col, row), color[:3])
+                else:
+                    src.set_at((col, row), (128,128,128))
         return pygame.transform.scale(src, (int(w), int(h)))
     except Exception:
         return None
