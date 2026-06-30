@@ -1132,3 +1132,6 @@ for _src_id, _new_id in _VOID_SOURCES:
 
 # 加载扩展方块库（ID 200-302）
 from block_types_extended import BLOCK_TYPES as _ext
+# 加载功能方块库（ID 330-359）
+from block_types_functional import FUNCTIONAL_BLOCKS as _func
+BLOCK_TYPES.update(_func)

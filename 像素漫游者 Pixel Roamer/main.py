@@ -1705,8 +1705,24 @@ while running:
                     player1.hp = player1.hp_max
             # lives==0 表示无限复活，on_death 已经重置了
 
+        # ---- Buff 系统 tick ----
+        player1.tick_buffs(dt)
+        # buff 属性修正
+        buf_v_max = player1.get_buff_stat("v_max", player1._base_v_max)
+        buf_v_jump = player1.get_buff_stat("v_jump", player1._base_v_jump)
+        buf_stam_rec = player1.get_buff_stat("stamina_recovery", 3.0)
+        buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
+        player1.v_max = buf_v_max
+        player1.v_jump = buf_v_jump
+        # 控制效果检查
+        rooted = player1.has_buff(21)
+        stunned = player1.has_buff(28)
+        grounded = player1.has_buff(27)
+        hopping = player1.has_buff(33)
+        reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8)
+
         # ---- 移动物理（游戏结束/胜利时冻结）----
-        if not _game_over and not _game_win:
+        if not _game_over and not _game_win and not stunned:
             if player1.fly_mode:
                 # ---- 飞行模式 ----
                 fly_dx, fly_dy = 0.0, 0.0
@@ -1735,33 +1751,34 @@ while running:
             else:
                 # ---- 正常模式 ----
                 dir_x = 0.0
-                if keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]:
-                    dir_x -= 0.35
-                if keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]:
-                    dir_x += 0.35
+                if not rooted and not hopping:
+                    left_key = keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]
+                    right_key = keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]
+                    if reversed_ctrl:
+                        left_key, right_key = right_key, left_key
+                    if left_key:
+                        dir_x -= 0.35
+                    if right_key:
+                        dir_x += 0.35
                 player1.move(dir_x)
 
                 # ---- 攀爬: W/↑向上 ----
                 sm = getattr(player1, '_stamina_mult', 1.0)
+                silenced = getattr(player1, '_silenced', False)
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
                     player1.climb_move(1.0)
-                    # 攀爬上升消耗体力 8/秒（受方块 k_stamina 影响）
-                    player1.consume_stamina(8.0 * sm * dt)
+                    if not silenced: player1.consume_stamina(14.0 * sm * buf_stam_cost * dt)
                 elif player1.is_climbing:
-                    # 悬挂不动消耗体力 5/秒
-                    player1.consume_stamina(5.0 * sm * dt)
+                    if not silenced: player1.consume_stamina(8.8 * sm * buf_stam_cost * dt)
 
                 # ---- 游泳: W/↑向上，攀爬优先 ----
                 swimming_now = False
                 if not player1.is_climbing and player1.can_swim and not player1.on_ground:
                     up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
                     if up_held:
-                        # 主动上浮：速度 = 浮力（方向向上）
                         swim_v = player1._swim_force
-                        # 浮力速度在阻力前添加
-                        player1.v_y += swim_v * dt * 30  # 缩放因子使其有用
-                        # 游泳消耗体力 12/秒（受方块 k_stamina 影响）
-                        player1.consume_stamina(12.0 * sm * dt)
+                        player1.v_y += swim_v * dt * 30
+                        if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
                         swimming_now = True
 
                 # 体力耗尽时无法攀爬/游泳
@@ -1770,11 +1787,11 @@ while running:
 
                 # ---- 体力恢复 ----
                 if not player1.is_climbing and not swimming_now and player1.stamina < player1.stamina_max:
-                    player1.recover_stamina(15.0 * dt)  # 恢复 15/秒
+                    player1.recover_stamina(buf_stam_rec * dt)
 
-                if jump_pressed:
-                    player1.jump()
-                    player1.consume_stamina(15.0 * sm)  # 跳跃消耗15体力
+                if jump_pressed and not grounded:
+                    if player1.jump():
+                        if not silenced: player1.consume_stamina(15.0 * sm * buf_stam_cost)
                     jump_pressed = False
 
                 player1.update_physics(dt, _current_map)

@@ -84,6 +84,11 @@ class Creature:
         self.score = 0                 # 玩家积分
         self._reached_end = False      # 是否触碰终点
 
+        # ---- Buff 系统 ----
+        self.buffs: list = []          # [BuffInstance, ...]
+        self._buff_timer = 0.0         # buff tick 累计时间
+        self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
+
     # ----- 游戏矩形 -----
     def get_game_rect(self) -> GameRect:
         return GameRect(self._x - self._w / 2, self._y - self._h / 2, self._w, self._h)
@@ -112,7 +117,11 @@ class Creature:
         magic_mult = 1.0 + magic_correction
 
         total_raw = phys_damage * phys_mult + magic_damage * magic_mult
-        damage = total_raw * (1 - self.dr)
+        # 勇气效果：额外减伤
+        courage_val = getattr(self, '_courage_dr', 0.0)
+        weakness_mult = getattr(self, '_weakness_mult', 1.0)
+        effective_dr = max(0.0, min(1.0, self.dr + courage_val))
+        damage = total_raw * (1 - effective_dr) * weakness_mult
 
         if damage <= 0:
             return 0.0
@@ -362,12 +371,28 @@ class Creature:
         if not types:
             return
 
+        # ---- 一次性效果冷却系统 ----
+        if not hasattr(self, '_special_cooldowns'):
+            self._special_cooldowns = {}
+        for k in list(self._special_cooldowns):
+            self._special_cooldowns[k] -= dt
+            if self._special_cooldowns[k] <= 0:
+                del self._special_cooldowns[k]
+
         self.can_climb = any(bt.climbable for bt in types)
         self.can_swim = any(bt.swim_f > 0 for bt in types)
         # 若接触池中有可游泳的方块，取最大浮力
         self._swim_force = max((bt.swim_f for bt in types), default=0.0)
         # 体力消耗倍率（取接触方块中最大值）
         self._stamina_mult = max((bt.k_stamina for bt in types), default=1.0)
+        # 沉默效果（抑制体力消耗）
+        self._silenced = any(bt.special == "silence" for bt in types)
+        # 勇气效果（临时减伤）
+        courage_val = max((float(bt.special_data) for bt in types if bt.special == "courage"), default=0.0)
+        self._courage_dr = courage_val
+        # 虚弱效果（受伤加深）
+        weakness_val = max((float(bt.special_data) for bt in types if bt.special == "weakness"), default=0.0)
+        self._weakness_mult = 1.0 + weakness_val
 
         # 攀爬中但已离开可攀爬方块：自动解除攀爬状态
         if self.is_climbing and not self.can_climb:
@@ -474,6 +499,275 @@ class Creature:
                     rx, ry = bt.special_data
                     self._x += random.uniform(-rx, rx)
                     self._y += random.uniform(-ry, ry)
+
+                # ========== 新增功能方块特效 ==========
+                elif bt.special == "catapult" and bt.special_data is not None:
+                    # 弹射：设置初速度 (vx, vy)
+                    if self._special_cooldowns.get("catapult", 0) <= 0:
+                        vx, vy = bt.special_data
+                        self.v_x = float(vx)
+                        self.v_y = float(vy)
+                        self._special_cooldowns["catapult"] = 0.4
+
+                elif bt.special == "dash" and bt.special_data is not None:
+                    # 水平冲刺：special_data = 速度
+                    if self._special_cooldowns.get("dash", 0) <= 0:
+                        self.v_x = float(bt.special_data)
+                        self._special_cooldowns["dash"] = 0.3
+
+                elif bt.special == "freeze":
+                    # 冻结：清空速度
+                    if self._special_cooldowns.get("freeze", 0) <= 0:
+                        self.v_x = 0.0
+                        self.v_y = 0.0
+                        self._special_cooldowns["freeze"] = 0.5
+
+                elif bt.special == "full_heal":
+                    # 瞬间满血（一次性）
+                    if self._special_cooldowns.get("full_heal", 0) <= 0:
+                        self.hp = self.hp_max
+                        self._special_cooldowns["full_heal"] = 2.0
+
+                elif bt.special == "full_stamina":
+                    # 瞬间满体力（一次性）
+                    if self._special_cooldowns.get("full_stamina", 0) <= 0:
+                        self.stamina = self.stamina_max
+                        self._special_cooldowns["full_stamina"] = 2.0
+
+                elif bt.special == "magnetic" and bt.special_data is not None:
+                    # 磁力吸引：向方块中心加速，special_data = 力度
+                    force = float(bt.special_data)
+                    grect = self.get_game_rect()
+                    cx, cy = self._x, self._y + self._h / 2
+                    # 在接触池中找到该方块坐标
+                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
+                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+                            coord = world._wrap_grid_coord(gx, gy)
+                            if coord is None:
+                                continue
+                            tile = world.grid.get(coord)
+                            if tile is not None and tile.type_id == bt.id:
+                                block_cx, block_cy = gx + 0.5, gy + 0.5
+                                dx = block_cx - cx
+                                dy = block_cy - cy
+                                dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
+                                self.v_x += dx / dist * force * dt * 10
+                                self.v_y += dy / dist * force * dt * 10
+                                break
+
+                elif bt.special == "set_spawn":
+                    # 设置重生点（一次性）
+                    if self._special_cooldowns.get("set_spawn", 0) <= 0:
+                        if hasattr(self, "spawn_pos"):
+                            self.spawn_pos = (self._x, self._y)
+                            self._special_cooldowns["set_spawn"] = 3.0
+
+                elif bt.special == "fortune" and bt.special_data is not None:
+                    # 一次性积分奖励
+                    if self._special_cooldowns.get("fortune", 0) <= 0:
+                        self.score += int(bt.special_data)
+                        self._special_cooldowns["fortune"] = 1.5
+
+                elif bt.special == "poison" and bt.special_data is not None:
+                    # 毒：无视50%护盾的伤害
+                    raw_dmg = float(bt.special_data) * dt
+                    bypass = raw_dmg * 0.5
+                    self.take_raw_damage(bypass)
+                    if self.shield > 0:
+                        self.shield = max(0, self.shield - (raw_dmg - bypass))
+                    else:
+                        self.hp = max(0, self.hp - (raw_dmg - bypass))
+
+                elif bt.special == "berserk" and bt.special_data is not None:
+                    # 狂暴：攻击翻倍但持续受伤
+                    mult = float(bt.special_data)
+                    self.phys_atk = int(self.phys_atk * mult) if not hasattr(self, '_berserk_active') else self.phys_atk
+                    self._berserk_active = True
+                    self.take_raw_damage(3.0 * dt)
+
+                elif bt.special == "phantom":
+                    # 幻影：接触后3秒内可穿透固体
+                    if self._special_cooldowns.get("phantom", 0) <= 0:
+                        self._phantom_active = True
+                        self._phantom_timer = 3.0
+                        self._special_cooldowns["phantom"] = 5.0
+
+                elif bt.special == "slow_field" and bt.special_data is not None:
+                    # 减速场
+                    self.v_max = self._base_v_max * float(bt.special_data)
+
+                elif bt.special == "gravity_well" and bt.special_data is not None:
+                    # 重力井：增加向下的加速度
+                    self.v_y -= float(bt.special_data) * dt
+
+                elif bt.special == "wind" and bt.special_data is not None:
+                    # 风力：持续推力 (vx, vy)
+                    wx, wy = bt.special_data
+                    self.v_x += float(wx) * dt
+                    self.v_y += float(wy) * dt
+
+                elif bt.special == "echo":
+                    # 回声：无功能效果，仅视觉/音频提示（在 main.py 处理）
+                    pass
+
+                elif bt.special == "confusion":
+                    # 混乱：短暂反转移动方向
+                    if self._special_cooldowns.get("confusion", 0) <= 0:
+                        self._confused = True
+                        self._confusion_timer = 2.0
+                        self._special_cooldowns["confusion"] = 8.0
+
+        # ---- 时效状态清理 ----
+        # 狂暴：离开狂暴方块后重置
+        if not any(bt.special == "berserk" for bt in types):
+            if hasattr(self, '_berserk_active') and self._berserk_active:
+                self.phys_atk = getattr(self, '_base_phys_atk', self.phys_atk)
+                self._berserk_active = False
+
+        # 幻影：计时衰减
+        if hasattr(self, '_phantom_timer') and self._phantom_timer > 0:
+            self._phantom_timer -= dt
+            if self._phantom_timer <= 0:
+                self._phantom_active = False
+
+        # 混乱：计时衰减
+        if hasattr(self, '_confusion_timer') and self._confusion_timer > 0:
+            self._confusion_timer -= dt
+            if self._confusion_timer <= 0:
+                self._confused = False
+
+        # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
+
+    # ================================================================
+    #  Buff 系统
+    # ================================================================
+    def apply_buff(self, buff_id: int, params: tuple = (),
+                   duration: float = None, source=None):
+        """给生物添加一个 buff。已存在则刷新时长。"""
+        from buff_system import BUFF_TYPES, BuffInstance
+        bt = BUFF_TYPES.get(buff_id)
+        if bt is None:
+            return
+
+        # 检查冲突：新 buff 会移除冲突列表中的 buff
+        for cid in bt.conflicts:
+            self.remove_buff(cid)
+        # 检查清理：某些 buff 获取时会清除自身
+        for cid in bt.cleanup_by:
+            if self.has_buff(cid):
+                self.remove_buff(buff_id)
+                return
+
+        # 已存在则刷新
+        for b in self.buffs:
+            if b.buff_id == buff_id:
+                b.refresh(params, duration)
+                return
+
+        # 新建
+        inst = BuffInstance(buff_id, params, duration, source)
+        inst.applied_at = self._buff_game_time
+        self.buffs.append(inst)
+
+    def remove_buff(self, buff_id: int):
+        """移除指定 buff。"""
+        self.buffs = [b for b in self.buffs if b.buff_id != buff_id]
+
+    def has_buff(self, buff_id: int) -> bool:
+        return any(b.buff_id == buff_id for b in self.buffs)
+
+    def clear_buffs(self, category: str = None):
+        """清除 buff。category 可选 positive/neutral/negative。"""
+        from buff_system import BUFF_TYPES, CAT_NEGATIVE
+        if category is None:
+            self.buffs.clear()
+        else:
+            self.buffs = [b for b in self.buffs
+                          if BUFF_TYPES.get(b.buff_id) and
+                          BUFF_TYPES[b.buff_id].category != category]
+
+    def tick_buffs(self, dt: float):
+        """每帧处理 buff 的持续时间衰减和 tick 效果。"""
+        self._buff_game_time += dt
+
+        # 过期检测
+        expired = []
+        for b in self.buffs:
+            if b.tick(dt):
+                expired.append(b.buff_id)
+        for bid in expired:
+            self.remove_buff(bid)
+
+        # Tick 效果（每秒处理一次，累积 dt）
+        self._buff_timer += dt
+        tick_interval = 0.25  # 每 0.25 秒 tick 一次
+        if self._buff_timer < tick_interval:
+            return
+        self._buff_timer -= tick_interval
+
+        from buff_system import BUFF_TYPES
+        for b in self.buffs:
+            bt = BUFF_TYPES.get(b.buff_id)
+            if bt is None or bt.tick is None:
+                continue
+            p = b.params
+
+            # ---- 恢复/伤害类 ----
+            if bt.tick == "regen":
+                amt = float(p[0]) if p else 3.0
+                self.heal(amt * tick_interval)
+            elif bt.tick == "shield_regen":
+                amt = float(p[0]) if p else 2.0
+                self.add_shield(amt * tick_interval, None)
+            elif bt.tick == "burning":
+                amt = float(p[0]) if p else 5.0
+                self.take_raw_damage(amt * tick_interval)
+            elif bt.tick == "bleeding":
+                pct = float(p[0]) if p else 1.0
+                self.take_raw_damage(self.hp * pct / 100.0 * tick_interval)
+            elif bt.tick == "cleansing":
+                interval = float(p[0]) if p else 5.0
+                self._buff_timer_cleanse = getattr(self, '_buff_timer_cleanse', 0) + tick_interval
+                if self._buff_timer_cleanse >= interval:
+                    self._buff_timer_cleanse -= interval
+                    for cb in self.buffs:
+                        cbt = BUFF_TYPES.get(cb.buff_id)
+                        if cbt and cbt.category == CAT_NEGATIVE and cb.buff_id != bt.id:
+                            self.remove_buff(cb.buff_id)
+                            break
+
+    def get_buff_stat(self, stat_name: str, base_value: float) -> float:
+        """根据活跃 buff 计算修改后的属性值。"""
+        from buff_system import BUFF_TYPES
+        result = base_value
+        for b in self.buffs:
+            bt = BUFF_TYPES.get(b.buff_id)
+            if bt is None:
+                continue
+            p = b.params
+            # 速度修正
+            if stat_name == "v_max":
+                if bt.tick == "swiftness":
+                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.3
+                elif bt.tick == "slowed":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
+            elif stat_name == "v_jump":
+                if bt.tick == "leaping":
+                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
+            elif stat_name == "stamina_recovery":
+                if bt.tick == "vigor":
+                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
+                elif bt.tick == "fatigue":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
+            elif stat_name == "stamina_cost":
+                if bt.tick == "endurance":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
+                elif bt.tick == "weakened":
+                    result *= float(p[0]) if p else 2.0
+            elif stat_name == "gravity":
+                if bt.tick == "feather":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
+        return result
 
     # ----- 工具 -----
     def get_center(self) -> Tuple[float, float]:
