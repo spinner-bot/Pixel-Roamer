@@ -762,28 +762,30 @@ def _run_block_browser(logic_surface, dt):
         _run_block_detail(logic_surface, dt)
         return
 
-    # 标题
+    # 标题 (5%-15% 区域)
+    TITLE_Y = int(LOGIC_HEIGHT * 0.07)
+    HINT_Y = int(LOGIC_HEIGHT * 0.925)
     title = f"方块预览器 [{_dev_block_browser_mode.upper()}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 8, 36,
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, TITLE_Y, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  B/Esc:返回"
-    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 20, 18,
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, HINT_Y, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
     cursor = _dev_block_browser_cursor
+    CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
 
     if _dev_block_browser_mode == "grid":
-        # 网格模式
         COLS = 8
         cell_w = 170
-        cell_h = 170
+        cell_h = 165
         preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
-        start_y = 62
+        start_y = CONTENT_TOP2
         rows = (len(all_ids) + COLS - 1) // COLS
 
-        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // cell_h)
+        visible_rows = max(1, (LOGIC_HEIGHT * 0.68) // cell_h)
         cursor_row = cursor // COLS
         if cursor_row < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor_row
@@ -819,8 +821,8 @@ def _run_block_browser(logic_surface, dt):
         # 列表模式 — 2行布局
         row_h = 90
         preview_size = 60
-        start_y = 64
-        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // row_h)
+        start_y = CONTENT_TOP2
+        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // row_h)
 
         if cursor < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor
@@ -1084,11 +1086,15 @@ def _run_buff_browser(logic_surface, dt):
         _run_buff_detail(logic_surface, dt)
         return
 
+    TITLE_Y = int(LOGIC_HEIGHT * 0.07)
+    HINT_Y = int(LOGIC_HEIGHT * 0.925)
+    CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
+
     title = f"Buff 预览器 [{_dev_buff_browser_mode.upper()}]"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 8, 36,
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, TITLE_Y, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
     mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  U/Esc:返回"
-    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 20, 18,
+    gt.draw(logic_surface, mode_hint, LOGIC_WIDTH // 2, HINT_Y, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
 
     name_key = "name2" if _dev_buff_browser_show_name2 else "name"
@@ -1097,12 +1103,12 @@ def _run_buff_browser(logic_surface, dt):
     if _dev_buff_browser_mode == "grid":
         COLS = 8
         cell_w = 170
-        cell_h = 170
+        cell_h = 165
         preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
-        start_y = 62
+        start_y = CONTENT_TOP2
         rows = (len(all_ids) + COLS - 1) // COLS
-        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // cell_h)
+        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // cell_h)
 
         cursor_row = cursor // COLS
         if cursor_row < _dev_buff_browser_scroll:
@@ -1128,8 +1134,8 @@ def _run_buff_browser(logic_surface, dt):
                 gt.draw(logic_surface, label, cx + cell_w // 2, cy + preview_size + 22, 20,
                                     (220, 220, 220), "sans", shadow=True, center_x=True)
     else:
-        row_h = 90; preview_size = 60; start_y = 64
-        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // row_h)
+        row_h = 90; preview_size = 60; start_y = CONTENT_TOP2
+        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // row_h)
         cat_names = {"positive": "有益", "neutral": "中性", "negative": "有害"}
 
         if cursor < _dev_buff_browser_scroll:
