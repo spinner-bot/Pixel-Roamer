@@ -963,8 +963,8 @@ def _run_block_detail(logic_surface, dt):
         elif ptype == "texture":
             code = bt.pattern[1] if len(bt.pattern) > 1 else "?"
             params = bt.pattern[2] if len(bt.pattern) > 2 else {}
-            preset_names = {"checkerboard": "棋盘格", "gradient": "渐变", "noise": "噪点",
-                           "brick": "砖墙", "wood": "木纹", "stone": "石纹"}
+            preset_names = {"checkerboard": "棋盘格", "gradient_h": "水平渐变", "gradient_v": "垂直渐变",
+                           "noise": "噪点", "brick": "砖墙", "wood": "木纹", "stone": "石纹"}
             gt.draw(logic_surface, f"编码: 预设图案", col3_x + 6, ry, 28, (200, 210, 240), "sans")
             gt.draw(logic_surface, f"代码: {code} ({preset_names.get(code, code)})",
                                 col3_x + 6, ry + 32, 27, (180, 190, 220), "sans")
@@ -975,6 +975,9 @@ def _run_block_detail(logic_surface, dt):
                     gt.draw(logic_surface, f"{k}: {v}",
                                         col3_x + 6, show_y, 22, (150, 170, 200), "sans")
                     show_y += 28
+            elif isinstance(params, (tuple, list)):
+                gt.draw(logic_surface, f"参数: {params}",
+                                    col3_x + 6, show_y, 18, (150, 170, 200), "sans")
         elif ptype == "vector":
             vw, vh = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
@@ -1268,6 +1271,9 @@ def _run_buff_detail(logic_surface, dt):
                     if show_y > CONTENT_BOT - 16: break
                     gt.draw(logic_surface, f"{k}: {v}", col3_x + 6, show_y, 22, (150, 170, 200), "sans")
                     show_y += 28
+            elif isinstance(params, (tuple, list)):
+                gt.draw(logic_surface, f"参数: {params}",
+                                    col3_x + 6, show_y, 18, (150, 170, 200), "sans")
         elif ptype == "vector":
             vw, vh = bt.icon[1]
             cmds = bt.icon[2] if len(bt.icon) > 2 else []
