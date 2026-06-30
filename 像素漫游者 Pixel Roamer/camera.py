@@ -27,16 +27,24 @@ class Camera:
         half_world_h = (self.logic_height / self.scale) / 2
 
         if not self.world.loop_x:
-            if self.x - half_world_w < 0:
-                self.x = half_world_w
-            if self.x + half_world_w > self.world.width:
-                self.x = self.world.width - half_world_w
+            # 视口大于地图时，居中显示地图
+            if half_world_w * 2 >= self.world.width:
+                self.x = self.world.width / 2
+            else:
+                if self.x - half_world_w < 0:
+                    self.x = half_world_w
+                if self.x + half_world_w > self.world.width:
+                    self.x = self.world.width - half_world_w
 
         if not self.world.loop_y:
-            if self.y - half_world_h < 0:
-                self.y = half_world_h
-            if self.y + half_world_h > self.world.height:
-                self.y = self.world.height - half_world_h
+            # 视口大于地图时，居中显示地图
+            if half_world_h * 2 >= self.world.height:
+                self.y = self.world.height / 2
+            else:
+                if self.y - half_world_h < 0:
+                    self.y = half_world_h
+                if self.y + half_world_h > self.world.height:
+                    self.y = self.world.height - half_world_h
 
     def world_to_screen(self, wx: float, wy: float) -> Tuple[float, float]:
         """游戏坐标（x右y上）→ 逻辑画布像素坐标（y下）"""

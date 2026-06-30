@@ -454,18 +454,6 @@ def draw_player_info(surf, player, dt: float):
     pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W + 10, info_y, 15, (200, 210, 230), shadow=True)
 
 
-# ===================== 坐标信息绘制 =====================
-def draw_player_info(surf, player, dt: float):
-    """在血条下方绘制玩家坐标（简洁大字）。"""
-    px, py = player.get_center()
-    # 格式：1位小数，小数后强制1位，前面不补零
-    x_str = f"{px:.1f}"
-    y_str = f"{py:.1f}"
-    info = f"X {x_str}   Y {y_str}"
-    text_img = FONT28.render(info, True, (220, 225, 240))
-    surf.blit(text_img, (60, 66))
-
-
 # ===================== 濒死滤镜 =====================
 def draw_near_death_vignette(surf, player):
     """当血量极低时，屏幕边缘绘制渐变红圈，确保覆盖四角。"""

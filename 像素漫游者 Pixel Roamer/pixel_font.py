@@ -10,7 +10,8 @@ from typing import List, Tuple, Dict
 # 基础设计网格 (宽 x 高)，用于定义字符形状
 GRID_W = 10
 GRID_H = 14
-LINE_WIDTH_BASE = 2.2  # 基础线宽（粗线条，卡通风格）
+LINE_WIDTH_BASE = 2.8  # 基础线宽（粗线条，卡通风格）
+CHAR_SPACING = 0.85    # 字符间距系数（越大越宽松）
 
 # ===================== 字符关键点数据 =====================
 # 每个字符定义为一组线段: [(x1, y1, x2, y2), ...]
@@ -210,7 +211,7 @@ _CHAR_SEGMENTS['★'] = [
 
 def get_char_width(target_h: float) -> float:
     """返回给定高度下单个字符的宽度。"""
-    return target_h * GRID_W / GRID_H * 0.7  # 字符间距
+    return target_h * GRID_W / GRID_H * CHAR_SPACING
 
 
 def text_width(text: str, target_h: float) -> float:
