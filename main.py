@@ -774,8 +774,8 @@ def _run_block_browser(logic_surface, dt):
 
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
     cursor = _dev_block_browser_cursor
-    CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
-    CONTENT_H = int(LOGIC_HEIGHT * 0.77)  # 20%-97%
+    CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.12)
+    CONTENT_H = int(LOGIC_HEIGHT * 0.85)  # 12%-97%
 
     if _dev_block_browser_mode == "grid":
         COLS = 8
@@ -877,9 +877,9 @@ def _run_block_detail(logic_surface, dt):
     ML = int(LOGIC_WIDTH * M)
     MR = int(LOGIC_WIDTH * (1-M))
     MT = int(LOGIC_HEIGHT * M)
-    CONTENT_TOP = int(LOGIC_HEIGHT * 0.20)
-    CONTENT_BOT = int(LOGIC_HEIGHT * 0.88)
-    HINT_TOP = int(LOGIC_HEIGHT * 0.92)
+    CONTENT_TOP = int(LOGIC_HEIGHT * 0.12)
+    CONTENT_BOT = int(LOGIC_HEIGHT * 0.97)
+    HINT_TOP = int(LOGIC_HEIGHT * 0.975)
 
     # ==== 标题 (5%-15%) ====
     title = f"[{bt.id}] {bt.name}  |  {bt.name2}"
