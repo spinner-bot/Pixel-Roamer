@@ -763,7 +763,7 @@ def _run_block_browser(logic_surface, dt):
         return
 
     # 标题 (5%-15% 区域)
-    TITLE_Y = int(LOGIC_HEIGHT * 0.07)
+    TITLE_Y = int(LOGIC_HEIGHT * 0.06) - 18  # 标题中心在6%
     HINT_Y = int(LOGIC_HEIGHT * 0.975)
     title = f"方块预览器 [{_dev_block_browser_mode.upper()}]"
     gt.draw(logic_surface, title, LOGIC_WIDTH // 2, TITLE_Y, 36,
@@ -1087,7 +1087,7 @@ def _run_buff_browser(logic_surface, dt):
         _run_buff_detail(logic_surface, dt)
         return
 
-    TITLE_Y = int(LOGIC_HEIGHT * 0.07)
+    TITLE_Y = int(LOGIC_HEIGHT * 0.06) - 18  # 标题中心在6%
     HINT_Y = int(LOGIC_HEIGHT * 0.975)
     CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
     CONTENT_H = int(LOGIC_HEIGHT * 0.77)
