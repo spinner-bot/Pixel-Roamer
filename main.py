@@ -861,7 +861,7 @@ def _run_block_browser(logic_surface, dt):
 
 
 def _run_block_detail(logic_surface, dt):
-    """方块详情页：上中下3区 — 标题 | 左预览+属性 / 右外观 | 操作指引。"""
+    """方块详情页：上中下3区 — 标题 | 左中右3栏 | 操作指引。5%边距。"""
     from block_types_data import BLOCK_TYPES
     bid = _dev_block_detail_id
     if bid is None: return
@@ -870,117 +870,136 @@ def _run_block_detail(logic_surface, dt):
         gt.draw(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 24, (255,100,100), "sans", center_x=True)
         return
 
-    # ==== 上区：标题 ====
+    M = 0.05
+    ML = int(LOGIC_WIDTH * M)
+    MR = int(LOGIC_WIDTH * (1-M))
+    MT = int(LOGIC_HEIGHT * M)
+    CONTENT_TOP = int(LOGIC_HEIGHT * 0.20)
+    CONTENT_BOT = int(LOGIC_HEIGHT * 0.88)
+    HINT_TOP = int(LOGIC_HEIGHT * 0.92)
+
+    # ==== 标题 (5%-15%) ====
     title = f"[{bt.id}] {bt.name}  |  {bt.name2}"
-    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, 6, 30,
+    gt.draw(logic_surface, title, LOGIC_WIDTH // 2, MT + 20, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
 
-    # ==== 中区：左右分栏 ====
-    mid_top = 44
-    mid_bot = LOGIC_HEIGHT - 42
-    div_x = LOGIC_WIDTH // 2 + 80  # 分隔竖线位置
+    # ==== 中区：左中右3栏 (20%-88%) ====
+    cw = (MR - ML) // 3
+    col1_x = ML
+    col2_x = ML + cw
+    col3_x = ML + cw * 2
 
-    # 分隔竖线
-    pygame.draw.line(logic_surface, (100, 100, 140), (div_x, mid_top), (div_x, mid_bot), 2)
+    for sep_x in [col2_x - 2, col3_x - 2]:
+        pygame.draw.line(logic_surface, (80, 80, 120), (sep_x, CONTENT_TOP), (sep_x, CONTENT_BOT), 1)
 
-    # -- 左栏：大预览 + 属性纵向排列 --
-    preview_size = 160
-    lx = 50
-    _draw_block_preview(logic_surface, bt, lx, mid_top, preview_size)
+    # -- 左栏：预览 + 基本信息 --
+    preview_size = min(cw - 20, 150)
+    _draw_block_preview(logic_surface, bt, col1_x + (cw - preview_size) // 2, CONTENT_TOP + 10, preview_size)
 
-    # 属性列表（预览图下方）
-    ly = mid_top + preview_size + 10
-    lh = 24
-    left_attrs = [
-        f"实体: {bt.is_solid}        单向: {bt.one_way}",
-        f"可攀爬: {bt.climbable}    浮力: {bt.swim_f:.2f}" if hasattr(bt, 'swim_f') else f"可攀爬: {bt.climbable}",
+    ly = CONTENT_TOP + preview_size + 20
+    lh = 25
+    linfos = [
+        f"ID: {bt.id}",
+        f"实体: {bt.is_solid}",
+        f"单向: {bt.one_way}",
+        f"可攀爬: {bt.climbable}",
+        f"浮力: {bt.swim_f:.2f}" if hasattr(bt, 'swim_f') else "浮力: -",
+        f"颜色: {bt.color}",
+    ]
+    for i, inf in enumerate(linfos):
+        if ly + i * lh > CONTENT_BOT - 10: break
+        gt.draw(logic_surface, inf, col1_x + 6, ly + i * lh, 18, (210, 220, 250), "sans", shadow=True)
+
+    # -- 中栏：物理/战斗属性 --
+    my = CONTENT_TOP + 10
+    mh = 25
+    mid_attrs = [
         f"表面摩擦: {bt.surface_f:.3f}",
         f"空间阻力: {bt.space_f:.3f}",
         f"弹跳: {bt.bounce}",
         f"加速k: {bt.accel_k}",
         f"加速b: {bt.accel_b}",
         f"伤害/s: {bt.damage_ps}",
-    ]
-    for i, attr in enumerate(left_attrs):
-        if ly + i * lh > mid_bot - 10: break
-        gt.draw(logic_surface, attr, lx + 4, ly + i * lh, 19, (220, 230, 255), "sans", shadow=True)
-
-    # -- 右栏：更多属性 + 外观数据 --
-    rx = div_x + 20
-    ry = mid_top
-    rh = 26
-    right_attrs = [
         f"体力倍率: {bt.k_stamina:.2f}",
-        f"光照等级: {bt.light_level}",
-        f"特殊效果: {bt.special}",
-        f"效果数据: {str(bt.special_data)[:50]}",
+        f"光照: {bt.light_level}",
+        f"特殊: {bt.special}",
+        f"特数: {str(bt.special_data)[:40]}",
         f"破坏等级: {bt.break_level}",
         f"破坏血量: {bt.break_hp:.1f}",
         f"破坏特效: {bt.break_special}",
         f"掉落物: {bt.drops_item_id}",
-        f"颜色: {bt.color}",
     ]
-    for i, attr in enumerate(right_attrs):
-        if ry + i * rh > mid_bot - 200: break
-        gt.draw(logic_surface, attr, rx, ry + i * rh, 19, (220, 230, 255), "sans", shadow=True)
+    for i, attr in enumerate(mid_attrs):
+        if my + i * mh > CONTENT_BOT - 10: break
+        gt.draw(logic_surface, attr, col2_x + 6, my + i * mh, 18, (210, 220, 250), "sans", shadow=True)
 
-    # 外观数据（右栏中下部，带分隔符）
-    app_y = ry + len(right_attrs) * rh + 30
-    sep = "═" * 42
-    gt.draw(logic_surface, sep, rx, app_y, 20, (180, 190, 220), "sans", shadow=True)
+    # -- 右栏：外观编码 --
+    ry = CONTENT_TOP + 8
+    sep_text = "======== 外观编码 ========"
+    gt.draw(logic_surface, sep_text, col3_x + cw // 2, ry, 20,
+                        (190, 200, 240), "sans", shadow=True, center_x=True)
+    ry += 30
 
     if bt.pattern is not None:
         ptype = bt.pattern[0]
         if ptype == "bitmap":
-            pw, ph = bt.pattern[1], bt.pattern[2]
-            data = bt.pattern[3] if len(bt.pattern) > 3 else []
-            gt.draw(logic_surface, f"编码: 位图  大小: {pw}×{ph}",
-                                rx, app_y + 30, 18, (200, 210, 240), "sans")
-            data_text = str(data)
-            # 逐段绘制长文本，自动截断
-            max_chars = 100
-            chunk = data_text[:max_chars] + ("…" if len(data_text) > max_chars else "")
-            gt.draw(logic_surface, f"数据: {chunk}",
-                                rx, app_y + 54, 14, (160, 180, 210), "sans")
-        elif ptype in ("preset", "texture"):
-            preset = bt.pattern[3] if len(bt.pattern) > 3 else "?"
-            pw, ph = bt.pattern[1], bt.pattern[2]
+            size = bt.pattern[1] if len(bt.pattern) > 1 else "?"
+            pixels = bt.pattern[2] if len(bt.pattern) > 2 else []
+            gt.draw(logic_surface, f"编码: 位图", col3_x + 6, ry, 17, (200, 210, 240), "sans")
+            gt.draw(logic_surface, f"尺寸: {size}x{size}", col3_x + 6, ry + 24, 17, (180, 190, 220), "sans")
+            # 逐行展示像素，每行一个列表
+            display_lines = []
+            display_lines.append("[")
+            for row_idx, row in enumerate(pixels[:8]):
+                suffix = "," if row_idx < min(8, len(pixels)) - 1 else ""
+                display_lines.append("  " + str(row) + suffix)
+            if len(pixels) > 8:
+                display_lines.append("  ... (" + str(len(pixels)) + " rows total)")
+            display_lines.append("]")
+            for j, dline in enumerate(display_lines):
+                if ry + 52 + j * 14 > CONTENT_BOT - 10: break
+                gt.draw(logic_surface, dline, col3_x + 6, ry + 52 + j * 14, 11, (150, 170, 210), "sans")
+        elif ptype == "texture":
+            code = bt.pattern[1] if len(bt.pattern) > 1 else "?"
+            params = bt.pattern[2] if len(bt.pattern) > 2 else {}
             preset_names = {"checkerboard": "棋盘格", "gradient": "渐变", "noise": "噪点",
                            "brick": "砖墙", "wood": "木纹", "stone": "石纹"}
-            preset_label = preset_names.get(preset, preset)
-            gt.draw(logic_surface, f"编码: 预设图案  大小: {pw}×{ph}",
-                                rx, app_y + 30, 18, (200, 210, 240), "sans")
-            gt.draw(logic_surface, f"预设代码: {preset} ({preset_label})",
-                                rx, app_y + 54, 16, (160, 180, 210), "sans")
+            gt.draw(logic_surface, f"编码: 预设图案", col3_x + 6, ry, 17, (200, 210, 240), "sans")
+            gt.draw(logic_surface, f"代码: {code} ({preset_names.get(code, code)})",
+                                col3_x + 6, ry + 24, 16, (180, 190, 220), "sans")
+            show_y = ry + 50
+            if isinstance(params, dict):
+                for k, v in params.items():
+                    if show_y > CONTENT_BOT - 16: break
+                    gt.draw(logic_surface, f"{k}: {v}",
+                                        col3_x + 6, show_y, 14, (150, 170, 200), "sans")
+                    show_y += 19
         elif ptype == "vector":
-            pw, ph = bt.pattern[1]
+            vw, vh = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
-            gt.draw(logic_surface, f"编码: 矢量  大小: {pw}×{ph}",
-                                rx, app_y + 30, 18, (200, 210, 240), "sans")
-            # 每条指令格式化
-            lines = []
-            for cmd in cmds[:8]:
+            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}",
+                                col3_x + 6, ry, 17, (200, 210, 240), "sans")
+            for j, cmd in enumerate(cmds):
+                cy2 = ry + 24 + j * 18
+                if cy2 > CONTENT_BOT - 16: break
                 ctype = cmd[0]
                 if ctype == "fill":
-                    lines.append(f"填充({cmd[1][0]},{cmd[1][1]},{cmd[1][2]})")
+                    c = cmd[1]
+                    text = f"fill({c[0]},{c[1]},{c[2]})"
                 elif ctype == "rect":
-                    lines.append(f"矩形({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},{cmd[5]})")
+                    text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},{cmd[5]})"
                 elif ctype == "circle":
-                    lines.append(f"圆({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})")
+                    text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})"
                 else:
-                    lines.append(str(cmd))
-            if len(cmds) > 8:
-                lines.append(f"… 共{len(cmds)}条")
-            for j, line in enumerate(lines):
-                gt.draw(logic_surface, line, rx, app_y + 54 + j * 20, 14, (160, 180, 210), "sans")
+                    text = str(cmd)
+                gt.draw(logic_surface, text, col3_x + 6, cy2, 13, (150, 170, 210), "sans")
     else:
-        gt.draw(logic_surface, f"编码: 无  纯色底色: {bt.color}",
-                            rx, app_y + 30, 18, (160, 180, 200), "sans")
+        gt.draw(logic_surface, f"编码: 无  底色: {bt.color}",
+                            col3_x + 6, ry, 17, (160, 180, 200), "sans")
 
-    # ==== 下区：操作指引 ====
-    gt.draw(logic_surface, "B / Esc  返回列表", LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 18,
+    # ==== 下区：操作指引 (92%-95%) ====
+    gt.draw(logic_surface, "B / Esc  返回列表", LOGIC_WIDTH // 2, HINT_TOP + 4, 18,
                         (140, 160, 200), "sans", shadow=True, center_x=True)
-
 
 def _handle_block_browser_input(event):
     """处理方块浏览器的键盘事件。"""
