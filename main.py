@@ -1076,6 +1076,7 @@ def _handle_block_browser_input(event):
 # ===================== Buff 预览器 =====================
 def _run_buff_browser(logic_surface, dt):
     """Buff 预览器渲染。"""
+    import buff_data
     from buff_system import BUFF_TYPES
     all_ids = sorted(BUFF_TYPES.keys())
     if not all_ids:
@@ -1162,6 +1163,7 @@ def _run_buff_browser(logic_surface, dt):
 
 def _run_buff_detail(logic_surface, dt):
     """Buff 详情页。"""
+    import buff_data
     from buff_system import BUFF_TYPES
     bid = _dev_buff_detail_id
     if bid is None: return
@@ -1224,6 +1226,7 @@ def _handle_buff_browser_input(event):
     """处理 Buff 预览器的键盘事件。"""
     global _dev_buff_browser, _dev_buff_browser_mode, _dev_buff_browser_cursor
     global _dev_buff_browser_scroll, _dev_buff_browser_show_name2, _dev_buff_detail_id
+    import buff_data
     from buff_system import BUFF_TYPES
 
     if event.type != pygame.KEYDOWN: return
