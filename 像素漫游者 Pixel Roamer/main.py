@@ -1349,7 +1349,6 @@ while running:
 
         # ---- HP 血条 ----
         # ---- 音效检测 ----
-        global _prev_score, _prev_alive, _win_played, _death_played
         if _prev_score < player1.score:
             sfx.play_pickup()
         _prev_score = player1.score
