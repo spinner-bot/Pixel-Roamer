@@ -57,6 +57,7 @@ class World:
         self.score_goal = 0          # 积分目标（score_target模式）
         self.time_limit = 0.0        # 时间限制秒（score_timed模式），0=无限
         self.music = ""              # 背景音乐文件名（music/目录下），空=无
+        self.fill_color = (30, 30, 30)  # 地图小于视口时的填充色
 
         # ---- 旧版存储（保留兼容） ----
         self.grid = {}                     # (gx, gy) → Tile  仅非默认方块

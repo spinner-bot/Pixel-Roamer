@@ -6,7 +6,7 @@ import struct, math
 import pygame
 
 _initialized = False
-_sfx_volume = 0.6      # 音效音量 (0~1)
+_sfx_volume = 0.8      # 音效音量 (0~1)
 _music_volume = 0.5    # 音乐音量 (0~1) — 预留
 _cache: dict = {}       # 缓存已生成的 Sound
 
@@ -18,8 +18,14 @@ def init():
     """初始化混音器。"""
     global _initialized
     if not _initialized:
-        pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
-        _initialized = True
+        try:
+            if pygame.mixer.get_init():
+                pygame.mixer.quit()
+            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
+            _initialized = True
+        except pygame.error:
+            # 音频设备不可用，静默失败
+            _initialized = True  # 避免反复重试
 
 
 def set_sfx_volume(v: float):

@@ -89,6 +89,9 @@ def _apply_config(world, map_name: str):
     world_attrs = config.get("world", {})
     for key, value in world_attrs.items():
         if hasattr(world, key):
+            # 特殊处理：fill_color 可能是 list，转为 tuple
+            if key == "fill_color" and isinstance(value, list):
+                value = tuple(value)
             setattr(world, key, value)
 
     # player 属性存入 world 供外部读取

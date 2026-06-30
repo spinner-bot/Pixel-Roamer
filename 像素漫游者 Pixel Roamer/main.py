@@ -7,6 +7,7 @@ from creature import Player
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
 from costumes import COSTUMES, DEFAULT_COSTUME_ID, list_costumes, render_costume_direct
 import sfx
+import pixel_font as pxf
 
 # ===================== 游戏元信息 =====================
 GAME_NAME_CN = "像素漫游者"
@@ -14,6 +15,7 @@ GAME_NAME_EN = "Pixel Roamer"
 GAME_DEV = "浪兮"
 
 # ===================== 初始化 =====================
+pygame.mixer.pre_init(22050, -16, 1, 512)  # 音频预初始化
 pygame.init()
 
 # 禁用IME中文输入法，避免字母键轮询失效
@@ -245,7 +247,7 @@ def draw_text_right(surf, font, text, x_right, y, color=(255, 255, 255)):
     return y + img.get_height()
 
 
-# ===================== HP 血条绘制 =====================
+# ===================== HP / 体力条 / 坐标 绘制 =====================
 _damage_flash_timer = 0.0       # 受伤黄色闪烁计时器
 _damage_flash_duration = 0.3    # 闪烁持续时间（秒）
 _prev_hp = None                 # 上一帧血量（用于检测受伤）
@@ -254,134 +256,202 @@ _prev_alive = True              # 上一帧存活状态（检测死亡）
 _win_played = False             # 通关音效是否已播放
 _death_played = False           # 死亡音效是否已播放
 
+BAR_X, BAR_Y = 24, 16
+BAR_W, BAR_H = 280, 32
+BAR_TEXT_H = 18                  # 像素文字高度
+BORDER_R = 6
+PAD = 4
+BAR_GAP = 5                     # 血条与体力条间距
+
+
+def _draw_single_bar(surf, x, y, w, h, pad, border_r,
+                     fill_ratio: float, fill_ratio2: float,
+                     color1, color2, flash_t: float, flash_dur: float):
+    """
+    绘制单个状态条（血条或体力条），支持副填充（护盾等）。
+    fill_ratio: 主填充比例 (0~1)
+    fill_ratio2: 副填充比例 (0~1)，在主填充右侧
+    总宽度固定为 w，当 fill_ratio + fill_ratio2 > 1 时按比例压缩。
+    """
+    fill_w_total = w - pad * 2
+    total_ratio = fill_ratio + fill_ratio2
+
+    if total_ratio > 1.0:
+        # 按比例压缩到 fill_w_total
+        main_w = int(fill_w_total * fill_ratio / total_ratio)
+        sub_w = int(fill_w_total * fill_ratio2 / total_ratio)
+        # 确保加起来不超过 total
+        if main_w + sub_w > fill_w_total:
+            sub_w = fill_w_total - main_w
+    else:
+        main_w = int(fill_w_total * fill_ratio)
+        sub_w = int(fill_w_total * fill_ratio2)
+
+    main_w = max(0, min(main_w, fill_w_total))
+    sub_w = max(0, min(sub_w, fill_w_total - main_w))
+
+    # 阴影
+    shadow_rect = pygame.Rect(x + 2, y + 2, w, h)
+    pygame.draw.rect(surf, (0, 0, 0, 160), shadow_rect, border_radius=border_r)
+
+    # 背景
+    bg_rect = pygame.Rect(x, y, w, h)
+    pygame.draw.rect(surf, (22, 22, 32), bg_rect, border_radius=border_r)
+
+    # 主填充
+    if main_w > 0:
+        fill_rect = pygame.Rect(x + pad, y + pad, main_w, h - pad * 2)
+        if flash_t > 0:
+            flash_a = flash_t / flash_dur
+            r = int(color1[0] * (1 - flash_a) + 255 * flash_a)
+            g = int(color1[1] * (1 - flash_a) + 220 * flash_a)
+            b = int(color1[2] * (1 - flash_a) + 60 * flash_a)
+            bar_c = (min(255, r), min(255, g), min(255, b))
+        else:
+            bar_c = color1
+        # 圆角矩形
+        if border_r > 2:
+            pygame.draw.rect(surf, bar_c, fill_rect, border_radius=border_r - 2)
+        else:
+            pygame.draw.rect(surf, bar_c, fill_rect)
+
+        # 高光
+        if main_w > 10 and h - pad * 2 > 6:
+            hl_y = y + pad + 1
+            hl_h = (h - pad * 2) // 2 - 1
+            hl_rect = pygame.Rect(x + pad + 2, hl_y, main_w - 4, max(1, hl_h))
+            hl_surf = pygame.Surface((max(1, main_w - 4), max(1, hl_h)), pygame.SRCALPHA)
+            hl_surf.fill((255, 255, 255, 40))
+            surf.blit(hl_surf, hl_rect)
+
+    # 副填充（在右侧，与主填充无缝衔接）
+    if sub_w > 0 and color2 is not None:
+        sub_x = x + pad + main_w
+        sub_rect = pygame.Rect(sub_x, y + pad, sub_w, h - pad * 2)
+        if border_r > 2:
+            pygame.draw.rect(surf, color2, sub_rect, border_radius=border_r - 2)
+        else:
+            pygame.draw.rect(surf, color2, sub_rect)
+        # 高光
+        if sub_w > 10 and h - pad * 2 > 6:
+            hl_y = y + pad + 1
+            hl_h = (h - pad * 2) // 2 - 1
+            sh_hl_rect = pygame.Rect(sub_x + 2, hl_y, sub_w - 4, max(1, hl_h))
+            sh_hl_surf = pygame.Surface((max(1, sub_w - 4), max(1, hl_h)), pygame.SRCALPHA)
+            sh_hl_surf.fill((255, 255, 255, 50))
+            surf.blit(sh_hl_surf, sh_hl_rect)
+
+    # 边框
+    pygame.draw.rect(surf, (70, 70, 90), bg_rect, 2, border_radius=border_r)
+
 
 def draw_hp_bar(surf, player, dt: float):
-    """在逻辑画布左上角绘制精美血条（含护盾显示）。"""
+    """绘制血条（固定宽度，含护盾按比例压缩）。"""
     global _damage_flash_timer, _prev_hp
 
     # 检测受伤
     if _prev_hp is not None and player.hp < _prev_hp - 0.5:
         _damage_flash_timer = _damage_flash_duration
+        sfx.play_hurt()
     _prev_hp = player.hp
 
     # 衰减闪烁计时器
     if _damage_flash_timer > 0:
         _damage_flash_timer -= dt
 
-    BAR_X, BAR_Y = 24, 24
-    BAR_W, BAR_H = 280, 34
-    BORDER_R = 7
-    PAD = 4  # 内边距
-
     hp = player.hp
-    hp_max = player.hp_max
+    hp_max = max(1, player.hp_max)
     shield = getattr(player, 'shield', 0.0)
 
-    # 计算扩展宽度（护盾部分可能需要超出 BAR_W）
-    has_shield = shield > 0
-    total_effective = hp + shield
-    if has_shield:
-        total_bar_w = int(BAR_W * total_effective / hp_max)
-        total_bar_w = max(BAR_W, total_bar_w)  # 至少保留基础宽度
-        # 限制最大宽度，防止超出屏幕
-        total_bar_w = min(total_bar_w, 700)
-    else:
-        total_bar_w = BAR_W
-
-    # 背景阴影
-    shadow_rect = pygame.Rect(BAR_X + 2, BAR_Y + 2, total_bar_w, BAR_H)
-    pygame.draw.rect(surf, (0, 0, 0, 160), shadow_rect, border_radius=BORDER_R)
-
-    # 主背景（深色）
-    bg_rect = pygame.Rect(BAR_X, BAR_Y, total_bar_w, BAR_H)
-    pygame.draw.rect(surf, (25, 25, 35), bg_rect, border_radius=BORDER_R)
-
-    # ---- HP 填充 ----
     hp_ratio = max(0.0, min(1.0, hp / hp_max))
-    # HP 填充宽度：若有护盾且超出上限，HP 按比例压缩
-    if has_shield and total_effective > hp_max:
-        hp_fill_w = int((total_bar_w - PAD * 2) * hp / total_effective)
+    shield_ratio = shield / hp_max if shield > 0 else 0.0
+
+    # HP 颜色：低血量红 → 渐变 → 高血量绿
+    if hp_ratio < 0.3:
+        hp_color = (220, 50, 40)
+    elif hp_ratio < 0.6:
+        t = (hp_ratio - 0.3) / 0.3
+        hp_color = (int(220 - 60 * t), int(50 + 140 * t), 40)
     else:
-        hp_fill_w = int((BAR_W - PAD * 2) * hp_ratio)
-    hp_fill_w = max(0, min(hp_fill_w, total_bar_w - PAD * 2))
+        hp_color = (80, 200, 60)
 
-    if hp_fill_w > 0:
-        fill_rect = pygame.Rect(BAR_X + PAD, BAR_Y + PAD, hp_fill_w, BAR_H - PAD * 2)
+    shield_color = (180, 210, 255) if shield > 0 else None
 
-        # 受伤闪烁时用黄色覆盖
-        if _damage_flash_timer > 0:
-            flash_alpha = _damage_flash_timer / _damage_flash_duration
-            r = int(220 - 120 * flash_alpha)
-            g = int(60 + 140 * flash_alpha)
-            b = int(50 + 100 * flash_alpha)
-            bar_color = (r, g, b)
-        else:
-            # 正常渐变色：低血量红，高血量绿
-            if hp_ratio < 0.3:
-                bar_color = (220, 50, 40)
-            elif hp_ratio < 0.6:
-                t = (hp_ratio - 0.3) / 0.3
-                bar_color = (int(220 - 60 * t), int(50 + 140 * t), int(40))
-            else:
-                bar_color = (80, 200, 60)
+    _draw_single_bar(surf, BAR_X, BAR_Y, BAR_W, BAR_H, PAD, BORDER_R,
+                     hp_ratio, shield_ratio, hp_color, shield_color,
+                     _damage_flash_timer, _damage_flash_duration)
 
-        pygame.draw.rect(surf, bar_color, fill_rect, border_radius=BORDER_R - 2)
-
-        # 血量高光（顶部亮带）
-        if hp_fill_w > 16:
-            highlight_rect = pygame.Rect(BAR_X + PAD, BAR_Y + PAD, hp_fill_w, (BAR_H - PAD * 2) // 2)
-            hl_surf = pygame.Surface((hp_fill_w, (BAR_H - PAD * 2) // 2), pygame.SRCALPHA)
-            hl_surf.fill((255, 255, 255, 50))
-            surf.blit(hl_surf, highlight_rect)
-
-    # ---- 护盾填充（白色）----
-    if has_shield:
-        if total_effective <= hp_max:
-            # 护盾在标准血条内，HP 右侧
-            shield_fill_w = int((BAR_W - PAD * 2) * shield / hp_max)
-        else:
-            # 护盾部分超出标准血条
-            shield_fill_w = int((total_bar_w - PAD * 2) * shield / total_effective)
-        shield_fill_w = max(1, min(shield_fill_w, total_bar_w - PAD * 2 - hp_fill_w))
-
-        shield_start_x = BAR_X + PAD + hp_fill_w
-        shield_rect = pygame.Rect(shield_start_x, BAR_Y + PAD, shield_fill_w, BAR_H - PAD * 2)
-        pygame.draw.rect(surf, (220, 230, 255), shield_rect, border_radius=BORDER_R - 2)
-
-        # 护盾高光
-        if shield_fill_w > 8:
-            sh_hl = pygame.Rect(shield_start_x, BAR_Y + PAD, shield_fill_w, (BAR_H - PAD * 2) // 2)
-            sh_hl_surf = pygame.Surface((shield_fill_w, (BAR_H - PAD * 2) // 2), pygame.SRCALPHA)
-            sh_hl_surf.fill((255, 255, 255, 60))
-            surf.blit(sh_hl_surf, sh_hl)
-
-    # 边框
-    pygame.draw.rect(surf, (80, 80, 100), bg_rect, 2, border_radius=BORDER_R)
-
-    # 装饰：左侧小图标（心形用菱形替代）
+    # 左侧心形图标
     icon_x, icon_y = BAR_X - 2, BAR_Y + BAR_H // 2
-    heart_color = (255, 60, 50) if hp_ratio < 0.3 else (255, 120, 100)
+    heart_color = (255, 50, 40) if hp_ratio < 0.3 else (255, 110, 90)
     pts = [
         (icon_x, icon_y),
-        (icon_x - 6, icon_y - 5),
-        (icon_x, icon_y - 10),
-        (icon_x + 6, icon_y - 5),
+        (icon_x - 5, icon_y - 4),
+        (icon_x, icon_y - 9),
+        (icon_x + 5, icon_y - 4),
     ]
     pygame.draw.polygon(surf, heart_color, pts)
-    pygame.draw.polygon(surf, (180, 30, 20), pts, 1)
+    pygame.draw.polygon(surf, (160, 25, 15), pts, 1)
 
-    # 文字：HP数值（含护盾）
-    if has_shield:
-        hp_text = f"{int(hp)} / {int(hp_max)} ({int(shield)})"
+    # 像素文字
+    if shield > 0:
+        txt = f"{int(hp)}/{int(hp_max)} +{int(shield)}"
     else:
-        hp_text = f"{int(hp)} / {int(hp_max)}"
-    text_img = FONT20.render(hp_text, True, (255, 255, 255))
-    text_x = BAR_X + BAR_W // 2 - text_img.get_width() // 2
-    text_y = BAR_Y + BAR_H // 2 - text_img.get_height() // 2
-    # 文字阴影
-    shadow_img = FONT20.render(hp_text, True, (0, 0, 0))
-    surf.blit(shadow_img, (text_x + 1, text_y + 1))
-    surf.blit(text_img, (text_x, text_y))
+        txt = f"{int(hp)}/{int(hp_max)}"
+    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W // 2, BAR_Y + BAR_H // 2 - BAR_TEXT_H // 2,
+                         BAR_TEXT_H, (255, 255, 255), shadow=True, center_x=True)
+
+    # HP 图标标签
+    pxf.draw_pixel_text(surf, "HP", BAR_X + BAR_W + 10, BAR_Y + 4, 14, (255, 255, 255), shadow=True)
+
+
+def draw_stamina_bar(surf, player, dt: float):
+    """在血条下方绘制体力条。"""
+    stam_y = BAR_Y + BAR_H + BAR_GAP
+    stamina = getattr(player, 'stamina', 100.0)
+    stamina_max = max(1, getattr(player, 'stamina_max', 100.0))
+    ratio = max(0.0, min(1.0, stamina / stamina_max))
+
+    # 体力颜色：低体力红 → 橙 → 蓝
+    if ratio < 0.25:
+        stam_color = (200, 60, 40)
+    elif ratio < 0.5:
+        t = (ratio - 0.25) / 0.25
+        stam_color = (int(200 - 40 * t), int(60 + 100 * t), int(40 + 80 * t))
+    else:
+        stam_color = (60, 140, 220)
+
+    _draw_single_bar(surf, BAR_X, stam_y, BAR_W, BAR_H, PAD, BORDER_R,
+                     ratio, 0.0, stam_color, None, 0.0, 0.0)
+
+    # 左侧图标（闪电形状 = 折线）
+    icon_x, icon_y = BAR_X - 2, stam_y + BAR_H // 2
+    bolt_color = (255, 200, 50) if ratio > 0.3 else (255, 100, 40)
+    bolt_pts = [
+        (icon_x + 3, icon_y - 7),
+        (icon_x - 2, icon_y),
+        (icon_x + 2, icon_y),
+        (icon_x - 3, icon_y + 7),
+        (icon_x + 3, icon_y - 1),
+        (icon_x - 1, icon_y - 1),
+    ]
+    pygame.draw.polygon(surf, bolt_color, bolt_pts)
+    pygame.draw.polygon(surf, (180, 130, 20), bolt_pts, 1)
+
+    # 像素文字
+    txt = f"{int(stamina)}/{int(stamina_max)}"
+    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
+                         BAR_TEXT_H, (255, 255, 255), shadow=True, center_x=True)
+    pxf.draw_pixel_text(surf, "SP", BAR_X + BAR_W + 10, stam_y + 4, 14, (255, 255, 255), shadow=True)
+
+
+def draw_player_info(surf, player, dt: float):
+    """在体力条下方绘制玩家坐标。"""
+    stam_y = BAR_Y + BAR_H + BAR_GAP
+    info_y = stam_y + BAR_H + 6
+    px, py = player.get_center()
+    txt = f"({px:.1f}, {py:.1f})"
+    pxf.draw_pixel_text(surf, txt, BAR_X + BAR_W + 10, info_y, 15, (200, 210, 230), shadow=True)
 
 
 # ===================== 坐标信息绘制 =====================
@@ -398,7 +468,7 @@ def draw_player_info(surf, player, dt: float):
 
 # ===================== 濒死滤镜 =====================
 def draw_near_death_vignette(surf, player):
-    """当血量极低时，屏幕边缘绘制渐变红圈。"""
+    """当血量极低时，屏幕边缘绘制渐变红圈，确保覆盖四角。"""
     if not player.alive:
         return
 
@@ -414,23 +484,27 @@ def draw_near_death_vignette(surf, player):
 
     W, H = surf.get_width(), surf.get_height()
     cx, cy = W // 2, H // 2
-    max_r = int((cx ** 2 + cy ** 2) ** 0.5)
+    max_r = int((cx ** 2 + cy ** 2) ** 0.5) + 20  # 略微超出保证覆盖四角
 
     vignette = pygame.Surface((W, H), pygame.SRCALPHA)
+    # 先填充整个表面为基础红色，确保四角不漏
+    vignette.fill((200, 20, 20, alpha))
 
-    # 从外向内绘制渐变红圈
-    inner_r = int(max_r * 0.45)  # 内部安全区半径
-    steps = 40
+    # 从外向内绘制渐变透明圈，中心逐渐变淡
+    inner_r = int(max_r * 0.40)  # 内部安全区半径
+    steps = 50
     for i in range(steps):
         t = i / steps
         r = inner_r + (max_r - inner_r) * t
-        a = int(alpha * (t ** 1.5))  # 越靠外越浓
-        # 在环形区域绘制
-        if a > 0:
-            pygame.draw.circle(vignette, (200, 20, 20, a), (cx, cy), int(r), max(1, int((max_r - inner_r) / steps) + 1))
+        # 越靠近中心的圈越"擦除"，形成渐变效果
+        erase_a = int(alpha * (1.0 - t ** 1.5))
+        if erase_a > 0:
+            pygame.draw.circle(vignette, (200, 20, 20, max(1, alpha - erase_a)),
+                             (cx, cy), int(r), max(2, int((max_r - inner_r) / steps) + 1))
 
-    # 中心安全区保持透明
-    pygame.draw.circle(vignette, (0, 0, 0, 0), (cx, cy), int(inner_r))
+    # 中心安全区完全透明
+    for rr in range(int(inner_r) - 2, int(inner_r) + 2):
+        pygame.draw.circle(vignette, (0, 0, 0, 0), (cx, cy), rr)
 
     surf.blit(vignette, (0, 0))
 
@@ -598,6 +672,7 @@ _EDITABLE_FIELDS = [
     ("world.edge_behavior",  "边界行为",           "str",   "solid",  ["solid", "void"]),
     ("world.view_blocks_h",  "视野(格高)",         "float", 15.0,     1.0),
     ("world.void_limit",     "虚空边界距离",       "int",   20,       5),
+    ("world.fill_color",     "背景填充色(R,G,B)",   "str",  "30,30,30", None),
     ("world.default_block_id","默认方块ID",        "int",   0,        1),
     # ---- Player 属性 ----
     ("player.hp_max",        "最大血量",           "float", 150.0,    10.0),
@@ -624,8 +699,365 @@ _EDITABLE_FIELDS = [
 _dev_inputting = False       # 是否处于精确输入模式
 _dev_input_text = ""         # 输入缓冲区
 
+# ===================== 方块浏览器状态 =====================
+_dev_block_browser = False        # 是否处于方块浏览模式
+_dev_block_browser_mode = "grid"  # "grid" | "list"
+_dev_block_browser_cursor = 0     # 当前光标索引
+_dev_block_browser_scroll = 0     # 列表滚动偏移
+_dev_block_browser_show_name2 = False  # True=显示name2, False=显示name
+_dev_block_detail_id = None       # 查看详情的方块ID，None=不在详情页
+_dev_block_page_offset = 0        # 列表模式页码偏移（用于快速翻页）
 
-def _get_edit_config(map_id: int) -> dict:
+
+# ---- 方块亮点选择器（算法自动匹配，非预存）----
+def _get_block_highlights(bt) -> list:
+    """根据方块属性自动生成亮点描述列表。算法选择，不依赖预存数据。"""
+    h = []
+    if bt.climbable:
+        h.append("可攀爬")
+    if getattr(bt, 'swim_f', 0.0) > 0:
+        h.append(f"浮力 {bt.swim_f:.1f}")
+    if bt.damage_ps > 0:
+        h.append(f"伤害 {bt.damage_ps:.0f}/s")
+    if abs(bt.surface_f - 1.0) > 0.001:
+        h.append(f"表面摩擦 x{bt.surface_f:.3f}")
+    if abs(bt.space_f - 1.0) > 0.001:
+        h.append(f"空间阻力 x{bt.space_f:.3f}")
+    if bt.bounce != (0.0, 0.0) and (abs(bt.bounce[0]) > 0.01 or abs(bt.bounce[1]) > 0.01):
+        h.append(f"弹跳 ({bt.bounce[0]:.0f},{bt.bounce[1]:.0f})")
+    if bt.accel_k != (0.0, 0.0):
+        h.append(f"加速系数 ({bt.accel_k[0]:.1f},{bt.accel_k[1]:.1f})")
+    if bt.special is not None:
+        special_names = {
+            "teleport": "传送", "checkpoint": "检查点", "heal": "治疗",
+            "shield": "护盾", "speed": "加速", "jump": "跳跃增强",
+            "score": "积分", "end_point": "终点", "explosive": "爆炸",
+            "ender": "随机传送",
+        }
+        sn = special_names.get(bt.special, bt.special)
+        h.append(f"特效: {sn}")
+    if bt.light_level > 0:
+        h.append(f"光照 {bt.light_level}")
+    if bt.break_level < 15:
+        h.append(f"破坏等级 {bt.break_level}")
+    if abs(bt.k_stamina - 1.0) > 0.001:
+        h.append(f"体力消耗 x{bt.k_stamina:.1f}")
+    if bt.drops_item_id is not None:
+        h.append(f"掉落: {bt.drops_item_id}")
+    if bt.one_way:
+        h.append("单向平台")
+    if not bt.is_solid:
+        if bt.climbable:
+            pass  # 已显示可攀爬
+        elif getattr(bt, 'swim_f', 0.0) <= 0:
+            h.append("非实体")
+    return h
+
+
+def _draw_block_preview(surf, bt, x, y, size):
+    """绘制单个方块的预览缩略图。"""
+    from pattern import render_block_pattern
+    preview = pygame.Surface((size, size))
+    preview.fill(bt.color)
+    if bt.pattern is not None:
+        render_block_pattern(preview, bt, 0, 0, size, size)
+    surf.blit(preview, (x, y))
+    # 边框
+    pygame.draw.rect(surf, (100, 100, 120), (x, y, size, size), 1)
+
+
+def _run_block_browser(logic_surface, dt):
+    """方块浏览器渲染（网格/列表模式）。"""
+    global _dev_block_browser_cursor, _dev_block_browser_scroll
+    from block_types_data import BLOCK_TYPES
+    all_ids = sorted(BLOCK_TYPES.keys())
+    if not all_ids:
+        return
+
+    # 详情页
+    if _dev_block_detail_id is not None:
+        _run_block_detail(logic_surface, dt)
+        return
+
+    # 标题
+    title = f"方块浏览器 [{_dev_block_browser_mode.upper()}]"
+    pxf.draw_pixel_text(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
+                        (255, 255, 200), shadow=True, center_x=True)
+    mode_hint = "Tab:切换视图  N:名称切换  Enter:详情  B/Esc:返回"
+    pxf.draw_pixel_text(logic_surface, mode_hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
+                        (140, 160, 200), shadow=True, center_x=True)
+
+    name_key = "name2" if _dev_block_browser_show_name2 else "name"
+    cursor = _dev_block_browser_cursor
+
+    if _dev_block_browser_mode == "grid":
+        # 网格模式
+        COLS = 10
+        cell_w = 140
+        cell_h = 120
+        preview_size = 64
+        start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
+        start_y = 56
+        rows = (len(all_ids) + COLS - 1) // COLS
+
+        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // cell_h)
+        # 自动滚动使光标可见
+        cursor_row = cursor // COLS
+        if cursor_row < _dev_block_browser_scroll:
+            _dev_block_browser_scroll = cursor_row
+        if cursor_row >= _dev_block_browser_scroll + visible_rows:
+            _dev_block_browser_scroll = max(0, cursor_row - visible_rows + 1)
+        _dev_block_browser_scroll = max(0, min(_dev_block_browser_scroll, max(0, rows - visible_rows)))
+
+        for row in range(_dev_block_browser_scroll, min(_dev_block_browser_scroll + visible_rows, rows)):
+            for col in range(COLS):
+                idx = row * COLS + col
+                if idx >= len(all_ids):
+                    break
+                bid = all_ids[idx]
+                bt = BLOCK_TYPES[bid]
+                cx = start_x + col * cell_w
+                cy = start_y + (row - _dev_block_browser_scroll) * cell_h
+
+                # 选中高亮
+                if idx == cursor:
+                    pygame.draw.rect(logic_surface, (80, 140, 255),
+                                    (cx - 3, cy - 3, cell_w - 4, cell_h - 4), 2, border_radius=4)
+
+                # 预览图
+                px = cx + (cell_w - 2 - preview_size) // 2
+                _draw_block_preview(logic_surface, bt, px, cy + 4, preview_size)
+
+                # 编号和名称
+                label = f"{bid}.{getattr(bt, name_key, bt.name)}"
+                pxf.draw_pixel_text(logic_surface, label, cx + cell_w // 2 - 2,
+                                    cy + preview_size + 8, 12, (220, 220, 220),
+                                    shadow=True, center_x=True)
+
+    else:
+        # 列表模式
+        row_h = 64
+        preview_size = 48
+        start_y = 56
+        visible_rows = max(1, (LOGIC_HEIGHT - start_y - 50) // row_h)
+
+        if cursor < _dev_block_browser_scroll:
+            _dev_block_browser_scroll = cursor
+        if cursor >= _dev_block_browser_scroll + visible_rows:
+            _dev_block_browser_scroll = max(0, cursor - visible_rows + 1)
+        _dev_block_browser_scroll = max(0, min(_dev_block_browser_scroll, max(0, len(all_ids) - visible_rows)))
+
+        for i in range(_dev_block_browser_scroll,
+                       min(_dev_block_browser_scroll + visible_rows, len(all_ids))):
+            idx = i
+            bid = all_ids[idx]
+            bt = BLOCK_TYPES[bid]
+            cy = start_y + (i - _dev_block_browser_scroll) * row_h
+
+            if idx == cursor:
+                pygame.draw.rect(logic_surface, (60, 60, 100), (40, cy, LOGIC_WIDTH - 80, row_h))
+                pygame.draw.rect(logic_surface, (100, 200, 255), (40, cy, LOGIC_WIDTH - 80, row_h), 2)
+
+            # 左侧预览
+            _draw_block_preview(logic_surface, bt, 56, cy + (row_h - preview_size) // 2, preview_size)
+
+            # 第一行：id, name, 基础属性
+            name_text = f"{bid}. {getattr(bt, name_key, bt.name)}"
+            pxf.draw_pixel_text(logic_surface, name_text, 56 + preview_size + 16, cy + 6, 13,
+                                (255, 255, 200), shadow=True)
+            # 基础属性标签
+            tags = []
+            if bt.is_solid: tags.append("实体")
+            if bt.climbable: tags.append("攀爬")
+            if getattr(bt, 'swim_f', 0.0) > 0: tags.append("游泳")
+            if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
+            tag_str = " | ".join(tags) if tags else "无特殊"
+            pxf.draw_pixel_text(logic_surface, tag_str,
+                                56 + preview_size + 16, cy + 24, 11, (150, 180, 210), shadow=True)
+
+            # 第二行：亮点
+            highlights = _get_block_highlights(bt)
+            if highlights:
+                hl_text = " · ".join(highlights[:4])  # 最多4个
+                pxf.draw_pixel_text(logic_surface, hl_text,
+                                    56 + preview_size + 16, cy + 40, 11, (200, 200, 230), shadow=True)
+
+
+def _run_block_detail(logic_surface, dt):
+    """方块详情页：展示该方块所有属性。"""
+    from block_types_data import BLOCK_TYPES
+    bid = _dev_block_detail_id
+    if bid is None:
+        return
+    bt = BLOCK_TYPES.get(bid)
+    if bt is None:
+        pxf.draw_pixel_text(logic_surface, f"方块 {bid} 不存在", LOGIC_WIDTH // 2, 100, 18,
+                            (255, 100, 100), center_x=True)
+        return
+
+    title = f"方块详情 #{bid}"
+    pxf.draw_pixel_text(logic_surface, title, LOGIC_WIDTH // 2, 16, 22,
+                        (255, 255, 200), shadow=True, center_x=True)
+
+    # 左侧预览
+    preview_size = 96
+    _draw_block_preview(logic_surface, bt, 60, 56, preview_size)
+
+    # 名称
+    pxf.draw_pixel_text(logic_surface, f"{bt.name} / {bt.name2}",
+                        60 + preview_size + 20, 56, 16, (255, 255, 255), shadow=True)
+
+    # 右侧属性列表（2列）
+    attrs = [
+        ("ID", str(bt.id)), ("name", bt.name), ("name2", bt.name2),
+        ("is_solid", str(bt.is_solid)), ("one_way", str(bt.one_way)),
+        ("climbable", str(bt.climbable)),
+        ("swim_f", f"{bt.swim_f:.2f}" if hasattr(bt, 'swim_f') else "0.00"),
+        ("surface_f", f"{bt.surface_f:.3f}"), ("space_f", f"{bt.space_f:.3f}"),
+        ("bounce", str(bt.bounce)), ("accel_k", str(bt.accel_k)),
+        ("accel_b", str(bt.accel_b)), ("damage_ps", f"{bt.damage_ps:.2f}"),
+        ("k_stamina", f"{bt.k_stamina:.2f}"), ("special", str(bt.special)),
+        ("special_data", str(bt.special_data)),
+        ("break_level", str(bt.break_level)), ("break_hp", f"{bt.break_hp:.1f}"),
+        ("break_special", str(bt.break_special)),
+        ("drops_item_id", str(bt.drops_item_id)),
+        ("light_level", str(bt.light_level)),
+        ("color", str(bt.color)),
+    ]
+
+    col_w = 380
+    start_y = 170
+    row_h = 22
+    for i, (attr, val) in enumerate(attrs):
+        col = i % 2
+        row = i // 2
+        ax = 60 + col * col_w
+        ay = start_y + row * row_h
+        if ay > LOGIC_HEIGHT - 100:
+            break
+        attr_text = f"{attr}:"
+        pxf.draw_pixel_text(logic_surface, attr_text, ax, ay, 12, (140, 180, 220), shadow=True)
+        pxf.draw_pixel_text(logic_surface, val, ax + 140, ay, 12, (255, 255, 255), shadow=True)
+
+    # 底部外观数据展示
+    appearance_y = LOGIC_HEIGHT - 120
+    pxf.draw_pixel_text(logic_surface, "--- 外观数据 ---", 60, appearance_y, 14,
+                        (200, 200, 255), shadow=True)
+
+    if bt.pattern is not None:
+        ptype = bt.pattern[0]
+        if ptype == "bitmap":
+            # 位图格式: ("bitmap", w, h, data)
+            w, h = bt.pattern[1], bt.pattern[2]
+            data = bt.pattern[3] if len(bt.pattern) > 3 else []
+            pxf.draw_pixel_text(logic_surface, f"位图 {w}x{h}, {len(data)}条数据",
+                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+        elif ptype == "preset":
+            # 纹理预设: ("preset", w, h, preset_name)
+            preset = bt.pattern[3] if len(bt.pattern) > 3 else "?"
+            w, h = bt.pattern[1], bt.pattern[2]
+            pxf.draw_pixel_text(logic_surface, f"纹理预设 {preset} ({w}x{h})",
+                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+        elif ptype == "vector":
+            # 矢量指令: ("vector", (w, h), [指令...])
+            w, h = bt.pattern[1]
+            cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
+            pxf.draw_pixel_text(logic_surface, f"矢量 {w}x{h}, {len(cmds)}条指令:",
+                                60, appearance_y + 20, 12, (180, 200, 220), shadow=True)
+            # 列出指令类型
+            cmd_types = []
+            for cmd in cmds[:12]:  # 最多显示12条
+                ctype = cmd[0] if cmd else "?"
+                if ctype == "fill":
+                    cmd_types.append(f"填充{cmd[1]}")
+                elif ctype == "rect":
+                    cmd_types.append(f"矩形({cmd[1]},{cmd[2]})")
+                elif ctype == "circle":
+                    cmd_types.append(f"圆({cmd[1]},{cmd[2]})")
+                else:
+                    cmd_types.append(ctype)
+            if len(cmds) > 12:
+                cmd_types.append(f"...+{len(cmds)-12}")
+            pxf.draw_pixel_text(logic_surface, " | ".join(cmd_types),
+                                60, appearance_y + 36, 11, (160, 180, 200), shadow=True)
+    else:
+        pxf.draw_pixel_text(logic_surface, "纯色底色 (无图案)",
+                            60, appearance_y + 20, 12, (160, 180, 200), shadow=True)
+
+    hint = "B/Esc: 返回列表"
+    pxf.draw_pixel_text(logic_surface, hint, LOGIC_WIDTH // 2, LOGIC_HEIGHT - 22, 14,
+                        (140, 160, 200), shadow=True, center_x=True)
+
+
+def _handle_block_browser_input(event):
+    """处理方块浏览器的键盘事件。"""
+    global _dev_block_browser, _dev_block_browser_mode, _dev_block_browser_cursor
+    global _dev_block_browser_scroll, _dev_block_browser_show_name2
+    global _dev_block_detail_id, _dev_block_page_offset
+    from block_types_data import BLOCK_TYPES
+
+    if event.type != pygame.KEYDOWN:
+        return
+
+    all_ids = sorted(BLOCK_TYPES.keys())
+    if not all_ids:
+        return
+
+    # 详情页内
+    if _dev_block_detail_id is not None:
+        if event.key in (pygame.K_ESCAPE, pygame.K_b):
+            _dev_block_detail_id = None
+        return
+
+    if event.key == pygame.K_ESCAPE or event.key == pygame.K_b:
+        _dev_block_browser = False
+        _dev_block_browser_cursor = 0
+        _dev_block_browser_scroll = 0
+        return
+
+    if event.key == pygame.K_TAB:
+        _dev_block_browser_mode = "list" if _dev_block_browser_mode == "grid" else "grid"
+        _dev_block_browser_scroll = 0
+
+    elif event.key == pygame.K_n:
+        _dev_block_browser_show_name2 = not _dev_block_browser_show_name2
+
+    elif event.key == pygame.K_RETURN:
+        bid = all_ids[_dev_block_browser_cursor]
+        _dev_block_detail_id = bid
+
+    elif event.key == pygame.K_UP:
+        if _dev_block_browser_mode == "grid":
+            COLS = 10
+            _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - COLS)
+        else:
+            _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - 1)
+
+    elif event.key == pygame.K_DOWN:
+        if _dev_block_browser_mode == "grid":
+            COLS = 10
+            _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + COLS)
+        else:
+            _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + 1)
+
+    elif event.key == pygame.K_LEFT:
+        if _dev_block_browser_mode == "grid":
+            _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - 1)
+        else:
+            # 列表模式左键快速翻页
+            visible_rows = max(1, (LOGIC_HEIGHT - 56 - 50) // 64)
+            _dev_block_browser_cursor = max(0, _dev_block_browser_cursor - visible_rows)
+            _dev_block_browser_scroll = max(0, _dev_block_browser_scroll - visible_rows)
+
+    elif event.key == pygame.K_RIGHT:
+        if _dev_block_browser_mode == "grid":
+            _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + 1)
+        else:
+            visible_rows = max(1, (LOGIC_HEIGHT - 56 - 50) // 64)
+            _dev_block_browser_cursor = min(len(all_ids) - 1, _dev_block_browser_cursor + visible_rows)
+            _dev_block_browser_scroll = min(
+                max(0, len(all_ids) - visible_rows),
+                _dev_block_browser_scroll + visible_rows)
     """获取地图的当前配置（合并 World 实例默认值与已保存配置）。"""
     saved = load_map_config(map_id)
     config = {"world": {}, "player": {}}
@@ -710,9 +1142,16 @@ def _get_map_type_label(m) -> str:
 
 
 def run_dev_page(dt: float):
-    """开发者界面：查询地图、选择地图、编辑属性、启动游戏。"""
+    """开发者界面：查询地图、选择地图、编辑属性、启动游戏、方块浏览器。"""
     global _dev_edit_mode, _dev_edit_field_idx, _dev_edit_dirty, _dev_edit_config
     global _dev_inputting, _dev_input_text
+    global _dev_block_browser
+
+    # 方块浏览器模式
+    if _dev_block_browser:
+        logic_surface.fill((20, 20, 40))
+        _run_block_browser(logic_surface, dt)
+        return
 
     logic_surface.fill((20, 20, 40))
 
@@ -888,7 +1327,7 @@ def run_dev_page(dt: float):
                              LOGIC_HEIGHT - 24, (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
-                             f"当前选中: ID={_dev_selected_id}  |  Enter 启动  E 编辑属性",
+                             f"当前选中: ID={_dev_selected_id}  |  Enter 启动  E 编辑  B 方块浏览器",
                              LOGIC_HEIGHT - 50, (140, 180, 255))
 
 
@@ -918,13 +1357,24 @@ def handle_dev_input(event):
     global _dev_selected_id, _dev_edit_mode, _dev_edit_field_idx
     global _dev_edit_dirty, _dev_edit_config
     global _dev_inputting, _dev_input_text
+    global _dev_block_browser
 
     if event.type != pygame.KEYDOWN:
+        return
+
+    # ========== 方块浏览器模式 ==========
+    if _dev_block_browser:
+        _handle_block_browser_input(event)
         return
 
     maps_dict = list_maps()
     ids = sorted(maps_dict.keys())
     if not ids:
+        return
+
+    # ========== B键进入方块浏览器 ==========
+    if event.key == pygame.K_b and not _dev_edit_mode and not _dev_inputting:
+        _dev_block_browser = True
         return
 
     # ========== 编辑模式按键 ==========
@@ -1313,12 +1763,40 @@ while running:
                     dir_x += 0.35
                 player1.move(dir_x)
 
-                # 攀爬中持续按W/↑向上
+                # ---- 攀爬: W/↑向上 ----
+                sm = getattr(player1, '_stamina_mult', 1.0)
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
                     player1.climb_move(1.0)
+                    # 攀爬上升消耗体力 8/秒（受方块 k_stamina 影响）
+                    player1.consume_stamina(8.0 * sm * dt)
+                elif player1.is_climbing:
+                    # 悬挂不动消耗体力 5/秒
+                    player1.consume_stamina(5.0 * sm * dt)
+
+                # ---- 游泳: W/↑向上，攀爬优先 ----
+                swimming_now = False
+                if not player1.is_climbing and player1.can_swim and not player1.on_ground:
+                    up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
+                    if up_held:
+                        # 主动上浮：速度 = 浮力（方向向上）
+                        swim_v = player1._swim_force
+                        # 浮力速度在阻力前添加
+                        player1.v_y += swim_v * dt * 30  # 缩放因子使其有用
+                        # 游泳消耗体力 12/秒（受方块 k_stamina 影响）
+                        player1.consume_stamina(12.0 * sm * dt)
+                        swimming_now = True
+
+                # 体力耗尽时无法攀爬/游泳
+                if player1.stamina <= 0 and player1.is_climbing:
+                    player1.stop_climbing()
+
+                # ---- 体力恢复 ----
+                if not player1.is_climbing and not swimming_now and player1.stamina < player1.stamina_max:
+                    player1.recover_stamina(15.0 * dt)  # 恢复 15/秒
 
                 if jump_pressed:
                     player1.jump()
+                    player1.consume_stamina(15.0 * sm)  # 跳跃消耗15体力
                     jump_pressed = False
 
                 player1.update_physics(dt, _current_map)
@@ -1332,7 +1810,8 @@ while running:
         camera.follow(px, py)
 
         # 渲染世界
-        logic_surface.fill((30, 30, 30))
+        fill_color = getattr(_current_map, 'fill_color', (30, 30, 30))
+        logic_surface.fill(fill_color)
         _current_map.draw(logic_surface, camera)
 
         # 绘制玩家（时装系统）
@@ -1367,16 +1846,17 @@ while running:
             _win_played = True
 
         draw_hp_bar(logic_surface, player1, dt)
+        draw_stamina_bar(logic_surface, player1, dt)
         draw_player_info(logic_surface, player1, dt)
 
         # ---- 濒死滤镜 ----
         draw_near_death_vignette(logic_surface, player1)
 
         # ---- 积分显示（顶部居中）----
-        score_text = f"★ {player1.score}"
-        score_img = FONT28.render(score_text, True, (255, 220, 80))
-        score_x = LOGIC_WIDTH // 2 - score_img.get_width() // 2
-        logic_surface.blit(score_img, (score_x, 18))
+        score_text = f"* {player1.score}"
+        pxf.draw_pixel_text(logic_surface, score_text,
+                           LOGIC_WIDTH // 2, 16, 22,
+                           (255, 220, 80), shadow=True, center_x=True)
 
         # ---- 计时器（积分限时模式）----
         wmode = _current_map.mode if _current_map else "free"
@@ -1385,27 +1865,27 @@ while running:
             remaining = max(0, time_limit - _game_timer)
             timer_text = f"{int(remaining // 60):02d}:{int(remaining % 60):02d}"
             timer_color = (255, 80, 80) if remaining < 30 else (255, 255, 255)
-            timer_img = FONT28.render(timer_text, True, timer_color)
-            timer_x = LOGIC_WIDTH // 2 - timer_img.get_width() // 2
-            logic_surface.blit(timer_img, (timer_x, 48))
+            pxf.draw_pixel_text(logic_surface, timer_text,
+                               LOGIC_WIDTH // 2, 42, 20,
+                               timer_color, shadow=True, center_x=True)
 
         # ---- 积分目标进度（积分目标模式）----
         score_goal = getattr(_current_map, 'score_goal', 0)
         if wmode == "score_target" and score_goal > 0:
-            goal_text = f"目标: {score_goal}  ({int(player1.score / max(1, score_goal) * 100)}%)"
-            goal_img = FONT20.render(goal_text, True, (200, 220, 255))
-            goal_x = LOGIC_WIDTH // 2 - goal_img.get_width() // 2
-            logic_surface.blit(goal_img, (goal_x, 48))
+            goal_text = f"Goal: {score_goal} ({int(player1.score / max(1, score_goal) * 100)}%)"
+            pxf.draw_pixel_text(logic_surface, goal_text,
+                               LOGIC_WIDTH // 2, 42, 15,
+                               (200, 220, 255), shadow=True, center_x=True)
 
         # ---- 爱心（复活次数）----
         if _player_lives_left > 0:
-            heart_text = "♥"
             if _player_lives_left <= 5:
-                heart_text = "♥ " * _player_lives_left
+                heart_text = "H " * _player_lives_left
             else:
-                heart_text = f"♥ × {_player_lives_left}"
-            heart_img = FONT24.render(heart_text.strip(), True, (255, 60, 60))
-            logic_surface.blit(heart_img, (LOGIC_WIDTH - heart_img.get_width() - 24, 18))
+                heart_text = f"H x{_player_lives_left}"
+            pxf.draw_pixel_text(logic_surface, heart_text.strip(),
+                               LOGIC_WIDTH - 24, 16, 18,
+                               (255, 60, 60), shadow=True, right_x=True)
 
         # ---- 游戏结束/胜利叠加层 ----
         if _game_over:
@@ -1427,18 +1907,17 @@ while running:
             y = draw_text_center(logic_surface, FONT28, f"最终得分: {player1.score}", y, (255, 220, 80)) + 8
             draw_text_center(logic_surface, FONT24, "按 ESC 返回", y + 16, (180, 180, 180))
 
-        # 右上角 FPS（白字灰边）
+        # 右上角 FPS
         fps_text = f"FPS {int(clock.get_fps())}"
-        fps_img = FONT28.render(fps_text, True, (255, 255, 255))
-        # 灰边（8方向绘制阴影）
-        for dx, dy in [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]:
-            shadow = FONT28.render(fps_text, True, (80, 80, 90))
-            logic_surface.blit(shadow, (LOGIC_WIDTH - fps_img.get_width() - 16 + dx, 8 + dy))
-        logic_surface.blit(fps_img, (LOGIC_WIDTH - fps_img.get_width() - 16, 8))
+        pxf.draw_pixel_text(logic_surface, fps_text,
+                           LOGIC_WIDTH - 16, 8, 18,
+                           (255, 255, 255), shadow=True, right_x=True)
 
         # 飞行模式指示
         if player1.fly_mode:
-            draw_text_center(logic_surface, FONT20, "【飞行模式】", LOGIC_HEIGHT - 40, (100, 255, 200))
+            pxf.draw_pixel_text(logic_surface, "[FLY]",
+                               LOGIC_WIDTH // 2, LOGIC_HEIGHT - 36, 15,
+                               (100, 255, 200), shadow=True, center_x=True)
 
         f += 1
         state_str = ("飞行" if player1.fly_mode

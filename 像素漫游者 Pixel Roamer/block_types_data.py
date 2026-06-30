@@ -56,7 +56,7 @@ BLOCK_TYPES = {
                      ("circle", 6, 8, 1, (255, 230, 180)),
                                           ("circle", 12, 13, 1, (255, 230, 180)),
                                                                     ])),
-    6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, color=(235, 80, 0),
+    6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, swim_f=3.0, color=(235, 80, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (235, 80, 0)),
                      ("rect", 0, 2, 16, 3, (255, 120, 0)),
@@ -66,7 +66,7 @@ BLOCK_TYPES = {
                      ("rect", 10, 9, 6, 1, (255, 200, 50)),
                                           ("rect", 4, 14, 8, 1, (255, 200, 50)),
                                                                     ])),
-    7: BlockType(7, "water", "水", is_solid=False, space_f=0.985, color=(0, 100, 255),
+    7: BlockType(7, "water", "水", is_solid=False, space_f=0.985, swim_f=4.5, color=(0, 100, 255),
                  pattern=("vector", (16, 16), [
                      ("fill", (0, 100, 255)),
                      ("rect", 0, 3, 16, 1, (50, 150, 255)),
@@ -76,7 +76,7 @@ BLOCK_TYPES = {
                      ("rect", 12, 10, 4, 1, (100, 200, 255)),
                                           ("rect", 6, 14, 5, 1, (100, 200, 255)),
                                                                     ])),
-    8: BlockType(8, "honey", "蜂蜜", is_solid=False, space_f=0.965, color=(255, 200, 0),
+    8: BlockType(8, "honey", "蜂蜜", is_solid=False, space_f=0.965, swim_f=2.0, color=(255, 200, 0),
                  pattern=("vector", (16, 16), [
                      ("fill", (255, 200, 0)),
                      ("rect", 0, 1, 16, 2, (220, 170, 0)),

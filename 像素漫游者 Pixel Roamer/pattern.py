@@ -68,11 +68,13 @@ _pattern_cache = {}
 
 
 def _make_hashable(obj):
-    """递归地将列表转换为元组，使对象可哈希"""
+    """递归地将列表/字典转换为元组，使对象可哈希"""
     if isinstance(obj, list):
         return tuple(_make_hashable(e) for e in obj)
     if isinstance(obj, tuple):
         return tuple(_make_hashable(e) for e in obj)
+    if isinstance(obj, dict):
+        return tuple(sorted((_make_hashable(k), _make_hashable(v)) for k, v in obj.items()))
     return obj
 
 

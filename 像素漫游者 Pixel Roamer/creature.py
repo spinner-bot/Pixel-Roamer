@@ -46,6 +46,9 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False       # 接触池中有可攀爬方块
         self.is_climbing = False     # 主动攀爬中
+        self.can_swim = False        # 接触池中有可游泳方块
+        self._swim_force = 0.0       # 当前最大浮力值
+        self._stamina_mult = 1.0     # 当前体力消耗倍率
 
         self._x = float(x)
         self._y = float(y)
@@ -360,6 +363,11 @@ class Creature:
             return
 
         self.can_climb = any(bt.climbable for bt in types)
+        self.can_swim = any(bt.swim_f > 0 for bt in types)
+        # 若接触池中有可游泳的方块，取最大浮力
+        self._swim_force = max((bt.swim_f for bt in types), default=0.0)
+        # 体力消耗倍率（取接触方块中最大值）
+        self._stamina_mult = max((bt.k_stamina for bt in types), default=1.0)
 
         # 攀爬中但已离开可攀爬方块：自动解除攀爬状态
         if self.is_climbing and not self.can_climb:

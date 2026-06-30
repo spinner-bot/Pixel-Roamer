@@ -14,6 +14,7 @@ class BlockType:
     climbable: bool = False
     surface_f: float = 1.0
     space_f: float = 1.0
+    swim_f: float = 0.0              # 浮力（>0 可游泳，值越大上浮越快）
     bounce: Tuple[float, float] = (0.0, 0.0)    # (vx, vy) 正 vy 向上
     accel_k: Tuple[float, float] = (0.0, 0.0)
     accel_b: Tuple[float, float] = (0.0, 0.0)
