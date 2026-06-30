@@ -1076,6 +1076,7 @@ def _handle_block_browser_input(event):
 # ===================== Buff 预览器 =====================
 def _run_buff_browser(logic_surface, dt):
     """Buff 预览器渲染。"""
+    global _dev_buff_browser_scroll
     import buff_data
     from buff_system import BUFF_TYPES
     all_ids = sorted(BUFF_TYPES.keys())
