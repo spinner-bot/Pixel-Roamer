@@ -1135,3 +1135,20 @@ from block_types_extended import BLOCK_TYPES as _ext
 # 加载功能方块库（ID 330-359）
 from block_types_functional import FUNCTIONAL_BLOCKS as _func
 BLOCK_TYPES.update(_func)
+
+# 归一化位图数据：确保行列数与声明尺寸一致
+for _bid, _bt in BLOCK_TYPES.items():
+    if _bt.pattern and _bt.pattern[0] == "bitmap":
+        try:
+            _fmt, _size, _rows = _bt.pattern
+            _fixed = []
+            for _r in _rows[:_size]:
+                _row = list(_r[:_size])
+                while len(_row) < _size:
+                    _row.append(_row[-1] if _row else (128, 128, 128))
+                _fixed.append(tuple(_row))
+            while len(_fixed) < _size:
+                _fixed.append(_fixed[-1] if _fixed else tuple([(128,128,128)]*_size))
+            _bt.pattern = ("bitmap", _size, _fixed)
+        except Exception:
+            pass
