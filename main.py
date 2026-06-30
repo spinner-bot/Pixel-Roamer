@@ -1160,9 +1160,10 @@ def _run_buff_browser(logic_surface, dt):
             line1 = f"[{bt.id}] {bt.name}  |  {bt.name2}"
             gt.draw(logic_surface, line1, 56 + preview_size + 16, cy + 10, 20,
                                 (255, 255, 210), "sans", shadow=True)
-            line2 = f"[{cat_str}]  {bt.desc}"
-            gt.draw(logic_surface, line2, 56 + preview_size + 16, cy + 42, 17,
+            label_w, _ = gt.draw(logic_surface, f"[{cat_str}] ", 56 + preview_size + 16, cy + 42, 17,
                                 cat_color, "sans", shadow=True)
+            gt.draw(logic_surface, bt.desc, 56 + preview_size + 16 + label_w, cy + 42, 17,
+                                (170, 190, 220), "sans", shadow=True)
 
 
 def _run_buff_detail(logic_surface, dt):
