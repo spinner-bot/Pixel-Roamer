@@ -128,11 +128,12 @@ def _draw_bitmap(pattern: Tuple, w: float, h: float) -> Optional[pygame.Surface]
     """
     try:
         _, size, pixels = pattern
-        src = pygame.Surface((size, size), pygame.SRCALPHA)
+        src = pygame.Surface((size, size))
         for row in range(size):
+            row_data = pixels[row] if row < len(pixels) else [(0,0,0)]*size
             for col in range(size):
-                color = pixels[row][col]
-                src.set_at((col, row), color)
+                color = row_data[col] if col < len(row_data) else (0,0,0)
+                src.set_at((col, row), color[:3])
         return pygame.transform.scale(src, (int(w), int(h)))
     except Exception:
         return None
