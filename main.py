@@ -764,7 +764,7 @@ def _run_block_browser(logic_surface, dt):
 
     # 标题 (5%-15% 区域)
     TITLE_Y = int(LOGIC_HEIGHT * 0.07)
-    HINT_Y = int(LOGIC_HEIGHT * 0.925)
+    HINT_Y = int(LOGIC_HEIGHT * 0.975)
     title = f"方块预览器 [{_dev_block_browser_mode.upper()}]"
     gt.draw(logic_surface, title, LOGIC_WIDTH // 2, TITLE_Y, 36,
                         (255, 255, 200), "sans", shadow=True, center_x=True)
@@ -775,17 +775,18 @@ def _run_block_browser(logic_surface, dt):
     name_key = "name2" if _dev_block_browser_show_name2 else "name"
     cursor = _dev_block_browser_cursor
     CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
+    CONTENT_H = int(LOGIC_HEIGHT * 0.77)  # 20%-97%
 
     if _dev_block_browser_mode == "grid":
         COLS = 8
         cell_w = 170
-        cell_h = 165
+        cell_h = CONTENT_H // 4  # 每页4排
         preview_size = 80
         start_x = (LOGIC_WIDTH - COLS * cell_w) // 2
         start_y = CONTENT_TOP2
         rows = (len(all_ids) + COLS - 1) // COLS
 
-        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // cell_h)
+        visible_rows = 4
         cursor_row = cursor // COLS
         if cursor_row < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor_row
@@ -819,10 +820,10 @@ def _run_block_browser(logic_surface, dt):
 
     else:
         # 列表模式 — 2行布局
-        row_h = 90
+        row_h = CONTENT_H // 8  # 每页8行
         preview_size = 60
         start_y = CONTENT_TOP2
-        visible_rows = max(1, int(LOGIC_HEIGHT * 0.68) // row_h)
+        visible_rows = 8
 
         if cursor < _dev_block_browser_scroll:
             _dev_block_browser_scroll = cursor
@@ -1087,8 +1088,9 @@ def _run_buff_browser(logic_surface, dt):
         return
 
     TITLE_Y = int(LOGIC_HEIGHT * 0.07)
-    HINT_Y = int(LOGIC_HEIGHT * 0.925)
+    HINT_Y = int(LOGIC_HEIGHT * 0.975)
     CONTENT_TOP2 = int(LOGIC_HEIGHT * 0.20)
+    CONTENT_H = int(LOGIC_HEIGHT * 0.77)
 
     title = f"Buff 预览器 [{_dev_buff_browser_mode.upper()}]"
     gt.draw(logic_surface, title, LOGIC_WIDTH // 2, TITLE_Y, 36,
