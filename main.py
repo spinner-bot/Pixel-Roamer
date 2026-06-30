@@ -710,6 +710,8 @@ def _get_block_highlights(bt) -> list:
         h.append(f"弹跳 ({bt.bounce[0]:.0f},{bt.bounce[1]:.0f})")
     if bt.accel_k != (0.0, 0.0):
         h.append(f"加速系数 ({bt.accel_k[0]:.1f},{bt.accel_k[1]:.1f})")
+    if bt.accel_b != (0.0, 0.0):
+        h.append(f"基础加速 ({bt.accel_b[0]:.1f},{bt.accel_b[1]:.1f})")
     if bt.special is not None:
         special_names = {
             "teleport": "传送", "checkpoint": "检查点", "heal": "治疗",
@@ -725,6 +727,8 @@ def _get_block_highlights(bt) -> list:
         h.append(f"破坏等级 {bt.break_level}")
     if abs(bt.k_stamina - 1.0) > 0.001:
         h.append(f"体力消耗 x{bt.k_stamina:.1f}")
+    if bt.break_special is not None:
+        h.append(f"破坏特效: {bt.break_special}")
     if bt.drops_item_id is not None:
         h.append(f"掉落: {bt.drops_item_id}")
     if bt.one_way:
@@ -734,6 +738,19 @@ def _get_block_highlights(bt) -> list:
             pass  # 已显示可攀爬
         elif getattr(bt, 'swim_f', 0.0) <= 0:
             h.append("非实体")
+    # Buff 信息（方块的 gameplay 核心扩展）
+    buff_ids = getattr(bt, 'buff_ids', ())
+    if buff_ids:
+        from buff_system import BUFF_TYPES
+        buff_names = []
+        for bid in buff_ids[:3]:
+            btype = BUFF_TYPES.get(bid)
+            if btype:
+                buff_names.append(btype.name2 or btype.name)
+            else:
+                buff_names.append(f"B{bid}")
+        suffix = "…" if len(buff_ids) > 3 else ""
+        h.append(f"增益: {','.join(buff_names)}{suffix}")
     return h
 
 
@@ -856,8 +873,13 @@ def _run_block_browser(logic_surface, dt):
             if bt.climbable: tags.append("攀爬")
             if getattr(bt, 'swim_f', 0.0) > 0: tags.append("游泳")
             if bt.damage_ps > 0: tags.append(f"伤{bt.damage_ps:.0f}")
+            if bt.one_way: tags.append("单向")
+            buff_ids = getattr(bt, 'buff_ids', ())
+            if buff_ids: tags.append(f"Buff×{len(buff_ids)}")
             highlights = _get_block_highlights(bt)
-            combined = tags + highlights[:3]
+            # 筛选非buff类亮点（buff已在上方标签体现），合并最多4项
+            non_buff_hl = [hl for hl in highlights if not hl.startswith("增益:")]
+            combined = tags + non_buff_hl[:4]
             line2 = "  |  ".join(combined) if combined else "—"
             gt.draw(logic_surface, line2, 56 + preview_size + 16, cy + 42, 17,
                                 (170, 190, 220), "sans", shadow=True)
@@ -914,9 +936,10 @@ def _run_block_detail(logic_surface, dt):
         if ly + i * lh > CONTENT_BOT - 10: break
         gt.draw(logic_surface, inf, col1_x + 6, ly + i * lh, FS, (210, 220, 250), "sans", shadow=True)
 
-    # -- 中栏：物理/战斗属性 --
+    # -- 中栏：物理/战斗属性 + Buff --
     my = CONTENT_TOP + 10
-    mh = 32
+    mh = 28
+    MFS = 20  # 中栏字体略小以容纳更多字段
     mid_attrs = [
         f"表面摩擦: {bt.surface_f:.3f}",
         f"空间阻力: {bt.space_f:.3f}",
@@ -928,14 +951,40 @@ def _run_block_detail(logic_surface, dt):
         f"光照: {bt.light_level}",
         f"特殊: {bt.special}",
         f"特数: {str(bt.special_data)[:40]}",
-        f"破坏等级: {bt.break_level}",
-        f"破坏血量: {bt.break_hp:.1f}",
+        f"破坏等级: {bt.break_level}  血量: {bt.break_hp:.0f}",
         f"破坏特效: {bt.break_special}",
         f"掉落物: {bt.drops_item_id}",
     ]
     for i, attr in enumerate(mid_attrs):
         if my + i * mh > CONTENT_BOT - 10: break
-        gt.draw(logic_surface, attr, col2_x + 6, my + i * mh, FS, (210, 220, 250), "sans", shadow=True)
+        gt.draw(logic_surface, attr, col2_x + 6, my + i * mh, MFS, (210, 220, 250), "sans", shadow=True)
+
+    # -- Buff 数据区（中栏下方） --
+    buff_ids = getattr(bt, 'buff_ids', ())
+    if buff_ids:
+        by = my + len(mid_attrs) * mh + 6
+        # 分隔线
+        pygame.draw.line(logic_surface, (100, 180, 100), (col2_x, by), (col2_x + cw - 12, by), 1)
+        by += 6
+        gt.draw(logic_surface, "══ Buff 绑定 ══", col2_x + cw // 2, by, 18,
+                            (100, 220, 100), "sans", shadow=True, center_x=True)
+        by += 22
+        from buff_system import BUFF_TYPES
+        buff_params = getattr(bt, 'buff_params_list', ())
+        buff_durs = getattr(bt, 'buff_durations', ())
+        for j, bid in enumerate(buff_ids):
+            if by > CONTENT_BOT - 16: break
+            btype = BUFF_TYPES.get(bid)
+            bname = f"{btype.name2} ({btype.name})" if btype else f"Buff#{bid}"
+            param = buff_params[j] if j < len(buff_params) else ()
+            dur = buff_durs[j] if j < len(buff_durs) else None
+            dur_str = f"{dur:.1f}s" if dur is not None else "永久"
+            buf_line = f"#{bid} {bname}"
+            gt.draw(logic_surface, buf_line, col2_x + 6, by, 17, (180, 240, 180), "sans", shadow=True)
+            by += 20
+            if param:
+                gt.draw(logic_surface, f"  参数: {param}  持续: {dur_str}", col2_x + 6, by, 15, (140, 180, 160), "sans")
+                by += 18
 
     # -- 右栏：外观编码 --
     ry = CONTENT_TOP + 8
