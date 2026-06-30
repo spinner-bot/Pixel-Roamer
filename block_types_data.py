@@ -57,7 +57,7 @@ BLOCK_TYPES = {
                                           ("circle", 12, 13, 1, (255, 230, 180)),
                                                                     ])),
     6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, swim_f=3.0, color=(235, 80, 0),
-                 buff_id=16, buff_params=(10,), buff_duration=10.0,
+                 buff_ids=(16,), buff_params_list=((10,),), buff_durations=(10.0,),
                  pattern=("vector", (16, 16), [
                      ("fill", (235, 80, 0)),
                      ("rect", 0, 2, 16, 3, (255, 120, 0)),
@@ -97,7 +97,7 @@ BLOCK_TYPES = {
                                           ("rect", 0, 12, 16, 2, (120, 70, 30)),
                                                                     ])),
     10: BlockType(10, "vine", "藤蔓", is_solid=False, climbable=True, damage_ps=5, color=(34, 139, 34),
-                  buff_id=17, buff_params=(1,), buff_duration=5.0,
+                  buff_ids=(17,), buff_params_list=((1,),), buff_durations=(5.0,),
                   pattern=("vector", (16, 16), [
                       ("rect", 5, 0, 6, 16, (0, 100, 0)),
                       ("circle", 4, 4, 2, (0, 80, 0)),

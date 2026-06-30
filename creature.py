@@ -428,11 +428,13 @@ class Creature:
         if max_dps > 0:
             self.take_raw_damage(max_dps * dt)
 
-        # ---- Buff 施加（接触方块时触发）----
+        # ---- Buff 施加（接触方块时触发，支持复合）----
         for bt in types:
-            if bt.buff_id is not None:
-                dur = bt.buff_duration
-                self.apply_buff(bt.buff_id, bt.buff_params, dur)
+            if bt.buff_ids:
+                for i, bid in enumerate(bt.buff_ids):
+                    params = bt.buff_params_list[i] if i < len(bt.buff_params_list) else ()
+                    dur = bt.buff_durations[i] if i < len(bt.buff_durations) else None
+                    self.apply_buff(bid, params, dur)
 
         for bt in types:
             if bt.special is not None:
