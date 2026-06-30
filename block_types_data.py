@@ -57,6 +57,7 @@ BLOCK_TYPES = {
                                           ("circle", 12, 13, 1, (255, 230, 180)),
                                                                     ])),
     6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, swim_f=3.0, color=(235, 80, 0),
+                 buff_id=16, buff_params=(10,), buff_duration=10.0,
                  pattern=("vector", (16, 16), [
                      ("fill", (235, 80, 0)),
                      ("rect", 0, 2, 16, 3, (255, 120, 0)),
@@ -96,6 +97,7 @@ BLOCK_TYPES = {
                                           ("rect", 0, 12, 16, 2, (120, 70, 30)),
                                                                     ])),
     10: BlockType(10, "vine", "藤蔓", is_solid=False, climbable=True, damage_ps=5, color=(34, 139, 34),
+                  buff_id=17, buff_params=(1,), buff_duration=5.0,
                   pattern=("vector", (16, 16), [
                       ("rect", 5, 0, 6, 16, (0, 100, 0)),
                       ("circle", 4, 4, 2, (0, 80, 0)),
@@ -1135,6 +1137,9 @@ from block_types_extended import BLOCK_TYPES as _ext
 # 加载功能方块库（ID 330-359）
 from block_types_functional import FUNCTIONAL_BLOCKS as _func
 BLOCK_TYPES.update(_func)
+# 加载 Buff 功能方块库（ID 400-741）
+from block_types_buff import BUFF_BLOCKS as _buff_blocks
+BLOCK_TYPES.update(_buff_blocks)
 
 # 归一化位图数据：确保行列数与声明尺寸一致
 for _bid, _bt in BLOCK_TYPES.items():

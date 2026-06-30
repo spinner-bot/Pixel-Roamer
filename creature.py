@@ -428,6 +428,12 @@ class Creature:
         if max_dps > 0:
             self.take_raw_damage(max_dps * dt)
 
+        # ---- Buff 施加（接触方块时触发）----
+        for bt in types:
+            if bt.buff_id is not None:
+                dur = bt.buff_duration
+                self.apply_buff(bt.buff_id, bt.buff_params, dur)
+
         for bt in types:
             if bt.special is not None:
                 if bt.special == "teleport" and bt.special_data is not None:

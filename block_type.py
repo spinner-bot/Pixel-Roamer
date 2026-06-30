@@ -30,3 +30,7 @@ class BlockType:
     color: Tuple[int, int, int] = (128, 128, 128)
     # 图案属性：为 None 时仅使用纯色底色
     pattern: Optional[Tuple] = None
+    # Buff 触发（接触时自动施加）
+    buff_id: Optional[int] = None       # 施加的 buff ID
+    buff_params: Tuple = ()             # buff 参数
+    buff_duration: Optional[float] = None  # 持续时间（秒），None=永久
