@@ -113,49 +113,49 @@ sticky_icon = [('fill', (30, 25, 20)), ('rect', 6, 6, 12, 8, (200, 160, 80)), ('
 
 register(BuffType(id=1, name="regen", name2="恢复", category=CAT_POSITIVE,
     desc="每秒恢复 {0} 点生命值",
-    icon=("vector",(G,G),heart),
+    icon=("vector",(G,G),heart()),
     max_stacks=3, tick="regen",
 ))
 
 register(BuffType(id=2, name="shield_regen", name2="护佑", category=CAT_POSITIVE,
     desc="每秒获得 {0} 点护盾",
-    icon=("vector",(G,G),shield),
+    icon=("vector",(G,G),shield()),
     max_stacks=3, tick="shield_regen",
 ))
 
 register(BuffType(id=3, name="swiftness", name2="迅捷", category=CAT_POSITIVE,
     desc="移动速度 +{0}%",
-    icon=("vector",(G,G),wing),
+    icon=("vector",(G,G),wing()),
     max_stacks=2, tick="swiftness",
 ))
 
 register(BuffType(id=4, name="leaping", name2="轻身", category=CAT_POSITIVE,
     desc="跳跃高度 +{0}%",
-    icon=("vector",(G,G),arrow_up),
+    icon=("vector",(G,G),arrow_up()),
     max_stacks=2, tick="leaping",
 ))
 
 register(BuffType(id=5, name="vigor", name2="活力", category=CAT_POSITIVE,
     desc="体力恢复速度 +{0}%",
-    icon=("vector",(G,G),bolt),
+    icon=("vector",(G,G),bolt()),
     max_stacks=2, tick="vigor",
 ))
 
 register(BuffType(id=6, name="endurance", name2="坚忍", category=CAT_POSITIVE,
     desc="体力消耗 -{0}%",
-    icon=("vector",(G,G),rock),
+    icon=("vector",(G,G),rock()),
     max_stacks=1, tick="endurance",
 ))
 
 register(BuffType(id=7, name="fortify", name2="坚守", category=CAT_POSITIVE,
     desc="受到伤害 -{0}%",
-    icon=("vector",(G,G),wall),
+    icon=("vector",(G,G),wall()),
     max_stacks=2, tick="fortify",
 ))
 
 register(BuffType(id=8, name="clarity", name2="清明", category=CAT_POSITIVE,
     desc="免疫方向反转和视野干扰",
-    icon=("vector",(G,G),eye),
+    icon=("vector",(G,G),eye()),
     max_stacks=1, tick="clarity",
     conflicts=(23, 24, 25), cleanup_by=()))
 
@@ -173,25 +173,25 @@ register(BuffType(id=10, name="thornmail", name2="荆棘", category=CAT_POSITIVE
 
 register(BuffType(id=11, name="lifesteal", name2="嗜血", category=CAT_POSITIVE,
     desc="造成伤害时回复其 {0}% 为生命",
-    icon=("vector",(G,G),blood),
+    icon=("vector",(G,G),blood()),
     max_stacks=3, tick="lifesteal",
 ))
 
 register(BuffType(id=12, name="cleansing", name2="净化", category=CAT_POSITIVE,
     desc="每 {0} 秒移除一个负面效果",
-    icon=("vector",(G,G),drop),
+    icon=("vector",(G,G),drop()),
     max_stacks=1, tick="cleansing",
 ))
 
 register(BuffType(id=13, name="feather", name2="轻羽", category=CAT_POSITIVE,
     desc="重力降低 {0}%",
-    icon=("vector",(G,G),feather),
+    icon=("vector",(G,G),feather()),
     max_stacks=1, tick="feather",
 ))
 
 register(BuffType(id=14, name="magnetic", name2="磁引", category=CAT_NEUTRAL,
     desc="自动吸引附近掉落物",
-    icon=("vector",(G,G),magnet),
+    icon=("vector",(G,G),magnet()),
     max_stacks=1, tick="magnetic",
 ))
 
@@ -203,7 +203,7 @@ register(BuffType(id=15, name="soaked", name2="浸湿", category=CAT_NEUTRAL,
 
 register(BuffType(id=16, name="burning", name2="着火", category=CAT_NEGATIVE,
     desc="每秒损失 {0} 点生命值，遇水清除",
-    icon=("vector",(G,G),fire),
+    icon=("vector",(G,G),fire()),
     max_stacks=3, tick="burning",
     conflicts=(), cleanup_by=(15,)))
 
@@ -215,31 +215,31 @@ register(BuffType(id=17, name="bleeding", name2="流血", category=CAT_NEGATIVE,
 
 register(BuffType(id=18, name="weakened", name2="脱力", category=CAT_NEGATIVE,
     desc="体力消耗速度 ×{0}",
-    icon=("vector",(G,G),chain),
+    icon=("vector",(G,G),chain()),
     max_stacks=1, tick="weakened",
 ))
 
 register(BuffType(id=19, name="fatigue", name2="疲倦", category=CAT_NEGATIVE,
     desc="体力恢复速度 -{0}%",
-    icon=("vector",(G,G),zzz),
+    icon=("vector",(G,G),zzz()),
     max_stacks=2, tick="fatigue",
 ))
 
 register(BuffType(id=20, name="grievous_wound", name2="重伤", category=CAT_NEGATIVE,
     desc="受到的治疗效果 -{0}%",
-    icon=("vector",(G,G),cracked_heart),
+    icon=("vector",(G,G),cracked_heart()),
     max_stacks=2, tick="grievous_wound",
 ))
 
 register(BuffType(id=21, name="rooted", name2="定身", category=CAT_NEGATIVE,
     desc="无法左右移动",
-    icon=("vector",(G,G),web),
+    icon=("vector",(G,G),web()),
     max_stacks=1, tick="rooted",
 ))
 
 register(BuffType(id=22, name="slowed", name2="缓步", category=CAT_NEGATIVE,
     desc="移动速度 -{0}%",
-    icon=("vector",(G,G),snail),
+    icon=("vector",(G,G),snail()),
     max_stacks=3, tick="slowed",
 ))
 
@@ -269,19 +269,19 @@ register(BuffType(id=26, name="armor_break", name2="破甲", category=CAT_NEGATI
 
 register(BuffType(id=27, name="grounded", name2="压制", category=CAT_NEGATIVE,
     desc="无法跳跃",
-    icon=("vector",(G,G),anchor),
+    icon=("vector",(G,G),anchor()),
     max_stacks=1, tick="grounded",
 ))
 
 register(BuffType(id=28, name="stunned", name2="晕眩", category=CAT_NEGATIVE,
     desc="无法移动、跳跃、交互",
-    icon=("vector",(G,G),spiral),
+    icon=("vector",(G,G),spiral()),
     max_stacks=1, tick="stunned",
 ))
 
 register(BuffType(id=29, name="pierced", name2="穿甲", category=CAT_NEGATIVE,
     desc="伤害优先消耗血量，无视护盾",
-    icon=("vector",(G,G),arrow_down),
+    icon=("vector",(G,G),arrow_down()),
     max_stacks=1, tick="pierced",
 ))
 
@@ -293,13 +293,13 @@ register(BuffType(id=30, name="disarmed", name2="缴械", category=CAT_NEGATIVE,
 
 register(BuffType(id=31, name="interfered", name2="干扰", category=CAT_NEGATIVE,
     desc="无法使用技能",
-    icon=("vector",(G,G),antenna),
+    icon=("vector",(G,G),antenna()),
     max_stacks=1, tick="interfered",
 ))
 
 register(BuffType(id=32, name="silenced_debuff", name2="沉默", category=CAT_NEGATIVE,
     desc="无法交互",
-    icon=("vector",(G,G),xmouth),
+    icon=("vector",(G,G),xmouth()),
     max_stacks=1, tick="silenced_debuff",
 ))
 
@@ -323,7 +323,7 @@ register(BuffType(id=35, name="magic_immune", name2="法术免疫", category=CAT
 
 register(BuffType(id=36, name="full_immune", name2="完全免疫", category=CAT_POSITIVE,
     desc="免疫所有伤害（包括环境伤害）",
-    icon=("vector",(G,G),aura),
+    icon=("vector",(G,G),aura()),
     max_stacks=1, tick="full_immune",
 ))
 
@@ -353,7 +353,7 @@ register(BuffType(id=40, name="iron_will", name2="铁意", category=CAT_POSITIVE
 
 register(BuffType(id=41, name="surefooted", name2="稳足", category=CAT_POSITIVE,
     desc="免疫风力、水流、磁力等环境位移",
-    icon=("vector",(G,G),anchor),
+    icon=("vector",(G,G),anchor()),
     max_stacks=1, tick="surefooted",
 ))
 
@@ -371,19 +371,19 @@ register(BuffType(id=43, name="sticky", name2="黏着", category=CAT_NEUTRAL,
 
 register(BuffType(id=44, name="drowsy", name2="困倦", category=CAT_NEGATIVE,
     desc="每 {0} 秒有概率短暂晕眩",
-    icon=("vector",(G,G),zzz),
+    icon=("vector",(G,G),zzz()),
     max_stacks=1, tick="drowsy",
 ))
 
 register(BuffType(id=45, name="electrified", name2="带电", category=CAT_NEUTRAL,
     desc="接触水体时持续受到伤害",
-    icon=("vector",(G,G),bolt),
+    icon=("vector",(G,G),bolt()),
     max_stacks=1, tick="electrified",
 ))
 
 register(BuffType(id=46, name="inflamed", name2="发炎", category=CAT_NEGATIVE,
     desc="受到的治疗效果减半，火焰伤害翻倍",
-    icon=("vector",(G,G),fire),
+    icon=("vector",(G,G),fire()),
     max_stacks=1, tick="inflamed",
 ))
 
@@ -395,60 +395,60 @@ register(BuffType(id=47, name="berserk", name2="狂暴", category=CAT_POSITIVE,
 
 register(BuffType(id=48, name="ghostly", name2="幽灵", category=CAT_POSITIVE,
     desc="可以穿过单层薄墙，持续 {0} 秒",
-    icon=("vector",(G,G),shadow),
+    icon=("vector",(G,G),shadow()),
     max_stacks=1, tick="ghostly",
 ))
 
 register(BuffType(id=49, name="magnetized", name2="磁化", category=CAT_NEUTRAL,
     desc="被附近的磁矿石吸引或排斥",
-    icon=("vector",(G,G),magnet),
+    icon=("vector",(G,G),magnet()),
     max_stacks=1, tick="magnetized",
 ))
 
 register(BuffType(id=50, name="glowing", name2="发光", category=CAT_POSITIVE,
     desc="自身发出光芒照亮周围",
-    icon=("vector",(G,G),star),
+    icon=("vector",(G,G),star()),
     max_stacks=1, tick="glowing",
 ))
 
 register(BuffType(id=51, name="chilled", name2="寒冷", category=CAT_NEGATIVE,
     desc="移动速度降低，入水后冻结加倍",
-    icon=("vector",(G,G),snowflake),
+    icon=("vector",(G,G),snowflake()),
     max_stacks=3, tick="chilled",
 ))
 
 register(BuffType(id=52, name="lucky", name2="幸运", category=CAT_POSITIVE,
     desc="效果结束时随机清除一个负面状态",
-    icon=("vector",(G,G),clover),
+    icon=("vector",(G,G),clover()),
     max_stacks=2, tick="lucky",
 ))
 
 register(BuffType(id=53, name="wind_walk", name2="风步", category=CAT_POSITIVE,
     desc="连续移动时获得越来越快的加速",
-    icon=("vector",(G,G),cloud),
+    icon=("vector",(G,G),cloud()),
     max_stacks=1, tick="wind_walk",
 ))
 
 register(BuffType(id=54, name="anchored", name2="定锚", category=CAT_POSITIVE,
     desc="重力大幅增加，不会被水流风力移动",
-    icon=("vector",(G,G),arrow_down),
+    icon=("vector",(G,G),arrow_down()),
     max_stacks=1, tick="anchored",
 ))
 
 register(BuffType(id=55, name="parasitic", name2="寄生", category=CAT_NEGATIVE,
     desc="每秒损失生命，被治愈时额外扣除等量生命",
-    icon=("vector",(G,G),blood),
+    icon=("vector",(G,G),blood()),
     max_stacks=3, tick="parasitic",
 ))
 
 register(BuffType(id=56, name="echo", name2="回声", category=CAT_NEUTRAL,
     desc="行动时发出声响，可能惊动敌人",
-    icon=("vector",(G,G),antenna),
+    icon=("vector",(G,G),antenna()),
     max_stacks=1, tick="echo",
 ))
 
 register(BuffType(id=57, name="cursed", name2="诅咒", category=CAT_NEGATIVE,
     desc="无法获得任何有益状态",
-    icon=("vector",(G,G),skull),
+    icon=("vector",(G,G),skull()),
     max_stacks=1, tick="cursed",
 ))
