@@ -81,11 +81,37 @@ class BuffInstance:
             self.stacks += 1
 
     def format_desc(self) -> str:
-        """将描述模板与 params 拼接，返回最终描述字符串。"""
+        """将描述模板与 params 拼接，返回最终描述字符串。
+        参数根据上下文智能格式化：%后缀→整数，大数→整数，小数→1-3位。"""
         bt = self.buff_type
         if not bt or not bt.desc:
             return ""
         s = bt.desc
         for i, p in enumerate(self.params):
-            s = s.replace(f"{{{i}}}", str(p))
+            placeholder = f"{{{i}}}"
+            idx = s.find(placeholder)
+            # 检查占位符前后的上下文
+            after = s[idx + len(placeholder):idx + len(placeholder) + 2] if idx >= 0 else ""
+            before = s[idx - 1:idx] if idx > 0 else ""
+            val = float(p) if isinstance(p, (int, float)) else p
+
+            if isinstance(val, (int, float)):
+                if '%' in after or (before in ('+', '-') and '%' in after):
+                    # 百分比：整数
+                    formatted = f"{val:.0f}"
+                elif abs(val) >= 100:
+                    formatted = f"{val:.0f}"
+                elif abs(val) >= 1:
+                    if val == int(val):
+                        formatted = f"{int(val)}"
+                    else:
+                        formatted = f"{val:.1f}"
+                elif abs(val) >= 0.1:
+                    formatted = f"{val:.2f}"
+                else:
+                    formatted = f"{val:.3f}"  # 兜底
+            else:
+                formatted = str(p)
+
+            s = s.replace(placeholder, formatted, 1)
         return s

@@ -575,7 +575,6 @@ def draw_buff_status(surf, player, dt: float):
 
     # ---- 鼠标悬浮浮窗 ----
     mx, my = pygame.mouse.get_pos()
-    # 转换屏幕坐标到逻辑坐标
     logic_mx = (mx - draw_offset_x) / scale
     logic_my = (my - draw_offset_y) / scale
 
@@ -584,7 +583,6 @@ def draw_buff_status(surf, player, dt: float):
             btype = b.buff_type
             if btype is None:
                 continue
-            # 准备文字
             name_text = btype.name2 or btype.name
             if b.duration is not None:
                 time_text = _format_time(max(0, b.duration))
@@ -593,15 +591,34 @@ def draw_buff_status(surf, player, dt: float):
             title = f"{name_text}  {time_text}"
             desc = b.format_desc() if b.format_desc() else ""
 
-            # 浮窗尺寸估算
             TW = 18  # 标题字号
-            DW = 15  # 描述字号
-            LH = 26  # 行高
-            # 粗略宽度：中文约等于字号宽度
-            title_w = len(title) * TW
-            desc_w = max(0, len(desc) * DW // 2) if desc else 0
-            popup_w = max(title_w, desc_w) + 20
-            popup_h = 40 if not desc else 56
+            DW = 14  # 描述字号
+            PAD_X = 12
+            PAD_Y = 8
+            # 浮窗最小/最大宽度
+            MIN_W = 160
+            MAX_W = 280
+            # 标题宽度决定基础宽
+            title_px = len(title) * TW  # 粗略估算
+            popup_w = max(MIN_W, min(MAX_W, title_px + PAD_X * 2))
+
+            # 描述自动换行
+            chars_per_line = max(1, (popup_w - PAD_X * 2) // (DW // 2))  # 中文字宽≈字号/2
+            desc_lines = []
+            if desc:
+                line = ""
+                for ch in desc:
+                    line += ch
+                    if len(line) >= chars_per_line:
+                        desc_lines.append(line)
+                        line = ""
+                if line:
+                    desc_lines.append(line)
+
+            # 动态高度
+            title_h = TW + 4
+            desc_h = len(desc_lines) * (DW + 4) if desc_lines else 0
+            popup_h = PAD_Y * 2 + title_h + desc_h + (4 if desc_lines else 0)
 
             # 定位：鼠标右侧，不超出屏幕
             popup_x = logic_mx + 16
@@ -619,13 +636,16 @@ def draw_buff_status(surf, player, dt: float):
             pygame.draw.rect(surf, (80, 80, 120), popup_rect, 1, border_radius=4)
 
             # 标题
-            gt.draw(surf, title, popup_x + popup_w // 2, popup_y + 6, TW,
+            gt.draw(surf, title, popup_x + popup_w // 2, popup_y + PAD_Y, TW,
                                (255, 255, 220), "sans", shadow=True, center_x=True)
-            # 描述（如果有）
-            if desc:
-                gt.draw(surf, desc, popup_x + popup_w // 2, popup_y + 28, DW,
-                                   (200, 210, 230), "sans", shadow=True, center_x=True)
-            break  # 只显示一个浮窗
+            # 描述（逐行）
+            if desc_lines:
+                dy = popup_y + PAD_Y + title_h + 4
+                for dl in desc_lines:
+                    gt.draw(surf, dl, popup_x + popup_w // 2, dy, DW,
+                                       (200, 210, 230), "sans", shadow=True, center_x=True)
+                    dy += DW + 4
+            break
 
 
 # ===================== 濒死滤镜 =====================
