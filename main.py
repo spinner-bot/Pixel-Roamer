@@ -379,18 +379,26 @@ def draw_hp_bar(surf, player, dt: float):
     gt.draw(surf, txt, BAR_X + BAR_W // 2, BAR_Y + BAR_H // 2 - BAR_TEXT_H // 2,
                          BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
 
-    # 右侧心形图标（与条等高）
-    hx = BAR_X + BAR_W + BAR_H // 2 + 2
+    # 右侧心形图标（与条等高，留空隙）
+    hx = BAR_X + BAR_W + BAR_H // 2 + 6
     hy = BAR_Y + BAR_H // 2
-    hs = BAR_H // 2 - 2  # 半高留边距
+    hs = BAR_H // 2 - 2
     heart_color = (255, 50, 40) if hp_ratio < 0.3 else (255, 110, 90)
     heart_pts = [
-        (hx, hy + hs),           # 底部尖
-        (hx - hs, hy - hs//3),   # 左上
-        (hx - hs//2, hy - hs),   # 左瓣顶
-        (hx, hy - hs//3),        # 中心凹
-        (hx + hs//2, hy - hs),   # 右瓣顶
-        (hx + hs, hy - hs//3),   # 右上
+        (hx, hy + hs),                    # 底尖
+        (hx + hs*3//10, hy + hs*6//10),   # 右下内
+        (hx + hs*7//10, hy + hs*3//10),   # 右下外
+        (hx + hs*9//10, hy - hs//10),     # 右外
+        (hx + hs*7//10, hy - hs//2),      # 右上
+        (hx + hs*35//100, hy - hs*85//100), # 右瓣顶
+        (hx + hs//10, hy - hs*65//100),   # 右瓣内
+        (hx, hy - hs*3//10),              # 中心凹
+        (hx - hs//10, hy - hs*65//100),   # 左瓣内
+        (hx - hs*35//100, hy - hs*85//100), # 左瓣顶
+        (hx - hs*7//10, hy - hs//2),      # 左上
+        (hx - hs*9//10, hy - hs//10),     # 左外
+        (hx - hs*7//10, hy + hs*3//10),   # 左下外
+        (hx - hs*3//10, hy + hs*6//10),   # 左下内
     ]
     pygame.draw.polygon(surf, heart_color, heart_pts)
     pygame.draw.polygon(surf, (160, 25, 15), heart_pts, 1)
@@ -432,18 +440,20 @@ def draw_stamina_bar(surf, player, dt: float):
     gt.draw(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
                          BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
 
-    # 右侧闪电图标（蓝色，与条等高）
-    bx = BAR_X + BAR_W + BAR_H // 2 + 2
+    # 右侧闪电图标（蓝色，上宽下窄，与条等高，留空隙）
+    bx = BAR_X + BAR_W + BAR_H // 2 + 6
     by = stam_y + BAR_H // 2
     bs = BAR_H // 2 - 2
     bolt_color = (60, 160, 255)
     bolt_pts = [
-        (bx, by - bs),           # 顶
-        (bx + bs//3, by - bs//4),
-        (bx - bs//2, by + bs//5),
-        (bx + bs//3, by + bs//5),
-        (bx - bs//2, by + bs),
-        (bx, by + bs//3),
+        (bx - bs, by - bs),          # 左上（宽）
+        (bx + bs//2, by - bs),       # 右上（宽）
+        (bx - bs//4, by - bs//4),    # 中左
+        (bx + bs//3, by),            # 中右
+        (bx - bs//3, by + bs//3),    # 下左
+        (bx + bs//4, by + bs//2),    # 下右
+        (bx - bs//6, by + bs),       # 底尖（窄）
+        (bx + bs//6, by + bs*7//10), # 底右
     ]
     pygame.draw.polygon(surf, bolt_color, bolt_pts)
     pygame.draw.polygon(surf, (30, 100, 180), bolt_pts, 1)
