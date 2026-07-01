@@ -600,19 +600,25 @@ def draw_buff_status(surf, player, dt: float):
             PAD_Y = 8
             MIN_W = 160
             MAX_W = 280
-            title_px = len(title) * TW
+            # 标题像素宽度（中文≈字号，ASCII≈字号/2）
+            title_px = sum(TW if ord(c) > 127 else TW // 2 for c in title)
             popup_w = max(MIN_W, min(MAX_W, title_px + PAD_X * 2))
 
-            # 描述自动换行
-            chars_per_line = max(1, (popup_w - PAD_X * 2) // (DW // 2))  # 中文字宽≈字号/2
+            # 描述像素级换行（中文≈DW，ASCII≈DW/2）
+            avail_w = popup_w - PAD_X * 2
             desc_lines = []
             if desc:
                 line = ""
+                line_px = 0
                 for ch in desc:
-                    line += ch
-                    if len(line) >= chars_per_line:
+                    ch_w = DW if ord(ch) > 127 else DW // 2
+                    if line_px + ch_w > avail_w and line:
                         desc_lines.append(line)
-                        line = ""
+                        line = ch
+                        line_px = ch_w
+                    else:
+                        line += ch
+                        line_px += ch_w
                 if line:
                     desc_lines.append(line)
 
@@ -621,7 +627,7 @@ def draw_buff_status(surf, player, dt: float):
             desc_h = len(desc_lines) * (DW + 4) if desc_lines else 0
             popup_h = PAD_Y * 2 + title_h + desc_h + (4 if desc_lines else 0)
 
-            # 定位：鼠标右侧，不超出屏幕
+            # 定位
             popup_x = logic_mx + 16
             popup_y = logic_my - popup_h // 2
             if popup_x + popup_w > LOGIC_WIDTH:
@@ -631,17 +637,22 @@ def draw_buff_status(surf, player, dt: float):
             if popup_y + popup_h > LOGIC_HEIGHT - 4:
                 popup_y = LOGIC_HEIGHT - popup_h - 4
 
-            # 绘制浮窗背景
+            # 背景
             popup_rect = pygame.Rect(popup_x, popup_y, popup_w, popup_h)
             pygame.draw.rect(surf, (15, 15, 35), popup_rect, border_radius=4)
             pygame.draw.rect(surf, (80, 80, 120), popup_rect, 1, border_radius=4)
 
-            # 标题：名称类别色 + 时间中性色
-            name_w, _ = gt.draw(surf, name_text, popup_x + PAD_X, popup_y + PAD_Y, TW,
-                                           name_color, "sans", shadow=True)
-            gt.draw(surf, f"  {time_text}", popup_x + PAD_X + name_w, popup_y + PAD_Y, TW,
+            # 标题居中（名称类别色 + 时间中性色）
+            name_px = sum(TW if ord(c) > 127 else TW // 2 for c in name_text)
+            gap_px = TW  # "  " 约一个中文字宽
+            time_px = sum(TW if ord(c) > 127 else TW // 2 for c in f"  {time_text}")
+            total_title_px = name_px + time_px
+            title_start_x = popup_x + (popup_w - total_title_px) // 2
+            gt.draw(surf, name_text, title_start_x, popup_y + PAD_Y, TW,
+                               name_color, "sans", shadow=True)
+            gt.draw(surf, f"  {time_text}", title_start_x + name_px, popup_y + PAD_Y, TW,
                                (200, 200, 210), "sans", shadow=True)
-            # 描述（逐行）
+            # 描述居中
             if desc_lines:
                 dy = popup_y + PAD_Y + title_h + 4
                 for dl in desc_lines:
