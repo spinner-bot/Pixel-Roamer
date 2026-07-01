@@ -419,10 +419,16 @@ def draw_stamina_bar(surf, player, dt: float):
     _draw_single_bar(surf, BAR_X, stam_y, BAR_W, BAR_H, PAD, BORDER_R,
                      ratio, 0.0, stam_color, None, 0.0, 0.0)
 
-    # 体力不足时边框高速黑白交替闪烁
+    # 体力不足时边框闪烁（3周期，暗→亮→暗→亮→暗→亮→暗）
     if _stamina_flash_timer > 0:
-        flash_on = int(_stamina_flash_timer * 24) % 2 == 0
-        flash_c = (255, 255, 255) if flash_on else (0, 0, 0)
+        # 频率降为原2/3，16个tick覆盖约1秒
+        tick = int(_stamina_flash_timer * 16)
+        # 3周期脉冲：暗暗暗暗 亮 暗 亮 暗 亮 暗暗暗暗（13帧）
+        flash_pattern = [0,0,0,0, 1,0, 1,0, 1, 0,0,0,0]
+        if tick < len(flash_pattern) and flash_pattern[tick]:
+            flash_c = (255, 255, 255)
+        else:
+            flash_c = (0, 0, 0)
         flash_rect = pygame.Rect(BAR_X, stam_y, BAR_W, BAR_H)
         pygame.draw.rect(surf, flash_c, flash_rect, 3, border_radius=BORDER_R)
 
@@ -2270,8 +2276,8 @@ while running:
 
                 # ---- 游泳: W/↑向上，攀爬优先 ----
                 swimming_now = False
-                if not player1.is_climbing and player1.can_swim and not player1.on_ground:
-                    up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
+                up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
+                if not player1.is_climbing and player1.can_swim:
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
                         if player1.stamina >= swim_cost:
@@ -2282,12 +2288,16 @@ while running:
                         else:
                             _stamina_flash_timer = _stamina_flash_duration
 
-                # 体力耗尽时无法攀爬/游泳
+                # 体力耗尽时无法攀爬
                 if player1.stamina < 0.01 and player1.is_climbing:
                     player1.stop_climbing()
 
-                # ---- 体力恢复 ----
-                if not player1.is_climbing and not swimming_now and player1.stamina < player1.stamina_max:
+                # ---- 体力恢复（攀爬中/水中按↑时不恢复，防止耗尽-恢复循环） ----
+                can_recover = (not player1.is_climbing
+                               and not swimming_now
+                               and not (player1.can_swim and up_held)
+                               and not (player1.can_climb and up_held and not player1.is_climbing))
+                if can_recover and player1.stamina < player1.stamina_max:
                     player1.recover_stamina(buf_stam_rec * dt)
 
                 if jump_pressed and not grounded:
