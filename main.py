@@ -419,18 +419,12 @@ def draw_stamina_bar(surf, player, dt: float):
     _draw_single_bar(surf, BAR_X, stam_y, BAR_W, BAR_H, PAD, BORDER_R,
                      ratio, 0.0, stam_color, None, 0.0, 0.0)
 
-    # 体力不足时边框闪烁（3周期，暗→亮→暗→亮→暗→亮→暗）
+    # 体力不足时边框闪3次（16Hz，均匀间隔，仅亮帧覆盖）
     if _stamina_flash_timer > 0:
-        # 频率降为原2/3，16个tick覆盖约1秒
         tick = int(_stamina_flash_timer * 16)
-        # 3周期脉冲：暗暗暗暗 亮 暗 亮 暗 亮 暗暗暗暗（13帧）
-        flash_pattern = [0,0,0,0, 1,0, 1,0, 1, 0,0,0,0]
-        if tick < len(flash_pattern) and flash_pattern[tick]:
-            flash_c = (255, 255, 255)
-        else:
-            flash_c = (0, 0, 0)
-        flash_rect = pygame.Rect(BAR_X, stam_y, BAR_W, BAR_H)
-        pygame.draw.rect(surf, flash_c, flash_rect, 3, border_radius=BORDER_R)
+        if tick in (0, 5, 10):  # 闪3下
+            flash_rect = pygame.Rect(BAR_X, stam_y, BAR_W, BAR_H)
+            pygame.draw.rect(surf, (255, 255, 255), flash_rect, 3, border_radius=BORDER_R)
 
     # 左侧图标（闪电形状 = 折线）
     icon_x, icon_y = BAR_X - 2, stam_y + BAR_H // 2
