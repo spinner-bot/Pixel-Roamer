@@ -2368,6 +2368,7 @@ while running:
                     else:
                         _stamina_flash_timer = _stamina_flash_duration
                 elif player1.is_climbing:
+                    player1.v_y = 0.0  # 不按就不动，无惯性
                     if player1.stamina >= climb_idle_cost:
                         if not silenced: player1.consume_stamina(8.8 * sm * buf_stam_cost * dt)
                     else:
