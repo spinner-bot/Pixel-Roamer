@@ -741,6 +741,7 @@ def _get_block_highlights(bt) -> list:
     # Buff 信息（方块的 gameplay 核心扩展）
     buff_ids = getattr(bt, 'buff_ids', ())
     if buff_ids:
+        import buff_data
         from buff_system import BUFF_TYPES
         buff_names = []
         for bid in buff_ids[:3]:
@@ -1076,28 +1077,44 @@ def _run_block_detail(logic_surface, dt):
             n_cmds = len(cmds)
             gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}  指令: {n_cmds}",
                                 col3_x + 6, ry, 19, (200, 210, 240), "sans")
-            # 每条指令一行，中号字体，超长指令尾部截断
-            VFS = 16        # 介于位图(13)和旧版大号(21)之间
-            VLH = 19        # 行高
-            max_chars = (cw - 14) // 8  # 8px/char 估算
-            for j, cmd in enumerate(cmds):
-                cy2 = ry + 28 + j * VLH
-                if cy2 > CONTENT_BOT - 8: break
-                ctype = cmd[0]
-                if ctype == "fill":
-                    c = cmd[1]
-                    text = f"fill({c[0]},{c[1]},{c[2]})"
-                elif ctype == "rect":
-                    c = cmd[5]
-                    text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},({c[0]},{c[1]},{c[2]}))"
-                elif ctype == "circle":
-                    c = cmd[4]
-                    text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},({c[0]},{c[1]},{c[2]}))"
-                else:
-                    text = str(cmd)
-                if len(text) > max_chars:
-                    text = text[:max_chars-2] + ".."
-                gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
+            if n_cmds <= 35:
+                # 少量指令：每条一行，中号字体
+                VFS = 16; VLH = 19
+                max_chars = (cw - 14) // 8
+                for j, cmd in enumerate(cmds):
+                    cy2 = ry + 28 + j * VLH
+                    if cy2 > CONTENT_BOT - 8: break
+                    ctype = cmd[0]
+                    if ctype == "fill":
+                        c = cmd[1]
+                        text = f"fill({c[0]},{c[1]},{c[2]})"
+                    elif ctype == "rect":
+                        c = cmd[5]
+                        text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},({c[0]},{c[1]},{c[2]}))"
+                    elif ctype == "circle":
+                        c = cmd[4]
+                        text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},({c[0]},{c[1]},{c[2]}))"
+                    else:
+                        text = str(cmd)
+                    if len(text) > max_chars:
+                        text = text[:max_chars-2] + ".."
+                    gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
+            else:
+                # 大量指令：与位图相同的紧凑换行模式
+                flat = "[" + ", ".join(
+                    f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                    else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                    else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                    else str(c)
+                    for c in cmds[:24]
+                ) + (", ..." if len(cmds) > 24 else "") + "]"
+                chars_per_line = (cw - 20) // 7
+                bj = 0
+                while bj < len(flat):
+                    chunk = flat[bj:bj + chars_per_line]
+                    if ry + 28 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
+                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
+                    bj += chars_per_line
     else:
         gt.draw(logic_surface, f"编码: 无  底色: {bt.color}",
                             col3_x + 6, ry, 19, (160, 180, 200), "sans")
