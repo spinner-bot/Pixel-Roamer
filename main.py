@@ -417,8 +417,14 @@ def draw_stamina_bar(surf, player, dt: float):
         stam_color = (60, 140, 220)
 
     _draw_single_bar(surf, BAR_X, stam_y, BAR_W, BAR_H, PAD, BORDER_R,
-                     ratio, 0.0, stam_color, None,
-                     _stamina_flash_timer, _stamina_flash_duration)
+                     ratio, 0.0, stam_color, None, 0.0, 0.0)
+
+    # 体力不足时边框高速黑白交替闪烁
+    if _stamina_flash_timer > 0:
+        flash_on = int(_stamina_flash_timer * 24) % 2 == 0
+        flash_c = (255, 255, 255) if flash_on else (0, 0, 0)
+        flash_rect = pygame.Rect(BAR_X, stam_y, BAR_W, BAR_H)
+        pygame.draw.rect(surf, flash_c, flash_rect, 3, border_radius=BORDER_R)
 
     # 左侧图标（闪电形状 = 折线）
     icon_x, icon_y = BAR_X - 2, stam_y + BAR_H // 2
