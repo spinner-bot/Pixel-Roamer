@@ -434,12 +434,16 @@ def draw_stamina_bar(surf, player, dt: float):
 
 
 def draw_player_info(surf, player, dt: float):
-    """在体力条下方绘制玩家坐标。"""
-    stam_y = BAR_Y + BAR_H + BAR_GAP
-    info_y = stam_y + BAR_H + 6
-    px, py = player.get_center()
-    txt = f"({px:.1f}, {py:.1f})"
-    gt.draw(surf, txt, BAR_X + BAR_W + 10, info_y, 20, (200, 210, 230), "mono", shadow=True)
+    """在体力条下方绘制复活次数（命数）。"""
+    global _player_lives_left
+    if _player_lives_left > 0:
+        stam_y = BAR_Y + BAR_H + BAR_GAP
+        info_y = stam_y + BAR_H + 6
+        if _player_lives_left <= 5:
+            heart_text = "H " * _player_lives_left
+        else:
+            heart_text = f"H x{_player_lives_left}"
+        gt.draw(surf, heart_text.strip(), BAR_X + BAR_W + 10, info_y, 20, (255, 60, 60), "mono", shadow=True)
 
 
 # ===================== 濒死滤镜 =====================
@@ -2326,15 +2330,7 @@ while running:
                                LOGIC_WIDTH // 2, 42, 15,
                                (200, 220, 255), "mono", shadow=True, center_x=True)
 
-        # ---- 爱心（复活次数）----
-        if _player_lives_left > 0:
-            if _player_lives_left <= 5:
-                heart_text = "H " * _player_lives_left
-            else:
-                heart_text = f"H x{_player_lives_left}"
-            gt.draw(logic_surface, heart_text.strip(),
-                               LOGIC_WIDTH - 24, 16, 18,
-                               (255, 60, 60), "mono", shadow=True, right_x=True)
+        # ---- 命数已移至体力条下方 (draw_player_info) ----
 
         # ---- 游戏结束/胜利叠加层 ----
         if _game_over:
@@ -2361,6 +2357,12 @@ while running:
         gt.draw(logic_surface, fps_text,
                            LOGIC_WIDTH - 16, 8, 18,
                            (255, 255, 255), "mono", shadow=True, right_x=True)
+        # 坐标（FPS 下方）
+        px, py = player1.get_center()
+        coord_text = f"({px:.1f}, {py:.1f})"
+        gt.draw(logic_surface, coord_text,
+                           LOGIC_WIDTH - 16, 30, 16,
+                           (200, 210, 230), "mono", shadow=True, right_x=True)
 
         # 飞行模式指示
         if player1.fly_mode:
