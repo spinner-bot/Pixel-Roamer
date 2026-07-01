@@ -2125,12 +2125,12 @@ while running:
                     # W/↑键：可攀爬时进入攀爬，攀爬中向上
                     if not player1.fly_mode:
                         if not player1.is_climbing and player1.can_climb:
-                            if player1.stamina > 0:
+                            if player1.stamina >= 0.5:
                                 player1.try_start_climbing(_current_map)
                             else:
                                 _stamina_flash_timer = _stamina_flash_duration
                         elif player1.is_climbing:
-                            if player1.stamina > 0:
+                            if player1.stamina >= 0.5:
                                 player1.climb_move(1.0)
                             else:
                                 _stamina_flash_timer = _stamina_flash_duration
@@ -2255,13 +2255,13 @@ while running:
                 sm = getattr(player1, '_stamina_mult', 1.0)
                 silenced = getattr(player1, '_silenced', False)
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
-                    if player1.stamina > 0:
+                    if player1.stamina >= 0.5:
                         player1.climb_move(1.0)
                         if not silenced: player1.consume_stamina(14.0 * sm * buf_stam_cost * dt)
                     else:
                         _stamina_flash_timer = _stamina_flash_duration
                 elif player1.is_climbing:
-                    if player1.stamina > 0:
+                    if player1.stamina >= 0.5:
                         if not silenced: player1.consume_stamina(8.8 * sm * buf_stam_cost * dt)
                     else:
                         _stamina_flash_timer = _stamina_flash_duration
@@ -2271,7 +2271,7 @@ while running:
                 if not player1.is_climbing and player1.can_swim and not player1.on_ground:
                     up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
                     if up_held:
-                        if player1.stamina > 0:
+                        if player1.stamina >= 0.5:
                             swim_v = player1._swim_force
                             player1.v_y += swim_v * dt * 30
                             if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
@@ -2280,7 +2280,7 @@ while running:
                             _stamina_flash_timer = _stamina_flash_duration
 
                 # 体力耗尽时无法攀爬/游泳
-                if player1.stamina <= 0 and player1.is_climbing:
+                if player1.stamina < 0.5 and player1.is_climbing:
                     player1.stop_climbing()
 
                 # ---- 体力恢复 ----
@@ -2288,7 +2288,7 @@ while running:
                     player1.recover_stamina(buf_stam_rec * dt)
 
                 if jump_pressed and not grounded:
-                    if player1.stamina > 0:
+                    if player1.stamina >= 0.5:
                         if player1.jump():
                             if not silenced: player1.consume_stamina(15.0 * sm * buf_stam_cost)
                     else:

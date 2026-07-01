@@ -190,7 +190,7 @@ class Creature:
 
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。需体力>0。"""
-        if self.stamina <= 0:
+        if self.stamina < 0.5:
             return False
         can_jump = self.on_ground or (self.is_climbing and not_on_ground_ok) or (self.is_climbing and self.alive)
         if (not_on_ground_ok or self.on_ground or self.is_climbing) and self.alive:
@@ -873,12 +873,17 @@ class Player(Creature):
 
     def consume_stamina(self, cost: float) -> bool:
         if self.stamina >= cost:
-            self.stamina -= cost
+            self.stamina = self.stamina - cost
+            if self.stamina < 0.5:
+                self.stamina = 0.0
             return True
+        # 扣减失败但体力已极低：归零防止浮点残留
+        if self.stamina < 0.5:
+            self.stamina = 0.0
         return False
 
     def recover_stamina(self, amount: float):
-        self.stamina = min(self.stamina_max, self.stamina + amount)
+        self.stamina = min(self.stamina_max, max(0.0, self.stamina + amount))
 
     def move(self, dir_x: float):
         self.a_x = dir_x * self.v_max
@@ -886,7 +891,7 @@ class Player(Creature):
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
         """若可攀爬则进入攀爬中状态，强制居中防止卡墙。"""
-        if self.can_climb and not self.is_climbing and self.alive and self.stamina > 0:
+        if self.can_climb and not self.is_climbing and self.alive and self.stamina >= 0.5:
             self.is_climbing = True
             self.v_x = 0.0
             self.v_y = 0.0
