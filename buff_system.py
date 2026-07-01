@@ -40,7 +40,7 @@ def register(buff: BuffType):
 # ===================== Buff 实例（运行在生物上） =====================
 class BuffInstance:
     """生物身上的一个活跃 buff。"""
-    __slots__ = ("buff_id", "params", "applied_at", "duration", "stacks", "source")
+    __slots__ = ("buff_id", "params", "applied_at", "duration", "initial_duration", "stacks", "source")
 
     def __init__(self, buff_id: int, params: tuple = (),
                  duration: Optional[float] = None, source=None):
