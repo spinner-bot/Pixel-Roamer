@@ -1073,22 +1073,24 @@ def _run_block_detail(logic_surface, dt):
         elif ptype == "vector":
             vw, vh = bt.pattern[1]
             cmds = bt.pattern[2] if len(bt.pattern) > 2 else []
-            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}",
-                                col3_x + 6, ry, 28, (200, 210, 240), "sans")
-            for j, cmd in enumerate(cmds):
-                cy2 = ry + 30 + j * 26
-                if cy2 > CONTENT_BOT - 16: break
-                ctype = cmd[0]
-                if ctype == "fill":
-                    c = cmd[1]
-                    text = f"fill({c[0]},{c[1]},{c[2]})"
-                elif ctype == "rect":
-                    text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},{cmd[5]})"
-                elif ctype == "circle":
-                    text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})"
-                else:
-                    text = str(cmd)
-                gt.draw(logic_surface, text, col3_x + 6, cy2, 21, (150, 170, 210), "sans")
+            n_cmds = len(cmds)
+            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}  指令: {n_cmds}",
+                                col3_x + 6, ry, 19, (200, 210, 240), "sans")
+            # 与位图相同的小字号紧凑显示，按右栏宽度自动折行
+            flat = "[" + ", ".join(
+                f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                else str(c)
+                for c in cmds[:24]
+            ) + (", ..." if len(cmds) > 24 else "") + "]"
+            chars_per_line = (cw - 20) // 7  # 7px per char at 13px font
+            bj = 0
+            while bj < len(flat):
+                chunk = flat[bj:bj + chars_per_line]
+                if ry + 28 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
+                gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
+                bj += chars_per_line
     else:
         gt.draw(logic_surface, f"编码: 无  底色: {bt.color}",
                             col3_x + 6, ry, 19, (160, 180, 200), "sans")
