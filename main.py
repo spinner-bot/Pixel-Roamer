@@ -2341,14 +2341,15 @@ while running:
                     # W/↑键：可攀爬时进入攀爬，攀爬中向上
                     if not player1.fly_mode:
                         if not player1.is_climbing and player1.can_climb:
-                            if player1.stamina >= 0.01:
+                            if player1.stamina >= 1.0:
                                 player1.try_start_climbing(_current_map)
                             else:
                                 _stamina_flash_timer = _stamina_flash_duration
                         elif player1.is_climbing:
-                            if player1.stamina >= 0.01:
+                            if player1.stamina >= 1.0:
                                 player1.climb_move(1.0)
                             else:
+                                player1.stop_climbing()
                                 _stamina_flash_timer = _stamina_flash_duration
                 elif event.key == player1.key_bind["down"] or event.key == pygame.K_DOWN:
                     # S/↓键：攀爬中则解除
@@ -2477,12 +2478,14 @@ while running:
                         player1.climb_move(1.0)
                         if not silenced: player1.consume_stamina(14.0 * sm * buf_stam_cost * dt)
                     else:
+                        player1.stop_climbing()
                         _stamina_flash_timer = _stamina_flash_duration
                 elif player1.is_climbing:
-                    player1.v_y = 0.0  # 不按就不动，无惯性
+                    player1.v_y = 0.0
                     if player1.stamina >= climb_idle_cost:
                         if not silenced: player1.consume_stamina(8.8 * sm * buf_stam_cost * dt)
                     else:
+                        player1.stop_climbing()
                         _stamina_flash_timer = _stamina_flash_duration
 
                 # ---- 游泳: W/↑向上，攀爬优先 ----
@@ -2497,11 +2500,9 @@ while running:
                             if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
                             swimming_now = True
                         else:
+                            # 体力耗尽：无法游泳，沉下去
+                            player1.v_y += _current_map.gravity * dt * 0.5
                             _stamina_flash_timer = _stamina_flash_duration
-
-                # 体力耗尽时无法攀爬
-                if player1.stamina < 0.01 and player1.is_climbing:
-                    player1.stop_climbing()
 
                 # ---- 体力恢复（攀爬中/水中按↑时不恢复，防止耗尽-恢复循环） ----
                 can_recover = (not player1.is_climbing

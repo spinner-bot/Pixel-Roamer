@@ -893,7 +893,7 @@ class Player(Creature):
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
         """若可攀爬则进入攀爬中状态，强制居中防止卡墙。"""
-        if self.can_climb and not self.is_climbing and self.alive and self.stamina >= 0.01:
+        if self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0:
             self.is_climbing = True
             self.v_x = 0.0
             self.v_y = 0.0
