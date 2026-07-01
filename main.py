@@ -2175,7 +2175,9 @@ while running:
         base_stam_rec = (
             (0.35 + 4 * (1 - stamina_ratio) + 1.65 * hp_ratio) * (0.85 + 0.25 * hp_ratio)
             + 0.0075 * stamina_missing
-            + 0.65 * ((1 - stamina_ratio) ** 2)
+            + 0.15 * ((1 - stamina_ratio) ** 2)
+            + 0.35 * ((1 - stamina_ratio) ** 3)
+            + 0.65 * ((1 - stamina_ratio) ** 4)
         )
         buf_stam_rec = player1.get_buff_stat("stamina_recovery", base_stam_rec)
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
