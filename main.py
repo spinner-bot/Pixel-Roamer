@@ -2171,7 +2171,7 @@ while running:
         # 体力恢复速度（动态公式）
         stamina_ratio = player1.stamina / max(1, player1.stamina_max)
         hp_ratio = player1.hp / max(1, player1.hp_max)
-        base_stam_rec = (1 + 5 * (1 - stamina_ratio) + 2 * hp_ratio) * (0.8 + 0.3 * hp_ratio)
+        base_stam_rec = (0.35 + 4 * (1 - stamina_ratio) + 1.65 * hp_ratio) * (0.85 + 0.25 * hp_ratio)
         buf_stam_rec = player1.get_buff_stat("stamina_recovery", base_stam_rec)
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
         player1.v_max = buf_v_max
