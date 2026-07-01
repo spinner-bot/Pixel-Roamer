@@ -588,18 +588,19 @@ def draw_buff_status(surf, player, dt: float):
                 time_text = _format_time(max(0, b.duration))
             else:
                 time_text = "永久"
+            # 名称按类别着色
+            cat_colors = {"positive": (100, 255, 100), "neutral": (100, 200, 255), "negative": (255, 100, 100)}
+            name_color = cat_colors.get(btype.category, (255, 255, 220))
             title = f"{name_text}  {time_text}"
             desc = b.format_desc() if b.format_desc() else ""
 
-            TW = 18  # 标题字号
-            DW = 14  # 描述字号
+            TW = 18
+            DW = 14
             PAD_X = 12
             PAD_Y = 8
-            # 浮窗最小/最大宽度
             MIN_W = 160
             MAX_W = 280
-            # 标题宽度决定基础宽
-            title_px = len(title) * TW  # 粗略估算
+            title_px = len(title) * TW
             popup_w = max(MIN_W, min(MAX_W, title_px + PAD_X * 2))
 
             # 描述自动换行
@@ -635,9 +636,11 @@ def draw_buff_status(surf, player, dt: float):
             pygame.draw.rect(surf, (15, 15, 35), popup_rect, border_radius=4)
             pygame.draw.rect(surf, (80, 80, 120), popup_rect, 1, border_radius=4)
 
-            # 标题
-            gt.draw(surf, title, popup_x + popup_w // 2, popup_y + PAD_Y, TW,
-                               (255, 255, 220), "sans", shadow=True, center_x=True)
+            # 标题：名称类别色 + 时间中性色
+            name_w, _ = gt.draw(surf, name_text, popup_x + PAD_X, popup_y + PAD_Y, TW,
+                                           name_color, "sans", shadow=True)
+            gt.draw(surf, f"  {time_text}", popup_x + PAD_X + name_w, popup_y + PAD_Y, TW,
+                               (200, 200, 210), "sans", shadow=True)
             # 描述（逐行）
             if desc_lines:
                 dy = popup_y + PAD_Y + title_h + 4
