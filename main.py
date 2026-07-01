@@ -556,7 +556,7 @@ def draw_buff_status(surf, player, dt: float):
             if progress > 0.01:
                 overlay = pygame.Surface((p, p), pygame.SRCALPHA)
                 cx_p, cy_p = p / 2, p / 2
-                r = p / 2 + 1
+                r = p * 0.75  # 覆盖四角（对角线半长≈p*0.707）
                 start_angle = -math.pi / 2  # 正上方
                 end_angle = start_angle + progress * 2 * math.pi
                 n_seg = max(3, int(progress * 36))
@@ -564,7 +564,7 @@ def draw_buff_status(surf, player, dt: float):
                 for seg in range(n_seg + 1):
                     a = start_angle + seg * (end_angle - start_angle) / n_seg
                     pie_pts.append((cx_p + r * math.cos(a), cy_p + r * math.sin(a)))
-                pygame.draw.polygon(overlay, (255, 255, 255, 130), pie_pts)
+                pygame.draw.polygon(overlay, (255, 255, 255, 175), pie_pts)
                 surf.blit(overlay, (ix, iy))
 
         # ---- 层数（右下角） ----
