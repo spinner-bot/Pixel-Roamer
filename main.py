@@ -2168,10 +2168,15 @@ while running:
         # buff 属性修正
         buf_v_max = player1.get_buff_stat("v_max", player1._base_v_max)
         buf_v_jump = player1.get_buff_stat("v_jump", player1._base_v_jump)
-        # 体力恢复速度（动态公式）
+        # 体力恢复速度（动态公式，三层结构）
         stamina_ratio = player1.stamina / max(1, player1.stamina_max)
         hp_ratio = player1.hp / max(1, player1.hp_max)
-        base_stam_rec = (0.35 + 4 * (1 - stamina_ratio) + 1.65 * hp_ratio) * (0.85 + 0.25 * hp_ratio)
+        stamina_missing = player1.stamina_max - player1.stamina
+        base_stam_rec = (
+            (0.35 + 4 * (1 - stamina_ratio) + 1.65 * hp_ratio) * (0.85 + 0.25 * hp_ratio)
+            + 0.0075 * stamina_missing
+            + 0.65 * ((1 - stamina_ratio) ** 2)
+        )
         buf_stam_rec = player1.get_buff_stat("stamina_recovery", base_stam_rec)
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
         player1.v_max = buf_v_max
