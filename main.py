@@ -440,24 +440,25 @@ def draw_stamina_bar(surf, player, dt: float):
     gt.draw(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
                          BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
 
-    # 右侧闪电图标（蓝色填充+深色边框，经典⚡造型）
-    bx = BAR_X + BAR_W + BAR_H // 2 + 6
-    by = stam_y + BAR_H // 2
-    bs = BAR_H // 2 - 1
+    # 右侧闪电图标（蓝色填充+深色边框，7点精确数据）
+    ox = BAR_X + BAR_W + 8
+    oy = stam_y + 1
+    s = BAR_H - 2  # 正方形画布边长
     bolt_fill = (80, 180, 255)
     bolt_border = (20, 60, 140)
+    # 7关键点（百分比坐标，原点左上）
     bolt_pts = [
-        (bx - bs,     by - bs),      # 左上宽
-        (bx + bs//2,  by - bs),      # 顶右
-        (bx - bs//4,  by - bs//3),   # 右上段左
-        (bx + bs//2,  by - bs//6),   # 中右突出
-        (bx - bs//3,  by + bs//3),   # 中下段左
-        (bx + bs//3,  by + bs//2),   # 右下段突出
-        (bx - bs//6,  by + bs),      # 底尖窄
-        (bx - bs//3,  by + bs//2),   # 底左坡
+        (ox + 0.350*s, oy + 0.135*s),
+        (ox + 0.600*s, oy + 0.135*s),
+        (ox + 0.465*s, oy + 0.425*s),
+        (ox + 0.720*s, oy + 0.425*s),
+        (ox + 0.465*s, oy + 0.900*s),
+        (ox + 0.510*s, oy + 0.510*s),
+        (ox + 0.245*s, oy + 0.515*s),
     ]
-    # 边框（稍大轮廓）
-    bd_pts = [(x + (1 if x >= bx else -1), y + (1 if y >= by else -1)) for x, y in bolt_pts]
+    # 边框（外扩1px）
+    cx = ox + s/2; cy = oy + s/2
+    bd_pts = [(x + (1.5 if x >= cx else -1.5), y + (1.5 if y >= cy else -1.5)) for x, y in bolt_pts]
     pygame.draw.polygon(surf, bolt_border, bd_pts)
     pygame.draw.polygon(surf, bolt_fill, bolt_pts)
 
