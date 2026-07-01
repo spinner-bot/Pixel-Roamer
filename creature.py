@@ -2,6 +2,7 @@ from __future__ import annotations
 import math
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
+import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
 
 from constants import RES_NORMAL_SCALE, CORR_FLOOR
 from game_rect import GameRect
