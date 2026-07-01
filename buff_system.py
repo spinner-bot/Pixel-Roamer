@@ -48,6 +48,7 @@ class BuffInstance:
         self.params = tuple(params)
         self.applied_at = 0.0        # 游戏时间，由 Creature 设置
         self.duration = duration     # None = 永久
+        self.initial_duration = duration  # 记录初始时长（用于进度显示）
         self.stacks = 1
         self.source = source
 
@@ -75,6 +76,7 @@ class BuffInstance:
             self.params = tuple(params)
         if duration is not None:
             self.duration = duration
+            self.initial_duration = duration
         if self.stacks < self.buff_type.max_stacks if self.buff_type else 1:
             self.stacks += 1
 

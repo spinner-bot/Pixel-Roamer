@@ -476,6 +476,81 @@ def draw_player_info(surf, player, dt: float):
         gt.draw(surf, heart_text.strip(), BAR_X + BAR_W + 10, info_y, 20, (255, 60, 60), "mono", shadow=True)
 
 
+# ===================== Buff 状态显示区 =====================
+def draw_buff_status(surf, player, dt: float):
+    """在屏幕左下方绘制当前活跃 buff 的状态图标（含进度扇形和层数）。"""
+    if not player.buffs:
+        return
+
+    import math
+    import buff_data
+    from buff_system import BUFF_TYPES
+    from pattern import _draw_vector, _draw_bitmap
+
+    p = BAR_H                     # 图标边长（与血条等高）
+    gap = int(p * 0.2)            # 间隙
+    step = p + gap                # 步进 1.2p
+    cols = 5                      # 每行最多5个
+    base_x = BAR_X                # 左对齐血条
+    base_y = int(LOGIC_HEIGHT * 0.875)  # 底边 87.5%
+
+    for k, b in enumerate(player.buffs):
+        btype = BUFF_TYPES.get(b.buff_id)
+        if btype is None or btype.icon is None:
+            continue
+
+        col = k % cols
+        row = k // cols
+        ix = base_x + col * step
+        iy = base_y - p - row * step  # 从底向上堆叠
+
+        # ---- 绘制图标 ----
+        icon_surf = pygame.Surface((p, p))
+        try:
+            icon = btype.icon
+            fmt = icon[0]
+            if fmt == "vector":
+                psurf = _draw_vector(icon, p, p)
+            elif fmt == "bitmap":
+                psurf = _draw_bitmap(icon, p, p)
+            else:
+                psurf = None
+            if psurf is not None:
+                icon_surf.blit(psurf, (0, 0))
+            else:
+                icon_surf.fill((60, 60, 80))
+        except Exception:
+            icon_surf.fill((60, 60, 80))
+        surf.blit(icon_surf, (ix, iy))
+        pygame.draw.rect(surf, (100, 100, 130), (ix, iy, p, p), 1)
+
+        # ---- 进度扇形覆盖（非永久buff） ----
+        if b.duration is not None and b.initial_duration and b.initial_duration > 0:
+            progress = 1.0 - (b.duration / b.initial_duration)
+            progress = max(0.0, min(1.0, progress))
+            if progress > 0.01:
+                overlay = pygame.Surface((p, p), pygame.SRCALPHA)
+                cx_p, cy_p = p / 2, p / 2
+                r = p / 2 + 1
+                start_angle = -math.pi / 2  # 正上方
+                end_angle = start_angle + progress * 2 * math.pi
+                # 用单个多边形近似扇形（36段足够平滑）
+                n_seg = max(3, int(progress * 36))
+                pie_pts = [(cx_p, cy_p)]
+                for seg in range(n_seg + 1):
+                    a = start_angle + seg * (end_angle - start_angle) / n_seg
+                    pie_pts.append((cx_p + r * math.cos(a), cy_p + r * math.sin(a)))
+                pygame.draw.polygon(overlay, (70, 70, 70, 130), pie_pts)
+                surf.blit(overlay, (ix, iy))
+
+        # ---- 层数（右下角） ----
+        if b.stacks > 1:
+            stack_text = str(b.stacks)
+            # 右下角小字
+            gt.draw(surf, stack_text, ix + p - 3, iy + p - 1, 12,
+                               (255, 255, 255), "mono", shadow=True, right_x=True)
+
+
 # ===================== 濒死滤镜 =====================
 def draw_near_death_vignette(surf, player):
     """当血量极低时，屏幕边缘绘制渐变红圈，确保覆盖四角。"""
@@ -2136,6 +2211,21 @@ while running:
                     player1.is_climbing = False
                     jump_pressed = False
                     # [log removed]
+                elif event.key == pygame.K_F5:
+                    # 调试：随机获得1-3个未生效的buff
+                    import random as _rnd
+                    from buff_system import BUFF_TYPES
+                    active_ids = {b.buff_id for b in player1.buffs}
+                    available = [bid for bid in BUFF_TYPES if bid not in active_ids]
+                    if available:
+                        n = _rnd.randint(1, min(3, len(available)))
+                        chosen = _rnd.sample(available, n)
+                        for bid in chosen:
+                            bt = BUFF_TYPES[bid]
+                            dur = _rnd.uniform(3.0, 20.0) if _rnd.random() < 0.7 else None
+                            p0 = _rnd.uniform(1, 30) if _rnd.random() < 0.6 else 0
+                            p1 = _rnd.uniform(1, 50) if _rnd.random() < 0.4 else 0
+                            player1.apply_buff(bid, (p0, p1), dur)
                 elif event.key == player1.key_bind["up"] or event.key == pygame.K_UP:
                     # W/↑键：可攀爬时进入攀爬，攀爬中向上
                     if not player1.fly_mode:
@@ -2372,6 +2462,7 @@ while running:
 
         # ---- 濒死滤镜 ----
         draw_near_death_vignette(logic_surface, player1)
+        draw_buff_status(logic_surface, player1, dt)
 
         # ---- 积分显示（顶部居中）----
         score_text = f"* {player1.score}"

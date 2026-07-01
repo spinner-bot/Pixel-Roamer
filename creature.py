@@ -672,6 +672,7 @@ class Creature:
         for b in self.buffs:
             if b.buff_id == buff_id:
                 b.refresh(params, duration)
+                b.applied_at = self._buff_game_time
                 return
 
         # 新建
