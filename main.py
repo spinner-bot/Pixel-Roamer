@@ -2222,7 +2222,7 @@ while running:
                         chosen = _rnd.sample(available, n)
                         for bid in chosen:
                             bt = BUFF_TYPES[bid]
-                            dur = _rnd.uniform(3.0, 20.0) if _rnd.random() < 0.7 else None
+                            dur = _rnd.uniform(3.0, 15.0)  # 必定有时限，最多15s
                             p0 = _rnd.uniform(1, 30) if _rnd.random() < 0.6 else 0
                             p1 = _rnd.uniform(1, 50) if _rnd.random() < 0.4 else 0
                             player1.apply_buff(bid, (p0, p1), dur)
