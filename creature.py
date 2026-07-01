@@ -717,7 +717,7 @@ class Creature:
             return
         self._buff_timer -= tick_interval
 
-        from buff_system import BUFF_TYPES
+        from buff_system import BUFF_TYPES, CAT_NEGATIVE
         for b in self.buffs:
             bt = BUFF_TYPES.get(b.buff_id)
             if bt is None or bt.tick is None:
