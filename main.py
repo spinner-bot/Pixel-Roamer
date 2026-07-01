@@ -477,8 +477,30 @@ def draw_player_info(surf, player, dt: float):
 
 
 # ===================== Buff 状态显示区 =====================
+# Buff 图标位置缓存（用于鼠标悬浮检测）
+_buff_icon_rects = []  # [(ix, iy, p, buff_instance), ...]
+
+def _format_time(seconds: float) -> str:
+    """将秒数格式化为可读时间字符串。"""
+    if seconds < 60:
+        return f"{seconds:.1f}s"
+    elif seconds < 3600:
+        m = int(seconds // 60)
+        s = seconds - m * 60
+        return f"{m}min{s:.1f}s"
+    else:
+        h = int(seconds // 3600)
+        r = seconds - h * 3600
+        m = int(r // 60)
+        s = r - m * 60
+        return f"{h}h{m}min{s:.1f}s"
+
+
 def draw_buff_status(surf, player, dt: float):
     """在屏幕左下方绘制当前活跃 buff 的状态图标（含进度扇形和层数）。"""
+    global _buff_icon_rects
+    _buff_icon_rects = []
+
     if not player.buffs:
         return
 
@@ -503,6 +525,9 @@ def draw_buff_status(surf, player, dt: float):
         row = k // cols
         ix = base_x + col * step
         iy = base_y - p - row * step  # 从底向上堆叠
+
+        # 记录位置供悬浮检测
+        _buff_icon_rects.append((ix, iy, p, b))
 
         # ---- 绘制图标 ----
         icon_surf = pygame.Surface((p, p))
@@ -534,7 +559,6 @@ def draw_buff_status(surf, player, dt: float):
                 r = p / 2 + 1
                 start_angle = -math.pi / 2  # 正上方
                 end_angle = start_angle + progress * 2 * math.pi
-                # 用单个多边形近似扇形（36段足够平滑）
                 n_seg = max(3, int(progress * 36))
                 pie_pts = [(cx_p, cy_p)]
                 for seg in range(n_seg + 1):
@@ -546,9 +570,62 @@ def draw_buff_status(surf, player, dt: float):
         # ---- 层数（右下角） ----
         if b.stacks > 1:
             stack_text = str(b.stacks)
-            # 右下角小字
             gt.draw(surf, stack_text, ix + p - 3, iy + p - 1, 12,
                                (255, 255, 255), "mono", shadow=True, right_x=True)
+
+    # ---- 鼠标悬浮浮窗 ----
+    mx, my = pygame.mouse.get_pos()
+    # 转换屏幕坐标到逻辑坐标
+    logic_mx = (mx - draw_offset_x) / scale
+    logic_my = (my - draw_offset_y) / scale
+
+    for ix, iy, p, b in _buff_icon_rects:
+        if ix <= logic_mx <= ix + p and iy <= logic_my <= iy + p:
+            btype = b.buff_type
+            if btype is None:
+                continue
+            # 准备文字
+            name_text = btype.name2 or btype.name
+            if b.duration is not None:
+                time_text = _format_time(max(0, b.duration))
+            else:
+                time_text = "永久"
+            title = f"{name_text}  {time_text}"
+            desc = b.format_desc() if b.format_desc() else ""
+
+            # 浮窗尺寸估算
+            TW = 18  # 标题字号
+            DW = 15  # 描述字号
+            LH = 26  # 行高
+            # 粗略宽度：中文约等于字号宽度
+            title_w = len(title) * TW
+            desc_w = max(0, len(desc) * DW // 2) if desc else 0
+            popup_w = max(title_w, desc_w) + 20
+            popup_h = 40 if not desc else 56
+
+            # 定位：鼠标右侧，不超出屏幕
+            popup_x = logic_mx + 16
+            popup_y = logic_my - popup_h // 2
+            if popup_x + popup_w > LOGIC_WIDTH:
+                popup_x = logic_mx - popup_w - 16
+            if popup_y < 4:
+                popup_y = 4
+            if popup_y + popup_h > LOGIC_HEIGHT - 4:
+                popup_y = LOGIC_HEIGHT - popup_h - 4
+
+            # 绘制浮窗背景
+            popup_rect = pygame.Rect(popup_x, popup_y, popup_w, popup_h)
+            pygame.draw.rect(surf, (15, 15, 35), popup_rect, border_radius=4)
+            pygame.draw.rect(surf, (80, 80, 120), popup_rect, 1, border_radius=4)
+
+            # 标题
+            gt.draw(surf, title, popup_x + popup_w // 2, popup_y + 6, TW,
+                               (255, 255, 220), "sans", shadow=True, center_x=True)
+            # 描述（如果有）
+            if desc:
+                gt.draw(surf, desc, popup_x + popup_w // 2, popup_y + 28, DW,
+                                   (200, 210, 230), "sans", shadow=True, center_x=True)
+            break  # 只显示一个浮窗
 
 
 # ===================== 濒死滤镜 =====================
