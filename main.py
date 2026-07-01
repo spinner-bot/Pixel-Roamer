@@ -371,18 +371,6 @@ def draw_hp_bar(surf, player, dt: float):
                      hp_ratio, shield_ratio, hp_color, shield_color,
                      _damage_flash_timer, _damage_flash_duration)
 
-    # 左侧心形图标
-    icon_x, icon_y = BAR_X - 2, BAR_Y + BAR_H // 2
-    heart_color = (255, 50, 40) if hp_ratio < 0.3 else (255, 110, 90)
-    pts = [
-        (icon_x, icon_y),
-        (icon_x - 5, icon_y - 4),
-        (icon_x, icon_y - 9),
-        (icon_x + 5, icon_y - 4),
-    ]
-    pygame.draw.polygon(surf, heart_color, pts)
-    pygame.draw.polygon(surf, (160, 25, 15), pts, 1)
-
     # 像素文字
     if shield > 0:
         txt = f"{int(hp)}/{int(hp_max)} +{int(shield)}"
@@ -391,8 +379,21 @@ def draw_hp_bar(surf, player, dt: float):
     gt.draw(surf, txt, BAR_X + BAR_W // 2, BAR_Y + BAR_H // 2 - BAR_TEXT_H // 2,
                          BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
 
-    # HP 图标标签
-    gt.draw(surf, "HP", BAR_X + BAR_W + 10, BAR_Y + 4, 18, (255, 255, 255), "mono", shadow=True)
+    # 右侧心形图标（与条等高）
+    hx = BAR_X + BAR_W + BAR_H // 2 + 2
+    hy = BAR_Y + BAR_H // 2
+    hs = BAR_H // 2 - 2  # 半高留边距
+    heart_color = (255, 50, 40) if hp_ratio < 0.3 else (255, 110, 90)
+    heart_pts = [
+        (hx, hy + hs),           # 底部尖
+        (hx - hs, hy - hs//3),   # 左上
+        (hx - hs//2, hy - hs),   # 左瓣顶
+        (hx, hy - hs//3),        # 中心凹
+        (hx + hs//2, hy - hs),   # 右瓣顶
+        (hx + hs, hy - hs//3),   # 右上
+    ]
+    pygame.draw.polygon(surf, heart_color, heart_pts)
+    pygame.draw.polygon(surf, (160, 25, 15), heart_pts, 1)
 
 
 def draw_stamina_bar(surf, player, dt: float):
@@ -426,25 +427,26 @@ def draw_stamina_bar(surf, player, dt: float):
             flash_rect = pygame.Rect(BAR_X, stam_y, BAR_W, BAR_H)
             pygame.draw.rect(surf, (255, 255, 255), flash_rect, 3, border_radius=BORDER_R)
 
-    # 左侧图标（闪电形状 = 折线）
-    icon_x, icon_y = BAR_X - 2, stam_y + BAR_H // 2
-    bolt_color = (255, 200, 50) if ratio > 0.3 else (255, 100, 40)
-    bolt_pts = [
-        (icon_x + 3, icon_y - 7),
-        (icon_x - 2, icon_y),
-        (icon_x + 2, icon_y),
-        (icon_x - 3, icon_y + 7),
-        (icon_x + 3, icon_y - 1),
-        (icon_x - 1, icon_y - 1),
-    ]
-    pygame.draw.polygon(surf, bolt_color, bolt_pts)
-    pygame.draw.polygon(surf, (180, 130, 20), bolt_pts, 1)
-
     # 像素文字
     txt = f"{int(stamina)}/{int(stamina_max)}"
     gt.draw(surf, txt, BAR_X + BAR_W // 2, stam_y + BAR_H // 2 - BAR_TEXT_H // 2,
                          BAR_TEXT_H, (255, 255, 255), "mono", shadow=True, center_x=True)
-    gt.draw(surf, "SP", BAR_X + BAR_W + 10, stam_y + 4, 18, (255, 255, 255), "mono", shadow=True)
+
+    # 右侧闪电图标（蓝色，与条等高）
+    bx = BAR_X + BAR_W + BAR_H // 2 + 2
+    by = stam_y + BAR_H // 2
+    bs = BAR_H // 2 - 2
+    bolt_color = (60, 160, 255)
+    bolt_pts = [
+        (bx, by - bs),           # 顶
+        (bx + bs//3, by - bs//4),
+        (bx - bs//2, by + bs//5),
+        (bx + bs//3, by + bs//5),
+        (bx - bs//2, by + bs),
+        (bx, by + bs//3),
+    ]
+    pygame.draw.polygon(surf, bolt_color, bolt_pts)
+    pygame.draw.polygon(surf, (30, 100, 180), bolt_pts, 1)
 
 
 def draw_player_info(surf, player, dt: float):
@@ -2294,12 +2296,13 @@ while running:
                     player1.recover_stamina(buf_stam_rec * dt)
 
                 if jump_pressed and not grounded:
+                    can_actually_jump = player1.on_ground or player1.is_climbing
                     jump_cost = 15.0 * sm * buf_stam_cost + 0.01
                     if player1.stamina >= jump_cost:
                         if player1.jump():
                             if not silenced: player1.consume_stamina(15.0 * sm * buf_stam_cost)
                             sfx.play_jump()
-                    else:
+                    elif can_actually_jump:
                         _stamina_flash_timer = _stamina_flash_duration
                     jump_pressed = False
 
