@@ -115,7 +115,7 @@ def play_jump():
     """跳跃：短上升滑音。"""
     init()
     s = _cached("jump", lambda: _slide_sound(250, 650, 0.10, 0.18))
-    s.set_volume(_sfx_volume * 0.7)
+    s.set_volume(_sfx_volume * 2.1)
     s.play()
 
 

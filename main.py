@@ -2108,7 +2108,6 @@ while running:
                     set_page(PAGE_SETTING)
                 elif event.key == player1.key_bind["jump"]:
                     jump_pressed = True
-                    sfx.play_jump()
                 elif event.key == pygame.K_c:
                     # 切换时装
                     cids = sorted(COSTUMES.keys())
@@ -2305,6 +2304,7 @@ while running:
                     if player1.stamina >= jump_cost:
                         if player1.jump():
                             if not silenced: player1.consume_stamina(15.0 * sm * buf_stam_cost)
+                            sfx.play_jump()
                     else:
                         _stamina_flash_timer = _stamina_flash_duration
                     jump_pressed = False
