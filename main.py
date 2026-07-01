@@ -890,7 +890,7 @@ def _run_block_browser(logic_surface, dt):
                 cat_colors_buff = {"positive": (100, 255, 100), "neutral": (100, 200, 255), "negative": (255, 100, 100)}
                 for bid in buff_ids:
                     btype = BUFF_TYPES.get(bid)
-                    bname = (btype.name2 or btype.name) if btype else f"B{bid}"
+                    bname = f"{btype.name} {btype.name2}" if btype else f"Buff#{bid}"
                     cat = btype.category if btype else "neutral"
                     items.append((bname, f"buff_{cat}"))
 
@@ -998,31 +998,35 @@ def _run_block_detail(logic_surface, dt):
         if my + i * mh > CONTENT_BOT - 10: break
         gt.draw(logic_surface, attr, col2_x + 6, my + i * mh, MFS, (210, 220, 250), "sans", shadow=True)
 
-    # -- Buff 数据区（中栏下方） --
+    # -- Buff 数据区（中栏下方，背景色与其他文字一致，buff名按类别着色） --
     buff_ids = getattr(bt, 'buff_ids', ())
     if buff_ids:
         by = my + len(mid_attrs) * mh + 6
-        # 分隔线
-        pygame.draw.line(logic_surface, (100, 180, 100), (col2_x, by), (col2_x + cw - 12, by), 1)
+        # 分隔线与标题使用与其他区域文字一致的颜色
+        DIV_C = (180, 190, 210)
+        pygame.draw.line(logic_surface, DIV_C, (col2_x, by), (col2_x + cw - 12, by), 1)
         by += 6
-        gt.draw(logic_surface, "══ Buff 绑定 ══", col2_x + cw // 2, by, 18,
-                            (100, 220, 100), "sans", shadow=True, center_x=True)
+        gt.draw(logic_surface, "── Buff 绑定 ──", col2_x + cw // 2, by, 18,
+                            DIV_C, "sans", shadow=True, center_x=True)
         by += 22
         from buff_system import BUFF_TYPES
         buff_params = getattr(bt, 'buff_params_list', ())
         buff_durs = getattr(bt, 'buff_durations', ())
+        cat_colors = {"positive": (100, 255, 100), "neutral": (100, 200, 255), "negative": (255, 100, 100)}
         for j, bid in enumerate(buff_ids):
             if by > CONTENT_BOT - 16: break
             btype = BUFF_TYPES.get(bid)
-            bname = f"{btype.name2} ({btype.name})" if btype else f"Buff#{bid}"
+            bname = f"{btype.name} {btype.name2}" if btype else f"Buff#{bid}"
+            cat = btype.category if btype else "neutral"
+            bc = cat_colors.get(cat, DIV_C)
             param = buff_params[j] if j < len(buff_params) else ()
             dur = buff_durs[j] if j < len(buff_durs) else None
             dur_str = f"{dur:.1f}s" if dur is not None else "永久"
             buf_line = f"#{bid} {bname}"
-            gt.draw(logic_surface, buf_line, col2_x + 6, by, 17, (180, 240, 180), "sans", shadow=True)
+            gt.draw(logic_surface, buf_line, col2_x + 6, by, 17, bc, "sans", shadow=True)
             by += 20
             if param:
-                gt.draw(logic_surface, f"  参数: {param}  持续: {dur_str}", col2_x + 6, by, 15, (140, 180, 160), "sans")
+                gt.draw(logic_surface, f"  参数: {param}  持续: {dur_str}", col2_x + 6, by, 15, DIV_C, "sans")
                 by += 18
 
     # -- 右栏：外观编码 --
