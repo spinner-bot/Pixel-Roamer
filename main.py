@@ -1645,16 +1645,45 @@ def _run_buff_detail(logic_surface, dt):
         elif ptype == "vector":
             vw, vh = bt.icon[1]
             cmds = bt.icon[2] if len(bt.icon) > 2 else []
-            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}", col3_x + 6, ry, 28, (200, 210, 240), "sans")
-            for j, cmd in enumerate(cmds):
-                cy2 = ry + 30 + j * 26
-                if cy2 > CONTENT_BOT - 16: break
-                ctype = cmd[0]
-                if ctype == "fill": c1 = cmd[1]; text = f"fill({c1[0]},{c1[1]},{c1[2]})"
-                elif ctype == "rect": text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},{cmd[5]})"
-                elif ctype == "circle": text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]})"
-                else: text = str(cmd)
-                gt.draw(logic_surface, text, col3_x + 6, cy2, 21, (150, 170, 210), "sans")
+            n_cmds = len(cmds)
+            gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}  指令: {n_cmds}",
+                                col3_x + 6, ry, 19, (200, 210, 240), "sans")
+            if n_cmds <= 35:
+                VFS = 16; VLH = 19
+                max_chars = (cw - 14) // 8
+                for j, cmd in enumerate(cmds):
+                    cy2 = ry + 28 + j * VLH
+                    if cy2 > CONTENT_BOT - 8: break
+                    ctype = cmd[0]
+                    if ctype == "fill":
+                        c = cmd[1]
+                        text = f"fill({c[0]},{c[1]},{c[2]})"
+                    elif ctype == "rect":
+                        c = cmd[5]
+                        text = f"rect({cmd[1]},{cmd[2]},{cmd[3]},{cmd[4]},({c[0]},{c[1]},{c[2]}))"
+                    elif ctype == "circle":
+                        c = cmd[4]
+                        text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},({c[0]},{c[1]},{c[2]}))"
+                    else:
+                        text = str(cmd)
+                    if len(text) > max_chars:
+                        text = text[:max_chars-2] + ".."
+                    gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
+            else:
+                flat = "[" + ", ".join(
+                    f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                    else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                    else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                    else str(c)
+                    for c in cmds[:24]
+                ) + (", ..." if len(cmds) > 24 else "") + "]"
+                chars_per_line = (cw - 20) // 7
+                bj = 0
+                while bj < len(flat):
+                    chunk = flat[bj:bj + chars_per_line]
+                    if ry + 28 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
+                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
+                    bj += chars_per_line
     else:
         gt.draw(logic_surface, f"编码: 无  纯色图标", col3_x + 6, ry, 19, (160, 180, 200), "sans")
 
