@@ -557,6 +557,39 @@ class Creature:
                 self._climb_top_y = climb_top
             if swim_top > -999:
                 self._swim_top_y = swim_top
+        # 检测岸边：水面高度处紧邻固体方块（水平距离 ≤0.2 格）
+        self._near_shore = False
+        self._shore_dir = 0  # 1=右侧岸, -1=左侧岸
+        if self._swim_top_y is not None:
+            surface_y = self._swim_top_y
+            shore_margin = 0.2
+            grect = self.get_game_rect()
+            # 检查右侧：水面相邻的固体方块
+            check_gx = int(grect.x + grect.w + shore_margin)
+            for gy in range(int(surface_y - 1), int(surface_y) + 1):
+                coord = world._wrap_grid_coord(check_gx, gy)
+                if coord is None:
+                    continue
+                bt = world.get_block_type_by_coord(coord[0], coord[1])
+                if bt.is_solid:
+                    # 该固体方块顶部应与水面齐平
+                    if gy + 1 >= surface_y - 0.1:
+                        self._near_shore = True
+                        self._shore_dir = 1
+                        break
+            # 检查左侧
+            if not self._near_shore:
+                check_gx = int(grect.x - shore_margin)
+                for gy in range(int(surface_y - 1), int(surface_y) + 1):
+                    coord = world._wrap_grid_coord(check_gx, gy)
+                    if coord is None:
+                        continue
+                    bt = world.get_block_type_by_coord(coord[0], coord[1])
+                    if bt.is_solid:
+                        if gy + 1 >= surface_y - 0.1:
+                            self._near_shore = True
+                            self._shore_dir = -1
+                            break
         # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
         # 仅水系液体触发（排除熔岩/蜂蜜等非水液体）
         if self.can_swim:

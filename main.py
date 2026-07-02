@@ -2544,7 +2544,45 @@ while running:
                 if can_recover and player1.stamina < player1.stamina_max:
                     player1.recover_stamina(buf_stam_rec * dt)
 
-                if jump_pressed and not grounded:
+                # ---- 上岸：水面上 + 近岸 + 跳跃键 ----
+                shore_exit_done = False
+                if (jump_pressed and not grounded
+                    and player1.can_swim and swimming_now
+                    and getattr(player1, '_near_shore', False)
+                    and player1.stamina >= 10):
+                    _shore_pending = getattr(player1, '_shore_exit_pending', False)
+                    if not _shore_pending:
+                        # 首次按下：获得刚好上岸的向上速度
+                        import math
+                        grav = abs(_current_map.gravity)
+                        h = player1._h / 2 + 0.12  # 半身高 + 余量
+                        player1.v_y = math.sqrt(2 * grav * h)
+                        player1.v_x = 0.0
+                        if not silenced: player1.consume_stamina(10)
+                        player1._shore_exit_pending = True
+                        player1._shore_exit_timer = 0.28  # 短窗口
+                        player1._shore_exit_dir = player1._shore_dir
+                        sfx.play_jump()
+                        shore_exit_done = True
+                        jump_pressed = False
+                # 上岸后续：窗口内按方向键则获得水平速度
+                if getattr(player1, '_shore_exit_pending', False) and not shore_exit_done:
+                    player1._shore_exit_timer -= dt
+                    exit_dir = player1._shore_exit_dir
+                    # 检测玩家按了对应方向键
+                    if exit_dir == 1:
+                        want_dir = keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]
+                    else:
+                        want_dir = keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]
+                    if want_dir:
+                        player1.v_x = exit_dir * 2.5  # 水平上岸推力
+                        player1._shore_exit_pending = False
+                    elif player1._shore_exit_timer <= 0:
+                        # 超时未按方向，落回水中
+                        player1._shore_exit_pending = False
+
+                # ---- 正常跳跃 ----
+                if jump_pressed and not grounded and not shore_exit_done:
                     can_actually_jump = player1.on_ground or player1.is_climbing
                     jump_cost = 15.0 * sm * buf_stam_cost + 0.01
                     if player1.stamina >= jump_cost:
@@ -2561,6 +2599,10 @@ while running:
                 # 攀爬中着陆或离开可攀爬方块：自动解除
                 if player1.is_climbing and (player1.on_ground or not player1.can_climb):
                     player1.is_climbing = False
+                # 上岸后着陆或离开水面：清除上岸待处理状态
+                if getattr(player1, '_shore_exit_pending', False):
+                    if player1.on_ground or not player1.can_swim:
+                        player1._shore_exit_pending = False
 
         px, py = player1.get_center()
         camera.follow(px, py)
