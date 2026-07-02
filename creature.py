@@ -102,10 +102,36 @@ class Creature:
     def clamp_velocity(self):
         self.v_x = max(-self.v_max, min(self.v_x, self.v_max))
 
+    def _get_buff_param(self, buff_id: int, idx: int = 0, default: float = 0.0) -> float:
+        """读取身上某 buff 的参数值，无此 buff 则返回 default。"""
+        for b in self.buffs:
+            if b.buff_id == buff_id and b.params and len(b.params) > idx:
+                return float(b.params[idx])
+        return default
+
     def take_damage(self, phys_damage: float, magic_damage: float,
-                    phys_pen: float = 0.0, magic_pen: float = 0.0) -> float:
+                    phys_pen: float = 0.0, magic_pen: float = 0.0,
+                    source: "Creature" = None, damage_type: str = "physical") -> float:
         if not self.alive:
             return 0.0
+
+        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
+        if self.has_buff(36):
+            return 0.0
+
+        # ---- Buff: 物理免疫 (34) / 法术免疫 (35) ----
+        if phys_damage > 0 and self.has_buff(34):
+            phys_damage = 0.0
+        if magic_damage > 0 and self.has_buff(35):
+            magic_damage = 0.0
+
+        if phys_damage <= 0 and magic_damage <= 0:
+            return 0.0
+
+        # ---- Buff: 破甲 (26) 无视目标抗性 ----
+        if source is not None and source.has_buff(26):
+            phys_pen = max(phys_pen, self.phys_res + RES_NORMAL_SCALE)
+            magic_pen = max(magic_pen, self.magic_res + RES_NORMAL_SCALE)
 
         x_phys = (phys_pen - self.phys_res) / RES_NORMAL_SCALE
         x_phys = max(-1.0, min(x_phys, 1.0))
@@ -121,30 +147,93 @@ class Creature:
         # 勇气效果：额外减伤
         courage_val = getattr(self, '_courage_dr', 0.0)
         weakness_mult = getattr(self, '_weakness_mult', 1.0)
+
+        # ---- Buff: 坚守 (7) 受到伤害减少 ----
+        fortify_mult = self.get_buff_stat("damage_taken", 1.0)
+
+        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
+        if self.has_buff(46) and damage_type == "fire":
+            fortify_mult *= 2.0
+
         effective_dr = max(0.0, min(1.0, self.dr + courage_val))
-        damage = total_raw * (1 - effective_dr) * weakness_mult
+        damage = total_raw * (1 - effective_dr) * weakness_mult * fortify_mult
 
         if damage <= 0:
             return 0.0
 
-        if self.shield > 0:
+        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
+        shield_absorbed = 0.0
+        if self.has_buff(29):
+            self.hp -= damage
+            if self.hp <= 0:
+                self.hp = 0
+                self.alive = False
+                self.on_death()
+        elif self.shield > 0:
             if self.shield >= damage:
+                shield_absorbed = damage
                 self.shield -= damage
-                return damage
             else:
+                shield_absorbed = self.shield
                 damage -= self.shield
                 self.shield = 0
+                self.hp -= damage
+                if self.hp <= 0:
+                    self.hp = 0
+                    self.alive = False
+                    self.on_death()
+        else:
+            self.hp -= damage
+            if self.hp <= 0:
+                self.hp = 0
+                self.alive = False
+                self.on_death()
 
-        self.hp -= damage
-        if self.hp <= 0:
-            self.hp = 0
-            self.alive = False
-            self.on_death()
-        return damage
+        # actual_damage = what was actually dealt (shield absorbed + HP lost)
+        actual_damage = shield_absorbed + (damage if not self.has_buff(29) else
+                        (damage if self.shield <= 0 else damage))
+        # More clear: actual damage is what was applied in total
+        if 'shield_absorbed' in dir() or True:
+            # We track actual_damage as total_raw * multipliers for reflection purposes
+            actual_damage = total_raw * (1 - effective_dr) * weakness_mult * fortify_mult
+        actual_damage = max(0.0, actual_damage)
 
-    def take_raw_damage(self, damage: float) -> float:
+        # ---- Buff: 荆棘 (10) 反弹伤害 ----
+        if source is not None and source.alive and self.has_buff(10) and actual_damage > 0:
+            thorn_pct = self._get_buff_param(10, 0, 30.0)
+            reflect = actual_damage * thorn_pct / 100.0
+            if reflect > 0:
+                source.take_raw_damage(reflect)
+
+        # ---- Buff: 嗜血 (11) 造成伤害时回血（由攻击者触发） ----
+        if source is not None and source.alive and source.has_buff(11) and actual_damage > 0:
+            lifesteal_pct = source._get_buff_param(11, 0, 15.0)
+            heal_amt = actual_damage * lifesteal_pct / 100.0
+            source.heal(heal_amt)
+
+        return actual_damage
+
+    def take_raw_damage(self, damage: float, damage_type: str = "raw") -> float:
         if not self.alive or damage <= 0:
             return 0.0
+
+        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
+        if self.has_buff(36):
+            return 0.0
+
+        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
+        if self.has_buff(46) and damage_type == "fire":
+            damage *= 2.0
+
+        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
+        if self.has_buff(29):
+            self.hp -= damage
+            if self.hp <= 0:
+                self.hp = 0
+                self.alive = False
+                self.on_death()
+            return damage
+
         if self.shield > 0:
             if self.shield >= damage:
                 self.shield -= damage
@@ -162,8 +251,25 @@ class Creature:
     def heal(self, amount: float) -> float:
         if not self.alive or amount <= 0:
             return 0.0
-        recover = min(amount, self.hp_max - self.hp)
+
+        # ---- Buff: 重伤 (20) 受到的治疗效果减少 ----
+        grievous_mult = self.get_buff_stat("healing_received", 1.0)
+
+        # ---- Buff: 发炎 (46) 治疗效果减半 ----
+        if self.has_buff(46):
+            grievous_mult *= 0.5
+
+        effective_amount = amount * grievous_mult
+        if effective_amount <= 0:
+            return 0.0
+
+        recover = min(effective_amount, self.hp_max - self.hp)
         self.hp += recover
+
+        # ---- Buff: 寄生 (55) 被治愈时额外扣除等量生命 ----
+        if self.has_buff(55) and recover > 0:
+            self.take_raw_damage(recover)
+
         return recover
 
     def add_shield(self, amount: float, max_shield: float = None) -> float:
@@ -733,10 +839,18 @@ class Creature:
                 self.add_shield(amt * tick_interval, None)
             elif bt.tick == "burning":
                 amt = float(p[0]) if p else 5.0
-                self.take_raw_damage(amt * tick_interval)
+                self.take_raw_damage(amt * tick_interval, damage_type="fire")
             elif bt.tick == "bleeding":
                 pct = float(p[0]) if p else 1.0
                 self.take_raw_damage(self.hp * pct / 100.0 * tick_interval)
+            elif bt.tick == "berserk":
+                # 狂暴：持续损失生命值（每秒 {0} 点）
+                amt = float(p[0]) if p else 5.0
+                self.take_raw_damage(amt * tick_interval)
+            elif bt.tick == "parasitic":
+                # 寄生：每秒损失生命（每秒 {0} 点）
+                amt = float(p[0]) if p else 3.0
+                self.take_raw_damage(amt * tick_interval)
             elif bt.tick == "cleansing":
                 interval = float(p[0]) if p else 5.0
                 self._buff_timer_cleanse = getattr(self, '_buff_timer_cleanse', 0) + tick_interval
@@ -778,6 +892,17 @@ class Creature:
                     result *= float(p[0]) if p else 2.0
             elif stat_name == "gravity":
                 if bt.tick == "feather":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
+                elif bt.tick == "anchored":
+                    # 定锚：重力大幅增加
+                    result *= 1.0 + float(p[0]) / 100.0 if p else 2.0
+            elif stat_name == "damage_taken":
+                # 坚守 (7)：受到伤害乘数
+                if bt.tick == "fortify":
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
+            elif stat_name == "healing_received":
+                # 重伤 (20)：受到治疗乘数
+                if bt.tick == "grievous_wound":
                     result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
         return result
 
