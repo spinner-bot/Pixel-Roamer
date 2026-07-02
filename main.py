@@ -2549,7 +2549,7 @@ while running:
                 if (jump_pressed and not grounded
                     and player1.can_swim and swimming_now
                     and getattr(player1, '_near_shore', False)
-                    and player1.stamina >= 10):
+                    and player1.stamina >= 25):
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
                         # 首次按下：获得刚好上岸的向上速度
@@ -2558,7 +2558,7 @@ while running:
                         h = player1._h / 2 + 0.12  # 半身高 + 余量
                         player1.v_y = math.sqrt(2 * grav * h)
                         player1.v_x = 0.0
-                        if not silenced: player1.consume_stamina(10)
+                        if not silenced: player1.consume_stamina(25)
                         player1._shore_exit_pending = True
                         player1._shore_exit_timer = 0.28  # 短窗口
                         player1._shore_exit_dir = player1._shore_dir
