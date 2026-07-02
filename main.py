@@ -157,7 +157,7 @@ def launch_world(map_id: int):
         w=cfg.get("w", 0.8),
         h=cfg.get("h", 1.8),
         v_max=cfg.get("v_max", 36.5),
-        v_jump=cfg.get("v_jump", 26.5),
+        v_jump=cfg.get("v_jump", 20.0),
         f_x=cfg.get("f_x", 0.985),
         f_y=cfg.get("f_y", 1.0),
         phys_atk=cfg.get("phys_atk", 10),
@@ -873,7 +873,7 @@ _EDITABLE_FIELDS = [
     # ---- Player 属性 ----
     ("player.hp_max",        "最大血量",           "float", 150.0,    10.0),
     ("player.v_max",         "最大速度",           "float", 36.5,     1.0),
-    ("player.v_jump",        "跳跃速度",           "float", 26.5,     1.0),
+    ("player.v_jump",        "跳跃速度",           "float", 20.0,     1.0),
     ("player.stamina_max",   "最大体力",           "float", 200.0,    10.0),
     ("player.phys_atk",      "物理攻击",           "float", 10.0,     5.0),
     ("player.magic_atk",     "魔法攻击",           "float", 0.0,      5.0),
@@ -1733,10 +1733,10 @@ def _get_edit_config(map_id: int) -> dict:
 
     # Player 默认值
     defaults = {
-        "hp_max": 150.0, "v_max": 36.5, "v_jump": 26.5, "stamina_max": 200.0,
+        "hp_max": 150.0, "v_max": 36.5, "v_jump": 20.0, "stamina_max": 200.0,
         "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
         "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
-        "f_x": 0.985, "f_y": 1.0, "shield": 0.0, "w": 0.8, "h": 1.8,
+        "f_x": 0.985, "f_y": 0.9965, "shield": 0.0, "w": 0.8, "h": 1.8,
         "costume_id": 1,
     }
     saved_player = saved.get("player", {})
