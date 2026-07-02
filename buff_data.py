@@ -591,24 +591,35 @@ def shore_icon():
     _fill_rect(cmds, int(hip_x + S*0.015), hip_y, int(S*0.014), int(S*0.055), black)
     _fill_rect(cmds, int(hip_x + S*0.03), int(hip_y + S*0.045), int(S*0.04), int(S*0.01), black)
 
-    # ====== 水花（浪花翻卷 + 阴影 + 色彩分级） ======
+    # ====== 水花（浪花翻卷：水向两侧翻开，精细结构） ======
     s_base = int(by + S*0.12)
-    for i in range(5):
-        cmds.append(('circle', int(bx - S*0.02 + i*S*0.02), int(s_base + i*4), max(2, int(S*0.06 - i*2)), (40, 115, 205)))
-    for i in range(6):
-        sx2 = int(bx - S*0.04 + i*S*0.022)
-        sy2 = int(s_base - 3 + abs(i-2)*4)
-        cmds.append(('circle', sx2, sy2, max(2, int(S*0.045 - i*2)), (130, 185, 245)))
+    # 阴影底层（水体暗色区域）
+    for i in range(4):
+        cmds.append(('circle', bx-3+i*2, s_base+i*2, 5-i, (30, 100, 190)))
+    # 左侧浪花翻卷：弧线从中心向左上方弯曲
     for i in range(7):
-        sx3 = int(bx - S*0.06 + i*S*0.02)
-        sy3 = int(s_base - 6 + i*2 if i < 4 else s_base - 2 - (i-3)*5)
-        r3 = max(2, int(S*0.038 - i*2)) if i < 5 else max(1, int(S*0.02 - (i-4)*3))
-        cmds.append(('circle', sx3, sy3, r3, (240, 248, 255)))
-    for i in range(10):
-        dx = int(bx - S*0.08 + i*S*0.02)
-        dy = int(s_base - 12 - abs(i-4)*4)
-        rng, dr = _rnd(rng, 4); dr += 1
-        cmds.append(('circle', dx, dy, dr, (230, 240, 255)))
+        lx = bx - 3 - i*3
+        ly = s_base - 2 + abs(i-3)*2 - 2
+        r = 3 if i < 4 else 2
+        cmds.append(('circle', lx, ly, r, (180, 220, 250)))
+        cmds.append(('circle', lx-1, ly-1, max(1,r-1), (230, 245, 255)))
+    # 右侧浪花翻卷：弧线从中心向右上方弯曲
+    for i in range(7):
+        rx = bx + 3 + i*3
+        ry = s_base - 2 + abs(i-3)*2 - 2
+        r = 3 if i < 4 else 2
+        cmds.append(('circle', rx, ry, r, (180, 220, 250)))
+        cmds.append(('circle', rx+1, ry-1, max(1,r-1), (230, 245, 255)))
+    # 中心上升水柱
+    for i in range(5):
+        cmds.append(('circle', bx-1, s_base-2-i*2, 2, (210, 235, 255)))
+        cmds.append(('circle', bx+1, s_base-2-i*2, 2, (210, 235, 255)))
+    # 飞溅水滴（向外散开）
+    for i in range(12):
+        rng, sx_off = _rnd(rng, 18); sx_off -= 9
+        rng, sy_off = _rnd(rng, 16); sy_off += 2
+        rng, dr = _rnd(rng, 2); dr += 1
+        cmds.append(('circle', bx+sx_off, s_base-sy_off, dr, (220, 240, 255)))
 
     return cmds
 register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
