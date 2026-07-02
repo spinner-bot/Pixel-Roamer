@@ -2509,16 +2509,16 @@ while running:
                 swimming_now = False
                 up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
                 if not player1.is_climbing and player1.can_swim:
-                    # 游泳上边界：人物中心到达水面（半腰位置）
-                    swim_bound = getattr(player1, '_swim_top_y', None)
-                    at_swim_bound = False
-                    if swim_bound is not None:
-                        if player1._y >= swim_bound - 0.05 and player1._y <= swim_bound + 2.0:
-                            player1._y = swim_bound  # 中心与水面齐平（半腰）
-                            player1.v_y = 0.0
-                            at_swim_bound = True
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
+                        # 游泳上边界仅在主动游泳时生效：人物中心到达水面（半腰位置）
+                        swim_bound = getattr(player1, '_swim_top_y', None)
+                        at_swim_bound = False
+                        if swim_bound is not None:
+                            if player1._y >= swim_bound - 0.05 and player1._y <= swim_bound + 2.0:
+                                player1._y = swim_bound  # 中心与水面齐平（半腰）
+                                player1.v_y = 0.0
+                                at_swim_bound = True
                         if at_swim_bound:
                             # 已到水面，保持位置并消耗同等体力
                             if player1.stamina >= swim_cost:
