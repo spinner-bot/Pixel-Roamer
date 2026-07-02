@@ -27,7 +27,7 @@ class Creature:
         a_x: float = 0,
         a_y: float = 0,
         f_x: float = 0.88,
-        f_y: float = 0.98,
+        f_y: float = 0.99,
         v_x: float = 0.0,
         v_y: float = 0.0,
         phys_atk: float = 10,
@@ -1142,7 +1142,7 @@ class Player(Creature):
                  v_max: float = 36.5,
                  v_jump: float = 26.5,
                  f_x: float = 0.985,
-                 f_y: float = 0.98,
+                 f_y: float = 0.99,
                  phys_atk: float = 10,
                  magic_atk: float = 0,
                  phys_res: float = 0,
@@ -1151,7 +1151,7 @@ class Player(Creature):
                  magic_pen: float = 0,
                  k_res: float = 150,
                  dr: float = 0,
-                 stamina_max: float = 100.0):
+                 stamina_max: float = 200.0):
         super().__init__(
             x=spawn_x,
             y=spawn_y,

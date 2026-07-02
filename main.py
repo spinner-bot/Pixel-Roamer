@@ -159,7 +159,7 @@ def launch_world(map_id: int):
         v_max=cfg.get("v_max", 36.5),
         v_jump=cfg.get("v_jump", 26.5),
         f_x=cfg.get("f_x", 0.985),
-        f_y=cfg.get("f_y", 0.98),
+        f_y=cfg.get("f_y", 0.99),
         phys_atk=cfg.get("phys_atk", 10),
         magic_atk=cfg.get("magic_atk", 0),
         phys_res=cfg.get("phys_res", 0),
@@ -168,7 +168,7 @@ def launch_world(map_id: int):
         magic_pen=cfg.get("magic_pen", 0),
         k_res=cfg.get("k_res", 150),
         dr=cfg.get("dr", 0),
-        stamina_max=cfg.get("stamina_max", 100),
+        stamina_max=cfg.get("stamina_max", 200),
     )
     # 加载时装
     player1.costume_id = cfg.get("costume_id", DEFAULT_COSTUME_ID)
@@ -874,7 +874,7 @@ _EDITABLE_FIELDS = [
     ("player.hp_max",        "最大血量",           "float", 150.0,    10.0),
     ("player.v_max",         "最大速度",           "float", 36.5,     1.0),
     ("player.v_jump",        "跳跃速度",           "float", 26.5,     1.0),
-    ("player.stamina_max",   "最大体力",           "float", 100.0,    10.0),
+    ("player.stamina_max",   "最大体力",           "float", 200.0,    10.0),
     ("player.phys_atk",      "物理攻击",           "float", 10.0,     5.0),
     ("player.magic_atk",     "魔法攻击",           "float", 0.0,      5.0),
     ("player.phys_res",      "物理抗性",           "float", 0.0,      5.0),
@@ -884,7 +884,7 @@ _EDITABLE_FIELDS = [
     ("player.k_res",         "抗性系数",           "float", 150.0,    10.0),
     ("player.dr",            "减伤率",             "float", 0.0,      0.05),
     ("player.f_x",           "X轴摩擦系数",        "float", 0.985,    0.005),
-    ("player.f_y",           "Y轴摩擦系数",        "float", 0.98,     0.005),
+    ("player.f_y",           "Y轴摩擦系数",        "float", 0.99,     0.005),
     ("player.shield",        "初始护盾",           "float", 0.0,      5.0),
     ("player.w",             "玩家宽度",           "float", 0.8,      0.1),
     ("player.h",             "玩家高度",           "float", 1.8,      0.1),
@@ -1733,10 +1733,10 @@ def _get_edit_config(map_id: int) -> dict:
 
     # Player 默认值
     defaults = {
-        "hp_max": 150.0, "v_max": 36.5, "v_jump": 26.5, "stamina_max": 100.0,
+        "hp_max": 150.0, "v_max": 36.5, "v_jump": 26.5, "stamina_max": 200.0,
         "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
         "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
-        "f_x": 0.985, "f_y": 0.98, "shield": 0.0, "w": 0.8, "h": 1.8,
+        "f_x": 0.985, "f_y": 0.99, "shield": 0.0, "w": 0.8, "h": 1.8,
         "costume_id": 1,
     }
     saved_player = saved.get("player", {})
