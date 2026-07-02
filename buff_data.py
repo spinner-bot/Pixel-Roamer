@@ -487,7 +487,7 @@ def shore_icon():
     for angle in [0.0, 105*_m.pi/180, 120*_m.pi/180, 135*_m.pi/180, 150*_m.pi/180, 165*_m.pi/180, 270*_m.pi/180]:
         cos_a = _m.cos(angle)
         sin_a = _m.sin(angle)
-        for d in range(sun_r+5, sun_r+10, 2):
+        for d in range(sun_r+3, sun_r+15, 2):
             px = int(sx + d * cos_a)
             py = int(sy + d * sin_a)
             if 0 <= px < S and 0 <= py < S:
@@ -553,84 +553,118 @@ def shore_icon():
     # 上20%区域 → r=3
     for _ in range(8):
         rng, bx = _rnd(rng, S - shore_x - 8); bx += shore_x + 3
-        rng, by = _rnd(rng, max(1, int(water_h*0.20))); by += water_top
+        rng, by = _rnd(rng, max(1, int(water_h*0.20)-4)); by += water_top + 4
         rng, al = _rnd(rng, 50); al += 190
         cmds.append(('circle', bx, by, 3, (al, min(255, al+30), 255)))
     # 上35%区域 → r=2
     for _ in range(22):
         rng, bx = _rnd(rng, S - shore_x - 6); bx += shore_x + 2
-        rng, by = _rnd(rng, max(1, int(water_h*0.35))); by += water_top
+        rng, by = _rnd(rng, max(1, int(water_h*0.35)-3)); by += water_top + 3
         rng, al = _rnd(rng, 55); al += 180
         cmds.append(('circle', bx, by, 2, (al, min(255, al+25), 255)))
     # 50%区域 → r=1
     for _ in range(35):
         rng, bx = _rnd(rng, S - shore_x - 4); bx += shore_x + 1
-        rng, by = _rnd(rng, max(1, int(water_h*0.50))); by += water_top
+        rng, by = _rnd(rng, max(1, int(water_h*0.50)-2)); by += water_top + 2
         rng, al = _rnd(rng, 60); al += 175
         cmds.append(('circle', bx, by, 1, (al, min(255, al+20), 255)))
 
     # ====== 岸边线 ======
     cmds.append(('rect', shore_x, water_top, 2, water_h, (130, 95, 55)))
 
-    # ====== 火柴人（黑色线条，用 r=1 小圆模拟） ======
-    def _fill_rect(cmds, x, y, w, h, color):
-        for px in range(int(x), int(x+w)):
-            for py in range(int(y), int(y+h)):
-                cmds.append(('circle', px, py, 1, color))
-    def _fill_circle(cmds, cx, cy, r, color):
-        for px in range(int(cx-r), int(cx+r+1)):
-            for py in range(int(cy-r), int(cy+r+1)):
-                if (px-cx)**2 + (py-cy)**2 <= r**2:
-                    cmds.append(('circle', px, py, 1, color))
-    bx = int(S*0.53)
-    by = int(S*0.35)
+    # ====== 火柴人（经典圆环头+线段身躯，小圆密排模拟线段） ======
     black = (0, 0, 0)
-    _fill_circle(cmds, int(bx - S*0.03), int(by - S*0.08), int(S*0.042), black)
-    waist_y = int(by + S*0.02)
-    _fill_rect(cmds, int(bx - S*0.015), int(by - S*0.04), int(S*0.025), int(S*0.06), black)
-    _fill_rect(cmds, int(bx - S*0.025), waist_y, int(S*0.02), int(S*0.065), black)
-    shoulder_x = int(bx - S*0.005)
-    shoulder_y = int(by - S*0.03)
-    _fill_rect(cmds, shoulder_x, shoulder_y, int(S*0.07), int(S*0.014), black)
-    _fill_rect(cmds, shoulder_x + int(S*0.06), int(shoulder_y - S*0.04), int(S*0.05), int(S*0.012), black)
-    _fill_rect(cmds, shoulder_x, int(shoulder_y + S*0.012), int(S*0.06), int(S*0.012), black)
-    _fill_rect(cmds, shoulder_x + int(S*0.05), int(shoulder_y - S*0.02), int(S*0.04), int(S*0.01), black)
-    hip_x = int(bx - S*0.02)
-    hip_y = int(waist_y + S*0.06)
-    _fill_rect(cmds, hip_x, hip_y, int(S*0.014), int(S*0.06), black)
-    _fill_rect(cmds, int(hip_x - S*0.04), int(hip_y + S*0.05), int(S*0.05), int(S*0.012), black)
-    _fill_rect(cmds, int(hip_x + S*0.015), hip_y, int(S*0.014), int(S*0.055), black)
-    _fill_rect(cmds, int(hip_x + S*0.03), int(hip_y + S*0.045), int(S*0.04), int(S*0.01), black)
+    sky_c = (135, 200, 240)
+    def _line(cmds, x1, y1, x2, y2, color, thick=2):
+        """用密排小圆绘制线段。"""
+        dx = x2 - x1; dy = y2 - y1
+        length = _m.sqrt(dx*dx + dy*dy)
+        if length < 0.5: return
+        steps = max(1, int(length * 3))  # 3圆/像素
+        for i in range(steps + 1):
+            t = i / steps
+            px = int(x1 + dx * t)
+            py = int(y1 + dy * t)
+            for tx in range(-thick//2, (thick+1)//2):
+                for ty in range(-thick//2, (thick+1)//2):
+                    cmds.append(('circle', px+tx, py+ty, 1, color))
+    # 头部定位
+    hx = int(S*0.43)
+    hy = int(S*0.30)
+    hr = int(S*0.045)
+    # 圆环节点头部：黑色大圆 + 背景色小圆（镂空）
+    _line(cmds, hx-hr, hy-hr, hx+hr, hy-hr, black, hr*2+1)
+    _line(cmds, hx-hr, hy+hr, hx+hr, hy+hr, black, hr*2+1)
+    _line(cmds, hx-hr, hy-hr, hx-hr, hy+hr, black, hr*2+1)
+    _line(cmds, hx+hr, hy-hr, hx+hr, hy+hr, black, hr*2+1)
+    # 用背景色圆覆盖内部
+    for _r2 in range(hr-1, 0, -1):
+        _line(cmds, hx-_r2, hy-_r2, hx+_r2, hy-_r2, sky_c, _r2*2+1)
+        _line(cmds, hx-_r2, hy+_r2, hx+_r2, hy+_r2, sky_c, _r2*2+1)
+        _line(cmds, hx-_r2, hy-_r2, hx-_r2, hy+_r2, sky_c, _r2*2+1)
+        _line(cmds, hx+_r2, hy-_r2, hx+_r2, hy+_r2, sky_c, _r2*2+1)
+    # 颈点（头下方）
+    neck_x = hx
+    neck_y = hy + hr
+    # 上身：30°斜向右下，长度16
+    ub_len = 16
+    ub_ang = 30 * _m.pi / 180
+    waist_x = neck_x + ub_len * _m.cos(ub_ang)
+    waist_y = neck_y + ub_len * _m.sin(ub_ang)
+    _line(cmds, neck_x, neck_y, waist_x, waist_y, black, 3)
+    # 下身：竖直向下，长度14
+    lb_len = 14
+    hip_x = waist_x
+    hip_y = waist_y + lb_len
+    _line(cmds, waist_x, waist_y, hip_x, hip_y, black, 3)
+    # 手臂：从上身下1/4处引出，15°夹角，角平分线⊥上身
+    arm_org_x = neck_x + ub_len * 0.75 * _m.cos(ub_ang)
+    arm_org_y = neck_y + ub_len * 0.75 * _m.sin(ub_ang)
+    arm_bisect = ub_ang + 90 * _m.pi / 180  # ⊥上身方向（指向左上天空）
+    arm_len = 9
+    for sign in [-1, 1]:
+        arm_ang = arm_bisect + sign * 7.5 * _m.pi / 180
+        ax = arm_org_x + arm_len * _m.cos(arm_ang)
+        ay = arm_org_y + arm_len * _m.sin(arm_ang)
+        _line(cmds, arm_org_x, arm_org_y, ax, ay, black, 2)
+    # 腿：10°夹角，角平分线与下身重合（竖直向下）
+    leg_len = 12
+    for sign in [-1, 1]:
+        leg_ang = 270 * _m.pi / 180 + sign * 5 * _m.pi / 180
+        lx = hip_x + leg_len * _m.cos(leg_ang)
+        ly = hip_y + leg_len * _m.sin(leg_ang)
+        _line(cmds, hip_x, hip_y, lx, ly, black, 3)
 
-    # ====== 水花（浪花翻卷：水向两侧翻开，精细结构） ======
-    s_base = int(by + S*0.12)
+    # ====== 水花（浪花翻卷：紧贴水面，与水连接） ======
+    s_base = water_top
+    sx_center = hip_x  # 水花中心对齐人物髋部
     # 阴影底层（水体暗色区域）
     for i in range(4):
-        cmds.append(('circle', bx-3+i*2, s_base+i*2, 5-i, (30, 100, 190)))
+        cmds.append(('circle', sx_center-3+i*2, s_base+i*2, 5-i, (30, 100, 190)))
     # 左侧浪花翻卷：弧线从中心向左上方弯曲
     for i in range(7):
-        lx = bx - 3 - i*3
+        lx = sx_center - 3 - i*3
         ly = s_base - 2 + abs(i-3)*2 - 2
         r = 3 if i < 4 else 2
         cmds.append(('circle', lx, ly, r, (180, 220, 250)))
         cmds.append(('circle', lx-1, ly-1, max(1,r-1), (230, 245, 255)))
     # 右侧浪花翻卷：弧线从中心向右上方弯曲
     for i in range(7):
-        rx = bx + 3 + i*3
+        rx = sx_center + 3 + i*3
         ry = s_base - 2 + abs(i-3)*2 - 2
         r = 3 if i < 4 else 2
         cmds.append(('circle', rx, ry, r, (180, 220, 250)))
         cmds.append(('circle', rx+1, ry-1, max(1,r-1), (230, 245, 255)))
     # 中心上升水柱
     for i in range(5):
-        cmds.append(('circle', bx-1, s_base-2-i*2, 2, (210, 235, 255)))
-        cmds.append(('circle', bx+1, s_base-2-i*2, 2, (210, 235, 255)))
+        cmds.append(('circle', sx_center-1, s_base-2-i*2, 2, (210, 235, 255)))
+        cmds.append(('circle', sx_center+1, s_base-2-i*2, 2, (210, 235, 255)))
     # 飞溅水滴（向外散开）
     for i in range(12):
         rng, sx_off = _rnd(rng, 18); sx_off -= 9
         rng, sy_off = _rnd(rng, 16); sy_off += 2
         rng, dr = _rnd(rng, 2); dr += 1
-        cmds.append(('circle', bx+sx_off, s_base-sy_off, dr, (220, 240, 255)))
+        cmds.append(('circle', sx_center+sx_off, s_base-sy_off, dr, (220, 240, 255)))
 
     return cmds
 register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
