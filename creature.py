@@ -89,6 +89,7 @@ class Creature:
         self.buffs: list = []          # [BuffInstance, ...]
         self._buff_timer = 0.0         # buff tick 累计时间
         self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
+        self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
 
     # ----- 游戏矩形 -----
     def get_game_rect(self) -> GameRect:
@@ -296,14 +297,28 @@ class Creature:
         self.v_y = 0.0
 
     def jump(self, not_on_ground_ok=False) -> bool:
-        """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。需体力>0。"""
+        """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
+        有二段跳 buff (37) 时，可在空中再跳一次。需体力>0。"""
         if self.stamina < 0.01:
             return False
-        can_jump = self.on_ground or (self.is_climbing and not_on_ground_ok) or (self.is_climbing and self.alive)
-        if (not_on_ground_ok or self.on_ground or self.is_climbing) and self.alive:
+
+        # 落地或攀爬时重置空中跳跃计数
+        if self.on_ground or self.is_climbing:
+            self._air_jumps_used = 0
+
+        # 计算最大空中跳跃次数（二段跳 buff 37 提供 +1）
+        max_air_jumps = 1 if self.has_buff(37) else 0
+
+        on_ground_or_climb = self.on_ground or self.is_climbing
+        can_air_jump = (not on_ground_or_climb and
+                        self._air_jumps_used < max_air_jumps)
+
+        if (not_on_ground_ok or on_ground_or_climb or can_air_jump) and self.alive:
             self.v_y = self.v_jump
             self.on_ground = False
             self.is_climbing = False
+            if can_air_jump:
+                self._air_jumps_used += 1
             return True
         return False
 
@@ -322,7 +337,25 @@ class Creature:
             return
         self.v_x += self.a_x * dt
         self.v_y += self.a_y * dt
-        self.v_y += world.gravity * dt
+
+        # ---- Buff: 重力修正（轻羽13/定锚54） ----
+        buf_grav = self.get_buff_stat("gravity", 1.0)
+        self.v_y += world.gravity * buf_grav * dt
+
+        # ---- Buff: 风步 (53) 连续移动加速 ----
+        if self.has_buff(53):
+            moving = abs(self.v_x) > 0.1
+            if moving:
+                self._wind_walk_timer = getattr(self, '_wind_walk_timer', 0.0) + dt
+                bonus = min(self._wind_walk_timer * 0.5, self._get_buff_param(53, 0, 0.5) * self.v_max)
+                # 按当前移动方向加速
+                direction = 1.0 if self.v_x > 0 else -1.0
+                self.v_x += direction * bonus * dt * 3
+            else:
+                self._wind_walk_timer = 0.0
+        else:
+            self._wind_walk_timer = 0.0
+
         self.clamp_velocity()
 
     # ----- 采样：仅自身矩形微扩 0.01，不做整格扩展 -----
@@ -405,6 +438,17 @@ class Creature:
         if liquid_space < 1.0:
             final_fx *= liquid_space
             final_fy *= liquid_space
+
+        # ---- Buff: 摩擦修正（滑腻42/黏着43/寒冷51） ----
+        buf_friction = self.get_buff_stat("friction", 1.0)
+        final_fx += (1.0 - final_fx) * (1.0 - buf_friction) if buf_friction < 1.0 else final_fx * buf_friction
+        # 更直观的做法：直接用 buff 值乘 friction
+        if self.has_buff(42):  # 滑腻：极低摩擦
+            final_fx = self.f_x * 0.15
+        elif self.has_buff(43):  # 黏着：高摩擦
+            final_fx = self.f_x * 1.8
+        elif self.has_buff(51):  # 寒冷：冰面摩擦
+            final_fx = self.f_x * 0.3
 
         self.v_x *= pow(final_fx, dt * 60)
         self.v_y *= pow(final_fy, dt * 60)
@@ -514,24 +558,28 @@ class Creature:
         if hasattr(self, '_base_v_jump'):
             self.v_jump = self._base_v_jump
 
-        ax_add, ay_add = 0.0, 0.0
-        for bt in types:
-            kx, ky = bt.accel_k
-            bx, by = bt.accel_b
-            ax_add += kx * self.v_x + bx
-            ay_add += ky * self.v_y + by
-        self.v_x += ax_add * dt
-        self.v_y += ay_add * dt
+        # ---- Buff: 稳足(41)/定锚(54)/石肤(39) 免疫环境力 ----
+        immune_forces = self.has_buff(41) or self.has_buff(54) or self.has_buff(39)
 
-        bounce_x, bounce_y = 0.0, 0.0
-        for bt in types:
-            bx, by = bt.bounce
-            if abs(bx) > abs(bounce_x):
-                bounce_x = bx
-            if abs(by) > abs(bounce_y):
-                bounce_y = by
-        self.v_x += bounce_x
-        self.v_y += bounce_y
+        if not immune_forces:
+            ax_add, ay_add = 0.0, 0.0
+            for bt in types:
+                kx, ky = bt.accel_k
+                bx, by = bt.accel_b
+                ax_add += kx * self.v_x + bx
+                ay_add += ky * self.v_y + by
+            self.v_x += ax_add * dt
+            self.v_y += ay_add * dt
+
+            bounce_x, bounce_y = 0.0, 0.0
+            for bt in types:
+                bx, by = bt.bounce
+                if abs(bx) > abs(bounce_x):
+                    bounce_x = bx
+                if abs(by) > abs(bounce_y):
+                    bounce_y = by
+            self.v_x += bounce_x
+            self.v_y += bounce_y
 
         max_dps = max((bt.damage_ps for bt in types), default=0.0)
         if max_dps > 0:
@@ -620,7 +668,7 @@ class Creature:
                 # ========== 新增功能方块特效 ==========
                 elif bt.special == "catapult" and bt.special_data is not None:
                     # 弹射：设置初速度 (vx, vy)
-                    if self._special_cooldowns.get("catapult", 0) <= 0:
+                    if not immune_forces and self._special_cooldowns.get("catapult", 0) <= 0:
                         vx, vy = bt.special_data
                         self.v_x = float(vx)
                         self.v_y = float(vy)
@@ -652,6 +700,8 @@ class Creature:
                         self._special_cooldowns["full_stamina"] = 2.0
 
                 elif bt.special == "magnetic" and bt.special_data is not None:
+                    if immune_forces:
+                        continue
                     # 磁力吸引：向方块中心加速，special_data = 力度
                     force = float(bt.special_data)
                     grect = self.get_game_rect()
@@ -714,10 +764,14 @@ class Creature:
                     self.v_max = self._base_v_max * float(bt.special_data)
 
                 elif bt.special == "gravity_well" and bt.special_data is not None:
+                    if immune_forces:
+                        continue
                     # 重力井：增加向下的加速度
                     self.v_y -= float(bt.special_data) * dt
 
                 elif bt.special == "wind" and bt.special_data is not None:
+                    if immune_forces:
+                        continue
                     # 风力：持续推力 (vx, vy)
                     wx, wy = bt.special_data
                     self.v_x += float(wx) * dt
@@ -877,6 +931,12 @@ class Creature:
                     result *= 1.0 + float(p[0]) / 100.0 if p else 1.3
                 elif bt.tick == "slowed":
                     result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
+                elif bt.tick == "stone_skin":
+                    # 石肤：大幅减速但免疫击退
+                    result *= 0.4
+                elif bt.tick == "chilled":
+                    # 寒冷：减速
+                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.6
             elif stat_name == "v_jump":
                 if bt.tick == "leaping":
                     result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
