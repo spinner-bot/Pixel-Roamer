@@ -2552,7 +2552,7 @@ while running:
                         player1.v_y = 32.0  # 高速向上
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
-                        player1.apply_buff(58, (), 1.0)
+                        player1.apply_buff(58, (), 0.3)
                         player1._shore_exit_pending = 'rise'  # 上升阶段
                         player1._shore_exit_dir = player1._shore_dir
                         player1._shore_exit_bound = getattr(player1, '_swim_top_y', None)
