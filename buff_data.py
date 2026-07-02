@@ -525,12 +525,12 @@ def shore_icon():
     # ====== 草丛（1px细线，高矮参差，多色叠加） ======
     grass_colors = [(60,170,40),(80,185,55),(45,145,30),(100,200,70),(55,160,35)]
     for gx in range(0, shore_x):
-        rng, gh = _rnd(rng, 28); gh += 6
+        rng, gh = _rnd(rng, 8); gh += 2
         rng, ci = _rnd(rng, 5)
         cg = grass_colors[ci]
         cmds.append(('rect', gx, dirt_top - gh, 1, gh, cg))
-        if gx % 3 == 0 and gh > 10:
-            rng, gh2 = _rnd(rng, gh-4); gh2 += 4
+        if gx % 3 == 0 and gh > 4:
+            rng, gh2 = _rnd(rng, gh-2); gh2 += 2
             rng, ci2 = _rnd(rng, 5)
             cmds.append(('rect', gx+1, dirt_top - gh2, 1, gh2, grass_colors[ci2]))
 
