@@ -597,16 +597,15 @@ def shore_icon():
             for tx in range(-thick//2, (thick+1)//2):
                 for ty in range(-thick//2, (thick+1)//2):
                     cmds.append(('circle', px+tx, py+ty, 1, color))
-    # 头部：黑色实心圆 + 背景色略小圆（镂空成环），半径翻倍
-    hx = int(S*0.43)
-    hy = int(S*0.30)
-    hr = int(S*0.09)
+    # 头部：黑色圆环（缩小到70%），颈点在4点钟方向（右下侧）
+    hr = int(S*0.09 * 0.7)
+    neck_ang = 330 * _m.pi / 180  # 4点钟方向
+    neck_x = int(S*0.40)
+    neck_y = int(S*0.36)
+    hx = neck_x - hr * _m.cos(neck_ang)
+    hy = neck_y - hr * _m.sin(neck_ang)
     cmds.append(('circle', hx, hy, hr, black))
-    cmds.append(('circle', hx, hy, hr-3, sky_c))
-    # 颈点：在头部120°位置（左上侧），线段延伸线过头部中心
-    neck_ang = 120 * _m.pi / 180
-    neck_x = hx + hr * _m.cos(neck_ang)
-    neck_y = hy + hr * _m.sin(neck_ang)
+    cmds.append(('circle', hx, hy, max(1, hr-3), sky_c))
     # 上身：30°斜向右下
     ub_len = 16
     ub_ang = 30 * _m.pi / 180
