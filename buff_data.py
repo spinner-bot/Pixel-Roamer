@@ -506,17 +506,27 @@ def shore_icon():
         rng, mr = _rnd(rng, 41); c3 = 35 + mr
         rng, mr = _rnd(rng, 3); sr = mr + 1
         cmds.append(('circle', dx, dy, sr, (cs, c2, c3)))
-    # 岩石碎块（不规则多边形 — 用叠层异长矩形模拟锯齿边 + 深色描边）
-    frags = [(4,95,8,5),(16,92,10,7),(30,96,7,4),(7,101,6,6),(22,99,9,5)]
-    for fx, fy, fw, fh in frags:
-        # 深色底边（模拟阴影/轮廓）
+    # 岩石碎块（仅在下半区，越往下越多越大）
+    dirt_mid = dirt_top + (S - dirt_top) // 2  # 中线
+    dirt_q3 = dirt_mid + (S - dirt_mid) // 2   # 下25%线
+    # 下半区碎片：小/中
+    frags_mid = [(3, dirt_mid+1, 6,4),(12, dirt_mid+3, 5,3),(22, dirt_mid, 7,5),
+                 (30, dirt_mid+2, 4,3),(18, dirt_mid+5, 5,4),(8, dirt_mid+6, 3,3)]
+    # 下25%区域碎片：大/密
+    frags_bot = [(2, dirt_q3, 9,7),(14, dirt_q3+1, 11,8),(28, dirt_q3, 8,6),
+                 (6, dirt_q3+5, 10,7),(20, dirt_q3+4, 9,8),(33, dirt_q3+2, 7,5),
+                 (11, dirt_q3+7, 8,6),(25, dirt_q3+6, 10,7),(3, dirt_q3+9, 12,8)]
+    all_frags = [(fx, fy, fw, fh, False) for fx, fy, fw, fh in frags_mid] + \
+                [(fx, fy, fw, fh, True) for fx, fy, fw, fh in frags_bot]
+    for fx, fy, fw, fh, is_bot in all_frags:
+        dark = (90, 75, 55) if is_bot else (105, 90, 70)
+        mid_c = (130, 110, 80) if is_bot else (145, 125, 95)
         for row in range(fh):
             row_w = fw - row if row < 3 else fw - (fh-row-1)*2
             if row_w < 2: row_w = 2
             off = (fw - row_w) // 2
-            edge_c = (100, 85, 65) if row == 0 or row == fh-1 else (140, 120, 90)
+            edge_c = dark if row == 0 or row == fh-1 else mid_c
             cmds.append(('rect', fx+off, fy+row, row_w, 1, edge_c))
-        # 内部亮色填充
         for row in range(1, fh-1):
             row_w = fw - row - 1 if row < 3 else fw - (fh-row-1)*2 - 1
             if row_w < 1: row_w = 1
