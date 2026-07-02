@@ -1,0 +1,15 @@
+{
+  "world": {
+    "gravity": -6.5,
+    "mode": "explore",
+    "view_blocks_h": 14.0
+  },
+  "player": {
+    "hp_max": 150,
+    "v_max": 36.5,
+    "v_jump": 11.5,
+    "stamina_max": 200,
+    "f_x": 0.985,
+    "f_y": 0.9965
+  }
+}
