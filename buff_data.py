@@ -518,11 +518,11 @@ def shore_icon():
     # 底部20%：极度密集，覆盖>85%
     dirt_b20 = int(S - (S - dirt_top) * 0.20)  # 底部20%分界线
     frags_dense = []
-    for _fx in range(0, shore_x-3, 8):
-        for _row in range(0, S - dirt_b20, 5):
-            rng, _fw = _rnd(rng, 5); _fw += 6
-            rng, _fh = _rnd(rng, 4); _fh += 4
-            rng, _ox = _rnd(rng, 4)
+    for _fx in range(0, shore_x-4, 10):
+        for _row in range(0, S - dirt_b20, 6):
+            rng, _fw = _rnd(rng, 5); _fw += 5
+            rng, _fh = _rnd(rng, 3); _fh += 3
+            rng, _ox = _rnd(rng, 3)
             frags_dense.append((_fx+_ox, dirt_b20+_row, _fw, _fh))
     all_frags = ([(fx, fy, fw, fh, False) for fx, fy, fw, fh in frags_mid] +
                  [(fx, fy, fw, fh, True) for fx, fy, fw, fh in frags_bot] +
@@ -581,15 +581,15 @@ def shore_icon():
     # ====== 岸边线 ======
     cmds.append(('rect', shore_x, water_top, 2, water_h, (130, 95, 55)))
 
-    # ====== 火柴人（经典圆环头+线段身躯，小圆密排模拟线段） ======
+    # ====== 火柴人（经典圆环头+线段身躯） ======
     black = (0, 0, 0)
     sky_c = (135, 200, 240)
-    def _line(cmds, x1, y1, x2, y2, color, thick=2):
-        """用密排小圆绘制线段。"""
+    def _seg(cmds, x1, y1, x2, y2, color, thick=2):
+        """用1px间距小圆绘制线段（稀疏，总量可控）。"""
         dx = x2 - x1; dy = y2 - y1
         length = _m.sqrt(dx*dx + dy*dy)
         if length < 0.5: return
-        steps = max(1, int(length * 3))  # 3圆/像素
+        steps = max(1, int(length))
         for i in range(steps + 1):
             t = i / steps
             px = int(x1 + dx * t)
@@ -597,52 +597,43 @@ def shore_icon():
             for tx in range(-thick//2, (thick+1)//2):
                 for ty in range(-thick//2, (thick+1)//2):
                     cmds.append(('circle', px+tx, py+ty, 1, color))
-    # 头部定位
+    # 头部：黑色实心圆 + 背景色略小圆（镂空成环）
     hx = int(S*0.43)
     hy = int(S*0.30)
     hr = int(S*0.045)
-    # 圆环节点头部：黑色大圆 + 背景色小圆（镂空）
-    _line(cmds, hx-hr, hy-hr, hx+hr, hy-hr, black, hr*2+1)
-    _line(cmds, hx-hr, hy+hr, hx+hr, hy+hr, black, hr*2+1)
-    _line(cmds, hx-hr, hy-hr, hx-hr, hy+hr, black, hr*2+1)
-    _line(cmds, hx+hr, hy-hr, hx+hr, hy+hr, black, hr*2+1)
-    # 用背景色圆覆盖内部
-    for _r2 in range(hr-1, 0, -1):
-        _line(cmds, hx-_r2, hy-_r2, hx+_r2, hy-_r2, sky_c, _r2*2+1)
-        _line(cmds, hx-_r2, hy+_r2, hx+_r2, hy+_r2, sky_c, _r2*2+1)
-        _line(cmds, hx-_r2, hy-_r2, hx-_r2, hy+_r2, sky_c, _r2*2+1)
-        _line(cmds, hx+_r2, hy-_r2, hx+_r2, hy+_r2, sky_c, _r2*2+1)
-    # 颈点（头下方）
+    cmds.append(('circle', hx, hy, hr, black))
+    cmds.append(('circle', hx, hy, hr-3, sky_c))
+    # 颈点
     neck_x = hx
     neck_y = hy + hr
-    # 上身：30°斜向右下，长度16
+    # 上身：30°斜向右下
     ub_len = 16
     ub_ang = 30 * _m.pi / 180
     waist_x = neck_x + ub_len * _m.cos(ub_ang)
     waist_y = neck_y + ub_len * _m.sin(ub_ang)
-    _line(cmds, neck_x, neck_y, waist_x, waist_y, black, 3)
-    # 下身：竖直向下，长度14
+    _seg(cmds, neck_x, neck_y, waist_x, waist_y, black, 3)
+    # 下身：竖直向下
     lb_len = 14
     hip_x = waist_x
     hip_y = waist_y + lb_len
-    _line(cmds, waist_x, waist_y, hip_x, hip_y, black, 3)
-    # 手臂：从上身下1/4处引出，15°夹角，角平分线⊥上身
+    _seg(cmds, waist_x, waist_y, hip_x, hip_y, black, 3)
+    # 手臂：从上身下1/4处引出，15°夹角，平分线⊥上身
     arm_org_x = neck_x + ub_len * 0.75 * _m.cos(ub_ang)
     arm_org_y = neck_y + ub_len * 0.75 * _m.sin(ub_ang)
-    arm_bisect = ub_ang + 90 * _m.pi / 180  # ⊥上身方向（指向左上天空）
+    arm_bisect = ub_ang + 90 * _m.pi / 180
     arm_len = 9
     for sign in [-1, 1]:
         arm_ang = arm_bisect + sign * 7.5 * _m.pi / 180
         ax = arm_org_x + arm_len * _m.cos(arm_ang)
         ay = arm_org_y + arm_len * _m.sin(arm_ang)
-        _line(cmds, arm_org_x, arm_org_y, ax, ay, black, 2)
-    # 腿：10°夹角，角平分线与下身重合（竖直向下）
+        _seg(cmds, arm_org_x, arm_org_y, ax, ay, black, 2)
+    # 腿：10°夹角，平分线与下身重合
     leg_len = 12
     for sign in [-1, 1]:
         leg_ang = 270 * _m.pi / 180 + sign * 5 * _m.pi / 180
         lx = hip_x + leg_len * _m.cos(leg_ang)
         ly = hip_y + leg_len * _m.sin(leg_ang)
-        _line(cmds, hip_x, hip_y, lx, ly, black, 3)
+        _seg(cmds, hip_x, hip_y, lx, ly, black, 3)
 
     # ====== 水花（浪花翻卷：紧贴水面，与水连接） ======
     s_base = water_top
