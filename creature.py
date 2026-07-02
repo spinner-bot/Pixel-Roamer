@@ -861,10 +861,43 @@ class Creature:
         inst = BuffInstance(buff_id, params, duration, source)
         inst.applied_at = self._buff_game_time
         self.buffs.append(inst)
+        # 触发 on_apply 回调
+        if bt.on_apply:
+            self._dispatch_buff_callback(bt.on_apply, b=inst)
 
     def remove_buff(self, buff_id: int):
         """移除指定 buff。"""
+        from buff_system import BUFF_TYPES
+        bt_removed = BUFF_TYPES.get(buff_id)
         self.buffs = [b for b in self.buffs if b.buff_id != buff_id]
+        # 触发 on_remove 回调
+        if bt_removed and bt_removed.on_remove:
+            self._dispatch_buff_callback(bt_removed.on_remove, buff_id=buff_id)
+
+    def _dispatch_buff_callback(self, callback: str, b=None, buff_id: int = None):
+        """执行 buff 的 on_apply / on_remove 回调。"""
+        from buff_system import BUFF_TYPES
+        if buff_id is None and b is not None:
+            buff_id = b.buff_id
+        bt = BUFF_TYPES.get(buff_id) if buff_id is not None else None
+        p = b.params if b is not None else ()
+
+        if callback == "full_heal":
+            self.hp = self.hp_max
+        elif callback == "full_stamina":
+            self.stamina = self.stamina_max
+        elif callback == "clear_negative":
+            from buff_system import CAT_NEGATIVE
+            for cb in list(self.buffs):
+                cbt = BUFF_TYPES.get(cb.buff_id)
+                if cbt and cbt.category == CAT_NEGATIVE:
+                    self.remove_buff(cb.buff_id)
+        elif callback == "explode":
+            # 对周围敌人造成伤害（预留接口）
+            pass
+        elif callback == "teleport_spawn":
+            if hasattr(self, 'spawn_pos'):
+                self._x, self._y = self.spawn_pos
 
     def has_buff(self, buff_id: int) -> bool:
         return any(b.buff_id == buff_id for b in self.buffs)
