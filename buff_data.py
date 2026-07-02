@@ -635,36 +635,39 @@ def shore_icon():
         ly = hip_y + leg_len * _m.sin(leg_ang)
         _seg(cmds, hip_x, hip_y, lx, ly, black, 3)
 
-    # ====== 水花（浪花翻卷：紧贴水面，与水连接） ======
+    # ====== 水花（缩小到40%，紧贴水面） ======
     s_base = water_top
-    sx_center = hip_x  # 水花中心对齐人物髋部
-    # 阴影底层（水体暗色区域）
-    for i in range(4):
-        cmds.append(('circle', sx_center-3+i*2, s_base+i*2, 5-i, (30, 100, 190)))
-    # 左侧浪花翻卷：弧线从中心向左上方弯曲
-    for i in range(7):
-        lx = sx_center - 3 - i*3
-        ly = s_base - 2 + abs(i-3)*2 - 2
-        r = 3 if i < 4 else 2
-        cmds.append(('circle', lx, ly, r, (180, 220, 250)))
-        cmds.append(('circle', lx-1, ly-1, max(1,r-1), (230, 245, 255)))
-    # 右侧浪花翻卷：弧线从中心向右上方弯曲
-    for i in range(7):
-        rx = sx_center + 3 + i*3
-        ry = s_base - 2 + abs(i-3)*2 - 2
-        r = 3 if i < 4 else 2
-        cmds.append(('circle', rx, ry, r, (180, 220, 250)))
-        cmds.append(('circle', rx+1, ry-1, max(1,r-1), (230, 245, 255)))
-    # 中心上升水柱
+    sx_center = hip_x
+    K = 0.4
+    # 阴影底层
+    for i in range(3):
+        r = max(1, int((5-i)*K))
+        cmds.append(('circle', int(sx_center + (-3+i*2)*K), int(s_base + i*2*K), r, (30, 100, 190)))
+    # 左侧浪花
     for i in range(5):
-        cmds.append(('circle', sx_center-1, s_base-2-i*2, 2, (210, 235, 255)))
-        cmds.append(('circle', sx_center+1, s_base-2-i*2, 2, (210, 235, 255)))
-    # 飞溅水滴（向外散开）
-    for i in range(12):
-        rng, sx_off = _rnd(rng, 18); sx_off -= 9
-        rng, sy_off = _rnd(rng, 16); sy_off += 2
+        lx = int(sx_center + (-3 - i*3)*K)
+        ly = int(s_base + (-2 + abs(i-2)*2 - 2)*K)
+        r = max(1, int((3 if i < 3 else 2)*K))
+        cmds.append(('circle', lx, ly, r, (180, 220, 250)))
+        cmds.append(('circle', int(lx-1*K), int(ly-1*K), max(1, r-1), (230, 245, 255)))
+    # 右侧浪花
+    for i in range(5):
+        rx = int(sx_center + (3 + i*3)*K)
+        ry = int(s_base + (-2 + abs(i-2)*2 - 2)*K)
+        r = max(1, int((3 if i < 3 else 2)*K))
+        cmds.append(('circle', rx, ry, r, (180, 220, 250)))
+        cmds.append(('circle', int(rx+1*K), int(ry-1*K), max(1, r-1), (230, 245, 255)))
+    # 中心水柱
+    for i in range(3):
+        r = max(1, int(2*K))
+        cmds.append(('circle', int(sx_center-1*K), int(s_base + (-2-i*2)*K), r, (210, 235, 255)))
+        cmds.append(('circle', int(sx_center+1*K), int(s_base + (-2-i*2)*K), r, (210, 235, 255)))
+    # 飞溅水滴
+    for i in range(8):
+        rng, sx_off = _rnd(rng, int(18*K)); sx_off -= int(9*K)
+        rng, sy_off = _rnd(rng, int(16*K)); sy_off += int(2*K)
         rng, dr = _rnd(rng, 2); dr += 1
-        cmds.append(('circle', sx_center+sx_off, s_base-sy_off, dr, (220, 240, 255)))
+        cmds.append(('circle', int(sx_center+sx_off), int(s_base-sy_off), dr, (220, 240, 255)))
 
     return cmds
 register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
