@@ -453,75 +453,63 @@ register(BuffType(id=57, name="cursed", name2="诅咒", category=CAT_NEGATIVE,
     max_stacks=1, tick="cursed",
 ))
 
-# 上岸用：256×256 高清场景图标（精心设计）
-_GS = 256
+# 上岸用：128×128 高清场景图标（精心设计）
+_GS = 128
+def _rnd(seed, n):
+    """确定性伪随机：返回 (新种子, 0..n-1随机值)"""
+    seed = (seed * 1103515245 + 12345) & 0x7FFFFFFF
+    return seed, seed % n
+
 def shore_icon():
     S = _GS
     cmds = []
+    rng = 42  # 初始种子
 
     # ====== 天空 ======
     cmds.append(('fill', (135, 200, 240)))
 
     # ====== 太阳：20阶渐变 + 光晕 + 丁达尔 ======
     sx, sy = int(S*0.15), int(S*0.12)
-    # 20阶渐变：外黄→内白
     for i in range(20, 0, -1):
         t = i / 20.0
-        r = int(S*0.09 * t)
-        r_col = int(255)
-        g_col = int(240 - 40*(1-t))
-        b_col = int(60 + 195*(1-t))
-        cmds.append(('circle', sx, sy, r, (r_col, g_col, b_col)))
-    # 光晕（外扩半透明大圆）
+        r = max(1, int(S*0.09 * t))
+        cmds.append(('circle', sx, sy, r, (255, int(240-40*(1-t)), int(60+195*(1-t)))))
     for i in range(5, 0, -1):
         r = int(S*0.09 + i*S*0.013)
-        alpha = 255 - i*40
-        c = (255, min(255, 230+i*5), min(255, 140+i*23))
-        cmds.append(('circle', sx, sy, r, c))
-    # 丁达尔光线（从太阳辐射出的斜矩形光束）
+        cmds.append(('circle', sx, sy, r, (255, min(255, 230+i*5), min(255, 140+i*23))))
     for i in range(6):
-        angle = -0.3 + i*0.15
         dx = int(S*0.32 * (1 + i*0.05))
         dy = int(S*0.12 * i*0.4)
         lx = int(sx + S*0.06)
         ly = int(sy)
-        rw = int(S*0.01 + i*0.5)
+        rw = max(1, int(S*0.01 + i*0.5))
         rh = int(S*0.25 + i*S*0.04)
         cmds.append(('rect', lx + dx, ly + dy - rh//2, rw, rh, (255, 252, 200)))
 
     # ====== 陆地（左侧 ~38%）======
-    # -- 岩石底层（不规则多边形结构） --
     rock_base = int(S*0.82)
     for i in range(8):
         rx = i * int(S*0.05)
         rw = int(S*0.06) if i % 2 == 0 else int(S*0.055)
         rh = int(S*0.21) if i % 3 != 0 else int(S*0.17)
-        ry = rock_base
         shade = 110 + (i % 4) * 12
-        cmds.append(('rect', rx, ry, rw, rh, (shade, shade-20, shade-35)))
-    # 岩石裂缝/纹理（细条）
+        cmds.append(('rect', rx, rock_base, rw, rh, (shade, shade-20, shade-35)))
     for i in range(5):
         fx = 8 + i*22
         cmds.append(('rect', fx, int(S*0.84), 2, int(S*0.15), (80, 70, 55)))
         cmds.append(('rect', fx+10, int(S*0.87), 1, int(S*0.10), (90, 80, 65)))
-    # -- 泥土层（中上部，带色彩斑点） --
     dirt_top = int(S*0.58)
     cmds.append(('rect', 0, dirt_top, int(S*0.38), int(S*0.24), (155, 115, 70)))
-    # 泥土斑点
-    import random as _r
-    _r.seed(77)
     for _ in range(45):
-        dx = _r.randint(2, int(S*0.36))
-        dy = _r.randint(dirt_top+2, rock_base-4)
-        spot_c = (
-            155 + _r.randint(-35, 35),
-            115 + _r.randint(-30, 30),
-            70 + _r.randint(-25, 25)
-        )
-        cmds.append(('circle', dx, dy, _r.randint(1, 4), spot_c))
-    # -- 草丛（竖条状，高矮不一） --
+        rng, dx = _rnd(rng, int(S*0.36)-2); dx += 2
+        rng, dy = _rnd(rng, rock_base - dirt_top - 6); dy += dirt_top + 2
+        rng, mr = _rnd(rng, 71); cs = 120 + mr
+        rng, mr = _rnd(rng, 61); c2 = 85 + mr
+        rng, mr = _rnd(rng, 51); c3 = 45 + mr
+        rng, mr = _rnd(rng, 4); sr = mr + 1
+        cmds.append(('circle', dx, dy, sr, (cs, c2, c3)))
     for gx in range(0, int(S*0.38), 4):
-        gh = 8 + ((gx * 17 + gx*gx) % 18)  # 伪随机高度
+        gh = 8 + ((gx * 17 + gx*gx) % 18)
         cg = (60 + (gx*3)%40, 160 + (gx*7)%40, 40 + (gx*5)%35)
         cmds.append(('rect', gx, dirt_top - gh, 2, gh, cg))
         if gx % 7 == 0:
@@ -530,75 +518,61 @@ def shore_icon():
     # ====== 水体（右侧 ~60%） ======
     shore_x = int(S*0.38)
     cmds.append(('rect', shore_x, int(S*0.55), S - shore_x, int(S*0.48), (20, 105, 200)))
-    # 水面气泡（代替横线）
-    _r.seed(123)
     for _ in range(35):
-        bx = _r.randint(shore_x+3, S-8)
-        by = _r.randint(int(S*0.58), int(S*0.94))
-        br = _r.randint(2, 6)
-        alpha = 180 + _r.randint(0, 75)
-        cmds.append(('circle', bx, by, br, (alpha, alpha+25, 255)))
+        rng, bx = _rnd(rng, S - shore_x - 11); bx += shore_x + 3
+        rng, by = _rnd(rng, int(S*0.36)); by += int(S*0.58)
+        rng, br = _rnd(rng, 5); br += 2
+        rng, al = _rnd(rng, 55); al += 180
+        cmds.append(('circle', bx, by, br, (al, min(255, al+25), 255)))
     for _ in range(15):
-        bx = _r.randint(shore_x+5, S-15)
-        by = _r.randint(int(S*0.60), int(S*0.90))
-        cmds.append(('circle', bx, by, _r.randint(1, 3), (220, 235, 255)))
+        rng, bx = _rnd(rng, S - shore_x - 20); bx += shore_x + 5
+        rng, by = _rnd(rng, int(S*0.30)); by += int(S*0.60)
+        rng, br = _rnd(rng, 3); br += 1
+        cmds.append(('circle', bx, by, br, (220, 235, 255)))
 
     # ====== 岸边线 ======
     cmds.append(('rect', shore_x, int(S*0.55), 2, int(S*0.48), (130, 95, 55)))
 
     # ====== 火柴人（放大，俯身速滑姿态） ======
-    # 身体中心偏右上，头朝左下方(岸边)
     bx = int(S*0.53)
     by = int(S*0.35)
     skin = (255, 210, 170)
     stick = (35, 28, 28)
-    # 头部（放大）
     cmds.append(('circle', int(bx - S*0.03), int(by - S*0.08), int(S*0.042), skin))
-    # 躯干：俯身，从腰部弯曲（上半身斜向左下，下半身斜向左下更陡）
-    waist_x = int(bx - S*0.01)
     waist_y = int(by + S*0.02)
-    # 上躯干（肩→腰）
     cmds.append(('rect', int(bx - S*0.015), int(by - S*0.04), int(S*0.025), int(S*0.06), stick))
-    # 下躯干（腰→臀，更倾斜）
     cmds.append(('rect', int(bx - S*0.025), waist_y, int(S*0.02), int(S*0.065), stick))
-    # 左臂（向后上方伸展，指向空中斜右上）
     shoulder_x = int(bx - S*0.005)
     shoulder_y = int(by - S*0.03)
     cmds.append(('rect', shoulder_x, shoulder_y, int(S*0.07), int(S*0.014), stick))
     cmds.append(('rect', shoulder_x + int(S*0.06), int(shoulder_y - S*0.04), int(S*0.05), int(S*0.012), stick))
-    # 右臂（也向后摆，略低）
     cmds.append(('rect', shoulder_x, int(shoulder_y + S*0.012), int(S*0.06), int(S*0.012), stick))
     cmds.append(('rect', shoulder_x + int(S*0.05), int(shoulder_y - S*0.02), int(S*0.04), int(S*0.01), stick))
-    # 左腿（向后弯曲，刚出水）
     hip_x = int(bx - S*0.02)
     hip_y = int(waist_y + S*0.06)
     cmds.append(('rect', hip_x, hip_y, int(S*0.014), int(S*0.06), stick))
     cmds.append(('rect', int(hip_x - S*0.04), int(hip_y + S*0.05), int(S*0.05), int(S*0.012), stick))
-    # 右腿（微屈）
     cmds.append(('rect', int(hip_x + S*0.015), hip_y, int(S*0.014), int(S*0.055), stick))
     cmds.append(('rect', int(hip_x + S*0.03), int(hip_y + S*0.045), int(S*0.04), int(S*0.01), stick))
 
     # ====== 水花（浪花翻卷 + 阴影 + 色彩分级） ======
     s_base = int(by + S*0.12)
-    # 阴影区（深色底层）
     for i in range(5):
-        cmds.append(('circle', int(bx - S*0.02 + i*S*0.02), int(s_base + i*4), int(S*0.06 - i*2), (40, 115, 205)))
-    # 中层浪花（蓝色过渡）
+        cmds.append(('circle', int(bx - S*0.02 + i*S*0.02), int(s_base + i*4), max(2, int(S*0.06 - i*2)), (40, 115, 205)))
     for i in range(6):
         sx2 = int(bx - S*0.04 + i*S*0.022)
         sy2 = int(s_base - 3 + abs(i-2)*4)
-        cmds.append(('circle', sx2, sy2, int(S*0.045 - i*2), (130, 185, 245)))
-    # 上层浪花（白色泡沫翻卷）
+        cmds.append(('circle', sx2, sy2, max(2, int(S*0.045 - i*2)), (130, 185, 245)))
     for i in range(7):
         sx3 = int(bx - S*0.06 + i*S*0.02)
         sy3 = int(s_base - 6 + i*2 if i < 4 else s_base - 2 - (i-3)*5)
-        r3 = int(S*0.038 - i*2) if i < 5 else int(S*0.02 - (i-4)*3)
-        cmds.append(('circle', sx3, sy3, max(2, r3), (240, 248, 255)))
-    # 飞溅水滴
+        r3 = max(2, int(S*0.038 - i*2)) if i < 5 else max(1, int(S*0.02 - (i-4)*3))
+        cmds.append(('circle', sx3, sy3, r3, (240, 248, 255)))
     for i in range(10):
         dx = int(bx - S*0.08 + i*S*0.02)
         dy = int(s_base - 12 - abs(i-4)*4)
-        cmds.append(('circle', dx, dy, _r.randint(1, 4), (230, 240, 255)))
+        rng, dr = _rnd(rng, 4); dr += 1
+        cmds.append(('circle', dx, dy, dr, (230, 240, 255)))
 
     return cmds
 register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
