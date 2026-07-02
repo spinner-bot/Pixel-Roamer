@@ -463,17 +463,47 @@ def draw_stamina_bar(surf, player, dt: float):
     pygame.draw.polygon(surf, bolt_fill, bolt_pts)
 
 
+def _draw_heart(surf, cx, cy, size, color, border_color):
+    """绘制一颗爱心（同HP条图标的矢量风格）。"""
+    hs = size / 2
+    hx, hy = cx, cy
+    pts = [
+        (hx, hy + hs),
+        (hx + hs*3//10, hy + hs*6//10),
+        (hx + hs*7//10, hy + hs*3//10),
+        (hx + hs*9//10, hy - hs//10),
+        (hx + hs*7//10, hy - hs//2),
+        (hx + hs*35//100, hy - hs*85//100),
+        (hx + hs//10, hy - hs*65//100),
+        (hx, hy - hs*3//10),
+        (hx - hs//10, hy - hs*65//100),
+        (hx - hs*35//100, hy - hs*85//100),
+        (hx - hs*7//10, hy - hs//2),
+        (hx - hs*9//10, hy - hs//10),
+        (hx - hs*7//10, hy + hs*3//10),
+        (hx - hs*3//10, hy + hs*6//10),
+    ]
+    # 边框外扩
+    bd_pts = [(x + (1.2 if x >= hx else -1.2), y + (1.2 if y >= hy else -1.2)) for x, y in pts]
+    pygame.draw.polygon(surf, border_color, bd_pts)
+    pygame.draw.polygon(surf, color, pts)
+
+
 def draw_player_info(surf, player, dt: float):
-    """在体力条下方绘制复活次数（命数）。"""
+    """在体力条正下方绘制复活次数（精致心形图标）。"""
     global _player_lives_left
-    if _player_lives_left > 0:
+    if _player_lives_left > 0 and _player_lives_left <= 99:
         stam_y = BAR_Y + BAR_H + BAR_GAP
-        info_y = stam_y + BAR_H + 6
-        if _player_lives_left <= 5:
-            heart_text = "H " * _player_lives_left
-        else:
-            heart_text = f"H x{_player_lives_left}"
-        gt.draw(surf, heart_text.strip(), BAR_X + BAR_W + 10, info_y, 20, (255, 60, 60), "mono", shadow=True)
+        # 条正下方居中
+        cx_center = BAR_X + BAR_W // 2
+        cy_base = stam_y + BAR_H + 14
+        heart_size = 16
+        heart_gap = 20
+        total_w = _player_lives_left * heart_gap - (heart_gap - heart_size)
+        start_x = int(cx_center - total_w / 2)
+        for i in range(_player_lives_left):
+            hx = start_x + i * heart_gap
+            _draw_heart(surf, hx, cy_base, heart_size, (255, 55, 45), (140, 20, 10))
 
 
 # ===================== Buff 状态显示区 =====================
@@ -2392,13 +2422,17 @@ while running:
         # 死亡处理（限复活次数）
         if not player1.alive and not _game_over and not _game_win:
             if _player_lives_left > 0:
-                _player_lives_left -= 1
                 if _player_lives_left <= 0:
                     _game_over = True
                 else:
                     player1.alive = True
                     player1.hp = player1.hp_max
+                    player1.clear_buffs()  # 清除所有状态
+                    player1.apply_buff(36, (), 3.0)  # 3秒完全免疫
             # lives==0 表示无限复活，on_death 已经重置了
+            elif _player_lives_left == 0:
+                player1.clear_buffs()
+                player1.apply_buff(36, (), 3.0)
 
         # ---- Buff 系统 tick ----
         player1.tick_buffs(dt)

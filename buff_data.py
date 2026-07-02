@@ -358,7 +358,7 @@ register(BuffType(id=41, name="surefooted", name2="稳足", category=CAT_POSITIV
 ))
 
 register(BuffType(id=42, name="slick", name2="滑腻", category=CAT_NEUTRAL,
-    desc="地面摩擦力大幅降低，如同在冰面上",
+    desc="地面摩擦力降低 {0}%，如同在冰面上",
     icon=("vector",(G,G),slick_icon),
     max_stacks=1, tick="slick",
 ))
@@ -453,10 +453,75 @@ register(BuffType(id=57, name="cursed", name2="诅咒", category=CAT_NEGATIVE,
     max_stacks=1, tick="cursed",
 ))
 
-# 上岸用：箭头跃出水面图标
-def shore_icon(): return [('fill', (20, 40, 55)), ('rect', 10, 2, 4, 8, (120, 200, 255)), ('rect', 8, 7, 8, 2, (120, 200, 255)), ('rect', 7, 5, 10, 2, (120, 200, 255)), ('rect', 4, 10, 4, 4, (180, 140, 80)), ('rect', 2, 9, 2, 8, (180, 140, 80)), ('rect', 0, 7, 2, 2, (140, 100, 40)), ('rect', 18, 7, 2, 2, (140, 100, 40))]
+# 上岸用：256×256 高清场景图标
+_GS = 256
+def shore_icon():
+    S = _GS  # 画布尺寸
+    sky = (135, 206, 235)
+    sun_c = (255, 240, 60)
+    sun_ray = (255, 250, 160)
+    grass = (80, 180, 60)
+    dirt = (160, 120, 70)
+    water = (30, 120, 220)
+    water_light = (80, 170, 250)
+    foam = (240, 250, 255)
+    stick = (40, 30, 30)
+    skin = (255, 210, 170)
+    splash = (220, 240, 255)
+
+    # 火柴人身体中心
+    bx = int(S*0.54)
+    by = int(S*0.38)
+    return [
+        # 天空
+        ('fill', sky),
+        # 太阳（左上） + 光芒
+        ('circle', int(S*0.15), int(S*0.12), int(S*0.08), sun_c),
+        ('circle', int(S*0.15), int(S*0.12), int(S*0.06), sun_ray),
+        ('rect', int(S*0.03), int(S*0.12), int(S*0.24), int(S*0.008), sun_ray),
+        ('rect', int(S*0.15), int(S*0.01), int(S*0.008), int(S*0.22), sun_ray),
+        ('rect', int(S*0.06), int(S*0.04), int(S*0.008), int(S*0.18), sun_ray),
+        ('rect', int(S*0.21), int(S*0.05), int(S*0.008), int(S*0.16), sun_ray),
+        # 草地（左侧 ~40%）
+        ('rect', 0, int(S*0.58), int(S*0.42), int(S*0.45), grass),
+        # 泥土断面
+        ('rect', 0, int(S*0.78), int(S*0.42), int(S*0.25), dirt),
+        # 水体（右侧 ~55%，从中间延伸到右侧）
+        ('rect', int(S*0.38), int(S*0.55), int(S*0.62), int(S*0.48), water),
+        # 水面波纹
+        ('rect', int(S*0.43), int(S*0.57), int(S*0.50), int(S*0.02), water_light),
+        ('rect', int(S*0.48), int(S*0.62), int(S*0.40), int(S*0.015), water_light),
+        ('rect', int(S*0.52), int(S*0.67), int(S*0.35), int(S*0.02), water_light),
+        ('rect', int(S*0.55), int(S*0.73), int(S*0.30), int(S*0.015), water_light),
+        # 岸边线（草地与水交界）
+        ('rect', int(S*0.38), int(S*0.55), int(S*0.015), int(S*0.48), dirt),
+        # === 火柴人（头朝左岸边，跃出水面） ===
+        # 头部（圆形）
+        ('circle', int(bx - S*0.02), int(by - S*0.045), int(S*0.03), skin),
+        # 躯干（斜向左上，朝向岸边）
+        ('rect', int(bx - S*0.025), by, int(S*0.01), int(S*0.08), stick),
+        # 左臂（向后上方伸展，指向空中斜向）
+        ('rect', int(bx - S*0.028), int(by + S*0.005), int(S*0.06), int(S*0.012), stick),
+        ('rect', int(bx - S*0.09), int(by - S*0.015), int(S*0.06), int(S*0.01), stick),
+        # 右臂（向前下方，辅助平衡）
+        ('rect', int(bx + S*0.01), int(by + S*0.01), int(S*0.04), int(S*0.01), stick),
+        # 左腿（弯曲，刚离水）
+        ('rect', int(bx - S*0.02), int(by + S*0.075), int(S*0.012), int(S*0.04), stick),
+        ('rect', int(bx - S*0.055), int(by + S*0.10), int(S*0.04), int(S*0.012), stick),
+        # 右腿
+        ('rect', int(bx + S*0.005), int(by + S*0.075), int(S*0.012), int(S*0.035), stick),
+        ('rect', int(bx + S*0.02), int(by + S*0.10), int(S*0.03), int(S*0.01), stick),
+        # === 水花 ===
+        ('circle', int(bx - S*0.03), int(by + S*0.14), int(S*0.04), splash),
+        ('circle', int(bx + S*0.04), int(by + S*0.13), int(S*0.03), splash),
+        ('circle', int(bx - S*0.06), int(by + S*0.12), int(S*0.025), splash),
+        ('circle', int(bx + S*0.07), int(by + S*0.135), int(S*0.02), splash),
+        ('circle', int(bx - S*0.08), int(by + S*0.08), int(S*0.015), splash),
+        ('circle', int(bx + S*0.09), int(by + S*0.10), int(S*0.012), splash),
+        ('circle', int(bx - S*0.04), int(by + S*0.06), int(S*0.01), splash),
+    ]
 register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
     desc="谁也不能阻止我上岸！游泳判定失效",
-    icon=("vector",(G,G),shore_icon()),
+    icon=("vector",(_GS,_GS),shore_icon()),
     max_stacks=1, tick="shore_exit",
 ))

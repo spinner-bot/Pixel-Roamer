@@ -2,14 +2,35 @@
   "world": {
     "gravity": -6.5,
     "mode": "explore",
-    "view_blocks_h": 14.0
+    "loop_x": false,
+    "loop_y": false,
+    "edge_behavior": "solid",
+    "view_blocks_h": 45.0,
+    "void_limit": 20,
+    "default_block_id": 0,
+    "lives": 3,
+    "score_goal": 0,
+    "time_limit": 0.0,
+    "music": ""
   },
   "player": {
     "hp_max": 150,
     "v_max": 36.5,
     "v_jump": 11.5,
     "stamina_max": 200,
+    "phys_atk": 10.0,
+    "magic_atk": 0.0,
+    "phys_res": 0.0,
+    "magic_res": 0.0,
+    "phys_pen": 0.0,
+    "magic_pen": 0.0,
+    "k_res": 150.0,
+    "dr": 0.0,
     "f_x": 0.985,
-    "f_y": 0.9965
+    "f_y": 0.9965,
+    "shield": 0.0,
+    "w": 0.8,
+    "h": 1.8,
+    "costume_id": 1
   }
 }
