@@ -2497,7 +2497,7 @@ while running:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
                         if player1.stamina >= swim_cost:
                             swim_v = player1._swim_force
-                            player1.v_y += swim_v * dt * 30
+                            player1.v_y = swim_v  # 匀速上游（同攀爬逻辑）
                             if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
                             swimming_now = True
                         else:
