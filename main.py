@@ -1346,21 +1346,32 @@ def _run_block_detail(logic_surface, dt):
                         text = str(cmd)
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
-                # 大量指令：紧凑换行模式（全部显示，不截断）
-                flat = "[" + ", ".join(
-                    f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
-                    else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
-                    else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
-                    else str(c)
-                    for c in cmds
-                ) + "]"
-                chars_per_line = (cw - 20) // 7
+                # 紧凑模式；条数>90触发绝对紧凑（10px/行距1px/去空格）
+                abs_compact = n_cmds > 90
+                if abs_compact:
+                    flat = "[" + ",".join(
+                        f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                        else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                        else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                        else str(c).replace(" ", "")
+                        for c in cmds
+                    ) + "]"
+                    CFS = 10; CLH = 11; cpch = (cw - 20) // 6
+                else:
+                    flat = "[" + ", ".join(
+                        f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                        else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                        else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                        else str(c)
+                        for c in cmds
+                    ) + "]"
+                    CFS = 13; CLH = 15; cpch = (cw - 20) // 7
                 bj = 0
                 while bj < len(flat):
-                    chunk = flat[bj:bj + chars_per_line]
-                    if ry + 28 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
-                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
-                    bj += chars_per_line
+                    chunk = flat[bj:bj + cpch]
+                    if ry + 28 + (bj // cpch) * CLH > CONTENT_BOT - 10: break
+                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // cpch) * CLH, CFS, (150, 170, 210), "sans")
+                    bj += cpch
     else:
         gt.draw(logic_surface, f"编码: 无  底色: {bt.color}",
                             col3_x + 6, ry, 19, (160, 180, 200), "sans")
@@ -1663,20 +1674,31 @@ def _run_buff_detail(logic_surface, dt):
                         text = str(cmd)
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
-                flat = "[" + ", ".join(
-                    f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
-                    else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
-                    else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
-                    else str(c)
-                    for c in cmds
-                ) + "]"
-                chars_per_line = (cw - 20) // 7
+                abs_compact = n_cmds > 90
+                if abs_compact:
+                    flat = "[" + ",".join(
+                        f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                        else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                        else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                        else str(c).replace(" ", "")
+                        for c in cmds
+                    ) + "]"
+                    CFS = 10; CLH = 11; cpch = (cw - 20) // 6
+                else:
+                    flat = "[" + ", ".join(
+                        f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
+                        else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
+                        else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
+                        else str(c)
+                        for c in cmds
+                    ) + "]"
+                    CFS = 13; CLH = 15; cpch = (cw - 20) // 7
                 bj = 0
                 while bj < len(flat):
-                    chunk = flat[bj:bj + chars_per_line]
-                    if ry + 28 + (bj // chars_per_line) * 15 > CONTENT_BOT - 10: break
-                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // chars_per_line) * 15, 13, (150, 170, 210), "sans")
-                    bj += chars_per_line
+                    chunk = flat[bj:bj + cpch]
+                    if ry + 28 + (bj // cpch) * CLH > CONTENT_BOT - 10: break
+                    gt.draw(logic_surface, chunk, col3_x + 6, ry + 28 + (bj // cpch) * CLH, CFS, (150, 170, 210), "sans")
+                    bj += cpch
     else:
         gt.draw(logic_surface, f"编码: 无  纯色图标", col3_x + 6, ry, 19, (160, 180, 200), "sans")
 
