@@ -1347,7 +1347,8 @@ def _run_block_detail(logic_surface, dt):
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
                 # 紧凑模式；条数>90触发绝对紧凑（10px/行距1px/去空格）
-                abs_compact = n_cmds > 90
+                abs_compact = n_cmds > 105
+                avail_w = int(LOGIC_WIDTH * 0.965) - (col3_x + 6)
                 if abs_compact:
                     flat = "[" + ",".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
@@ -1356,7 +1357,7 @@ def _run_block_detail(logic_surface, dt):
                         else str(c).replace(" ", "")
                         for c in cmds
                     ) + "]"
-                    CFS = 10; CLH = 11; cpch = (cw - 20) // 6
+                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 6)
                 else:
                     flat = "[" + ", ".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
@@ -1365,7 +1366,7 @@ def _run_block_detail(logic_surface, dt):
                         else str(c)
                         for c in cmds
                     ) + "]"
-                    CFS = 13; CLH = 15; cpch = (cw - 20) // 7
+                    CFS = 13; CLH = 15; cpch = max(1, avail_w // 7)
                 bj = 0
                 while bj < len(flat):
                     chunk = flat[bj:bj + cpch]
@@ -1674,7 +1675,8 @@ def _run_buff_detail(logic_surface, dt):
                         text = str(cmd)
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
-                abs_compact = n_cmds > 90
+                abs_compact = n_cmds > 105
+                avail_w = int(LOGIC_WIDTH * 0.965) - (col3_x + 6)
                 if abs_compact:
                     flat = "[" + ",".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
@@ -1683,7 +1685,7 @@ def _run_buff_detail(logic_surface, dt):
                         else str(c).replace(" ", "")
                         for c in cmds
                     ) + "]"
-                    CFS = 10; CLH = 11; cpch = (cw - 20) // 6
+                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 6)
                 else:
                     flat = "[" + ", ".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
@@ -1692,7 +1694,7 @@ def _run_buff_detail(logic_surface, dt):
                         else str(c)
                         for c in cmds
                     ) + "]"
-                    CFS = 13; CLH = 15; cpch = (cw - 20) // 7
+                    CFS = 13; CLH = 15; cpch = max(1, avail_w // 7)
                 bj = 0
                 while bj < len(flat):
                     chunk = flat[bj:bj + cpch]
