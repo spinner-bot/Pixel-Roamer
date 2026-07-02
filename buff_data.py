@@ -461,79 +461,107 @@ def _rnd(seed, n):
     return seed, seed % n
 
 def shore_icon():
+    import math as _m
     S = _GS
     cmds = []
-    rng = 42  # 初始种子
+    rng = 42
 
     # ====== 天空 ======
     cmds.append(('fill', (135, 200, 240)))
 
-    # ====== 太阳：20阶渐变 + 光晕 + 丁达尔 ======
-    sx, sy = int(S*0.15), int(S*0.12)
-    for i in range(20, 0, -1):
-        t = i / 20.0
-        r = max(1, int(S*0.09 * t))
-        cmds.append(('circle', sx, sy, r, (255, int(240-40*(1-t)), int(60+195*(1-t)))))
-    for i in range(5, 0, -1):
-        r = int(S*0.09 + i*S*0.013)
-        cmds.append(('circle', sx, sy, r, (255, min(255, 230+i*5), min(255, 140+i*23))))
-    for i in range(6):
-        dx = int(S*0.32 * (1 + i*0.05))
-        dy = int(S*0.12 * i*0.4)
-        lx = int(sx + S*0.06)
-        ly = int(sy)
-        rw = max(1, int(S*0.01 + i*0.5))
-        rh = int(S*0.25 + i*S*0.04)
-        cmds.append(('rect', lx + dx, ly + dy - rh//2, rw, rh, (255, 252, 200)))
+    # ====== 太阳：中心白→外周橘黄，10阶渐变 + 光晕 + 丁达尔射线 ======
+    sx, sy = int(S*0.16), int(S*0.10)
+    sun_r = int(S*0.10)
+    for i in range(10, 0, -1):
+        t = i / 10.0
+        r = max(1, int(sun_r * t))
+        rr = int(255)
+        gg = int(235 - 45*(1-t))
+        bb = int(100 - 70*t)
+        cmds.append(('circle', sx, sy, r, (rr, gg, bb)))
+    for i in range(3, 0, -1):
+        r = sun_r + i*3
+        cmds.append(('circle', sx, sy, r, (255, min(255,225+i*8), min(255,140+i*25))))
+    # 丁达尔射线：从太阳边缘以不同角度辐射，每射线由小圆点组成
+    for angle in [0.4, 1.1, 1.9, 2.6, 3.4, 4.2, 5.0, 5.7]:
+        cos_a = _m.cos(angle)
+        sin_a = _m.sin(angle)
+        for d in range(sun_r+2, sun_r+16, 2):
+            px = int(sx + d * cos_a)
+            py = int(sy + d * sin_a)
+            if 0 <= px < S and 0 <= py < S:
+                cmds.append(('circle', px, py, 1, (255, 250, 210)))
 
-    # ====== 陆地（左侧 ~38%）======
-    rock_base = int(S*0.82)
-    for i in range(8):
-        rx = i * int(S*0.05)
-        rw = int(S*0.06) if i % 2 == 0 else int(S*0.055)
-        rh = int(S*0.21) if i % 3 != 0 else int(S*0.17)
-        shade = 110 + (i % 4) * 12
-        cmds.append(('rect', rx, rock_base, rw, rh, (shade, shade-20, shade-35)))
-    for i in range(5):
-        fx = 8 + i*22
-        cmds.append(('rect', fx, int(S*0.84), 2, int(S*0.15), (80, 70, 55)))
-        cmds.append(('rect', fx+10, int(S*0.87), 1, int(S*0.10), (90, 80, 65)))
+    # ====== 陆地（左侧 ~38%，土层延伸到底，无岩石层） ======
     dirt_top = int(S*0.58)
-    cmds.append(('rect', 0, dirt_top, int(S*0.38), int(S*0.24), (155, 115, 70)))
-    for _ in range(45):
-        rng, dx = _rnd(rng, int(S*0.36)-2); dx += 2
-        rng, dy = _rnd(rng, rock_base - dirt_top - 6); dy += dirt_top + 2
-        rng, mr = _rnd(rng, 71); cs = 120 + mr
-        rng, mr = _rnd(rng, 61); c2 = 85 + mr
-        rng, mr = _rnd(rng, 51); c3 = 45 + mr
-        rng, mr = _rnd(rng, 4); sr = mr + 1
+    shore_x = int(S*0.38)
+    cmds.append(('rect', 0, dirt_top, shore_x, S - dirt_top, (148, 108, 65)))
+    # 泥土斑点
+    for _ in range(55):
+        rng, dx = _rnd(rng, shore_x-3); dx += 2
+        rng, dy = _rnd(rng, S - dirt_top - 6); dy += dirt_top + 2
+        rng, mr = _rnd(rng, 61); cs = 118 + mr
+        rng, mr = _rnd(rng, 51); c2 = 78 + mr
+        rng, mr = _rnd(rng, 41); c3 = 35 + mr
+        rng, mr = _rnd(rng, 3); sr = mr + 1
         cmds.append(('circle', dx, dy, sr, (cs, c2, c3)))
-    for gx in range(0, int(S*0.38), 4):
-        gh = 8 + ((gx * 17 + gx*gx) % 18)
-        cg = (60 + (gx*3)%40, 160 + (gx*7)%40, 40 + (gx*5)%35)
-        cmds.append(('rect', gx, dirt_top - gh, 2, gh, cg))
-        if gx % 7 == 0:
-            cmds.append(('rect', gx+2, dirt_top - gh + 3, 2, gh - 3, (cg[0]+20, cg[1]+15, cg[2]+10)))
+    # 岩石碎块（不规则多边形 — 用叠层异长矩形模拟锯齿边 + 深色描边）
+    frags = [(4,95,8,5),(16,92,10,7),(30,96,7,4),(7,101,6,6),(22,99,9,5)]
+    for fx, fy, fw, fh in frags:
+        # 深色底边（模拟阴影/轮廓）
+        for row in range(fh):
+            row_w = fw - row if row < 3 else fw - (fh-row-1)*2
+            if row_w < 2: row_w = 2
+            off = (fw - row_w) // 2
+            edge_c = (100, 85, 65) if row == 0 or row == fh-1 else (140, 120, 90)
+            cmds.append(('rect', fx+off, fy+row, row_w, 1, edge_c))
+        # 内部亮色填充
+        for row in range(1, fh-1):
+            row_w = fw - row - 1 if row < 3 else fw - (fh-row-1)*2 - 1
+            if row_w < 1: row_w = 1
+            off = (fw - row_w) // 2 + 1
+            cmds.append(('rect', fx+off, fy+row, max(1,row_w-2), 1, (155, 135, 100)))
+
+    # ====== 草丛（1px细线，高矮参差，多色叠加） ======
+    grass_colors = [(60,170,40),(80,185,55),(45,145,30),(100,200,70),(55,160,35)]
+    for gx in range(0, shore_x):
+        rng, gh = _rnd(rng, 28); gh += 6
+        rng, ci = _rnd(rng, 5)
+        cg = grass_colors[ci]
+        cmds.append(('rect', gx, dirt_top - gh, 1, gh, cg))
+        if gx % 3 == 0 and gh > 10:
+            rng, gh2 = _rnd(rng, gh-4); gh2 += 4
+            rng, ci2 = _rnd(rng, 5)
+            cmds.append(('rect', gx+1, dirt_top - gh2, 1, gh2, grass_colors[ci2]))
 
     # ====== 水体（右侧 ~60%） ======
-    shore_x = int(S*0.38)
-    cmds.append(('rect', shore_x, int(S*0.55), S - shore_x, int(S*0.48), (20, 105, 200)))
-    for _ in range(35):
-        rng, bx = _rnd(rng, S - shore_x - 11); bx += shore_x + 3
-        rng, by = _rnd(rng, int(S*0.36)); by += int(S*0.58)
-        rng, br = _rnd(rng, 5); br += 2
+    water_top = int(S*0.55)
+    water_h = S - water_top
+    cmds.append(('rect', shore_x, water_top, S - shore_x, water_h, (20, 105, 200)))
+    # 气泡：r=1/2/3，分区分布
+    # 上20%区域 → r=3
+    for _ in range(8):
+        rng, bx = _rnd(rng, S - shore_x - 8); bx += shore_x + 3
+        rng, by = _rnd(rng, max(1, int(water_h*0.20))); by += water_top
+        rng, al = _rnd(rng, 50); al += 190
+        cmds.append(('circle', bx, by, 3, (al, min(255, al+30), 255)))
+    # 上35%区域 → r=2
+    for _ in range(22):
+        rng, bx = _rnd(rng, S - shore_x - 6); bx += shore_x + 2
+        rng, by = _rnd(rng, max(1, int(water_h*0.35))); by += water_top
         rng, al = _rnd(rng, 55); al += 180
-        cmds.append(('circle', bx, by, br, (al, min(255, al+25), 255)))
-    for _ in range(15):
-        rng, bx = _rnd(rng, S - shore_x - 20); bx += shore_x + 5
-        rng, by = _rnd(rng, int(S*0.30)); by += int(S*0.60)
-        rng, br = _rnd(rng, 3); br += 1
-        cmds.append(('circle', bx, by, br, (220, 235, 255)))
+        cmds.append(('circle', bx, by, 2, (al, min(255, al+25), 255)))
+    # 50%区域 → r=1
+    for _ in range(35):
+        rng, bx = _rnd(rng, S - shore_x - 4); bx += shore_x + 1
+        rng, by = _rnd(rng, max(1, int(water_h*0.50))); by += water_top
+        rng, al = _rnd(rng, 60); al += 175
+        cmds.append(('circle', bx, by, 1, (al, min(255, al+20), 255)))
 
     # ====== 岸边线 ======
-    cmds.append(('rect', shore_x, int(S*0.55), 2, int(S*0.48), (130, 95, 55)))
+    cmds.append(('rect', shore_x, water_top, 2, water_h, (130, 95, 55)))
 
-    # ====== 火柴人（放大，俯身速滑姿态） ======
+    # ====== 火柴人（俯身速滑姿态） ======
     bx = int(S*0.53)
     by = int(S*0.35)
     skin = (255, 210, 170)
