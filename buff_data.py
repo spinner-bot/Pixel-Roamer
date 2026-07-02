@@ -476,12 +476,12 @@ def shore_icon():
         t = i / 10.0
         r = max(1, int(sun_r * t))
         rr = int(255)
-        gg = int(235 - 45*(1-t))
-        bb = int(100 - 70*t)
+        gg = int(220 - 80*(1-t))
+        bb = int(50 - 40*t)
         cmds.append(('circle', sx, sy, r, (rr, gg, bb)))
     for i in range(3, 0, -1):
         r = sun_r + i*3
-        cmds.append(('circle', sx, sy, r, (255, min(255,225+i*8), min(255,140+i*25))))
+        cmds.append(('circle', sx, sy, r, (255, min(255,200+i*8), min(255,80+i*25))))
     # 丁达尔射线：从太阳边缘以不同角度辐射，每射线由小圆点组成
     # 7方向：水平右(0°), 105°, 120°, 135°, 150°, 165°, 竖直下(270°)
     for angle in [0.0, 105*_m.pi/180, 120*_m.pi/180, 135*_m.pi/180, 150*_m.pi/180, 165*_m.pi/180, 270*_m.pi/180]:
@@ -491,7 +491,7 @@ def shore_icon():
             px = int(sx + d * cos_a)
             py = int(sy + d * sin_a)
             if 0 <= px < S and 0 <= py < S:
-                cmds.append(('circle', px, py, 1, (255, 250, 210)))
+                cmds.append(('circle', px, py, 1, (255, 220, 130)))
 
     # ====== 陆地（左侧 ~38%，土层延伸到底，无岩石层） ======
     dirt_top = int(S*0.58)
