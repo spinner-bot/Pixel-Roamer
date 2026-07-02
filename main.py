@@ -2567,13 +2567,14 @@ while running:
                     feet_y = player1._y - player1._h / 2
                     if _shore_state == 'rise':
                         if swim_bound is not None and feet_y >= swim_bound:
-                            # 竖直空气墙：到达水面高度，锁 v_y
+                            # 竖直空气墙：到达水面高度，锁 v_y，记录起始位置
                             player1.v_y = 0.0
-                            player1.v_x = exit_dir * 16.0  # 高速水平推出
+                            player1.v_x = exit_dir * 16.0
+                            player1._shore_slide_start_x = player1._x
                             player1._shore_exit_pending = 'slide'
                     elif _shore_state == 'slide':
-                        if not player1.can_swim:
-                            # 水平空气墙：脚下方块不再是水，已到岸上，锁 v_x
+                        # 水平空气墙：滑够 0.55 格（半身宽+岸边容差）即停
+                        if abs(player1._x - player1._shore_slide_start_x) >= 0.55:
                             player1.v_x = 0.0
                             player1._shore_exit_pending = False
                         elif not player1.has_buff(58):
