@@ -2551,6 +2551,45 @@ while running:
         player_screen_rect = pygame.Rect(sx, sy_top, sw, sh)
         render_costume_direct(logic_surface, player1.costume_id, player_screen_rect)
 
+        # ---- Buff 视线效果（只影响世界/生物，不影响 UI） ----
+        # Buff: 发光 (50) 自身发光照亮周围
+        if player1.has_buff(50):
+            px, py = player1.get_center()
+            cam_scale = camera.scale
+            sx = (px - camera.x) * cam_scale + camera.logic_width / 2
+            sy = camera.logic_height / 2 - (py - camera.y) * cam_scale
+            glow_radius = 120
+            glow = pygame.Surface((glow_radius * 2, glow_radius * 2), pygame.SRCALPHA)
+            for i in range(8, 0, -1):
+                alpha = 30 - i * 3
+                r = glow_radius * i / 8
+                pygame.draw.circle(glow, (255, 240, 180, max(0, alpha)),
+                                   (glow_radius, glow_radius), int(r))
+            logic_surface.blit(glow, (sx - glow_radius, sy - glow_radius), special_flags=pygame.BLEND_ADD)
+
+        # Buff: 失明 (24) 屏幕变亮黄色（清明 buff 8 免疫）
+        if player1.has_buff(24) and not player1.has_buff(8):
+            blind_overlay = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
+            blind_overlay.fill((255, 240, 80, 140))
+            logic_surface.blit(blind_overlay, (0, 0))
+
+        # Buff: 视野受限 (25) 缩小视野半径（清明 buff 8 免疫）
+        if player1.has_buff(25) and not player1.has_buff(8):
+            vision_radius = 5.0  # 默认半径（格）
+            for b in player1.buffs:
+                if b.buff_id == 25 and b.params:
+                    vision_radius = float(b.params[0])
+            px, py = player1.get_center()
+            cam_scale = camera.scale
+            sx = (px - camera.x) * cam_scale + camera.logic_width / 2
+            sy = camera.logic_height / 2 - (py - camera.y) * cam_scale
+            vision_radius_px = int(vision_radius * 24 * cam_scale)
+            dark = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
+            dark.fill((0, 0, 0, 220))
+            if vision_radius_px > 0:
+                pygame.draw.circle(dark, (0, 0, 0, 0), (int(sx), int(sy)), vision_radius_px)
+            logic_surface.blit(dark, (0, 0))
+
         # ---- HP 血条 ----
         # ---- 音效检测 ----
         if _prev_score < player1.score:
@@ -2577,44 +2616,6 @@ while running:
         # ---- 濒死滤镜 ----
         draw_near_death_vignette(logic_surface, player1)
         draw_buff_status(logic_surface, player1, dt)
-
-        # ---- Buff: 失明 (24) 屏幕变亮黄色（清明 buff 8 免疫） ----
-        if player1.has_buff(24) and not player1.has_buff(8):
-            blind_overlay = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
-            blind_overlay.fill((255, 240, 80, 140))
-            logic_surface.blit(blind_overlay, (0, 0))
-
-        # ---- Buff: 视野受限 (25) 缩小视野半径（清明 buff 8 免疫） ----
-        if player1.has_buff(25) and not player1.has_buff(8):
-            vision_radius = 5.0  # 默认半径（格）
-            for b in player1.buffs:
-                if b.buff_id == 25 and b.params:
-                    vision_radius = float(b.params[0])
-            px, py = player1.get_center()
-            cam_scale = camera.scale
-            sx = (px - camera.x) * cam_scale + camera.logic_width / 2
-            sy = camera.logic_height / 2 - (py - camera.y) * cam_scale
-            vision_radius_px = int(vision_radius * 24 * cam_scale)
-            dark = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
-            dark.fill((0, 0, 0, 220))
-            if vision_radius_px > 0:
-                pygame.draw.circle(dark, (0, 0, 0, 0), (int(sx), int(sy)), vision_radius_px)
-            logic_surface.blit(dark, (0, 0))
-
-        # ---- Buff: 发光 (50) 自身发光照亮周围 ----
-        if player1.has_buff(50):
-            px, py = player1.get_center()
-            cam_scale = camera.scale
-            sx = (px - camera.x) * cam_scale + camera.logic_width / 2
-            sy = camera.logic_height / 2 - (py - camera.y) * cam_scale
-            glow_radius = 120
-            glow = pygame.Surface((glow_radius * 2, glow_radius * 2), pygame.SRCALPHA)
-            for i in range(8, 0, -1):
-                alpha = 30 - i * 3
-                r = glow_radius * i / 8
-                pygame.draw.circle(glow, (255, 240, 180, max(0, alpha)),
-                                   (glow_radius, glow_radius), int(r))
-            logic_surface.blit(glow, (sx - glow_radius, sy - glow_radius), special_flags=pygame.BLEND_ADD)
 
         # ---- 积分显示（顶部居中）----
         score_text = f"* {player1.score}"
