@@ -487,7 +487,7 @@ def shore_icon():
     for angle in [0.0, 105*_m.pi/180, 120*_m.pi/180, 135*_m.pi/180, 150*_m.pi/180, 165*_m.pi/180, 270*_m.pi/180]:
         cos_a = _m.cos(angle)
         sin_a = _m.sin(angle)
-        for d in range(sun_r+3, sun_r+15, 2):
+        for d in range(sun_r+10, sun_r+22, 3):
             px = int(sx + d * cos_a)
             py = int(sy + d * sin_a)
             if 0 <= px < S and 0 <= py < S:
@@ -597,15 +597,16 @@ def shore_icon():
             for tx in range(-thick//2, (thick+1)//2):
                 for ty in range(-thick//2, (thick+1)//2):
                     cmds.append(('circle', px+tx, py+ty, 1, color))
-    # 头部：黑色实心圆 + 背景色略小圆（镂空成环）
+    # 头部：黑色实心圆 + 背景色略小圆（镂空成环），半径翻倍
     hx = int(S*0.43)
     hy = int(S*0.30)
-    hr = int(S*0.045)
+    hr = int(S*0.09)
     cmds.append(('circle', hx, hy, hr, black))
     cmds.append(('circle', hx, hy, hr-3, sky_c))
-    # 颈点
-    neck_x = hx
-    neck_y = hy + hr
+    # 颈点：在头部120°位置（左上侧），线段延伸线过头部中心
+    neck_ang = 120 * _m.pi / 180
+    neck_x = hx + hr * _m.cos(neck_ang)
+    neck_y = hy + hr * _m.sin(neck_ang)
     # 上身：30°斜向右下
     ub_len = 16
     ub_ang = 30 * _m.pi / 180
@@ -617,10 +618,10 @@ def shore_icon():
     hip_x = waist_x
     hip_y = waist_y + lb_len
     _seg(cmds, waist_x, waist_y, hip_x, hip_y, black, 3)
-    # 手臂：从上身下1/4处引出，15°夹角，平分线⊥上身
+    # 手臂：从上身下1/4处引出，15°夹角，平分线⊥上身（另一侧垂直→指向天空）
     arm_org_x = neck_x + ub_len * 0.75 * _m.cos(ub_ang)
     arm_org_y = neck_y + ub_len * 0.75 * _m.sin(ub_ang)
-    arm_bisect = ub_ang + 90 * _m.pi / 180
+    arm_bisect = ub_ang - 90 * _m.pi / 180  # 另一侧⊥方向（指向右上天空）
     arm_len = 9
     for sign in [-1, 1]:
         arm_ang = arm_bisect + sign * 7.5 * _m.pi / 180
