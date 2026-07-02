@@ -561,27 +561,35 @@ def shore_icon():
     # ====== 岸边线 ======
     cmds.append(('rect', shore_x, water_top, 2, water_h, (130, 95, 55)))
 
-    # ====== 火柴人（俯身速滑姿态） ======
+    # ====== 火柴人（黑色线条，用 r=1 小圆模拟） ======
+    def _fill_rect(cmds, x, y, w, h, color):
+        for px in range(int(x), int(x+w)):
+            for py in range(int(y), int(y+h)):
+                cmds.append(('circle', px, py, 1, color))
+    def _fill_circle(cmds, cx, cy, r, color):
+        for px in range(int(cx-r), int(cx+r+1)):
+            for py in range(int(cy-r), int(cy+r+1)):
+                if (px-cx)**2 + (py-cy)**2 <= r**2:
+                    cmds.append(('circle', px, py, 1, color))
     bx = int(S*0.53)
     by = int(S*0.35)
-    skin = (255, 210, 170)
-    stick = (35, 28, 28)
-    cmds.append(('circle', int(bx - S*0.03), int(by - S*0.08), int(S*0.042), skin))
+    black = (0, 0, 0)
+    _fill_circle(cmds, int(bx - S*0.03), int(by - S*0.08), int(S*0.042), black)
     waist_y = int(by + S*0.02)
-    cmds.append(('rect', int(bx - S*0.015), int(by - S*0.04), int(S*0.025), int(S*0.06), stick))
-    cmds.append(('rect', int(bx - S*0.025), waist_y, int(S*0.02), int(S*0.065), stick))
+    _fill_rect(cmds, int(bx - S*0.015), int(by - S*0.04), int(S*0.025), int(S*0.06), black)
+    _fill_rect(cmds, int(bx - S*0.025), waist_y, int(S*0.02), int(S*0.065), black)
     shoulder_x = int(bx - S*0.005)
     shoulder_y = int(by - S*0.03)
-    cmds.append(('rect', shoulder_x, shoulder_y, int(S*0.07), int(S*0.014), stick))
-    cmds.append(('rect', shoulder_x + int(S*0.06), int(shoulder_y - S*0.04), int(S*0.05), int(S*0.012), stick))
-    cmds.append(('rect', shoulder_x, int(shoulder_y + S*0.012), int(S*0.06), int(S*0.012), stick))
-    cmds.append(('rect', shoulder_x + int(S*0.05), int(shoulder_y - S*0.02), int(S*0.04), int(S*0.01), stick))
+    _fill_rect(cmds, shoulder_x, shoulder_y, int(S*0.07), int(S*0.014), black)
+    _fill_rect(cmds, shoulder_x + int(S*0.06), int(shoulder_y - S*0.04), int(S*0.05), int(S*0.012), black)
+    _fill_rect(cmds, shoulder_x, int(shoulder_y + S*0.012), int(S*0.06), int(S*0.012), black)
+    _fill_rect(cmds, shoulder_x + int(S*0.05), int(shoulder_y - S*0.02), int(S*0.04), int(S*0.01), black)
     hip_x = int(bx - S*0.02)
     hip_y = int(waist_y + S*0.06)
-    cmds.append(('rect', hip_x, hip_y, int(S*0.014), int(S*0.06), stick))
-    cmds.append(('rect', int(hip_x - S*0.04), int(hip_y + S*0.05), int(S*0.05), int(S*0.012), stick))
-    cmds.append(('rect', int(hip_x + S*0.015), hip_y, int(S*0.014), int(S*0.055), stick))
-    cmds.append(('rect', int(hip_x + S*0.03), int(hip_y + S*0.045), int(S*0.04), int(S*0.01), stick))
+    _fill_rect(cmds, hip_x, hip_y, int(S*0.014), int(S*0.06), black)
+    _fill_rect(cmds, int(hip_x - S*0.04), int(hip_y + S*0.05), int(S*0.05), int(S*0.012), black)
+    _fill_rect(cmds, int(hip_x + S*0.015), hip_y, int(S*0.014), int(S*0.055), black)
+    _fill_rect(cmds, int(hip_x + S*0.03), int(hip_y + S*0.045), int(S*0.04), int(S*0.01), black)
 
     # ====== 水花（浪花翻卷 + 阴影 + 色彩分级） ======
     s_base = int(by + S*0.12)
