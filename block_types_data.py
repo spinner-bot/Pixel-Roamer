@@ -97,7 +97,7 @@ BLOCK_TYPES = {
                                           ("rect", 0, 12, 16, 2, (120, 70, 30)),
                                                                     ])),
     10: BlockType(10, "vine", "藤蔓", is_solid=False, climbable=True, damage_ps=5, color=(34, 139, 34),
-                  buff_ids=(17,), buff_params_list=((1,),), buff_durations=(5.0,),
+                  buff_ids=(17,), buff_params_list=((0.5,),), buff_durations=(5.0,),
                   pattern=("vector", (16, 16), [
                       ("rect", 5, 0, 6, 16, (0, 100, 0)),
                       ("circle", 4, 4, 2, (0, 80, 0)),
