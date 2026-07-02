@@ -157,7 +157,7 @@ def launch_world(map_id: int):
         w=cfg.get("w", 0.8),
         h=cfg.get("h", 1.8),
         v_max=cfg.get("v_max", 36.5),
-        v_jump=cfg.get("v_jump", 20.0),
+        v_jump=cfg.get("v_jump", 11.5),
         f_x=cfg.get("f_x", 0.985),
         f_y=cfg.get("f_y", 1.0),
         phys_atk=cfg.get("phys_atk", 10),
@@ -873,7 +873,7 @@ _EDITABLE_FIELDS = [
     # ---- Player 属性 ----
     ("player.hp_max",        "最大血量",           "float", 150.0,    10.0),
     ("player.v_max",         "最大速度",           "float", 36.5,     1.0),
-    ("player.v_jump",        "跳跃速度",           "float", 20.0,     1.0),
+    ("player.v_jump",        "跳跃速度",           "float", 11.5,     1.0),
     ("player.stamina_max",   "最大体力",           "float", 200.0,    10.0),
     ("player.phys_atk",      "物理攻击",           "float", 10.0,     5.0),
     ("player.magic_atk",     "魔法攻击",           "float", 0.0,      5.0),
@@ -1733,7 +1733,7 @@ def _get_edit_config(map_id: int) -> dict:
 
     # Player 默认值
     defaults = {
-        "hp_max": 150.0, "v_max": 36.5, "v_jump": 20.0, "stamina_max": 200.0,
+        "hp_max": 150.0, "v_max": 36.5, "v_jump": 11.5, "stamina_max": 200.0,
         "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
         "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
         "f_x": 0.985, "f_y": 0.9965, "shield": 0.0, "w": 0.8, "h": 1.8,
@@ -2548,38 +2548,38 @@ while running:
                     and player1.stamina >= 25):
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
-                        # 首次按下：获得刚好上岸的向上速度
-                        # 根据液体空间阻力动态补偿（熔岩等稠液体需要更高初速）
-                        import math
-                        grav = abs(_current_map.gravity)
-                        liquid_sf = getattr(player1, '_liquid_space_f', 0.985)
-                        base_loss = 1.0 - 0.9965 * 0.985  # 水基线
-                        actual_loss = max(1.0 - 0.9965 * liquid_sf, 0.001)
-                        drag_scale = math.sqrt(actual_loss / base_loss)
-                        h = player1._h + 0.3
-                        player1.v_y = math.sqrt(2 * grav * h) * 1.25 * drag_scale
+                        # 高速上岸 + 临时空气墙：极速完成，不受液体阻力影响
+                        player1.v_y = 22.0  # 高速向上
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
                         player1.apply_buff(58, (), 2.0)
-                        player1._shore_exit_pending = True
+                        player1._shore_exit_pending = 'rise'  # 上升阶段
                         player1._shore_exit_dir = player1._shore_dir
-                        # 记录水面高度用于后续检测
                         player1._shore_exit_bound = getattr(player1, '_swim_top_y', None)
                         sfx.play_jump()
                         shore_exit_done = True
                         jump_pressed = False
-                # 上岸后续：自动检测离开水面后，向岸方向轻推
-                if getattr(player1, '_shore_exit_pending', False) and not shore_exit_done:
+                # 上岸后续：空气墙逻辑（到达高度→竖直停，再水平推→到位停）
+                _shore_state = getattr(player1, '_shore_exit_pending', False)
+                if _shore_state and not shore_exit_done:
                     exit_dir = player1._shore_exit_dir
                     swim_bound = getattr(player1, '_shore_exit_bound', None)
-                    # 检测人物脚部是否离开水面
                     feet_y = player1._y - player1._h / 2
-                    if swim_bound is not None and feet_y >= swim_bound:
-                        # 脚已出水，自动向岸方向轻推（刚好脱离水体接触）
-                        player1.v_x = exit_dir * 1.8
-                        player1._shore_exit_pending = False
-                    elif not player1.has_buff(58):
-                        # buff 过期仍未出水，落回
+                    if _shore_state == 'rise':
+                        if swim_bound is not None and feet_y >= swim_bound:
+                            # 竖直空气墙：到达水面高度，锁 v_y
+                            player1.v_y = 0.0
+                            player1.v_x = exit_dir * 10.0  # 高速水平推出
+                            player1._shore_exit_pending = 'slide'
+                    elif _shore_state == 'slide':
+                        if player1.on_ground:
+                            # 水平空气墙：着陆，锁 v_x
+                            player1.v_x = 0.0
+                            player1._shore_exit_pending = False
+                        elif not player1.has_buff(58):
+                            player1._shore_exit_pending = False
+                    # buff 过期兜底
+                    if player1._shore_exit_pending and not player1.has_buff(58):
                         player1._shore_exit_pending = False
 
                 # ---- 正常跳跃 ----

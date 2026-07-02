@@ -1141,7 +1141,7 @@ class Player(Creature):
                  w: float = 0.8,
                  h: float = 1.8,
                  v_max: float = 36.5,
-                 v_jump: float = 20.0,
+                 v_jump: float = 11.5,
                  f_x: float = 0.985,
                  f_y: float = 0.9965,
                  phys_atk: float = 10,

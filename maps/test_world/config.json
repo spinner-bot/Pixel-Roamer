@@ -16,7 +16,7 @@
   "player": {
     "hp_max": 150.0,
     "v_max": 21.5,
-    "v_jump": 16.5,
+    "v_jump": 9.0,
     "stamina_max": 200.0,
     "phys_atk": 10.0,
     "magic_atk": 0.0,
