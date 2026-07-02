@@ -2473,7 +2473,7 @@ while running:
                 sm = getattr(player1, '_stamina_mult', 1.0)
                 silenced = getattr(player1, '_silenced', False)
                 climb_up_cost = 14.0 * sm * buf_stam_cost * dt + 0.01
-                climb_idle_cost = 8.8 * sm * buf_stam_cost * dt + 0.01
+                climb_idle_cost = 3.52 * sm * buf_stam_cost * dt + 0.01
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
                     if player1.stamina >= climb_up_cost:
                         player1.climb_move(1.0)
@@ -2484,7 +2484,7 @@ while running:
                 elif player1.is_climbing:
                     player1.v_y = 0.0
                     if player1.stamina >= climb_idle_cost:
-                        if not silenced: player1.consume_stamina(8.8 * sm * buf_stam_cost * dt)
+                        if not silenced: player1.consume_stamina(3.52 * sm * buf_stam_cost * dt)
                     else:
                         player1.stop_climbing()
                         _stamina_flash_timer = _stamina_flash_duration
