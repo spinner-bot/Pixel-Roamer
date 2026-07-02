@@ -782,7 +782,9 @@ class Creature:
                     pass
 
                 elif bt.special == "confusion":
-                    # 混乱：短暂反转移动方向
+                    # 混乱：短暂反转移动方向（铁意免疫）
+                    if self.has_buff(40):
+                        continue
                     if self._special_cooldowns.get("confusion", 0) <= 0:
                         self._confused = True
                         self._confusion_timer = 2.0
@@ -815,9 +817,17 @@ class Creature:
     def apply_buff(self, buff_id: int, params: tuple = (),
                    duration: float = None, source=None):
         """给生物添加一个 buff。已存在则刷新时长。"""
-        from buff_system import BUFF_TYPES, BuffInstance
+        from buff_system import BUFF_TYPES, BuffInstance, CAT_POSITIVE
         bt = BUFF_TYPES.get(buff_id)
         if bt is None:
+            return
+
+        # ---- Buff: 诅咒 (57) 无法获得有益 buff ----
+        if bt.category == CAT_POSITIVE and self.has_buff(57):
+            return
+
+        # ---- Buff: 铁意 (40) 免疫定身/晕眩/压制/反向 ----
+        if buff_id in (21, 27, 28, 23) and self.has_buff(40):
             return
 
         # 检查冲突：新 buff 会移除冲突列表中的 buff
@@ -866,9 +876,19 @@ class Creature:
         expired = []
         for b in self.buffs:
             if b.tick(dt):
-                expired.append(b.buff_id)
-        for bid in expired:
-            self.remove_buff(bid)
+                expired.append(b)
+        for b in expired:
+            # ---- Buff: 幸运 (52) 过期时随机清除一个负面效果 ----
+            from buff_system import BUFF_TYPES, CAT_NEGATIVE
+            bt = BUFF_TYPES.get(b.buff_id)
+            if bt and bt.tick == "lucky":
+                import random
+                negatives = [cb for cb in self.buffs
+                            if BUFF_TYPES.get(cb.buff_id) and
+                            BUFF_TYPES[cb.buff_id].category == CAT_NEGATIVE]
+                if negatives:
+                    self.remove_buff(random.choice(negatives).buff_id)
+            self.remove_buff(b.buff_id)
 
         # Tick 效果（每秒处理一次，累积 dt）
         self._buff_timer += dt
@@ -915,6 +935,21 @@ class Creature:
                         if cbt and cbt.category == CAT_NEGATIVE and cb.buff_id != bt.id:
                             self.remove_buff(cb.buff_id)
                             break
+            elif bt.tick == "drowsy":
+                # 困倦 (44)：每隔 {0} 秒有概率短暂晕眩
+                interval = float(p[0]) if p else 4.0
+                self._buff_timer_drowsy = getattr(self, '_buff_timer_drowsy', 0) + tick_interval
+                if self._buff_timer_drowsy >= interval:
+                    self._buff_timer_drowsy -= interval
+                    import random
+                    if random.random() < 0.4:
+                        # 短暂晕眩 0.5 秒
+                        self.apply_buff(28, (0.5,), 0.5)
+            elif bt.tick == "electrified":
+                # 带电 (45)：接触水体时持续受到伤害
+                if getattr(self, 'can_swim', False):
+                    amt = float(p[0]) if p else 8.0
+                    self.take_raw_damage(amt * tick_interval, damage_type="magic")
 
     def get_buff_stat(self, stat_name: str, base_value: float) -> float:
         """根据活跃 buff 计算修改后的属性值。"""

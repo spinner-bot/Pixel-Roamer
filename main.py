@@ -2420,12 +2420,13 @@ while running:
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
         player1.v_max = buf_v_max
         player1.v_jump = buf_v_jump
-        # 控制效果检查
-        rooted = player1.has_buff(21)
-        stunned = player1.has_buff(28)
-        grounded = player1.has_buff(27)
+        # 控制效果检查（铁意 buff 40 免疫定身/晕眩/压制/反向）
+        iron_will = player1.has_buff(40)
+        rooted = player1.has_buff(21) and not iron_will
+        stunned = player1.has_buff(28) and not iron_will
+        grounded = player1.has_buff(27) and not iron_will
         hopping = player1.has_buff(33)
-        reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8)
+        reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8) and not iron_will
 
         # ---- 移动物理（游戏结束/胜利时冻结）----
         if not _game_over and not _game_win and not stunned:
