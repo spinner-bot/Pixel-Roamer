@@ -2549,10 +2549,10 @@ while running:
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
                         # 高速上岸 + 临时空气墙：极速完成，不受液体阻力影响
-                        player1.v_y = 22.0  # 高速向上
+                        player1.v_y = 32.0  # 高速向上
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
-                        player1.apply_buff(58, (), 2.0)
+                        player1.apply_buff(58, (), 1.0)
                         player1._shore_exit_pending = 'rise'  # 上升阶段
                         player1._shore_exit_dir = player1._shore_dir
                         player1._shore_exit_bound = getattr(player1, '_swim_top_y', None)
@@ -2569,7 +2569,7 @@ while running:
                         if swim_bound is not None and feet_y >= swim_bound:
                             # 竖直空气墙：到达水面高度，锁 v_y
                             player1.v_y = 0.0
-                            player1.v_x = exit_dir * 10.0  # 高速水平推出
+                            player1.v_x = exit_dir * 16.0  # 高速水平推出
                             player1._shore_exit_pending = 'slide'
                     elif _shore_state == 'slide':
                         if not player1.can_swim:
