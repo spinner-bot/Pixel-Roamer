@@ -2474,8 +2474,24 @@ while running:
                 silenced = getattr(player1, '_silenced', False)
                 climb_up_cost = 14.0 * sm * buf_stam_cost * dt + 0.01
                 climb_idle_cost = 3.52 * sm * buf_stam_cost * dt + 0.01
+                # 攀爬上边界：到达梯子顶端则停住，消耗挂住体力
+                climb_bound = getattr(player1, '_climb_top_y', None)
+                at_climb_bound = False
+                if climb_bound is not None and player1.is_climbing:
+                    player_top = player1._y + player1._h / 2
+                    if player_top >= climb_bound - 0.05:
+                        player1._y = climb_bound - player1._h / 2
+                        player1.v_y = 0.0
+                        at_climb_bound = True
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
-                    if player1.stamina >= climb_up_cost:
+                    if at_climb_bound:
+                        # 已到顶端，消耗挂住体力
+                        if player1.stamina >= climb_idle_cost:
+                            if not silenced: player1.consume_stamina(3.52 * sm * buf_stam_cost * dt)
+                        else:
+                            player1.stop_climbing()
+                            _stamina_flash_timer = _stamina_flash_duration
+                    elif player1.stamina >= climb_up_cost:
                         player1.climb_move(1.0)
                         if not silenced: player1.consume_stamina(14.0 * sm * buf_stam_cost * dt)
                     else:
@@ -2493,9 +2509,25 @@ while running:
                 swimming_now = False
                 up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
                 if not player1.is_climbing and player1.can_swim:
+                    # 游泳上边界：到达水面则停住
+                    swim_bound = getattr(player1, '_swim_top_y', None)
+                    at_swim_bound = False
+                    if swim_bound is not None:
+                        player_top = player1._y + player1._h / 2
+                        if player_top >= swim_bound - 0.05:
+                            player1._y = swim_bound - player1._h / 2
+                            player1.v_y = 0.0
+                            at_swim_bound = True
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
-                        if player1.stamina >= swim_cost:
+                        if at_swim_bound:
+                            # 已到水面，保持位置并消耗同等体力
+                            if player1.stamina >= swim_cost:
+                                if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
+                                swimming_now = True
+                            else:
+                                _stamina_flash_timer = _stamina_flash_duration
+                        elif player1.stamina >= swim_cost:
                             swim_v = player1._swim_force
                             player1.v_y = swim_v  # 匀速上游（同攀爬逻辑）
                             if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)

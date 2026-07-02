@@ -532,6 +532,31 @@ class Creature:
         self.can_swim = any(bt.swim_f > 0 for bt in types)
         # 若接触池中有可游泳的方块，取最大浮力
         self._swim_force = max((bt.swim_f for bt in types), default=0.0)
+        # 计算攀爬/游泳的上边界（用于到达顶端时停住）
+        self._climb_top_y = None
+        self._swim_top_y = None
+        if self.can_climb or self.can_swim:
+            grect = self.get_game_rect()
+            min_gx = int(grect.x) - 1
+            max_gx = int(grect.x + grect.w) + 1
+            min_gy = int(grect.y) - 1
+            max_gy = int(grect.y + grect.h) + 1
+            climb_top = -999.0
+            swim_top = -999.0
+            for gx in range(min_gx, max_gx + 1):
+                for gy in range(min_gy, max_gy + 1):
+                    coord = world._wrap_grid_coord(gx, gy)
+                    if coord is None:
+                        continue
+                    bt = world.get_block_type_by_coord(coord[0], coord[1])
+                    if bt.climbable:
+                        climb_top = max(climb_top, float(gy + 1))
+                    if bt.swim_f > 0:
+                        swim_top = max(swim_top, float(gy + 1))
+            if climb_top > -999:
+                self._climb_top_y = climb_top
+            if swim_top > -999:
+                self._swim_top_y = swim_top
         # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
         # 仅水系液体触发（排除熔岩/蜂蜜等非水液体）
         if self.can_swim:

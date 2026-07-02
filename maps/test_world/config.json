@@ -7,13 +7,17 @@
     "edge_behavior": "solid",
     "view_blocks_h": 20.0,
     "void_limit": 20,
-    "default_block_id": 0
+    "default_block_id": 0,
+    "lives": 0,
+    "score_goal": 0,
+    "time_limit": 0.0,
+    "music": ""
   },
   "player": {
     "hp_max": 150.0,
     "v_max": 21.5,
     "v_jump": 16.5,
-    "stamina_max": 100.0,
+    "stamina_max": 200.0,
     "phys_atk": 10.0,
     "magic_atk": 0.0,
     "phys_res": 0.0,
@@ -26,6 +30,7 @@
     "f_y": 0.98,
     "shield": 0.0,
     "w": 0.8,
-    "h": 1.8
+    "h": 1.8,
+    "costume_id": 1
   }
 }
