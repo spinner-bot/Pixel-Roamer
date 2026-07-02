@@ -483,10 +483,11 @@ def shore_icon():
         r = sun_r + i*3
         cmds.append(('circle', sx, sy, r, (255, min(255,225+i*8), min(255,140+i*25))))
     # 丁达尔射线：从太阳边缘以不同角度辐射，每射线由小圆点组成
-    for angle in [0.4, 1.1, 1.9, 2.6, 3.4, 4.2, 5.0, 5.7]:
+    # 7方向：水平右(0°), 105°, 120°, 135°, 150°, 165°, 竖直下(270°)
+    for angle in [0.0, 105*_m.pi/180, 120*_m.pi/180, 135*_m.pi/180, 150*_m.pi/180, 165*_m.pi/180, 270*_m.pi/180]:
         cos_a = _m.cos(angle)
         sin_a = _m.sin(angle)
-        for d in range(sun_r+2, sun_r+16, 2):
+        for d in range(sun_r+5, sun_r+10, 2):
             px = int(sx + d * cos_a)
             py = int(sy + d * sin_a)
             if 0 <= px < S and 0 <= py < S:
