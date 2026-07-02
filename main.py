@@ -2511,31 +2511,25 @@ while running:
                 if not player1.is_climbing and player1.can_swim and not player1.has_buff(58):
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
-                        # 游泳上边界仅在主动游泳时生效：人物中心到达水面（半腰位置）
-                        swim_bound = getattr(player1, '_swim_top_y', None)
-                        at_swim_bound = False
-                        if swim_bound is not None:
-                            if player1._y >= swim_bound - 0.05 and player1._y <= swim_bound + 2.0:
-                                player1._y = swim_bound  # 中心与水面齐平（半腰）
-                                player1.v_y = 0.0
-                                at_swim_bound = True
-                        if at_swim_bound:
-                            # 已到水面，保持位置并消耗同等体力
-                            if player1.stamina >= swim_cost:
+                        if player1.stamina >= swim_cost:
+                            # 游泳上边界仅在主动游泳且体力足够时生效
+                            swim_bound = getattr(player1, '_swim_top_y', None)
+                            at_swim_bound = False
+                            if swim_bound is not None:
+                                if player1._y >= swim_bound - 0.05 and player1._y <= swim_bound + 2.0:
+                                    player1._y = swim_bound  # 中心与水面齐平（半腰）
+                                    player1.v_y = 0.0
+                                    at_swim_bound = True
+                            if at_swim_bound:
                                 if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
                                 swimming_now = True
                             else:
-                                # 体力耗尽：正常下沉
-                                player1.v_y += _current_map.gravity * dt * 0.5
-                                _stamina_flash_timer = _stamina_flash_duration
-                        elif player1.stamina >= swim_cost:
-                            swim_v = player1._swim_force
-                            player1.v_y = swim_v  # 匀速上游（同攀爬逻辑）
-                            if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
-                            swimming_now = True
+                                swim_v = player1._swim_force
+                                player1.v_y = swim_v  # 匀速上游
+                                if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
+                                swimming_now = True
                         else:
-                            # 体力耗尽：无法游泳，沉下去
-                            player1.v_y += _current_map.gravity * dt * 0.5
+                            # 体力耗尽：不吸附、不游泳，自然下沉
                             _stamina_flash_timer = _stamina_flash_duration
 
                 # ---- 体力恢复（攀爬中/水中按↑时不恢复，防止耗尽-恢复循环） ----
