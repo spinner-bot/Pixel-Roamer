@@ -159,7 +159,7 @@ def launch_world(map_id: int):
         v_max=cfg.get("v_max", 36.5),
         v_jump=cfg.get("v_jump", 26.5),
         f_x=cfg.get("f_x", 0.985),
-        f_y=cfg.get("f_y", 0.99),
+        f_y=cfg.get("f_y", 1.0),
         phys_atk=cfg.get("phys_atk", 10),
         magic_atk=cfg.get("magic_atk", 0),
         phys_res=cfg.get("phys_res", 0),
@@ -884,7 +884,7 @@ _EDITABLE_FIELDS = [
     ("player.k_res",         "抗性系数",           "float", 150.0,    10.0),
     ("player.dr",            "减伤率",             "float", 0.0,      0.05),
     ("player.f_x",           "X轴摩擦系数",        "float", 0.985,    0.005),
-    ("player.f_y",           "Y轴摩擦系数",        "float", 0.99,     0.005),
+    ("player.f_y",           "Y轴摩擦系数",        "float", 1.0,      0.005),
     ("player.shield",        "初始护盾",           "float", 0.0,      5.0),
     ("player.w",             "玩家宽度",           "float", 0.8,      0.1),
     ("player.h",             "玩家高度",           "float", 1.8,      0.1),
@@ -1736,7 +1736,7 @@ def _get_edit_config(map_id: int) -> dict:
         "hp_max": 150.0, "v_max": 36.5, "v_jump": 26.5, "stamina_max": 200.0,
         "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
         "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
-        "f_x": 0.985, "f_y": 0.99, "shield": 0.0, "w": 0.8, "h": 1.8,
+        "f_x": 0.985, "f_y": 1.0, "shield": 0.0, "w": 0.8, "h": 1.8,
         "costume_id": 1,
     }
     saved_player = saved.get("player", {})
