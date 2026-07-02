@@ -512,12 +512,21 @@ def shore_icon():
     # 下半区碎片：小/中
     frags_mid = [(3, dirt_mid+1, 6,4),(12, dirt_mid+3, 5,3),(22, dirt_mid, 7,5),
                  (30, dirt_mid+2, 4,3),(18, dirt_mid+5, 5,4),(8, dirt_mid+6, 3,3)]
-    # 下25%区域碎片：大/密
+    # 下25%区域碎片：大/密（不含底部20%）
     frags_bot = [(2, dirt_q3, 9,7),(14, dirt_q3+1, 11,8),(28, dirt_q3, 8,6),
-                 (6, dirt_q3+5, 10,7),(20, dirt_q3+4, 9,8),(33, dirt_q3+2, 7,5),
-                 (11, dirt_q3+7, 8,6),(25, dirt_q3+6, 10,7),(3, dirt_q3+9, 12,8)]
-    all_frags = [(fx, fy, fw, fh, False) for fx, fy, fw, fh in frags_mid] + \
-                [(fx, fy, fw, fh, True) for fx, fy, fw, fh in frags_bot]
+                 (6, dirt_q3+4, 10,7),(20, dirt_q3+3, 9,8),(33, dirt_q3+2, 7,5)]
+    # 底部20%：极度密集，覆盖>85%
+    dirt_b20 = int(S - (S - dirt_top) * 0.20)  # 底部20%分界线
+    frags_dense = []
+    for _fx in range(0, shore_x-3, 8):
+        for _row in range(0, S - dirt_b20, 5):
+            rng, _fw = _rnd(rng, 5); _fw += 6
+            rng, _fh = _rnd(rng, 4); _fh += 4
+            rng, _ox = _rnd(rng, 4)
+            frags_dense.append((_fx+_ox, dirt_b20+_row, _fw, _fh))
+    all_frags = ([(fx, fy, fw, fh, False) for fx, fy, fw, fh in frags_mid] +
+                 [(fx, fy, fw, fh, True) for fx, fy, fw, fh in frags_bot] +
+                 [(fx, fy, fw, fh, True) for fx, fy, fw, fh in frags_dense])
     for fx, fy, fw, fh, is_bot in all_frags:
         dark = (90, 75, 55) if is_bot else (105, 90, 70)
         mid_c = (130, 110, 80) if is_bot else (145, 125, 95)
