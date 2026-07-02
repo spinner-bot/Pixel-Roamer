@@ -2131,4 +2131,4 @@ add(BlockType(0, "drowning_depth", "溺水深渊",
     buff_durations=(4.0, 4.0)
 ))
 
-print(f'Generated {len(BUFF_BLOCKS)} hand-designed buff blocks (IDs {min(BUFF_BLOCKS.keys())}-{max(BUFF_BLOCKS.keys())})')
+
