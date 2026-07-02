@@ -532,6 +532,12 @@ class Creature:
         self.can_swim = any(bt.swim_f > 0 for bt in types)
         # 若接触池中有可游泳的方块，取最大浮力
         self._swim_force = max((bt.swim_f for bt in types), default=0.0)
+        # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
+        # 排除熔岩类方块（会施加着火 16 的液体不触发浸湿）
+        if self.can_swim:
+            has_lava = any(bt.buff_ids and 16 in bt.buff_ids for bt in types)
+            if not has_lava:
+                self.apply_buff(15, (), 1.0)
         # 体力消耗倍率（取接触方块中最大值）
         self._stamina_mult = max((bt.k_stamina for bt in types), default=1.0)
         # 沉默效果（抑制体力消耗）
