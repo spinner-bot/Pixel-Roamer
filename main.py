@@ -2508,7 +2508,7 @@ while running:
                 # ---- 游泳: W/↑向上，攀爬优先 ----
                 swimming_now = False
                 up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
-                if not player1.is_climbing and player1.can_swim:
+                if not player1.is_climbing and player1.can_swim and not player1.has_buff(58):
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
                         # 游泳上边界仅在主动游泳时生效：人物中心到达水面（半腰位置）
@@ -2559,6 +2559,7 @@ while running:
                         player1.v_y = math.sqrt(2 * grav * h)
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
+                        player1.apply_buff(58, (), 1.2)  # 翻身上岸：短暂免疫游泳判定
                         player1._shore_exit_pending = True
                         player1._shore_exit_timer = 0.28  # 短窗口
                         player1._shore_exit_dir = player1._shore_dir

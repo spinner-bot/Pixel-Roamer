@@ -452,3 +452,11 @@ register(BuffType(id=57, name="cursed", name2="诅咒", category=CAT_NEGATIVE,
     icon=("vector",(G,G),skull()),
     max_stacks=1, tick="cursed",
 ))
+
+# 上岸用：箭头跃出水面图标
+def shore_icon(): return [('fill', (20, 40, 55)), ('rect', 10, 2, 4, 8, (120, 200, 255)), ('rect', 8, 7, 8, 2, (120, 200, 255)), ('rect', 7, 5, 10, 2, (120, 200, 255)), ('rect', 4, 10, 4, 4, (180, 140, 80)), ('rect', 2, 9, 2, 8, (180, 140, 80)), ('rect', 0, 7, 2, 2, (140, 100, 40)), ('rect', 18, 7, 2, 2, (140, 100, 40))]
+register(BuffType(id=58, name="shore_exit", name2="翻身上岸", category=CAT_NEUTRAL,
+    desc="谁也不能阻止我上岸！",
+    icon=("vector",(G,G),shore_icon()),
+    max_stacks=1, tick="shore_exit",
+))
