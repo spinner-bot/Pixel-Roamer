@@ -2549,10 +2549,15 @@ while running:
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
                         # 首次按下：获得刚好上岸的向上速度
+                        # 根据液体空间阻力动态补偿（熔岩等稠液体需要更高初速）
                         import math
                         grav = abs(_current_map.gravity)
+                        liquid_sf = getattr(player1, '_liquid_space_f', 0.985)
+                        base_loss = 1.0 - 0.9965 * 0.985  # 水基线
+                        actual_loss = max(1.0 - 0.9965 * liquid_sf, 0.001)
+                        drag_scale = math.sqrt(actual_loss / base_loss)
                         h = player1._h + 0.3
-                        player1.v_y = math.sqrt(2 * grav * h) * 1.25
+                        player1.v_y = math.sqrt(2 * grav * h) * 1.25 * drag_scale
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
                         player1.apply_buff(58, (), 2.0)

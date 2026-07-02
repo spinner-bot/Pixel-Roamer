@@ -530,8 +530,9 @@ class Creature:
 
         self.can_climb = any(bt.climbable for bt in types)
         self.can_swim = any(bt.swim_f > 0 for bt in types)
-        # 若接触池中有可游泳的方块，取最大浮力
+        # 若接触池中有可游泳的方块，取最大浮力；同时记录最小空间阻力（用于上岸速度补偿）
         self._swim_force = max((bt.swim_f for bt in types), default=0.0)
+        self._liquid_space_f = min((bt.space_f for bt in types if bt.swim_f > 0), default=1.0)
         # 计算攀爬/游泳的上边界（用于到达顶端时停住）
         self._climb_top_y = None
         self._swim_top_y = None
