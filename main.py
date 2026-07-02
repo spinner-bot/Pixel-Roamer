@@ -1357,7 +1357,7 @@ def _run_block_detail(logic_surface, dt):
                         else str(c).replace(" ", "")
                         for c in cmds
                     ) + "]"
-                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 6)
+                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 5)
                 else:
                     flat = "[" + ", ".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
@@ -1685,7 +1685,7 @@ def _run_buff_detail(logic_surface, dt):
                         else str(c).replace(" ", "")
                         for c in cmds
                     ) + "]"
-                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 6)
+                    CFS = 10; CLH = 11; cpch = max(1, avail_w // 5)
                 else:
                     flat = "[" + ", ".join(
                         f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
