@@ -2572,8 +2572,8 @@ while running:
                             player1.v_x = exit_dir * 10.0  # 高速水平推出
                             player1._shore_exit_pending = 'slide'
                     elif _shore_state == 'slide':
-                        if player1.on_ground:
-                            # 水平空气墙：着陆，锁 v_x
+                        if not player1.can_swim:
+                            # 水平空气墙：脚下方块不再是水，已到岸上，锁 v_x
                             player1.v_x = 0.0
                             player1._shore_exit_pending = False
                         elif not player1.has_buff(58):
