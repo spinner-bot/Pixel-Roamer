@@ -2578,14 +2578,14 @@ while running:
         draw_near_death_vignette(logic_surface, player1)
         draw_buff_status(logic_surface, player1, dt)
 
-        # ---- Buff: 失明 (24) 屏幕变亮黄色 ----
-        if player1.has_buff(24):
+        # ---- Buff: 失明 (24) 屏幕变亮黄色（清明 buff 8 免疫） ----
+        if player1.has_buff(24) and not player1.has_buff(8):
             blind_overlay = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
             blind_overlay.fill((255, 240, 80, 140))
             logic_surface.blit(blind_overlay, (0, 0))
 
-        # ---- Buff: 视野受限 (25) 缩小视野半径 ----
-        if player1.has_buff(25):
+        # ---- Buff: 视野受限 (25) 缩小视野半径（清明 buff 8 免疫） ----
+        if player1.has_buff(25) and not player1.has_buff(8):
             vision_radius = 5.0  # 默认半径（格）
             for b in player1.buffs:
                 if b.buff_id == 25 and b.params:
