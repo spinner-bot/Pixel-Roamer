@@ -459,35 +459,43 @@ class Creature:
         self.on_wall_right = False
         self.on_ceiling = False
 
-        # X轴
-        grect.x += self.v_x * dt
-        for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-            if grect.collides(block_grect) and not bt.one_way:
-                if self.v_x > 0:
-                    grect.x = block_grect.x - grect.w
-                    self.on_wall_right = True
-                elif self.v_x < 0:
-                    grect.x = block_grect.x + block_grect.w
-                    self.on_wall_left = True
-                self.v_x = 0
+        # ---- Buff: 幽灵 (48) / 幻影方块效果 ----
+        ghost_mode = self.has_buff(48) or getattr(self, '_phantom_active', False)
 
-        # Y轴
-        grect.y += self.v_y * dt
-        for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-            if grect.collides(block_grect):
-                if bt.one_way:
-                    if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h + 0.001:
+        if not ghost_mode:
+            # X轴
+            grect.x += self.v_x * dt
+            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
+                if grect.collides(block_grect) and not bt.one_way:
+                    if self.v_x > 0:
+                        grect.x = block_grect.x - grect.w
+                        self.on_wall_right = True
+                    elif self.v_x < 0:
+                        grect.x = block_grect.x + block_grect.w
+                        self.on_wall_left = True
+                    self.v_x = 0
+
+            # Y轴
+            grect.y += self.v_y * dt
+            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
+                if grect.collides(block_grect):
+                    if bt.one_way:
+                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h + 0.001:
+                            grect.y = block_grect.y + block_grect.h
+                            self.v_y = 0
+                            self.on_ground = True
+                        continue
+                    if self.v_y < 0:
                         grect.y = block_grect.y + block_grect.h
-                        self.v_y = 0
                         self.on_ground = True
-                    continue
-                if self.v_y < 0:
-                    grect.y = block_grect.y + block_grect.h
-                    self.on_ground = True
-                elif self.v_y > 0:
-                    grect.y = block_grect.y - grect.h
-                    self.on_ceiling = True
-                self.v_y = 0
+                    elif self.v_y > 0:
+                        grect.y = block_grect.y - grect.h
+                        self.on_ceiling = True
+                    self.v_y = 0
+        else:
+            # 幽灵模式：自由穿过固体，但仍受重力影响
+            grect.x += self.v_x * dt
+            grect.y += self.v_y * dt
 
         self.set_from_game_rect(grect)
 
@@ -704,6 +712,9 @@ class Creature:
                         continue
                     # 磁力吸引：向方块中心加速，special_data = 力度
                     force = float(bt.special_data)
+                    # Buff: 磁化 (49) 磁力效果加倍
+                    if self.has_buff(49):
+                        force *= 2.5
                     grect = self.get_game_rect()
                     cx, cy = self._x, self._y + self._h / 2
                     # 在接触池中找到该方块坐标
