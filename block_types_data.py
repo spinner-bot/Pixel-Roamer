@@ -57,7 +57,7 @@ BLOCK_TYPES = {
                                           ("circle", 12, 13, 1, (255, 230, 180)),
                                                                     ])),
     6: BlockType(6, "lava", "熔岩", is_solid=False, damage_ps=45, space_f=0.9, swim_f=3.0, color=(235, 80, 0),
-                 buff_ids=(16,), buff_params_list=((10,),), buff_durations=(10.0,),
+                 buff_ids=(16,), buff_params_list=((5,),), buff_durations=(10.0,),
                  pattern=("vector", (16, 16), [
                      ("fill", (235, 80, 0)),
                      ("rect", 0, 2, 16, 3, (255, 120, 0)),
