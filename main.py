@@ -1328,9 +1328,7 @@ def _run_block_detail(logic_surface, dt):
             gt.draw(logic_surface, f"编码: 矢量  画布: {vw}x{vh}  指令: {n_cmds}",
                                 col3_x + 6, ry, 19, (200, 210, 240), "sans")
             if n_cmds <= 35:
-                # 少量指令：每条一行，中号字体
                 VFS = 16; VLH = 19
-                max_chars = (cw - 14) // 8
                 for j, cmd in enumerate(cmds):
                     cy2 = ry + 28 + j * VLH
                     if cy2 > CONTENT_BOT - 8: break
@@ -1346,18 +1344,16 @@ def _run_block_detail(logic_surface, dt):
                         text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},({c[0]},{c[1]},{c[2]}))"
                     else:
                         text = str(cmd)
-                    if len(text) > max_chars:
-                        text = text[:max_chars-2] + ".."
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
-                # 大量指令：与位图相同的紧凑换行模式
+                # 大量指令：紧凑换行模式（全部显示，不截断）
                 flat = "[" + ", ".join(
                     f"fill({c[1][0]},{c[1][1]},{c[1][2]})" if c[0] == "fill"
                     else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
                     else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
                     else str(c)
-                    for c in cmds[:24]
-                ) + (", ..." if len(cmds) > 24 else "") + "]"
+                    for c in cmds
+                ) + "]"
                 chars_per_line = (cw - 20) // 7
                 bj = 0
                 while bj < len(flat):
@@ -1650,7 +1646,6 @@ def _run_buff_detail(logic_surface, dt):
                                 col3_x + 6, ry, 19, (200, 210, 240), "sans")
             if n_cmds <= 35:
                 VFS = 16; VLH = 19
-                max_chars = (cw - 14) // 8
                 for j, cmd in enumerate(cmds):
                     cy2 = ry + 28 + j * VLH
                     if cy2 > CONTENT_BOT - 8: break
@@ -1666,8 +1661,6 @@ def _run_buff_detail(logic_surface, dt):
                         text = f"circle({cmd[1]},{cmd[2]},{cmd[3]},({c[0]},{c[1]},{c[2]}))"
                     else:
                         text = str(cmd)
-                    if len(text) > max_chars:
-                        text = text[:max_chars-2] + ".."
                     gt.draw(logic_surface, text, col3_x + 6, cy2, VFS, (150, 170, 210), "sans")
             else:
                 flat = "[" + ", ".join(
@@ -1675,8 +1668,8 @@ def _run_buff_detail(logic_surface, dt):
                     else f"rect({c[1]},{c[2]},{c[3]},{c[4]},({c[5][0]},{c[5][1]},{c[5][2]}))" if c[0] == "rect"
                     else f"circle({c[1]},{c[2]},{c[3]},({c[4][0]},{c[4][1]},{c[4][2]}))" if c[0] == "circle"
                     else str(c)
-                    for c in cmds[:24]
-                ) + (", ..." if len(cmds) > 24 else "") + "]"
+                    for c in cmds
+                ) + "]"
                 chars_per_line = (cw - 20) // 7
                 bj = 0
                 while bj < len(flat):
