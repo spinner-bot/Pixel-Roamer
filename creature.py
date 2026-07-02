@@ -440,9 +440,6 @@ class Creature:
             final_fy *= liquid_space
 
         # ---- Buff: 摩擦修正（滑腻42/黏着43/寒冷51） ----
-        buf_friction = self.get_buff_stat("friction", 1.0)
-        final_fx += (1.0 - final_fx) * (1.0 - buf_friction) if buf_friction < 1.0 else final_fx * buf_friction
-        # 更直观的做法：直接用 buff 值乘 friction
         if self.has_buff(42):  # 滑腻：极低摩擦
             final_fx = self.f_x * 0.15
         elif self.has_buff(43):  # 黏着：高摩擦
