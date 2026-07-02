@@ -2525,6 +2525,8 @@ while running:
                                 if not silenced: player1.consume_stamina(21.0 * sm * buf_stam_cost * dt)
                                 swimming_now = True
                             else:
+                                # 体力耗尽：正常下沉
+                                player1.v_y += _current_map.gravity * dt * 0.5
                                 _stamina_flash_timer = _stamina_flash_duration
                         elif player1.stamina >= swim_cost:
                             swim_v = player1._swim_force
@@ -2553,34 +2555,32 @@ while running:
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
                         # 首次按下：获得刚好上岸的向上速度
-                        # 摩擦/水阻每帧衰减 ~3-7%，用倍率补偿（全身高 + 余量，覆盖阻力损耗）
                         import math
                         grav = abs(_current_map.gravity)
-                        h = player1._h + 0.3  # 全高 + 余量，补偿摩擦水阻
+                        h = player1._h + 0.3
                         player1.v_y = math.sqrt(2 * grav * h) * 1.25
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
-                        player1.apply_buff(58, (), 2.0)  # 翻身上岸：免疫游泳判定（覆盖完整弧线）
+                        player1.apply_buff(58, (), 2.0)
                         player1._shore_exit_pending = True
-                        player1._shore_exit_timer = 0.55  # 方向键窗口
                         player1._shore_exit_dir = player1._shore_dir
+                        # 记录水面高度用于后续检测
+                        player1._shore_exit_bound = getattr(player1, '_swim_top_y', None)
                         sfx.play_jump()
                         shore_exit_done = True
                         jump_pressed = False
-                # 上岸后续：窗口内按方向键则获得水平速度
+                # 上岸后续：自动检测离开水面后，向岸方向轻推
                 if getattr(player1, '_shore_exit_pending', False) and not shore_exit_done:
-                    player1._shore_exit_timer -= dt
                     exit_dir = player1._shore_exit_dir
-                    # 检测玩家按了对应方向键
-                    if exit_dir == 1:
-                        want_dir = keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]
-                    else:
-                        want_dir = keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]
-                    if want_dir:
-                        player1.v_x = exit_dir * 2.5  # 水平上岸推力
+                    swim_bound = getattr(player1, '_shore_exit_bound', None)
+                    # 检测人物脚部是否离开水面
+                    feet_y = player1._y - player1._h / 2
+                    if swim_bound is not None and feet_y >= swim_bound:
+                        # 脚已出水，自动向岸方向轻推（刚好脱离水体接触）
+                        player1.v_x = exit_dir * 1.8
                         player1._shore_exit_pending = False
-                    elif player1._shore_exit_timer <= 0:
-                        # 超时未按方向，落回水中
+                    elif not player1.has_buff(58):
+                        # buff 过期仍未出水，落回
                         player1._shore_exit_pending = False
 
                 # ---- 正常跳跃 ----
