@@ -163,7 +163,6 @@ class Creature:
             return 0.0
 
         # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        shield_absorbed = 0.0
         if self.has_buff(29):
             self.hp -= damage
             if self.hp <= 0:
@@ -172,10 +171,8 @@ class Creature:
                 self.on_death()
         elif self.shield > 0:
             if self.shield >= damage:
-                shield_absorbed = damage
                 self.shield -= damage
             else:
-                shield_absorbed = self.shield
                 damage -= self.shield
                 self.shield = 0
                 self.hp -= damage
@@ -190,14 +187,8 @@ class Creature:
                 self.alive = False
                 self.on_death()
 
-        # actual_damage = what was actually dealt (shield absorbed + HP lost)
-        actual_damage = shield_absorbed + (damage if not self.has_buff(29) else
-                        (damage if self.shield <= 0 else damage))
-        # More clear: actual damage is what was applied in total
-        if 'shield_absorbed' in dir() or True:
-            # We track actual_damage as total_raw * multipliers for reflection purposes
-            actual_damage = total_raw * (1 - effective_dr) * weakness_mult * fortify_mult
-        actual_damage = max(0.0, actual_damage)
+        # 实际受到的总伤害（用于荆棘反弹、嗜血回复计算）
+        actual_damage = max(0.0, total_raw * (1 - effective_dr) * weakness_mult * fortify_mult)
 
         # ---- Buff: 荆棘 (10) 反弹伤害 ----
         if source is not None and source.alive and self.has_buff(10) and actual_damage > 0:
