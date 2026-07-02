@@ -2553,15 +2553,16 @@ while running:
                     _shore_pending = getattr(player1, '_shore_exit_pending', False)
                     if not _shore_pending:
                         # 首次按下：获得刚好上岸的向上速度
+                        # 摩擦/水阻每帧衰减 ~3-7%，用倍率补偿（全身高 + 余量，覆盖阻力损耗）
                         import math
                         grav = abs(_current_map.gravity)
-                        h = player1._h / 2 + 0.12  # 半身高 + 余量
-                        player1.v_y = math.sqrt(2 * grav * h)
+                        h = player1._h + 0.3  # 全高 + 余量，补偿摩擦水阻
+                        player1.v_y = math.sqrt(2 * grav * h) * 1.25
                         player1.v_x = 0.0
                         if not silenced: player1.consume_stamina(25)
-                        player1.apply_buff(58, (), 1.2)  # 翻身上岸：短暂免疫游泳判定
+                        player1.apply_buff(58, (), 2.0)  # 翻身上岸：免疫游泳判定（覆盖完整弧线）
                         player1._shore_exit_pending = True
-                        player1._shore_exit_timer = 0.28  # 短窗口
+                        player1._shore_exit_timer = 0.55  # 方向键窗口
                         player1._shore_exit_dir = player1._shore_dir
                         sfx.play_jump()
                         shore_exit_done = True
