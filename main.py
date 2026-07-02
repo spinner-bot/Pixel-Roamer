@@ -1739,6 +1739,7 @@ def _handle_buff_browser_input(event):
 
     if event.key == pygame.K_TAB:
         _dev_buff_browser_mode = "list" if _dev_buff_browser_mode == "grid" else "grid"
+        _dev_buff_browser_scroll = 0
     elif event.key == pygame.K_n:
         _dev_buff_browser_show_name2 = not _dev_buff_browser_show_name2
     elif event.key == pygame.K_RETURN:
@@ -1748,9 +1749,21 @@ def _handle_buff_browser_input(event):
     elif event.key == pygame.K_DOWN:
         _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + (8 if _dev_buff_browser_mode == "grid" else 1))
     elif event.key == pygame.K_LEFT:
-        _dev_buff_browser_cursor = max(0, _dev_buff_browser_cursor - 1)
+        if _dev_buff_browser_mode == "grid":
+            _dev_buff_browser_cursor = max(0, _dev_buff_browser_cursor - 1)
+        else:
+            visible_rows = max(1, (LOGIC_HEIGHT - 56 - 50) // 64)
+            _dev_buff_browser_cursor = max(0, _dev_buff_browser_cursor - visible_rows)
+            _dev_buff_browser_scroll = max(0, _dev_buff_browser_scroll - visible_rows)
     elif event.key == pygame.K_RIGHT:
-        _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + 1)
+        if _dev_buff_browser_mode == "grid":
+            _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + 1)
+        else:
+            visible_rows = max(1, (LOGIC_HEIGHT - 56 - 50) // 64)
+            _dev_buff_browser_cursor = min(len(all_ids) - 1, _dev_buff_browser_cursor + visible_rows)
+            _dev_buff_browser_scroll = min(
+                max(0, len(all_ids) - visible_rows),
+                _dev_buff_browser_scroll + visible_rows)
 
 
 def _get_edit_config(map_id: int) -> dict:
