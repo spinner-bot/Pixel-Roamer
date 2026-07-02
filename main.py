@@ -2474,13 +2474,13 @@ while running:
                 silenced = getattr(player1, '_silenced', False)
                 climb_up_cost = 14.0 * sm * buf_stam_cost * dt + 0.01
                 climb_idle_cost = 3.52 * sm * buf_stam_cost * dt + 0.01
-                # 攀爬上边界：到达梯子顶端则停住，消耗挂住体力
+                # 攀爬上边界：人物中心到达梯子顶端（半腰位置），消耗挂住体力
                 climb_bound = getattr(player1, '_climb_top_y', None)
                 at_climb_bound = False
                 if climb_bound is not None and player1.is_climbing:
-                    player_top = player1._y + player1._h / 2
-                    if player_top >= climb_bound - 0.05:
-                        player1._y = climb_bound - player1._h / 2
+                    # 仅当靠近边界时吸附（防止远处瞬移）
+                    if player1._y >= climb_bound - 0.05 and player1._y <= climb_bound + 2.0:
+                        player1._y = climb_bound  # 中心与方块上边界齐平（半腰）
                         player1.v_y = 0.0
                         at_climb_bound = True
                 if player1.is_climbing and (keys[player1.key_bind["up"]] or keys[pygame.K_UP]):
@@ -2509,13 +2509,12 @@ while running:
                 swimming_now = False
                 up_held = keys[player1.key_bind["up"]] or keys[pygame.K_UP]
                 if not player1.is_climbing and player1.can_swim:
-                    # 游泳上边界：到达水面则停住
+                    # 游泳上边界：人物中心到达水面（半腰位置）
                     swim_bound = getattr(player1, '_swim_top_y', None)
                     at_swim_bound = False
                     if swim_bound is not None:
-                        player_top = player1._y + player1._h / 2
-                        if player_top >= swim_bound - 0.05:
-                            player1._y = swim_bound - player1._h / 2
+                        if player1._y >= swim_bound - 0.05 and player1._y <= swim_bound + 2.0:
+                            player1._y = swim_bound  # 中心与水面齐平（半腰）
                             player1.v_y = 0.0
                             at_swim_bound = True
                     if up_held:

@@ -1180,35 +1180,55 @@ class Player(Creature):
 
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
-        """若可攀爬则进入攀爬中状态，强制居中防止卡墙。"""
-        if self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0:
-            self.is_climbing = True
-            self.v_x = 0.0
-            self.v_y = 0.0
-            self.a_x = 0.0
-            self.a_y = 0.0
-            # 强制居中到最近的 climbable 方块中心
-            if world is not None:
-                grect = self.get_game_rect()
-                cx = grect.x + grect.w / 2
-                best_x = None
-                best_dist = 999.0
-                for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                    for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                        coord = world._wrap_grid_coord(gx, gy)
-                        if coord is None:
-                            continue
-                        bt = world.get_block_type_by_coord(coord[0], coord[1])
-                        if bt.climbable:
-                            block_cx = gx + 0.5
-                            dist = abs(cx - block_cx)
-                            if dist < best_dist:
-                                best_dist = dist
-                                best_x = block_cx
-                if best_x is not None:
-                    self._x = best_x
-            return True
-        return False
+        """若可攀爬则进入攀爬中状态，强制居中防止卡墙。
+        必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
+        if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
+            return False
+        # 垂直邻近判定：人物中心必须在可攀爬方块的垂直跨度内
+        if world is not None:
+            grect = self.get_game_rect()
+            cy = self._y
+            in_range = False
+            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
+                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+                    coord = world._wrap_grid_coord(gx, gy)
+                    if coord is None:
+                        continue
+                    bt = world.get_block_type_by_coord(coord[0], coord[1])
+                    if bt.climbable:
+                        if gy - 0.3 <= cy <= gy + 1 + 0.3:
+                            in_range = True
+                            break
+                if in_range:
+                    break
+            if not in_range:
+                return False
+        self.is_climbing = True
+        self.v_x = 0.0
+        self.v_y = 0.0
+        self.a_x = 0.0
+        self.a_y = 0.0
+        # 强制居中到最近的 climbable 方块中心
+        if world is not None:
+            grect = self.get_game_rect()
+            cx = grect.x + grect.w / 2
+            best_x = None
+            best_dist = 999.0
+            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
+                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+                    coord = world._wrap_grid_coord(gx, gy)
+                    if coord is None:
+                        continue
+                    bt = world.get_block_type_by_coord(coord[0], coord[1])
+                    if bt.climbable:
+                        block_cx = gx + 0.5
+                        dist = abs(cx - block_cx)
+                        if dist < best_dist:
+                            best_dist = dist
+                            best_x = block_cx
+            if best_x is not None:
+                self._x = best_x
+        return True
 
     def stop_climbing(self):
         """主动解除攀爬状态（落下）。"""
