@@ -97,8 +97,11 @@ class BuffInstance:
 
             if isinstance(val, (int, float)):
                 if '%' in after or (before in ('+', '-') and '%' in after):
-                    # 百分比：整数
-                    formatted = f"{val:.0f}"
+                    # 百分比：整数；但小数值保留一位小数（如 0.5%）
+                    if abs(val) < 1 and val != int(val):
+                        formatted = f"{val:.1f}"
+                    else:
+                        formatted = f"{val:.0f}"
                 elif abs(val) >= 100:
                     formatted = f"{val:.0f}"
                 elif abs(val) >= 1:
