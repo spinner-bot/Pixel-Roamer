@@ -1,6 +1,20 @@
 """
 时装系统：玩家皮肤渲染
-每个时装为 16×32 位图（宽×高），统一使用该尺寸设计。
+
+数据格式：
+  每个时装为 16×32 像素位图（宽×高）。
+  像素数据为 list[list[(R,G,B)|0]]，行优先自上而下，0=透明。
+  "frames" 字典按动画状态组织：idle / walk / jump / climb，
+  每个状态是一个帧列表（list of pixel arrays），支持多帧循环动画。
+
+添加新时装：
+  1. 定义颜色常量（建议用前缀区分，如 _ADV_ / _NIN_ / _MAG_）
+  2. 定义 _COSTUME_<NAME> = [[...16 elements...] * 32 rows]
+  3. 调用 register_costume() 或直接在 COSTUMES 字典中添加条目
+
+渲染管线：
+  导入时预渲染所有帧 → 渲染时 scale + cache → blit
+  支持水平翻转（flip_h）和动画状态帧选择（anim_state / anim_frame）
 """
 from __future__ import annotations
 from typing import Tuple, Dict, Optional
@@ -241,6 +255,36 @@ def get_costume(costume_id: int) -> Optional[dict]:
 def list_costumes() -> dict:
     """列出所有时装 {id: name}。"""
     return {c["id"]: c["name"] for c in COSTUMES.values()}
+
+
+def register_costume(costume_id: int, name: str, name_en: str, desc: str,
+                     w: int, h: int, idle_pixels: list) -> None:
+    """运行时注册新时装。立即预渲染所有帧，支持热添加。
+    初始时所有动画状态共用 idle_pixels（后续可手动扩展 frames）。
+    """
+    COSTUMES[costume_id] = {
+        "id": costume_id,
+        "name": name,
+        "name_en": name_en,
+        "desc": desc,
+        "w": w, "h": h,
+        "frames": {
+            "idle":  [idle_pixels],
+            "walk":  [idle_pixels],
+            "jump":  [idle_pixels],
+            "climb": [idle_pixels],
+        },
+    }
+    # 立即预渲染所有帧
+    cdata = COSTUMES[costume_id]
+    cdata["src_frames"] = {}
+    for state, frame_list in cdata["frames"].items():
+        cdata["src_frames"][state] = [
+            _pixels_to_surface(f, w, h) for f in frame_list
+        ]
+    cdata["pixels"] = idle_pixels  # 兼容旧接口
+    # 清除旧缓存以确保新时装可被渲染
+    _costume_cache.clear()
 
 
 def render_costume(surface: pygame.Surface, costume_id: int,
