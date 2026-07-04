@@ -300,6 +300,17 @@ def get_costume_anim_info(costume_id: int) -> Optional[dict]:
     return {state: len(frames) for state, frames in costume["frames"].items()}
 
 
+def clear_costume_cache():
+    """清除缩放缓存。地图切换时调用，不影响预渲染源表面。"""
+    _costume_cache.clear()
+
+
+def get_costume_cache_info() -> dict:
+    """返回缓存诊断信息 {entries, total_pixels}。"""
+    total_pixels = sum(s.get_width() * s.get_height() for s in _costume_cache.values())
+    return {"entries": len(_costume_cache), "total_pixels": total_pixels}
+
+
 # ---- 兼容旧接口：仍可通过 costumes["pixels"] 访问原始像素数据 ----
 for _cid, _cdata in COSTUMES.items():
     _cdata["pixels"] = _cdata["frames"]["idle"][0]  # 指向 idle 第一帧

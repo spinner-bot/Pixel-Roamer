@@ -5,7 +5,9 @@ from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS
 from camera import Camera
 from creature import Player
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
-from costumes import COSTUMES, DEFAULT_COSTUME_ID, list_costumes, render_costume_direct, get_costume_anim_info
+from costumes import (COSTUMES, DEFAULT_COSTUME_ID, list_costumes,
+                       render_costume_direct, get_costume_anim_info,
+                       clear_costume_cache)
 import sfx
 import game_text as gt
 
@@ -184,6 +186,7 @@ def launch_world(map_id: int):
     _play_world_music(_current_map)
 
     _world_initialized = True
+    clear_costume_cache()  # 地图切换时清除缩放缓存，释放 Atlas 内存
 
 
 def _play_world_music(world):
