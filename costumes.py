@@ -190,6 +190,25 @@ COSTUMES: Dict[int, dict] = {
 
 DEFAULT_COSTUME_ID = 1
 
+# ===================== 预渲染辅助 =====================
+def _pixels_to_surface(pixels: list, w: int, h: int) -> pygame.Surface:
+    """将二维像素列表转换为带透明通道的 pygame.Surface。
+    0 (整数零) 表示透明像素。仅在模块导入时调用。"""
+    surf = pygame.Surface((w, h), pygame.SRCALPHA)
+    for row in range(h):
+        row_data = pixels[row]
+        for col in range(w):
+            color = row_data[col]
+            if color != 0:
+                surf.set_at((col, row), color)
+    return surf
+
+
+# ===================== 预渲染所有时装源表面（模块导入时一次性执行） =====================
+for _cid, _cdata in COSTUMES.items():
+    _cdata["src_surf"] = _pixels_to_surface(_cdata["pixels"], _cdata["w"], _cdata["h"])
+
+
 # ===================== 渲染缓存 =====================
 _costume_cache: dict = {}  # (costume_id, w, h) → pygame.Surface
 
@@ -208,7 +227,7 @@ def render_costume(surface: pygame.Surface, costume_id: int,
                    x: float, y: float, w: float, h: float):
     """
     在 surface 的 (x,y,w,h) 矩形区域绘制时装。
-    使用缓存加速重复渲染。
+    使用预渲染源表面 + 缩放缓存加速重复渲染。
     """
     costume = COSTUMES.get(costume_id)
     if costume is None:
@@ -225,18 +244,8 @@ def render_costume(surface: pygame.Surface, costume_id: int,
         surface.blit(_costume_cache[cache_key], (x, y))
         return
 
-    # 创建时装 Surface
-    pixels = costume["pixels"]
-    src_w, src_h = costume["w"], costume["h"]
-    src = pygame.Surface((src_w, src_h), pygame.SRCALPHA)
-
-    for row in range(src_h):
-        for col in range(src_w):
-            color = pixels[row][col]
-            if color != 0:
-                src.set_at((col, row), color)
-
-    # 缩放到目标尺寸
+    # 使用导入时预渲染的源表面，直接缩放（无 set_at 循环）
+    src = costume["src_surf"]
     scaled = pygame.transform.scale(src, (pw, ph))
     _costume_cache[cache_key] = scaled
     surface.blit(scaled, (x, y))
