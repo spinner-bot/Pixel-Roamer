@@ -224,10 +224,12 @@ def list_costumes() -> dict:
 
 
 def render_costume(surface: pygame.Surface, costume_id: int,
-                   x: float, y: float, w: float, h: float):
+                   x: float, y: float, w: float, h: float,
+                   flip_h: bool = False):
     """
     在 surface 的 (x,y,w,h) 矩形区域绘制时装。
     使用预渲染源表面 + 缩放缓存加速重复渲染。
+    flip_h=True 时水平翻转（用于角色朝向）。
     """
     costume = COSTUMES.get(costume_id)
     if costume is None:
@@ -241,19 +243,21 @@ def render_costume(surface: pygame.Surface, costume_id: int,
 
     cache_key = (costume_id, pw, ph)
     if cache_key in _costume_cache:
-        surface.blit(_costume_cache[cache_key], (x, y))
-        return
+        scaled = _costume_cache[cache_key]
+    else:
+        # 使用导入时预渲染的源表面，直接缩放（无 set_at 循环）
+        src = costume["src_surf"]
+        scaled = pygame.transform.scale(src, (pw, ph))
+        _costume_cache[cache_key] = scaled
 
-    # 使用导入时预渲染的源表面，直接缩放（无 set_at 循环）
-    src = costume["src_surf"]
-    scaled = pygame.transform.scale(src, (pw, ph))
-    _costume_cache[cache_key] = scaled
+    if flip_h:
+        scaled = pygame.transform.flip(scaled, True, False)
     surface.blit(scaled, (x, y))
 
 
 def render_costume_direct(surface: pygame.Surface, costume_id: int,
-                          dest_rect: pygame.Rect):
+                          dest_rect: pygame.Rect, flip_h: bool = False):
     """直接在目标矩形上绘制时装。"""
     render_costume(surface, costume_id,
                    dest_rect.x, dest_rect.y,
-                   dest_rect.w, dest_rect.h)
+                   dest_rect.w, dest_rect.h, flip_h=flip_h)

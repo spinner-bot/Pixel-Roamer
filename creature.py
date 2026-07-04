@@ -1191,6 +1191,7 @@ class Player(Creature):
         self.fly_mode = False
         self.fly_speed = 8.0
         self.costume_id = 1      # 默认时装ID
+        self.facing_right = True  # 朝向（True=右, False=左），用于时装渲染翻转
         # 存储基础值，供 speed/jump 特效临时修改后恢复
         self._base_v_max = v_max
         self._base_v_jump = v_jump

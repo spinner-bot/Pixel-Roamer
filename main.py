@@ -2530,6 +2530,13 @@ while running:
                     fly_dx -= 1.0
                 if keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]:
                     fly_dx += 1.0
+                # 飞行模式朝向（与地面移动逻辑一致）
+                if (keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]) and \
+                   not (keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]):
+                    player1.facing_right = True
+                elif (keys[player1.key_bind["left"]] or keys[pygame.K_LEFT]) and \
+                     not (keys[player1.key_bind["right"]] or keys[pygame.K_RIGHT]):
+                    player1.facing_right = False
                 if keys[player1.key_bind["up"]] or keys[pygame.K_UP]:
                     fly_dy += 1.0
                 if keys[player1.key_bind["down"]] or keys[pygame.K_DOWN]:
@@ -2560,6 +2567,11 @@ while running:
                         dir_x -= 0.35
                     if right_key:
                         dir_x += 0.35
+                    # 更新角色朝向（仅单方向按键时更新，同时按住保持原朝向）
+                    if right_key and not left_key:
+                        player1.facing_right = True
+                    elif left_key and not right_key:
+                        player1.facing_right = False
                 player1.move(dir_x)
 
                 # ---- 攀爬: W/↑向上 ----
@@ -2717,7 +2729,8 @@ while running:
         sw = grect.w * cam_scale
         sh = grect.h * cam_scale
         player_screen_rect = pygame.Rect(sx, sy_top, sw, sh)
-        render_costume_direct(logic_surface, player1.costume_id, player_screen_rect)
+        render_costume_direct(logic_surface, player1.costume_id, player_screen_rect,
+                              flip_h=not player1.facing_right)
 
         # ---- Buff 视线效果（只影响世界/生物，不影响 UI） ----
         # Buff: 发光 (50) 自身发光照亮周围
