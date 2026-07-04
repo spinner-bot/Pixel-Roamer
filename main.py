@@ -5,7 +5,7 @@ from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS
 from camera import Camera
 from creature import Player
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
-from costumes import COSTUMES, DEFAULT_COSTUME_ID, list_costumes, render_costume_direct
+from costumes import COSTUMES, DEFAULT_COSTUME_ID, list_costumes, render_costume_direct, get_costume_anim_info
 import sfx
 import game_text as gt
 
@@ -2729,8 +2729,35 @@ while running:
         sw = grect.w * cam_scale
         sh = grect.h * cam_scale
         player_screen_rect = pygame.Rect(sx, sy_top, sw, sh)
+
+        # ---- 动画状态判定 ----
+        if player1.fly_mode:
+            anim_state = "idle"
+        elif player1.is_climbing:
+            anim_state = "climb"
+        elif not player1.on_ground:
+            anim_state = "jump"
+        elif abs(player1.v_x) > 0.3:
+            anim_state = "walk"
+        else:
+            anim_state = "idle"
+
+        # 推进动画计时器并循环帧
+        info = get_costume_anim_info(player1.costume_id)
+        if info and anim_state in info:
+            frame_count = info[anim_state]
+            if frame_count > 1:
+                player1._anim_timer += dt
+                if player1._anim_timer >= 0.15:  # ~6.7 fps 行走周期
+                    player1._anim_timer -= 0.15
+                    player1._anim_frame = (player1._anim_frame + 1) % frame_count
+        else:
+            player1._anim_frame = 0
+
         render_costume_direct(logic_surface, player1.costume_id, player_screen_rect,
-                              flip_h=not player1.facing_right)
+                              flip_h=not player1.facing_right,
+                              anim_state=anim_state,
+                              anim_frame=player1._anim_frame)
 
         # ---- Buff 视线效果（只影响世界/生物，不影响 UI） ----
         # Buff: 发光 (50) 自身发光照亮周围
