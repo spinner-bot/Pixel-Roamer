@@ -213,9 +213,53 @@ def invalidate_cache():
     _cache.clear()
 
 
+# ===================== 音效池化（防止瞬间大量播放导致爆音） =====================
+# 每个优先级的最大并发数（基于声道区间大小）
+_MAX_CONCURRENT = {
+    Priority.CRITICAL: 2,   # 关键音效最多 2 个同时
+    Priority.GAMEPLAY:  3,  # 玩法音效最多 3 个同时
+    Priority.UI:        2,  # UI 音效最多 2 个同时
+}
+# 每个优先级的播放时间戳队列（ms，基于 pygame.time.get_ticks）
+_play_timestamps: dict[int, list[int]] = {
+    Priority.CRITICAL: [],
+    Priority.GAMEPLAY:  [],
+    Priority.UI:        [],
+}
+# 各优先级时间窗口（ms）：超过此时间的记录视为过期
+_POOL_WINDOW_MS = {
+    Priority.CRITICAL: 800,   # death/win 持续时间较长
+    Priority.GAMEPLAY:  400,  # jump/hurt/pickup/checkpoint
+    Priority.UI:        100,  # click 极短
+}
+# 错误抑制：每种错误类型只记录一次（避免刷屏）
+_error_once: set[str] = set()
+
+
+def _check_pool(priority: int) -> bool:
+    """检查音效池是否允许播放。清理过期记录后，若未达上限则记录并返回 True。"""
+    now = pygame.time.get_ticks()
+    window = _POOL_WINDOW_MS.get(priority, 300)
+    cap = _MAX_CONCURRENT.get(priority, 3)
+    stamps = _play_timestamps.get(priority)
+    if stamps is None:
+        return True  # 未知优先级，允许通过
+
+    # 清理过期
+    cutoff = now - window
+    while stamps and stamps[0] < cutoff:
+        stamps.pop(0)
+
+    if len(stamps) >= cap:
+        return False  # 池满，丢弃
+
+    stamps.append(now)
+    return True
+
+
 # ===================== 声道管理 + 播放 =====================
 def _acquire_channel(priority: int) -> pygame.mixer.Channel | None:
-    """在指定优先级区间内找一个空闲声道，必要时抢占最早播放的。"""
+    """在指定优先级区间内找一个空闲声道。CRITICAL 可抢占，其他优先级不抢占（由池化控制并发）。"""
     if not _channels:
         return None
     start, end = _CHANNEL_TIERS.get(priority, (0, len(_channels)))
@@ -228,43 +272,49 @@ def _acquire_channel(priority: int) -> pygame.mixer.Channel | None:
         if ch is not None and not ch.get_busy():
             return ch
 
-    # 2) 关键优先级不允许抢占，下降到低优先级区间借用
+    # 2) CRITICAL：可以抢占 GAMEPLAY 区间
     if priority == Priority.CRITICAL:
-        # 尝试抢占 GAMEPLAY 区间
-        for i in range(*_CHANNEL_TIERS[Priority.GAMEPLAY]):
+        gs, ge = _CHANNEL_TIERS[Priority.GAMEPLAY]
+        for i in range(gs, min(ge, len(_channels))):
             ch = _channels[i]
             if ch is not None:
                 ch.stop()
                 return ch
-        # 还是没找到，返回第一个可用声道
+        # 最后手段：任意可用声道
         for ch in _channels:
             if ch is not None:
                 return ch
         return None
 
-    # 3) 玩法/UI 优先级：抢占同区间内最早播放的声道
-    for i in range(start, end):
-        ch = _channels[i]
-        if ch is not None:
-            ch.stop()
-            return ch
-
+    # 3) GAMEPLAY / UI：不抢占，由 _check_pool 控制已有上限
     return None
 
 
 def _play_sfx_at(sound: pygame.mixer.Sound, volume: float, priority: int):
-    """通过声道管理播放一个音效（当前无空间定位，pan 留空）。"""
+    """通过声道管理播放一个音效，含池化限制和错误恢复。"""
     if _muted or _mixer_failed:
         return
     _ensure_init()
+
+    # 池化检查：同一优先级并发过多则丢弃（CRITICAL 始终放行）
+    if priority != Priority.CRITICAL and not _check_pool(priority):
+        return
+
     ch = _acquire_channel(priority)
     if ch is None:
         return
     try:
         ch.set_volume(volume)
         ch.play(sound)
-    except pygame.error:
-        pass  # 声道无效或 Sound 已失效，静默跳过
+    except pygame.error as e:
+        # 记录一次错误类型，抑制重复日志
+        err_key = str(e)[:80]
+        if err_key not in _error_once:
+            _error_once.add(err_key)
+            # 静默降级，不打印到 stdout；调试时可取消注释：
+            # print(f"[sfx] play error: {e}")
+    except Exception:
+        pass  # 防御性兜底
 
 
 def _play_sfx(sound: pygame.mixer.Sound, volume: float, priority: int):
