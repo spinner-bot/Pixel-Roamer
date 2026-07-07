@@ -177,3 +177,173 @@ def _render_note(freq: float, duration_sec: float,
         v = int(MAX_AMP * vol * env * raw)
         buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
     return sfx._make(buf, RATE)
+
+
+# ===================== 音乐模式数据结构 =====================
+class MusicPattern:
+    """一段音乐的模式定义（纯数据，无音频）。"""
+    __slots__ = ("tempo_bpm", "total_beats", "tracks")
+    def __init__(self, tempo_bpm: float, total_beats: float, tracks: list):
+        self.tempo_bpm = tempo_bpm        # 每分钟节拍数
+        self.total_beats = total_beats    # 总节拍数（决定循环长度）
+        self.tracks = tracks              # list[list[MusicEvent]]
+        # 每个 track 是 MusicEvent 列表
+        # MusicEvent = (beat_offset, note, duration_beats, wave, velocity)
+
+    @property
+    def duration_sec(self) -> float:
+        """整个循环的时长（秒）。"""
+        return self.total_beats * 60.0 / self.tempo_bpm
+
+
+# ===================== 模式 → 音频预渲染引擎 =====================
+def _render_track_to_buffer(track: list, tempo_bpm: float, total_beats: float,
+                            master_vol: float = 0.3) -> bytearray | None:
+    """
+    将单条轨道渲染为 PCM 字节缓冲区。
+    轨道元素格式：(beat_offset, note, duration_beats, wave, velocity)
+      - note: 音名字符串 "C4" 或休止符 "R"
+      - velocity: 0~1 力度
+    """
+    if not track:
+        return None
+
+    duration_sec = total_beats * 60.0 / tempo_bpm
+    total_samples = int(RATE * duration_sec)
+    if total_samples <= 0:
+        return None
+
+    # 16-bit mono PCM 混合缓冲区（int 类型，累加后钳位）
+    mix = [0] * total_samples
+
+    beat_dur = 60.0 / tempo_bpm  # 每拍秒数
+
+    for evt in track:
+        beat_offset = evt[0]
+        note = evt[1]
+        duration_beats = evt[2]
+        wave = evt[3] if len(evt) > 3 else "sine"
+        velocity = evt[4] if len(evt) > 4 else 0.7
+
+        if note == "R" or note == "":
+            continue  # 休止符
+
+        freq = _freq(note)
+        note_dur = duration_beats * beat_dur
+        start_sample = int(beat_offset * beat_dur * RATE)
+        note_samples = int(note_dur * RATE)
+        end_sample = min(start_sample + note_samples, total_samples)
+
+        if start_sample >= total_samples:
+            continue
+
+        attack_samples = int(RATE * 0.008)  # 8ms fast attack
+        release_samples = int(RATE * 0.04)  # 40ms release
+
+        for i in range(start_sample, end_sample):
+            j = i - start_sample
+            t = i / RATE
+
+            # 包络
+            if j < attack_samples:
+                env = j / max(1, attack_samples)
+            elif j > note_samples - release_samples:
+                env = max(0.0, (note_samples - j) / max(1, release_samples))
+            else:
+                env = 1.0
+
+            # 波形
+            if wave == "square":
+                raw = 1.0 if math.sin(2 * math.pi * freq * t) >= 0 else -1.0
+            elif wave == "triangle":
+                raw = 2.0 * abs(2.0 * (freq * t - math.floor(freq * t + 0.5))) - 1.0
+            elif wave == "noise":
+                raw = sfx._noise_sample(i + int(freq * 1000))
+            elif wave == "saw":
+                raw = 2.0 * (freq * t - math.floor(freq * t + 0.5))
+            else:
+                raw = math.sin(2 * math.pi * freq * t)
+
+            mix[i] += int(MAX_AMP * master_vol * velocity * env * raw)
+
+    # 钳位到 16-bit 范围
+    buf = bytearray()
+    for v in mix:
+        v = max(-32768, min(32767, v))
+        buf.extend(struct.pack('<h', v))
+    return buf
+
+
+def _render_pattern(pattern: MusicPattern, master_vol: float = 0.5) -> pygame.mixer.Sound:
+    """
+    将 MusicPattern 预渲染为单个可循环 Sound。
+    多轨并行混合到单个缓冲区。
+    """
+    total_samples = int(RATE * pattern.duration_sec)
+    if total_samples <= 0:
+        return pygame.mixer.Sound(buffer=bytes(0))
+
+    # 多轨累计混合
+    mix = [0] * total_samples
+    beat_dur = 60.0 / pattern.tempo_bpm
+
+    for track in pattern.tracks:
+        for evt in track:
+            beat_offset = evt[0]
+            note = evt[1]
+            duration_beats = evt[2]
+            wave = evt[3] if len(evt) > 3 else "sine"
+            velocity = evt[4] if len(evt) > 4 else 0.7
+
+            if note == "R" or note == "":
+                continue
+
+            freq = _freq(note)
+            note_dur = duration_beats * beat_dur
+            start_sample = int(beat_offset * beat_dur * RATE)
+            note_samples = int(note_dur * RATE)
+            end_sample = min(start_sample + note_samples, total_samples)
+
+            if start_sample >= total_samples:
+                continue
+
+            attack_samples = int(RATE * 0.008)
+            release_samples = int(RATE * min(0.06, note_dur * 0.3))
+
+            for i in range(start_sample, end_sample):
+                j = i - start_sample
+                t = i / RATE
+
+                if j < attack_samples:
+                    env = j / max(1, attack_samples)
+                elif j > note_samples - release_samples:
+                    env = max(0.0, (note_samples - j) / max(1, release_samples))
+                else:
+                    env = 1.0
+
+                if wave == "square":
+                    raw = 1.0 if math.sin(2 * math.pi * freq * t) >= 0 else -1.0
+                elif wave == "triangle":
+                    raw = 2.0 * abs(2.0 * (freq * t - math.floor(freq * t + 0.5))) - 1.0
+                elif wave == "noise":
+                    raw = sfx._noise_sample(i + int(freq * 1000))
+                elif wave == "saw":
+                    raw = 2.0 * (freq * t - math.floor(freq * t + 0.5))
+                else:
+                    raw = math.sin(2 * math.pi * freq * t)
+
+                mix[i] += int(MAX_AMP * master_vol * velocity * env * raw)
+
+    # 钳位 + 输出
+    buf = bytearray()
+    for v in mix:
+        v = max(-32768, min(32767, v))
+        buf.extend(struct.pack('<h', v))
+    return sfx._make(buf, RATE)
+
+
+def _render_and_register(key: str, pattern: MusicPattern, master_vol: float = 0.5):
+    """渲染模式并注册到缓存。"""
+    sound = _render_pattern(pattern, master_vol)
+    register(key, sound)
+    return sound
