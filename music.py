@@ -605,6 +605,99 @@ def _pattern_adventure() -> MusicPattern:
     return MusicPattern(tempo, total_beats, [melody, bass, drums])
 
 
+def _pattern_victory() -> MusicPattern:
+    """胜利号角：C大调上行琶音，4拍不循环（~2.4秒 @100BPM）。"""
+    tempo = 100.0
+    total_beats = 4.0
+
+    # 号角旋律（正弦 + 三角叠加）
+    fanfare = [
+        (0.0, "C4", 0.25, "sine", 0.50),
+        (0.25, "E4", 0.25, "sine", 0.55),
+        (0.5, "G4", 0.25, "sine", 0.60),
+        (0.75, "C5", 0.5, "sine", 0.65),
+        (1.25, "E5", 0.5, "sine", 0.70),
+        (1.75, "G5", 0.5, "sine", 0.75),
+        (2.25, "C6", 1.0, "sine", 0.80),
+        (3.25, "R", 0.75, "sine", 0),
+    ]
+
+    # 和声（三角波）
+    harmony = [
+        (0.0, "C3", 2.0, "triangle", 0.30),
+        (0.0, "G3", 2.0, "triangle", 0.25),
+        (0.0, "C4", 2.0, "triangle", 0.20),
+        (2.0, "G2", 2.0, "triangle", 0.30),
+        (2.0, "B3", 2.0, "triangle", 0.25),
+        (2.0, "D4", 2.0, "triangle", 0.20),
+    ]
+
+    return MusicPattern(tempo, total_beats, [fanfare, harmony])
+
+
+def _pattern_danger() -> MusicPattern:
+    """危险/低血量主题：紧张低频脉冲，16拍循环（~12秒 @80BPM）。"""
+    tempo = 80.0
+    total_beats = 16.0
+
+    # 紧张脉冲（方波低音，短促）
+    pulse = [
+        (0.0, "C2", 0.5, "square", 0.30),
+        (0.5, "R", 0.5, "square", 0),
+        (1.0, "C2", 0.5, "square", 0.30),
+        (1.5, "R", 0.5, "square", 0),
+        (2.0, "G2", 0.5, "square", 0.28),
+        (2.5, "R", 0.5, "square", 0),
+        (3.0, "G2", 0.5, "square", 0.28),
+        (3.5, "R", 0.5, "square", 0),
+        # 升高
+        (4.0, "D2", 0.5, "square", 0.32),
+        (4.5, "R", 0.25, "square", 0),
+        (4.75, "D2", 0.25, "square", 0.30),
+        (5.25, "R", 0.25, "square", 0),
+        (5.5, "D2", 0.5, "square", 0.32),
+        (6.0, "R", 0.5, "square", 0),
+        (7.0, "D#2", 0.5, "square", 0.30),
+        (7.5, "R", 0.5, "square", 0),
+        # 紧张持续
+        (8.0, "C2", 0.25, "square", 0.35),
+        (8.25, "C2", 0.25, "square", 0.30),
+        (8.5, "C2", 0.25, "square", 0.35),
+        (8.75, "R", 0.25, "square", 0),
+        (9.0, "G2", 0.25, "square", 0.32),
+        (9.25, "G2", 0.25, "square", 0.28),
+        (9.5, "R", 0.5, "square", 0),
+        (10.0, "F2", 0.5, "square", 0.30),
+        (10.5, "R", 0.5, "square", 0),
+        (11.0, "E2", 0.5, "square", 0.32),
+        (11.5, "R", 0.5, "square", 0),
+        # 下行收束
+        (12.0, "D#2", 0.5, "square", 0.30),
+        (12.5, "R", 0.5, "square", 0),
+        (13.0, "D2", 0.5, "square", 0.28),
+        (13.5, "R", 0.5, "square", 0),
+        (14.0, "C2", 0.5, "square", 0.30),
+        (14.5, "R", 0.5, "square", 0),
+        (15.0, "G1", 1.0, "square", 0.25),
+    ]
+
+    # 高频紧张音色（噪声 + 高音）
+    tension = [
+        (0.0, "3000", 0.12, "noise", 0.08),
+        (2.0, "3000", 0.12, "noise", 0.08),
+        (4.5, "3000", 0.08, "noise", 0.10),
+        (5.5, "3000", 0.08, "noise", 0.10),
+        (8.0, "3000", 0.08, "noise", 0.12),
+        (8.25, "3000", 0.08, "noise", 0.10),
+        (8.5, "3000", 0.08, "noise", 0.12),
+        (10.0, "3000", 0.08, "noise", 0.10),
+        (12.0, "3000", 0.12, "noise", 0.08),
+        (14.0, "3000", 0.12, "noise", 0.08),
+    ]
+
+    return MusicPattern(tempo, total_beats, [pulse, tension])
+
+
 # ===================== 主题曲渲染 =====================
 def _init_all_tracks():
     """渲染所有主题曲目到缓存（首次调用时自动执行）。"""
@@ -612,6 +705,10 @@ def _init_all_tracks():
         _render_and_register("home", _pattern_home(), master_vol=0.45)
     if "adventure" not in _music_cache:
         _render_and_register("adventure", _pattern_adventure(), master_vol=0.40)
+    if "victory" not in _music_cache:
+        _render_and_register("victory", _pattern_victory(), master_vol=0.50)
+    if "danger" not in _music_cache:
+        _render_and_register("danger", _pattern_danger(), master_vol=0.35)
 
 
 # 改写 play() 使其自动初始化曲目
