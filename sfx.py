@@ -134,11 +134,24 @@ def _make(buf: bytearray, rate: int) -> pygame.mixer.Sound:
     return pygame.mixer.Sound(buffer=bytes(buf))
 
 
+def _antialias_filter(raw: float, state: float, freq: float) -> tuple[float, float]:
+    """1-pole 低通滤波器，根据频率自适应降混叠。返回 (filtered, new_state)。"""
+    # 截止频率随基频升高而降低，抑制 Nyquist 以上的谐波
+    # 在 RATE=22050 时，Nyquist = 11025 Hz
+    cutoff = min(8000.0, freq * 4.5)  # 自适应截止频率
+    coeff = cutoff / (cutoff + RATE)   # 1-pole 系数
+    # 对于方波/三角波，增强滤波（更多谐波需要更强衰减）
+    filtered = state + coeff * (raw - state)
+    return filtered, filtered
+
+
 def _slide_sound(freq_start: float, freq_end: float, duration: float,
                   vol: float = 0.35, wave: str = "sine") -> pygame.mixer.Sound:
-    """频率滑音（正弦/方波/三角波可选）。"""
+    """频率滑音（正弦/方波/三角波可选，非正弦波含抗混叠滤波）。"""
     n = int(RATE * duration)
     buf = bytearray()
+    filter_state = 0.0  # 滤波器状态
+    use_filter = wave in ("square", "triangle", "noise")
     for i in range(n):
         t = i / RATE
         progress = i / max(1, n - 1)
@@ -152,6 +165,8 @@ def _slide_sound(freq_start: float, freq_end: float, duration: float,
             raw = _noise_sample(i + int(freq_start * 1000))
         else:
             raw = math.sin(2 * math.pi * freq * t)
+        if use_filter:
+            raw, filter_state = _antialias_filter(raw, filter_state, freq)
         v = int(MAX_AMP * vol * env * raw)
         buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
     return _make(buf, RATE)
@@ -172,17 +187,19 @@ def _pop_sound(freq: float, duration: float = 0.06, vol: float = 0.3) -> pygame.
     return _make(buf, RATE)
 
 
-# ---- 确定性噪声生成器（LCG，替代 hash()） ----
+# ---- 确定性噪声生成器（xorshift32，替代 hash()） ----
 _NOISE_SEED = 42
 
 
 def _noise_sample(step: int) -> float:
-    """确定性 PRNG 噪声采样，返回 [-1, 1]。"""
+    """确定性 PRNG 噪声采样（xorshift32），返回 [-1, 1]。"""
     global _NOISE_SEED
-    s = (_NOISE_SEED + step * 2654435761) & 0xFFFFFFFF
-    s = (s ^ (s >> 13)) & 0xFFFFFFFF
-    s = (s * 1103515245 + 12345) & 0x7FFFFFFF
-    return (s / 0x7FFFFFFF) * 2.0 - 1.0
+    # 混合 step 与种子，xorshift32 算法
+    s = (_NOISE_SEED ^ (step * 2654435761)) & 0xFFFFFFFF
+    s ^= (s << 13) & 0xFFFFFFFF
+    s ^= (s >> 17) & 0xFFFFFFFF
+    s ^= (s << 5) & 0xFFFFFFFF
+    return (s / 0xFFFFFFFF) * 2.0 - 1.0
 
 
 def _envelope(i: int, n: int) -> float:
