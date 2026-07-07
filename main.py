@@ -2901,7 +2901,7 @@ while running:
         # 右上角 FPS
         fps_text = f"FPS {int(clock.get_fps())}"
         gt.draw(logic_surface, fps_text,
-                           LOGIC_WIDTH - 16, 8, 18,
+                           LOGIC_WIDTH - 16, 8, 21,
                            (255, 255, 255), "mono", shadow=True, right_x=True)
         # 坐标（FPS 下方）
         px, py = player1.get_center()
