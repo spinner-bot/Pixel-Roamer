@@ -6,28 +6,69 @@ import struct, math
 import pygame
 
 _initialized = False
-_sfx_volume = 0.8      # 音效音量 (0~1)
-_music_volume = 0.5    # 音乐音量 (0~1) — 预留
-_cache: dict = {}       # 缓存已生成的 Sound
+_mixer_failed = False       # 混音器初始化失败标记
+_mixer_retry_time = 0.0     # 下次重试时间（秒，基于 pygame.time.get_ticks）
+_mixer_retry_interval = 60_000  # 重试间隔（毫秒）
+
+_sfx_volume = 0.8           # 音效音量 (0~1)
+_music_volume = 0.5         # 音乐音量 (0~1)
+_muted = False              # 全局静音标记
+_cache: dict = {}           # 缓存已生成的 Sound
 
 RATE = 22050
 MAX_AMP = 32767
 
+# ---- 各音效基准音量（与 _sfx_volume 相乘得到最终音量） ----
+_BASE_VOLUMES = {
+    "jump":       0.38,
+    "pickup":     0.25,
+    "pickup2":    0.20,
+    "hurt":       0.25,
+    "death":      0.30,
+    "checkpoint": 0.30,
+    "win":        0.30,
+    "click":      0.06,
+}
+
+
+# ===================== 初始化 =====================
+def _ensure_init():
+    """惰性初始化混音器（幂等：已初始化且参数匹配则跳过）。"""
+    global _initialized, _mixer_failed, _mixer_retry_time
+    if _mixer_failed:
+        now = pygame.time.get_ticks()
+        if now < _mixer_retry_time:
+            return
+        _mixer_failed = False  # 允许重试
+
+    if _initialized:
+        return
+
+    try:
+        current = pygame.mixer.get_init()
+        if current is None:
+            # 尚未初始化
+            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
+        elif current == (RATE, -16, 1):
+            # 已初始化且参数匹配，无需操作
+            pass
+        else:
+            # 参数不匹配，重建
+            pygame.mixer.quit()
+            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
+        _initialized = True
+    except pygame.error:
+        _initialized = True  # 避免死循环重试
+        _mixer_failed = True
+        _mixer_retry_time = pygame.time.get_ticks() + _mixer_retry_interval
+
 
 def init():
-    """初始化混音器。"""
-    global _initialized
-    if not _initialized:
-        try:
-            if pygame.mixer.get_init():
-                pygame.mixer.quit()
-            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
-            _initialized = True
-        except pygame.error:
-            # 音频设备不可用，静默失败
-            _initialized = True  # 避免反复重试
+    """公开初始化入口（兼容旧接口），内部幂等。"""
+    _ensure_init()
 
 
+# ===================== 音量 & 静音 =====================
 def set_sfx_volume(v: float):
     global _sfx_volume
     _sfx_volume = max(0.0, min(1.0, v))
@@ -44,6 +85,24 @@ def get_sfx_volume() -> float:
 
 def get_music_volume() -> float:
     return _music_volume
+
+
+def set_mute(on: bool):
+    """设置全局静音。"""
+    global _muted
+    _muted = on
+
+
+def toggle_mute():
+    """切换全局静音状态，返回切换后的状态。"""
+    global _muted
+    _muted = not _muted
+    return _muted
+
+
+def is_muted() -> bool:
+    """返回当前是否静音。"""
+    return _muted
 
 
 # ===================== 波形生成工具 =====================
@@ -72,7 +131,7 @@ def _slide_sound(freq_start: float, freq_end: float, duration: float,
         elif wave == "triangle":
             raw = 2.0 * abs(2.0 * (freq * t - math.floor(freq * t + 0.5))) - 1.0
         elif wave == "noise":
-            raw = (hash((int(t * RATE), freq_start)) % 2000 - 1000) / 1000.0
+            raw = _noise_sample(i + int(freq_start * 1000))
         else:
             raw = math.sin(2 * math.pi * freq * t)
         v = int(MAX_AMP * vol * env * raw)
@@ -81,25 +140,49 @@ def _slide_sound(freq_start: float, freq_end: float, duration: float,
 
 
 def _pop_sound(freq: float, duration: float = 0.06, vol: float = 0.3) -> pygame.mixer.Sound:
-    """短促单音（带快速衰减）。"""
+    """短促单音（带快速衰减 + 1ms 淡入防噼啪声）。"""
     n = int(RATE * duration)
     buf = bytearray()
+    fade_in_samples = int(RATE * 0.001)  # 1ms 淡入
     for i in range(n):
         t = i / RATE
-        env = max(0, 1.0 - i / max(1, n - 1)) ** 1.5
+        # 淡入
+        attack = min(1.0, i / max(1, fade_in_samples)) if fade_in_samples > 0 else 1.0
+        # 衰减包络
+        decay = max(0, 1.0 - i / max(1, n - 1)) ** 1.5
+        env = attack * decay
         v = int(MAX_AMP * vol * env * math.sin(2 * math.pi * freq * t))
         buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
     return _make(buf, RATE)
 
 
+# ---- 确定性噪声生成器（LCG，替代 hash()） ----
+_NOISE_SEED = 42
+
+
+def _noise_sample(step: int) -> float:
+    """确定性 PRNG 噪声采样，返回 [-1, 1]。"""
+    global _NOISE_SEED
+    # 混合 step 到种子中
+    s = (_NOISE_SEED + step * 2654435761) & 0xFFFFFFFF
+    s = (s ^ (s >> 13)) & 0xFFFFFFFF
+    s = (s * 1103515245 + 12345) & 0x7FFFFFFF
+    return (s / 0x7FFFFFFF) * 2.0 - 1.0
+
+
 def _envelope(i: int, n: int) -> float:
-    """ADSR简易包络：快起→保持→衰减。"""
+    """ADSR简易包络：快起→保持→衰减→1ms淡出防噼啪声。"""
     attack = int(RATE * 0.005)
     release = int(RATE * 0.03)
+    fade_out = int(RATE * 0.001)  # 1ms 最后淡出
     if i < attack:
         return i / attack
     elif i > n - release:
-        return max(0, (n - i) / release)
+        r = max(0, (n - i) / release)
+        # 末尾极短淡出
+        if i > n - fade_out:
+            r *= (n - i) / fade_out
+        return r
     return 1.0
 
 
@@ -110,45 +193,56 @@ def _cached(key: str, factory) -> pygame.mixer.Sound:
     return _cache[key]
 
 
+def invalidate_cache():
+    """清空音效缓存（切换音频设备后使用）。"""
+    global _cache
+    _cache.clear()
+
+
+# ===================== 内部播放辅助 =====================
+def _play_sfx(key: str, s: pygame.mixer.Sound, base_vol: float):
+    """统一的音效播放入口：检查静音/混音器状态，设音量并播放。"""
+    if _muted or _mixer_failed:
+        return
+    _ensure_init()
+    s.set_volume(_sfx_volume * base_vol)
+    s.play()
+
+
 # ===================== 游戏音效 =====================
 def play_jump():
     """跳跃：短上升滑音。"""
-    init()
     s = _cached("jump", lambda: _slide_sound(250, 650, 0.10, 0.18))
-    s.set_volume(_sfx_volume * 2.1)
-    s.play()
+    _play_sfx("jump", s, _BASE_VOLUMES["jump"])
 
 
 def play_pickup():
     """拾取积分：双音和弦。"""
-    init()
     s = _cached("pickup", lambda: _pop_sound(880, 0.06, 0.25))
     s2 = _cached("pickup2", lambda: _pop_sound(1320, 0.08, 0.2))
-    s.set_volume(_sfx_volume)
-    s2.set_volume(_sfx_volume * 0.8)
+    if _muted or _mixer_failed:
+        return
+    _ensure_init()
+    s.set_volume(_sfx_volume * _BASE_VOLUMES["pickup"])
+    s2.set_volume(_sfx_volume * _BASE_VOLUMES["pickup2"])
     s.play()
     s2.play()
 
 
 def play_hurt():
     """受伤：低频脉冲。"""
-    init()
     s = _cached("hurt", lambda: _slide_sound(120, 60, 0.15, 0.25, "square"))
-    s.set_volume(_sfx_volume)
-    s.play()
+    _play_sfx("hurt", s, _BASE_VOLUMES["hurt"])
 
 
 def play_death():
     """死亡：下降滑音。"""
-    init()
     s = _cached("death", lambda: _slide_sound(400, 50, 0.35, 0.30))
-    s.set_volume(_sfx_volume)
-    s.play()
+    _play_sfx("death", s, _BASE_VOLUMES["death"])
 
 
 def play_checkpoint():
     """检查点：三连上行音。"""
-    init()
     def _cp():
         n = int(RATE * 0.25)
         buf = bytearray()
@@ -163,13 +257,11 @@ def play_checkpoint():
                 buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
         return _make(buf, RATE)
     s = _cached("checkpoint", _cp)
-    s.set_volume(_sfx_volume)
-    s.play()
+    _play_sfx("checkpoint", s, _BASE_VOLUMES["checkpoint"])
 
 
 def play_win():
     """通关：四音上行琶音。"""
-    init()
     def _win():
         n = int(RATE * 0.5)
         buf = bytearray()
@@ -184,13 +276,10 @@ def play_win():
                 buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
         return _make(buf, RATE)
     s = _cached("win", _win)
-    s.set_volume(_sfx_volume)
-    s.play()
+    _play_sfx("win", s, _BASE_VOLUMES["win"])
 
 
 def play_click():
     """UI点击：极短高频。"""
-    init()
     s = _cached("click", lambda: _pop_sound(1000, 0.03, 0.12))
-    s.set_volume(_sfx_volume * 0.5)
-    s.play()
+    _play_sfx("click", s, _BASE_VOLUMES["click"])

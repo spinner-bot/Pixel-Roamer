@@ -835,42 +835,40 @@ def handle_setting_input(event):
     if event.type != pygame.KEYDOWN:
         return
 
-    from sfx import play_click
-
     if event.key == pygame.K_UP:
         _setting_selected_row = (_setting_selected_row - 1) % _SETTING_ROWS
         _setting_fps_just_autodetected = False
-        play_click()
+        sfx.play_click()
     elif event.key == pygame.K_DOWN:
         _setting_selected_row = (_setting_selected_row + 1) % _SETTING_ROWS
         _setting_fps_just_autodetected = False
-        play_click()
+        sfx.play_click()
     elif event.key == pygame.K_LEFT:
         if _setting_selected_row == 0:
             _setting_selected_fps_idx = (_setting_selected_fps_idx - 1) % len(_FPS_OPTIONS)
             _setting_fps_just_autodetected = False
             current_fps = _FPS_OPTIONS[_setting_selected_fps_idx]
-            play_click()
+            sfx.play_click()
         elif _setting_selected_row == 2:
             sfx.set_sfx_volume(sfx.get_sfx_volume() - 0.05)
-            play_click()
+            sfx.play_click()
         elif _setting_selected_row == 3:
             sfx.set_music_volume(sfx.get_music_volume() - 0.05)
             pygame.mixer.music.set_volume(sfx.get_music_volume())
-            play_click()
+            sfx.play_click()
     elif event.key == pygame.K_RIGHT:
         if _setting_selected_row == 0:
             _setting_selected_fps_idx = (_setting_selected_fps_idx + 1) % len(_FPS_OPTIONS)
             _setting_fps_just_autodetected = False
             current_fps = _FPS_OPTIONS[_setting_selected_fps_idx]
-            play_click()
+            sfx.play_click()
         elif _setting_selected_row == 2:
             sfx.set_sfx_volume(sfx.get_sfx_volume() + 0.05)
-            play_click()
+            sfx.play_click()
         elif _setting_selected_row == 3:
             sfx.set_music_volume(sfx.get_music_volume() + 0.05)
             pygame.mixer.music.set_volume(sfx.get_music_volume())
-            play_click()
+            sfx.play_click()
     elif event.key == pygame.K_RETURN:
         if _setting_selected_row == 1:
             detected = _run_fps_benchmark()
