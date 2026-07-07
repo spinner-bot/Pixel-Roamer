@@ -14,9 +14,11 @@ _sfx_volume = 0.8           # 音效音量 (0~1)
 _music_volume = 0.5         # 音乐音量 (0~1)
 _muted = False              # 全局静音标记
 _cache: dict = {}           # 缓存已生成的 Sound
+_stereo = False             # 当前是否为立体声模式（成功初始化后设置）
 
 RATE = 22050
 MAX_AMP = 32767
+OUTPUT_CHANNELS = 2         # 立体声输出（2 = 左右声道）
 
 # ---- 各音效基准音量（与 _sfx_volume 相乘得到最终音量） ----
 _BASE_VOLUMES = {
@@ -47,8 +49,8 @@ _channels: list = []              # [pygame.mixer.Channel or None, ...]
 
 
 def _ensure_init():
-    """惰性初始化混音器 + 声道分配（幂等）。"""
-    global _initialized, _mixer_failed, _mixer_retry_time, _channels
+    """惰性初始化混音器 + 声道分配（幂等，立体声输出）。"""
+    global _initialized, _mixer_failed, _mixer_retry_time, _channels, _stereo
     if _mixer_failed:
         now = pygame.time.get_ticks()
         if now < _mixer_retry_time:
@@ -60,13 +62,17 @@ def _ensure_init():
 
     try:
         current = pygame.mixer.get_init()
+        expected = (RATE, -16, OUTPUT_CHANNELS)
         if current is None:
-            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
-        elif current == (RATE, -16, 1):
+            pygame.mixer.init(frequency=RATE, size=-16, channels=OUTPUT_CHANNELS, buffer=512)
+            _stereo = True
+        elif current == expected:
+            _stereo = True
             pass
         else:
             pygame.mixer.quit()
-            pygame.mixer.init(frequency=RATE, size=-16, channels=1, buffer=512)
+            pygame.mixer.init(frequency=RATE, size=-16, channels=OUTPUT_CHANNELS, buffer=512)
+            _stereo = True
 
         # 分配专用声道
         num_ch = pygame.mixer.get_num_channels()  # 默认 8
@@ -274,6 +280,30 @@ def _check_pool(priority: int) -> bool:
     return True
 
 
+# ===================== 空间音频 =====================
+def _stereo_volume(master_vol: float, pan: float) -> tuple[float, float]:
+    """将主音量 + 声像 (-1=左, 0=中, 1=右) 转换为 (左音量, 右音量)。"""
+    pan = max(-1.0, min(1.0, pan))
+    left = master_vol * (1.0 - max(0.0, pan))   # pan>0 时减少左声道
+    right = master_vol * (1.0 + min(0.0, pan))  # pan<0 时减少右声道
+    return (max(0.0, left), max(0.0, right))
+
+
+def _distance_attenuation(distance: float, max_distance: float = 16.0,
+                          min_distance: float = 1.0, curve: str = "linear") -> float:
+    """距离衰减系数 0~1。"""
+    if distance <= min_distance:
+        return 1.0
+    if distance >= max_distance:
+        return 0.0
+    t = (distance - min_distance) / (max_distance - min_distance)
+    if curve == "inverse":
+        return 1.0 / (1.0 + t * 4.0)
+    elif curve == "exp":
+        return math.exp(-t * 3.0)
+    return 1.0 - t  # linear (default)
+
+
 # ===================== 声道管理 + 播放 =====================
 def _acquire_channel(priority: int) -> pygame.mixer.Channel | None:
     """在指定优先级区间内找一个空闲声道。CRITICAL 可抢占，其他优先级不抢占（由池化控制并发）。"""
@@ -307,8 +337,9 @@ def _acquire_channel(priority: int) -> pygame.mixer.Channel | None:
     return None
 
 
-def _play_sfx_at(sound: pygame.mixer.Sound, volume: float, priority: int):
-    """通过声道管理播放一个音效，含池化限制和错误恢复。"""
+def _play_sfx_at(sound: pygame.mixer.Sound, volume: float, priority: int,
+                 pan: float = 0.0):
+    """通过声道管理播放一个音效，含池化限制、立体声定位和错误恢复。"""
     if _muted or _mixer_failed:
         return
     _ensure_init()
@@ -321,22 +352,73 @@ def _play_sfx_at(sound: pygame.mixer.Sound, volume: float, priority: int):
     if ch is None:
         return
     try:
-        ch.set_volume(volume)
+        if _stereo:
+            lv, rv = _stereo_volume(volume, pan)
+            ch.set_volume(lv, rv)
+        else:
+            ch.set_volume(volume)
         ch.play(sound)
     except pygame.error as e:
-        # 记录一次错误类型，抑制重复日志
         err_key = str(e)[:80]
         if err_key not in _error_once:
             _error_once.add(err_key)
-            # 静默降级，不打印到 stdout；调试时可取消注释：
-            # print(f"[sfx] play error: {e}")
     except Exception:
-        pass  # 防御性兜底
+        pass
 
 
 def _play_sfx(sound: pygame.mixer.Sound, volume: float, priority: int):
-    """便捷封装（兼容 _play_sfx 旧签名 + 新增 priority）。"""
-    _play_sfx_at(sound, volume, priority)
+    """便捷封装（居中播放，兼容旧签名）。"""
+    _play_sfx_at(sound, volume, priority, pan=0.0)
+
+
+# ===================== 空间音效公开 API =====================
+# sound_key → (cache_key, priority, base_vol_key) 映射
+_SPATIAL_SOUNDS = {
+    "jump":       ("jump",       Priority.GAMEPLAY, "jump"),
+    "pickup":     ("pickup",     Priority.GAMEPLAY, "pickup"),
+    "hurt":       ("hurt",       Priority.GAMEPLAY, "hurt"),
+    "death":      ("death",      Priority.CRITICAL, "death"),
+    "checkpoint": ("checkpoint", Priority.GAMEPLAY, "checkpoint"),
+    "win":        ("win",        Priority.CRITICAL, "win"),
+    "click":      ("click",      Priority.UI,       "click"),
+}
+
+
+def play_sfx_at(sound_key: str, x: float, y: float,
+                listener_x: float, listener_y: float,
+                max_distance: float = 16.0):
+    """
+    在指定位置播放空间音效（自动计算声像和距离衰减）。
+    现有 play_* 函数均居中播放，此 API 供需要空间感的场景使用。
+    """
+    info = _SPATIAL_SOUNDS.get(sound_key)
+    if info is None:
+        return
+    cache_key, priority, vol_key = info
+
+    s = _cache.get(cache_key)
+    if s is None:
+        return  # 音效尚未缓存（首次调用 play_* 后才可用）
+
+    dx = x - listener_x
+    dy = y - listener_y
+    distance = math.sqrt(dx * dx + dy * dy)
+
+    # 距离衰减
+    atten = _distance_attenuation(distance, max_distance)
+    if atten <= 0.0:
+        return
+
+    volume = _sfx_volume * _BASE_VOLUMES[vol_key] * atten
+
+    # 水平声像（垂直方向不参与定位）
+    if max_distance > 0 and distance > 0.01:
+        pan = dx / (max_distance * 0.5)
+        pan = max(-1.0, min(1.0, pan))
+    else:
+        pan = 0.0
+
+    _play_sfx_at(s, volume, priority, pan=pan)
 
 
 # ===================== 游戏音效 =====================

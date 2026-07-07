@@ -17,7 +17,7 @@ GAME_NAME_EN = "Pixel Roamer"
 GAME_DEV = "浪兮"
 
 # ===================== 初始化 =====================
-pygame.mixer.pre_init(22050, -16, 1, 512)  # 音频预初始化
+pygame.mixer.pre_init(22050, -16, 2, 512)  # 音频预初始化（立体声）
 pygame.init()
 
 # 禁用IME中文输入法，避免字母键轮询失效
