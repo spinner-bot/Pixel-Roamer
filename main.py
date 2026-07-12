@@ -102,6 +102,9 @@ def set_page_no_launch(page_id: int):
     global page, _page_need_launch
     page = page_id
     _page_need_launch = False
+    # 恢复目标页面的背景音乐
+    if page_id == PAGE_HOME:
+        music.play("home", fade_in_ms=800)
 
 
 def set_page_by_name(name: str, **kwargs):

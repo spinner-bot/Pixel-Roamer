@@ -258,7 +258,7 @@ def run_home_page(surf: pygame.Surface, dt: float, logic_w: int, logic_h: int):
 
     # ---- 底部信息 ----
     bottom_y = logic_h - 60
-    gt.draw(surf, "↑ ↓ 选择   Enter 确认   Esc 返回", logic_w // 2, bottom_y, 18,
+    gt.draw(surf, "↑ ↓ / 1-4 选择   Enter 确认   Esc 开发者界面", logic_w // 2, bottom_y, 18,
             (130, 140, 170), "mono", center_x=True)
     gt.draw(surf, f"v1.0 — 开发者：浪兮", logic_w // 2, bottom_y + 24, 14,
             (90, 95, 115), "mono", center_x=True)
@@ -295,6 +295,18 @@ def handle_home_input(event) -> int | None:
         return action
     elif event.key == pygame.K_ESCAPE:
         return None  # 主页不响应 Esc（由调用方处理）
+    # 数字快捷键 1-4
+    elif event.key == pygame.K_1:
+        return _MENU_ITEMS[0][0]
+    elif event.key == pygame.K_2:
+        return _MENU_ITEMS[1][0]
+    elif event.key == pygame.K_3:
+        return _MENU_ITEMS[2][0]
+    elif event.key == pygame.K_4:
+        action = _MENU_ITEMS[3][0]
+        if action == MENU_QUIT:
+            _quit_requested = True
+        return action
 
     return None
 
