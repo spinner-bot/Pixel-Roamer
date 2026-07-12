@@ -74,10 +74,17 @@ _page_launch_kwargs = {}
 
 _world_initialized = False  # 跟踪世界是否已初始化（从设置返回时跳过重新初始化）
 
+# 页面过渡动画
+_transition_alpha = 255      # 当前黑屏透明度 (0~255)，启动时全黑
+_transition_target = 0        # 目标透明度
+_transition_speed = 800       # 过渡速度（alpha/秒）
+_next_page_after_transition = None  # 过渡完成后切换的页面
+
 
 def set_page(page_id: int, **kwargs):
     """设置当前页面，立即执行对应启动器。"""
     global page, _page_need_launch, _page_launch_kwargs
+    global _transition_alpha, _transition_target
     # 页面切换时管理音乐
     if page_id == PAGE_INIT:
         music.stop(fade_out_ms=400)  # 加载界面静音
@@ -95,6 +102,14 @@ def set_page(page_id: int, **kwargs):
     _page_launch_kwargs = kwargs
     _page_need_launch = False
     _dispatch_launcher()
+    _trigger_fade_in()
+
+
+def _trigger_fade_in():
+    """触发页面淡入过渡效果。"""
+    global _transition_alpha, _transition_target
+    _transition_alpha = 200
+    _transition_target = 0
 
 
 def set_page_no_launch(page_id: int):
@@ -105,6 +120,7 @@ def set_page_no_launch(page_id: int):
     # 恢复目标页面的背景音乐
     if page_id == PAGE_HOME:
         music.play("home", fade_in_ms=800)
+    _trigger_fade_in()
 
 
 def set_page_by_name(name: str, **kwargs):
@@ -3014,9 +3030,22 @@ while running:
         hp.run_home_page(logic_surface, dt, LOGIC_WIDTH, LOGIC_HEIGHT)
 
     # ----- 最终输出 -----
+    # 页面过渡淡入效果
+    if _transition_alpha > _transition_target:
+        _transition_alpha = max(_transition_target, _transition_alpha - _transition_speed * dt)
+    elif _transition_alpha < _transition_target:
+        _transition_alpha = min(_transition_target, _transition_alpha + _transition_speed * dt)
+
     win_surface.fill((0, 0, 0))
     scaled_surf = pygame.transform.scale(logic_surface, (int(LOGIC_WIDTH * scale), int(LOGIC_HEIGHT * scale)))
     win_surface.blit(scaled_surf, (draw_offset_x, draw_offset_y))
+
+    # 过渡黑幕覆盖
+    if _transition_alpha > 1:
+        overlay = pygame.Surface((win_w, win_h), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, int(_transition_alpha)))
+        win_surface.blit(overlay, (0, 0))
+
     pygame.display.flip()
 
 pygame.quit()
