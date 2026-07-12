@@ -2093,7 +2093,7 @@ def run_dev_page(dt: float):
                              LOGIC_HEIGHT - 24, (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
-                             f"当前选中: ID={_dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览",
+                             f"当前选中: ID={_dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览  Esc主页",
                              LOGIC_HEIGHT - 50, (140, 180, 255))
 
 
@@ -2356,6 +2356,9 @@ def handle_dev_input(event):
     elif event.key == pygame.K_r:
         _init_dev_selection()
         # [log removed]
+    elif event.key == pygame.K_ESCAPE:
+        # 返回主页
+        set_page(PAGE_HOME)
 
 
 # ===================== 页面启动器注册表 =====================
