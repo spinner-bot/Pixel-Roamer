@@ -20,6 +20,8 @@ _logo_scale = 1.0
 _logo_bounce_t = 0.0
 _dots = 0                      # 加载动画点数
 _dot_timer = 0.0
+_status_index = 0               # 当前加载状态消息索引
+_status_timer = 0.0             # 状态消息切换计时器
 
 # 提示文字列表
 TIPS = [
@@ -35,6 +37,18 @@ TIPS = [
     "提示：按 F1/F2 调整帧率上限",
     "提示：探索地图边界，发现隐藏区域",
     "提示：游泳时按空格键可快速上岸",
+]
+
+# 加载状态消息（根据进度阶段切换）
+LOADING_STATUSES = [
+    "正在初始化引擎...",
+    "正在加载字体资源...",
+    "正在加载地图数据...",
+    "正在加载音效系统...",
+    "正在合成背景音乐...",
+    "正在加载角色时装...",
+    "正在生成粒子效果...",
+    "即将完成...",
 ]
 
 # 粒子颜色
@@ -61,6 +75,8 @@ def init_loading_screen(logic_w: int, logic_h: int):
     _logo_bounce_t = 0.0
     _dots = 0
     _dot_timer = 0.0
+    _status_index = 0
+    _status_timer = 0.0
 
     # 生成背景粒子（缓慢上升的光点）
     _particles = []
@@ -228,13 +244,20 @@ def run_loading_screen(surf: pygame.Surface, dt: float, logic_w: int, logic_h: i
     gt.draw(surf, pct_text, logic_w // 2, bar_y + bar_h + 8, 24,
             (200, 200, 220), "mono", center_x=True, shadow=True)
 
-    # ---- 加载动画点 ----
+    # ---- 加载状态消息 ----
+    _status_timer += dt
+    # 根据进度确定当前状态消息
+    target_status_idx = min(len(LOADING_STATUSES) - 1, int(_progress * len(LOADING_STATUSES)))
+    if target_status_idx != _status_index and _status_timer > 0.3:
+        _status_index = target_status_idx
+        _status_timer = 0.0
+
     _dot_timer += dt
     if _dot_timer > 0.4:
         _dot_timer = 0.0
         _dots = (_dots + 1) % 4
-    dots_text = "加载中" + "." * _dots
-    gt.draw(surf, dots_text, logic_w // 2, bar_y + bar_h + 36, 18,
+    status_text = LOADING_STATUSES[_status_index] + "." * _dots
+    gt.draw(surf, status_text, logic_w // 2, bar_y + bar_h + 36, 18,
             (150, 150, 180), "sans", center_x=True)
 
     # ---- 提示文字（淡入淡出） ----
