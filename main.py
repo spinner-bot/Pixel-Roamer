@@ -11,6 +11,8 @@ from costumes import (COSTUMES, DEFAULT_COSTUME_ID, list_costumes,
 import sfx
 import music
 import game_text as gt
+import loading_screen as ls
+import home_page as hp
 
 # ===================== 游戏元信息 =====================
 GAME_NAME_CN = "像素漫游者"
@@ -66,7 +68,7 @@ PAGE_WORLD = 3
 PAGE_INFINITE_WORLD = 4
 PAGE_SETTING = 5
 
-page = PAGE_DEV  # 默认进入开发者界面
+page = PAGE_INIT  # 启动时进入加载界面
 _page_need_launch = True
 _page_launch_kwargs = {}
 
@@ -77,7 +79,9 @@ def set_page(page_id: int, **kwargs):
     """设置当前页面，立即执行对应启动器。"""
     global page, _page_need_launch, _page_launch_kwargs
     # 页面切换时管理音乐
-    if page_id == PAGE_HOME:
+    if page_id == PAGE_INIT:
+        music.stop(fade_out_ms=400)  # 加载界面静音
+    elif page_id == PAGE_HOME:
         music.play("home", fade_in_ms=1000)
     elif page_id == PAGE_WORLD:
         pass  # 音乐由 launch_world 处理
@@ -141,6 +145,17 @@ def _init_dev_selection():
     ids = sorted(maps_dict.keys())
     if _dev_selected_id not in ids:
         _dev_selected_id = ids[0]
+
+
+def launch_init():
+    """启动器：加载界面。初始化粒子、星空和加载进度。"""
+    ls.init_loading_screen(LOGIC_WIDTH, LOGIC_HEIGHT)
+
+
+def launch_home():
+    """启动器：游戏主页。初始化粒子、星空和菜单动画。"""
+    hp.init_home_page(LOGIC_WIDTH, LOGIC_HEIGHT)
+    # 音乐由 set_page 的 PAGE_HOME 分支统一管理，此处不重复播放
 
 
 def launch_dev():
@@ -2346,8 +2361,8 @@ def handle_dev_input(event):
 # ===================== 页面启动器注册表 =====================
 _LAUNCHERS = {
     PAGE_DEV: launch_dev,
-    PAGE_INIT: launch_default,
-    PAGE_HOME: launch_default,
+    PAGE_INIT: launch_init,
+    PAGE_HOME: launch_home,
     PAGE_WORLD: launch_world,
     PAGE_INFINITE_WORLD: launch_default,
     PAGE_SETTING: launch_setting,
@@ -2461,10 +2476,58 @@ while running:
                         player1.stop_climbing()
         elif page == PAGE_SETTING:
             handle_setting_input(event)
-        else:
-            # 占位页面：Enter 返回 dev
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-                set_page(PAGE_DEV)
+        elif page == PAGE_INIT:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+                    if ls.is_loading_complete():
+                        set_page(PAGE_HOME)
+                elif event.key == pygame.K_ESCAPE:
+                    # Esc 跳过加载直接进主页
+                    ls.mark_loading_complete()
+                    set_page(PAGE_HOME)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                if ls.is_loading_complete():
+                    set_page(PAGE_HOME)
+        elif page == PAGE_HOME:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    set_page(PAGE_DEV)
+                elif event.key == pygame.K_q:
+                    # Q 键快速退出
+                    pygame.event.post(pygame.event.Event(pygame.QUIT))
+                else:
+                    action = hp.handle_home_input(event)
+                    if action == hp.MENU_START:
+                        set_page(PAGE_DEV)
+                    elif action == hp.MENU_SETTINGS:
+                        _setting_from_page = PAGE_HOME
+                        _setting_selected_row = 0
+                        _setting_fps_just_autodetected = False
+                        set_page(PAGE_SETTING)
+                    elif action == hp.MENU_DEV:
+                        set_page(PAGE_DEV)
+                    elif action == hp.MENU_QUIT:
+                        pygame.event.post(pygame.event.Event(pygame.QUIT))
+            elif event.type == pygame.MOUSEMOTION:
+                hp.handle_home_mouse(
+                    event.pos, LOGIC_WIDTH, LOGIC_HEIGHT, scale,
+                    draw_offset_x, draw_offset_y)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                hp.handle_home_mouse(
+                    event.pos, LOGIC_WIDTH, LOGIC_HEIGHT, scale,
+                    draw_offset_x, draw_offset_y)
+                action = hp.get_selected_action()
+                if action == hp.MENU_START:
+                    set_page(PAGE_DEV)
+                elif action == hp.MENU_SETTINGS:
+                    _setting_from_page = PAGE_HOME
+                    _setting_selected_row = 0
+                    _setting_fps_just_autodetected = False
+                    set_page(PAGE_SETTING)
+                elif action == hp.MENU_DEV:
+                    set_page(PAGE_DEV)
+                elif action == hp.MENU_QUIT:
+                    pygame.event.post(pygame.event.Event(pygame.QUIT))
 
     # ----- 页面逻辑 & 渲染 -----
     if page == PAGE_DEV:
@@ -2929,14 +2992,20 @@ while running:
     elif page == PAGE_SETTING:
         run_setting_page(dt)
 
-    else:
-        # 占位页面
-        logic_surface.fill((20, 20, 40))
-        page_names = {0: "dev", 1: "init", 2: "home", 3: "world", 4: "infinite_world", 5: "setting"}
-        draw_text_center(logic_surface, FONT40,
-                         f"=== {page_names.get(page, '?')} 页面 ===", 400, (150, 150, 150))
-        draw_text_center(logic_surface, FONT24,
-                         "（尚未实现，按 Enter 返回开发者界面）", 460, (120, 120, 140))
+    elif page == PAGE_INIT:
+        # ---- 加载界面 ----
+        # 模拟加载进度（根据经过时间）
+        import time as _time
+        load_elapsed = _time.time() - ls._start_time
+        simulated_progress = min(1.0, load_elapsed / 2.8)  # 约2.8秒加载完成
+        ls.set_progress(simulated_progress)
+        if simulated_progress >= 1.0 and not ls.is_loading_complete():
+            ls.mark_loading_complete()
+        ls.run_loading_screen(logic_surface, dt, LOGIC_WIDTH, LOGIC_HEIGHT)
+
+    elif page == PAGE_HOME:
+        # ---- 游戏主页 ----
+        hp.run_home_page(logic_surface, dt, LOGIC_WIDTH, LOGIC_HEIGHT)
 
     # ----- 最终输出 -----
     win_surface.fill((0, 0, 0))
