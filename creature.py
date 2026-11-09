@@ -1200,10 +1200,8 @@ class Player(Creature):
 
     def on_death(self):
         super().on_death()
-        saved_score = self.score       # 保留分数
-        self.reset(*self.spawn_pos)
-        self.score = saved_score
-        self.stamina = self.stamina_max
+        # Leave the player dead so the game loop can apply the configured
+        # respawn limit and run the death transition exactly once.
 
     def consume_stamina(self, cost: float) -> bool:
         if self.stamina >= cost:
