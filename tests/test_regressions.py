@@ -31,6 +31,30 @@ class LoadingScreenTests(unittest.TestCase):
                          len(loading_screen.LOADING_STATUSES) - 1)
 
 
+class MusicTests(unittest.TestCase):
+    def test_first_track_request_is_non_blocking_and_renders_on_demand(self):
+        import music
+
+        music.stop(fade_out_ms=0)
+        music.invalidate_cache()
+        start = time.perf_counter()
+        music.play("home", fade_in_ms=0, loops=0)
+        request_duration = time.perf_counter() - start
+
+        self.assertLess(request_duration, 0.75)
+        self.assertNotIn("adventure", music._music_cache)
+        deadline = time.monotonic() + 10
+        while "home" not in music._music_cache and time.monotonic() < deadline:
+            music.update()
+            time.sleep(0.01)
+        music.update()
+        self.assertIn("home", music._music_cache)
+        self.assertEqual(music.get_current_track(), "home")
+        self.assertNotIn("adventure", music._music_cache)
+        music.stop(fade_out_ms=0)
+        music.invalidate_cache()
+
+
 class PlayerDeathTests(unittest.TestCase):
     def make_player(self):
         from creature import Player
