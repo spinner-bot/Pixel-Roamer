@@ -13,6 +13,7 @@ import music
 import game_text as gt
 import loading_screen as ls
 import home_page as hp
+from game_state import resolve_player_death
 
 # ===================== 游戏元信息 =====================
 GAME_NAME_CN = "像素漫游者"
@@ -153,6 +154,7 @@ _game_over = False
 _game_win = False
 _game_timer = 0.0             # 累计游戏时间（秒）
 _player_lives_left = 0        # 剩余复活次数
+_infinite_lives = True        # lives=0 时无限复活；有限次数耗尽后保持为 False
 
 
 def _init_dev_selection():
@@ -219,11 +221,12 @@ def launch_world(map_id: int):
     player1.costume_id = cfg.get("costume_id", DEFAULT_COSTUME_ID)
 
     # 初始化游戏状态
-    global _game_over, _game_win, _game_timer, _player_lives_left
+    global _game_over, _game_win, _game_timer, _player_lives_left, _infinite_lives
     _game_over = False
     _game_win = False
     _game_timer = 0.0
     _player_lives_left = getattr(_current_map, 'lives', 0)
+    _infinite_lives = _player_lives_left == 0
 
     # 播放地图专属音乐
     _play_world_music(_current_map)
@@ -2580,18 +2583,8 @@ while running:
 
         # 死亡处理（限复活次数）
         if not player1.alive and not _game_over and not _game_win:
-            if _player_lives_left > 0:
-                if _player_lives_left <= 0:
-                    _game_over = True
-                else:
-                    player1.alive = True
-                    player1.hp = player1.hp_max
-                    player1.clear_buffs()  # 清除所有状态
-                    player1.apply_buff(36, (), 3.0)  # 3秒完全免疫
-            # lives==0 表示无限复活，on_death 已经重置了
-            elif _player_lives_left == 0:
-                player1.clear_buffs()
-                player1.apply_buff(36, (), 3.0)
+            _player_lives_left, _game_over = resolve_player_death(
+                player1, _player_lives_left, _infinite_lives)
 
         # ---- Buff 系统 tick ----
         player1.tick_buffs(dt)
@@ -2622,7 +2615,7 @@ while running:
         reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8) and not iron_will
 
         # ---- 移动物理（游戏结束/胜利时冻结）----
-        if not _game_over and not _game_win and not stunned:
+        if not _game_over and not _game_win and player1.alive and not stunned:
             if player1.fly_mode:
                 # ---- 飞行模式 ----
                 fly_dx, fly_dy = 0.0, 0.0
