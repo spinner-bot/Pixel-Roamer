@@ -368,7 +368,7 @@ def generate():
     rect(w, Z10+331, 78, 18, 14, 97, hollow=True)
     # 终点信标——挑高台上
     platform(w, Z10+337, 83, 6, 68)
-    p(w, Z10+340, 85, 303); p(w, Z10+340, 86, 303)  # end_beacon 双层
+    p(w, Z10+340, 88, 303)  # end_beacon：放在终点传送门装饰上方，避免被覆盖
     # 光柱
     for dy in range(-5, 6):
         p(w, Z10+336, 85+dy, 66); p(w, Z10+344, 85+dy, 66)
