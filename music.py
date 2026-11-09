@@ -8,6 +8,7 @@ from __future__ import annotations
 import struct, math
 import pygame
 import sfx
+from concurrent.futures import ThreadPoolExecutor
 
 # ---- 音乐专用状态 ----
 _music_initialized = False
@@ -15,6 +16,9 @@ _current_track: str | None = None     # 当前播放的曲目 key
 _current_sound: pygame.mixer.Sound | None = None  # 当前播放的 Sound 对象
 _music_volume = 0.5                   # 音乐音量 (0~1)
 _music_cache: dict[str, pygame.mixer.Sound] = {}  # 曲目缓存
+_music_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="music-render")
+_pending_tracks = {}
+_requested_track = None
 
 
 def _ensure_init():
@@ -60,7 +64,8 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
 
 def stop(fade_out_ms: int = 500):
     """停止当前音乐，可选淡出。"""
-    global _current_track, _current_sound
+    global _current_track, _current_sound, _requested_track
+    _requested_track = None
     if _current_sound is not None:
         try:
             if fade_out_ms > 0:
@@ -699,16 +704,12 @@ def _pattern_danger() -> MusicPattern:
 
 
 # ===================== 主题曲渲染 =====================
-def _init_all_tracks():
-    """渲染所有主题曲目到缓存（首次调用时自动执行）。"""
-    if "home" not in _music_cache:
-        _render_and_register("home", _pattern_home(), master_vol=0.45)
-    if "adventure" not in _music_cache:
-        _render_and_register("adventure", _pattern_adventure(), master_vol=0.40)
-    if "victory" not in _music_cache:
-        _render_and_register("victory", _pattern_victory(), master_vol=0.50)
-    if "danger" not in _music_cache:
-        _render_and_register("danger", _pattern_danger(), master_vol=0.35)
+_TRACK_BUILDERS = {
+    "home": (_pattern_home, 0.45),
+    "adventure": (_pattern_adventure, 0.40),
+    "victory": (_pattern_victory, 0.50),
+    "danger": (_pattern_danger, 0.35),
+}
 
 
 # 改写 play() 使其自动初始化曲目
@@ -716,6 +717,42 @@ _original_play = play
 
 
 def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
-    """播放指定曲目（自动渲染、缓存、无缝循环、淡入）。"""
-    _init_all_tracks()
-    _original_play(track_key, fade_in_ms, loops)
+    """按需合成曲目；首次合成放到后台，避免阻塞游戏帧。"""
+    global _requested_track
+    if track_key in _music_cache:
+        _requested_track = None
+        _original_play(track_key, fade_in_ms, loops)
+        return
+
+    builder = _TRACK_BUILDERS.get(track_key)
+    if builder is None:
+        _original_play(track_key, fade_in_ms, loops)
+        return
+
+    _ensure_init()
+    if track_key not in _pending_tracks:
+        pattern_factory, volume = builder
+        pattern = pattern_factory()
+        _pending_tracks[track_key] = _music_executor.submit(
+            _render_pattern, pattern, volume)
+    _requested_track = (track_key, fade_in_ms, loops)
+
+
+def update():
+    """Finish background synthesis and start the most recently requested track."""
+    global _requested_track
+
+    for key, future in list(_pending_tracks.items()):
+        if not future.done():
+            continue
+        try:
+            _music_cache[key] = future.result()
+        except Exception:
+            if _requested_track and _requested_track[0] == key:
+                _requested_track = None
+        del _pending_tracks[key]
+
+    if _requested_track and _requested_track[0] in _music_cache:
+        key, fade_in_ms, loops = _requested_track
+        _requested_track = None
+        _original_play(key, fade_in_ms, loops)
