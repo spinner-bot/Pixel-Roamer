@@ -2411,6 +2411,7 @@ f = 0
 
 while running:
     dt = clock.tick(current_fps) / 1000.0
+    music.update()
 
     # ----- 事件处理 -----
     for event in pygame.event.get():
