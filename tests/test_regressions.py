@@ -107,6 +107,7 @@ class PlayerDeathTests(unittest.TestCase):
 class MapSmokeTests(unittest.TestCase):
     def test_all_maps_load_have_valid_spawn_and_render(self):
         from camera import Camera
+        from creature import Player
         from maps import get_map, list_maps
 
         maps = list_maps()
@@ -124,6 +125,36 @@ class MapSmokeTests(unittest.TestCase):
             camera = Camera(640, 360, world)
             camera.follow(spawn_x, spawn_y)
             world.draw(surface, camera)
+
+            if world.mode == "explore":
+                endpoints = [
+                    coord for coord, tile in world.grid.items()
+                    if world.block_types.get(tile.type_id)
+                    and world.block_types[tile.type_id].special == "end_point"
+                ]
+                self.assertTrue(endpoints, f"{maps[map_id]} has no end point")
+                end_x, end_y = endpoints[0]
+                keys = {
+                    "left": pygame.K_a,
+                    "right": pygame.K_d,
+                    "jump": pygame.K_SPACE,
+                    "up": pygame.K_w,
+                    "down": pygame.K_s,
+                    "fly": pygame.K_f,
+                }
+                player = Player(0, "test", end_x - 0.3, end_y + 0.5, keys)
+                player.collide_with_world(world, 1 / 60)
+                self.assertTrue(player._reached_end, f"{maps[map_id]} end point did not activate")
+
+            if world.mode == "score_target":
+                available_score = sum(
+                    world.block_types[tile.type_id].special_data
+                    for tile in world.grid.values()
+                    if tile.type_id in world.block_types
+                    and world.block_types[tile.type_id].special == "score"
+                )
+                self.assertGreaterEqual(available_score, world.score_goal,
+                                        f"{maps[map_id]} cannot reach its score goal")
 
 
 class ApplicationStartupTests(unittest.TestCase):
