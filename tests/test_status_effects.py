@@ -12,6 +12,19 @@ def player(**kwargs):
 
 
 class BuffTimeTests(unittest.TestCase):
+    def test_environment_timers_expire_without_any_collision_updates(self):
+        for flying in (False, True):
+            actor = player()
+            actor.fly_mode = flying
+            actor.apply_buff(28, (), 2)
+            actor._confused = actor._phantom_active = True
+            actor._confusion_timer = actor._phantom_timer = 0.5
+            actor._special_cooldowns = {"phantom": 0.5}
+            actor.tick_buffs(1)
+            self.assertFalse(actor._confused)
+            self.assertFalse(actor._phantom_active)
+            self.assertEqual(actor._special_cooldowns, {})
+
     def test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply(self):
         actor = player()
         actor.apply_buff(12, (1,), 10)
