@@ -470,6 +470,11 @@ def generate():
         for rest_x in range(3007, 3012):
             p(w, rest_x, rest_y, 19)
 
+    # 裂隙清空和熔岩笔刷会覆盖北侧竖井 y=98..100，恢复并接到落脚石。
+    # 梯顶高出石面一格，允许松梯横移站稳，不强制再付一次跳跃体力。
+    for climb_y in range(98, 105):
+        p(w, 2996, climb_y, 9)
+
     # Finalize after random scenery: arrival space must not be filled again.
     from maps.portal_pad import prepare_portal_pad
     for first, second in portal_pairs:
