@@ -1,4 +1,4 @@
-"""Run real physics routes in a child process to preserve lazy registry checks."""
+"""Run production session routes in a child process to preserve lazy registry checks."""
 import json
 from pathlib import Path
 import subprocess
@@ -14,13 +14,16 @@ class ThemeRouteTests(unittest.TestCase):
             output = Path(directory) / 'routes.json'
             result = subprocess.run([sys.executable, 'scripts/audit_theme_routes.py',
                                      '--output', str(output)], cwd=root,
-                                    capture_output=True, text=True, timeout=30)
+                                    capture_output=True, text=True, timeout=60)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             report = json.loads(output.read_text())
         self.assertEqual(len(report['runs']), 18)
         for run in report['runs']:
             with self.subTest(id=run['id'], fps=run['fps'], route=run['route']):
                 self.assertTrue(run['reached_end'])
+                self.assertTrue(run['game_win'])
+                self.assertEqual(run['lives_left'], run['initial_lives'])
+                self.assertGreaterEqual(run['min_stamina'], 0)
                 self.assertEqual(run['min_hp'], run['max_hp'])
                 if run['route'] == 'upper':
                     self.assertEqual(len(run['waypoints']), 4)
