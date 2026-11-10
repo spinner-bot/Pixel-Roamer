@@ -101,14 +101,14 @@ class GameApp:
         self._dev_block_browser_mode = "grid"
         self._dev_block_browser_cursor = 0
         self._dev_block_browser_scroll = 0
-        self._dev_block_browser_show_name2 = False
+        self._dev_block_browser_show_name2 = True
         self._dev_block_detail_id = None
         self._dev_block_page_offset = 0
         self._dev_buff_browser = False         # 是否处于 Buff 预览模式
         self._dev_buff_browser_mode = "grid"
         self._dev_buff_browser_cursor = 0
         self._dev_buff_browser_scroll = 0
-        self._dev_buff_browser_show_name2 = False
+        self._dev_buff_browser_show_name2 = True
         self._dev_buff_detail_id = None
         self._LAUNCHERS = {
             PAGE_DEV: self.launch_dev,
