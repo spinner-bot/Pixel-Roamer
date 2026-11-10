@@ -1,17 +1,20 @@
 from __future__ import annotations
 import pygame
+from decimal import Decimal
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_summary, rename_map
 from costumes import COSTUMES
 import game_text as gt
 from pixel_roamer.ui.config import FONT20, FONT24, FONT28, FONT34, FONT56, GAME_DEV, GAME_NAME_CN, GAME_NAME_EN, PAGE_HOME, PAGE_WORLD, _EDITABLE_FIELDS
 from pixel_roamer.ui.widgets import draw_text_center, draw_text_left, draw_text_right
+from pixel_roamer.ui.editor_input import EditorTextInput
 
 class MapBrowser:
     """Map Browser behavior; shared session and viewport come from app."""
 
     def __init__(self, app):
         self.app = app
+        self.text_input = EditorTextInput(self)
 
     def _get_edit_config(self, map_id: int) -> dict:
         """获取地图的当前配置（合并 World 实例默认值与已保存配置）。"""
@@ -133,14 +136,16 @@ class MapBrowser:
             # ---- 重命名行 ----
             map_name = maps_dict.get(self.app._dev_selected_id, "?")
             if self.app._dev_renaming:
-                rename_hint = f"新名称: {self.app._dev_input_text}▌  (Enter确认 Esc取消)"
+                rename_hint = '新名称: ' + self.text_input.display() + '  (Enter确认 Esc取消)'
+                rename_hint = gt.elide(rename_hint, LOGIC_WIDTH - 120, FONT24)
+                self.text_input.set_rect((200, y, 1200, 36))
                 y = draw_text_center(self.app.logic_surface, FONT24, rename_hint, y, (255, 220, 100)) + 4
             else:
                 rename_line = f"地图名: {map_name}  [按 R 重命名]"
                 y = draw_text_center(self.app.logic_surface, FONT24, rename_line, y, (200, 200, 220)) + 4
 
             if self.app._dev_inputting and not self.app._dev_renaming:
-                hint = "输入数值后 Enter 确认  Esc 取消"
+                hint = "直接输入替换原值  Ctrl+A 全选  Enter 确认  Esc 取消"
             elif not self.app._dev_renaming:
                 hint = "↑↓ 选择  ← → 快速调整  Enter 精确输入  S 保存  R 改名  Esc 返回"
             else:
@@ -189,13 +194,14 @@ class MapBrowser:
                 # 值显示
                 if is_sel and self.app._dev_inputting:
                     # 精确输入模式：显示光标
-                    display_text = self.app._dev_input_text + "▌"
+                    display_text = self.text_input.display()
+                    self.text_input.set_rect((600, row_y, 780, 36))
                     val_color = (255, 255, 100)
                 else:
                     if ftype == "bool":
                         display_text = "是" if val else "否"
                     elif ftype == "float":
-                        display_text = f"{val:.3f}".rstrip("0").rstrip(".")
+                        display_text = str(val)
                     elif ftype == "int":
                         display_text = str(int(val))
                         # 时装字段：同时显示名称
@@ -207,7 +213,11 @@ class MapBrowser:
                         display_text = str(val)
                     val_color = (100, 255, 150) if is_sel else (150, 220, 150)
 
-                draw_text_right(self.app.logic_surface, FONT24 if is_sel else FONT20,
+                text_size = FONT24 if is_sel else FONT20
+                display_text = gt.elide(display_text[::-1], 760, text_size)[::-1]
+                if is_sel and self.app._dev_inputting and self.text_input.selected:
+                    pygame.draw.rect(self.app.logic_surface, (40, 75, 80), (600, row_y + 2, 780, row_h - 4))
+                draw_text_right(self.app.logic_surface, text_size,
                                 display_text, LOGIC_WIDTH - 220, row_y + 6, val_color)
                 y += row_h + 2
 
@@ -257,6 +267,8 @@ class MapBrowser:
         if self.app._dev_buff_browser:
             self.app.references._handle_buff_browser_input(event)
             return
+        if self.text_input.handle(event):
+            return
         if event.type != pygame.KEYDOWN:
             return
 
@@ -275,120 +287,20 @@ class MapBrowser:
 
         # ========== 编辑模式按键 ==========
         if self.app._dev_edit_mode and self.app._dev_selected_id is not None:
-            # ---- 重命名模式（优先级最高）----
-            if self.app._dev_renaming:
-                if event.key == pygame.K_ESCAPE:
-                    self.app._dev_renaming = False
-                    self.app._dev_input_text = ""
-                elif event.key == pygame.K_RETURN:
-                    new_name = self.app._dev_input_text.strip()
-                    if new_name:
-                        ok = rename_map(self.app._dev_selected_id, new_name)
-                        if ok:
-                            self.app._init_dev_selection()
-                            self.app._dev_edit_config = self._get_edit_config(self.app._dev_selected_id)
-                    self.app._dev_renaming = False
-                    self.app._dev_input_text = ""
-                elif event.key == pygame.K_BACKSPACE:
-                    self.app._dev_input_text = self.app._dev_input_text[:-1]
-                elif event.unicode and len(event.unicode) > 0:
-                    ch = event.unicode
-                    if ch.isprintable() and ord(ch) >= 32 and ch not in '/\\:*?\"<>|':
-                        self.app._dev_input_text += ch
-                return
-
             field_path, label, ftype, default, step = _EDITABLE_FIELDS[self.app._dev_edit_field_idx]
-
-            # ---- 精确输入模式 ----
-            if self.app._dev_inputting:
-                if event.key == pygame.K_ESCAPE:
-                    # 取消输入
-                    self.app._dev_inputting = False
-                    self.app._dev_input_text = ""
-                elif event.key == pygame.K_RETURN:
-                    # 确认输入
-                    val = self._parse_input_value(self.app._dev_input_text, ftype)
-                    if val is not None:
-                        # 对 str 类型校验选项
-                        if ftype == "str" and isinstance(step, list) and val not in step:
-                            pass  # 无效选项，忽略
-                        else:
-                            self._set_field_value(self.app._dev_edit_config, field_path, val)
-                            self.app._dev_edit_dirty = True
-                    self.app._dev_inputting = False
-                    self.app._dev_input_text = ""
-                elif event.key == pygame.K_BACKSPACE:
-                    self.app._dev_input_text = self.app._dev_input_text[:-1]
-                elif event.key == pygame.K_DELETE:
-                    self.app._dev_input_text = ""
-                # ==== 小键盘支持 ====
-                elif event.key == pygame.K_KP0:
-                    self.app._dev_input_text += "0"
-                elif event.key == pygame.K_KP1:
-                    self.app._dev_input_text += "1"
-                elif event.key == pygame.K_KP2:
-                    self.app._dev_input_text += "2"
-                elif event.key == pygame.K_KP3:
-                    self.app._dev_input_text += "3"
-                elif event.key == pygame.K_KP4:
-                    self.app._dev_input_text += "4"
-                elif event.key == pygame.K_KP5:
-                    self.app._dev_input_text += "5"
-                elif event.key == pygame.K_KP6:
-                    self.app._dev_input_text += "6"
-                elif event.key == pygame.K_KP7:
-                    self.app._dev_input_text += "7"
-                elif event.key == pygame.K_KP8:
-                    self.app._dev_input_text += "8"
-                elif event.key == pygame.K_KP9:
-                    self.app._dev_input_text += "9"
-                elif event.key == pygame.K_KP_PERIOD:
-                    if ftype in ("float", "int"):
-                        self.app._dev_input_text += "."
-                elif event.key == pygame.K_KP_MINUS:
-                    if ftype in ("float", "int"):
-                        self.app._dev_input_text += "-"
-                elif event.unicode and len(event.unicode) > 0:
-                    # 过滤控制字符
-                    ch = event.unicode
-                    if ch.isprintable() and ord(ch) >= 32:
-                        # bool 类型特殊处理：允许输入 true/false/是/否 等
-                        if ftype == "bool":
-                            if ch.isalpha():
-                                self.app._dev_input_text += ch
-                        elif ftype == "str":
-                            self.app._dev_input_text += ch
-                        else:
-                            # 数字类型：允许数字、负号、小数点
-                            if ch.isdigit() or ch in ".-":
-                                self.app._dev_input_text += ch
-                return
 
             # ---- 常规编辑模式按键 ----
             if event.key == pygame.K_ESCAPE:
                 self.app._dev_edit_mode = False
                 self.app._dev_edit_dirty = False
             elif event.key == pygame.K_r:
-                # 启动重命名
-                self.app._dev_renaming = True
-                self.app._dev_input_text = maps_dict.get(self.app._dev_selected_id, "")
-                self.app._dev_inputting = False
+                self.text_input.begin(rename=True)
             elif event.key == pygame.K_UP:
                 self.app._dev_edit_field_idx = (self.app._dev_edit_field_idx - 1) % len(_EDITABLE_FIELDS)
             elif event.key == pygame.K_DOWN:
                 self.app._dev_edit_field_idx = (self.app._dev_edit_field_idx + 1) % len(_EDITABLE_FIELDS)
             elif event.key == pygame.K_RETURN:
-                # 进入精确输入模式
-                val = self._get_field_value(self.app._dev_edit_config, field_path)
-                if ftype == "bool":
-                    self.app._dev_input_text = "true" if val else "false"
-                elif ftype == "str":
-                    self.app._dev_input_text = str(val)
-                elif ftype == "int":
-                    self.app._dev_input_text = str(int(val))
-                else:
-                    self.app._dev_input_text = f"{val:.3f}".rstrip("0").rstrip(".")
-                self.app._dev_inputting = True
+                self.text_input.begin()
             elif event.key == pygame.K_LEFT:
                 try:
                     if ftype == "bool":
@@ -406,7 +318,7 @@ class MapBrowser:
                     elif ftype == "float":
                         val = self._get_field_value(self.app._dev_edit_config, field_path)
                         if val is not None and isinstance(step, (int, float)):
-                            val = float(val) - float(step)
+                            val = float(Decimal(str(val)) - Decimal(str(step)))
                             self._set_field_value(self.app._dev_edit_config, field_path, val)
                     elif ftype == "int":
                         val = self._get_field_value(self.app._dev_edit_config, field_path)
@@ -433,7 +345,7 @@ class MapBrowser:
                     elif ftype == "float":
                         val = self._get_field_value(self.app._dev_edit_config, field_path)
                         if val is not None and isinstance(step, (int, float)):
-                            val = float(val) + float(step)
+                            val = float(Decimal(str(val)) + Decimal(str(step)))
                             self._set_field_value(self.app._dev_edit_config, field_path, val)
                     elif ftype == "int":
                         val = self._get_field_value(self.app._dev_edit_config, field_path)
@@ -452,13 +364,6 @@ class MapBrowser:
                 else:
                     self.app._dev_edit_dirty = False
                     self.app._dev_error = ""
-            elif event.key == pygame.K_RETURN:
-                # 在编辑模式中 Enter 也保存并启动
-                if self.app._dev_edit_dirty:
-                    save_map_config(self.app._dev_selected_id, self.app._dev_edit_config)
-                    self.app._dev_edit_dirty = False
-                self.app._dev_edit_mode = False
-                self.app.set_page(PAGE_WORLD, map_id=self.app._dev_selected_id)
             return
 
         # ========== 列表模式按键 ==========
