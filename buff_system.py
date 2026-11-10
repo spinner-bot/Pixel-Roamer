@@ -40,7 +40,7 @@ def register(buff: BuffType):
 # ===================== Buff 实例（运行在生物上） =====================
 class BuffInstance:
     """生物身上的一个活跃 buff。"""
-    __slots__ = ("buff_id", "params", "applied_at", "duration", "initial_duration", "stacks", "source")
+    __slots__ = ("buff_id", "params", "applied_at", "duration", "initial_duration", "stacks", "source", "tick_elapsed")
 
     def __init__(self, buff_id: int, params: tuple = (),
                  duration: Optional[float] = None, source=None):
@@ -51,6 +51,7 @@ class BuffInstance:
         self.initial_duration = duration  # 记录初始时长（用于进度显示）
         self.stacks = 1
         self.source = source
+        self.tick_elapsed = 0.0
 
     @property
     def buff_type(self) -> Optional[BuffType]:
@@ -68,7 +69,7 @@ class BuffInstance:
         if self.duration is None:
             return False
         self.duration -= dt
-        return self.duration <= 0
+        return self.duration <= 1e-12
 
     def refresh(self, params: tuple = None, duration: Optional[float] = None):
         """刷新 buff（重新获取时调用）。"""
@@ -77,8 +78,8 @@ class BuffInstance:
         if duration is not None:
             self.duration = duration
             self.initial_duration = duration
-        if self.stacks < self.buff_type.max_stacks if self.buff_type else 1:
-            self.stacks += 1
+        maximum = self.buff_type.max_stacks if self.buff_type else 1
+        self.stacks = min(maximum, self.stacks + 1)
 
     def format_desc(self) -> str:
         """将描述模板与 params 拼接，返回最终描述字符串。
