@@ -10,7 +10,7 @@ world = World(
     map_id=MAP_ID, name="无限森林",
     w=80, h=45,
     gravity=-6.5, view_blocks_h=18,
-    spawn_points=(40, 22),
+    spawn_points=(40.5, 22.9),
     mode="adventure",
     default_block_id=0,     # 天空
     loop_x=True, loop_y=False,  # ★ 仅X轴循环

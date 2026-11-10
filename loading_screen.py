@@ -64,6 +64,7 @@ def init_loading_screen(logic_w: int, logic_h: int):
     global _start_time, _progress, _loading_complete
     global _tip_index, _tip_alpha, _tip_transition
     global _particles, _stars, _logo_scale, _logo_bounce_t, _dots, _dot_timer
+    global _status_index, _status_timer
 
     _start_time = time.time()
     _progress = 0.0
@@ -125,6 +126,7 @@ def run_loading_screen(surf: pygame.Surface, dt: float, logic_w: int, logic_h: i
     """渲染一帧加载界面。返回 True 表示加载完成可以切换页面。"""
     global _tip_alpha, _tip_transition, _tip_index
     global _logo_bounce_t, _dots, _dot_timer
+    global _status_index, _status_timer
 
     elapsed = time.time() - _start_time
 

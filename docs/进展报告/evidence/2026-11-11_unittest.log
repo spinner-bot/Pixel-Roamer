@@ -1,0 +1,50 @@
+test_all_shipped_configs_are_valid (test_config.ConfigTests) ... ok
+test_color_input_normalizes_without_changing_original (test_config.ConfigTests) ... ok
+test_rejects_unbounded_physics_and_invalid_types (test_config.ConfigTests) ... ok
+test_save_load_invalid_file_fallback_and_default_tile_application (test_config.ConfigTests) ... ok
+test_extreme_runtime_velocity_cannot_hang_collision_loop (test_gameplay.CollisionTests) ... ok
+test_fast_fall_lands_without_crossing_floor (test_gameplay.CollisionTests) ... ok
+test_fast_movement_does_not_cross_a_one_tile_wall (test_gameplay.CollisionTests) ... ok
+test_negative_fractional_coordinates_use_floor (test_gameplay.CollisionTests) ... ok
+test_one_way_platform_allows_jumping_from_below (test_gameplay.CollisionTests) ... ok
+test_one_way_platform_stays_solid_at_exact_rest (test_gameplay.CollisionTests) ... ok
+test_single_loop_axis_does_not_disable_void_on_other_axis (test_gameplay.CollisionTests) ... ok
+test_solid_default_tile_collides (test_gameplay.CollisionTests) ... ok
+test_default_ladder_world_has_climbable_contacts (test_gameplay.EnvironmentTests) ... ok
+test_environment_modifiers_restore_after_leaving (test_gameplay.EnvironmentTests) ... ok
+test_leaving_water_and_ladder_clears_contact_state (test_gameplay.EnvironmentTests) ... ok
+test_respawn_clears_environment_timers_and_modifiers (test_gameplay.EnvironmentTests) ... ok
+test_temporary_effects_expire_in_empty_air (test_gameplay.EnvironmentTests) ... ok
+test_friction_buffs_damp_without_inverting_or_amplifying_motion (test_gameplay.FrameRateTests) ... ok
+test_horizontal_movement_matches_across_frame_rates (test_gameplay.FrameRateTests) ... ok
+test_speed_and_jump_tiles_combine_with_buffs_and_restore (test_gameplay.FrameRateTests) ... ok
+test_coin_across_negative_loop_seam_is_consumed_once (test_gameplay.PickupTests) ... ok
+test_each_touched_coin_scores_once (test_gameplay.PickupTests) ... ok
+test_only_touched_coin_is_consumed (test_gameplay.PickupTests) ... ok
+test_score_block_without_consumed_variant_restores_default (test_gameplay.PickupTests) ... ok
+test_teleport_uses_touched_portal_metadata (test_gameplay.PickupTests) ... ok
+test_poison_bypasses_half_shield_and_respects_immunity (test_gameplay.PoisonTests) ... ok
+test_poison_lethal_second_half_marks_player_dead (test_gameplay.PoisonTests) ... ok
+test_application_survives_loading_and_enters_main_loop (test_regressions.ApplicationStartupTests) ... ok
+test_loading_status_renders_across_multiple_frames (test_regressions.LoadingScreenTests) ... ok
+test_all_maps_load_have_valid_spawn_and_render (test_regressions.MapSmokeTests) ... ok
+test_first_track_request_is_non_blocking_and_renders_on_demand (test_regressions.MusicTests) ... ok
+test_movement_collision_and_jump_stay_active (test_regressions.PhysicsTests) ... ok
+test_finite_respawns_decrement_then_game_over (test_regressions.PlayerDeathTests) ... ok
+test_zero_lives_means_unlimited_respawns (test_regressions.PlayerDeathTests) ... ok
+test_edit_invalidates_all_visible_loop_copies (test_rendering.LoopRenderingTests) ... ok
+test_fractional_camera_scale_does_not_leave_chunk_gaps (test_rendering.LoopRenderingTests) ... ok
+test_non_chunk_sized_loops_render_at_actual_world_period (test_rendering.LoopRenderingTests) ... ok
+test_all_map_spawns_have_clear_character_space (test_sessions.MapSessionTests) ... ok
+test_new_game_restores_collected_score_blocks (test_sessions.MapSessionTests) ... ok
+test_sessions_do_not_share_grid_indexes_or_render_caches (test_sessions.MapSessionTests) ... ok
+test_temple_existing_corridor_reaches_portal_and_end (test_sessions.MapSessionTests) ... ok
+test_world_settings_do_not_leak_into_next_game (test_sessions.MapSessionTests) ... ok
+test_real_main_loop_navigation_and_game_rules (test_ui.ApplicationFlowTests) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 13.200s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

@@ -71,6 +71,7 @@ class Creature:
         self.f_y = f_y
 
         self.phys_atk = phys_atk
+        self._base_phys_atk = phys_atk
         self.magic_atk = magic_atk
         self.phys_res = phys_res
         self.magic_res = magic_res
@@ -205,7 +206,8 @@ class Creature:
 
         return actual_damage
 
-    def take_raw_damage(self, damage: float, damage_type: str = "raw") -> float:
+    def take_raw_damage(self, damage: float, damage_type: str = "raw",
+                        bypass_shield: bool = False) -> float:
         if not self.alive or damage <= 0:
             return 0.0
 
@@ -218,7 +220,7 @@ class Creature:
             damage *= 2.0
 
         # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if self.has_buff(29):
+        if bypass_shield or self.has_buff(29):
             self.hp -= damage
             if self.hp <= 0:
                 self.hp = 0
@@ -367,7 +369,6 @@ class Creature:
         min_gy = math.floor(expanded_rect.y)
         max_gy = math.floor(expanded_rect.y + expanded_rect.h - 1e-9)
         _wrap = world._wrap_grid_coord
-        _default_id = world.default_tile.type_id
         for gx in range(min_gx, max_gx + 1):
             for gy in range(min_gy, max_gy + 1):
                 coord = _wrap(gx, gy)
@@ -377,12 +378,48 @@ class Creature:
                         tiles.add(1)
                     continue
                 bt = world.get_block_type_by_coord(coord[0], coord[1])
-                if bt.id != _default_id:
-                    tiles.add(bt.id)
+                tiles.add(bt.id)
         return tiles
+
+    def _contact_tile_instances(self, world):
+        """Yield actual touched tiles once, including across looping seams."""
+        rect = self.get_game_rect()
+        seen = set()
+        for gx in range(math.floor(rect.x - 0.01),
+                        math.floor(rect.x + rect.w + 0.01 - 1e-9) + 1):
+            for gy in range(math.floor(rect.y - 0.01),
+                            math.floor(rect.y + rect.h + 0.01 - 1e-9) + 1):
+                coord = world._wrap_grid_coord(gx, gy)
+                if coord is None or coord in seen:
+                    continue
+                seen.add(coord)
+                tile = world.grid.get(coord)
+                if tile is not None:
+                    yield gx, gy, coord, tile
 
     # ----- 碰撞与效果总控 -----
     def collide_with_world(self, world, dt: float):
+        """Keep each collision step below half a tile, even after a long frame."""
+        remaining = max(0.0, dt)
+        for _ in range(256):
+            if not self.alive:
+                break
+            speed = max(abs(self.v_x), abs(self.v_y))
+            if not math.isfinite(speed):
+                self.reset_motion()
+                break
+            step = min(remaining, 0.4 / speed) if speed > 0 else remaining
+            self._collide_with_world_step(world, step)
+            remaining -= step
+            if remaining < 1e-9:
+                break
+        if self.alive and world.edge_behavior == "void" and world.is_out_of_bounds(self._x, self._y):
+            # The void ends a life even during respawn immunity.
+            self.hp = 0
+            self.alive = False
+            self.on_death()
+
+    def _collide_with_world_step(self, world, dt: float):
         if not self.alive:
             return
 
@@ -435,15 +472,15 @@ class Creature:
         if self.has_buff(42):
             slick_pct = min(99.0, max(0.0, self._get_buff_param(42, 0, 85.0)))
             slick_mult = 1.0 - slick_pct / 100.0
-            final_fx = self.f_x * slick_mult
+            final_fx = self.f_x ** slick_mult
         if self.has_buff(43):  # 黏着：高摩擦
             sticky_pct = self._get_buff_param(43, 0, 80.0)
             sticky_mult = 1.0 + sticky_pct / 100.0
-            final_fx = self.f_x * sticky_mult
+            final_fx = self.f_x ** sticky_mult
         if self.has_buff(51):  # 寒冷：冰面摩擦
             chill_pct = self._get_buff_param(51, 0, 70.0)
             chill_mult = 1.0 - chill_pct / 100.0
-            final_fx = self.f_x * chill_mult
+            final_fx = self.f_x ** max(0.01, chill_mult)
 
         self.v_x *= pow(final_fx, dt * 60)
         self.v_y *= pow(final_fy, dt * 60)
@@ -475,7 +512,7 @@ class Creature:
             for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
                 if grect.collides(block_grect):
                     if bt.one_way:
-                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h + 0.001:
+                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h - 1e-9:
                             grect.y = block_grect.y + block_grect.h
                             self.v_y = 0
                             self.on_ground = True
@@ -491,6 +528,23 @@ class Creature:
             # 幽灵模式：自由穿过固体，但仍受重力影响
             grect.x += self.v_x * dt
             grect.y += self.v_y * dt
+
+        # A later substep can have zero velocity after an earlier collision.
+        # Preserve resting contact from geometry rather than clearing its flags.
+        if not ghost_mode and (self.v_x == 0 or self.v_y == 0):
+            for block_rect, bt in world.get_nearby_solid_blocks_game(grect):
+                overlap_x = grect.x < block_rect.x + block_rect.w and grect.x + grect.w > block_rect.x
+                overlap_y = grect.y < block_rect.y + block_rect.h and grect.y + grect.h > block_rect.y
+                if overlap_x and self.v_y == 0:
+                    if abs(grect.y - block_rect.y - block_rect.h) < 1e-8:
+                        self.on_ground = True
+                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) < 1e-8:
+                        self.on_ceiling = True
+                if overlap_y and self.v_x == 0 and not bt.one_way:
+                    if abs(grect.x + grect.w - block_rect.x) < 1e-8:
+                        self.on_wall_right = True
+                    if abs(grect.x - block_rect.x - block_rect.w) < 1e-8:
+                        self.on_wall_left = True
 
         self.set_from_game_rect(grect)
 
@@ -516,17 +570,11 @@ class Creature:
         all_ids = self.contact_pool.copy()
         if self.stand_pool is not None:
             all_ids.add(self.stand_pool)
-        if not all_ids:
-            return
-
         types = []
         for bid in all_ids:
             bt = world.block_types.get(bid)
             if bt:
                 types.append(bt)
-        if not types:
-            return
-
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
             self._special_cooldowns = {}
@@ -625,11 +673,8 @@ class Creature:
             self.is_climbing = False
             self.v_y = 0.0
 
-        # 重置速度/跳跃为基础值（speed/jump 特效会重新修改）
-        if hasattr(self, '_base_v_max'):
-            self.v_max = self._base_v_max
-        if hasattr(self, '_base_v_jump'):
-            self.v_jump = self._base_v_jump
+        self._environment_speed_mult = 1.0
+        self._environment_jump_mult = 1.0
 
         # ---- Buff: 稳足(41)/定锚(54)/石肤(39) 免疫环境力 ----
         immune_forces = self.has_buff(41) or self.has_buff(54) or self.has_buff(39)
@@ -671,28 +716,14 @@ class Creature:
                 if bt.special == "teleport" and bt.special_data is not None:
                     # 支持 meta 覆盖目标坐标
                     tx, ty = bt.special_data
-                    # 在接触池中找到该方块对应的 Tile 实例（若有 meta 则覆盖）
-                    for bid in all_ids:
-                        if bid == bt.id:
-                            # 从 world 中查找接触到的该类型方块
-                            grect = self.get_game_rect()
-                            min_gx = int(grect.x) - 1
-                            max_gx = int(grect.x + grect.w) + 1
-                            min_gy = int(grect.y) - 1
-                            max_gy = int(grect.y + grect.h) + 1
-                            for gx in range(min_gx, max_gx + 1):
-                                for gy in range(min_gy, max_gy + 1):
-                                    coord = world._wrap_grid_coord(gx, gy)
-                                    if coord is None:
-                                        continue
-                                    tile = world.grid.get(coord)
-                                    if tile is not None and tile.type_id == bt.id and tile.meta is not None:
-                                        if isinstance(tile.meta, dict):
-                                            tx = tile.meta.get("tp_x", tx)
-                                            ty = tile.meta.get("tp_y", ty)
-                                        break
+                    for _, _, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id and isinstance(tile.meta, dict):
+                            tx = tile.meta.get("tp_x", tx)
+                            ty = tile.meta.get("tp_y", ty)
+                            break
                     self._x = float(tx)
                     self._y = float(ty)
+                    self.reset_motion()
                 elif bt.special == "checkpoint":
                     if hasattr(self, "spawn_pos"):
                         self.spawn_pos = (self._x, self._y)
@@ -707,24 +738,16 @@ class Creature:
                         self.add_shield(float(bt.special_data) * dt, None)
                 elif bt.special == "speed" and bt.special_data is not None:
                     # 临时速度倍率（持续接触期间）
-                    self.v_max = self._base_v_max * float(bt.special_data)
+                    self._environment_speed_mult = float(bt.special_data)
                 elif bt.special == "jump" and bt.special_data is not None:
-                    self.v_jump = self._base_v_jump * float(bt.special_data)
+                    self._environment_jump_mult = float(bt.special_data)
                 elif bt.special == "score" and bt.special_data is not None:
-                    # 积分方块：得分并替换为消耗态
-                    pts = int(bt.special_data)
-                    self.score += pts
-                    # 在接触池中找到该方块并替换为消耗态（ID+10）
-                    consumed_id = bt.id + 10
-                    grect = self.get_game_rect()
-                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                            coord = world._wrap_grid_coord(gx, gy)
-                            if coord is None:
-                                continue
-                            tile = world.grid.get(coord)
-                            if tile is not None and tile.type_id == bt.id:
-                                world.set_tile(gx, gy, consumed_id)
+                    consumed_id = (bt.consumed_type_id if bt.consumed_type_id is not None
+                                   else world.default_tile.type_id)
+                    for gx, gy, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id:
+                            self.score += int(bt.special_data)
+                            world.set_tile(gx, gy, consumed_id)
                 elif bt.special == "end_point":
                     # 终点：触发通关（由 main.py 检测）
                     self._reached_end = True
@@ -781,22 +804,15 @@ class Creature:
                     if self.has_buff(49):
                         force *= 2.5
                     grect = self.get_game_rect()
-                    cx, cy = self._x, self._y + self._h / 2
+                    cx, cy = self._x, self._y
                     # 在接触池中找到该方块坐标
-                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                            coord = world._wrap_grid_coord(gx, gy)
-                            if coord is None:
-                                continue
-                            tile = world.grid.get(coord)
-                            if tile is not None and tile.type_id == bt.id:
-                                block_cx, block_cy = gx + 0.5, gy + 0.5
-                                dx = block_cx - cx
-                                dy = block_cy - cy
-                                dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
-                                self.v_x += dx / dist * force * dt * 10
-                                self.v_y += dy / dist * force * dt * 10
-                                break
+                    for gx, gy, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id:
+                            dx = gx + 0.5 - cx
+                            dy = gy + 0.5 - cy
+                            dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
+                            self.v_x += dx / dist * force * dt * 10
+                            self.v_y += dy / dist * force * dt * 10
 
                 elif bt.special == "set_spawn":
                     # 设置重生点（一次性）
@@ -815,11 +831,8 @@ class Creature:
                     # 毒：无视50%护盾的伤害
                     raw_dmg = float(bt.special_data) * dt
                     bypass = raw_dmg * 0.5
-                    self.take_raw_damage(bypass)
-                    if self.shield > 0:
-                        self.shield = max(0, self.shield - (raw_dmg - bypass))
-                    else:
-                        self.hp = max(0, self.hp - (raw_dmg - bypass))
+                    self.take_raw_damage(bypass, bypass_shield=True)
+                    self.take_raw_damage(raw_dmg - bypass)
 
                 elif bt.special == "berserk" and bt.special_data is not None:
                     # 狂暴：攻击翻倍但持续受伤
@@ -837,7 +850,7 @@ class Creature:
 
                 elif bt.special == "slow_field" and bt.special_data is not None:
                     # 减速场
-                    self.v_max = self._base_v_max * float(bt.special_data)
+                    self._environment_speed_mult = float(bt.special_data)
 
                 elif bt.special == "gravity_well" and bt.special_data is not None:
                     if immune_forces:
@@ -886,6 +899,15 @@ class Creature:
                 self._confused = False
 
         # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
+        self.refresh_movement_stats()
+
+    def refresh_movement_stats(self):
+        """Combine environmental modifiers with active buffs."""
+        if hasattr(self, '_base_v_max'):
+            speed = self._base_v_max * getattr(self, '_environment_speed_mult', 1.0)
+            jump = self._base_v_jump * getattr(self, '_environment_jump_mult', 1.0)
+            self.v_max = max(0.0, self.get_buff_stat("v_max", speed))
+            self.v_jump = max(0.0, self.get_buff_stat("v_jump", jump))
 
     # ================================================================
     #  Buff 系统
@@ -1130,6 +1152,32 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False
         self.is_climbing = False
+        self.can_swim = False
+        self._swim_force = 0.0
+        self._liquid_space_f = 1.0
+        self._climb_top_y = None
+        self._swim_top_y = None
+        self._near_shore = False
+        self._shore_dir = 0
+        self._shore_exit_pending = False
+        self._environment_speed_mult = 1.0
+        self._environment_jump_mult = 1.0
+        self._stamina_mult = 1.0
+        self._silenced = False
+        self._courage_dr = 0.0
+        self._weakness_mult = 1.0
+        self._phantom_active = False
+        self._phantom_timer = 0.0
+        self._confused = False
+        self._confusion_timer = 0.0
+        self._berserk_active = False
+        self.phys_atk = self._base_phys_atk
+        self._special_cooldowns = {}
+        self._air_jumps_used = 0
+        self._wind_walk_timer = 0.0
+        if hasattr(self, '_base_v_max'):
+            self.v_max = self._base_v_max
+            self.v_jump = self._base_v_jump
         self.fly_mode = False
         self.contact_pool = set()
         self.stand_pool = None
@@ -1200,10 +1248,8 @@ class Player(Creature):
 
     def on_death(self):
         super().on_death()
-        saved_score = self.score       # 保留分数
-        self.reset(*self.spawn_pos)
-        self.score = saved_score
-        self.stamina = self.stamina_max
+        # Leave the player dead so the game loop can apply the configured
+        # respawn limit and run the death transition exactly once.
 
     def consume_stamina(self, cost: float) -> bool:
         if self.stamina >= cost:

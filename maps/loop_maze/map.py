@@ -9,7 +9,7 @@ world = World(
     map_id=MAP_ID, name="循环迷宫",
     w=48, h=36,
     gravity=-6.5, view_blocks_h=20,
-    spawn_points=(24, 30),
+    spawn_points=(22.5, 17.0),
     mode="adventure",
     default_block_id=11,       # 夜晚空气（深色背景）
     loop_x=True, loop_y=True,  # ★ XY双向循环
@@ -144,5 +144,9 @@ for y in range(0, 36, 9):
 for hx, hy in [(24,15),(3,29),(15,34),(44,34),(2,7),(30,17),(18,21),(40,30)]:
     if world.get_tile(hx, hy).type_id == 0:
         world.set_tile(hx, hy, 290)
+
+# 保留角色可通过的枢纽出口，避免墙壁封死已有通道。
+fill(21, 18, 21, 20, 0)
+fill(27, 18, 27, 20, 0)
 
 world.end_bulk_load()

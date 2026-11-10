@@ -94,14 +94,14 @@ def generate():
     w.lives = 5; w.fill_color = (18, 14, 28)
     w.begin_bulk_load()
 
-    # ---- 全图填充基岩 + 清空上半部 ----
+    # ---- 地表基岩 ----
+    # 原逻辑先铺满 6000×150，再清空 y=20..147，产生近百万个无用方块写入。
+    # 最终只保留 y=0..16 的石层和 y=148..149 的顶层边界；其余区域为空气。
     for x in range(W):
-        for y in range(H):
-            bt_id = 2 if y < 75 else 27  # 上半石头，下半黑曜石（更深）
-            p(w, x, y, bt_id)
-    for x in range(W):
-        for y in range(20, 148):
-            w.set_tile(x, y, 0)
+        for y in range(17):
+            p(w, x, y, 2)
+        p(w, x, 148, 27)
+        p(w, x, 149, 27)
 
     # 覆上一层薄土
     for x in range(W):
@@ -368,7 +368,7 @@ def generate():
     rect(w, Z10+331, 78, 18, 14, 97, hollow=True)
     # 终点信标——挑高台上
     platform(w, Z10+337, 83, 6, 68)
-    p(w, Z10+340, 85, 303); p(w, Z10+340, 86, 303)  # end_beacon 双层
+    p(w, Z10+340, 88, 303)  # end_beacon：放在终点传送门装饰上方，避免被覆盖
     # 光柱
     for dy in range(-5, 6):
         p(w, Z10+336, 85+dy, 66); p(w, Z10+344, 85+dy, 66)

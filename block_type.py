@@ -34,3 +34,4 @@ class BlockType:
     buff_ids: Tuple = ()                # buff ID 元组
     buff_params_list: Tuple = ()        # 各 buff 参数元组
     buff_durations: Tuple = ()          # 各 buff 持续时间（秒）元组，None=永久
+    consumed_type_id: Optional[int] = None  # 拾取后的方块；未配置则恢复地图默认方块

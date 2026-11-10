@@ -79,14 +79,14 @@ def _make_hashable(obj):
 
 
 def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
-                         x: float, y: float, w: float, h: float):
+                         x: float, y: float, w: float, h: float, overdraw: bool = True):
     """
     在 surface 上的 (x, y, w, h) 矩形区域绘制方块图案。
     为保证无黑线，实际绘制尺寸向右下各扩展 1 像素。
     """
     # 目标绘制尺寸 +1 像素消除接缝
-    draw_w = w + 1
-    draw_h = h + 1
+    draw_w = w + int(overdraw)
+    draw_h = h + int(overdraw)
     base_rect = pygame.Rect(x, y, draw_w, draw_h)
 
     # 1. 填充底色

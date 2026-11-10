@@ -9,7 +9,7 @@ world = World(
     map_id=MAP_ID, name="限时冲刺",
     w=40, h=25,
     gravity=-5.8, view_blocks_h=20,
-    spawn_points=(3, 4),
+    spawn_points=(4.5, 5.9),
     mode="score_timed",
     default_block_id=11,
 )

@@ -1151,7 +1151,7 @@ _SCORE_BLOCKS = [
 for aid, uid, name, name2, pts, color in _SCORE_BLOCKS:
     BLOCK_TYPES[aid] = BlockType(aid, name, name2,
         is_solid=False, break_hp=1, break_level=0, light_level=4,
-        special="score", special_data=pts, color=color,
+        special="score", special_data=pts, color=color, consumed_type_id=uid,
         pattern=("vector", (16, 16), [
             ("fill", (0, 0, 0)),
             ("circle", 8, 8, 5, color),

@@ -4,7 +4,7 @@ test_world —— 探索测试地图（64x36）
 from world import World
 
 MAP_ID = 1
-world = World(map_id=MAP_ID, name="探索测试地图", w=64, h=36, gravity=-6.5, view_blocks_h=15, spawn_points=(4, 25))
+world = World(map_id=MAP_ID, name="探索测试地图", w=64, h=36, gravity=-6.5, view_blocks_h=15, spawn_points=(4.5, 25.9))
 
 world.begin_bulk_load()
 

@@ -4,7 +4,8 @@ import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
 from camera import Camera
 from creature import Player
-from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
+from maps import (get_map, list_maps, load_map_config, save_map_config,
+                  get_map_folder_name, get_map_summary, rename_map)
 from costumes import (COSTUMES, DEFAULT_COSTUME_ID, list_costumes,
                        render_costume_direct, get_costume_anim_info,
                        clear_costume_cache)
@@ -13,6 +14,7 @@ import music
 import game_text as gt
 import loading_screen as ls
 import home_page as hp
+from game_state import resolve_player_death
 
 # ===================== 游戏元信息 =====================
 GAME_NAME_CN = "像素漫游者"
@@ -120,6 +122,8 @@ def set_page_no_launch(page_id: int):
     # 恢复目标页面的背景音乐
     if page_id == PAGE_HOME:
         music.play("home", fade_in_ms=800)
+    elif page_id == PAGE_WORLD and _current_map is not None:
+        _play_world_music(_current_map)
     _trigger_fade_in()
 
 
@@ -146,6 +150,7 @@ _dev_edit_mode = False        # 开发者地图编辑模式
 _dev_edit_field_idx = 0       # 当前编辑字段索引
 _dev_edit_dirty = False       # 是否有未保存的修改
 _dev_edit_config = {}         # 当前编辑中的配置
+_dev_error = ""
 _dev_renaming = False         # 是否正在重命名地图
 
 # 游戏状态
@@ -153,6 +158,7 @@ _game_over = False
 _game_win = False
 _game_timer = 0.0             # 累计游戏时间（秒）
 _player_lives_left = 0        # 剩余复活次数
+_infinite_lives = True        # lives=0 时无限复活；有限次数耗尽后保持为 False
 
 
 def _init_dev_selection():
@@ -219,11 +225,12 @@ def launch_world(map_id: int):
     player1.costume_id = cfg.get("costume_id", DEFAULT_COSTUME_ID)
 
     # 初始化游戏状态
-    global _game_over, _game_win, _game_timer, _player_lives_left
+    global _game_over, _game_win, _game_timer, _player_lives_left, _infinite_lives
     _game_over = False
     _game_win = False
     _game_timer = 0.0
     _player_lives_left = getattr(_current_map, 'lives', 0)
+    _infinite_lives = _player_lives_left == 0
 
     # 播放地图专属音乐
     _play_world_music(_current_map)
@@ -1855,6 +1862,7 @@ def _get_edit_config(map_id: int) -> dict:
         config["world"]["view_blocks_h"] = m.view_blocks_h
         config["world"]["void_limit"] = m.void_limit
         config["world"]["default_block_id"] = m.default_tile.type_id
+        config["world"]["fill_color"] = ",".join(str(c) for c in m.fill_color)
         config["world"]["lives"] = getattr(m, 'lives', 0)
         config["world"]["score_goal"] = getattr(m, 'score_goal', 100)
         config["world"]["time_limit"] = getattr(m, 'time_limit', 0.0)
@@ -1884,6 +1892,10 @@ def _get_edit_config(map_id: int) -> dict:
     # 已保存的 world 配置覆盖
     saved_world = saved.get("world", {})
     config["world"].update(saved_world)
+    color = config["world"].get("fill_color", (30, 30, 30))
+    if isinstance(color, (list, tuple)):
+        color = ",".join(str(component) for component in color)
+    config["world"]["fill_color"] = color
     return config
 
 
@@ -1911,13 +1923,13 @@ def _set_field_value(config: dict, field_path: str, value):
     obj[parts[-1]] = value
 
 
-def _get_map_type_label(m) -> str:
+def _get_map_type_label(loop_x: bool, loop_y: bool) -> str:
     """获取地图类型标签。"""
-    if m.loop_x and m.loop_y:
+    if loop_x and loop_y:
         return "循环XY"
-    elif m.loop_x:
+    elif loop_x:
         return "循环X"
-    elif m.loop_y:
+    elif loop_y:
         return "循环Y"
     else:
         return "有限"
@@ -2067,10 +2079,10 @@ def run_dev_page(dt: float):
         for mid in map_ids:
             name = maps_dict[mid]
             try:
-                m = get_map(mid)
-                info_size = f"{m.width}×{m.height}"
-                info_type = _get_map_type_label(m)
-                info_mode = m.mode
+                info = get_map_summary(mid)
+                info_size = f"{info['width']}×{info['height']}"
+                info_type = _get_map_type_label(info["loop_x"], info["loop_y"])
+                info_mode = info["mode"]
             except Exception:
                 info_size = "?"
                 info_type = "?"
@@ -2108,8 +2120,8 @@ def run_dev_page(dt: float):
     if _dev_selected_id is not None:
         if _dev_edit_mode:
             draw_text_center(logic_surface, FONT20,
-                             "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
-                             LOGIC_HEIGHT - 24, (140, 180, 255))
+                             _dev_error or "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
+                             LOGIC_HEIGHT - 24, (255, 100, 80) if _dev_error else (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
                              f"当前选中: ID={_dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览  Esc主页",
@@ -2141,6 +2153,7 @@ def handle_dev_input(event):
     """处理 dev 页面的键盘事件。"""
     global _dev_selected_id, _dev_edit_mode, _dev_edit_field_idx
     global _dev_edit_dirty, _dev_edit_config
+    global _dev_error
     global _dev_inputting, _dev_input_text
     global _dev_block_browser, _dev_buff_browser
 
@@ -2340,9 +2353,13 @@ def handle_dev_input(event):
                 pass
         elif event.key == pygame.K_s:
             # 保存到硬盘
-            save_map_config(_dev_selected_id, _dev_edit_config)
-            _dev_edit_dirty = False
-            # [log removed]
+            try:
+                save_map_config(_dev_selected_id, _dev_edit_config)
+            except (ValueError, OSError) as error:
+                _dev_error = str(error)
+            else:
+                _dev_edit_dirty = False
+                _dev_error = ""
         elif event.key == pygame.K_RETURN:
             # 在编辑模式中 Enter 也保存并启动
             if _dev_edit_dirty:
@@ -2408,6 +2425,7 @@ f = 0
 
 while running:
     dt = clock.tick(current_fps) / 1000.0
+    music.update()
 
     # ----- 事件处理 -----
     for event in pygame.event.get():
@@ -2580,24 +2598,14 @@ while running:
 
         # 死亡处理（限复活次数）
         if not player1.alive and not _game_over and not _game_win:
-            if _player_lives_left > 0:
-                if _player_lives_left <= 0:
-                    _game_over = True
-                else:
-                    player1.alive = True
-                    player1.hp = player1.hp_max
-                    player1.clear_buffs()  # 清除所有状态
-                    player1.apply_buff(36, (), 3.0)  # 3秒完全免疫
-            # lives==0 表示无限复活，on_death 已经重置了
-            elif _player_lives_left == 0:
-                player1.clear_buffs()
-                player1.apply_buff(36, (), 3.0)
+            _player_lives_left, _game_over = resolve_player_death(
+                player1, _player_lives_left, _infinite_lives)
 
         # ---- Buff 系统 tick ----
-        player1.tick_buffs(dt)
+        if not _game_over and not _game_win and player1.alive:
+            player1.tick_buffs(dt)
         # buff 属性修正
-        buf_v_max = player1.get_buff_stat("v_max", player1._base_v_max)
-        buf_v_jump = player1.get_buff_stat("v_jump", player1._base_v_jump)
+        player1.refresh_movement_stats()
         # 体力恢复速度（动态公式，三层结构）
         stamina_ratio = player1.stamina / max(1, player1.stamina_max)
         hp_ratio = player1.hp / max(1, player1.hp_max)
@@ -2611,18 +2619,17 @@ while running:
         )
         buf_stam_rec = player1.get_buff_stat("stamina_recovery", base_stam_rec)
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
-        player1.v_max = buf_v_max
-        player1.v_jump = buf_v_jump
         # 控制效果检查（铁意 buff 40 免疫定身/晕眩/压制/反向）
         iron_will = player1.has_buff(40)
         rooted = player1.has_buff(21) and not iron_will
         stunned = player1.has_buff(28) and not iron_will
         grounded = player1.has_buff(27) and not iron_will
         hopping = player1.has_buff(33)
-        reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8) and not iron_will
+        reversed_ctrl = ((player1.has_buff(23) or getattr(player1, '_confused', False))
+                         and not player1.has_buff(8) and not iron_will)
 
         # ---- 移动物理（游戏结束/胜利时冻结）----
-        if not _game_over and not _game_win and not stunned:
+        if not _game_over and not _game_win and player1.alive and not stunned:
             if player1.fly_mode:
                 # ---- 飞行模式 ----
                 fly_dx, fly_dy = 0.0, 0.0

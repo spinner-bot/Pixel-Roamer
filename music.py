@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 import struct, math
+import time
 import pygame
 import sfx
 
@@ -15,6 +16,10 @@ _current_track: str | None = None     # 当前播放的曲目 key
 _current_sound: pygame.mixer.Sound | None = None  # 当前播放的 Sound 对象
 _music_volume = 0.5                   # 音乐音量 (0~1)
 _music_cache: dict[str, pygame.mixer.Sound] = {}  # 曲目缓存
+_pending_tracks = {}
+_requested_track = None
+_RENDER_CHUNK_SAMPLES = 512
+_RENDER_FRAME_BUDGET = 0.004
 
 
 def _ensure_init():
@@ -60,7 +65,8 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
 
 def stop(fade_out_ms: int = 500):
     """停止当前音乐，可选淡出。"""
-    global _current_track, _current_sound
+    global _current_track, _current_sound, _requested_track
+    _requested_track = None
     if _current_sound is not None:
         try:
             if fade_out_ms > 0:
@@ -274,14 +280,13 @@ def _render_track_to_buffer(track: list, tempo_bpm: float, total_beats: float,
     return buf
 
 
-def _render_pattern(pattern: MusicPattern, master_vol: float = 0.5) -> pygame.mixer.Sound:
+def _render_pattern_steps(pattern: MusicPattern, master_vol: float = 0.5):
     """
-    将 MusicPattern 预渲染为单个可循环 Sound。
-    多轨并行混合到单个缓冲区。
+    分片合成音乐；每处理一小段样本就让回主循环，限制单帧 CPU 时间。
     """
     total_samples = int(RATE * pattern.duration_sec)
     if total_samples <= 0:
-        return pygame.mixer.Sound(buffer=bytes(0))
+        return sfx._make(bytes(0), RATE)
 
     # 多轨累计混合
     mix = [0] * total_samples
@@ -310,36 +315,52 @@ def _render_pattern(pattern: MusicPattern, master_vol: float = 0.5) -> pygame.mi
             attack_samples = int(RATE * 0.008)
             release_samples = int(RATE * min(0.06, note_dur * 0.3))
 
-            for i in range(start_sample, end_sample):
-                j = i - start_sample
-                t = i / RATE
+            for chunk_start in range(start_sample, end_sample, _RENDER_CHUNK_SAMPLES):
+                chunk_end = min(end_sample, chunk_start + _RENDER_CHUNK_SAMPLES)
+                for i in range(chunk_start, chunk_end):
+                    j = i - start_sample
+                    t = i / RATE
 
-                if j < attack_samples:
-                    env = j / max(1, attack_samples)
-                elif j > note_samples - release_samples:
-                    env = max(0.0, (note_samples - j) / max(1, release_samples))
-                else:
-                    env = 1.0
+                    if j < attack_samples:
+                        env = j / max(1, attack_samples)
+                    elif j > note_samples - release_samples:
+                        env = max(0.0, (note_samples - j) / max(1, release_samples))
+                    else:
+                        env = 1.0
 
-                if wave == "square":
-                    raw = 1.0 if math.sin(2 * math.pi * freq * t) >= 0 else -1.0
-                elif wave == "triangle":
-                    raw = 2.0 * abs(2.0 * (freq * t - math.floor(freq * t + 0.5))) - 1.0
-                elif wave == "noise":
-                    raw = sfx._noise_sample(i + int(freq * 1000))
-                elif wave == "saw":
-                    raw = 2.0 * (freq * t - math.floor(freq * t + 0.5))
-                else:
-                    raw = math.sin(2 * math.pi * freq * t)
+                    if wave == "square":
+                        raw = 1.0 if math.sin(2 * math.pi * freq * t) >= 0 else -1.0
+                    elif wave == "triangle":
+                        raw = 2.0 * abs(2.0 * (freq * t - math.floor(freq * t + 0.5))) - 1.0
+                    elif wave == "noise":
+                        raw = sfx._noise_sample(i + int(freq * 1000))
+                    elif wave == "saw":
+                        raw = 2.0 * (freq * t - math.floor(freq * t + 0.5))
+                    else:
+                        raw = math.sin(2 * math.pi * freq * t)
 
-                mix[i] += int(MAX_AMP * master_vol * velocity * env * raw)
+                    mix[i] += int(MAX_AMP * master_vol * velocity * env * raw)
+                yield None
 
     # 钳位 + 输出
-    buf = bytearray()
-    for v in mix:
-        v = max(-32768, min(32767, v))
-        buf.extend(struct.pack('<h', v))
+    buf = bytearray(total_samples * 2)
+    for chunk_start in range(0, total_samples, _RENDER_CHUNK_SAMPLES):
+        chunk_end = min(total_samples, chunk_start + _RENDER_CHUNK_SAMPLES)
+        for i in range(chunk_start, chunk_end):
+            v = max(-32768, min(32767, mix[i]))
+            struct.pack_into('<h', buf, i * 2, v)
+        yield None
     return sfx._make(buf, RATE)
+
+
+def _render_pattern(pattern: MusicPattern, master_vol: float = 0.5) -> pygame.mixer.Sound:
+    """同步渲染工具，供非游戏主循环调用。"""
+    steps = _render_pattern_steps(pattern, master_vol)
+    while True:
+        try:
+            next(steps)
+        except StopIteration as completed:
+            return completed.value
 
 
 def _render_and_register(key: str, pattern: MusicPattern, master_vol: float = 0.5):
@@ -699,16 +720,12 @@ def _pattern_danger() -> MusicPattern:
 
 
 # ===================== 主题曲渲染 =====================
-def _init_all_tracks():
-    """渲染所有主题曲目到缓存（首次调用时自动执行）。"""
-    if "home" not in _music_cache:
-        _render_and_register("home", _pattern_home(), master_vol=0.45)
-    if "adventure" not in _music_cache:
-        _render_and_register("adventure", _pattern_adventure(), master_vol=0.40)
-    if "victory" not in _music_cache:
-        _render_and_register("victory", _pattern_victory(), master_vol=0.50)
-    if "danger" not in _music_cache:
-        _render_and_register("danger", _pattern_danger(), master_vol=0.35)
+_TRACK_BUILDERS = {
+    "home": (_pattern_home, 0.45),
+    "adventure": (_pattern_adventure, 0.40),
+    "victory": (_pattern_victory, 0.50),
+    "danger": (_pattern_danger, 0.35),
+}
 
 
 # 改写 play() 使其自动初始化曲目
@@ -716,6 +733,48 @@ _original_play = play
 
 
 def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
-    """播放指定曲目（自动渲染、缓存、无缝循环、淡入）。"""
-    _init_all_tracks()
-    _original_play(track_key, fade_in_ms, loops)
+    """按需逐帧合成曲目，调用时不会同步渲染音频。"""
+    global _requested_track
+    if track_key in _music_cache:
+        _requested_track = None
+        _original_play(track_key, fade_in_ms, loops)
+        return
+
+    builder = _TRACK_BUILDERS.get(track_key)
+    if builder is None:
+        _original_play(track_key, fade_in_ms, loops)
+        return
+
+    _ensure_init()
+    if track_key not in _pending_tracks:
+        pattern_factory, volume = builder
+        pattern = pattern_factory()
+        _pending_tracks[track_key] = _render_pattern_steps(pattern, volume)
+    _requested_track = (track_key, fade_in_ms, loops)
+
+
+def update():
+    """按每帧 CPU 预算推进曲目合成，并启动最近请求的曲目。"""
+    global _requested_track
+
+    deadline = time.perf_counter() + _RENDER_FRAME_BUDGET
+    for key, renderer in list(_pending_tracks.items()):
+        while time.perf_counter() < deadline:
+            try:
+                next(renderer)
+            except StopIteration as completed:
+                _music_cache[key] = completed.value
+                del _pending_tracks[key]
+                break
+            except Exception:
+                del _pending_tracks[key]
+                if _requested_track and _requested_track[0] == key:
+                    _requested_track = None
+                break
+        if time.perf_counter() >= deadline:
+            break
+
+    if _requested_track and _requested_track[0] in _music_cache:
+        key, fade_in_ms, loops = _requested_track
+        _requested_track = None
+        _original_play(key, fade_in_ms, loops)
