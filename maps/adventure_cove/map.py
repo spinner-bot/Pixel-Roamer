@@ -4,13 +4,13 @@
 """
 from __future__ import annotations
 from world import World
-import random
+from random import Random
 
 MAP_ID = 21
 MAP_NAME = "冒险湾"
 MAP_NAME_EN = "Adventure Cove"
 W, H = 420, 100
-random.seed(42)
+_rng = Random(42)
 
 _placed = set()
 def p(w, x, y, bid):
@@ -19,7 +19,7 @@ def p(w, x, y, bid):
         _placed.add(bid)
 
 def pick(pool):
-    return pool[random.randint(0, len(pool)-1)]
+    return pool[_rng.randint(0, len(pool)-1)]
 
 # =========== 笔刷 ===========
 def rect(w, x, y, rw, rh, bid, hollow=False):
@@ -71,6 +71,8 @@ def pillar(w, x, y, h, bid):
 
 # =========== 主生成 ===========
 def generate():
+    _rng.seed(42)
+    _placed.clear()
     w = World(map_id=MAP_ID, name=MAP_NAME, w=W, h=H,
               loop_x=False, loop_y=False, gravity=-6.5,
               spawn_points=(30, 72), mode="explore",
@@ -299,8 +301,8 @@ def generate():
 
     # 散落金币
     for _ in range(50):
-        gx = random.randint(5, 412)
-        gy = random.randint(30, 92)
+        gx = _rng.randint(5, 412)
+        gy = _rng.randint(30, 92)
         bt = w.get_block_type(gx, gy)
         if bt and bt.id == 0:
             p(w, gx, gy, 315)
