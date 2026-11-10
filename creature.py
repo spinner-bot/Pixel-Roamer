@@ -1073,50 +1073,29 @@ class Player(Creature):
         必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
         if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
             return False
-        # 垂直邻近判定：人物中心必须在可攀爬方块的垂直跨度内
+        best_x = self._x
         if world is not None:
-            grect = self.get_game_rect()
-            cy = self._y
-            in_range = False
-            for gx in range(math.floor(grect.x) - 1, math.floor(grect.x + grect.w) + 2):
-                for gy in range(math.floor(grect.y) - 1, math.floor(grect.y + grect.h) + 2):
+            from teleport import can_place
+            rect = self.get_game_rect()
+            candidates = []
+            # Only actually touched ladder cells may capture the character.
+            for gx in range(math.floor(rect.x - 0.01), math.floor(rect.x + rect.w + 0.01 - 1e-9) + 1):
+                for gy in range(math.floor(rect.y - 0.01), math.floor(rect.y + rect.h + 0.01 - 1e-9) + 1):
                     coord = world._wrap_grid_coord(gx, gy)
                     if coord is None:
                         continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        if gy - 0.3 <= cy <= gy + 1 + 0.3:
-                            in_range = True
-                            break
-                if in_range:
-                    break
-            if not in_range:
+                    block = world.get_block_type_by_coord(*coord)
+                    if not block.climbable or not (gy - 0.3 <= self._y <= gy + 1.3):
+                        continue
+                    center = gx + 0.5
+                    if can_place(self, world, center, self._y):
+                        candidates.append(center)
+            if not candidates:
                 return False
+            best_x = min(candidates, key=lambda x: (abs(x - self._x), x))
         self.is_climbing = True
-        self.v_x = 0.0
-        self.v_y = 0.0
-        self.a_x = 0.0
-        self.a_y = 0.0
-        # 强制居中到最近的 climbable 方块中心
-        if world is not None:
-            grect = self.get_game_rect()
-            cx = grect.x + grect.w / 2
-            best_x = None
-            best_dist = 999.0
-            for gx in range(math.floor(grect.x) - 1, math.floor(grect.x + grect.w) + 2):
-                for gy in range(math.floor(grect.y) - 1, math.floor(grect.y + grect.h) + 2):
-                    coord = world._wrap_grid_coord(gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        block_cx = gx + 0.5
-                        dist = abs(cx - block_cx)
-                        if dist < best_dist:
-                            best_dist = dist
-                            best_x = block_cx
-            if best_x is not None:
-                self._x = best_x
+        self.v_x = self.v_y = self.a_x = self.a_y = 0.0
+        self._x = best_x
         return True
 
     def stop_climbing(self):
