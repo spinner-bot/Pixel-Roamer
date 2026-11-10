@@ -461,6 +461,14 @@ def generate():
         if (bt and bt.id == 0) and (tb and tb.is_solid if tb else False):
             p(w, lx, ly, pick([9,10,31]))
 
+    # 祭坛最高跳跃仍够不到 y=51 的老根竖井；补齐入口的竖向连接。
+    # 100 体力不能连续爬完整段，侧台允许站立恢复，避免调高角色参数。
+    for climb_y in range(33, 59):
+        p(w, 3006, climb_y, 9)
+    for rest_y in (44, 55):
+        for rest_x in range(3007, 3012):
+            p(w, rest_x, rest_y, 19)
+
     # Finalize after random scenery: arrival space must not be filled again.
     from maps.portal_pad import prepare_portal_pad
     for first, second in portal_pairs:
