@@ -27,6 +27,8 @@ class GameApp:
     """Own the application lifetime, session state and page coordination."""
 
     def __init__(self):
+        self.focused = True
+        self._discard_elapsed = False
         self.help = HelpOverlay()
         self.help_open = False
         self.session = WorldSession(self)
@@ -293,12 +295,27 @@ class GameApp:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+            if event.type in (pygame.WINDOWFOCUSLOST, pygame.WINDOWMINIMIZED):
+                self.focused = False
+                self._discard_elapsed = True
+                self.jump_pressed = False
+                self.settings.cancel_drag()
+                continue
+            if event.type == pygame.WINDOWFOCUSGAINED:
+                self.focused = True
+                self._discard_elapsed = True
+                self.jump_pressed = False
+                continue
             if event.type == pygame.VIDEORESIZE:
                 self.win_w, self.win_h = max(320, event.w), max(180, event.h)
                 self.win_surface = pygame.display.set_mode((self.win_w, self.win_h), pygame.RESIZABLE)
                 self.update_scale_param()
                 if self._current_map is not None:
                     self._current_map.invalidate_chunks()
+            if not self.focused and event.type in (pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN,
+                                                   pygame.MOUSEBUTTONUP, pygame.MOUSEMOTION,
+                                                   pygame.MOUSEWHEEL):
+                continue
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_F1:
                     self.current_fps = min(self.current_fps + 10, MAX_FPS)
@@ -437,12 +454,15 @@ class GameApp:
                         pygame.event.post(pygame.event.Event(pygame.QUIT))
 
     def _draw_current_page(self, dt):
+        if self._discard_elapsed:
+            dt = 0
+            self._discard_elapsed = False
         if self.page == PAGE_DEV:
             self.map_browser.run_dev_page(dt)
 
         elif self.page == PAGE_WORLD:
             self.session.advance(dt)
-            self.world_view.draw(dt)
+            self.world_view.draw(dt if self.focused else 0)
 
 
         elif self.page == PAGE_SETTING:
