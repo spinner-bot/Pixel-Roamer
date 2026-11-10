@@ -1,6 +1,7 @@
 from __future__ import annotations
 import pygame
 from decimal import Decimal
+from resource_catalog import player_defaults
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 from maps import get_map, list_maps, load_map_config, save_map_config, get_map_summary, rename_map
 from costumes import COSTUMES
@@ -48,13 +49,7 @@ class MapBrowser:
             config["world"]["default_block_id"] = 0
 
         # Player 默认值
-        defaults = {
-            "hp_max": 150.0, "v_max": 36.5, "v_jump": 11.5, "stamina_max": 200.0,
-            "phys_atk": 10.0, "magic_atk": 0.0, "phys_res": 0.0, "magic_res": 0.0,
-            "phys_pen": 0.0, "magic_pen": 0.0, "k_res": 150.0, "dr": 0.0,
-            "f_x": 0.985, "f_y": 0.9965, "shield": 0.0, "w": 0.8, "h": 1.8,
-            "costume_id": 1,
-        }
+        defaults = player_defaults()
         saved_player = saved.get("player", {})
         for key, default_val in defaults.items():
             config["player"][key] = saved_player.get(key, default_val)
