@@ -755,7 +755,7 @@ class Creature:
                 elif bt.special == "berserk" and bt.special_data is not None:
                     # 狂暴：攻击翻倍但持续受伤
                     mult = float(bt.special_data)
-                    self.phys_atk = int(self.phys_atk * mult) if not hasattr(self, '_berserk_active') else self.phys_atk
+                    self.phys_atk = self._base_phys_atk * mult
                     self._berserk_active = True
                     self.take_raw_damage(3.0 * dt)
 
