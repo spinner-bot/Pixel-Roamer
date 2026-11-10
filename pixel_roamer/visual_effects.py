@@ -1,0 +1,52 @@
+"""World-only status overlays with explicit world-to-pixel units."""
+from collections import OrderedDict
+import math
+import pygame
+
+
+class WorldEffects:
+    def __init__(self):
+        self._glows = OrderedDict()
+        self._mask = None
+
+    def _glow(self, radius):
+        if radius not in self._glows:
+            glow = pygame.Surface((radius * 2, radius * 2))
+            glow.fill((0, 0, 0))
+            for layer in range(8, 0, -1):
+                alpha = 30 - layer * 3
+                color = tuple(round(channel * alpha / 255) for channel in (255, 240, 180))
+                pygame.draw.circle(glow, color, (radius, radius), max(1, round(radius * layer / 8)))
+            self._glows[radius] = glow
+            while len(self._glows) > 4:
+                self._glows.popitem(last=False)
+        self._glows.move_to_end(radius)
+        return self._glows[radius]
+
+    def draw(self, surface, player, camera):
+        center = tuple(round(value) for value in camera.world_to_screen(*player.get_center()))
+        if player.has_buff(50):
+            radius = max(4, min(256, round(3 * camera.scale)))
+            surface.blit(self._glow(radius), (center[0] - radius, center[1] - radius),
+                         special_flags=pygame.BLEND_RGB_ADD)
+        if player.has_buff(8):
+            return
+        if not player.has_buff(24) and not player.has_buff(25):
+            return
+        if self._mask is None or self._mask.get_size() != surface.get_size():
+            self._mask = pygame.Surface(surface.get_size(), pygame.SRCALPHA)
+        if player.has_buff(24):
+            self._mask.fill((255, 240, 80, 140))
+            surface.blit(self._mask, (0, 0))
+        if player.has_buff(25):
+            radius_blocks = max(0, player._get_buff_param(25, 0, 5))
+            # Camera scale is already pixels per tile; there is no second *24.
+            radius_pixels = radius_blocks * camera.scale
+            farthest = max(math.hypot(x - center[0], y - center[1])
+                           for x in (0, surface.get_width()) for y in (0, surface.get_height()))
+            if radius_pixels >= farthest:
+                return
+            self._mask.fill((0, 0, 0, 220))
+            if radius_pixels > 0:
+                pygame.draw.circle(self._mask, (0, 0, 0, 0), center, max(1, round(radius_pixels)))
+            surface.blit(self._mask, (0, 0))
