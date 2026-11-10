@@ -112,136 +112,66 @@ class Creature:
                 return float(b.params[idx])
         return default
 
+    def _receive_damage(self, amount: float, bypass_shield: bool = False) -> float:
+        """Return resources actually lost, including shield and capped overkill."""
+        if not self.alive or amount <= 0:
+            return 0.0
+        shield_lost = 0.0 if bypass_shield else min(self.shield, amount)
+        self.shield -= shield_lost
+        health_lost = min(self.hp, amount - shield_lost)
+        self.hp -= health_lost
+        if self.hp <= 0:
+            self.hp = 0.0
+            self.alive = False
+            self.on_death()
+        return shield_lost + health_lost
+
     def take_damage(self, phys_damage: float, magic_damage: float,
                     phys_pen: float = 0.0, magic_pen: float = 0.0,
                     source: "Creature" = None, damage_type: str = "physical") -> float:
-        if not self.alive:
+        if not all(math.isfinite(value) for value in (phys_damage, magic_damage, phys_pen, magic_pen)):
+            raise ValueError("damage inputs must be finite")
+        if not self.alive or self.has_buff(36) or (damage_type == "fire" and self.has_buff(9)):
             return 0.0
+        phys_damage = 0.0 if self.has_buff(34) else max(0.0, phys_damage)
+        magic_damage = 0.0 if self.has_buff(35) else max(0.0, magic_damage)
+        armor_broken = self.has_buff(26)
 
-        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
-        if self.has_buff(36):
-            return 0.0
+        def resistance_multiplier(penetration, resistance):
+            if armor_broken:
+                return 1.0
+            x = max(-1.0, min((penetration - resistance) / RES_NORMAL_SCALE, 1.0))
+            correction = max(x, CORR_FLOOR, 0.95 * math.sin(x) + 0.15 * x ** 2)
+            return 1.0 + correction
 
-        # ---- Buff: 物理免疫 (34) / 法术免疫 (35) ----
-        if phys_damage > 0 and self.has_buff(34):
-            phys_damage = 0.0
-        if magic_damage > 0 and self.has_buff(35):
-            magic_damage = 0.0
-
-        if phys_damage <= 0 and magic_damage <= 0:
-            return 0.0
-
-        # ---- Buff: 破甲 (26) 无视目标抗性 ----
-        if source is not None and source.has_buff(26):
-            phys_pen = max(phys_pen, self.phys_res + RES_NORMAL_SCALE)
-            magic_pen = max(magic_pen, self.magic_res + RES_NORMAL_SCALE)
-
-        x_phys = (phys_pen - self.phys_res) / RES_NORMAL_SCALE
-        x_phys = max(-1.0, min(x_phys, 1.0))
-        phys_correction = max(x_phys, CORR_FLOOR, 0.95 * math.sin(x_phys) + 0.15 * (x_phys ** 2))
-        phys_mult = 1.0 + phys_correction
-
-        x_magic = (magic_pen - self.magic_res) / RES_NORMAL_SCALE
-        x_magic = max(-1.0, min(x_magic, 1.0))
-        magic_correction = max(x_magic, CORR_FLOOR, 0.95 * math.sin(x_magic) + 0.15 * (x_magic ** 2))
-        magic_mult = 1.0 + magic_correction
-
-        total_raw = phys_damage * phys_mult + magic_damage * magic_mult
-        # 勇气效果：额外减伤
-        courage_val = getattr(self, '_courage_dr', 0.0)
-        weakness_mult = getattr(self, '_weakness_mult', 1.0)
-
-        # ---- Buff: 坚守 (7) 受到伤害减少 ----
-        fortify_mult = self.get_buff_stat("damage_taken", 1.0)
-
-        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
+        total = (phys_damage * resistance_multiplier(phys_pen, self.phys_res)
+                 + magic_damage * resistance_multiplier(magic_pen, self.magic_res))
+        reduction = 0.0 if armor_broken else max(0.0, min(1.0, self.dr + getattr(self, '_courage_dr', 0.0)))
+        fortify = 1.0 if armor_broken else self.get_buff_stat("damage_taken", 1.0)
         if self.has_buff(46) and damage_type == "fire":
-            fortify_mult *= 2.0
-
-        effective_dr = max(0.0, min(1.0, self.dr + courage_val))
-        damage = total_raw * (1 - effective_dr) * weakness_mult * fortify_mult
-
-        if damage <= 0:
-            return 0.0
-
-        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if self.has_buff(29):
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-        elif self.shield > 0:
-            if self.shield >= damage:
-                self.shield -= damage
-            else:
-                damage -= self.shield
-                self.shield = 0
-                self.hp -= damage
-                if self.hp <= 0:
-                    self.hp = 0
-                    self.alive = False
-                    self.on_death()
-        else:
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-
-        # 实际受到的总伤害（用于荆棘反弹、嗜血回复计算）
-        actual_damage = max(0.0, total_raw * (1 - effective_dr) * weakness_mult * fortify_mult)
-
-        # ---- Buff: 荆棘 (10) 反弹伤害 ----
-        if source is not None and source.alive and self.has_buff(10) and actual_damage > 0:
-            thorn_pct = self._get_buff_param(10, 0, 30.0)
-            reflect = actual_damage * thorn_pct / 100.0
-            if reflect > 0:
-                source.take_raw_damage(reflect)
-
-        # ---- Buff: 嗜血 (11) 造成伤害时回血（由攻击者触发） ----
-        if source is not None and source.alive and source.has_buff(11) and actual_damage > 0:
-            lifesteal_pct = source._get_buff_param(11, 0, 15.0)
-            heal_amt = actual_damage * lifesteal_pct / 100.0
-            source.heal(heal_amt)
-
-        return actual_damage
+            total *= 2
+        amount = total * (1 - reduction) * getattr(self, '_weakness_mult', 1.0) * fortify
+        actual = self._receive_damage(amount, bypass_shield=self.has_buff(29))
+        if source is not None and source.alive and actual > 0:
+            if self.has_buff(10):
+                source.take_raw_damage(actual * max(0, self._get_buff_param(10, 0, 30)) / 100)
+            if source.alive and source.has_buff(11):
+                source.heal(actual * max(0, source._get_buff_param(11, 0, 15)) / 100)
+        return actual
 
     def take_raw_damage(self, damage: float, damage_type: str = "raw",
                         bypass_shield: bool = False) -> float:
-        if not self.alive or damage <= 0:
+        if not math.isfinite(damage):
+            raise ValueError("damage must be finite")
+        if not self.alive or damage <= 0 or self.has_buff(36):
             return 0.0
-
-        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
-        if self.has_buff(36):
+        if ((damage_type == "fire" and self.has_buff(9))
+                or (damage_type == "magic" and self.has_buff(35))
+                or (damage_type == "physical" and self.has_buff(34))):
             return 0.0
-
-        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
         if self.has_buff(46) and damage_type == "fire":
-            damage *= 2.0
-
-        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if bypass_shield or self.has_buff(29):
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-            return damage
-
-        if self.shield > 0:
-            if self.shield >= damage:
-                self.shield -= damage
-                return damage
-            else:
-                damage -= self.shield
-                self.shield = 0
-        self.hp -= damage
-        if self.hp <= 0:
-            self.hp = 0
-            self.alive = False
-            self.on_death()
-        return damage
+            damage *= 2
+        return self._receive_damage(damage, bypass_shield=bypass_shield or self.has_buff(29))
 
     def heal(self, amount: float) -> float:
         if not self.alive or amount <= 0:
@@ -271,7 +201,7 @@ class Creature:
         if not self.alive or amount <= 0:
             return 0.0
         if max_shield is not None:
-            target = min(self.shield + amount, max_shield)
+            target = max(self.shield, min(self.shield + amount, max_shield))
         else:
             target = self.shield + amount
         add = target - self.shield
@@ -694,7 +624,9 @@ class Creature:
 
         max_dps = max((bt.damage_ps for bt in types), default=0.0)
         if max_dps > 0:
-            self.take_raw_damage(max_dps * dt)
+            self.take_raw_damage(max_dps * dt, damage_type="fire" if any(
+                bt.damage_ps == max_dps and bt.buff_ids and 16 in bt.buff_ids for bt in types
+            ) else "raw")
 
         # ---- Buff 施加（接触方块时触发，支持复合）----
         for bt in types:
@@ -993,137 +925,12 @@ class Creature:
                           BUFF_TYPES[b.buff_id].category != category]
 
     def tick_buffs(self, dt: float):
-        """每帧处理 buff 的持续时间衰减和 tick 效果。"""
-        self._buff_game_time += dt
-
-        # 过期检测
-        expired = []
-        for b in self.buffs:
-            if b.tick(dt):
-                expired.append(b)
-        for b in expired:
-            # ---- Buff: 幸运 (52) 过期时随机清除一个负面效果 ----
-            from buff_system import BUFF_TYPES, CAT_NEGATIVE
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt and bt.tick == "lucky":
-                import random
-                negatives = [cb for cb in self.buffs
-                            if BUFF_TYPES.get(cb.buff_id) and
-                            BUFF_TYPES[cb.buff_id].category == CAT_NEGATIVE]
-                if negatives:
-                    self.remove_buff(random.choice(negatives).buff_id)
-            self.remove_buff(b.buff_id)
-
-        # Tick 效果（每秒处理一次，累积 dt）
-        self._buff_timer += dt
-        tick_interval = 0.25  # 每 0.25 秒 tick 一次
-        if self._buff_timer < tick_interval:
-            return
-        self._buff_timer -= tick_interval
-
-        from buff_system import BUFF_TYPES, CAT_NEGATIVE
-        for b in self.buffs:
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt is None or bt.tick is None:
-                continue
-            p = b.params
-
-            # ---- 恢复/伤害类 ----
-            if bt.tick == "regen":
-                amt = float(p[0]) if p else 3.0
-                self.heal(amt * tick_interval)
-            elif bt.tick == "shield_regen":
-                amt = float(p[0]) if p else 2.0
-                self.add_shield(amt * tick_interval, None)
-            elif bt.tick == "burning":
-                amt = float(p[0]) if p else 5.0
-                self.take_raw_damage(amt * tick_interval, damage_type="fire")
-            elif bt.tick == "bleeding":
-                pct = float(p[0]) if p else 1.0
-                self.take_raw_damage(self.hp * pct / 100.0 * tick_interval)
-            elif bt.tick == "berserk":
-                # 狂暴：持续损失生命值（每秒 {0} 点）
-                amt = float(p[0]) if p else 5.0
-                self.take_raw_damage(amt * tick_interval)
-            elif bt.tick == "parasitic":
-                # 寄生：每秒损失生命（每秒 {0} 点）
-                amt = float(p[0]) if p else 3.0
-                self.take_raw_damage(amt * tick_interval)
-            elif bt.tick == "cleansing":
-                interval = float(p[0]) if p else 5.0
-                self._buff_timer_cleanse = getattr(self, '_buff_timer_cleanse', 0) + tick_interval
-                if self._buff_timer_cleanse >= interval:
-                    self._buff_timer_cleanse -= interval
-                    for cb in self.buffs:
-                        cbt = BUFF_TYPES.get(cb.buff_id)
-                        if cbt and cbt.category == CAT_NEGATIVE and cb.buff_id != bt.id:
-                            self.remove_buff(cb.buff_id)
-                            break
-            elif bt.tick == "drowsy":
-                # 困倦 (44)：每隔 {0} 秒有概率短暂晕眩
-                interval = float(p[0]) if p else 4.0
-                self._buff_timer_drowsy = getattr(self, '_buff_timer_drowsy', 0) + tick_interval
-                if self._buff_timer_drowsy >= interval:
-                    self._buff_timer_drowsy -= interval
-                    import random
-                    if random.random() < 0.4:
-                        # 短暂晕眩 0.5 秒
-                        self.apply_buff(28, (0.5,), 0.5)
-            elif bt.tick == "electrified":
-                # 带电 (45)：接触水体时持续受到伤害
-                if getattr(self, 'can_swim', False):
-                    amt = float(p[0]) if p else 8.0
-                    self.take_raw_damage(amt * tick_interval, damage_type="magic")
+        from status_effects import advance_buffs
+        advance_buffs(self, dt)
 
     def get_buff_stat(self, stat_name: str, base_value: float) -> float:
-        """根据活跃 buff 计算修改后的属性值。"""
-        from buff_system import BUFF_TYPES
-        result = base_value
-        for b in self.buffs:
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt is None:
-                continue
-            p = b.params
-            # 速度修正
-            if stat_name == "v_max":
-                if bt.tick == "swiftness":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.3
-                elif bt.tick == "slowed":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-                elif bt.tick == "stone_skin":
-                    # 石肤：大幅减速但免疫击退
-                    result *= 0.4
-                elif bt.tick == "chilled":
-                    # 寒冷：减速
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.6
-            elif stat_name == "v_jump":
-                if bt.tick == "leaping":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
-            elif stat_name == "stamina_recovery":
-                if bt.tick == "vigor":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
-                elif bt.tick == "fatigue":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-            elif stat_name == "stamina_cost":
-                if bt.tick == "endurance":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
-                elif bt.tick == "weakened":
-                    result *= float(p[0]) if p else 2.0
-            elif stat_name == "gravity":
-                if bt.tick == "feather":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-                elif bt.tick == "anchored":
-                    # 定锚：重力大幅增加
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 2.0
-            elif stat_name == "damage_taken":
-                # 坚守 (7)：受到伤害乘数
-                if bt.tick == "fortify":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
-            elif stat_name == "healing_received":
-                # 重伤 (20)：受到治疗乘数
-                if bt.tick == "grievous_wound":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-        return result
+        from status_effects import modified_stat
+        return modified_stat(self, stat_name, base_value)
 
     # ----- 工具 -----
     def get_center(self) -> Tuple[float, float]:
