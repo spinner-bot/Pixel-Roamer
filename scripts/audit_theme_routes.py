@@ -12,11 +12,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from maps import get_map
 from creature import Player
+from simulation import FixedStepClock, SIMULATION_HZ
 
 
 def run_route(map_id, fps, upper=False):
     world = get_map(map_id)
     player = Player(0, 'route', *world.spawn_points, {})
+    clock = FixedStepClock()
+
+    def step(dt):
+        player.tick_buffs(dt)
+        player.refresh_movement_stats()
+        player.update_physics(dt, world)
+        player.collide_with_world(world, dt)
     targets = [(90, 9.9)]
     if upper:
         targets = [(24.5, 13.9), (38.5, 16.9), (55.5, 13.9), (90, 9.9)]
@@ -27,8 +35,6 @@ def run_route(map_id, fps, upper=False):
     for tx, ty in targets:
         previous_score = player.score
         for _ in range(fps * 90):
-            player.tick_buffs(1 / fps)
-            player.refresh_movement_stats()
             desired_v = max(-6, min(6, (tx - player._x) * 3))
             error = desired_v - player.v_x
             player.move(1 if error > 0.6 else -1 if error < -0.6 else 0)
@@ -36,8 +42,7 @@ def run_route(map_id, fps, upper=False):
                 # Approach the platform before jumping so ascent is visible.
                 if abs(tx - player._x) < 8 or player._y > 12:
                     jumps += int(player.jump())
-            player.update_physics(1 / fps, world)
-            player.collide_with_world(world, 1 / fps)
+            clock.advance(1 / fps, step)
             frames += 1
             min_hp = min(min_hp, player.hp)
             if not player.alive or not all(math.isfinite(v) for v in
@@ -79,7 +84,7 @@ def main():
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'],
               cwd=ROOT, text=True).strip(),
               'scope': 'physics route inputs only; no real device visual or control acceptance',
-              'runs': results}
+              'simulation_hz': SIMULATION_HZ, 'runs': results}
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
