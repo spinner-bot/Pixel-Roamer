@@ -113,6 +113,10 @@ class MapBrowser:
 
         self.app.logic_surface.fill((20, 20, 40))
 
+        if not self.app._dev_edit_mode:
+            self.app.map_selector.draw(dt)
+            return
+
         maps_dict = list_maps()
         map_ids = sorted(maps_dict.keys())
 
@@ -215,76 +219,10 @@ class MapBrowser:
             draw_text_center(self.app.logic_surface, FONT20,
                              "已修改，按 S 保存" if self.app._dev_edit_dirty else "无修改",
                              y, status_color)
-        else:
-            # ========== 地图列表模式 ==========
-            y = draw_text_center(self.app.logic_surface, FONT34, "开发者界面 (DEV)", y, (100, 200, 255)) + 12
-            y = draw_text_center(self.app.logic_surface, FONT24, "↑↓ 选择  Enter 启动  E 编辑属性  R 刷新", y, (180, 180, 180)) + 30
-
-            # 表头
-            col_x_id = 80
-            col_x_name = 160
-            col_x_mode = 400
-            col_x_type = 580
-            col_x_size = 730
-            header_y = y
-            pygame.draw.rect(self.app.logic_surface, (30, 30, 55), (40, y - 2, LOGIC_WIDTH - 80, 30))
-            draw_text_left(self.app.logic_surface, FONT20, "ID", col_x_id, y + 2, (150, 150, 150))
-            draw_text_left(self.app.logic_surface, FONT20, "地图名称", col_x_name, y + 2, (150, 150, 150))
-            draw_text_left(self.app.logic_surface, FONT20, "游戏模式", col_x_mode, y + 2, (150, 150, 150))
-            draw_text_left(self.app.logic_surface, FONT20, "循环", col_x_type, y + 2, (150, 150, 150))
-            draw_text_left(self.app.logic_surface, FONT20, "尺寸", col_x_size, y + 2, (150, 150, 150))
-            y = header_y + 34
-
-            for mid in map_ids:
-                name = maps_dict[mid]
-                try:
-                    info = get_map_summary(mid)
-                    info_size = f"{info['width']}×{info['height']}"
-                    info_type = self._get_map_type_label(info["loop_x"], info["loop_y"])
-                    info_mode = info["mode"]
-                except Exception:
-                    info_size = "?"
-                    info_type = "?"
-                    info_mode = "?"
-
-                is_selected = (mid == self.app._dev_selected_id)
-                row_h = 36
-                if is_selected:
-                    pygame.draw.rect(self.app.logic_surface, (50, 50, 90), (40, y - 1, LOGIC_WIDTH - 80, row_h))
-                    pygame.draw.rect(self.app.logic_surface, (100, 200, 255), (40, y - 1, LOGIC_WIDTH - 80, row_h), 2)
-
-                font = FONT28 if is_selected else FONT24
-                sel_color = (255, 255, 180)
-                norm_color = (200, 200, 200)
-                c = lambda b: sel_color if b and is_selected else norm_color
-
-                draw_text_left(self.app.logic_surface, font, str(mid), col_x_id, y + 3, c(True))
-                draw_text_left(self.app.logic_surface, font, name, col_x_name, y + 3, c(True))
-                # 游戏模式用颜色标注
-                mode_color_map = {"free": (180,200,220), "explore": (255,200,150),
-                                  "score_timed": (255,150,150), "score_target": (150,255,150)}
-                mc = mode_color_map.get(info_mode, (200,200,200))
-                if not is_selected: mc = tuple(int(c*0.75) for c in mc)
-                draw_text_left(self.app.logic_surface, font, info_mode, col_x_mode, y + 3, mc)
-                # 循环类型
-                type_color_map = {"有限": (180, 200, 220), "循环X": (150, 255, 200),
-                                  "循环Y": (150, 200, 255), "循环XY": (255, 200, 150)}
-                tc = type_color_map.get(info_type, (200, 200, 200))
-                if not is_selected: tc = tuple(int(c*0.75) for c in tc)
-                draw_text_left(self.app.logic_surface, font, info_type, col_x_type, y + 3, tc)
-                draw_text_left(self.app.logic_surface, font, info_size, col_x_size, y + 3, c(False))
-                y += row_h
-
-        # 底部
         if self.app._dev_selected_id is not None:
-            if self.app._dev_edit_mode:
-                draw_text_center(self.app.logic_surface, FONT20,
-                                 self.app._dev_error or "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
-                                 LOGIC_HEIGHT - 24, (255, 100, 80) if self.app._dev_error else (140, 180, 255))
-            else:
-                draw_text_center(self.app.logic_surface, FONT24,
-                                 f"当前选中: ID={self.app._dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览  Esc主页",
-                                 LOGIC_HEIGHT - 50, (140, 180, 255))
+            draw_text_center(self.app.logic_surface, FONT20,
+                             self.app._dev_error or "S: 保存到硬盘 | Enter: 精确输入 | Esc: 返回列表",
+                             LOGIC_HEIGHT - 24, (255, 100, 80) if self.app._dev_error else (140, 180, 255))
 
     def _parse_input_value(self, text: str, ftype: str):
         """解析输入文本为对应类型的值，失败返回 None。"""
@@ -308,6 +246,10 @@ class MapBrowser:
 
     def handle_dev_input(self, event):
         """处理 dev 页面的键盘事件。"""
+
+        if (not self.app._dev_edit_mode and not self.app._dev_block_browser
+                and not self.app._dev_buff_browser and self.app.map_selector.handle_input(event)):
+            return
 
         if event.type != pygame.KEYDOWN:
             return
