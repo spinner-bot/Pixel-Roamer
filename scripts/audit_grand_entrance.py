@@ -60,9 +60,12 @@ def run(fps, legacy=False, upper=False):
                 keys[pygame.K_w] = True
                 if player.can_climb and not player.is_climbing:
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_w))
-                if player.is_climbing and player._y >= heights[rest]:
+                drop_to_rest = upper and rest == 2
+                leave_height = 74 - player._h / 2 if drop_to_rest else heights[rest]
+                if player.is_climbing and player._y >= leave_height:
                     phase = 'rest'
-                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
+                    key = pygame.K_s if drop_to_rest else pygame.K_SPACE
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=key))
             if phase == 'rest':
                 tx = 3010.5
                 keys[pygame.K_w] = False
