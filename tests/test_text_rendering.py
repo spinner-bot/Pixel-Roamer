@@ -8,6 +8,13 @@ import game_text
 
 
 class TextRenderingTests(unittest.TestCase):
+    def test_long_names_fit_their_columns_without_losing_short_names(self):
+        self.assertEqual(game_text.elide("黏土", 200, 24), "黏土")
+        text = game_text.elide("这是一个很长的地图名称" * 10, 240, 24)
+        self.assertTrue(text.endswith("…"))
+        self.assertLessEqual(game_text._get_font("sans", 24).get_rect(text).width, 240)
+        self.assertEqual(game_text.elide("地图", 0, 24), "")
+
     def test_bundled_font_has_chinese_gameplay_glyphs_without_system_fonts(self):
         font = game_text._get_font("sans", 24)
         self.assertIn("Fusion Pixel", font.name)
