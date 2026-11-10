@@ -1,4 +1,4 @@
-"""Production routes from Grand Journey altar to first cave and optional cross hall."""
+"""Production routes from Grand Journey altar to cave, hall and first portal."""
 import argparse
 from collections import defaultdict
 import json
@@ -20,7 +20,8 @@ from pixel_roamer.world_session import WorldSession
 from teleport import can_place
 
 
-def run(fps, legacy=False, upper=False):
+def run(fps, legacy=False, upper=False, portal=False):
+    upper = upper or portal
     app = GameApp.__new__(GameApp)
     app.p1_keys = dict(left=pygame.K_a, right=pygame.K_d, up=pygame.K_w,
                        down=pygame.K_s, jump=pygame.K_SPACE, fly=pygame.K_f)
@@ -28,7 +29,7 @@ def run(fps, legacy=False, upper=False):
     if legacy:
         module = ModuleType('legacy_grand_entrance')
         module.__file__ = str(ROOT / 'maps/grand_journey/map.py')
-        source = subprocess.check_output(['git', 'show', ('43c16b4' if upper else 'c95354d') + ':maps/grand_journey/map.py'],
+        source = subprocess.check_output(['git', 'show', ('b93d820' if portal else ('43c16b4' if upper else 'c95354d')) + ':maps/grand_journey/map.py'],
                                          cwd=ROOT, text=True)
         exec(compile(source, module.__file__, 'exec'), module.__dict__)
         _apply_config(module.world, 'grand_journey')
@@ -44,12 +45,18 @@ def run(fps, legacy=False, upper=False):
     phase, rest = 'altar', 0
     tops = (45, 56, 71) if upper else (45, 56)
     heights = tuple(top + player._h / 2 for top in tops)
+    rest_goal = 100 if portal else 95
     reached_hall = False
+    reached_portal = False
+    failure = None
+    north_climb_bound = None
+    jump_targets = {'stone': (2997.5, 104.9), 'low_platform': (2991.5, 112.9),
+                    'high_platform': (3000.5, 120.9), 'gate': (3018.5, 120.9)}
     trace = []
     min_hp, min_stamina, peak = player.hp, player.stamina, player._y
     rest_stops = []
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'):
-        for frame in range(150 * fps):
+        for frame in range(300 * fps):
             events = []
             keys[pygame.K_w] = False
             tx = 3002.5 if phase == 'altar' else 3006.5
@@ -69,7 +76,7 @@ def run(fps, legacy=False, upper=False):
             if phase == 'rest':
                 tx = 3010.5
                 keys[pygame.K_w] = False
-                if player.on_ground and player._y >= heights[rest] - .1 and player.stamina >= 95:
+                if player.on_ground and player._y >= heights[rest] - .1 and player.stamina >= rest_goal:
                     rest_stops.append({'position': player.get_center(), 'stamina': player.stamina,
                                        'seconds': frame / fps})
                     rest += 1
@@ -93,25 +100,64 @@ def run(fps, legacy=False, upper=False):
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
                 if player.on_ground and abs(player._y - 76.9) < .1 and abs(player._x - tx) < .4:
                     reached_hall = True
-                    break
+                    if not portal:
+                        break
+                    phase = 'north_align'
+            if phase == 'north_align':
+                tx = 2996.5
+                keys[pygame.K_w] = False
+                if player.on_ground and abs(player._x - tx) < .15 and abs(player.v_x) < .5 and player.stamina >= 100:
+                    phase = 'north_climb'
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
+            if phase == 'north_climb':
+                tx = 2996.5
+                keys[pygame.K_w] = True
+                if player.can_climb and not player.is_climbing:
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_w))
+                if player.is_climbing and player._y >= 105:
+                    phase = 'stone'
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_s))
+            if phase in jump_targets:
+                tx, ty = jump_targets[phase]
+                keys[pygame.K_w] = False
+                if player.on_ground:
+                    if abs(player._x - tx) < .4 and abs(player._y - ty) < .1:
+                        if player.stamina >= 95 and phase != 'gate':
+                            sequence = list(jump_targets)
+                            phase = sequence[sequence.index(phase) + 1]
+                    elif player.stamina >= 20 and (ty > player._y + 1 or abs(player._x - tx) > 4
+                                                     or player.on_wall_left or player.on_wall_right):
+                        events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
             desired = max(-6, min(6, (tx - player._x) * 3))
             error = desired - player.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .3, error < -.3
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
             session.advance(1 / fps)
+            if phase == 'north_climb':
+                bound = getattr(player, '_climb_top_y', None)
+                if bound is not None:
+                    north_climb_bound = max(north_climb_bound or bound, bound)
             peak = max(peak, player._y)
             min_hp, min_stamina = min(min_hp, player.hp), min(min_stamina, player.stamina)
             if not can_place(player, app._current_map, *player.get_center()):
-                raise AssertionError('entrance route penetrated terrain')
+                failure = {'position': player.get_center(), 'phase': phase, 'reason': 'terrain overlap or invalid coordinates'}
+                break
             if player.fly_mode or app._game_over or app._player_lives_left != 5:
-                raise AssertionError('entrance route used flight, death or respawn')
+                failure = {'position': player.get_center(), 'phase': phase, 'lives': app._player_lives_left}
+                break
+            if portal and player._x > 4000:
+                reached_portal = True
+                break
             if frame % fps == 0:
                 trace.append({'t': frame / fps, 'phase': phase, 'position': player.get_center(),
                               'stamina': player.stamina, 'hp': player.hp})
-            if legacy and frame >= (90 if upper else 30) * fps:
+            if legacy and frame >= (150 if portal else (90 if upper else 30)) * fps:
                 break
-    return {'fps': fps, 'reached_cave': rest >= 2, 'reached_hall': reached_hall, 'seconds': frame / fps,
+    reached_goal = reached_portal if portal else (reached_hall if upper else rest >= 2)
+    if not reached_goal and failure is None:
+        failure = {'reason': 'route time budget exceeded', 'phase': phase, 'position': player.get_center()}
+    return {'fps': fps, 'simulation_seconds': session.app._game_timer, 'reached_cave': rest >= 2, 'reached_hall': reached_hall, 'reached_portal': reached_portal, 'north_climb_bound': north_climb_bound, 'failure': failure, 'phase': phase, 'seconds': frame / fps,
             'position': player.get_center(), 'peak': peak, 'rest_stops': rest_stops,
             'min_hp': min_hp, 'min_stamina': min_stamina, 'lives_left': app._player_lives_left,
             'trace': trace}
@@ -121,19 +167,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--legacy', action='store_true')
     parser.add_argument('--upper', action='store_true')
+    parser.add_argument('--portal', action='store_true')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    runs = [run(fps, args.legacy, args.upper) for fps in (30, 60, 144)]
+    runs = [run(fps, args.legacy, args.upper, args.portal) for fps in (30, 60, 144)]
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                                      text=True).strip(),
               'legacy_map': args.legacy,
-              'legacy_map_revision': ('43c16b4' if args.upper else 'c95354d') if args.legacy else None,
-              'scope': ('spawn to cross hall' if args.upper else 'spawn to first cave') + '; actual application/session synthetic inputs; not full map victory',
+              'legacy_map_revision': ('b93d820' if args.portal else ('43c16b4' if args.upper else 'c95354d')) if args.legacy else None,
+              'scope': ('spawn to first portal' if args.portal else ('spawn to cross hall' if args.upper else 'spawn to first cave')) + '; actual application/session synthetic inputs; not full map victory',
               'runs': runs}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps([{k: v for k, v in run.items() if k != 'trace'} for run in runs]))
-    if not args.legacy and not all(run['reached_hall' if args.upper else 'reached_cave'] for run in runs):
+    if not args.legacy and not all(run['reached_portal' if args.portal else ('reached_hall' if args.upper else 'reached_cave')] for run in runs):
         sys.exit(1)
 
 
