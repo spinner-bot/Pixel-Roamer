@@ -514,10 +514,10 @@ class Creature:
         self._swim_top_y = None
         if self.can_climb or self.can_swim:
             grect = self.get_game_rect()
-            min_gx = int(grect.x) - 1
-            max_gx = int(grect.x + grect.w) + 1
-            min_gy = int(grect.y) - 1
-            max_gy = int(grect.y + grect.h) + 1
+            min_gx = math.floor(grect.x) - 1
+            max_gx = math.floor(grect.x + grect.w) + 1
+            min_gy = math.floor(grect.y) - 1
+            max_gy = math.floor(grect.y + grect.h) + 1
             climb_top = -999.0
             swim_top = -999.0
             for gx in range(min_gx, max_gx + 1):
@@ -542,8 +542,8 @@ class Creature:
             shore_margin = 0.2
             grect = self.get_game_rect()
             # 检查右侧：水面相邻的固体方块
-            check_gx = int(grect.x + grect.w + shore_margin)
-            for gy in range(int(surface_y - 1), int(surface_y) + 1):
+            check_gx = math.floor(grect.x + grect.w + shore_margin)
+            for gy in range(math.floor(surface_y - 1), math.floor(surface_y) + 1):
                 coord = world._wrap_grid_coord(check_gx, gy)
                 if coord is None:
                     continue
@@ -556,8 +556,8 @@ class Creature:
                         break
             # 检查左侧
             if not self._near_shore:
-                check_gx = int(grect.x - shore_margin)
-                for gy in range(int(surface_y - 1), int(surface_y) + 1):
+                check_gx = math.floor(grect.x - shore_margin)
+                for gy in range(math.floor(surface_y - 1), math.floor(surface_y) + 1):
                     coord = world._wrap_grid_coord(check_gx, gy)
                     if coord is None:
                         continue
@@ -1078,8 +1078,8 @@ class Player(Creature):
             grect = self.get_game_rect()
             cy = self._y
             in_range = False
-            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+            for gx in range(math.floor(grect.x) - 1, math.floor(grect.x + grect.w) + 2):
+                for gy in range(math.floor(grect.y) - 1, math.floor(grect.y + grect.h) + 2):
                     coord = world._wrap_grid_coord(gx, gy)
                     if coord is None:
                         continue
@@ -1103,8 +1103,8 @@ class Player(Creature):
             cx = grect.x + grect.w / 2
             best_x = None
             best_dist = 999.0
-            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+            for gx in range(math.floor(grect.x) - 1, math.floor(grect.x + grect.w) + 2):
+                for gy in range(math.floor(grect.y) - 1, math.floor(grect.y + grect.h) + 2):
                     coord = world._wrap_grid_coord(gx, gy)
                     if coord is None:
                         continue
