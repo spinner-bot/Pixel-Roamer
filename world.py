@@ -13,8 +13,8 @@ from pattern import render_block_pattern
 
 # ===================== 性能常量 =====================
 CHUNK_SIZE = 32          # 每个 Chunk 边长（方块数）
-CHUNK_TEX_PX = 10        # Chunk 纹理中每方块的像素（平衡质量与内存）
-MAX_CHUNK_SURFACES = 128
+CHUNK_TEX_PX = 16        # Preserve native 16px terrain without downsampling first.
+MAX_CHUNK_SURFACES = 64  # 64 MiB base textures, plus the separate scaled budget.
 MAX_SCALED_CACHE_BYTES = 64 * 1024 * 1024
 
 
