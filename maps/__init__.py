@@ -17,6 +17,9 @@ import os
 import json
 import importlib
 import ast
+import tempfile
+import warnings
+from map_config import validate_config
 
 _MAP_REGISTRY_SIGNATURE = None
 _MAP_REGISTRY_CACHE = {}
@@ -51,8 +54,11 @@ def load_map_config(map_id: int) -> dict:
         return {}
     config_path = os.path.join(maps_dir, name, "config.json")
     if os.path.isfile(config_path):
-        with open(config_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                return validate_config(json.load(f))
+        except (ValueError, OSError) as error:
+            warnings.warn(f"忽略无效地图配置 {config_path}: {error}", RuntimeWarning)
     return {}
 
 
@@ -63,8 +69,18 @@ def save_map_config(map_id: int, config: dict):
     if name is None:
         raise KeyError(f"地图ID {map_id} 不存在，无法保存配置")
     config_path = os.path.join(maps_dir, name, "config.json")
-    with open(config_path, "w", encoding="utf-8") as f:
-        json.dump(config, f, ensure_ascii=False, indent=2)
+    validated = validate_config(config)
+    temp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=os.path.dirname(config_path),
+                                         prefix=".config-", suffix=".json", delete=False) as f:
+            temp_path = f.name
+            json.dump(validated, f, ensure_ascii=False, indent=2, allow_nan=False)
+            f.write("\n")
+        os.replace(temp_path, config_path)
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.unlink(temp_path)
 
 
 def get_map_folder_name(map_id: int) -> str:
@@ -153,15 +169,15 @@ def _apply_config(world, map_name: str):
     config_path = os.path.join(maps_dir, map_name, "config.json")
     if not os.path.isfile(config_path):
         return
-    try:
-        with open(config_path, "r", encoding="utf-8") as f:
-            config = json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return
+    config = load_map_config(world.map_id)
 
     # 应用 world 属性
     world_attrs = config.get("world", {})
     for key, value in world_attrs.items():
+        if key == "default_block_id":
+            world.default_tile.type_id = value
+            world._default_bt = world.block_types[value]
+            continue
         if hasattr(world, key):
             # 特殊处理：fill_color 可能是 list，转为 tuple
             if key == "fill_color" and isinstance(value, list):
