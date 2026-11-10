@@ -1,6 +1,7 @@
 """Drive the real main loop with deterministic SDL events and a fixed clock."""
 import inspect
 import json
+import os
 from pathlib import Path
 import runpy
 import sys
@@ -30,16 +31,44 @@ def key(code):
     return [pygame.event.Event(pygame.KEYDOWN, key=code, unicode="", mod=0)]
 
 
+def capture(g, name):
+    directory = os.environ.get("PIXEL_ROAMER_SCREENSHOT_DIR")
+    if directory:
+        target = Path(directory)
+        target.mkdir(parents=True, exist_ok=True)
+        pygame.image.save(g["logic_surface"], str(target / f"{name}.png"))
+
+
 def scenarios(g):
     assert g["page"] == g["PAGE_INIT"]
     yield key(pygame.K_ESCAPE)
     assert g["page"] == g["PAGE_HOME"]
+    capture(g, "home")
     yield [pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=(5, 5))]
     assert g["page"] == g["PAGE_HOME"], "background click activated menu selection"
     yield [pygame.event.Event(pygame.VIDEORESIZE, w=0, h=0)]
     assert g["scale"] > 0
     yield key(pygame.K_RETURN)
     assert g["page"] == g["PAGE_DEV"]
+    capture(g, "maps")
+    yield key(pygame.K_b)
+    assert g["_dev_block_browser"]
+    capture(g, "blocks")
+    yield key(pygame.K_RETURN)
+    assert g["_dev_block_detail_id"] is not None
+    yield key(pygame.K_ESCAPE)
+    yield key(pygame.K_TAB)
+    yield key(pygame.K_b)
+    assert not g["_dev_block_browser"]
+    yield key(pygame.K_u)
+    assert g["_dev_buff_browser"]
+    capture(g, "buffs")
+    yield key(pygame.K_RETURN)
+    assert g["_dev_buff_detail_id"] is not None
+    yield key(pygame.K_ESCAPE)
+    yield key(pygame.K_TAB)
+    yield key(pygame.K_u)
+    assert not g["_dev_buff_browser"]
     map_ids = sorted(g["list_maps"]())
     for map_id in map_ids:
         g["_dev_selected_id"] = map_id
@@ -143,7 +172,12 @@ class AppContext:
         self.module = sys.modules[type(app).__module__]
 
     def __getitem__(self, key):
-        return getattr(self.app, key) if hasattr(self.app, key) else getattr(self.module, key)
+        if hasattr(self.app, key):
+            return getattr(self.app, key)
+        for component in (self.app.map_browser, self.app.references, self.app.hud, self.app.settings):
+            if hasattr(component, key):
+                return getattr(component, key)
+        return getattr(self.module, key)
 
     def __setitem__(self, key, value):
         setattr(self.app, key, value)
