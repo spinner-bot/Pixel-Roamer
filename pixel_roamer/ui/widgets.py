@@ -1,6 +1,6 @@
 """Shared text layout helpers."""
 from __future__ import annotations
-from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
+from constants import LOGIC_WIDTH
 import game_text as gt
 
 def draw_text_center(surf, font_size, text, y, color=(255,255,255), shadow=False):
