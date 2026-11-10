@@ -673,11 +673,8 @@ class Creature:
             self.is_climbing = False
             self.v_y = 0.0
 
-        # 重置速度/跳跃为基础值（speed/jump 特效会重新修改）
-        if hasattr(self, '_base_v_max'):
-            self.v_max = self._base_v_max
-        if hasattr(self, '_base_v_jump'):
-            self.v_jump = self._base_v_jump
+        self._environment_speed_mult = 1.0
+        self._environment_jump_mult = 1.0
 
         # ---- Buff: 稳足(41)/定锚(54)/石肤(39) 免疫环境力 ----
         immune_forces = self.has_buff(41) or self.has_buff(54) or self.has_buff(39)
@@ -741,9 +738,9 @@ class Creature:
                         self.add_shield(float(bt.special_data) * dt, None)
                 elif bt.special == "speed" and bt.special_data is not None:
                     # 临时速度倍率（持续接触期间）
-                    self.v_max = self._base_v_max * float(bt.special_data)
+                    self._environment_speed_mult = float(bt.special_data)
                 elif bt.special == "jump" and bt.special_data is not None:
-                    self.v_jump = self._base_v_jump * float(bt.special_data)
+                    self._environment_jump_mult = float(bt.special_data)
                 elif bt.special == "score" and bt.special_data is not None:
                     consumed_id = (bt.consumed_type_id if bt.consumed_type_id is not None
                                    else world.default_tile.type_id)
@@ -853,7 +850,7 @@ class Creature:
 
                 elif bt.special == "slow_field" and bt.special_data is not None:
                     # 减速场
-                    self.v_max = self._base_v_max * float(bt.special_data)
+                    self._environment_speed_mult = float(bt.special_data)
 
                 elif bt.special == "gravity_well" and bt.special_data is not None:
                     if immune_forces:
@@ -902,6 +899,15 @@ class Creature:
                 self._confused = False
 
         # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
+        self.refresh_movement_stats()
+
+    def refresh_movement_stats(self):
+        """Combine environmental modifiers with active buffs."""
+        if hasattr(self, '_base_v_max'):
+            speed = self._base_v_max * getattr(self, '_environment_speed_mult', 1.0)
+            jump = self._base_v_jump * getattr(self, '_environment_jump_mult', 1.0)
+            self.v_max = max(0.0, self.get_buff_stat("v_max", speed))
+            self.v_jump = max(0.0, self.get_buff_stat("v_jump", jump))
 
     # ================================================================
     #  Buff 系统
@@ -1154,6 +1160,8 @@ class Creature:
         self._near_shore = False
         self._shore_dir = 0
         self._shore_exit_pending = False
+        self._environment_speed_mult = 1.0
+        self._environment_jump_mult = 1.0
         self._stamina_mult = 1.0
         self._silenced = False
         self._courage_dr = 0.0
