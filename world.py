@@ -260,6 +260,10 @@ class World:
                 else:
                     self._solid_index.discard(coord)
                 self._mark_dirty(x, y)
+            else:
+                # Match bulk-load semantics when only portal/interaction data
+                # changes. Metadata does not affect the current terrain raster.
+                old.meta = meta
 
     # ================================================================
     #  碰撞查询（使用实体索引加速）
