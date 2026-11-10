@@ -1892,6 +1892,10 @@ def _get_edit_config(map_id: int) -> dict:
     # 已保存的 world 配置覆盖
     saved_world = saved.get("world", {})
     config["world"].update(saved_world)
+    color = config["world"].get("fill_color", (30, 30, 30))
+    if isinstance(color, (list, tuple)):
+        color = ",".join(str(component) for component in color)
+    config["world"]["fill_color"] = color
     return config
 
 
