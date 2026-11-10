@@ -29,11 +29,11 @@ def _load_map(map_name: str):
 
 
 def get_map(map_id: int):
-    """根据地图ID加载对应的 World 实例，并应用 config.json（若存在）。"""
+    """从生成模板创建独立的新一局，并应用 config.json（若存在）。"""
     name = _map_registry().get(map_id)
     if name is None:
         raise KeyError(f"地图ID {map_id} 不存在")
-    world = _load_map(name).world
+    world = _load_map(name).world.create_session()
     _apply_config(world, name)
     return world
 
