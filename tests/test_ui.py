@@ -6,6 +6,14 @@ import unittest
 
 
 class ApplicationFlowTests(unittest.TestCase):
+    def test_entry_import_does_not_initialize_a_window(self):
+        root = Path(__file__).resolve().parents[1]
+        env = {**os.environ, "SDL_VIDEODRIVER": "dummy", "SDL_AUDIODRIVER": "dummy"}
+        result = subprocess.run([sys.executable, "-c",
+                                 "import pygame; import main; assert pygame.display.get_surface() is None"],
+                                cwd=root, env=env, capture_output=True, text=True, timeout=10)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_real_main_loop_navigation_and_game_rules(self):
         root = Path(__file__).resolve().parents[1]
         env = {**os.environ, "SDL_VIDEODRIVER": "dummy", "SDL_AUDIODRIVER": "dummy"}
