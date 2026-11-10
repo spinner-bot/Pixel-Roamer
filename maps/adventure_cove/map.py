@@ -267,8 +267,11 @@ def generate():
         pillar(w, cx, 74, 14, 34)
 
     # 风助推 → 最高收集
-    p(w, 355, 77, 387)          # wind_vortex
-    p(w, 409, 77, 387)
+    # 单格风场的有效接触距离太短，实际跳升不足以越过 14 格柱廊。
+    # 连续风柱提供可见的上升通路，保持原风力和角色参数。
+    for wind_x in (355, 409):
+        for wind_y in range(77, 83):
+            p(w, wind_x, wind_y, 387)
 
     # 轻羽buff（低重力 → feather buff 13）
     p(w, 370, 78, 389)          # anti_grav_ore
