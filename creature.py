@@ -399,6 +399,22 @@ class Creature:
 
     # ----- 碰撞与效果总控 -----
     def collide_with_world(self, world, dt: float):
+        """Keep each collision step below half a tile, even after a long frame."""
+        remaining = max(0.0, dt)
+        while self.alive:
+            speed = max(abs(self.v_x), abs(self.v_y))
+            step = min(remaining, 0.4 / speed) if speed > 0 else remaining
+            self._collide_with_world_step(world, step)
+            remaining -= step
+            if remaining < 1e-9:
+                break
+        if self.alive and world.edge_behavior == "void" and world.is_out_of_bounds(self._x, self._y):
+            # The void ends a life even during respawn immunity.
+            self.hp = 0
+            self.alive = False
+            self.on_death()
+
+    def _collide_with_world_step(self, world, dt: float):
         if not self.alive:
             return
 
@@ -491,7 +507,7 @@ class Creature:
             for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
                 if grect.collides(block_grect):
                     if bt.one_way:
-                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h + 0.001:
+                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h - 1e-9:
                             grect.y = block_grect.y + block_grect.h
                             self.v_y = 0
                             self.on_ground = True
@@ -507,6 +523,23 @@ class Creature:
             # 幽灵模式：自由穿过固体，但仍受重力影响
             grect.x += self.v_x * dt
             grect.y += self.v_y * dt
+
+        # A later substep can have zero velocity after an earlier collision.
+        # Preserve resting contact from geometry rather than clearing its flags.
+        if not ghost_mode and (self.v_x == 0 or self.v_y == 0):
+            for block_rect, bt in world.get_nearby_solid_blocks_game(grect):
+                overlap_x = grect.x < block_rect.x + block_rect.w and grect.x + grect.w > block_rect.x
+                overlap_y = grect.y < block_rect.y + block_rect.h and grect.y + grect.h > block_rect.y
+                if overlap_x and self.v_y == 0:
+                    if abs(grect.y - block_rect.y - block_rect.h) < 1e-8:
+                        self.on_ground = True
+                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) < 1e-8:
+                        self.on_ceiling = True
+                if overlap_y and self.v_x == 0 and not bt.one_way:
+                    if abs(grect.x + grect.w - block_rect.x) < 1e-8:
+                        self.on_wall_right = True
+                    if abs(grect.x - block_rect.x - block_rect.w) < 1e-8:
+                        self.on_wall_left = True
 
         self.set_from_game_rect(grect)
 
