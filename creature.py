@@ -223,6 +223,8 @@ class Creature:
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
         有二段跳 buff (37) 时，可在空中再跳一次。需体力>0。"""
+        if (not self.has_buff(40) and (self.has_buff(27) or self.has_buff(28))):
+            return False
         if self.stamina < 0.01:
             return False
 
@@ -1064,6 +1066,8 @@ class Player(Creature):
         必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
         if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
             return False
+        if self.has_buff(28) and not self.has_buff(40):
+            return False
         best_x = self._x
         if world is not None:
             from teleport import can_place
@@ -1097,6 +1101,6 @@ class Player(Creature):
 
     def climb_move(self, dy: float, speed: float = 3.0):
         """攀爬中上下移动。dy>0 向上，dy<0 向下。"""
-        if self.is_climbing:
+        if self.is_climbing and self.alive and (not self.has_buff(28) or self.has_buff(40)):
             self.v_y = dy * speed
             self.v_x = 0.0
