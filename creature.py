@@ -472,15 +472,15 @@ class Creature:
         if self.has_buff(42):
             slick_pct = min(99.0, max(0.0, self._get_buff_param(42, 0, 85.0)))
             slick_mult = 1.0 - slick_pct / 100.0
-            final_fx = self.f_x * slick_mult
+            final_fx = self.f_x ** slick_mult
         if self.has_buff(43):  # 黏着：高摩擦
             sticky_pct = self._get_buff_param(43, 0, 80.0)
             sticky_mult = 1.0 + sticky_pct / 100.0
-            final_fx = self.f_x * sticky_mult
+            final_fx = self.f_x ** sticky_mult
         if self.has_buff(51):  # 寒冷：冰面摩擦
             chill_pct = self._get_buff_param(51, 0, 70.0)
             chill_mult = 1.0 - chill_pct / 100.0
-            final_fx = self.f_x * chill_mult
+            final_fx = self.f_x ** max(0.01, chill_mult)
 
         self.v_x *= pow(final_fx, dt * 60)
         self.v_y *= pow(final_fy, dt * 60)
