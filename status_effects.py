@@ -114,7 +114,8 @@ def advance_environment_timers(actor, dt):
         if remaining <= 1e-12:
             setattr(actor, flag, False)
     if getattr(actor, "_shore_exit_pending", False) and not actor.has_buff(58):
-        actor._shore_exit_pending = False
+        from shore_exit import cancel_shore_exit
+        cancel_shore_exit(actor)
     if (getattr(actor, "fly_mode", False) or actor.is_climbing
             or (actor.has_buff(28) and not actor.has_buff(40))):
         actor._wind_walk_timer = 0.0
