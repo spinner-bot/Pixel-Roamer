@@ -1,14 +1,11 @@
 from __future__ import annotations
 import pygame
-from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
-from maps import (get_map, list_maps, load_map_config, save_map_config,
-                  get_map_folder_name, get_map_summary, rename_map)
-from costumes import (COSTUMES, DEFAULT_COSTUME_ID, list_costumes,
-                       render_costume_direct, get_costume_anim_info,
-                       clear_costume_cache)
+from constants import LOGIC_WIDTH, LOGIC_HEIGHT
+from maps import get_map, list_maps, load_map_config, save_map_config, get_map_summary, rename_map
+from costumes import COSTUMES
 import game_text as gt
-from pixel_roamer.ui.config import (FONT20, FONT24, FONT28, FONT34, FONT56, GAME_DEV, GAME_NAME_CN, GAME_NAME_EN, PAGE_HOME, PAGE_WORLD, _EDITABLE_FIELDS)
-from pixel_roamer.ui.widgets import (draw_text_center, draw_text_left, draw_text_right)
+from pixel_roamer.ui.config import FONT20, FONT24, FONT28, FONT34, FONT56, GAME_DEV, GAME_NAME_CN, GAME_NAME_EN, PAGE_HOME, PAGE_WORLD, _EDITABLE_FIELDS
+from pixel_roamer.ui.widgets import draw_text_center, draw_text_left, draw_text_right
 
 class MapBrowser:
     """Map Browser behavior; shared session and viewport come from app."""
@@ -519,7 +516,6 @@ class MapBrowser:
                 if self.app._dev_edit_dirty:
                     save_map_config(self.app._dev_selected_id, self.app._dev_edit_config)
                     self.app._dev_edit_dirty = False
-                    # [log removed]
                 self.app._dev_edit_mode = False
                 self.app.set_page(PAGE_WORLD, map_id=self.app._dev_selected_id)
             return
@@ -534,7 +530,6 @@ class MapBrowser:
                 self.app._dev_edit_field_idx = 0
                 self.app._dev_edit_dirty = False
                 self.app._dev_edit_config = self._get_edit_config(self.app._dev_selected_id)
-                # [log removed]
         elif event.key == pygame.K_UP:
             idx = ids.index(self.app._dev_selected_id) if self.app._dev_selected_id in ids else 0
             idx = (idx - 1) % len(ids)
@@ -545,7 +540,6 @@ class MapBrowser:
             self.app._dev_selected_id = ids[idx]
         elif event.key == pygame.K_r:
             self.app._init_dev_selection()
-            # [log removed]
         elif event.key == pygame.K_ESCAPE:
             # 返回主页
             self.app.set_page(PAGE_HOME)
