@@ -67,6 +67,11 @@ def stop(fade_out_ms: int = 500):
     """停止当前音乐，可选淡出。"""
     global _current_track, _current_sound, _requested_track
     _requested_track = None
+    if pygame.mixer.get_init():
+        if fade_out_ms > 0:
+            pygame.mixer.music.fadeout(fade_out_ms)
+        else:
+            pygame.mixer.music.stop()
     if _current_sound is not None:
         try:
             if fade_out_ms > 0:
@@ -84,6 +89,8 @@ def set_volume(v: float):
     global _music_volume
     _music_volume = max(0.0, min(1.0, v))
     sfx.set_music_volume(_music_volume)
+    if pygame.mixer.get_init():
+        pygame.mixer.music.set_volume(_music_volume)
     # 更新当前播放中 Sound 的音量
     if _current_sound is not None:
         try:
@@ -98,12 +105,25 @@ def get_volume() -> float:
 
 def is_playing() -> bool:
     """检查是否有音乐正在播放。"""
+    if pygame.mixer.get_init() and pygame.mixer.music.get_busy():
+        return True
     if _current_sound is None:
         return False
     try:
         return _current_sound.get_num_channels() > 0
     except pygame.error:
         return False
+
+
+def play_file(filename: str, fade_in_ms: int = 800, loops: int = -1):
+    """Play a streamed file through the same stop/volume lifecycle as synths."""
+    global _current_track
+    _ensure_init()
+    stop(fade_out_ms=0)
+    pygame.mixer.music.load(filename)
+    pygame.mixer.music.set_volume(_music_volume)
+    pygame.mixer.music.play(loops=loops, fade_ms=fade_in_ms)
+    _current_track = f"file:{filename}"
 
 
 def get_current_track() -> str | None:
@@ -735,6 +755,8 @@ _original_play = play
 def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     """按需逐帧合成曲目，调用时不会同步渲染音频。"""
     global _requested_track
+    if pygame.mixer.get_init():
+        pygame.mixer.music.stop()
     if track_key in _music_cache:
         _requested_track = None
         _original_play(track_key, fade_in_ms, loops)
