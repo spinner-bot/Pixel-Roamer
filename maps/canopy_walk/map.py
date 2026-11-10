@@ -1,0 +1,11 @@
+"""晨光林径：紧凑双路线地图，布局由 JSON 加载。"""
+from pathlib import Path
+from world import World
+from maps.layout import apply_layout
+
+MAP_ID = 1001
+world = World(map_id=MAP_ID, name="晨光林径", w=96, h=36,
+              gravity=-6.5, view_blocks_h=24, spawn_points=(4.5, 9.9),
+              mode="explore", default_block_id=0, edge_behavior="solid")
+world.lives = 3
+apply_layout(world, Path(__file__).with_name("layout.json"))
