@@ -2,9 +2,9 @@ from __future__ import annotations
 import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
 from camera import Camera
-from creature import Player
+from player_factory import create_world_player
 from maps import get_map, list_maps
-from costumes import COSTUMES, DEFAULT_COSTUME_ID, clear_costume_cache
+from costumes import COSTUMES, clear_costume_cache
 import music
 import loading_screen as ls
 import home_page as hp
@@ -210,34 +210,7 @@ class GameApp:
         """启动器：游戏世界。传入地图ID，加载地图、创建相机和玩家。"""
         self._current_map = get_map(map_id)
         self.camera = Camera(LOGIC_WIDTH, LOGIC_HEIGHT, self._current_map)
-        sp_x, sp_y = self._current_map.spawn_points
-
-        # 读取玩家配置（若有），全部传入 Player 构造函数
-        cfg = getattr(self._current_map, 'player_config', {})
-        self.player1 = Player(
-            player_id=0, player_name="玩家1",
-            spawn_x=float(sp_x), spawn_y=float(sp_y),
-            key_bind=self.p1_keys,
-            hp_max=cfg.get("hp_max", 150),
-            shield=cfg.get("shield", 0),
-            w=cfg.get("w", 0.8),
-            h=cfg.get("h", 1.8),
-            v_max=cfg.get("v_max", 36.5),
-            v_jump=cfg.get("v_jump", 11.5),
-            f_x=cfg.get("f_x", 0.985),
-            f_y=cfg.get("f_y", 1.0),
-            phys_atk=cfg.get("phys_atk", 10),
-            magic_atk=cfg.get("magic_atk", 0),
-            phys_res=cfg.get("phys_res", 0),
-            magic_res=cfg.get("magic_res", 0),
-            phys_pen=cfg.get("phys_pen", 0),
-            magic_pen=cfg.get("magic_pen", 0),
-            k_res=cfg.get("k_res", 150),
-            dr=cfg.get("dr", 0),
-            stamina_max=cfg.get("stamina_max", 200),
-        )
-        # 加载时装
-        self.player1.costume_id = cfg.get("costume_id", DEFAULT_COSTUME_ID)
+        self.player1 = create_world_player(self._current_map, self.p1_keys)
 
         # 初始化游戏状态
         self._game_over = False
