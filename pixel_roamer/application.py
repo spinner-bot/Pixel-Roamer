@@ -138,6 +138,8 @@ class GameApp:
         """设置当前页面，立即执行对应启动器。"""
         self.jump_pressed = False
         self.help_open = False
+        if page_id != PAGE_DEV:
+            self.map_browser.text_input.cancel()
         # 页面切换时管理音乐
         if page_id == PAGE_INIT:
             music.stop(fade_out_ms=400)  # 加载界面静音
@@ -165,6 +167,8 @@ class GameApp:
     def set_page_no_launch(self, page_id: int):
         """切换页面但不触发启动器（用于返回暂停状态）。"""
         self.jump_pressed = False
+        if page_id != PAGE_DEV:
+            self.map_browser.text_input.cancel()
         self.page = page_id
         self._page_need_launch = False
         # 恢复目标页面的背景音乐
@@ -300,11 +304,13 @@ class GameApp:
                 self._discard_elapsed = True
                 self.jump_pressed = False
                 self.settings.cancel_drag()
+                self.map_browser.text_input.pause()
                 continue
             if event.type == pygame.WINDOWFOCUSGAINED:
                 self.focused = True
                 self._discard_elapsed = True
                 self.jump_pressed = False
+                self.map_browser.text_input.resume()
                 continue
             if event.type == pygame.VIDEORESIZE:
                 self.win_w, self.win_h = max(320, event.w), max(180, event.h)
@@ -314,8 +320,12 @@ class GameApp:
                     self._current_map.invalidate_chunks()
             if not self.focused and event.type in (pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN,
                                                    pygame.MOUSEBUTTONUP, pygame.MOUSEMOTION,
-                                                   pygame.MOUSEWHEEL):
+                                                   pygame.MOUSEWHEEL, pygame.TEXTINPUT,
+                                                   pygame.TEXTEDITING):
                 continue
+            if (event.type == pygame.KEYDOWN and self.page != PAGE_WORLD
+                    and event.key == pygame.K_KP_ENTER):
+                event.key = pygame.K_RETURN
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_F1:
                     self.current_fps = min(self.current_fps + 10, MAX_FPS)
