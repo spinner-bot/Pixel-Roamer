@@ -6,6 +6,7 @@ import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
 
 from constants import RES_NORMAL_SCALE, CORR_FLOOR
 from game_rect import GameRect
+from collision import CONTACT_EPSILON, spans_overlap, sweep_axis
 from block_type import BlockType
 
 if TYPE_CHECKING:
@@ -495,35 +496,21 @@ class Creature:
         ghost_mode = self.has_buff(48) or getattr(self, '_phantom_active', False)
 
         if not ghost_mode:
-            # X轴
-            grect.x += self.v_x * dt
-            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-                if grect.collides(block_grect) and not bt.one_way:
-                    if self.v_x > 0:
-                        grect.x = block_grect.x - grect.w
-                        self.on_wall_right = True
-                    elif self.v_x < 0:
-                        grect.x = block_grect.x + block_grect.w
-                        self.on_wall_left = True
-                    self.v_x = 0
+            dx = self.v_x * dt
+            swept_x = GameRect(grect.x + min(0, dx), grect.y,
+                               grect.w + abs(dx), grect.h)
+            if sweep_axis(grect, dx, world.get_nearby_solid_blocks_game(swept_x), True):
+                self.on_wall_right = dx > 0
+                self.on_wall_left = dx < 0
+                self.v_x = 0
 
-            # Y轴
-            grect.y += self.v_y * dt
-            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-                if grect.collides(block_grect):
-                    if bt.one_way:
-                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h - 1e-9:
-                            grect.y = block_grect.y + block_grect.h
-                            self.v_y = 0
-                            self.on_ground = True
-                        continue
-                    if self.v_y < 0:
-                        grect.y = block_grect.y + block_grect.h
-                        self.on_ground = True
-                    elif self.v_y > 0:
-                        grect.y = block_grect.y - grect.h
-                        self.on_ceiling = True
-                    self.v_y = 0
+            dy = self.v_y * dt
+            swept_y = GameRect(grect.x, grect.y + min(0, dy),
+                               grect.w, grect.h + abs(dy))
+            if sweep_axis(grect, dy, world.get_nearby_solid_blocks_game(swept_y), False):
+                self.on_ground = dy < 0
+                self.on_ceiling = dy > 0
+                self.v_y = 0
         else:
             # 幽灵模式：自由穿过固体，但仍受重力影响
             grect.x += self.v_x * dt
@@ -533,17 +520,17 @@ class Creature:
         # Preserve resting contact from geometry rather than clearing its flags.
         if not ghost_mode and (self.v_x == 0 or self.v_y == 0):
             for block_rect, bt in world.get_nearby_solid_blocks_game(grect):
-                overlap_x = grect.x < block_rect.x + block_rect.w and grect.x + grect.w > block_rect.x
-                overlap_y = grect.y < block_rect.y + block_rect.h and grect.y + grect.h > block_rect.y
+                overlap_x = spans_overlap(grect.x, grect.w, block_rect.x, block_rect.w)
+                overlap_y = spans_overlap(grect.y, grect.h, block_rect.y, block_rect.h)
                 if overlap_x and self.v_y == 0:
-                    if abs(grect.y - block_rect.y - block_rect.h) < 1e-8:
+                    if abs(grect.y - block_rect.y - block_rect.h) <= CONTACT_EPSILON:
                         self.on_ground = True
-                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) < 1e-8:
+                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) <= CONTACT_EPSILON:
                         self.on_ceiling = True
                 if overlap_y and self.v_x == 0 and not bt.one_way:
-                    if abs(grect.x + grect.w - block_rect.x) < 1e-8:
+                    if abs(grect.x + grect.w - block_rect.x) <= CONTACT_EPSILON:
                         self.on_wall_right = True
-                    if abs(grect.x - block_rect.x - block_rect.w) < 1e-8:
+                    if abs(grect.x - block_rect.x - block_rect.w) <= CONTACT_EPSILON:
                         self.on_wall_left = True
 
         self.set_from_game_rect(grect)
