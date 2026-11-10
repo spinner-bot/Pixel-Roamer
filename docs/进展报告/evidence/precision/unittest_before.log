@@ -1,0 +1,290 @@
+test_actual_clay_platform_jump_and_landing_preserves_horizontal_motion (test_collision_precision.CollisionPrecisionTests) ... FAIL
+test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) ... test_roundoff_at_ceiling_does_not_push_player_sideways (test_collision_precision.CollisionPrecisionTests) ... FAIL
+test_vertical_slide_along_wall_does_not_become_a_floor_collision (test_collision_precision.CollisionPrecisionTests) ... FAIL
+
+======================================================================
+FAIL: test_actual_clay_platform_jump_and_landing_preserves_horizontal_motion (test_collision_precision.CollisionPrecisionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 80, in test_actual_clay_platform_jump_and_landing_preserves_horizontal_motion
+    self.assertLessEqual(abs(player._x - previous_x), speed / fps + 1e-8)
+AssertionError: 0.3999999999999986 not less than or equal to 0.004055565555555556
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=-1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=5, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=-1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=8, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=-1, offset=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=-1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=1, offset=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=1, offset=-1e-15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=16, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=32, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=32, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=32, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=32, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=64, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=64, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=64, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=64, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=128, direction=-1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=128, direction=-1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=128, direction=1, offset=-1e-12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_landing_roundoff_does_not_become_a_side_collision (test_collision_precision.CollisionPrecisionTests) (top=128, direction=1, offset=-1e-09)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 33, in test_landing_roundoff_does_not_become_a_side_collision
+    self.assertGreaterEqual(dx * direction, -1e-8)
+AssertionError: -1.3999999999999995 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_roundoff_at_ceiling_does_not_push_player_sideways (test_collision_precision.CollisionPrecisionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 46, in test_roundoff_at_ceiling_does_not_push_player_sideways
+    self.assertGreaterEqual((player._x - old_x) * direction, -1e-8)
+AssertionError: -0.40000000000000036 not greater than or equal to -1e-08
+
+======================================================================
+FAIL: test_vertical_slide_along_wall_does_not_become_a_floor_collision (test_collision_precision.CollisionPrecisionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_collision_precision.py", line 59, in test_vertical_slide_along_wall_does_not_become_a_floor_collision
+    self.assertGreater((player._y - before_y) * direction, 0)
+AssertionError: -0.9000000000000004 not greater than 0
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.013s
+
+FAILED (failures=35)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
