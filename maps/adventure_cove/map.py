@@ -312,6 +312,15 @@ def generate():
     for hx, hy in hidden:
         p(w, hx, hy, 314)
 
+    # 底层失足后的返回路线：接回海滩，不跳过后续区域。
+    # 57 格连续攀爬会耗尽默认体力；侧台每 16 格提供站立恢复点。
+    ladder_col(w, 20, 10, 59)
+    for rest_y in (26, 42, 58):
+        for rest_x in range(21, 26):
+            p(w, rest_x, rest_y, 19)
+    p(w, 19, 10, 43)
+    p(w, 21, 69, 314)  # 将原 (20,64) 的钻石移出返程梯井。
+
     w.end_bulk_load()
     w.lives = 3
     return w
