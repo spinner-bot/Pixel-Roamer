@@ -55,6 +55,9 @@ def validate_config(config):
             elif section == "world" and key == "music":
                 if not isinstance(value, str):
                     raise ValueError(f"{field} 必须是文本")
+            elif section == "world" and key == "name":
+                if not isinstance(value, str) or not value.strip() or len(value) > 64:
+                    raise ValueError(f"{field} 必须是 1 到 64 个字符的名称")
             elif section == "world" and key == "default_block_id":
                 from block_types_data import BLOCK_TYPES
                 if isinstance(value, bool) or not isinstance(value, int) or value not in BLOCK_TYPES:
