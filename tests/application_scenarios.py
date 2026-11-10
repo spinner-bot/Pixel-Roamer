@@ -119,6 +119,18 @@ def scenarios(g):
     g["_dev_selected_id"] = 1
     yield key(pygame.K_RETURN)
     player = g["player1"]
+    for flying in (False, True):
+        player.fly_mode = flying
+        player._confused = player._phantom_active = True
+        player._confusion_timer = player._phantom_timer = 0.03
+        player.can_swim = True
+        player.apply_buff(28, (), 0.05 if not flying else 0)
+        for _ in range(5):
+            yield []
+        assert not player._confused and not player._phantom_active
+        if flying:
+            assert not player.can_swim and not player.can_climb
+    player.fly_mode = False
     player._confused = True
     player._confusion_timer = 2
     held_keys.add(pygame.K_d)
