@@ -82,7 +82,7 @@ class SettingsPage:
             return True
         if event.type not in (pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN):
             return False
-        position = getattr(event, 'pos', pygame.mouse.get_pos())
+        position = event.pos if hasattr(event, 'pos') else pygame.mouse.get_pos()
         point = ((position[0] - self.app.draw_offset_x) / self.app.scale,
                  (position[1] - self.app.draw_offset_y) / self.app.scale)
         pressed = event.type == pygame.MOUSEBUTTONDOWN and event.button == 1
