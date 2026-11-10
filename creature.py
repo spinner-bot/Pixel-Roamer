@@ -501,10 +501,6 @@ class Creature:
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
             self._special_cooldowns = {}
-        for k in list(self._special_cooldowns):
-            self._special_cooldowns[k] -= dt
-            if self._special_cooldowns[k] <= 0:
-                del self._special_cooldowns[k]
 
         self.can_climb = any(bt.climbable for bt in types)
         self.can_swim = any(bt.swim_f > 0 for bt in types)
@@ -811,18 +807,6 @@ class Creature:
                 self.phys_atk = getattr(self, '_base_phys_atk', self.phys_atk)
                 self._berserk_active = False
 
-        # 幻影：计时衰减
-        if hasattr(self, '_phantom_timer') and self._phantom_timer > 0:
-            self._phantom_timer -= dt
-            if self._phantom_timer <= 0:
-                self._phantom_active = False
-
-        # 混乱：计时衰减
-        if hasattr(self, '_confusion_timer') and self._confusion_timer > 0:
-            self._confusion_timer -= dt
-            if self._confusion_timer <= 0:
-                self._confused = False
-
         # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
         self.refresh_movement_stats()
 
@@ -925,8 +909,15 @@ class Creature:
                           BUFF_TYPES[b.buff_id].category != category]
 
     def tick_buffs(self, dt: float):
-        from status_effects import advance_buffs
+        from status_effects import advance_buffs, advance_environment_timers
         advance_buffs(self, dt)
+        advance_environment_timers(self, dt)
+
+    def clear_environment_contacts(self, world):
+        """Drop stale surface modifiers when free flight bypasses collision."""
+        self.contact_pool = set()
+        self.stand_pool = None
+        self._apply_tile_effects(world, 0.0)
 
     def get_buff_stat(self, stat_name: str, base_value: float) -> float:
         from status_effects import modified_stat
