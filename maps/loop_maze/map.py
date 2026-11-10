@@ -119,15 +119,21 @@ fill(45, 30, 47, 30, 33)    # 右边缘
 world.set_tile(1, 31, 297)   # 加速之路
 
 # ============ 传送门网络（利用meta设置目标）============
+# Keep a two-block-high route out of the hidden room across the loop seam.
+# The old cloud row sealed it against the ceiling.
+fill(0, 30, 3, 30, 11)
+fill(0, 29, 0, 31, 11)
+fill(45, 29, 47, 31, 11)
+fill(45, 28, 47, 28, 33)
 # T1: 枢纽 → 东北隐藏室
 world.set_tile(26, 15, 300)
 if (26, 15) in world.grid:
-    world.grid[(26, 15)].meta = {"tp_x": 3, "tp_y": 30}
+    world.grid[(26, 15)].meta = {"tp_x": 4.5, "tp_y": 29.9}
 
 # T2: 南通道 → 西北隐藏点
 world.set_tile(23, 8, 300)
 if (23, 8) in world.grid:
-    world.grid[(23, 8)].meta = {"tp_x": 2, "tp_y": 8}
+    world.grid[(23, 8)].meta = {"tp_x": 2.5, "tp_y": 8.9}
 
 # ============ 装饰 ============
 # 中央天花板的星夜装饰
