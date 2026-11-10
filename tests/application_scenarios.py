@@ -136,10 +136,23 @@ def scenarios(g):
 driver = None
 
 
+class AppContext:
+    """Expose the live application to the existing scenario assertions."""
+    def __init__(self, app):
+        self.app = app
+        self.module = sys.modules[type(app).__module__]
+
+    def __getitem__(self, key):
+        return getattr(self.app, key) if hasattr(self.app, key) else getattr(self.module, key)
+
+    def __setitem__(self, key, value):
+        setattr(self.app, key, value)
+
+
 def events():
     global driver
     if driver is None:
-        driver = scenarios(inspect.currentframe().f_back.f_globals)
+        driver = scenarios(AppContext(inspect.currentframe().f_back.f_locals["self"]))
     return next(driver)
 
 
