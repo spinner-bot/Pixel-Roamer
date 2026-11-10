@@ -16,6 +16,7 @@ CHUNK_SIZE = 32          # 每个 Chunk 边长（方块数）
 CHUNK_TEX_PX = 16        # Preserve native 16px terrain without downsampling first.
 MAX_CHUNK_SURFACES = 64  # 64 MiB base textures, plus the separate scaled budget.
 MAX_SCALED_CACHE_BYTES = 64 * 1024 * 1024
+MAX_TERRAIN_TEXTURES = 512
 
 
 # ===================== 地图格子与 World =====================
@@ -85,6 +86,7 @@ class World:
         self._scaled_chunk_cache = OrderedDict()  # 缩放纹理（按字节数限制）
         self._scaled_chunk_cache_bytes = 0
         self._dirty_chunks = set()         # 待重渲染的 Chunk 键
+        self._terrain_textures = OrderedDict()
         self._bulk_loading = False         # 批量加载模式标志
 
     def create_session(self):
@@ -97,6 +99,7 @@ class World:
         session.default_tile = Tile(self.default_tile.type_id, deepcopy(self.default_tile.meta))
         session._solid_index = self._solid_index.copy()
         session._chunk_surfaces = OrderedDict()
+        session._terrain_textures = OrderedDict()
         session._scaled_chunk_cache = OrderedDict()
         session._scaled_chunk_cache_bytes = 0
         session._dirty_chunks = set()
@@ -291,6 +294,25 @@ class World:
     # ================================================================
     #  绘制（Chunk 缓存 + 增量重渲染）
     # ================================================================
+    def _terrain_texture(self, block_type):
+        """Rasterize a terrain definition once instead of hashing it per tile."""
+        key = block_type.id
+        cached = self._terrain_textures.get(key)
+        if (cached is not None and cached[0] is block_type
+                and cached[1] == tuple(block_type.color)
+                and cached[2] is block_type.pattern):
+            self._terrain_textures.move_to_end(key)
+            return cached[3]
+        texture = pygame.Surface((CHUNK_TEX_PX, CHUNK_TEX_PX))
+        render_block_pattern(texture, block_type, 0, 0, CHUNK_TEX_PX, CHUNK_TEX_PX,
+                             overdraw=False)
+        self._terrain_textures[key] = (block_type, tuple(block_type.color),
+                                       block_type.pattern, texture)
+        self._terrain_textures.move_to_end(key)
+        while len(self._terrain_textures) > MAX_TERRAIN_TEXTURES:
+            self._terrain_textures.popitem(last=False)
+        return texture
+
     def _render_chunk(self, ck: Tuple[int, int]):
         """将指定 Chunk 渲染到固定尺寸 Surface 并缓存。"""
         cx, cy = ck
@@ -306,12 +328,12 @@ class World:
 
         # 绘制默认方块图案（若有）
         if self._default_bt.pattern is not None:
+            texture = self._terrain_texture(self._default_bt)
             for lx in range(chunk_w):
                 for ly in range(chunk_h):
                     px = lx * CHUNK_TEX_PX
                     py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                    render_block_pattern(surf, self._default_bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
-                                         overdraw=False)
+                    surf.blit(texture, (px, py))
 
         # 覆盖非默认方块
         base_x = cx * CHUNK_SIZE
@@ -342,8 +364,7 @@ class World:
                 px = lx * CHUNK_TEX_PX
                 # Y 轴翻转：世界坐标 y↑，纹理 y↓
                 py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                render_block_pattern(surf, bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
-                                     overdraw=False)
+                surf.blit(self._terrain_texture(bt), (px, py))
 
         self._chunk_surfaces[ck] = surf
         self._chunk_surfaces.move_to_end(ck)
