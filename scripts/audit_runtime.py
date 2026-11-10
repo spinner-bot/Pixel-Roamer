@@ -1,6 +1,5 @@
 """Reproducible headless stress audit; results are evidence, not a playability proof."""
 import argparse
-import inspect
 import json
 import math
 import os
@@ -20,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 import pygame
 from camera import Camera
 from creature import Player
+from player_factory import create_world_player
 from game_state import resolve_player_death
 from maps import get_map, list_maps
 from world import World, MAX_CHUNK_SURFACES, MAX_SCALED_CACHE_BYTES
@@ -35,10 +35,7 @@ def finite_player(player):
 def map_audit(map_id, frames):
     started = time.perf_counter()
     world = get_map(map_id)
-    config = world.player_config
-    kwargs = {key: value for key, value in config.items()
-              if key in inspect.signature(Player).parameters}
-    player = Player(0, "audit", *world.spawn_points, {}, **kwargs)
+    player = create_world_player(world, {}, player_name='audit')
     rect = player.get_game_rect()
     overlaps = [(block.x, block.y, kind.id)
                 for block, kind in world.get_nearby_solid_blocks_game(rect)
@@ -91,6 +88,7 @@ def map_audit(map_id, frames):
     return {
         "id": map_id, "name": world.name, "frames": len(physics_ms),
         "simulated_seconds": len(physics_ms) / 60, "spawn": world.spawn_points,
+        "player_hp_max": player.hp_max, "player_vertical_drag": player.f_y,
         "spawn_overlaps": overlaps, "respawns_in_stress_run": respawns,
         "score": player.score, "physics_mean_ms": statistics.mean(physics_ms),
         "physics_p95_ms": sorted(physics_ms)[int(len(physics_ms) * 0.95)],
