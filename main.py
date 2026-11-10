@@ -86,6 +86,8 @@ _next_page_after_transition = None  # 过渡完成后切换的页面
 def set_page(page_id: int, **kwargs):
     """设置当前页面，立即执行对应启动器。"""
     global page, _page_need_launch, _page_launch_kwargs
+    global jump_pressed
+    jump_pressed = False
     global _transition_alpha, _transition_target
     # 页面切换时管理音乐
     if page_id == PAGE_INIT:
@@ -117,6 +119,8 @@ def _trigger_fade_in():
 def set_page_no_launch(page_id: int):
     """切换页面但不触发启动器（用于返回暂停状态）。"""
     global page, _page_need_launch
+    global jump_pressed
+    jump_pressed = False
     page = page_id
     _page_need_launch = False
     # 恢复目标页面的背景音乐
@@ -193,6 +197,8 @@ def launch_dev():
 def launch_world(map_id: int):
     """启动器：游戏世界。传入地图ID，加载地图、创建相机和玩家。"""
     global _current_map, camera, player1, _world_initialized
+    global _prev_hp, _prev_score, _prev_alive, _win_played, _death_played
+    global _damage_flash_timer, _stamina_flash_timer, jump_pressed
     _current_map = get_map(map_id)
     camera = Camera(LOGIC_WIDTH, LOGIC_HEIGHT, _current_map)
     sp_x, sp_y = _current_map.spawn_points
@@ -229,6 +235,14 @@ def launch_world(map_id: int):
     _game_over = False
     _game_win = False
     _game_timer = 0.0
+    _prev_hp = None
+    _prev_score = 0
+    _prev_alive = True
+    _win_played = False
+    _death_played = False
+    _damage_flash_timer = 0.0
+    _stamina_flash_timer = 0.0
+    jump_pressed = False
     _player_lives_left = getattr(_current_map, 'lives', 0)
     _infinite_lives = _player_lives_left == 0
 
@@ -251,11 +265,11 @@ def _play_world_music(world):
         music_path = os.path.join(os.path.dirname(__file__), 'music', music_name)
         if os.path.isfile(music_path):
             try:
-                pygame.mixer.music.load(music_path)
-                pygame.mixer.music.set_volume(sfx.get_music_volume())
-                pygame.mixer.music.play(-1)
+                music.play_file(music_path)
             except pygame.error:
-                pass
+                music.play("adventure", fade_in_ms=1200)
+        else:
+            music.play("adventure", fade_in_ms=1200)
     else:
         # 默认：冒险主题
         music.play("adventure", fade_in_ms=1200)
@@ -862,7 +876,7 @@ def run_setting_page(dt: float):
         y += row_h + 6
 
     # 0: FPS
-    fps_label = "自动" if _setting_fps_just_autodetected else str(_FPS_OPTIONS[_setting_selected_fps_idx])
+    fps_label = str(current_fps)
     _row(f"帧率上限", f"{fps_label} FPS", 0)
 
     # 1: 自动检测
@@ -2432,7 +2446,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.VIDEORESIZE:
-            win_w, win_h = event.w, event.h
+            win_w, win_h = max(320, event.w), max(180, event.h)
             win_surface = pygame.display.set_mode((win_w, win_h), pygame.RESIZABLE)
             update_scale_param()
             if _current_map is not None:
@@ -2553,10 +2567,9 @@ while running:
                     event.pos, LOGIC_WIDTH, LOGIC_HEIGHT, scale,
                     draw_offset_x, draw_offset_y)
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                hp.handle_home_mouse(
+                action = hp.handle_home_mouse(
                     event.pos, LOGIC_WIDTH, LOGIC_HEIGHT, scale,
                     draw_offset_x, draw_offset_y)
-                action = hp.get_selected_action()
                 if action == hp.MENU_START:
                     set_page(PAGE_DEV)
                 elif action == hp.MENU_SETTINGS:
@@ -2818,6 +2831,8 @@ while running:
                     if player1.on_ground or not player1.can_swim:
                         player1._shore_exit_pending = False
 
+        # A keydown is consumed by this world frame even when a status blocks it.
+        jump_pressed = False
         px, py = player1.get_center()
         camera.follow(px, py)
 
