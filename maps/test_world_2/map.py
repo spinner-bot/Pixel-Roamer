@@ -3,6 +3,7 @@ test_world_2 —— 主题大地图（650x80）
 包含7个主题区域：森林、矿山/峡谷、沙漠、海洋、城镇、火山/下界、天空岛屿
 """
 from world import World
+from random import Random
 
 MAP_ID = 2
 world = World(map_id=MAP_ID, name="主题大地图", w=650, h=80,
@@ -14,6 +15,7 @@ world.begin_bulk_load()
 
 def generate(world):
     """生成 650x80 的多主题区域地图"""
+    rng = Random(2)
     # 辅助：填充矩形
     def fill(x0, y0, x1, y1, tile_id):
         for x in range(x0, x1+1):
@@ -111,7 +113,7 @@ def generate(world):
     fill(300, 9, 400, 18, 7)        # 水
     # 海床装饰
     for _ in range(50):
-        rx = 300 + (hash(str(_)) % 100)
+        rx = 300 + rng.randrange(100)
         ry = 7
         world.set_tile(rx, ry, 47)   # 白色羊毛(珊瑚)
         world.set_tile(rx+1, ry, 48) # 红色羊毛
