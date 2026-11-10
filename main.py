@@ -4,7 +4,8 @@ import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
 from camera import Camera
 from creature import Player
-from maps import get_map, list_maps, load_map_config, save_map_config, get_map_folder_name, rename_map
+from maps import (get_map, list_maps, load_map_config, save_map_config,
+                  get_map_folder_name, get_map_summary, rename_map)
 from costumes import (COSTUMES, DEFAULT_COSTUME_ID, list_costumes,
                        render_costume_direct, get_costume_anim_info,
                        clear_costume_cache)
@@ -1914,13 +1915,13 @@ def _set_field_value(config: dict, field_path: str, value):
     obj[parts[-1]] = value
 
 
-def _get_map_type_label(m) -> str:
+def _get_map_type_label(loop_x: bool, loop_y: bool) -> str:
     """获取地图类型标签。"""
-    if m.loop_x and m.loop_y:
+    if loop_x and loop_y:
         return "循环XY"
-    elif m.loop_x:
+    elif loop_x:
         return "循环X"
-    elif m.loop_y:
+    elif loop_y:
         return "循环Y"
     else:
         return "有限"
@@ -2070,10 +2071,10 @@ def run_dev_page(dt: float):
         for mid in map_ids:
             name = maps_dict[mid]
             try:
-                m = get_map(mid)
-                info_size = f"{m.width}×{m.height}"
-                info_type = _get_map_type_label(m)
-                info_mode = m.mode
+                info = get_map_summary(mid)
+                info_size = f"{info['width']}×{info['height']}"
+                info_type = _get_map_type_label(info["loop_x"], info["loop_y"])
+                info_mode = info["mode"]
             except Exception:
                 info_size = "?"
                 info_type = "?"
