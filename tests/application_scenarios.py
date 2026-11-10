@@ -83,6 +83,27 @@ def scenarios(g):
         yield key(pygame.K_RETURN)
         assert g["page"] == g["PAGE_WORLD"], map_id
         if map_id == map_ids[0]:
+            actor = g['player1']
+            actor.apply_buff(16, (8,), 10)
+            duration = actor.buffs[-1].duration
+            hp = actor.hp
+            paused = g['_game_timer']
+            position = actor.get_center()
+            g['settings']._drag_row = 2
+            yield [pygame.event.Event(pygame.WINDOWFOCUSLOST)] + key(pygame.K_SPACE)
+            assert not g['focused'] and not g['jump_pressed']
+            assert g['settings']._drag_row is None
+            for _ in range(3):
+                yield []
+                assert g['_game_timer'] == paused and actor.get_center() == position
+                assert actor.hp == hp and actor.buffs[-1].duration == duration
+            capture(g, 'focus_pause')
+            yield [pygame.event.Event(pygame.WINDOWFOCUSGAINED)]
+            assert g['focused'] and not g['jump_pressed']
+            assert g['_game_timer'] == paused and actor.hp == hp
+            yield []
+            assert g['_game_timer'] > paused and actor.hp < hp
+            actor.remove_buff(16)
             paused_time = g["_game_timer"]
             position = g["player1"].get_center()
             yield key(pygame.K_h)
