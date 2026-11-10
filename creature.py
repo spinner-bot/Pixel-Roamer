@@ -71,6 +71,7 @@ class Creature:
         self.f_y = f_y
 
         self.phys_atk = phys_atk
+        self._base_phys_atk = phys_atk
         self.magic_atk = magic_atk
         self.phys_res = phys_res
         self.magic_res = magic_res
@@ -377,8 +378,7 @@ class Creature:
                         tiles.add(1)
                     continue
                 bt = world.get_block_type_by_coord(coord[0], coord[1])
-                if bt.id != _default_id:
-                    tiles.add(bt.id)
+                tiles.add(bt.id)
         return tiles
 
     # ----- 碰撞与效果总控 -----
@@ -516,17 +516,11 @@ class Creature:
         all_ids = self.contact_pool.copy()
         if self.stand_pool is not None:
             all_ids.add(self.stand_pool)
-        if not all_ids:
-            return
-
         types = []
         for bid in all_ids:
             bt = world.block_types.get(bid)
             if bt:
                 types.append(bt)
-        if not types:
-            return
-
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
             self._special_cooldowns = {}
@@ -1130,6 +1124,30 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False
         self.is_climbing = False
+        self.can_swim = False
+        self._swim_force = 0.0
+        self._liquid_space_f = 1.0
+        self._climb_top_y = None
+        self._swim_top_y = None
+        self._near_shore = False
+        self._shore_dir = 0
+        self._shore_exit_pending = False
+        self._stamina_mult = 1.0
+        self._silenced = False
+        self._courage_dr = 0.0
+        self._weakness_mult = 1.0
+        self._phantom_active = False
+        self._phantom_timer = 0.0
+        self._confused = False
+        self._confusion_timer = 0.0
+        self._berserk_active = False
+        self.phys_atk = self._base_phys_atk
+        self._special_cooldowns = {}
+        self._air_jumps_used = 0
+        self._wind_walk_timer = 0.0
+        if hasattr(self, '_base_v_max'):
+            self.v_max = self._base_v_max
+            self.v_jump = self._base_v_jump
         self.fly_mode = False
         self.contact_pool = set()
         self.stand_pool = None
