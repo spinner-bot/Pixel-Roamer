@@ -334,6 +334,6 @@ def handle_home_mouse(pos: tuple, logic_w: int, logic_h: int, scale: float,
         item_y = menu_start_y + i * (item_h + item_gap)
         if item_x <= logic_mx <= item_x + item_w and item_y <= logic_my <= item_y + item_h:
             _selected_index = i
-            return None
+            return _MENU_ITEMS[i][0]
 
     return None
