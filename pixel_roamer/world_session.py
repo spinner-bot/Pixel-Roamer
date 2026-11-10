@@ -13,7 +13,7 @@ class WorldSession:
         self.world = None
 
     def advance(self, dt):
-        if self.app.help_open:
+        if self.app.help_open or not getattr(self.app, 'focused', True):
             self.app.jump_pressed = False
             return
         keys = pygame.key.get_pressed()
