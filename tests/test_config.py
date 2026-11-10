@@ -11,6 +11,23 @@ from map_config import validate_config
 
 
 class ConfigTests(unittest.TestCase):
+    def test_rename_preserves_display_name_and_rejects_invalid_folders(self):
+        import maps
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / "fixture"
+            folder.mkdir()
+            (folder / "map.py").write_text(
+                'MAP_ID = 1\nworld = World(map_id=1, name="原名称", w=20, h=20)\n')
+            with patch.object(maps, "__file__", str(root / "__init__.py")):
+                self.assertEqual(maps.get_map_summary(1)["name"], "原名称")
+                for invalid in ("../outside", "_hidden", "", " name", "..", "bad/name"):
+                    self.assertFalse(maps.rename_map(1, invalid))
+                self.assertTrue(maps.rename_map(1, "新名称"))
+                self.assertTrue((root / "新名称/map.py").is_file())
+                self.assertEqual(maps.get_map_summary(1)["name"], "新名称")
+                self.assertEqual(maps.load_map_config(1)["world"]["name"], "新名称")
+
     def test_rejects_unbounded_physics_and_invalid_types(self):
         for config in (
             {"world": {"gravity": 2 ** 40}}, {"world": {"gravity": 10 ** 1000}},
