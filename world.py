@@ -135,46 +135,30 @@ class World:
     #  Chunk 辅助
     # ================================================================
     def _chunk_key(self, gx: int, gy: int) -> Tuple[int, int]:
-        """返回格子所属 Chunk 的键。循环世界自动取模。"""
-        cx = gx // CHUNK_SIZE
-        cy = gy // CHUNK_SIZE
-        if self.loop_x:
-            cx = cx % max(1, (self.width + CHUNK_SIZE - 1) // CHUNK_SIZE)
-        if self.loop_y:
-            cy = cy % max(1, (self.height + CHUNK_SIZE - 1) // CHUNK_SIZE)
-        return (cx, cy)
+        return self._chunk_wrap(gx // CHUNK_SIZE, gy // CHUNK_SIZE)
 
     def _chunk_wrap(self, cx: int, cy: int) -> Tuple[int, int]:
-        """将 Chunk 索引按循环规则包裹到有效范围。"""
+        """Repeat chunk phases at the true tile period, including partial chunks."""
         if self.loop_x:
-            cx = cx % max(1, (self.width + CHUNK_SIZE - 1) // CHUNK_SIZE)
+            cx %= self.width // math.gcd(self.width, CHUNK_SIZE)
         if self.loop_y:
-            cy = cy % max(1, (self.height + CHUNK_SIZE - 1) // CHUNK_SIZE)
-        return (cx, cy)
+            cy %= self.height // math.gcd(self.height, CHUNK_SIZE)
+        return cx, cy
 
     def _mark_dirty(self, gx: int, gy: int):
-        """标记某个方块所在的 Chunk 需要重渲染。循环世界同时标记所有副本。"""
+        if self.loop_x or self.loop_y:
+            # One tile can occur in several chunk phases when a loop is not
+            # aligned to CHUNK_SIZE. The bounded caches are cheap to invalidate.
+            self._chunk_surfaces.clear()
+            self._dirty_chunks.clear()
+            self.invalidate_chunks()
+            return
         ck = self._chunk_key(gx, gy)
         self._dirty_chunks.add(ck)
-        if self.loop_x or self.loop_y:
-            ncx = max(1, (self.width + CHUNK_SIZE - 1) // CHUNK_SIZE)
-            ncy = max(1, (self.height + CHUNK_SIZE - 1) // CHUNK_SIZE)
-            for dck in list(self._chunk_surfaces.keys()):
-                if dck[0] % ncx == ck[0] % ncx and dck[1] % ncy == ck[1] % ncy:
-                    self._dirty_chunks.add(dck)
-        # 缩放缓存：循环世界要失效所有映射到同一Chunk的副本
-        if self.loop_x or self.loop_y:
-            ncx = max(1, (self.width + CHUNK_SIZE - 1) // CHUNK_SIZE)
-            ncy = max(1, (self.height + CHUNK_SIZE - 1) // CHUNK_SIZE)
-            stale = [k for k in self._scaled_chunk_cache
-                     if k[0] % ncx == ck[0] % ncx and k[1] % ncy == ck[1] % ncy]
-        else:
-            stale = [k for k in self._scaled_chunk_cache
-                     if k[0] == ck[0] and k[1] == ck[1]]
-        for k in stale:
-            cached = self._scaled_chunk_cache.pop(k, None)
-            if cached is not None:
-                self._scaled_chunk_cache_bytes -= cached.get_pitch() * cached.get_height()
+        stale = [key for key in self._scaled_chunk_cache if key[:2] == ck]
+        for key in stale:
+            cached = self._scaled_chunk_cache.pop(key)
+            self._scaled_chunk_cache_bytes -= cached.get_pitch() * cached.get_height()
 
     # ================================================================
     #  Tile 读写
@@ -326,7 +310,8 @@ class World:
                 for ly in range(chunk_h):
                     px = lx * CHUNK_TEX_PX
                     py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                    render_block_pattern(surf, self._default_bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX)
+                    render_block_pattern(surf, self._default_bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
+                                         overdraw=False)
 
         # 覆盖非默认方块
         base_x = cx * CHUNK_SIZE
@@ -357,7 +342,8 @@ class World:
                 px = lx * CHUNK_TEX_PX
                 # Y 轴翻转：世界坐标 y↑，纹理 y↓
                 py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                render_block_pattern(surf, bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX)
+                render_block_pattern(surf, bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
+                                     overdraw=False)
 
         self._chunk_surfaces[ck] = surf
         self._chunk_surfaces.move_to_end(ck)
@@ -412,7 +398,7 @@ class World:
                 # 缩放至屏幕尺寸（缓存避免每帧分配巨型临时Surface）
                 need_scale = (blit_w != CHUNK_SIZE * CHUNK_TEX_PX or blit_h != CHUNK_SIZE * CHUNK_TEX_PX)
                 if need_scale:
-                    cache_key = (cx, cy, blit_w, blit_h)
+                    cache_key = (*wck, blit_w, blit_h)
                     scaled = self._scaled_chunk_cache.get(cache_key)
                     if scaled is None:
                         scaled = pygame.transform.scale(chunk_surf, (blit_w, blit_h))
