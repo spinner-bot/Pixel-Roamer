@@ -1,0 +1,402 @@
+{
+  "code_revision": "d40a8db3635a5f28f544280ef346c39351deb8de",
+  "scope": "clear targets, real triggers and one second survival; not full map routes",
+  "portals": [
+    {
+      "map": 3,
+      "source": [
+        144,
+        20,
+        300
+      ],
+      "target": [
+        30.5,
+        50.9
+      ],
+      "after_one_second": [
+        30.5,
+        50.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 3,
+      "source": [
+        220,
+        110,
+        300
+      ],
+      "target": [
+        130,
+        40
+      ],
+      "after_one_second": [
+        130.0,
+        37.84518509396627
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 3,
+      "source": [
+        375,
+        80,
+        300
+      ],
+      "target": [
+        289.5,
+        63.9
+      ],
+      "after_one_second": [
+        289.5,
+        63.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 3,
+      "source": [
+        468,
+        17,
+        300
+      ],
+      "target": [
+        407,
+        23
+      ],
+      "after_one_second": [
+        407.0,
+        21.2934370257642
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 3,
+      "source": [
+        70,
+        50,
+        300
+      ],
+      "target": [
+        185,
+        70
+      ],
+      "after_one_second": [
+        185.0,
+        67.84518509396625
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 4,
+      "source": [
+        26,
+        15,
+        300
+      ],
+      "target": [
+        4.5,
+        29.9
+      ],
+      "after_one_second": [
+        4.5,
+        29.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 4,
+      "source": [
+        23,
+        8,
+        300
+      ],
+      "target": [
+        2.5,
+        8.9
+      ],
+      "after_one_second": [
+        2.5,
+        8.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 6,
+      "source": [
+        39,
+        22,
+        300
+      ],
+      "target": [
+        76.5,
+        15.9
+      ],
+      "after_one_second": [
+        76.5,
+        15.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 7,
+      "source": [
+        28,
+        17,
+        300
+      ],
+      "target": [
+        44.5,
+        40.9
+      ],
+      "after_one_second": [
+        44.5,
+        39.9
+      ],
+      "hp": 150.0,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        3018,
+        120,
+        300
+      ],
+      "target": [
+        4800.5,
+        60.9
+      ],
+      "after_one_second": [
+        4800.5,
+        60.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        4440,
+        74,
+        300
+      ],
+      "target": [
+        5300.5,
+        55.9
+      ],
+      "after_one_second": [
+        5300.5,
+        55.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5005,
+        53,
+        300
+      ],
+      "target": [
+        5500.5,
+        90.9
+      ],
+      "after_one_second": [
+        5500.5,
+        90.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5510,
+        52,
+        300
+      ],
+      "target": [
+        5940.5,
+        85.9
+      ],
+      "after_one_second": [
+        5940.5,
+        85.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        4800,
+        60,
+        300
+      ],
+      "target": [
+        3018.5,
+        120.9
+      ],
+      "after_one_second": [
+        3018.5,
+        120.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5300,
+        55,
+        300
+      ],
+      "target": [
+        4440.5,
+        74.9
+      ],
+      "after_one_second": [
+        4440.5,
+        74.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5500,
+        90,
+        300
+      ],
+      "target": [
+        5005.5,
+        53.9
+      ],
+      "after_one_second": [
+        5005.5,
+        53.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5940,
+        85,
+        300
+      ],
+      "target": [
+        5510.5,
+        52.9
+      ],
+      "after_one_second": [
+        5510.5,
+        52.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        4740,
+        47,
+        357
+      ],
+      "target": [
+        3000,
+        40
+      ],
+      "after_one_second": [
+        3000.0,
+        37.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        1906,
+        26,
+        425
+      ],
+      "target": [
+        3000,
+        40
+      ],
+      "after_one_second": [
+        3000.0,
+        37.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 20,
+      "source": [
+        5160,
+        75,
+        434
+      ],
+      "target": [
+        3000,
+        40
+      ],
+      "after_one_second": [
+        3000.0,
+        37.9
+      ],
+      "hp": 150,
+      "reached_end": false
+    },
+    {
+      "map": 21,
+      "source": [
+        415,
+        78,
+        425
+      ],
+      "target": [
+        417.5,
+        81.9
+      ],
+      "after_one_second": [
+        417.5,
+        81.9
+      ],
+      "hp": 150,
+      "reached_end": true
+    },
+    {
+      "map": 21,
+      "source": [
+        415,
+        79,
+        425
+      ],
+      "target": [
+        417.5,
+        81.9
+      ],
+      "after_one_second": [
+        417.5,
+        81.9
+      ],
+      "hp": 150,
+      "reached_end": true
+    }
+  ]
+}
