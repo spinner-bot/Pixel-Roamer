@@ -167,6 +167,23 @@ def scenarios(g):
     for _ in range(5):
         yield []
     assert not g["jump_pressed"] and player.v_y <= 0, "blocked jump leaked into a later frame"
+    world = g['_current_map']
+    for x in range(4, 8):
+        for y in range(4, 9):
+            world.set_tile(x, y, 0)
+    world.set_tile(5, 5, 9)
+    player.reset(6.1, 5.7)
+    player.collide_with_world(world, 0)
+    player.apply_buff(28, (), .2)
+    before_x = player._x
+    yield key(pygame.K_w)
+    assert player._x == before_x and not player.is_climbing, 'stun allowed ladder capture'
+    for _ in range(15):
+        yield []
+    assert not player.has_buff(28) and not player.is_climbing
+    assert player._x == before_x, 'blocked climb leaked after stun expiry'
+    yield key(pygame.K_w)
+    assert player.is_climbing and player._x == 5.5
     yield key(pygame.K_ESCAPE)
 
     # Timed failure and target victory must freeze damage-over-time effects.
