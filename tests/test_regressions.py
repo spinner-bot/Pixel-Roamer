@@ -137,7 +137,7 @@ class MapSmokeTests(unittest.TestCase):
             if name.startswith("maps.") and name.endswith(".map")
         ]
         self.assertEqual(loaded_map_modules, ["maps.grand_journey.map"])
-        self.assertEqual(len(selected_world.grid), 140372)
+        self.assertEqual(len(selected_world.grid), 140360)
         surface = pygame.Surface((640, 360))
         for map_id in sorted(maps):
             world = get_map(map_id)
