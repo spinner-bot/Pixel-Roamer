@@ -14,6 +14,9 @@ class SettingsPage:
         self.app = app
         self._drag_row = None
 
+    def cancel_drag(self):
+        self._drag_row = None
+
     @staticmethod
     def rows():
         return [pygame.Rect(230, 220 + index * 110, 1140, 92) for index in range(4)]
