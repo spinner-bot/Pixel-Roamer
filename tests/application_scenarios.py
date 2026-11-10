@@ -46,6 +46,11 @@ def scenarios(g):
     capture(g, "home")
     yield [pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=(5, 5))]
     assert g["page"] == g["PAGE_HOME"], "background click activated menu selection"
+    yield key(pygame.K_3)
+    assert g["page"] == g["PAGE_DEV"] and g["_dev_block_browser"]
+    yield key(pygame.K_ESCAPE)
+    yield key(pygame.K_ESCAPE)
+    assert g["page"] == g["PAGE_HOME"]
     yield [pygame.event.Event(pygame.VIDEORESIZE, w=0, h=0)]
     assert g["scale"] > 0
     yield key(pygame.K_RETURN)
