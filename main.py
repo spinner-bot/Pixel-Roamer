@@ -122,6 +122,8 @@ def set_page_no_launch(page_id: int):
     # 恢复目标页面的背景音乐
     if page_id == PAGE_HOME:
         music.play("home", fade_in_ms=800)
+    elif page_id == PAGE_WORLD and _current_map is not None:
+        _play_world_music(_current_map)
     _trigger_fade_in()
 
 
@@ -2596,10 +2598,10 @@ while running:
                 player1, _player_lives_left, _infinite_lives)
 
         # ---- Buff 系统 tick ----
-        player1.tick_buffs(dt)
+        if not _game_over and not _game_win and player1.alive:
+            player1.tick_buffs(dt)
         # buff 属性修正
-        buf_v_max = player1.get_buff_stat("v_max", player1._base_v_max)
-        buf_v_jump = player1.get_buff_stat("v_jump", player1._base_v_jump)
+        player1.refresh_movement_stats()
         # 体力恢复速度（动态公式，三层结构）
         stamina_ratio = player1.stamina / max(1, player1.stamina_max)
         hp_ratio = player1.hp / max(1, player1.hp_max)
@@ -2613,15 +2615,14 @@ while running:
         )
         buf_stam_rec = player1.get_buff_stat("stamina_recovery", base_stam_rec)
         buf_stam_cost = player1.get_buff_stat("stamina_cost", 1.0)
-        player1.v_max = buf_v_max
-        player1.v_jump = buf_v_jump
         # 控制效果检查（铁意 buff 40 免疫定身/晕眩/压制/反向）
         iron_will = player1.has_buff(40)
         rooted = player1.has_buff(21) and not iron_will
         stunned = player1.has_buff(28) and not iron_will
         grounded = player1.has_buff(27) and not iron_will
         hopping = player1.has_buff(33)
-        reversed_ctrl = player1.has_buff(23) and not player1.has_buff(8) and not iron_will
+        reversed_ctrl = ((player1.has_buff(23) or getattr(player1, '_confused', False))
+                         and not player1.has_buff(8) and not iron_will)
 
         # ---- 移动物理（游戏结束/胜利时冻结）----
         if not _game_over and not _game_win and player1.alive and not stunned:
