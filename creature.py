@@ -966,6 +966,9 @@ class Creature:
         self._special_cooldowns = {}
         self._air_jumps_used = 0
         self._wind_walk_timer = 0.0
+        self._anim_timer = 0.0
+        self._anim_frame = 0
+        self._anim_state = "idle"
         if hasattr(self, '_base_v_max'):
             self.v_max = self._base_v_max
             self.v_jump = self._base_v_jump
