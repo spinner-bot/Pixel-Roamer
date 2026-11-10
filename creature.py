@@ -401,8 +401,13 @@ class Creature:
     def collide_with_world(self, world, dt: float):
         """Keep each collision step below half a tile, even after a long frame."""
         remaining = max(0.0, dt)
-        while self.alive:
+        for _ in range(256):
+            if not self.alive:
+                break
             speed = max(abs(self.v_x), abs(self.v_y))
+            if not math.isfinite(speed):
+                self.reset_motion()
+                break
             step = min(remaining, 0.4 / speed) if speed > 0 else remaining
             self._collide_with_world_step(world, step)
             remaining -= step
