@@ -94,14 +94,14 @@ def generate():
     w.lives = 5; w.fill_color = (18, 14, 28)
     w.begin_bulk_load()
 
-    # ---- 全图填充基岩 + 清空上半部 ----
+    # ---- 地表基岩 ----
+    # 原逻辑先铺满 6000×150，再清空 y=20..147，产生近百万个无用方块写入。
+    # 最终只保留 y=0..16 的石层和 y=148..149 的顶层边界；其余区域为空气。
     for x in range(W):
-        for y in range(H):
-            bt_id = 2 if y < 75 else 27  # 上半石头，下半黑曜石（更深）
-            p(w, x, y, bt_id)
-    for x in range(W):
-        for y in range(20, 148):
-            w.set_tile(x, y, 0)
+        for y in range(17):
+            p(w, x, y, 2)
+        p(w, x, 148, 27)
+        p(w, x, 149, 27)
 
     # 覆上一层薄土
     for x in range(W):
