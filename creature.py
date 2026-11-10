@@ -686,6 +686,12 @@ class Creature:
                         vx, vy = bt.special_data
                         self.v_x = float(vx)
                         self.v_y = float(vy)
+                        if self.v_y > 0:
+                            # The launch has already consumed the grounded state.
+                            # A keydown before the next sweep must not replace it
+                            # with a weaker ground jump or climbing velocity.
+                            self.on_ground = False
+                            self.is_climbing = False
                         self._special_cooldowns["catapult"] = 0.4
 
                 elif bt.special == "dash" and bt.special_data is not None:
