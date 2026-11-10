@@ -161,5 +161,93 @@ class PoisonTests(unittest.TestCase):
         self.assertFalse(player.alive)
 
 
+class CollisionTests(unittest.TestCase):
+    def test_fast_movement_does_not_cross_a_one_tile_wall(self):
+        for direction in (-1, 1):
+            with self.subTest(direction=direction):
+                world = make_world()
+                world.set_tile(5, 5, 1)
+                player = make_player(2 if direction > 0 else 9, 5.5)
+                player.v_x = direction * 36.5
+                player.collide_with_world(world, 0.2)
+                self.assertEqual(player.v_x, 0)
+                if direction > 0:
+                    self.assertAlmostEqual(player._x, 4.6)
+                else:
+                    self.assertAlmostEqual(player._x, 6.4)
+
+    def test_fast_fall_lands_without_crossing_floor(self):
+        world = make_world()
+        world.set_tile(5, 5, 1)
+        player = make_player(y=15)
+        player.v_y = -100
+        player.collide_with_world(world, 0.2)
+        self.assertTrue(player.on_ground)
+        self.assertAlmostEqual(player._y, 6.9)
+
+    def test_one_way_platform_stays_solid_at_exact_rest(self):
+        from block_types_data import BLOCK_TYPES
+        platform = BlockType(5000, is_solid=True, one_way=True)
+        world = make_world(block_types={**BLOCK_TYPES, platform.id: platform})
+        world.gravity = -10
+        world.set_tile(5, 5, platform.id)
+        player = make_player(y=6.9)
+        for _ in range(120):
+            player.update_physics(1 / 60, world)
+            player.collide_with_world(world, 1 / 60)
+        self.assertTrue(player.on_ground)
+        self.assertAlmostEqual(player._y, 6.9)
+
+    def test_one_way_platform_allows_jumping_from_below(self):
+        from block_types_data import BLOCK_TYPES
+        platform = BlockType(5000, is_solid=True, one_way=True)
+        world = make_world(block_types={**BLOCK_TYPES, platform.id: platform})
+        world.set_tile(5, 5, platform.id)
+        player = make_player(y=2)
+        player.v_y = 30
+        player.collide_with_world(world, 0.2)
+        self.assertGreater(player._y - player._h / 2, 6)
+
+    def test_solid_default_tile_collides(self):
+        world = make_world(default_block_id=1)
+        world.set_tile(5, 6, 0)
+        world.set_tile(5, 7, 0)
+        player = make_player(y=7)
+        player.v_y = -10
+        player.collide_with_world(world, 0.2)
+        self.assertTrue(player.on_ground)
+        self.assertAlmostEqual(player._y, 6.9)
+
+    def test_negative_fractional_coordinates_use_floor(self):
+        world = make_world()
+        world.set_tile(0, 5, 310)
+        self.assertEqual(world.get_tile(-0.2, 5).type_id, 0)
+        looping = make_world(loop_x=True)
+        looping.set_tile(39, 5, 310)
+        self.assertEqual(looping.get_tile(-0.2, 5).type_id, 310)
+
+    def test_single_loop_axis_does_not_disable_void_on_other_axis(self):
+        world = make_world(loop_x=True)
+        self.assertFalse(world.is_out_of_bounds(-1000, 10))
+        self.assertTrue(world.is_out_of_bounds(10, -21))
+        player = make_player(10, -21)
+        player.collide_with_world(world, 1 / 60)
+        self.assertFalse(player.alive)
+
+
+class FrameRateTests(unittest.TestCase):
+    def test_horizontal_movement_matches_across_frame_rates(self):
+        positions = []
+        for fps in (30, 60, 144):
+            world = World(0, "frame rate", 1000, 50, gravity=0, edge_behavior="void")
+            player = make_player(5, 20)
+            for _ in range(fps * 5):
+                player.move(0.35)
+                player.update_physics(1 / fps, world)
+                player.collide_with_world(world, 1 / fps)
+            positions.append(player._x)
+        self.assertLess(max(positions) - min(positions), 2.5, positions)
+
+
 if __name__ == "__main__":
     unittest.main()
