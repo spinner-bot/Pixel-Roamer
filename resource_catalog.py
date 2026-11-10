@@ -186,3 +186,13 @@ def load_interface(path=None):
         defaults[section][key] = field["default"]
     validate_config(defaults)
     return options, rows
+
+
+def load_home_menu():
+    with (CATALOG_DIR / "interface.json").open(encoding="utf-8") as source:
+        items = json.load(source).get("home_menu")
+    if (not isinstance(items, list) or [item.get("id") for item in items] != [0, 1, 2, 3]
+            or any(not isinstance(item.get(key), str) or not item[key]
+                   for item in items for key in ("label", "description"))):
+        raise ValueError("home menu must define four named actions in order")
+    return items
