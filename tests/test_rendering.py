@@ -10,6 +10,20 @@ from world import World
 
 
 class LoopRenderingTests(unittest.TestCase):
+    def test_fractional_camera_scale_does_not_leave_chunk_gaps(self):
+        world = World(0, "seam", 5, 3, loop_x=True, loop_y=True,
+                      block_types={0: BlockType(0, is_solid=False, color=(17, 34, 51))})
+        camera = Camera(640, 360, world)
+        camera.scale = 3.17
+        camera.follow(0.27, 1.3)
+        surface = pygame.Surface((640, 360))
+        surface.fill((255, 0, 255))
+        world.draw(surface, camera)
+        expected = pygame.Surface(surface.get_size())
+        expected.fill((17, 34, 51))
+        self.assertEqual(pygame.image.tobytes(surface, "RGB"),
+                         pygame.image.tobytes(expected, "RGB"))
+
     def make_world(self):
         types = {0: BlockType(0, is_solid=False, color=(0, 0, 0))}
         for tile_id in range(1, 16):
