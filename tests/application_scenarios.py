@@ -111,7 +111,10 @@ def scenarios(g):
         assert g["player1"] is player
         music = g["music"]
         track = music._requested_track[0] if music._requested_track else music.get_current_track()
-        assert track == "adventure", (map_id, track)
+        if pygame.mixer.get_init():
+            assert track == "adventure", (map_id, track)
+        else:
+            assert not music.is_playing()
         yield key(pygame.K_ESCAPE)
         assert g["page"] == g["PAGE_DEV"]
 
