@@ -1,10 +1,10 @@
 from __future__ import annotations
 import pygame
-from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
+from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 import sfx
 import music
-from pixel_roamer.ui.config import (FONT20, FONT24, FONT28, FONT40, _FPS_OPTIONS, _SETTING_ROWS)
-from pixel_roamer.ui.widgets import (draw_text_center, draw_text_left, draw_text_right)
+from pixel_roamer.ui.config import FONT20, FONT24, FONT28, FONT40, _FPS_OPTIONS, _SETTING_ROWS
+from pixel_roamer.ui.widgets import draw_text_center, draw_text_left, draw_text_right
 
 class SettingsPage:
     """Settings behavior; shared session and viewport come from app."""
