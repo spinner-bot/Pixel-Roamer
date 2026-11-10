@@ -62,3 +62,21 @@ class GrandEntranceTests(unittest.TestCase):
                 self.assertGreater(run['min_stamina'], 10)
                 self.assertAlmostEqual(run['position'][0], 4800.5)
                 self.assertAlmostEqual(run['position'][1], 60.9)
+
+    def test_existing_portal_route_reaches_formal_victory_from_spawn(self):
+        report = self.audit('--finish')
+        self.assertEqual(report['goal'], 'finish')
+        self.assertEqual(len(report['runs']), 3)
+        for run in report['runs']:
+            with self.subTest(fps=run['fps']):
+                self.assertTrue(run['game_win'])
+                self.assertTrue(run['reached_end'])
+                self.assertTrue(run['reached_portal'])
+                self.assertIsNone(run['failure'])
+                self.assertEqual(run['lives_left'], 5)
+                self.assertGreater(run['min_hp'], 120)
+                self.assertGreater(run['min_stamina'], 10)
+                self.assertEqual([hop['phase'] for hop in run['hops']], ['gate', 'library', 'crystal'])
+                for hop, expected in zip(run['hops'], [(4800.5, 60.9), (5500.5, 90.9), (5940.5, 85.9)]):
+                    self.assertLess(abs(hop['to'][0] - expected[0]), .01)
+                    self.assertLess(abs(hop['to'][1] - expected[1]), .01)
