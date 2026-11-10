@@ -458,6 +458,18 @@ def generate():
         if (bt and bt.id == 0) and (tb and tb.is_solid if tb else False):
             p(w, lx, ly, pick([9,10,31]))
 
+    # Finalize after random scenery: arrival space must not be filled again.
+    from maps.portal_pad import prepare_portal_pad
+    for first, second in portal_pairs:
+        first_landing = prepare_portal_pad(w, *first)
+        second_landing = prepare_portal_pad(w, *second)
+        w.grid[first].meta = dict(zip(("tp_x", "tp_y"), second_landing))
+        w.grid[second].meta = dict(zip(("tp_x", "tp_y"), first_landing))
+    # Unconfigured showcase runes return to the entrance, never world origin.
+    for tile in w.grid.values():
+        if w.block_types[tile.type_id].special == "teleport" and tile.meta is None:
+            tile.meta = dict(zip(("tp_x", "tp_y"), w.spawn_points))
+
     w.end_bulk_load()
     return w
 
