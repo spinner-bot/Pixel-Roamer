@@ -48,6 +48,7 @@ python scripts/audit_runtime.py --frames 36000 --block-frames 300 --output /tmp/
 - `pixel_roamer/world_session.py` / `world_view.py`：世界规则更新与绘制。
 - `pixel_roamer/ui/`：HUD、设置、地图浏览/编辑及方块/buff 图鉴。
 - `collision.py` / `status_effects.py` / `simulation.py`：碰撞几何、状态数值和固定模拟时钟。
+- `environment_contacts.py` / `shore_exit.py` / `teleport.py`：连续接触边界、游泳上岸与安全传送。
 - `data/catalogs/`：方块、buff、时装及编辑字段 JSON；格式见 [数据说明](data/README.md)。
 - `maps/`：地图算法、配置与主题地图 JSON 布局；`tests/`：自动回归与主循环场景。
 
