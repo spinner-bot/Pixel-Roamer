@@ -13,6 +13,12 @@ from resource_catalog import load_blocks, load_buffs, load_costumes, load_interf
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = json.loads((ROOT / "tests/fixtures/catalog_baseline.json").read_text())
+ART = json.loads((ROOT / "tests/fixtures/catalog_art_overrides.json").read_text())
+NON_ART = json.loads((ROOT / "tests/fixtures/catalog_non_art_baseline.json").read_text())
+
+
+def expected(kind, entry_id):
+    return {**BASELINE[kind][str(entry_id)], **ART[kind].get(str(entry_id), {})}
 
 
 def digest(value):
@@ -40,11 +46,11 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(set(map(str, blocks)), set(BASELINE["blocks"]))
         for block_id, block in blocks.items():
             with self.subTest(block_id=block_id):
-                self.assertEqual(digest(asdict(block)), BASELINE["blocks"][str(block_id)]["definition"])
+                self.assertEqual(digest(asdict(block)), expected("blocks", block_id)["definition"])
                 surface = pygame.Surface((32, 32), pygame.SRCALPHA)
                 render_block_pattern(surface, block, 0, 0, 32, 32, overdraw=False)
                 self.assertEqual(hashlib.sha256(pygame.image.tobytes(surface, "RGBA")).hexdigest(),
-                                 BASELINE["blocks"][str(block_id)]["rgba32"])
+                                 expected("blocks", block_id)["rgba32"])
 
     def test_all_buff_definitions_and_icons_match_pre_migration(self):
         from pattern import _draw_vector
@@ -52,10 +58,19 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(set(map(str, buffs)), set(BASELINE["buffs"]))
         for buff_id, buff in buffs.items():
             with self.subTest(buff_id=buff_id):
-                self.assertEqual(digest(asdict(buff)), BASELINE["buffs"][str(buff_id)]["definition"])
+                self.assertEqual(digest(asdict(buff)), expected("buffs", buff_id)["definition"])
                 surface = _draw_vector(buff.icon, 32, 32)
                 self.assertEqual(hashlib.sha256(pygame.image.tobytes(surface, "RGBA")).hexdigest(),
-                                 BASELINE["buffs"][str(buff_id)]["rgba32"])
+                                 expected("buffs", buff_id)["rgba32"])
+
+    def test_art_refinement_preserves_every_gameplay_field(self):
+        for kind, entries, art_field in (("blocks", load_blocks(), "pattern"),
+                                         ("buffs", load_buffs(), "icon")):
+            for entry_id, entry in entries.items():
+                definition = asdict(entry)
+                definition.pop(art_field)
+                with self.subTest(kind=kind, entry_id=entry_id):
+                    self.assertEqual(digest(definition), NON_ART[kind][str(entry_id)])
 
     def test_costume_frames_match_pre_migration_pixels(self):
         from costumes import _pixels_to_surface
