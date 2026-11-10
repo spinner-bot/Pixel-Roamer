@@ -44,11 +44,15 @@ class MusicTests(unittest.TestCase):
         self.assertLess(request_duration, 0.75)
         self.assertNotIn("adventure", music._music_cache)
         deadline = time.monotonic() + 10
+        max_update_duration = 0.0
         while "home" not in music._music_cache and time.monotonic() < deadline:
+            update_start = time.perf_counter()
             music.update()
-            time.sleep(0.01)
+            max_update_duration = max(max_update_duration,
+                                      time.perf_counter() - update_start)
         music.update()
         self.assertIn("home", music._music_cache)
+        self.assertLess(max_update_duration, 0.03)
         self.assertEqual(music.get_current_track(), "home")
         self.assertNotIn("adventure", music._music_cache)
         music.stop(fade_out_ms=0)
@@ -108,13 +112,41 @@ class MapSmokeTests(unittest.TestCase):
     def test_all_maps_load_have_valid_spawn_and_render(self):
         from camera import Camera
         from creature import Player
-        from maps import get_map, list_maps
+        from maps import get_map, get_map_summary, list_maps
 
+        import sys
+        registry_start = time.perf_counter()
         maps = list_maps()
+        self.assertLess(time.perf_counter() - registry_start, 1.0)
         self.assertEqual(len(maps), 12)
+        self.assertFalse(any(
+            name.startswith("maps.") and name.endswith(".map")
+            for name in sys.modules
+        ), "listing maps must not execute map generation modules")
+        summaries = {map_id: get_map_summary(map_id) for map_id in maps}
+        self.assertFalse(any(
+            name.startswith("maps.") and name.endswith(".map")
+            for name in sys.modules
+        ), "map summaries must not execute map generation modules")
+        selected_load_start = time.perf_counter()
+        selected_world = get_map(20)
+        self.assertLess(time.perf_counter() - selected_load_start, 1.5,
+                        "loading one map should not generate every map")
+        loaded_map_modules = [
+            name for name in sys.modules
+            if name.startswith("maps.") and name.endswith(".map")
+        ]
+        self.assertEqual(loaded_map_modules, ["maps.grand_journey.map"])
+        self.assertEqual(len(selected_world.grid), 140372)
         surface = pygame.Surface((640, 360))
         for map_id in sorted(maps):
             world = get_map(map_id)
+            summary = summaries[map_id]
+            self.assertEqual(summary["width"], world.width, maps[map_id])
+            self.assertEqual(summary["height"], world.height, maps[map_id])
+            self.assertEqual(summary["mode"], world.mode, maps[map_id])
+            self.assertEqual(summary["loop_x"], world.loop_x, maps[map_id])
+            self.assertEqual(summary["loop_y"], world.loop_y, maps[map_id])
             spawn_x, spawn_y = world.spawn_points
             self.assertGreater(world.width, 0, maps[map_id])
             self.assertGreater(world.height, 0, maps[map_id])
@@ -124,7 +156,13 @@ class MapSmokeTests(unittest.TestCase):
             self.assertLess(spawn_y, world.height, maps[map_id])
             camera = Camera(640, 360, world)
             camera.follow(spawn_x, spawn_y)
+            draw_start = time.perf_counter()
             world.draw(surface, camera)
+            first_draw_seconds = time.perf_counter() - draw_start
+            if map_id in (3, 19, 20):
+                self.assertLess(first_draw_seconds, 1.0,
+                                f"{maps[map_id]} first draw took {first_draw_seconds:.2f}s")
+            self.assertLessEqual(world._scaled_chunk_cache_bytes, 64 * 1024 * 1024)
 
             if world.mode == "explore":
                 endpoints = [
@@ -155,6 +193,38 @@ class MapSmokeTests(unittest.TestCase):
                 )
                 self.assertGreaterEqual(available_score, world.score_goal,
                                         f"{maps[map_id]} cannot reach its score goal")
+
+
+class PhysicsTests(unittest.TestCase):
+    def test_movement_collision_and_jump_stay_active(self):
+        from creature import Player
+        from maps import get_map
+
+        world = get_map(1)
+        keys = {
+            "left": pygame.K_a,
+            "right": pygame.K_d,
+            "jump": pygame.K_SPACE,
+            "up": pygame.K_w,
+            "down": pygame.K_s,
+            "fly": pygame.K_f,
+        }
+        player = Player(0, "physics", *world.spawn_points, keys)
+        for _ in range(300):
+            player.move(0.35)
+            player.update_physics(1 / 60, world)
+            player.collide_with_world(world, 1 / 60)
+
+        self.assertTrue(player.alive)
+        self.assertGreater(player._x, world.spawn_points[0])
+        self.assertGreater(player._y, 0)
+        self.assertTrue(player.on_ground)
+
+        before_jump = player._y
+        self.assertTrue(player.jump())
+        player.update_physics(1 / 60, world)
+        player.collide_with_world(world, 1 / 60)
+        self.assertGreater(player._y, before_jump)
 
 
 class ApplicationStartupTests(unittest.TestCase):
