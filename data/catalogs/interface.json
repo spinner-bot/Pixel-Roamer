@@ -220,5 +220,27 @@
       "default": 1,
       "step": 1
     }
+  ],
+  "home_menu": [
+    {
+      "id": 0,
+      "label": "开始漫游",
+      "description": "选择一张地图，踏入像素世界"
+    },
+    {
+      "id": 1,
+      "label": "设置",
+      "description": "帧率、音量与显示"
+    },
+    {
+      "id": 2,
+      "label": "世界图鉴",
+      "description": "认识方块与状态效果"
+    },
+    {
+      "id": 3,
+      "label": "退出游戏",
+      "description": "结束本次漫游"
+    }
   ]
 }
