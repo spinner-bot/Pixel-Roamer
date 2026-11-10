@@ -132,6 +132,26 @@ def draw_multiline(
     return cy
 
 
+def elide(text: str, max_width: int, size: int, font_family: str = "sans") -> str:
+    """Fit a single label to a column without drawing over neighboring content."""
+    font = _get_font(font_family, size)
+    if max_width <= 0:
+        return ""
+    if font.get_rect(text).width <= max_width:
+        return text
+    suffix = "…"
+    if font.get_rect(suffix).width > max_width:
+        return ""
+    low, high = 0, len(text)
+    while low < high:
+        middle = (low + high + 1) // 2
+        if font.get_rect(text[:middle] + suffix).width <= max_width:
+            low = middle
+        else:
+            high = middle - 1
+    return text[:low] + suffix
+
+
 # ===================== 兼容旧版辅助函数 =====================
 def draw_center(surf, text, size, y, color=(255, 255, 255),
                 font_family="sans", shadow=False):
