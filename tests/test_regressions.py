@@ -142,6 +142,7 @@ class MapSmokeTests(unittest.TestCase):
         for map_id in sorted(maps):
             world = get_map(map_id)
             summary = summaries[map_id]
+            self.assertEqual(summary["name"], world.name, maps[map_id])
             self.assertEqual(summary["width"], world.width, maps[map_id])
             self.assertEqual(summary["height"], world.height, maps[map_id])
             self.assertEqual(summary["mode"], world.mode, maps[map_id])
