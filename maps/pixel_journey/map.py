@@ -12,7 +12,7 @@ world = World(
     w=480, h=280,
     gravity=-6.2,          # 略低重力，利于探索与跑酷
     view_blocks_h=18,       # 适中的视野范围
-    spawn_points=(15, 52),  # 起始森林出生点
+    spawn_points=(15.5, 54.9),  # 起始森林出生点
     mode="adventure",
     default_block_id=0,     # 默认空气
     edge_behavior="solid",
