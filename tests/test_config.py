@@ -13,7 +13,8 @@ from map_config import validate_config
 class ConfigTests(unittest.TestCase):
     def test_rejects_unbounded_physics_and_invalid_types(self):
         for config in (
-            {"world": {"gravity": 2 ** 40}}, {"world": {"view_blocks_h": 0}},
+            {"world": {"gravity": 2 ** 40}}, {"world": {"gravity": 10 ** 1000}},
+            {"world": {"view_blocks_h": 0}}, {"player": {"costume_id": 99999}},
             {"player": {"f_x": 1.5}}, {"player": {"v_max": float("inf")}},
             {"player": {"hp_max": float("nan")}}, {"player": {"w": -1}},
             {"world": {"loop_x": "false"}}, {"world": {"lives": True}},
