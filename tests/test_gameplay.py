@@ -248,6 +248,29 @@ class CollisionTests(unittest.TestCase):
 
 
 class FrameRateTests(unittest.TestCase):
+    def test_speed_and_jump_tiles_combine_with_buffs_and_restore(self):
+        from block_types_data import BLOCK_TYPES
+        speed = BlockType(5000, is_solid=False, special="speed", special_data=1.8)
+        jump = BlockType(5001, is_solid=False, special="jump", special_data=1.5)
+        world = make_world(block_types={**BLOCK_TYPES, speed.id: speed, jump.id: jump})
+        world.set_tile(5, 5, speed.id)
+        world.set_tile(5, 6, jump.id)
+        player = make_player(y=6)
+        player.apply_buff(3, (30,), 10)
+        player.apply_buff(4, (50,), 10)
+        player.collide_with_world(world, 0)
+        player.refresh_movement_stats()  # Same refresh as the next main-loop frame.
+        self.assertAlmostEqual(player.v_max, player._base_v_max * 1.8 * 1.3)
+        self.assertAlmostEqual(player.v_jump, player._base_v_jump * 1.5 * 1.5)
+        player._x = 20
+        player.collide_with_world(world, 0)
+        self.assertAlmostEqual(player.v_max, player._base_v_max * 1.3)
+        self.assertAlmostEqual(player.v_jump, player._base_v_jump * 1.5)
+        player.clear_buffs()
+        player.refresh_movement_stats()
+        self.assertEqual(player.v_max, player._base_v_max)
+        self.assertEqual(player.v_jump, player._base_v_jump)
+
     def test_horizontal_movement_matches_across_frame_rates(self):
         positions = []
         for fps in (30, 60, 144):
