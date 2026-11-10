@@ -133,6 +133,18 @@ class WorldSession:
                 silenced = getattr(self.app.player1, '_silenced', False)
                 climb_up_cost = 14.0 * sm * buf_stam_cost * dt + 0.01
                 climb_idle_cost = 3.52 * sm * buf_stam_cost * dt + 0.01
+                up_held = keys[self.app.player1.key_bind["up"]] or keys[pygame.K_UP]
+                down_held = keys[self.app.player1.key_bind["down"]] or keys[pygame.K_DOWN]
+                if down_held:
+                    self.app.player1.stop_climbing()
+                elif (up_held and not self.app.player1.is_climbing and self.app.player1.can_climb
+                      and not self.app.jump_pressed and self.app.player1.v_y <= 0):
+                    # Held input must work when contact begins after KEYDOWN.
+                    # Keep an intentional jump detached during its ascent.
+                    if self.app.player1.stamina >= 1:
+                        self.app.player1.try_start_climbing(self.app._current_map)
+                    else:
+                        self.app._stamina_flash_timer = self.app._stamina_flash_duration
                 # 攀爬上边界：人物中心到达梯子顶端（半腰位置），消耗挂住体力
                 climb_bound = getattr(self.app.player1, '_climb_top_y', None)
                 at_climb_bound = False
@@ -142,7 +154,7 @@ class WorldSession:
                         self.app.player1._y = climb_bound  # 中心与方块上边界齐平（半腰）
                         self.app.player1.v_y = 0.0
                         at_climb_bound = True
-                if self.app.player1.is_climbing and (keys[self.app.player1.key_bind["up"]] or keys[pygame.K_UP]):
+                if self.app.player1.is_climbing and up_held:
                     if at_climb_bound:
                         # 已到顶端，消耗挂住体力
                         if self.app.player1.stamina >= climb_idle_cost:
@@ -166,7 +178,6 @@ class WorldSession:
 
                 # ---- 游泳: W/↑向上，攀爬优先 ----
                 swimming_now = False
-                up_held = keys[self.app.player1.key_bind["up"]] or keys[pygame.K_UP]
                 swim_surface = getattr(self.app.player1, '_swim_top_y', None)
                 above_surface = (swim_surface is not None and self.app.player1._y > swim_surface + .05)
                 if (not self.app.player1.is_climbing and self.app.player1.can_swim
