@@ -18,6 +18,7 @@ _music_volume = 0.5                   # 音乐音量 (0~1)
 _music_cache: dict[str, pygame.mixer.Sound] = {}  # 曲目缓存
 _pending_tracks = {}
 _requested_track = None
+_current_channel_id = None
 _RENDER_CHUNK_SAMPLES = 512
 _RENDER_FRAME_BUDGET = 0.004
 
@@ -35,7 +36,7 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     播放指定曲目（自动缓存、无缝循环、淡入）。
     若已有曲目播放中，先淡出旧曲目。
     """
-    global _current_track, _current_sound
+    global _current_track, _current_sound, _current_channel_id
 
     if not _ensure_init():
         return
@@ -43,6 +44,9 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     sound = _music_cache.get(track_key)
     if sound is None:
         return  # 曲目尚未渲染（需先调用 register + render）
+    if _current_sound is sound and is_playing():
+        sound.set_volume(_music_volume)
+        return
 
     # 淡出旧曲目
     if _current_sound is not None and _current_sound is not sound:
@@ -54,7 +58,12 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     # 播放新曲目（Sound.set_volume 影响该 Sound 的所有实例）
     sound.set_volume(_music_volume)
     try:
-        sound.play(loops=loops, fade_ms=fade_in_ms)
+        # Two channels allow crossfades while effects remain in their own pool.
+        first, second = sfx.MUSIC_CHANNEL_IDS
+        _current_channel_id = second if _current_channel_id == first else first
+        channel = pygame.mixer.Channel(_current_channel_id)
+        channel.set_volume(1.0, 1.0)
+        channel.play(sound, loops=loops, fade_ms=fade_in_ms)
     except pygame.error:
         pass
 
