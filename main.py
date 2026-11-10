@@ -148,6 +148,7 @@ _dev_edit_mode = False        # 开发者地图编辑模式
 _dev_edit_field_idx = 0       # 当前编辑字段索引
 _dev_edit_dirty = False       # 是否有未保存的修改
 _dev_edit_config = {}         # 当前编辑中的配置
+_dev_error = ""
 _dev_renaming = False         # 是否正在重命名地图
 
 # 游戏状态
@@ -1859,6 +1860,7 @@ def _get_edit_config(map_id: int) -> dict:
         config["world"]["view_blocks_h"] = m.view_blocks_h
         config["world"]["void_limit"] = m.void_limit
         config["world"]["default_block_id"] = m.default_tile.type_id
+        config["world"]["fill_color"] = ",".join(str(c) for c in m.fill_color)
         config["world"]["lives"] = getattr(m, 'lives', 0)
         config["world"]["score_goal"] = getattr(m, 'score_goal', 100)
         config["world"]["time_limit"] = getattr(m, 'time_limit', 0.0)
@@ -2112,8 +2114,8 @@ def run_dev_page(dt: float):
     if _dev_selected_id is not None:
         if _dev_edit_mode:
             draw_text_center(logic_surface, FONT20,
-                             "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
-                             LOGIC_HEIGHT - 24, (140, 180, 255))
+                             _dev_error or "S: 保存到硬盘  |  Enter: 精确输入当前字段  |  Esc: 返回列表",
+                             LOGIC_HEIGHT - 24, (255, 100, 80) if _dev_error else (140, 180, 255))
         else:
             draw_text_center(logic_surface, FONT24,
                              f"当前选中: ID={_dev_selected_id}  |  Enter启动 E编辑 B方块预览 UBuff预览  Esc主页",
@@ -2145,6 +2147,7 @@ def handle_dev_input(event):
     """处理 dev 页面的键盘事件。"""
     global _dev_selected_id, _dev_edit_mode, _dev_edit_field_idx
     global _dev_edit_dirty, _dev_edit_config
+    global _dev_error
     global _dev_inputting, _dev_input_text
     global _dev_block_browser, _dev_buff_browser
 
@@ -2344,9 +2347,13 @@ def handle_dev_input(event):
                 pass
         elif event.key == pygame.K_s:
             # 保存到硬盘
-            save_map_config(_dev_selected_id, _dev_edit_config)
-            _dev_edit_dirty = False
-            # [log removed]
+            try:
+                save_map_config(_dev_selected_id, _dev_edit_config)
+            except (ValueError, OSError) as error:
+                _dev_error = str(error)
+            else:
+                _dev_edit_dirty = False
+                _dev_error = ""
         elif event.key == pygame.K_RETURN:
             # 在编辑模式中 Enter 也保存并启动
             if _dev_edit_dirty:
