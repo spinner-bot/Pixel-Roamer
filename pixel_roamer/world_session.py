@@ -2,19 +2,27 @@ from __future__ import annotations
 import pygame
 import sfx
 from game_state import resolve_player_death
+from simulation import FixedStepClock
 
 class WorldSession:
     """Existing world rules and input."""
 
     def __init__(self, app):
         self.app = app
+        self.clock = FixedStepClock()
+        self.world = None
 
     def advance(self, dt):
         if self.app.help_open:
             self.app.jump_pressed = False
             return
         keys = pygame.key.get_pressed()
+        if self.world is not self.app._current_map:
+            self.world = self.app._current_map
+            self.clock = FixedStepClock()
+        self.clock.advance(dt, lambda step: self._advance_step(step, keys))
 
+    def _advance_step(self, dt, keys):
         # ---- 游戏状态检查 ----
 
         # 计时器
