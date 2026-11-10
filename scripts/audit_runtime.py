@@ -24,6 +24,7 @@ from game_state import resolve_player_death
 from maps import get_map, list_maps
 from world import World, MAX_CHUNK_SURFACES, MAX_SCALED_CACHE_BYTES
 from block_types_data import BLOCK_TYPES
+from simulation import FixedStepClock, SIMULATION_HZ
 
 
 def finite_player(player):
@@ -58,18 +59,23 @@ def map_audit(map_id, frames):
     physics_ms = []
     draw_ms = []
     respawns = 0
+    clock = FixedStepClock()
+
+    def step(dt):
+        player.tick_buffs(dt)
+        player.refresh_movement_stats()
+        player.update_physics(dt, world)
+        player.collide_with_world(world, dt)
+
     for frame in range(frames):
         if not player.alive:
             resolve_player_death(player, 0, True)
             respawns += 1
         start = time.perf_counter()
-        player.tick_buffs(1 / 60)
-        player.refresh_movement_stats()
         player.move(0.35 if (frame // 240) % 2 == 0 else -0.35)
         if frame % 60 == 0:
             player.jump()
-        player.update_physics(1 / 60, world)
-        player.collide_with_world(world, 1 / 60)
+        clock.advance(1 / 60, step)
         physics_ms.append((time.perf_counter() - start) * 1000)
         if not finite_player(player):
             errors.append(f"nonfinite player state at frame {frame}")
@@ -102,12 +108,17 @@ def block_audit(frames):
         world = World(0, "block", 30, 30, gravity=-6.5, edge_behavior="void")
         world.set_tile(5, 5, tile_id)
         player = Player(0, "block", 5.5, 5.5, {})
+        clock = FixedStepClock()
+
+        def step(dt):
+            player.tick_buffs(dt)
+            player.update_physics(dt, world)
+            player.collide_with_world(world, dt)
+
         started = time.perf_counter()
         try:
             for _ in range(frames):
-                player.tick_buffs(1 / 60)
-                player.update_physics(1 / 60, world)
-                player.collide_with_world(world, 1 / 60)
+                clock.advance(1 / 60, step)
                 if not finite_player(player):
                     raise AssertionError("nonfinite player state")
                 if not player.alive:
@@ -132,6 +143,7 @@ def main():
     pygame.init()
     random.seed(20261111)
     report = {"python": platform.python_version(), "pygame": pygame.version.ver,
+              "simulation_hz": SIMULATION_HZ,
               "video_driver": pygame.display.get_driver(), "seed": 20261111,
               "code_revision": subprocess.check_output(
                   ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
