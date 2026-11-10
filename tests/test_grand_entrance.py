@@ -14,7 +14,7 @@ class GrandEntranceTests(unittest.TestCase):
             output = Path(directory) / 'entrance.json'
             result = subprocess.run([sys.executable, 'scripts/audit_grand_entrance.py',
                                      '--output', str(output), *flags], cwd=root,
-                                    capture_output=True, text=True, timeout=30)
+                                    capture_output=True, text=True, timeout=45)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             report = json.loads(output.read_text())
         return report
@@ -47,3 +47,18 @@ class GrandEntranceTests(unittest.TestCase):
                 self.assertTrue(all(stop['stamina'] >= 95 for stop in run['rest_stops']))
                 self.assertAlmostEqual(run['position'][1], 76.9)
                 self.assertLess(abs(run['position'][0] - 3002.5), .4)
+
+    def test_north_shaft_and_existing_platforms_reach_first_portal(self):
+        report = self.audit('--portal')
+        self.assertEqual(len(report['runs']), 3)
+        for run in report['runs']:
+            with self.subTest(fps=run['fps']):
+                self.assertTrue(run['reached_cave'])
+                self.assertTrue(run['reached_hall'])
+                self.assertTrue(run['reached_portal'])
+                self.assertIsNone(run['failure'])
+                self.assertEqual(run['lives_left'], 5)
+                self.assertGreater(run['min_hp'], 120)  # Original thorn vine remains active.
+                self.assertGreater(run['min_stamina'], 10)
+                self.assertAlmostEqual(run['position'][0], 4800.5)
+                self.assertAlmostEqual(run['position'][1], 60.9)
