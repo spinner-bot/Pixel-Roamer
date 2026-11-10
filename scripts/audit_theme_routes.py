@@ -11,13 +11,13 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from maps import get_map
-from creature import Player
+from player_factory import create_world_player
 from simulation import FixedStepClock, SIMULATION_HZ
 
 
 def run_route(map_id, fps, upper=False):
     world = get_map(map_id)
-    player = Player(0, 'route', *world.spawn_points, {})
+    player = create_world_player(world, {}, player_name='route')
     clock = FixedStepClock()
 
     def step(dt):
@@ -71,7 +71,7 @@ def run_route(map_id, fps, upper=False):
         raise AssertionError(f'{map_id}/{fps}: missing upper platform rewards: {rewards}')
     return {'id': map_id, 'fps': fps, 'route': 'upper' if upper else 'main',
             'frames': frames, 'seconds': round(frames / fps, 3), 'jumps': jumps,
-            'score': player.score, 'waypoint_rewards': rewards, 'min_hp': min_hp, 'waypoints': visited,
+            'score': player.score, 'waypoint_rewards': rewards, 'min_hp': min_hp, 'max_hp': player.hp_max, 'vertical_drag': player.f_y, 'waypoints': visited,
             'reached_end': True}
 
 

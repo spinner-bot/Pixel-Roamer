@@ -21,7 +21,7 @@ class ThemeRouteTests(unittest.TestCase):
         for run in report['runs']:
             with self.subTest(id=run['id'], fps=run['fps'], route=run['route']):
                 self.assertTrue(run['reached_end'])
-                self.assertEqual(run['min_hp'], 100)
+                self.assertEqual(run['min_hp'], run['max_hp'])
                 if run['route'] == 'upper':
                     self.assertEqual(len(run['waypoints']), 4)
                     self.assertGreaterEqual(run['jumps'], 2)
