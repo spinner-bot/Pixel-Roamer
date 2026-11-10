@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import OrderedDict
 import pygame
 from typing import Optional, Tuple, Any
 
@@ -11,6 +12,8 @@ from pattern import render_block_pattern
 # ===================== 性能常量 =====================
 CHUNK_SIZE = 32          # 每个 Chunk 边长（方块数）
 CHUNK_TEX_PX = 10        # Chunk 纹理中每方块的像素（平衡质量与内存）
+MAX_CHUNK_SURFACES = 128
+MAX_SCALED_CACHE_BYTES = 64 * 1024 * 1024
 
 
 # ===================== 地图格子与 World =====================
@@ -76,10 +79,10 @@ class World:
 
         # ---- 性能优化：Chunk 渲染缓存 ----
         # 每个 Chunk 预渲染为固定像素尺寸的 Surface（方块数×CHUNK_TEX_PX）
-        self._chunk_surfaces = {}          # (cx, cy) → pygame.Surface (原始纹理)
-        self._scaled_chunk_cache = {}      # (cx, cy, blit_w, blit_h) → pygame.Surface (缩放后)
+        self._chunk_surfaces = OrderedDict()  # (cx, cy) → 原始纹理（LRU 上限）
+        self._scaled_chunk_cache = OrderedDict()  # 缩放纹理（按字节数限制）
+        self._scaled_chunk_cache_bytes = 0
         self._dirty_chunks = set()         # 待重渲染的 Chunk 键
-        self._chunk_initialized = False    # 首次绘制时批量构建
         self._bulk_loading = False         # 批量加载模式标志
 
     # ================================================================
@@ -150,7 +153,9 @@ class World:
             stale = [k for k in self._scaled_chunk_cache
                      if k[0] == ck[0] and k[1] == ck[1]]
         for k in stale:
-            del self._scaled_chunk_cache[k]
+            cached = self._scaled_chunk_cache.pop(k, None)
+            if cached is not None:
+                self._scaled_chunk_cache_bytes -= cached.get_pitch() * cached.get_height()
 
     # ================================================================
     #  Tile 读写
@@ -210,8 +215,9 @@ class World:
             if bt and bt.is_solid:
                 self._solid_index.add(coord)
         # 标记所有 Chunk 待重建
-        self._chunk_initialized = False
         self._chunk_surfaces.clear()
+        self._scaled_chunk_cache.clear()
+        self._scaled_chunk_cache_bytes = 0
         self._dirty_chunks.clear()
 
     def set_tile(self, x: int, y: int, type_id: int, meta=None):
@@ -400,21 +406,20 @@ class World:
                 render_block_pattern(surf, bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX)
 
         self._chunk_surfaces[ck] = surf
+        self._chunk_surfaces.move_to_end(ck)
+        while len(self._chunk_surfaces) > MAX_CHUNK_SURFACES:
+            self._chunk_surfaces.popitem(last=False)
         self._dirty_chunks.discard(ck)
 
-    def _rebuild_all_chunks(self):
-        """首次绘制或 scale 变化时重建所有 Chunk。"""
-        self._chunk_surfaces.clear()
-        self._dirty_chunks.clear()
-        # 收集所有有非默认方块的 Chunk + 脏 Chunk
-        all_chunks = set()
-        for gx, gy in self.grid:
-            all_chunks.add(self._chunk_key(gx, gy))
-        for ck in all_chunks:
-            self._render_chunk(ck)
-        self._chunk_initialized = True
-
     def draw(self, surface: pygame.Surface, camera):
+        # 空的双向循环小世界在每格远小于一个屏幕像素时无法分辨纹理细节。
+        # 直接填充默认色，避免遍历数百万个重复 chunk。
+        if (self.loop_x and self.loop_y and not self.grid
+                and self.width * camera.scale < 0.5
+                and self.height * camera.scale < 0.5):
+            surface.fill(self._default_bt.color)
+            return
+
         # 视野范围（世界坐标）
         view_world_w = camera.logic_width / camera.scale
         view_world_h = camera.logic_height / camera.scale
@@ -422,14 +427,6 @@ class World:
         end_x = int(camera.x + view_world_w / 2) + 1
         start_y = int(camera.y - view_world_h / 2) - 1
         end_y = int(camera.y + view_world_h / 2) + 1
-
-        # 首次或 scale 变化时重建
-        if not self._chunk_initialized:
-            self._rebuild_all_chunks()
-
-        # 重渲染脏 Chunk
-        for ck in list(self._dirty_chunks):
-            self._render_chunk(ck)
 
         # 可见 Chunk 范围
         min_cx = start_x // CHUNK_SIZE
@@ -445,11 +442,12 @@ class World:
             for cy in range(min_cy, max_cy + 1):
                 # 循环世界：Chunk 索引映射到有效范围
                 wck = self._chunk_wrap(cx, cy) if (self.loop_x or self.loop_y) else (cx, cy)
-                ck = (cx, cy)  # 屏幕位置用原始 cx,cy
                 chunk_surf = self._chunk_surfaces.get(wck)
-                if chunk_surf is None:
-                    # 此 Chunk 无任何非默认方块——只绘制默认底色
-                    chunk_surf = self._render_empty_chunk(wck)
+                if chunk_surf is None or wck in self._dirty_chunks:
+                    self._render_chunk(wck)
+                    chunk_surf = self._chunk_surfaces[wck]
+                else:
+                    self._chunk_surfaces.move_to_end(wck)
 
                 # Chunk 世界坐标左下角
                 chunk_wx = cx * CHUNK_SIZE
@@ -464,30 +462,20 @@ class World:
                     scaled = self._scaled_chunk_cache.get(cache_key)
                     if scaled is None:
                         scaled = pygame.transform.scale(chunk_surf, (blit_w, blit_h))
-                        self._scaled_chunk_cache[cache_key] = scaled
+                        size_bytes = scaled.get_pitch() * scaled.get_height()
+                        if size_bytes <= MAX_SCALED_CACHE_BYTES:
+                            self._scaled_chunk_cache[cache_key] = scaled
+                            self._scaled_chunk_cache_bytes += size_bytes
+                            while self._scaled_chunk_cache_bytes > MAX_SCALED_CACHE_BYTES:
+                                _, evicted = self._scaled_chunk_cache.popitem(last=False)
+                                self._scaled_chunk_cache_bytes -= evicted.get_pitch() * evicted.get_height()
+                    else:
+                        self._scaled_chunk_cache.move_to_end(cache_key)
                     surface.blit(scaled, (sx, sy_top))
                 else:
                     surface.blit(chunk_surf, (sx, sy_top))
 
-    def _render_empty_chunk(self, ck: Tuple[int, int]) -> pygame.Surface:
-        """仅为默认方块填充的 Chunk 创建 Surface（懒加载+缓存）。"""
-        tex_w = CHUNK_SIZE * CHUNK_TEX_PX
-        tex_h = CHUNK_SIZE * CHUNK_TEX_PX
-        surf = pygame.Surface((tex_w, tex_h))
-        default_color = self._default_bt.color
-        surf.fill(default_color)
-
-        if self._default_bt.pattern is not None:
-            for lx in range(CHUNK_SIZE):
-                for ly in range(CHUNK_SIZE):
-                    px = lx * CHUNK_TEX_PX
-                    py = (CHUNK_SIZE - 1 - ly) * CHUNK_TEX_PX
-                    render_block_pattern(surf, self._default_bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX)
-
-        self._chunk_surfaces[ck] = surf
-        return surf
-
     def invalidate_chunks(self):
-        """强制下次绘制时重建所有 Chunk（如窗口 resize 导致 scale 变化）。"""
-        self._chunk_initialized = False
+        """丢弃缩放纹理（如窗口 resize）；基础 chunk 纹理可继续复用。"""
         self._scaled_chunk_cache.clear()
+        self._scaled_chunk_cache_bytes = 0
