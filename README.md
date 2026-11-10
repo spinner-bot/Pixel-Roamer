@@ -60,3 +60,5 @@ python scripts/audit_frame_rates.py --output /tmp/pixel-frame-rates.json
 ```
 
 中文像素字体随项目提供；没有可用音频设备时，游戏跳过声音并继续运行。完整过程、像素比较和原始审计数据见 [自主推进台账](docs/进展报告/2026-11-11_自主推进工作台账.md)。
+
+地图列表按 E 编辑属性：Enter 精确输入，直接输入替换原值，Ctrl+A 全选，S 保存；R 支持中文改名。输入无效时保留内容并显示原因；普通 Enter 与小键盘 Enter 均可确认。
