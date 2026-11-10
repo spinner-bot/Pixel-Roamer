@@ -463,9 +463,10 @@ def generate():
 
     # 祭坛最高跳跃仍够不到 y=51 的老根竖井；补齐入口的竖向连接。
     # 100 体力不能连续爬完整段，侧台允许站立恢复，避免调高角色参数。
-    for climb_y in range(33, 59):
+    # 与十字大厅原有 x=3006、y=74..82 的竖井接通。
+    for climb_y in range(33, 83):
         p(w, 3006, climb_y, 9)
-    for rest_y in (44, 55):
+    for rest_y in (44, 55, 70):
         for rest_x in range(3007, 3012):
             p(w, rest_x, rest_y, 19)
 
