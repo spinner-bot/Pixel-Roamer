@@ -1,12 +1,13 @@
 from __future__ import annotations
 import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
-from costumes import render_costume_direct, get_costume_anim_info
+from costumes import render_costume_at_feet, advance_costume_animation
 import sfx
 import music
 import game_text as gt
 from pixel_roamer.ui.config import FONT24, FONT28, FONT56
 from pixel_roamer.ui.widgets import draw_text_center
+from pixel_roamer.visual_effects import WorldEffects
 from pixel_roamer.ui.theme import PALETTE as P, key_hint
 
 class WorldView:
@@ -14,23 +15,17 @@ class WorldView:
 
     def __init__(self, app):
         self.app = app
+        self.effects = WorldEffects()
 
     def draw(self, dt):
         fill_color = getattr(self.app._current_map, 'fill_color', (30, 30, 30))
         self.app.logic_surface.fill(fill_color)
         self.app._current_map.draw(self.app.logic_surface, self.app.camera)
 
+        self.effects.draw(self.app.logic_surface, self.app.player1, self.app.camera)
+
         # 绘制玩家（时装系统）
         grect = self.app.player1.get_game_rect()
-        # 时装位图底部有透明行，向下偏移使脚部对齐碰撞箱底部
-        shift = grect.h * 0.22
-        cam_scale = self.app.camera.scale
-        sx = (grect.x - self.app.camera.x) * cam_scale + self.app.camera.logic_width / 2
-        sy_top = self.app.camera.logic_height / 2 - (grect.y + grect.h - shift - self.app.camera.y) * cam_scale
-        sw = grect.w * cam_scale
-        sh = grect.h * cam_scale
-        player_screen_rect = pygame.Rect(sx, sy_top, sw, sh)
-
         # ---- 动画状态判定 ----
         if self.app.player1.fly_mode:
             anim_state = "idle"
@@ -43,61 +38,14 @@ class WorldView:
         else:
             anim_state = "idle"
 
-        # 推进动画计时器并循环帧
-        info = get_costume_anim_info(self.app.player1.costume_id)
-        if info and anim_state in info:
-            frame_count = info[anim_state]
-            if frame_count > 1:
-                self.app.player1._anim_timer += dt
-                if self.app.player1._anim_timer >= 0.15:  # ~6.7 fps 行走周期
-                    self.app.player1._anim_timer -= 0.15
-                    self.app.player1._anim_frame = (self.app.player1._anim_frame + 1) % frame_count
-        else:
-            self.app.player1._anim_frame = 0
-
-        render_costume_direct(self.app.logic_surface, self.app.player1.costume_id, player_screen_rect,
-                              flip_h=not self.app.player1.facing_right,
-                              anim_state=anim_state,
-                              anim_frame=self.app.player1._anim_frame)
-
-        # ---- Buff 视线效果（只影响世界/生物，不影响 UI） ----
-        # Buff: 发光 (50) 自身发光照亮周围
-        if self.app.player1.has_buff(50):
-            px, py = self.app.player1.get_center()
-            cam_scale = self.app.camera.scale
-            sx = (px - self.app.camera.x) * cam_scale + self.app.camera.logic_width / 2
-            sy = self.app.camera.logic_height / 2 - (py - self.app.camera.y) * cam_scale
-            glow_radius = 120
-            glow = pygame.Surface((glow_radius * 2, glow_radius * 2), pygame.SRCALPHA)
-            for i in range(8, 0, -1):
-                alpha = 30 - i * 3
-                r = glow_radius * i / 8
-                pygame.draw.circle(glow, (255, 240, 180, max(0, alpha)),
-                                   (glow_radius, glow_radius), int(r))
-            self.app.logic_surface.blit(glow, (sx - glow_radius, sy - glow_radius), special_flags=pygame.BLEND_ADD)
-
-        # Buff: 失明 (24) 屏幕变亮黄色（清明 buff 8 免疫）
-        if self.app.player1.has_buff(24) and not self.app.player1.has_buff(8):
-            blind_overlay = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
-            blind_overlay.fill((255, 240, 80, 140))
-            self.app.logic_surface.blit(blind_overlay, (0, 0))
-
-        # Buff: 视野受限 (25) 缩小视野半径（清明 buff 8 免疫）
-        if self.app.player1.has_buff(25) and not self.app.player1.has_buff(8):
-            vision_radius = 5.0  # 默认半径（格）
-            for b in self.app.player1.buffs:
-                if b.buff_id == 25 and b.params:
-                    vision_radius = float(b.params[0])
-            px, py = self.app.player1.get_center()
-            cam_scale = self.app.camera.scale
-            sx = (px - self.app.camera.x) * cam_scale + self.app.camera.logic_width / 2
-            sy = self.app.camera.logic_height / 2 - (py - self.app.camera.y) * cam_scale
-            vision_radius_px = int(vision_radius * 24 * cam_scale)
-            dark = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
-            dark.fill((0, 0, 0, 220))
-            if vision_radius_px > 0:
-                pygame.draw.circle(dark, (0, 0, 0, 0), (int(sx), int(sy)), vision_radius_px)
-            self.app.logic_surface.blit(dark, (0, 0))
+        animation_dt = 0 if self.app.help_open or self.app._game_over or self.app._game_win else dt
+        advance_costume_animation(self.app.player1, anim_state, animation_dt)
+        feet_x, feet_y = self.app.camera.world_to_screen(self.app.player1._x, grect.y)
+        render_costume_at_feet(self.app.logic_surface, self.app.player1.costume_id,
+                               feet_x, feet_y, grect.w * self.app.camera.scale,
+                               grect.h * self.app.camera.scale,
+                               flip_h=not self.app.player1.facing_right,
+                               anim_state=anim_state, anim_frame=self.app.player1._anim_frame)
 
         # ---- HP 血条 ----
         # ---- 音效检测 ----
