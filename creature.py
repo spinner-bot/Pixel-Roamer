@@ -713,25 +713,6 @@ class Creature:
                         self.stamina = self.stamina_max
                         self._special_cooldowns["full_stamina"] = 2.0
 
-                elif bt.special == "magnetic" and bt.special_data is not None:
-                    if immune_forces:
-                        continue
-                    # 磁力吸引：向方块中心加速，special_data = 力度
-                    force = float(bt.special_data)
-                    # Buff: 磁化 (49) 磁力效果加倍
-                    if self.has_buff(49):
-                        force *= 2.5
-                    grect = self.get_game_rect()
-                    cx, cy = self._x, self._y
-                    # 在接触池中找到该方块坐标
-                    for gx, gy, _, tile in self._contact_tile_instances(world):
-                        if tile.type_id == bt.id:
-                            dx = gx + 0.5 - cx
-                            dy = gy + 0.5 - cy
-                            dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
-                            self.v_x += dx / dist * force * dt * 10
-                            self.v_y += dy / dist * force * dt * 10
-
                 elif bt.special == "set_spawn":
                     # 设置重生点（一次性）
                     if self._special_cooldowns.get("set_spawn", 0) <= 0:
@@ -796,6 +777,10 @@ class Creature:
                         self._confused = True
                         self._confusion_timer = 2.0
                         self._special_cooldowns["confusion"] = 8.0
+
+        if not immune_forces:
+            from environment_forces import apply_magnetism
+            apply_magnetism(self, world, types, dt)
 
         # ---- 时效状态清理 ----
         # 狂暴：离开狂暴方块后重置
