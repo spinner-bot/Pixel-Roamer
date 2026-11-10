@@ -1,5 +1,6 @@
 """Load validated game definitions from versioned JSON catalogs."""
 from dataclasses import fields
+from functools import lru_cache
 import json
 import math
 from pathlib import Path
@@ -196,3 +197,15 @@ def load_home_menu():
                    for item in items for key in ("label", "description"))):
         raise ValueError("home menu must define four named actions in order")
     return items
+
+
+@lru_cache(maxsize=1)
+def _player_default_items():
+    _, editor_fields = load_interface()
+    return tuple((path.split('.', 1)[1], default)
+                 for path, _, _, default, _ in editor_fields if path.startswith('player.'))
+
+
+def player_defaults():
+    """Return an independent game preset from the validated startup catalog."""
+    return dict(_player_default_items())
