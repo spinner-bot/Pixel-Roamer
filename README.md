@@ -39,3 +39,12 @@ python scripts/audit_runtime.py --frames 36000 --block-frames 300 --output /tmp/
 模拟输入和离屏绘制不能替代实体键盘、显示器、音频设备及完整关卡游玩验收。修复历程和实测数据见 [持续迭代记录](docs/进展报告/2026-11-11_持续迭代与玩法回归.md)。
 
 地图编辑器保存时检查数值范围、类型、方块 ID 和 RGB 颜色；错误信息显示在编辑页底部。无效配置文件加载时发出警告，使用地图源码默认配置。摩擦系数必须在 0～1 之间，重力范围为 -1000～1000，移动/跳跃速度为 0～1000；其他范围见 `map_config.py`。
+
+## 项目结构
+
+- `main.py`：启动入口；`pixel_roamer/application.py`：窗口和页面协调。
+- `pixel_roamer/world_session.py` / `world_view.py`：世界规则更新与绘制。
+- `pixel_roamer/ui/`：HUD、设置、地图浏览/编辑及方块/buff 图鉴。
+- `collision.py` / `status_effects.py`：碰撞几何和状态数值处理。
+- `data/catalogs/`：方块、buff、时装及编辑字段 JSON；格式见 [数据说明](data/README.md)。
+- `maps/`：现有地图生成算法和配置；`tests/`：自动回归与主循环场景。
