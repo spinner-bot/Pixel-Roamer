@@ -10,6 +10,9 @@ class WorldSession:
         self.app = app
 
     def advance(self, dt):
+        if self.app.help_open:
+            self.app.jump_pressed = False
+            return
         keys = pygame.key.get_pressed()
 
         # ---- 游戏状态检查 ----
