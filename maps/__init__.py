@@ -145,6 +145,7 @@ def get_map_summary(map_id: int) -> dict:
             return default if value is None else value
 
         summary = {
+            "name": resolve("name", name),
             "width": resolve("w", None),
             "height": resolve("h", None),
             "mode": resolve("mode", "adventure"),
@@ -157,7 +158,7 @@ def get_map_summary(map_id: int) -> dict:
 
     result = dict(summary)
     config_world = load_map_config(map_id).get("world", {})
-    for key in ("width", "height", "mode", "loop_x", "loop_y"):
+    for key in ("name", "width", "height", "mode", "loop_x", "loop_y"):
         if key in config_world:
             result[key] = config_world[key]
     return result
@@ -190,8 +191,11 @@ def _apply_config(world, map_name: str):
 
 def rename_map(map_id: int, new_name: str) -> bool:
     """彻底重命名地图：文件夹名、World.name 一起改。返回是否成功。"""
-    import shutil
     import sys
+    if (not isinstance(new_name, str) or not new_name.strip() or len(new_name) > 64
+            or new_name != new_name.strip() or new_name.startswith((".", "_"))
+            or new_name.endswith(".") or any(c in new_name for c in '/\\:*?"<>|')):
+        return False
     maps_dir = os.path.dirname(__file__)
     name = _map_registry().get(map_id)
     if name is None:
@@ -202,13 +206,19 @@ def rename_map(map_id: int, new_name: str) -> bool:
         return True
     if os.path.exists(new_path):
         return False
+    config = load_map_config(map_id)
+    config.setdefault("world", {})["name"] = new_name
     try:
-        shutil.move(old_path, new_path)
-        module = sys.modules.get(f"maps.{name}.map")
-        if module is not None and hasattr(module, "world"):
-            module.world.name = new_name
+        os.rename(old_path, new_path)
+        try:
+            save_map_config(map_id, config)
+        except (OSError, ValueError):
+            os.rename(new_path, old_path)
+            raise
+        sys.modules.pop(f"maps.{name}.map", None)
+        sys.modules.pop(f"maps.{name}", None)
         return True
-    except OSError:
+    except (OSError, ValueError):
         return False
 
 
