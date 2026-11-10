@@ -47,3 +47,26 @@ def teleport_to(actor, world, x, y):
     actor._teleport_latched = True
     actor.collide_with_world(world, 0)
     return True
+
+
+def random_teleport(actor, world, ranges, rng=None):
+    """Try at most 32 bounded offsets; an impossible destination is a no-op."""
+    if not isinstance(ranges, (tuple, list)) or len(ranges) != 2:
+        return False
+    if any(type(value) not in (int, float) for value in ranges):
+        return False
+    try:
+        rx, ry = map(float, ranges)
+    except OverflowError:
+        return False
+    if any(not math.isfinite(value) or value < 0 for value in (rx, ry)):
+        return False
+    if rng is None:
+        import random
+        rng = random
+    for _ in range(32):
+        x = actor._x + rng.uniform(-rx, rx)
+        y = actor._y + rng.uniform(-ry, ry)
+        if teleport_to(actor, world, x, y):
+            return True
+    return False
