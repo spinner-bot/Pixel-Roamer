@@ -206,7 +206,8 @@ class Creature:
 
         return actual_damage
 
-    def take_raw_damage(self, damage: float, damage_type: str = "raw") -> float:
+    def take_raw_damage(self, damage: float, damage_type: str = "raw",
+                        bypass_shield: bool = False) -> float:
         if not self.alive or damage <= 0:
             return 0.0
 
@@ -219,7 +220,7 @@ class Creature:
             damage *= 2.0
 
         # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if self.has_buff(29):
+        if bypass_shield or self.has_buff(29):
             self.hp -= damage
             if self.hp <= 0:
                 self.hp = 0
@@ -368,7 +369,6 @@ class Creature:
         min_gy = math.floor(expanded_rect.y)
         max_gy = math.floor(expanded_rect.y + expanded_rect.h - 1e-9)
         _wrap = world._wrap_grid_coord
-        _default_id = world.default_tile.type_id
         for gx in range(min_gx, max_gx + 1):
             for gy in range(min_gy, max_gy + 1):
                 coord = _wrap(gx, gy)
@@ -380,6 +380,22 @@ class Creature:
                 bt = world.get_block_type_by_coord(coord[0], coord[1])
                 tiles.add(bt.id)
         return tiles
+
+    def _contact_tile_instances(self, world):
+        """Yield actual touched tiles once, including across looping seams."""
+        rect = self.get_game_rect()
+        seen = set()
+        for gx in range(math.floor(rect.x - 0.01),
+                        math.floor(rect.x + rect.w + 0.01 - 1e-9) + 1):
+            for gy in range(math.floor(rect.y - 0.01),
+                            math.floor(rect.y + rect.h + 0.01 - 1e-9) + 1):
+                coord = world._wrap_grid_coord(gx, gy)
+                if coord is None or coord in seen:
+                    continue
+                seen.add(coord)
+                tile = world.grid.get(coord)
+                if tile is not None:
+                    yield gx, gy, coord, tile
 
     # ----- 碰撞与效果总控 -----
     def collide_with_world(self, world, dt: float):
@@ -665,26 +681,11 @@ class Creature:
                 if bt.special == "teleport" and bt.special_data is not None:
                     # 支持 meta 覆盖目标坐标
                     tx, ty = bt.special_data
-                    # 在接触池中找到该方块对应的 Tile 实例（若有 meta 则覆盖）
-                    for bid in all_ids:
-                        if bid == bt.id:
-                            # 从 world 中查找接触到的该类型方块
-                            grect = self.get_game_rect()
-                            min_gx = int(grect.x) - 1
-                            max_gx = int(grect.x + grect.w) + 1
-                            min_gy = int(grect.y) - 1
-                            max_gy = int(grect.y + grect.h) + 1
-                            for gx in range(min_gx, max_gx + 1):
-                                for gy in range(min_gy, max_gy + 1):
-                                    coord = world._wrap_grid_coord(gx, gy)
-                                    if coord is None:
-                                        continue
-                                    tile = world.grid.get(coord)
-                                    if tile is not None and tile.type_id == bt.id and tile.meta is not None:
-                                        if isinstance(tile.meta, dict):
-                                            tx = tile.meta.get("tp_x", tx)
-                                            ty = tile.meta.get("tp_y", ty)
-                                        break
+                    for _, _, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id and isinstance(tile.meta, dict):
+                            tx = tile.meta.get("tp_x", tx)
+                            ty = tile.meta.get("tp_y", ty)
+                            break
                     self._x = float(tx)
                     self._y = float(ty)
                 elif bt.special == "checkpoint":
@@ -705,20 +706,12 @@ class Creature:
                 elif bt.special == "jump" and bt.special_data is not None:
                     self.v_jump = self._base_v_jump * float(bt.special_data)
                 elif bt.special == "score" and bt.special_data is not None:
-                    # 积分方块：得分并替换为消耗态
-                    pts = int(bt.special_data)
-                    self.score += pts
-                    # 在接触池中找到该方块并替换为消耗态（ID+10）
-                    consumed_id = bt.id + 10
-                    grect = self.get_game_rect()
-                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                            coord = world._wrap_grid_coord(gx, gy)
-                            if coord is None:
-                                continue
-                            tile = world.grid.get(coord)
-                            if tile is not None and tile.type_id == bt.id:
-                                world.set_tile(gx, gy, consumed_id)
+                    consumed_id = (bt.consumed_type_id if bt.consumed_type_id is not None
+                                   else world.default_tile.type_id)
+                    for gx, gy, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id:
+                            self.score += int(bt.special_data)
+                            world.set_tile(gx, gy, consumed_id)
                 elif bt.special == "end_point":
                     # 终点：触发通关（由 main.py 检测）
                     self._reached_end = True
@@ -775,22 +768,15 @@ class Creature:
                     if self.has_buff(49):
                         force *= 2.5
                     grect = self.get_game_rect()
-                    cx, cy = self._x, self._y + self._h / 2
+                    cx, cy = self._x, self._y
                     # 在接触池中找到该方块坐标
-                    for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                        for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                            coord = world._wrap_grid_coord(gx, gy)
-                            if coord is None:
-                                continue
-                            tile = world.grid.get(coord)
-                            if tile is not None and tile.type_id == bt.id:
-                                block_cx, block_cy = gx + 0.5, gy + 0.5
-                                dx = block_cx - cx
-                                dy = block_cy - cy
-                                dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
-                                self.v_x += dx / dist * force * dt * 10
-                                self.v_y += dy / dist * force * dt * 10
-                                break
+                    for gx, gy, _, tile in self._contact_tile_instances(world):
+                        if tile.type_id == bt.id:
+                            dx = gx + 0.5 - cx
+                            dy = gy + 0.5 - cy
+                            dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
+                            self.v_x += dx / dist * force * dt * 10
+                            self.v_y += dy / dist * force * dt * 10
 
                 elif bt.special == "set_spawn":
                     # 设置重生点（一次性）
@@ -809,11 +795,8 @@ class Creature:
                     # 毒：无视50%护盾的伤害
                     raw_dmg = float(bt.special_data) * dt
                     bypass = raw_dmg * 0.5
-                    self.take_raw_damage(bypass)
-                    if self.shield > 0:
-                        self.shield = max(0, self.shield - (raw_dmg - bypass))
-                    else:
-                        self.hp = max(0, self.hp - (raw_dmg - bypass))
+                    self.take_raw_damage(bypass, bypass_shield=True)
+                    self.take_raw_damage(raw_dmg - bypass)
 
                 elif bt.special == "berserk" and bt.special_data is not None:
                     # 狂暴：攻击翻倍但持续受伤
