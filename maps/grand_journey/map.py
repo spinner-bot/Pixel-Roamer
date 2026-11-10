@@ -4,13 +4,14 @@
 """
 from __future__ import annotations
 from world import World
-import random, math
+import math
+from random import Random
 
 MAP_ID = 20
 MAP_NAME = "宏大旅程"
 MAP_NAME_EN = "Grand Journey"
 W, H = 6000, 150
-random.seed(2026)
+_rng = Random(2026)
 
 _placed = set()
 def p(w, x, y, bid):
@@ -19,7 +20,7 @@ def p(w, x, y, bid):
         _placed.add(bid)
 
 def pick(pool):
-    return pool[random.randint(0, len(pool)-1)]
+    return pool[_rng.randint(0, len(pool)-1)]
 
 # ============================================================
 # 快捷绘制原语（像画家的笔刷）
@@ -86,6 +87,8 @@ def _noise_static(x, y):
 # 绘制画布
 # ============================================================
 def generate():
+    _rng.seed(2026)
+    _placed.clear()
     w = World(map_id=MAP_ID, name=MAP_NAME, w=W, h=H,
               loop_x=False, loop_y=False, gravity=-0.7,
               spawn_points=(3000, 40), mode="explore",
@@ -327,8 +330,8 @@ def generate():
                 w.set_tile(x, y, 0)
     # 晶簇从墙壁生长
     for _ in range(200):
-        cx = Z9 + random.randint(20, 380)
-        cy = random.randint(35, 115)
+        cx = Z9 + _rng.randint(20, 380)
+        cy = _rng.randint(35, 115)
         bt = w.get_block_type(cx, cy)
         bt2 = w.get_block_type(cx+1, cy) if cx+1 < W else None
         if (bt and bt.is_solid) != (bt2 and not bt2.is_solid if bt2 else False):
@@ -427,8 +430,8 @@ def generate():
     needed = sorted(all_ids - {0,1,11,12,13,14,15} - _placed)
     for bid in needed:
         for _ in range(200):
-            rx = random.randint(100, W-100)
-            ry = random.randint(25, 125)
+            rx = _rng.randint(100, W-100)
+            ry = _rng.randint(25, 125)
             bt = w.get_block_type(rx, ry)
             if bt and bt.id == 0:
                 p(w, rx, ry, bid)
@@ -437,10 +440,10 @@ def generate():
     # 散布收集品到空位
     treasures = [310,311,312,313,314,315,316,317,318,319]
     for _ in range(500):
-        tx = random.randint(50, W-50)
-        ty = random.randint(22, 140)
+        tx = _rng.randint(50, W-50)
+        ty = _rng.randint(22, 140)
         bt = w.get_block_type(tx, ty)
-        if bt and bt.id == 0 and random.random() < 0.3:
+        if bt and bt.id == 0 and _rng.random() < 0.3:
             p(w, tx, ty, pick(treasures))
 
     # 检查点
@@ -451,8 +454,8 @@ def generate():
 
     # 散布梯子和藤蔓用于垂直移动
     for _ in range(400):
-        lx = random.randint(50, W-50)
-        ly = random.randint(25, 135)
+        lx = _rng.randint(50, W-50)
+        ly = _rng.randint(25, 135)
         bt = w.get_block_type(lx, ly)
         tb = w.get_block_type(lx, ly+1)
         if (bt and bt.id == 0) and (tb and tb.is_solid if tb else False):
