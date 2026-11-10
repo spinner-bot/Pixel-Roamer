@@ -59,12 +59,35 @@
 """
 
 import pygame
+from collections import OrderedDict
 from typing import Optional, Tuple
 from block_type import BlockType
 
 
 # 图案缓存：键为 (pattern, width, height)，值为 pygame.Surface
-_pattern_cache = {}
+_pattern_cache = OrderedDict()
+_pattern_cache_bytes = 0
+MAX_PATTERN_CACHE_BYTES = 16 * 1024 * 1024
+MAX_PATTERN_CACHE_ENTRIES = 512
+
+
+def clear_pattern_cache():
+    global _pattern_cache_bytes
+    _pattern_cache.clear()
+    _pattern_cache_bytes = 0
+
+
+def _remember_pattern(key, surface):
+    global _pattern_cache_bytes
+    size = surface.get_pitch() * surface.get_height()
+    if size > MAX_PATTERN_CACHE_BYTES:
+        return
+    _pattern_cache[key] = surface
+    _pattern_cache_bytes += size
+    while (_pattern_cache_bytes > MAX_PATTERN_CACHE_BYTES
+           or len(_pattern_cache) > MAX_PATTERN_CACHE_ENTRIES):
+        _, removed = _pattern_cache.popitem(last=False)
+        _pattern_cache_bytes -= removed.get_pitch() * removed.get_height()
 
 
 def _make_hashable(obj):
@@ -101,6 +124,7 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
     cache_key = (hashable_pattern, int(draw_w), int(draw_h))
     if cache_key in _pattern_cache:
         pattern_surf = _pattern_cache[cache_key]
+        _pattern_cache.move_to_end(cache_key)
         surface.blit(pattern_surf, base_rect)
         return
 
@@ -116,7 +140,7 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
         return
 
     if pattern_surf is not None:
-        _pattern_cache[cache_key] = pattern_surf
+        _remember_pattern(cache_key, pattern_surf)
         surface.blit(pattern_surf, base_rect)
 
 
