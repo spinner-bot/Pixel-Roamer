@@ -251,14 +251,13 @@ class MapBrowser:
                 and not self.app._dev_buff_browser and self.app.map_selector.handle_input(event)):
             return
 
-        if event.type != pygame.KEYDOWN:
-            return
-
         if self.app._dev_block_browser:
             self.app.references._handle_block_browser_input(event)
             return
         if self.app._dev_buff_browser:
             self.app.references._handle_buff_browser_input(event)
+            return
+        if event.type != pygame.KEYDOWN:
             return
 
         maps_dict = list_maps()
