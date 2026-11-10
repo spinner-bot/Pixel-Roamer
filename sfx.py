@@ -51,18 +51,18 @@ _channels: list = []              # [pygame.mixer.Channel or None, ...]
 def _ensure_init():
     """惰性初始化混音器 + 声道分配（幂等，立体声输出）。"""
     global _initialized, _mixer_failed, _mixer_retry_time, _channels, _stereo
-    if _mixer_failed:
+    expected = (RATE, -16, OUTPUT_CHANNELS)
+    current = pygame.mixer.get_init()
+    if _initialized and current == expected:
+        return True
+    if _mixer_failed and current is None:
         now = pygame.time.get_ticks()
         if now < _mixer_retry_time:
-            return
+            return False
         _mixer_failed = False
 
-    if _initialized:
-        return
-
     try:
-        current = pygame.mixer.get_init()
-        expected = (RATE, -16, OUTPUT_CHANNELS)
+        invalidate_cache()
         if current is None:
             pygame.mixer.init(frequency=RATE, size=-16, channels=OUTPUT_CHANNELS, buffer=512)
             _stereo = True
@@ -81,10 +81,14 @@ def _ensure_init():
             _channels[i] = pygame.mixer.Channel(i)
 
         _initialized = True
+        _mixer_failed = False
+        return True
     except pygame.error:
-        _initialized = True
+        _initialized = False
         _mixer_failed = True
+        _channels = []
         _mixer_retry_time = pygame.time.get_ticks() + _mixer_retry_interval
+        return False
 
 
 def init():
@@ -136,8 +140,18 @@ def _gen(buf: bytearray, t: float, vol: float, freq: float):
     buf.extend(struct.pack('<h', max(-32768, min(32767, v))))
 
 
-def _make(buf: bytearray, rate: int) -> pygame.mixer.Sound:
-    return pygame.mixer.Sound(buffer=bytes(buf))
+def _make(buf: bytearray, rate: int) -> pygame.mixer.Sound | None:
+    if not _ensure_init():
+        return None
+    # Synthesizers produce signed 16-bit mono. Interleave identical L/R samples
+    # before supplying the stereo mixer, preserving duration and pitch.
+    mono = bytes(buf)
+    stereo = bytearray(len(mono) * 2)
+    stereo[0::4] = mono[0::2]
+    stereo[1::4] = mono[1::2]
+    stereo[2::4] = mono[0::2]
+    stereo[3::4] = mono[1::2]
+    return pygame.mixer.Sound(buffer=stereo)
 
 
 def _antialias_filter(raw: float, state: float, freq: float) -> tuple[float, float]:
@@ -224,7 +238,9 @@ def _envelope(i: int, n: int) -> float:
 
 
 # ===================== 音效缓存工厂 =====================
-def _cached(key: str, factory) -> pygame.mixer.Sound:
+def _cached(key: str, factory) -> pygame.mixer.Sound | None:
+    if _muted or not _ensure_init():
+        return None
     if key not in _cache:
         _cache[key] = factory()
     return _cache[key]
@@ -340,9 +356,8 @@ def _acquire_channel(priority: int) -> pygame.mixer.Channel | None:
 def _play_sfx_at(sound: pygame.mixer.Sound, volume: float, priority: int,
                  pan: float = 0.0):
     """通过声道管理播放一个音效，含池化限制、立体声定位和错误恢复。"""
-    if _muted or _mixer_failed:
+    if _muted or sound is None or not _ensure_init():
         return
-    _ensure_init()
 
     # 池化检查：同一优先级并发过多则丢弃（CRITICAL 始终放行）
     if priority != Priority.CRITICAL and not _check_pool(priority):
