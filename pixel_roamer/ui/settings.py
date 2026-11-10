@@ -1,95 +1,130 @@
+"""Settings with shared pixel styling and pointer/keyboard control parity."""
 from __future__ import annotations
 import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 import sfx
 import music
-from pixel_roamer.ui.config import FONT20, FONT24, FONT28, FONT40, _FPS_OPTIONS, _SETTING_ROWS
-from pixel_roamer.ui.widgets import draw_text_center, draw_text_left, draw_text_right
+import game_text as gt
+from pixel_roamer.ui.config import PAGE_WORLD, _FPS_OPTIONS, _SETTING_ROWS
+from pixel_roamer.ui.theme import PALETTE as P, panel, key_hint
+
 
 class SettingsPage:
-    """Settings behavior; shared session and viewport come from app."""
-
     def __init__(self, app):
         self.app = app
+        self._drag_row = None
 
-    def _run_fps_benchmark(self) -> int:
-        """快速测试设备帧率能力，返回推荐的 fps 上限（30 的整数倍）。"""
-        test_surface = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT))
-        test_clock = pygame.time.Clock()
+    @staticmethod
+    def rows():
+        return [pygame.Rect(230, 220 + index * 110, 1140, 92) for index in range(4)]
+
+    @staticmethod
+    def slider(row):
+        return pygame.Rect(790, 220 + row * 110 + 38, 430, 18)
+
+    def _run_fps_benchmark(self):
+        surface = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT))
+        clock = pygame.time.Clock()
         start = pygame.time.get_ticks()
         frames = 0
         while pygame.time.get_ticks() - start < 800:
-            test_surface.fill((0, 0, 0))
+            if pygame.event.peek(pygame.QUIT):
+                self.app.running = False
+                return self.app.current_fps
+            surface.fill((0, 0, 0))
             for i in range(50):
-                pygame.draw.rect(test_surface, (i * 5 % 255, i * 3 % 255, i * 7 % 255),
+                pygame.draw.rect(surface, (i * 5 % 255, i * 3 % 255, i * 7 % 255),
                                  (i * 20 % LOGIC_WIDTH, i * 15 % LOGIC_HEIGHT, 80, 60))
-            test_clock.tick(1000)
+            clock.tick(1000)
             frames += 1
         measured = frames / 0.8 * 0.9
-        best = 30
-        for opt in _FPS_OPTIONS:
-            if opt <= measured:
-                best = opt
-        return best
+        return max((option for option in _FPS_OPTIONS if option <= measured), default=30)
 
-    def _draw_volume_bar(self, surf, x, y, w, h, value, is_active):
-        """绘制音量条：value 0~1。"""
-        bg = pygame.Rect(x, y, w, h)
-        pygame.draw.rect(surf, (20, 20, 35), bg, border_radius=4)
-        if is_active:
-            pygame.draw.rect(surf, (100, 180, 255), bg, 2, border_radius=4)
-        fill_w = int((w - 4) * value)
-        if fill_w > 0:
-            fill_color = (80, 200, 120) if is_active else (60, 150, 90)
-            pygame.draw.rect(surf, fill_color, (x + 2, y + 2, fill_w, h - 4), border_radius=2)
+    def run_setting_page(self, dt):
+        surface = self.app.logic_surface
+        surface.fill(P['background'])
+        panel(surface, (64, 64, 150, 46))
+        gt.draw(surface, '返回  Esc', 139, 76, 21, P['text'], 'sans', center_x=True)
+        title = '暂停与设置' if self.app._setting_from_page == PAGE_WORLD else '设置'
+        gt.draw(surface, title, 230, 72, 48, P['text'], 'sans')
+        gt.draw(surface, '即时调整，返回后继续漫游。', 232, 144, 21, P['muted'], 'sans')
+        labels = ['帧率上限', '快速性能评估', '音效音量', '音乐音量']
+        hints = ['左右键切换，也可点击右侧按钮', 'Enter 执行；评估后仍可手动选择',
+                 '点击或拖动右侧音量条', '点击或拖动右侧音量条']
+        for index, rect in enumerate(self.rows()):
+            panel(surface, rect, index == self.app._setting_selected_row)
+            gt.draw(surface, labels[index], rect.x + 26, rect.y + 13, 27, P['text'], 'sans')
+            gt.draw(surface, hints[index], rect.x + 27, rect.y + 56, 18, P['muted'], 'sans')
+            if index == 0:
+                gt.draw(surface, f'{self.app.current_fps} FPS', 1130, rect.y + 26, 30, P['accent'], right_x=True)
+                for x, text in ((1190, '-'), (1270, '+')):
+                    panel(surface, (x, rect.y + 18, 58, 54))
+                    gt.draw(surface, text, x + 29, rect.y + 28, 30, P['text'], center_x=True)
+            elif index == 1:
+                text = '评估完成' if self.app._setting_fps_just_autodetected else '开始评估  Enter'
+                gt.draw(surface, text, rect.right - 34, rect.y + 30, 24, P['mint'], 'sans', right_x=True)
+            else:
+                value = sfx.get_sfx_volume() if index == 2 else music.get_volume()
+                bar = self.slider(index)
+                pygame.draw.rect(surface, P['border'], bar)
+                pygame.draw.rect(surface, P['mint'], (bar.x, bar.y, round(bar.w * value), bar.h))
+                pygame.draw.rect(surface, P['text'], (bar.x + round(bar.w * value) - 3, bar.y - 6, 6, 30))
+                gt.draw(surface, f'{round(value * 100)}%', rect.right - 32, rect.y + 30,
+                        24, P['text'], right_x=True)
+        gt.draw(surface, '窗口可自由缩放；调整不会重新开始当前地图。', 232, 716, 21, P['muted'], 'sans')
+        x = key_hint(surface, '↑ ↓', '选择', 230, 820)
+        x = key_hint(surface, '← →', '调整', x, 820)
+        key_hint(surface, 'Esc', '返回', x, 820)
 
-    def run_setting_page(self, dt: float):
-        """设置页面渲染。"""
+    def _pointer_input(self, event):
+        if event.type == pygame.MOUSEBUTTONUP:
+            self._drag_row = None
+            return True
+        if event.type not in (pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN):
+            return False
+        position = getattr(event, 'pos', pygame.mouse.get_pos())
+        point = ((position[0] - self.app.draw_offset_x) / self.app.scale,
+                 (position[1] - self.app.draw_offset_y) / self.app.scale)
+        pressed = event.type == pygame.MOUSEBUTTONDOWN and event.button == 1
+        if pressed and pygame.Rect(64, 64, 150, 46).collidepoint(point):
+            self.app.set_page_no_launch(self.app._setting_from_page)
+            return True
+        for index, rect in enumerate(self.rows()):
+            if rect.collidepoint(point):
+                self.app._setting_selected_row = index
+                if pressed and index in (2, 3) and self.slider(index).inflate(12, 32).collidepoint(point):
+                    self._drag_row = index
+                if pressed and index == 0 and point[0] >= 1190:
+                    key = pygame.K_LEFT if point[0] < 1260 else pygame.K_RIGHT
+                    self.handle_setting_input(pygame.event.Event(pygame.KEYDOWN, key=key))
+                elif pressed and index == 1:
+                    self.handle_setting_input(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_RETURN))
+                break
+        if self._drag_row in (2, 3):
+            bar = self.slider(self._drag_row)
+            value = max(0, min(1, (point[0] - bar.x) / bar.w))
+            if self._drag_row == 2:
+                sfx.set_sfx_volume(value)
+            else:
+                music.set_volume(value)
+        return True
 
-        sfx_vol = sfx.get_sfx_volume()
-        mus_vol = sfx.get_music_volume()
-
-        self.app.logic_surface.fill((20, 20, 40))
-
-        y = 60
-        y = draw_text_center(self.app.logic_surface, FONT40, "设置 (SETTING)", y, (100, 200, 255)) + 24
-
-        # 辅助：绘制一行
-        def _row(label, value_text, row_idx, hint="← → 调整"):
-            nonlocal y
-            is_active = (self.app._setting_selected_row == row_idx)
-            row_h = 46
-            bg = pygame.Rect(200, y - 2, LOGIC_WIDTH - 400, row_h)
-            pygame.draw.rect(self.app.logic_surface, (40, 40, 70) if is_active else (25, 25, 45), bg, border_radius=4)
-            if is_active:
-                pygame.draw.rect(self.app.logic_surface, (100, 180, 255), bg, 2, border_radius=4)
-            draw_text_left(self.app.logic_surface, FONT28, label, 240, y + 7, (255, 255, 255))
-            draw_text_right(self.app.logic_surface, FONT24, value_text, LOGIC_WIDTH - 270, y + 9, (220, 220, 220))
-            draw_text_right(self.app.logic_surface, FONT20, hint, LOGIC_WIDTH - 240, y + 9, (140, 140, 160))
-            y += row_h + 6
-
-        # 0: FPS
-        fps_label = str(self.app.current_fps)
-        _row(f"帧率上限", f"{fps_label} FPS", 0)
-
-        # 1: 自动检测
-        _row("自动检测设备最佳帧率", "Enter 执行", 1, "Enter")
-
-        # 2: 音效音量
-        _row("音效音量", f"{int(sfx_vol * 100)}%", 2)
-        self._draw_volume_bar(self.app.logic_surface, 340, y - 48, LOGIC_WIDTH - 680, 16, sfx_vol, self.app._setting_selected_row == 2)
-
-        # 3: 音乐音量（预留）
-        _row("音乐音量", f"{int(mus_vol * 100)}%", 3)
-        self._draw_volume_bar(self.app.logic_surface, 340, y - 48, LOGIC_WIDTH - 680, 16, mus_vol, self.app._setting_selected_row == 3)
-
-        if self.app._setting_fps_just_autodetected:
-            draw_text_center(self.app.logic_surface, FONT20, f"检测结果：{fps_label} FPS 已自动设定", LOGIC_HEIGHT - 86, (100, 255, 100))
-
-        draw_text_center(self.app.logic_surface, FONT20, "↑ ↓ 选择    ← → 调整    Enter 确认    Esc 返回", LOGIC_HEIGHT - 58, (140, 140, 180))
+    def _adjust_fps(self, direction):
+        current = self.app.current_fps
+        if direction < 0:
+            current = max((value for value in _FPS_OPTIONS if value < current), default=min(current, _FPS_OPTIONS[0]))
+        else:
+            current = min((value for value in _FPS_OPTIONS if value > current), default=max(current, _FPS_OPTIONS[-1]))
+        self.app.current_fps = current
+        self.app._setting_selected_fps_idx = _FPS_OPTIONS.index(current) if current in _FPS_OPTIONS else 0
+        self.app._setting_fps_just_autodetected = False
+        sfx.play_click()
 
     def handle_setting_input(self, event):
         """处理设置页面的键盘事件。"""
+
+        if self._pointer_input(event):
+            return
 
         if event.type != pygame.KEYDOWN:
             return
@@ -104,10 +139,7 @@ class SettingsPage:
             sfx.play_click()
         elif event.key == pygame.K_LEFT:
             if self.app._setting_selected_row == 0:
-                self.app._setting_selected_fps_idx = (self.app._setting_selected_fps_idx - 1) % len(_FPS_OPTIONS)
-                self.app._setting_fps_just_autodetected = False
-                self.app.current_fps = _FPS_OPTIONS[self.app._setting_selected_fps_idx]
-                sfx.play_click()
+                self._adjust_fps(-1)
             elif self.app._setting_selected_row == 2:
                 sfx.set_sfx_volume(sfx.get_sfx_volume() - 0.05)
                 sfx.play_click()
@@ -117,10 +149,7 @@ class SettingsPage:
                 sfx.play_click()
         elif event.key == pygame.K_RIGHT:
             if self.app._setting_selected_row == 0:
-                self.app._setting_selected_fps_idx = (self.app._setting_selected_fps_idx + 1) % len(_FPS_OPTIONS)
-                self.app._setting_fps_just_autodetected = False
-                self.app.current_fps = _FPS_OPTIONS[self.app._setting_selected_fps_idx]
-                sfx.play_click()
+                self._adjust_fps(1)
             elif self.app._setting_selected_row == 2:
                 sfx.set_sfx_volume(sfx.get_sfx_volume() + 0.05)
                 sfx.play_click()
