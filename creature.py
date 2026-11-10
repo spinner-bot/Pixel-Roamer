@@ -498,6 +498,8 @@ class Creature:
             bt = world.block_types.get(bid)
             if bt:
                 types.append(bt)
+        if not any(bt.special == "teleport" for bt in types):
+            self._teleport_latched = False
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
             self._special_cooldowns = {}
@@ -635,6 +637,9 @@ class Creature:
         for bt in types:
             if bt.special is not None:
                 if bt.special == "teleport" and bt.special_data is not None:
+                    if getattr(self, '_teleport_latched', False):
+                        continue
+                    self._teleport_latched = True
                     # 支持 meta 覆盖目标坐标
                     tx, ty = bt.special_data
                     for _, _, _, tile in self._contact_tile_instances(world):
@@ -642,9 +647,8 @@ class Creature:
                             tx = tile.meta.get("tp_x", tx)
                             ty = tile.meta.get("tp_y", ty)
                             break
-                    self._x = float(tx)
-                    self._y = float(ty)
-                    self.reset_motion()
+                    from teleport import teleport_to
+                    teleport_to(self, world, tx, ty)
                 elif bt.special == "checkpoint":
                     if hasattr(self, "spawn_pos"):
                         self.spawn_pos = (self._x, self._y)
@@ -931,6 +935,7 @@ class Creature:
         return self.get_game_rect().collides(other.get_game_rect())
 
     def reset(self, x: float, y: float):
+        self._teleport_latched = False
         self._x = float(x)
         self._y = float(y)
         self.hp = self.hp_max
