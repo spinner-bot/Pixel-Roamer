@@ -370,6 +370,18 @@ class World:
                 py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
                 surf.blit(self._terrain_texture(bt), (px, py))
 
+        # Nearest scaling can sample one native pixel beyond a rounded world
+        # edge. Extend edge pixels in partial chunks, then clip at world bounds.
+        top_padding = 0 if self.loop_y else max(0, (base_y + chunk_h - self.height) * CHUNK_TEX_PX)
+        if 0 < top_padding < tex_h:
+            for px in range(tex_w):
+                surf.fill(surf.get_at((px, top_padding)), (px, 0, 1, top_padding))
+        valid_width = tex_w if self.loop_x else min(tex_w, (self.width - base_x) * CHUNK_TEX_PX)
+        if 0 < valid_width < tex_w:
+            for py in range(tex_h):
+                surf.fill(surf.get_at((valid_width - 1, py)),
+                          (valid_width, py, tex_w - valid_width, 1))
+
         self._chunk_surfaces[ck] = surf
         self._chunk_surfaces.move_to_end(ck)
         while len(self._chunk_surfaces) > MAX_CHUNK_SURFACES:
@@ -377,6 +389,28 @@ class World:
         self._dirty_chunks.discard(ck)
 
     def draw(self, surface: pygame.Surface, camera):
+        """Respect finite world bounds and preserve the caller's clip."""
+        original = surface.get_clip()
+        visible = original.copy()
+        if not self.loop_x:
+            left = round(camera.world_to_screen(0, 0)[0])
+            right = round(camera.world_to_screen(self.width, 0)[0])
+            visible = visible.clip(pygame.Rect(left, original.y, max(0, right - left), original.h))
+        if not self.loop_y:
+            top = round(camera.world_to_screen(0, self.height)[1])
+            bottom = round(camera.world_to_screen(0, 0)[1])
+            visible = visible.clip(pygame.Rect(original.x, top, original.w, max(0, bottom - top)))
+        if visible != original:
+            surface.fill(self.fill_color)
+        if not visible:
+            return
+        surface.set_clip(visible)
+        try:
+            self._draw_visible_chunks(surface, camera)
+        finally:
+            surface.set_clip(original)
+
+    def _draw_visible_chunks(self, surface: pygame.Surface, camera):
         # 空的双向循环小世界在每格远小于一个屏幕像素时无法分辨纹理细节。
         # 直接填充默认色，避免遍历数百万个重复 chunk。
         if (self.loop_x and self.loop_y and not self.grid
@@ -398,6 +432,10 @@ class World:
         max_cx = end_x // CHUNK_SIZE
         min_cy = start_y // CHUNK_SIZE
         max_cy = end_y // CHUNK_SIZE
+        if not self.loop_x:
+            min_cx, max_cx = max(0, min_cx), min(max_cx, (self.width - 1) // CHUNK_SIZE)
+        if not self.loop_y:
+            min_cy, max_cy = max(0, min_cy), min(max_cy, (self.height - 1) // CHUNK_SIZE)
 
         scale = camera.scale
 
