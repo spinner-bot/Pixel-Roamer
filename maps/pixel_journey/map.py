@@ -647,4 +647,10 @@ for hx, hy in heal_spots:
         if world.get_tile(hx, hy).type_id == 0:
             world.set_tile(hx, hy, 290)  # 治愈之泉
 
+# Stand above the forest floor and beside the ice-room treasure, not inside it.
+world.grid[(144, 20)].meta = {"tp_x": 30.5, "tp_y": 50.9}
+world.grid[(375, py_base + 40)].meta = {"tp_x": 289.5, "tp_y": 63.9}
+# The destination treasure room needs a physical exit to its climbing vine.
+fill(275, 63, 277, 65, 0)
+fill(269, 62, 277, 62, 244)
 world.end_bulk_load()
