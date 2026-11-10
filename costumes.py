@@ -2,6 +2,7 @@
 from __future__ import annotations
 from typing import Tuple, Dict, Optional
 import pygame
+import math
 from resource_catalog import load_costumes
 
 COSTUMES, DEFAULT_COSTUME_ID = load_costumes()
@@ -121,6 +122,50 @@ def render_costume_direct(surface: pygame.Surface, costume_id: int,
                    dest_rect.x, dest_rect.y,
                    dest_rect.w, dest_rect.h, flip_h=flip_h,
                    anim_state=anim_state, anim_frame=anim_frame)
+
+
+def render_costume_at_feet(surface, costume_id, center_x, feet_y, w, h,
+                            flip_h=False, anim_state="idle", anim_frame=0):
+    """Anchor the visible sprite to the physical feet, regardless of padding."""
+    costume = COSTUMES.get(costume_id)
+    if costume is None or w < 1 or h < 1:
+        return pygame.Rect(0, 0, 0, 0)
+    frames = costume["src_frames"].get(anim_state, costume["src_frames"]["idle"])
+    index = anim_frame % len(frames)
+    key = (costume_id, anim_state, index, int(w), int(h))
+    if key not in _costume_cache:
+        _costume_cache[key] = pygame.transform.scale(frames[index], (int(w), int(h)))
+    image = _costume_cache[key]
+    if flip_h:
+        image = pygame.transform.flip(image, True, False)
+    visible = image.get_bounding_rect()
+    left = round(center_x - visible.x - visible.w / 2)
+    top = round(feet_y - visible.bottom)
+    surface.blit(image, (left, top))
+    return visible.move(left, top)
+
+
+def advance_costume_animation(player, state, dt):
+    if not math.isfinite(dt) or dt < 0:
+        raise ValueError("animation dt must be finite and nonnegative")
+    info = get_costume_anim_info(player.costume_id) or {"idle": 1}
+    if state not in info:
+        state = "idle"
+    if (getattr(player, "_anim_state", None) != state
+            or getattr(player, "_anim_costume", None) != player.costume_id):
+        player._anim_timer = 0.0
+        player._anim_frame = 0
+        player._anim_state = state
+        player._anim_costume = player.costume_id
+    count = info[state]
+    if count <= 1:
+        player._anim_frame = 0
+        player._anim_timer = 0.0
+        return
+    player._anim_timer += dt
+    advanced = int((player._anim_timer + 1e-12) / 0.15)
+    player._anim_timer = max(0.0, player._anim_timer - advanced * 0.15)
+    player._anim_frame = (player._anim_frame + advanced) % count
 
 
 def get_costume_anim_info(costume_id: int) -> Optional[dict]:
