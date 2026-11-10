@@ -18,6 +18,7 @@ from pixel_roamer.ui.hud import HudRenderer
 from pixel_roamer.ui.settings import SettingsPage
 from pixel_roamer.ui.references import ReferenceBrowser
 from pixel_roamer.ui.map_browser import MapBrowser
+from pixel_roamer.ui.map_selector import MapSelector
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -31,6 +32,7 @@ class GameApp:
         self.settings = SettingsPage(self)
         self.references = ReferenceBrowser(self)
         self.map_browser = MapBrowser(self)
+        self.map_selector = MapSelector(self)
         pygame.mixer.pre_init(22050, -16, 2, 512)  # 音频预初始化（立体声）
         pygame.init()
         pygame.key.stop_text_input()
@@ -396,6 +398,7 @@ class GameApp:
                             self.set_page(PAGE_SETTING)
                         elif action == hp.MENU_DEV:
                             self.set_page(PAGE_DEV)
+                            self._dev_block_browser = True
                         elif action == hp.MENU_QUIT:
                             pygame.event.post(pygame.event.Event(pygame.QUIT))
                 elif event.type == pygame.MOUSEMOTION:
@@ -415,6 +418,7 @@ class GameApp:
                         self.set_page(PAGE_SETTING)
                     elif action == hp.MENU_DEV:
                         self.set_page(PAGE_DEV)
+                        self._dev_block_browser = True
                     elif action == hp.MENU_QUIT:
                         pygame.event.post(pygame.event.Event(pygame.QUIT))
 
