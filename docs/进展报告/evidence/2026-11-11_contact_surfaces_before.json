@@ -1,0 +1,17 @@
+{
+  "actor_revision": "8400f34",
+  "runs": [
+    {
+      "kind": 7,
+      "expected_top": 6,
+      "actual_top": 8.0,
+      "near_shore": false
+    },
+    {
+      "kind": 9,
+      "expected_top": 6,
+      "actual_top": 8.0,
+      "near_shore": false
+    }
+  ]
+}
