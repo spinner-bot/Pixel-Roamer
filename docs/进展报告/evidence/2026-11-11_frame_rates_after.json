@@ -1,0 +1,111 @@
+{
+  "code_revision": "b7d5cdef3300e7e1ba7932f700aeed62c958b7a7",
+  "simulation_hz": 120,
+  "runs": [
+    {
+      "tile": 2,
+      "fps": 30,
+      "seconds": 5,
+      "distance": 151.3125792993016,
+      "speed": 36.22521566533455
+    },
+    {
+      "tile": 2,
+      "fps": 60,
+      "seconds": 5,
+      "distance": 151.3125792993016,
+      "speed": 36.22521566533455
+    },
+    {
+      "tile": 2,
+      "fps": 144,
+      "seconds": 5,
+      "distance": 151.3125792993016,
+      "speed": 36.22521566533455
+    },
+    {
+      "tile": 3,
+      "fps": 30,
+      "seconds": 5,
+      "distance": 164.40208333333317,
+      "speed": 36.5
+    },
+    {
+      "tile": 3,
+      "fps": 60,
+      "seconds": 5,
+      "distance": 164.40208333333317,
+      "speed": 36.5
+    },
+    {
+      "tile": 3,
+      "fps": 144,
+      "seconds": 5,
+      "distance": 164.40208333333317,
+      "speed": 36.5
+    },
+    {
+      "tile": 4,
+      "fps": 30,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 4,
+      "fps": 60,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 4,
+      "fps": 144,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 5,
+      "fps": 30,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 5,
+      "fps": 60,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 5,
+      "fps": 144,
+      "seconds": 5,
+      "distance": 30.80820809057856,
+      "speed": 6.385031345703531
+    },
+    {
+      "tile": 23,
+      "fps": 30,
+      "seconds": 5,
+      "distance": 11.862633207015662,
+      "speed": 2.4041988164666384
+    },
+    {
+      "tile": 23,
+      "fps": 60,
+      "seconds": 5,
+      "distance": 11.862633207015662,
+      "speed": 2.4041988164666384
+    },
+    {
+      "tile": 23,
+      "fps": 144,
+      "seconds": 5,
+      "distance": 11.862633207015662,
+      "speed": 2.4041988164666384
+    }
+  ]
+}
