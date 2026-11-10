@@ -41,6 +41,9 @@ def capture(g, name):
 
 def scenarios(g):
     assert g["page"] == g["PAGE_INIT"]
+    yield []
+    assert g["ls"].is_loading_complete(), "startup imposed a fake wait after resources were ready"
+    capture(g, "loading")
     yield key(pygame.K_ESCAPE)
     assert g["page"] == g["PAGE_HOME"]
     capture(g, "home")
@@ -79,12 +82,26 @@ def scenarios(g):
         g["_dev_selected_id"] = map_id
         yield key(pygame.K_RETURN)
         assert g["page"] == g["PAGE_WORLD"], map_id
+        if map_id == map_ids[0]:
+            paused_time = g["_game_timer"]
+            position = g["player1"].get_center()
+            yield key(pygame.K_h)
+            assert g["help_open"]
+            for _ in range(3):
+                yield []
+                assert g["_game_timer"] == paused_time
+                assert g["player1"].get_center() == position
+            capture(g, "help")
+            yield key(pygame.K_ESCAPE)
+            assert g["page"] == g["PAGE_WORLD"] and not g["help_open"]
         player = g["player1"]
         timer = g["_game_timer"]
         position = player.get_center()
         yield key(pygame.K_SPACE) + key(pygame.K_BACKSPACE)
         assert g["page"] == g["PAGE_SETTING"]
         assert not g["jump_pressed"]
+        if map_id == map_ids[0]:
+            capture(g, "settings")
         for _ in range(3):
             yield []
             assert g["_game_timer"] == timer
