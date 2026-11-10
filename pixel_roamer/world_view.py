@@ -7,6 +7,7 @@ import music
 import game_text as gt
 from pixel_roamer.ui.config import FONT24, FONT28, FONT56
 from pixel_roamer.ui.widgets import draw_text_center
+from pixel_roamer.ui.theme import PALETTE as P, key_hint
 
 class WorldView:
     """Existing world rendering and feedback."""
@@ -200,3 +201,9 @@ class WorldView:
             gt.draw(self.app.logic_surface, "[FLY]",
                                LOGIC_WIDTH // 2, LOGIC_HEIGHT - 36, 15,
                                (100, 255, 200), "mono", shadow=True, center_x=True)
+
+        gt.draw(self.app.logic_surface, gt.elide(self.app._current_map.name, 420, 18),
+                LOGIC_WIDTH // 2, LOGIC_HEIGHT - 28, 18, P["text"], "sans", shadow=True, center_x=True)
+        key_hint(self.app.logic_surface, "H", "操作指南", LOGIC_WIDTH - 202, LOGIC_HEIGHT - 44)
+        if self.app.help_open:
+            self.app.help.draw(self.app.logic_surface)
