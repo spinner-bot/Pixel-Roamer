@@ -1,10 +1,10 @@
 from __future__ import annotations
 import pygame
-from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
+from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 import sfx
 import game_text as gt
 import home_page as hp
-from pixel_roamer.ui.config import (BAR_GAP, BAR_H, BAR_TEXT_H, BAR_W, BAR_X, BAR_Y, BORDER_R, PAD)
+from pixel_roamer.ui.config import BAR_GAP, BAR_H, BAR_TEXT_H, BAR_W, BAR_X, BAR_Y, BORDER_R, PAD
 
 class HudRenderer:
     """Hud behavior; shared session and viewport come from app."""
