@@ -19,6 +19,7 @@ from pixel_roamer.ui.settings import SettingsPage
 from pixel_roamer.ui.references import ReferenceBrowser
 from pixel_roamer.ui.map_browser import MapBrowser
 from pixel_roamer.ui.map_selector import MapSelector
+from pixel_roamer.ui.help_overlay import HelpOverlay
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +27,8 @@ class GameApp:
     """Own the application lifetime, session state and page coordination."""
 
     def __init__(self):
+        self.help = HelpOverlay()
+        self.help_open = False
         self.session = WorldSession(self)
         self.world_view = WorldView(self)
         self.hud = HudRenderer(self)
@@ -132,6 +135,7 @@ class GameApp:
     def set_page(self, page_id: int, **kwargs):
         """设置当前页面，立即执行对应启动器。"""
         self.jump_pressed = False
+        self.help_open = False
         # 页面切换时管理音乐
         if page_id == PAGE_INIT:
             music.stop(fade_out_ms=400)  # 加载界面静音
@@ -185,6 +189,8 @@ class GameApp:
     def launch_init(self):
         """启动器：加载界面。初始化粒子、星空和加载进度。"""
         ls.init_loading_screen(LOGIC_WIDTH, LOGIC_HEIGHT)
+        ls.set_progress(1.0)
+        ls.mark_loading_complete()
 
     def launch_home(self):
         """启动器：游戏主页。初始化粒子、星空和菜单动画。"""
@@ -272,7 +278,7 @@ class GameApp:
     def launch_setting(self, from_page: int = PAGE_WORLD):
         """启动器：设置页面。保存来源页面，以便返回。"""
         # from_page 存储在 kwargs 中，由调用方传入
-        pass
+        self.settings._drag_row = None
 
     def launch_default(self, page_id: int):
         """占位启动器。"""
@@ -304,6 +310,14 @@ class GameApp:
                 self.map_browser.handle_dev_input(event)
             elif self.page == PAGE_WORLD:
                 if event.type == pygame.KEYDOWN:
+                    if self.help_open:
+                        if event.key in (pygame.K_h, pygame.K_ESCAPE):
+                            self.help_open = False
+                        continue
+                    if event.key == pygame.K_h:
+                        self.help_open = True
+                        self.jump_pressed = False
+                        continue
                     if event.key == pygame.K_ESCAPE:
                         self.set_page(PAGE_DEV)
                     elif event.key == pygame.K_BACKSPACE:
@@ -435,14 +449,6 @@ class GameApp:
             self.settings.run_setting_page(dt)
 
         elif self.page == PAGE_INIT:
-            # ---- 加载界面 ----
-            # 模拟加载进度（根据经过时间）
-            import time as _time
-            load_elapsed = _time.time() - ls._start_time
-            simulated_progress = min(1.0, load_elapsed / 2.8)  # 约2.8秒加载完成
-            ls.set_progress(simulated_progress)
-            if simulated_progress >= 1.0 and not ls.is_loading_complete():
-                ls.mark_loading_complete()
             ls.run_loading_screen(self.logic_surface, dt, LOGIC_WIDTH, LOGIC_HEIGHT)
 
         elif self.page == PAGE_HOME:
