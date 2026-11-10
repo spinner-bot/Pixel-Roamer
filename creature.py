@@ -513,27 +513,8 @@ class Creature:
         self._climb_top_y = None
         self._swim_top_y = None
         if self.can_climb or self.can_swim:
-            grect = self.get_game_rect()
-            min_gx = math.floor(grect.x - 0.01)
-            max_gx = math.floor(grect.x + grect.w + 0.01 - 1e-9)
-            min_gy = math.floor(grect.y - 0.01)
-            max_gy = math.floor(grect.y + grect.h + 0.01 - 1e-9)
-            climb_top = -999.0
-            swim_top = -999.0
-            for gx in range(min_gx, max_gx + 1):
-                for gy in range(min_gy, max_gy + 1):
-                    coord = world._wrap_grid_coord(gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        climb_top = max(climb_top, float(gy + 1))
-                    if bt.swim_f > 0:
-                        swim_top = max(swim_top, float(gy + 1))
-            if climb_top > -999:
-                self._climb_top_y = climb_top
-            if swim_top > -999:
-                self._swim_top_y = swim_top
+            from environment_contacts import connected_contact_tops
+            self._climb_top_y, self._swim_top_y = connected_contact_tops(self, world)
         # 检测岸边：水面高度处紧邻固体方块（水平距离 ≤0.2 格）
         self._near_shore = False
         self._shore_dir = 0  # 1=右侧岸, -1=左侧岸
@@ -550,7 +531,10 @@ class Creature:
                 bt = world.get_block_type_by_coord(coord[0], coord[1])
                 if bt.is_solid:
                     # 该固体方块顶部应与水面齐平
-                    if gy + 1 >= surface_y - 0.1:
+                    from teleport import can_place
+                    target_x = self._x + (self._w / 2 + 0.25)
+                    if abs(gy + 1 - surface_y) <= 0.1 and can_place(
+                            self, world, target_x, surface_y + self._h / 2):
                         self._near_shore = True
                         self._shore_dir = 1
                         break
@@ -563,7 +547,10 @@ class Creature:
                         continue
                     bt = world.get_block_type_by_coord(coord[0], coord[1])
                     if bt.is_solid:
-                        if gy + 1 >= surface_y - 0.1:
+                        from teleport import can_place
+                        target_x = self._x - (self._w / 2 + 0.25)
+                        if abs(gy + 1 - surface_y) <= 0.1 and can_place(
+                                self, world, target_x, surface_y + self._h / 2):
                             self._near_shore = True
                             self._shore_dir = -1
                             break
@@ -648,7 +635,10 @@ class Creature:
                             ty = tile.meta.get("tp_y", ty)
                             break
                     from teleport import teleport_to
-                    teleport_to(self, world, tx, ty)
+                    if teleport_to(self, world, tx, ty):
+                        # Placement refreshed target contacts; never continue
+                        # applying source effects after relocation.
+                        return
                 elif bt.special == "checkpoint":
                     if hasattr(self, "spawn_pos"):
                         self.spawn_pos = (self._x, self._y)
