@@ -514,10 +514,10 @@ class Creature:
         self._swim_top_y = None
         if self.can_climb or self.can_swim:
             grect = self.get_game_rect()
-            min_gx = math.floor(grect.x) - 1
-            max_gx = math.floor(grect.x + grect.w) + 1
-            min_gy = math.floor(grect.y) - 1
-            max_gy = math.floor(grect.y + grect.h) + 1
+            min_gx = math.floor(grect.x - 0.01)
+            max_gx = math.floor(grect.x + grect.w + 0.01 - 1e-9)
+            min_gy = math.floor(grect.y - 0.01)
+            max_gy = math.floor(grect.y + grect.h + 0.01 - 1e-9)
             climb_top = -999.0
             swim_top = -999.0
             for gx in range(min_gx, max_gx + 1):
