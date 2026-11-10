@@ -1,0 +1,336 @@
+{
+  "python": "3.10.12",
+  "pygame": "2.6.1",
+  "simulation_hz": 120,
+  "video_driver": "dummy",
+  "seed": 20261111,
+  "code_revision": "09bc2e57c13706a7704a7d79afb551e31f1ca74d",
+  "scope": "synthetic input; no assertion of full map completion or real device behavior",
+  "maps": [
+    {
+      "id": 1,
+      "name": "探索测试地图",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        25.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.18642683834089743,
+      "physics_p95_ms": 0.25285297306254506,
+      "physics_max_ms": 1.3063870137557387,
+      "draw_max_ms": 58.83633304620162,
+      "base_chunk_cache_count": 9,
+      "scaled_cache_bytes": 11943936,
+      "elapsed_seconds": 6.9194217449985445,
+      "errors": []
+    },
+    {
+      "id": 2,
+      "name": "主题大地图",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        10,
+        55
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.1322355283142921,
+      "physics_p95_ms": 0.19323901506140828,
+      "physics_max_ms": 1.0400539613328874,
+      "draw_max_ms": 121.201439993456,
+      "base_chunk_cache_count": 20,
+      "scaled_cache_bytes": 2949120,
+      "elapsed_seconds": 5.069549747975543,
+      "errors": []
+    },
+    {
+      "id": 3,
+      "name": "像素启程",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        15.5,
+        54.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 3,
+      "score": 0,
+      "physics_mean_ms": 0.18647432770942235,
+      "physics_p95_ms": 0.25934597942978144,
+      "physics_max_ms": 1.6973369638435543,
+      "draw_max_ms": 102.01881401007995,
+      "base_chunk_cache_count": 19,
+      "scaled_cache_bytes": 31129600,
+      "elapsed_seconds": 7.186800385010429,
+      "errors": []
+    },
+    {
+      "id": 4,
+      "name": "循环迷宫",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        22.5,
+        17.0
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.19943084105842798,
+      "physics_p95_ms": 0.230474048294127,
+      "physics_max_ms": 0.7182139670476317,
+      "draw_max_ms": 54.02660701656714,
+      "base_chunk_cache_count": 2,
+      "scaled_cache_bytes": 2654208,
+      "elapsed_seconds": 7.366348870971706,
+      "errors": []
+    },
+    {
+      "id": 5,
+      "name": "无尽攀爬",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        10,
+        6
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.1619973511308975,
+      "physics_p95_ms": 0.24537998251616955,
+      "physics_max_ms": 0.839752028696239,
+      "draw_max_ms": 22.281034965999424,
+      "base_chunk_cache_count": 4,
+      "scaled_cache_bytes": 8769672,
+      "elapsed_seconds": 6.026000583020505,
+      "errors": []
+    },
+    {
+      "id": 6,
+      "name": "无限森林",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        40.5,
+        22.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.2061042540881317,
+      "physics_p95_ms": 0.24283002130687237,
+      "physics_max_ms": 2.0617060363292694,
+      "draw_max_ms": 87.4133930192329,
+      "base_chunk_cache_count": 5,
+      "scaled_cache_bytes": 8192000,
+      "elapsed_seconds": 7.699506389035378,
+      "errors": []
+    },
+    {
+      "id": 7,
+      "name": "终焉神殿",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        18.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 75,
+      "physics_mean_ms": 0.192969239648341,
+      "physics_p95_ms": 0.24220498744398355,
+      "physics_max_ms": 0.4451560089364648,
+      "draw_max_ms": 29.073553974740207,
+      "base_chunk_cache_count": 5,
+      "scaled_cache_bytes": 8192000,
+      "elapsed_seconds": 7.1871335380128585,
+      "errors": []
+    },
+    {
+      "id": 8,
+      "name": "限时冲刺",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        5.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 3,
+      "score": 680,
+      "physics_mean_ms": 0.1626361791293473,
+      "physics_p95_ms": 0.22563600214198232,
+      "physics_max_ms": 0.8750429842621088,
+      "draw_max_ms": 23.498005990404636,
+      "base_chunk_cache_count": 6,
+      "scaled_cache_bytes": 7962624,
+      "elapsed_seconds": 6.198106502008159,
+      "errors": []
+    },
+    {
+      "id": 9,
+      "name": "收藏家之旅",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        27,
+        22
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 3,
+      "score": 555,
+      "physics_mean_ms": 0.17953105560930757,
+      "physics_p95_ms": 0.24019397096708417,
+      "physics_max_ms": 0.6856180261820555,
+      "draw_max_ms": 30.366981984116137,
+      "base_chunk_cache_count": 9,
+      "scaled_cache_bytes": 14745600,
+      "elapsed_seconds": 6.8103849299950525,
+      "errors": []
+    },
+    {
+      "id": 19,
+      "name": "微型世界",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        0,
+        0
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.15523242435139967,
+      "physics_p95_ms": 0.16335700638592243,
+      "physics_max_ms": 0.19417796283960342,
+      "draw_max_ms": 118.7646760372445,
+      "base_chunk_cache_count": 1,
+      "scaled_cache_bytes": 1327104,
+      "elapsed_seconds": 5.843819560017437,
+      "errors": []
+    },
+    {
+      "id": 20,
+      "name": "宏大旅程",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        3000,
+        40
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.1307905792313654,
+      "physics_p95_ms": 0.15342305414378643,
+      "physics_max_ms": 1.8270740401931107,
+      "draw_max_ms": 235.0967069505714,
+      "base_chunk_cache_count": 6,
+      "scaled_cache_bytes": 7962624,
+      "elapsed_seconds": 5.66793731803773,
+      "errors": []
+    },
+    {
+      "id": 21,
+      "name": "冒险湾",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        30,
+        72
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 0,
+      "physics_mean_ms": 0.13975253125115866,
+      "physics_p95_ms": 0.2027489827014506,
+      "physics_max_ms": 0.49912399845197797,
+      "draw_max_ms": 48.52894798386842,
+      "base_chunk_cache_count": 22,
+      "scaled_cache_bytes": 5767168,
+      "elapsed_seconds": 5.361129764991347,
+      "errors": []
+    },
+    {
+      "id": 1001,
+      "name": "晨光林径",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        9.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 50,
+      "physics_mean_ms": 0.1411479429096087,
+      "physics_p95_ms": 0.21226797252893448,
+      "physics_max_ms": 0.23163598962128162,
+      "draw_max_ms": 51.578093029093,
+      "base_chunk_cache_count": 10,
+      "scaled_cache_bytes": 9216000,
+      "elapsed_seconds": 5.326122699014377,
+      "errors": []
+    },
+    {
+      "id": 1002,
+      "name": "霜月观测台",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        9.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 175,
+      "physics_mean_ms": 0.15231510067274534,
+      "physics_p95_ms": 0.20828796550631523,
+      "physics_max_ms": 0.23274699924513698,
+      "draw_max_ms": 75.32692496897653,
+      "base_chunk_cache_count": 8,
+      "scaled_cache_bytes": 7372800,
+      "elapsed_seconds": 5.816274965996854,
+      "errors": []
+    },
+    {
+      "id": 1003,
+      "name": "琥珀水道",
+      "frames": 36000,
+      "simulated_seconds": 600.0,
+      "spawn": [
+        4.5,
+        9.9
+      ],
+      "spawn_overlaps": [],
+      "respawns_in_stress_run": 0,
+      "score": 30,
+      "physics_mean_ms": 0.1511459231244064,
+      "physics_p95_ms": 0.21606305381283164,
+      "physics_max_ms": 1.0882290080189705,
+      "draw_max_ms": 25.29944502748549,
+      "base_chunk_cache_count": 8,
+      "scaled_cache_bytes": 7372800,
+      "elapsed_seconds": 5.65275076800026,
+      "errors": []
+    }
+  ],
+  "blocks": {
+    "types_checked": 359,
+    "frames_per_type": 300,
+    "failures": [],
+    "slowest_case": {
+      "id": 386,
+      "elapsed_ms": 54.60891802795231
+    }
+  },
+  "passed": true
+}
