@@ -218,6 +218,14 @@ class PhysicsTests(unittest.TestCase):
         self.assertTrue(player.alive)
         self.assertGreater(player._x, world.spawn_points[0])
         self.assertGreater(player._y, 0)
+        # The route can leave the starting platform; wait for an actual landing
+        # instead of assuming frame 300 must coincide with ground contact.
+        for _ in range(300):
+            if player.on_ground:
+                break
+            player.move(0)
+            player.update_physics(1 / 60, world)
+            player.collide_with_world(world, 1 / 60)
         self.assertTrue(player.on_ground)
 
         before_jump = player._y
