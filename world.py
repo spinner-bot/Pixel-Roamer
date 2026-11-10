@@ -375,8 +375,6 @@ class World:
         max_cy = end_y // CHUNK_SIZE
 
         scale = camera.scale
-        blit_w = int(CHUNK_SIZE * scale)
-        blit_h = int(CHUNK_SIZE * scale)
 
         for cx in range(min_cx, max_cx + 1):
             for cy in range(min_cy, max_cy + 1):
@@ -394,6 +392,10 @@ class World:
                 chunk_wy = cy * CHUNK_SIZE
                 # 屏幕坐标（左上角）
                 sx, sy_top = camera.world_to_screen(chunk_wx, chunk_wy + CHUNK_SIZE)
+                right = round(sx + CHUNK_SIZE * scale)
+                bottom = round(sy_top + CHUNK_SIZE * scale)
+                sx, sy_top = round(sx), round(sy_top)
+                blit_w, blit_h = max(1, right - sx), max(1, bottom - sy_top)
 
                 # 缩放至屏幕尺寸（缓存避免每帧分配巨型临时Surface）
                 need_scale = (blit_w != CHUNK_SIZE * CHUNK_TEX_PX or blit_h != CHUNK_SIZE * CHUNK_TEX_PX)
