@@ -7,6 +7,28 @@ os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
 
 class MapSessionTests(unittest.TestCase):
+    def test_test_world_clay_platform_jump_and_walk_has_no_snap(self):
+        from maps import get_map
+        from creature import Player
+        for direction in (-1, 1):
+            world = get_map(1)
+            self.assertEqual(world.get_tile(13, 15).type_id, 4)
+            player = Player(0, "clay route", 13, 16.9, {}, v_jump=3)
+            player.collide_with_world(world, 0)
+            self.assertTrue(player.jump())
+            landed = False
+            for frame in range(120):
+                player.move(0.05 * direction)
+                player.update_physics(1 / 60, world)
+                before, speed = player._x, abs(player.v_x)
+                player.collide_with_world(world, 1 / 60)
+                self.assertLessEqual(abs(player._x - before), speed / 60 + 1e-8)
+                self.assertGreaterEqual((player._x - before) * direction, -1e-8)
+                if frame > 1 and player.on_ground:
+                    landed = True
+            self.assertTrue(landed)
+            self.assertEqual(world.get_tile(player._x, player._y - player._h / 2 - 0.001).type_id, 4)
+
     def test_all_map_spawns_have_clear_character_space(self):
         from maps import get_map, list_maps
         from creature import Player
