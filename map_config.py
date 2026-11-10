@@ -35,10 +35,14 @@ def validate_config(config):
             if key in ranges:
                 low, high = ranges[key]
                 if (isinstance(value, bool) or not isinstance(value, (int, float))
-                        or not math.isfinite(value) or not low <= value <= high):
+                        or not low <= value <= high or not math.isfinite(value)):
                     raise ValueError(f"{field} 必须在 {low} 到 {high} 之间")
                 if key in INTEGER_FIELDS and not isinstance(value, int):
                     raise ValueError(f"{field} 必须是整数")
+                if section == "player" and key == "costume_id":
+                    from costumes import COSTUMES
+                    if value not in COSTUMES:
+                        raise ValueError(f"{field} 必须是已注册时装 ID")
             elif section == "world" and key in ("loop_x", "loop_y"):
                 if not isinstance(value, bool):
                     raise ValueError(f"{field} 必须为 true/false")
