@@ -118,7 +118,7 @@ class MapSmokeTests(unittest.TestCase):
         registry_start = time.perf_counter()
         maps = list_maps()
         self.assertLess(time.perf_counter() - registry_start, 1.0)
-        self.assertEqual(len(maps), 12)
+        self.assertEqual(len(maps), 15)
         self.assertFalse(any(
             name.startswith("maps.") and name.endswith(".map")
             for name in sys.modules

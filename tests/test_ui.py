@@ -20,7 +20,7 @@ class ApplicationFlowTests(unittest.TestCase):
         result = subprocess.run([sys.executable, str(root / "tests/application_scenarios.py")],
                                 cwd=root, env=env, capture_output=True, text=True, timeout=60)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn('"maps_navigated": 12', result.stdout)
+        self.assertIn('"maps_navigated": 15', result.stdout)
 
 
 if __name__ == "__main__":
