@@ -39,6 +39,11 @@ def can_place(actor, world, x, y):
 def teleport_to(actor, world, x, y):
     if not can_place(actor, world, x, y):
         return False
+    from shore_exit import cancel_shore_exit
+    cancel_shore_exit(actor)
+    actor.is_climbing = False
     actor._x, actor._y = normalized_target(world, x, y)
     actor.reset_motion()
+    actor._teleport_latched = True
+    actor.collide_with_world(world, 0)
     return True
