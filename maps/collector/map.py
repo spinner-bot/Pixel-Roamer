@@ -3,6 +3,9 @@
 收集500分解锁通关！各个角落都有宝藏，需仔细探索
 """
 from world import World
+from random import Random
+
+_rng = Random(9)
 
 MAP_ID = 9
 world = World(
@@ -68,10 +71,9 @@ fill(3, 17, 21, 17, 19)    # 地板
 fill(3, 16, 21, 16, 2)
 # 水晶装饰
 for _ in range(15):
-    import random
-    cx, cy = random.randint(4, 20), random.randint(18, 23)
+    cx, cy = _rng.randint(4, 20), _rng.randint(18, 23)
     if world.get_tile(cx, cy).type_id == 0:
-        world.set_tile(cx, cy, random.choice([200,201,204,206]))
+        world.set_tile(cx, cy, _rng.choice([200,201,204,206]))
 # 水晶间的积分
 world.set_tile(8, 18, 312)      # 红宝石
 world.set_tile(15, 19, 313)     # 蓝宝石
