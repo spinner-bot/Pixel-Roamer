@@ -9,7 +9,7 @@ os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from creature import Player
+from player_factory import create_world_player
 from maps import get_map, list_maps
 from teleport import can_place
 from simulation import SIMULATION_STEP
@@ -27,10 +27,12 @@ def audit():
             tx, ty = kind.special_data
             if isinstance(tile.meta, dict):
                 tx, ty = tile.meta.get('tp_x', tx), tile.meta.get('tp_y', ty)
+            prototype = create_world_player(world, {}, player_name='portal')
+            half_w, half_h = prototype._w / 2, prototype._h / 2
             player = None
-            for px, py in ((x + .5, y + .9), (x + .5, y + 1.9),
-                           (x - .4, y + .5), (x + 1.4, y + .5), (x + .5, y - .9)):
-                candidate = Player(0, 'portal', px, py, {})
+            for px, py in ((x + .5, y + half_h), (x + .5, y + 1 + half_h),
+                           (x - half_w, y + .5), (x + 1 + half_w, y + .5), (x + .5, y - half_h)):
+                candidate = create_world_player(world, {}, player_name='portal', position=(px, py))
                 if (can_place(candidate, world, px, py)
                         and any(coord == (x, y) for _, _, coord, _ in
                                 candidate._contact_tile_instances(world))):
