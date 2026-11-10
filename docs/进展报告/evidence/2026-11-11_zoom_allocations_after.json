@@ -1,0 +1,675 @@
+{
+  "world_revision": "f7a787a1cad43d24591384226e24b4ccbe30375c",
+  "scope": "actual transform allocation requests intercepted above 64 MiB; not peak RSS",
+  "runs": [
+    {
+      "view_blocks_h": 2,
+      "completed": true,
+      "draw_ms": 4.974643001332879,
+      "max_requested_bytes": 57600,
+      "requests": [
+        {
+          "size": [
+            16,
+            16
+          ],
+          "requested_bytes": 1024
+        },
+        {
+          "size": [
+            14400,
+            1
+          ],
+          "requested_bytes": 57600
+        },
+        {
+          "size": [
+            1,
+            14400
+          ],
+          "requested_bytes": 57600
+        }
+      ]
+    },
+    {
+      "view_blocks_h": 4,
+      "completed": true,
+      "draw_ms": 6.139958975836635,
+      "max_requested_bytes": 28804,
+      "requests": [
+        {
+          "size": [
+            7200,
+            1
+          ],
+          "requested_bytes": 28800
+        },
+        {
+          "size": [
+            1,
+            7201
+          ],
+          "requested_bytes": 28804
+        }
+      ]
+    },
+    {
+      "view_blocks_h": 14,
+      "completed": true,
+      "draw_ms": 25.149028981104493,
+      "max_requested_bytes": 16924996,
+      "requests": [
+        {
+          "size": [
+            2057,
+            2057
+          ],
+          "requested_bytes": 16924996
+        },
+        {
+          "size": [
+            2057,
+            2057
+          ],
+          "requested_bytes": 16924996
+        }
+      ]
+    },
+    {
+      "view_blocks_h": 200,
+      "completed": true,
+      "draw_ms": 76.47695200284943,
+      "max_requested_bytes": 82944,
+      "requests": [
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        },
+        {
+          "size": [
+            144,
+            144
+          ],
+          "requested_bytes": 82944
+        }
+      ]
+    }
+  ]
+}
