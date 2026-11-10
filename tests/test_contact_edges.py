@@ -8,6 +8,21 @@ from world import World
 
 
 class ContactEdgeTests(unittest.TestCase):
+    def test_untouched_upper_liquid_or_ladder_does_not_hide_current_shore(self):
+        for kind, attribute in ((7, '_swim_top_y'), (9, '_climb_top_y')):
+            world = World(0, 'layers', 20, 20, loop_x=True, loop_y=True, gravity=0)
+            for y in range(1, 6):
+                world.set_tile(5, y, kind)
+                world.set_tile(4, y, 2)
+            world.set_tile(6, 7, kind)
+            for dx, dy in ((0, 0), (-20, -20), (20, 20)):
+                player = Player(0, 'layers', 5.5 + dx, 5.7 + dy, {})
+                player.collide_with_world(world, 0)
+                self.assertEqual(getattr(player, attribute), 6 + dy)
+                if kind == 7:
+                    self.assertTrue(player._near_shore)
+                    self.assertEqual(player._shore_dir, -1)
+
     def test_mirrored_shores_survive_negative_and_large_loop_translations(self):
         for x, shore, direction in ((1.45, 0, -1), (8.55, 9, 1)):
             world = World(0, 'shore', 10, 20, loop_x=True, loop_y=True, gravity=0)
