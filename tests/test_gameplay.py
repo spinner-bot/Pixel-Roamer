@@ -248,6 +248,22 @@ class CollisionTests(unittest.TestCase):
 
 
 class FrameRateTests(unittest.TestCase):
+    def test_friction_buffs_damp_without_inverting_or_amplifying_motion(self):
+        speeds = {}
+        for buff_id in (None, 42, 43, 51):
+            world = make_world()
+            player = make_player()
+            player.v_x = 10
+            if buff_id is not None:
+                player.apply_buff(buff_id, (), 10)
+            player.collide_with_world(world, 1)
+            speeds[buff_id] = player.v_x
+            self.assertGreater(player.v_x, 0)
+            self.assertLessEqual(player.v_x, 10)
+        self.assertGreater(speeds[42], speeds[None])  # Slippery: less damping.
+        self.assertGreater(speeds[51], speeds[None])  # Icy: less damping.
+        self.assertLess(speeds[43], speeds[None])     # Sticky: more damping.
+
     def test_speed_and_jump_tiles_combine_with_buffs_and_restore(self):
         from block_types_data import BLOCK_TYPES
         speed = BlockType(5000, is_solid=False, special="speed", special_data=1.8)
