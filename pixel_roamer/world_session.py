@@ -3,6 +3,7 @@ import pygame
 import sfx
 from game_state import resolve_player_death
 from simulation import FixedStepClock
+from shore_exit import begin_shore_exit, advance_shore_exit, after_shore_physics
 
 class WorldSession:
     """Existing world rules and input."""
@@ -166,7 +167,10 @@ class WorldSession:
                 # ---- 游泳: W/↑向上，攀爬优先 ----
                 swimming_now = False
                 up_held = keys[self.app.player1.key_bind["up"]] or keys[pygame.K_UP]
-                if not self.app.player1.is_climbing and self.app.player1.can_swim and not self.app.player1.has_buff(58):
+                swim_surface = getattr(self.app.player1, '_swim_top_y', None)
+                above_surface = (swim_surface is not None and self.app.player1._y > swim_surface + .05)
+                if (not self.app.player1.is_climbing and self.app.player1.can_swim
+                        and not self.app.player1.has_buff(58) and not above_surface):
                     if up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
                         if self.app.player1.stamina >= swim_cost:
@@ -174,7 +178,7 @@ class WorldSession:
                             swim_bound = getattr(self.app.player1, '_swim_top_y', None)
                             at_swim_bound = False
                             if swim_bound is not None:
-                                if self.app.player1._y >= swim_bound - 0.05 and self.app.player1._y <= swim_bound + 2.0:
+                                if self.app.player1._y >= swim_bound - 0.05 and self.app.player1._y <= swim_bound + 0.05:
                                     self.app.player1._y = swim_bound  # 中心与水面齐平（半腰）
                                     self.app.player1.v_y = 0.0
                                     at_swim_bound = True
@@ -204,42 +208,11 @@ class WorldSession:
                     and self.app.player1.can_swim and swimming_now
                     and getattr(self.app.player1, '_near_shore', False)
                     and self.app.player1.stamina >= 25):
-                    _shore_pending = getattr(self.app.player1, '_shore_exit_pending', False)
-                    if not _shore_pending:
-                        # 高速上岸 + 临时空气墙：极速完成，不受液体阻力影响
-                        self.app.player1.v_y = 32.0  # 高速向上
-                        self.app.player1.v_x = 0.0
-                        if not silenced: self.app.player1.consume_stamina(25)
-                        self.app.player1.apply_buff(58, (), 0.3)
-                        self.app.player1._shore_exit_pending = 'rise'  # 上升阶段
-                        self.app.player1._shore_exit_dir = self.app.player1._shore_dir
-                        self.app.player1._shore_exit_bound = getattr(self.app.player1, '_swim_top_y', None)
+                    if begin_shore_exit(self.app.player1, suppress_cost=silenced):
                         sfx.play_jump()
                         shore_exit_done = True
                         self.app.jump_pressed = False
-                # 上岸后续：空气墙逻辑（到达高度→竖直停，再水平推→到位停）
-                _shore_state = getattr(self.app.player1, '_shore_exit_pending', False)
-                if _shore_state and not shore_exit_done:
-                    exit_dir = self.app.player1._shore_exit_dir
-                    swim_bound = getattr(self.app.player1, '_shore_exit_bound', None)
-                    feet_y = self.app.player1._y - self.app.player1._h / 2
-                    if _shore_state == 'rise':
-                        if swim_bound is not None and feet_y >= swim_bound:
-                            # 竖直空气墙：到达水面高度，锁 v_y，记录起始位置
-                            self.app.player1.v_y = 0.0
-                            self.app.player1.v_x = exit_dir * 16.0
-                            self.app.player1._shore_slide_start_x = self.app.player1._x
-                            self.app.player1._shore_exit_pending = 'slide'
-                    elif _shore_state == 'slide':
-                        # 水平空气墙：滑够 0.55 格（半身宽+岸边容差）即停
-                        if abs(self.app.player1._x - self.app.player1._shore_slide_start_x) >= 0.55:
-                            self.app.player1.v_x = 0.0
-                            self.app.player1._shore_exit_pending = False
-                        elif not self.app.player1.has_buff(58):
-                            self.app.player1._shore_exit_pending = False
-                    # buff 过期兜底
-                    if self.app.player1._shore_exit_pending and not self.app.player1.has_buff(58):
-                        self.app.player1._shore_exit_pending = False
+                advance_shore_exit(self.app.player1)
 
                 # ---- 正常跳跃 ----
                 if self.app.jump_pressed and not grounded and not shore_exit_done:
@@ -259,10 +232,7 @@ class WorldSession:
                 # 攀爬中着陆或离开可攀爬方块：自动解除
                 if self.app.player1.is_climbing and (self.app.player1.on_ground or not self.app.player1.can_climb):
                     self.app.player1.is_climbing = False
-                # 上岸后着陆或离开水面：清除上岸待处理状态
-                if getattr(self.app.player1, '_shore_exit_pending', False):
-                    if self.app.player1.on_ground or not self.app.player1.can_swim:
-                        self.app.player1._shore_exit_pending = False
+                after_shore_physics(self.app.player1)
 
         # A keydown is consumed by this world frame even when a status blocks it.
         self.app.jump_pressed = False
