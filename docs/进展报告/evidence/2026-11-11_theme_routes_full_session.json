@@ -1,0 +1,629 @@
+{
+  "code_revision": "3b04f84",
+  "scope": "production WorldSession controls and presets, synthetic keys; no physical device acceptance",
+  "simulation_hz": 120,
+  "runs": [
+    {
+      "id": 1001,
+      "fps": 30,
+      "route": "main",
+      "frames": 480,
+      "seconds": 16.0,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.6,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1001,
+      "fps": 30,
+      "route": "upper",
+      "frames": 567,
+      "seconds": 18.9,
+      "jumps": 2,
+      "score": 140,
+      "waypoint_rewards": [
+        20,
+        30,
+        60,
+        30
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.575,
+          13.9
+        ],
+        [
+          38.478,
+          16.9
+        ],
+        [
+          55.041,
+          13.9
+        ],
+        [
+          89.602,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.18684964571966,
+      "jump_requests": 2
+    },
+    {
+      "id": 1001,
+      "fps": 60,
+      "route": "main",
+      "frames": 966,
+      "seconds": 16.1,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.59,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1001,
+      "fps": 60,
+      "route": "upper",
+      "frames": 1133,
+      "seconds": 18.883,
+      "jumps": 2,
+      "score": 130,
+      "waypoint_rewards": [
+        30,
+        10,
+        60,
+        30
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.632,
+          13.9
+        ],
+        [
+          38.482,
+          16.9
+        ],
+        [
+          55.006,
+          13.9
+        ],
+        [
+          89.604,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.08436579330126,
+      "jump_requests": 2
+    },
+    {
+      "id": 1001,
+      "fps": 144,
+      "route": "main",
+      "frames": 2322,
+      "seconds": 16.125,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.594,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1001,
+      "fps": 144,
+      "route": "upper",
+      "frames": 2721,
+      "seconds": 18.896,
+      "jumps": 2,
+      "score": 130,
+      "waypoint_rewards": [
+        30,
+        10,
+        60,
+        30
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.66,
+          13.9
+        ],
+        [
+          38.495,
+          16.9
+        ],
+        [
+          55.013,
+          13.9
+        ],
+        [
+          89.603,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.03304664273375,
+      "jump_requests": 2
+    },
+    {
+      "id": 1002,
+      "fps": 30,
+      "route": "main",
+      "frames": 2714,
+      "seconds": 90.467,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.592,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1002,
+      "fps": 30,
+      "route": "upper",
+      "frames": 1414,
+      "seconds": 47.133,
+      "jumps": 2,
+      "score": 310,
+      "waypoint_rewards": [
+        25,
+        75,
+        150,
+        60
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.575,
+          13.9
+        ],
+        [
+          38.479,
+          16.9
+        ],
+        [
+          55.019,
+          13.9
+        ],
+        [
+          89.591,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.18684964571966,
+      "jump_requests": 2
+    },
+    {
+      "id": 1002,
+      "fps": 60,
+      "route": "main",
+      "frames": 5427,
+      "seconds": 90.45,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.593,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1002,
+      "fps": 60,
+      "route": "upper",
+      "frames": 2828,
+      "seconds": 47.133,
+      "jumps": 2,
+      "score": 285,
+      "waypoint_rewards": [
+        50,
+        25,
+        150,
+        60
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.632,
+          13.9
+        ],
+        [
+          38.482,
+          16.9
+        ],
+        [
+          55.03,
+          13.9
+        ],
+        [
+          89.591,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.08436579330126,
+      "jump_requests": 2
+    },
+    {
+      "id": 1002,
+      "fps": 144,
+      "route": "main",
+      "frames": 13024,
+      "seconds": 90.444,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.595,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1002,
+      "fps": 144,
+      "route": "upper",
+      "frames": 6791,
+      "seconds": 47.16,
+      "jumps": 2,
+      "score": 285,
+      "waypoint_rewards": [
+        50,
+        25,
+        150,
+        60
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.66,
+          13.9
+        ],
+        [
+          38.495,
+          16.9
+        ],
+        [
+          55.01,
+          13.9
+        ],
+        [
+          89.593,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 179.03304664273375,
+      "jump_requests": 2
+    },
+    {
+      "id": 1003,
+      "fps": 30,
+      "route": "main",
+      "frames": 1041,
+      "seconds": 34.7,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.593,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1003,
+      "fps": 30,
+      "route": "upper",
+      "frames": 779,
+      "seconds": 25.967,
+      "jumps": 2,
+      "score": 80,
+      "waypoint_rewards": [
+        15,
+        15,
+        30,
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.575,
+          13.9
+        ],
+        [
+          38.478,
+          16.9
+        ],
+        [
+          55.041,
+          13.9
+        ],
+        [
+          89.596,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 175.53444250316727,
+      "jump_requests": 2
+    },
+    {
+      "id": 1003,
+      "fps": 60,
+      "route": "main",
+      "frames": 2083,
+      "seconds": 34.717,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.591,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1003,
+      "fps": 60,
+      "route": "upper",
+      "frames": 1555,
+      "seconds": 25.917,
+      "jumps": 2,
+      "score": 75,
+      "waypoint_rewards": [
+        20,
+        5,
+        30,
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.632,
+          13.9
+        ],
+        [
+          38.482,
+          16.9
+        ],
+        [
+          55.006,
+          13.9
+        ],
+        [
+          89.592,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 175.42398409808587,
+      "jump_requests": 2
+    },
+    {
+      "id": 1003,
+      "fps": 144,
+      "route": "main",
+      "frames": 5000,
+      "seconds": 34.722,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          89.592,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 200.0,
+      "jump_requests": 0
+    },
+    {
+      "id": 1003,
+      "fps": 144,
+      "route": "upper",
+      "frames": 3732,
+      "seconds": 25.917,
+      "jumps": 2,
+      "score": 75,
+      "waypoint_rewards": [
+        20,
+        5,
+        30,
+        20
+      ],
+      "min_hp": 150.0,
+      "max_hp": 150.0,
+      "vertical_drag": 1.0,
+      "waypoints": [
+        [
+          24.66,
+          13.9
+        ],
+        [
+          38.495,
+          16.9
+        ],
+        [
+          55.013,
+          13.9
+        ],
+        [
+          89.594,
+          9.9
+        ]
+      ],
+      "reached_end": true,
+      "game_win": true,
+      "lives_left": 3,
+      "initial_lives": 3,
+      "min_stamina": 175.36867107848067,
+      "jump_requests": 2
+    }
+  ],
+  "note": "Route measurements taken with the same script before formatting-only indentation cleanup; tests rerun after commit."
+}
