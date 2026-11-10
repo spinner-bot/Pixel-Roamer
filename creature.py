@@ -726,6 +726,7 @@ class Creature:
                             break
                     self._x = float(tx)
                     self._y = float(ty)
+                    self.reset_motion()
                 elif bt.special == "checkpoint":
                     if hasattr(self, "spawn_pos"):
                         self.spawn_pos = (self._x, self._y)
