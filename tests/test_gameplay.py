@@ -1,5 +1,6 @@
 """Deterministic gameplay regressions using small, isolated worlds."""
 import os
+import time
 import unittest
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
@@ -162,6 +163,17 @@ class PoisonTests(unittest.TestCase):
 
 
 class CollisionTests(unittest.TestCase):
+    def test_extreme_runtime_velocity_cannot_hang_collision_loop(self):
+        world = make_world(loop_x=True, loop_y=True)
+        player = make_player()
+        player.v_y = 1e12
+        start = time.perf_counter()
+        player.collide_with_world(world, 1 / 60)
+        self.assertLess(time.perf_counter() - start, 1)
+        player.v_y = float("inf")
+        player.collide_with_world(world, 1 / 60)
+        self.assertEqual(player.v_y, 0)
+
     def test_fast_movement_does_not_cross_a_one_tile_wall(self):
         for direction in (-1, 1):
             with self.subTest(direction=direction):
