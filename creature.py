@@ -462,26 +462,32 @@ class Creature:
             final_fx = self.f_x
             final_fy = self.f_y
 
-        # 液体空间阻力
-        liquid_space = min((bt.space_f for bt in block_types_list if bt.space_f != 1.0), default=1.0)
-        if liquid_space < 1.0:
-            final_fx *= liquid_space
-            final_fy *= liquid_space
+        # Surface modifiers can reduce damping to zero; passive friction must
+        # never turn into an energy source (ice surface_f can be greater than 1).
+        final_fx = max(0.0, min(1.0, final_fx))
+        final_fy = max(0.0, min(1.0, final_fy))
 
         # ---- Buff: 摩擦修正（滑腻42/黏着43/寒冷51） ----
         # 滑腻 (42)：系数越高越滑，param[0]=滑腻度%，默认85%→15%摩擦
         if self.has_buff(42):
             slick_pct = min(99.0, max(0.0, self._get_buff_param(42, 0, 85.0)))
             slick_mult = 1.0 - slick_pct / 100.0
-            final_fx = self.f_x ** slick_mult
+            final_fx = final_fx ** slick_mult
         if self.has_buff(43):  # 黏着：高摩擦
-            sticky_pct = self._get_buff_param(43, 0, 80.0)
+            sticky_pct = max(0.0, self._get_buff_param(43, 0, 80.0))
             sticky_mult = 1.0 + sticky_pct / 100.0
-            final_fx = self.f_x ** sticky_mult
+            final_fx = final_fx ** sticky_mult
         if self.has_buff(51):  # 寒冷：冰面摩擦
-            chill_pct = self._get_buff_param(51, 0, 70.0)
+            chill_pct = min(99.0, max(0.0, self._get_buff_param(51, 0, 70.0)))
             chill_mult = 1.0 - chill_pct / 100.0
-            final_fx = self.f_x ** max(0.01, chill_mult)
+            final_fx = final_fx ** chill_mult
+
+        # Liquid drag remains active when a friction buff is present.
+        liquid_space = min((bt.space_f for bt in block_types_list if bt.space_f != 1.0), default=1.0)
+        if liquid_space < 1.0:
+            liquid_space = max(0.0, liquid_space)
+            final_fx *= liquid_space
+            final_fy *= liquid_space
 
         self.v_x *= pow(final_fx, dt * 60)
         self.v_y *= pow(final_fy, dt * 60)
