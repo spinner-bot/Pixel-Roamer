@@ -1,6 +1,7 @@
 from __future__ import annotations
 from collections import OrderedDict
 from copy import copy, deepcopy
+import math
 import pygame
 from typing import Optional, Tuple, Any
 
@@ -107,7 +108,7 @@ class World:
     #  坐标包装（内联快速路径）
     # ================================================================
     def _wrap(self, x: float, y: float) -> Optional[Tuple[int, int]]:
-        gx, gy = int(x), int(y)
+        gx, gy = math.floor(x), math.floor(y)
         if self.loop_x:
             gx = gx % self.width
         elif gx < 0 or gx >= self.width:
@@ -277,96 +278,31 @@ class World:
     #  碰撞查询（使用实体索引加速）
     # ================================================================
     def get_nearby_solid_blocks_game(self, grect: GameRect, margin: int = 1) -> list:
-        """返回与 grect 附近所有实体方块的 (GameRect, BlockType) 列表。
-
-        优化：使用 _solid_index 预过滤，跳过大量空气方块。
-        对于稠密地图回退到逐格扫描。
-        """
-        min_x = int(grect.x) - margin
-        max_x = int(grect.x + grect.w) + margin
-        min_y = int(grect.y) - margin
-        max_y = int(grect.y + grect.h) + margin
-        total_cells = (max_x - min_x + 1) * (max_y - min_y + 1)
-
+        """Query only nearby cells, including solid defaults and wrapped copies."""
+        min_x = math.floor(grect.x) - margin
+        max_x = math.floor(grect.x + grect.w) + margin
+        min_y = math.floor(grect.y) - margin
+        max_y = math.floor(grect.y + grect.h) + margin
         blocks = []
-        _solid = self._solid_index
-        _grid = self.grid
-        _wrap = self._wrap_grid_coord
-        _bt_fast = self._bt_fast
-        _loop_x = self.loop_x
-        _loop_y = self.loop_y
-        _w = self.width
-        _h = self.height
-        _edge = self.edge_behavior
-        _boundary_bt = self._boundary_bt
-
-        # 循环世界：稀疏路径在边界处会漏掉对侧方块，直接走逐格扫描
-        if _loop_x or _loop_y or len(_solid) > total_cells * 0.7:
-            # 稠密地图：逐格扫描
-            for gx in range(min_x, max_x + 1):
-                for gy in range(min_y, max_y + 1):
-                    coord = _wrap(gx, gy)
-                    if coord is None:
-                        if _edge == "solid" and _boundary_bt and _boundary_bt.is_solid:
-                            blocks.append((GameRect(gx, gy, 1, 1), _boundary_bt))
-                        continue
-                    tile = _grid.get(coord)
-                    if tile is not None:
-                        tid = tile.type_id
-                        if 0 <= tid < len(_bt_fast):
-                            bt = _bt_fast[tid]
-                        else:
-                            bt = self.block_types.get(tid)
-                        if bt and bt.is_solid:
-                            blocks.append((GameRect(gx, gy, 1, 1), bt))
-        else:
-            # 稀疏地图：通过实体索引快速过滤
-            # 确定查询范围内的 Chunk 范围
-            c_min_x = min_x // CHUNK_SIZE
-            c_max_x = max_x // CHUNK_SIZE
-            c_min_y = min_y // CHUNK_SIZE
-            c_max_y = max_y // CHUNK_SIZE
-
-            for gx, gy in _solid:
-                # 快速排除不在范围内的坐标
-                if gx < min_x or gx > max_x or gy < min_y or gy > max_y:
-                    continue
-                coord = _wrap(gx, gy)
+        for gx in range(min_x, max_x + 1):
+            for gy in range(min_y, max_y + 1):
+                coord = self._wrap_grid_coord(gx, gy)
                 if coord is None:
-                    continue
-                tile = _grid.get(coord)
-                if tile is None:
-                    continue
-                tid = tile.type_id
-                if 0 <= tid < len(_bt_fast):
-                    bt = _bt_fast[tid]
+                    bt = self._boundary_bt if self.edge_behavior == "solid" else None
                 else:
-                    bt = self.block_types.get(tid)
-                if bt and bt.is_solid:
+                    bt = self.get_block_type_by_coord(*coord)
+                if bt is not None and bt.is_solid:
                     blocks.append((GameRect(gx, gy, 1, 1), bt))
-
-            # 边界处理
-            if _edge == "solid" and _boundary_bt and _boundary_bt.is_solid:
-                for gx in range(min_x, max_x + 1):
-                    for gy in range(min_y, max_y + 1):
-                        if _wrap(gx, gy) is None:
-                            blocks.append((GameRect(gx, gy, 1, 1), _boundary_bt))
-
         return blocks
 
     # ================================================================
     #  越界检测
     # ================================================================
     def is_out_of_bounds(self, x: float, y: float) -> bool:
-        gx, gy = int(x), int(y)
-        if self.loop_x or self.loop_y:
-            return False
-        if self.edge_behavior == "void":
-            if (gx < -self.void_limit or gx >= self.width + self.void_limit or
-                    gy < -self.void_limit or gy >= self.height + self.void_limit):
-                return True
-            return False
-        return gx < 0 or gx >= self.width or gy < 0 or gy >= self.height
+        margin = self.void_limit if self.edge_behavior == "void" else 0
+        outside_x = not self.loop_x and (x < -margin or x >= self.width + margin)
+        outside_y = not self.loop_y and (y < -margin or y >= self.height + margin)
+        return outside_x or outside_y
 
     # ================================================================
     #  绘制（Chunk 缓存 + 增量重渲染）
