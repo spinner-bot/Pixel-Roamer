@@ -1,0 +1,99 @@
+{
+  "code_revision": "74f29c7a3aa6c854c9b74ba8d4945ee02afaf7f6",
+  "legacy_revision": "956158f",
+  "scope": "isolated launch contact and production session jump input",
+  "before": [
+    {
+      "fps": 30,
+      "after_contact": {
+        "ground": true,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 10.849999999999994,
+        "stamina": 185.29068524410567,
+        "position": [
+          5.5,
+          4.0147916666666665
+        ]
+      }
+    },
+    {
+      "fps": 60,
+      "after_contact": {
+        "ground": true,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 11.174999999999997,
+        "stamina": 185.1323457532659,
+        "position": [
+          5.5,
+          3.465520833333333
+        ]
+      }
+    },
+    {
+      "fps": 144,
+      "after_contact": {
+        "ground": true,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 11.391666666666666,
+        "stamina": 185.0264980164388,
+        "position": [
+          5.5,
+          3.0903125
+        ]
+      }
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "after_contact": {
+        "ground": false,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 34.349999999999994,
+        "stamina": 200.0,
+        "position": [
+          5.5,
+          6.364791666666667
+        ]
+      }
+    },
+    {
+      "fps": 60,
+      "after_contact": {
+        "ground": false,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 34.675,
+        "stamina": 200.0,
+        "position": [
+          5.5,
+          4.640520833333333
+        ]
+      }
+    },
+    {
+      "fps": 144,
+      "after_contact": {
+        "ground": false,
+        "vy": 35.0
+      },
+      "after_jump_request": {
+        "vy": 34.891666666666666,
+        "stamina": 200.0,
+        "position": [
+          5.5,
+          3.4819791666666666
+        ]
+      }
+    }
+  ]
+}
