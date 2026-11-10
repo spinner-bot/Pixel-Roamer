@@ -9,7 +9,7 @@ world = World(
     map_id=MAP_ID, name="终焉神殿",
     w=50, h=45,
     gravity=-6.5, view_blocks_h=18,
-    spawn_points=(6, 18),
+    spawn_points=(4.5, 18.9),
     mode="explore",
     default_block_id=11,
 )
@@ -108,7 +108,7 @@ world.set_tile(31, 26, 314)
 # 传送门（去隐藏室）
 world.set_tile(28, 17, 300)
 if (28, 17) in world.grid:
-    world.grid[(28, 17)].meta = {"tp_x": 44, "tp_y": 38}
+    world.grid[(28, 17)].meta = {"tp_x": 44.5, "tp_y": 40.9}
 
 # ============ 西侧攀爬塔 (x=36~49, y=16~42) ============
 fill(36, 15, 49, 15, 230)
@@ -161,5 +161,9 @@ world.set_tile(46, 39, 316)
 for hx, hy in [(6,18),(24,10),(28,20),(43,38),(36,29),(28,15)]:
     if world.get_tile(hx, hy).type_id == 0:
         world.set_tile(hx, hy, 290)
+
+# 连接起始室、东走廊、中央大厅及原有攀爬塔。
+for door_x in (12, 20, 21, 35):
+    fill(door_x, 17, door_x, 19, 0)
 
 world.end_bulk_load()
