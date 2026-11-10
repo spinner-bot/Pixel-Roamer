@@ -26,3 +26,5 @@
 格式化数据：`python3 scripts/format_catalogs.py`。迁移前所有方块定义、图案、状态图标和时装帧都有哈希基线；运行 `python3 -m unittest discover -s tests -p test_catalogs.py -v` 验证属性及像素一致性。未来有意修改外观时应保留修改前后截图并明确更新相应视觉基线。
 
 地图的运行配置仍放在 `maps/<目录>/config.json`，沿用地图编辑器保存/加载和 `map_config.py` 数值校验。生成地图的算法保留在 Python 中，内容定义和执行逻辑分离。
+
+`interface.json` 中的 player 字段默认值是游戏角色预设的统一来源，由 `resource_catalog.player_defaults()` 校验加载；`player_factory.create_world_player()` 用于实际启动和地图审计，地图 config.json 的 player 值覆盖该预设。编辑器读取同一份默认值，避免仅保存默认配置就改变物理参数。
