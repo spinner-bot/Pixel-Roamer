@@ -8,7 +8,7 @@ import game_text as gt
 from pixel_roamer.ui.config import FONT24, FONT28, FONT56
 from pixel_roamer.ui.widgets import draw_text_center
 from pixel_roamer.visual_effects import WorldEffects
-from pixel_roamer.ui.theme import PALETTE as P, key_hint
+from pixel_roamer.ui.theme import PALETTE as P, key_hint, panel
 
 class WorldView:
     """Existing world rendering and feedback."""
@@ -155,3 +155,12 @@ class WorldView:
         key_hint(self.app.logic_surface, "H", "操作指南", LOGIC_WIDTH - 202, LOGIC_HEIGHT - 44)
         if self.app.help_open:
             self.app.help.draw(self.app.logic_surface)
+        if not getattr(self.app, 'focused', True):
+            shade = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT), pygame.SRCALPHA)
+            shade.fill((0, 0, 0, 145))
+            self.app.logic_surface.blit(shade, (0, 0))
+            panel(self.app.logic_surface, (460, 350, 680, 188))
+            gt.draw(self.app.logic_surface, '已暂停', 800, 380, 48,
+                    P['text'], 'sans', center_x=True)
+            gt.draw(self.app.logic_surface, '返回游戏窗口后继续漫游', 800, 464, 24,
+                    P['muted'], 'sans', center_x=True)
