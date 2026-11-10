@@ -10,7 +10,7 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
-加载页完成后按 Enter/空格进入主页，按 Esc 可跳过加载。主页选择“开始游戏”后，在地图列表中选择地图并按 Enter 开始。
+加载页完成后按 Enter/空格进入主页，按 Esc 可跳过加载。主页选择“开始漫游”后，在地图列表中选择地图并按 Enter 开始。
 
 ## 操作
 
@@ -20,7 +20,8 @@ python main.py
 - F：切换飞行模式
 - C：切换时装
 - 游戏中 Esc：返回地图列表；Backspace：打开设置
-- F1/F2：调整帧率上限
+- H：打开/关闭操作帮助，帮助打开时暂停游戏
+- F1/F2：调整显示帧率上限，世界模拟固定为 120 Hz
 
 ## 回归检查
 
@@ -45,6 +46,15 @@ python scripts/audit_runtime.py --frames 36000 --block-frames 300 --output /tmp/
 - `main.py`：启动入口；`pixel_roamer/application.py`：窗口和页面协调。
 - `pixel_roamer/world_session.py` / `world_view.py`：世界规则更新与绘制。
 - `pixel_roamer/ui/`：HUD、设置、地图浏览/编辑及方块/buff 图鉴。
-- `collision.py` / `status_effects.py`：碰撞几何和状态数值处理。
+- `collision.py` / `status_effects.py` / `simulation.py`：碰撞几何、状态数值和固定模拟时钟。
 - `data/catalogs/`：方块、buff、时装及编辑字段 JSON；格式见 [数据说明](data/README.md)。
-- `maps/`：现有地图生成算法和配置；`tests/`：自动回归与主循环场景。
+- `maps/`：地图算法、配置与主题地图 JSON 布局；`tests/`：自动回归与主循环场景。
+
+三张紧凑主题地图可在列表底部选择：1001 晨光林径、1002 霜月观测台、1003 琥珀水道。主路通向终点，上层平台提供收集支线。
+
+```bash
+python scripts/audit_theme_routes.py --output /tmp/pixel-routes.json
+python scripts/audit_frame_rates.py --output /tmp/pixel-frame-rates.json
+```
+
+中文像素字体随项目提供；没有可用音频设备时，游戏跳过声音并继续运行。完整过程、像素比较和原始审计数据见 [自主推进台账](docs/进展报告/2026-11-11_自主推进工作台账.md)。
