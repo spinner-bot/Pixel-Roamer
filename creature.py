@@ -498,7 +498,7 @@ class Creature:
             bt = world.block_types.get(bid)
             if bt:
                 types.append(bt)
-        if not any(bt.special == "teleport" for bt in types):
+        if not any(bt.special in ("teleport", "ender") for bt in types):
             self._teleport_latched = False
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
@@ -670,11 +670,12 @@ class Creature:
                     # 破坏时爆炸（由方块破坏逻辑处理）
                     pass
                 elif bt.special == "ender" and bt.special_data is not None:
-                    # 随机传送：special_data = (x_range, y_range) 最大偏移
-                    import random
-                    rx, ry = bt.special_data
-                    self._x += random.uniform(-rx, rx)
-                    self._y += random.uniform(-ry, ry)
+                    if getattr(self, '_teleport_latched', False):
+                        continue
+                    self._teleport_latched = True
+                    from teleport import random_teleport
+                    if random_teleport(self, world, bt.special_data):
+                        return
 
                 # ========== 新增功能方块特效 ==========
                 elif bt.special == "catapult" and bt.special_data is not None:
