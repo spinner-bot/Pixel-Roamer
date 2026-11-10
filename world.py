@@ -403,15 +403,6 @@ class World:
 
         for cx in range(min_cx, max_cx + 1):
             for cy in range(min_cy, max_cy + 1):
-                # 循环世界：Chunk 索引映射到有效范围
-                wck = self._chunk_wrap(cx, cy) if (self.loop_x or self.loop_y) else (cx, cy)
-                chunk_surf = self._chunk_surfaces.get(wck)
-                if chunk_surf is None or wck in self._dirty_chunks:
-                    self._render_chunk(wck)
-                    chunk_surf = self._chunk_surfaces[wck]
-                else:
-                    self._chunk_surfaces.move_to_end(wck)
-
                 # Chunk 世界坐标左下角
                 chunk_wx = cx * CHUNK_SIZE
                 chunk_wy = cy * CHUNK_SIZE
@@ -421,6 +412,25 @@ class World:
                 bottom = round(sy_top + CHUNK_SIZE * scale)
                 sx, sy_top = round(sx), round(sy_top)
                 blit_w, blit_h = max(1, right - sx), max(1, bottom - sy_top)
+
+                destination = pygame.Rect(sx, sy_top, blit_w, blit_h)
+                if not destination.colliderect(surface.get_clip()):
+                    continue
+
+                # 循环世界：Chunk 索引映射到有效范围
+                wck = self._chunk_wrap(cx, cy) if (self.loop_x or self.loop_y) else (cx, cy)
+                chunk_surf = self._chunk_surfaces.get(wck)
+                if chunk_surf is None or wck in self._dirty_chunks:
+                    self._render_chunk(wck)
+                    chunk_surf = self._chunk_surfaces[wck]
+                else:
+                    self._chunk_surfaces.move_to_end(wck)
+
+                estimated_bytes = blit_w * blit_h * chunk_surf.get_bytesize()
+                if estimated_bytes > MAX_SCALED_CACHE_BYTES:
+                    from chunk_scaling import blit_large_chunk
+                    blit_large_chunk(surface, chunk_surf, destination)
+                    continue
 
                 # 缩放至屏幕尺寸（缓存避免每帧分配巨型临时Surface）
                 need_scale = (blit_w != CHUNK_SIZE * CHUNK_TEX_PX or blit_h != CHUNK_SIZE * CHUNK_TEX_PX)
