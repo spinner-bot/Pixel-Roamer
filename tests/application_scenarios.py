@@ -106,6 +106,7 @@ def scenarios(g):
     yield key(pygame.K_ESCAPE)
 
     # Invalid editor input must remain editable and must not overwrite a file.
+    assert g["_get_edit_config"](20)["world"]["fill_color"] == "20,15,30"
     g["_dev_selected_id"] = 1
     g["_dev_edit_config"] = g["_get_edit_config"](1)
     g["_dev_edit_config"]["world"]["gravity"] = float("nan")
