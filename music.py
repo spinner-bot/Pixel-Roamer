@@ -25,10 +25,8 @@ _RENDER_FRAME_BUDGET = 0.004
 def _ensure_init():
     """确保混音器和 sfx 已初始化。"""
     global _music_initialized
-    if _music_initialized:
-        return
-    sfx._ensure_init()
-    _music_initialized = True
+    _music_initialized = sfx._ensure_init()
+    return _music_initialized
 
 
 # ===================== 公开 API =====================
@@ -39,7 +37,8 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     """
     global _current_track, _current_sound
 
-    _ensure_init()
+    if not _ensure_init():
+        return
 
     sound = _music_cache.get(track_key)
     if sound is None:
@@ -118,7 +117,8 @@ def is_playing() -> bool:
 def play_file(filename: str, fade_in_ms: int = 800, loops: int = -1):
     """Play a streamed file through the same stop/volume lifecycle as synths."""
     global _current_track
-    _ensure_init()
+    if not _ensure_init():
+        return
     stop(fade_out_ms=0)
     pygame.mixer.music.load(filename)
     pygame.mixer.music.set_volume(_music_volume)
@@ -755,6 +755,8 @@ _original_play = play
 def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     """按需逐帧合成曲目，调用时不会同步渲染音频。"""
     global _requested_track
+    if not _ensure_init():
+        return
     if pygame.mixer.get_init():
         pygame.mixer.music.stop()
     if track_key in _music_cache:
@@ -767,7 +769,6 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
         _original_play(track_key, fade_in_ms, loops)
         return
 
-    _ensure_init()
     if track_key not in _pending_tracks:
         pattern_factory, volume = builder
         pattern = pattern_factory()
@@ -778,6 +779,8 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
 def update():
     """按每帧 CPU 预算推进曲目合成，并启动最近请求的曲目。"""
     global _requested_track
+    if not _ensure_init():
+        return
 
     deadline = time.perf_counter() + _RENDER_FRAME_BUDGET
     for key, renderer in list(_pending_tracks.items()):
