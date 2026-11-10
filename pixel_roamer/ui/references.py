@@ -1,6 +1,6 @@
 from __future__ import annotations
 import pygame
-from constants import LOGIC_WIDTH, LOGIC_HEIGHT, INIT_WIN_W, INIT_WIN_H, MIN_FPS, MAX_FPS, DEFAULT_FPS
+from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 import game_text as gt
 
 class ReferenceBrowser:
