@@ -19,6 +19,8 @@ _stereo = False             # 当前是否为立体声模式（成功初始化�
 RATE = 22050
 MAX_AMP = 32767
 OUTPUT_CHANNELS = 2         # 立体声输出（2 = 左右声道）
+SFX_CHANNEL_COUNT = 8
+MUSIC_CHANNEL_IDS = (8, 9)
 
 # ---- 各音效基准音量（与 _sfx_volume 相乘得到最终音量） ----
 _BASE_VOLUMES = {
@@ -75,9 +77,10 @@ def _ensure_init():
             _stereo = True
 
         # 分配专用声道
-        num_ch = pygame.mixer.get_num_channels()  # 默认 8
-        _channels = [None] * num_ch
-        for i in range(num_ch):
+        pygame.mixer.set_num_channels(max(pygame.mixer.get_num_channels(), 10))
+        pygame.mixer.set_reserved(SFX_CHANNEL_COUNT)
+        _channels = [None] * SFX_CHANNEL_COUNT
+        for i in range(SFX_CHANNEL_COUNT):
             _channels[i] = pygame.mixer.Channel(i)
 
         _initialized = True
