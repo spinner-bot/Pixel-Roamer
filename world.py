@@ -1,5 +1,6 @@
 from __future__ import annotations
 from collections import OrderedDict
+from copy import copy, deepcopy
 import pygame
 from typing import Optional, Tuple, Any
 
@@ -84,6 +85,23 @@ class World:
         self._scaled_chunk_cache_bytes = 0
         self._dirty_chunks = set()         # 待重渲染的 Chunk 键
         self._bulk_loading = False         # 批量加载模式标志
+
+    def create_session(self):
+        """Create mutable gameplay state without changing the generated template."""
+        session = copy(self)
+        session.grid = {
+            coord: Tile(tile.type_id, deepcopy(tile.meta))
+            for coord, tile in self.grid.items()
+        }
+        session.default_tile = Tile(self.default_tile.type_id, deepcopy(self.default_tile.meta))
+        session._solid_index = self._solid_index.copy()
+        session._chunk_surfaces = OrderedDict()
+        session._scaled_chunk_cache = OrderedDict()
+        session._scaled_chunk_cache_bytes = 0
+        session._dirty_chunks = set()
+        session._bulk_loading = False
+        session.player_config = deepcopy(getattr(self, 'player_config', {}))
+        return session
 
     # ================================================================
     #  坐标包装（内联快速路径）
