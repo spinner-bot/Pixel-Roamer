@@ -99,8 +99,7 @@ class WorldSession:
                     self.app.player1._y = max(0.5, min(self.app.player1._y, self.app._current_map.height - 0.5))
                 # 更新接触池（用于绘制等）
                 grect = self.app.player1.get_game_rect()
-                self.app.player1.contact_pool = set()
-                self.app.player1.stand_pool = None
+                self.app.player1.clear_environment_contacts(self.app._current_map)
             else:
                 # ---- 正常模式 ----
                 dir_x = 0.0
