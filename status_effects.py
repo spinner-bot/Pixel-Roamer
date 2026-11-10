@@ -98,3 +98,23 @@ def modified_stat(actor, stat_name, base_value):
         if stat_name == "stamina_cost" and kind.tick == "weakened":
             result *= max(0, float(buff.params[0]) if buff.params else 2)
     return result
+
+
+def advance_environment_timers(actor, dt):
+    """Timed contact effects advance even when flight or stun skips physics."""
+    cooldowns = getattr(actor, "_special_cooldowns", {})
+    for name in list(cooldowns):
+        cooldowns[name] -= dt
+        if cooldowns[name] <= 1e-12:
+            del cooldowns[name]
+    for timer, flag in (("_phantom_timer", "_phantom_active"),
+                        ("_confusion_timer", "_confused")):
+        remaining = max(0.0, getattr(actor, timer, 0.0) - dt)
+        setattr(actor, timer, remaining)
+        if remaining <= 1e-12:
+            setattr(actor, flag, False)
+    if getattr(actor, "_shore_exit_pending", False) and not actor.has_buff(58):
+        actor._shore_exit_pending = False
+    if (getattr(actor, "fly_mode", False) or actor.is_climbing
+            or (actor.has_buff(28) and not actor.has_buff(40))):
+        actor._wind_walk_timer = 0.0
