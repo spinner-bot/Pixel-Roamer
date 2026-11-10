@@ -1,5 +1,6 @@
 from __future__ import annotations
 import pygame
+from collections import OrderedDict
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 import sfx
 import game_text as gt
@@ -11,6 +12,26 @@ class HudRenderer:
 
     def __init__(self, app):
         self.app = app
+        self._icons = OrderedDict()
+
+    def _buff_icon(self, btype, size):
+        """Keep rasterization out of the frame loop; bound alternate sizes too."""
+        from pattern import _draw_vector, _draw_bitmap
+        key = (btype.id, size, id(btype.icon))
+        if key in self._icons:
+            self._icons.move_to_end(key)
+            return self._icons[key]
+        surface = pygame.Surface((size, size))
+        surface.fill((60, 60, 80))
+        icon = btype.icon
+        if icon and icon[0] in ("vector", "bitmap"):
+            renderer = _draw_vector if icon[0] == "vector" else _draw_bitmap
+            surface.fill((0, 0, 0))
+            surface.blit(renderer(icon, size, size), (0, 0))
+        self._icons[key] = surface
+        while len(self._icons) > 128:
+            self._icons.popitem(last=False)
+        return surface
 
     def _draw_single_bar(self, surf, x, y, w, h, pad, border_r,
                          fill_ratio: float, fill_ratio2: float,
@@ -281,7 +302,6 @@ class HudRenderer:
         import math
         import buff_data
         from buff_system import BUFF_TYPES
-        from pattern import _draw_vector, _draw_bitmap
 
         p = BAR_H                     # 图标边长（与血条等高）
         gap = int(p * 0.2)            # 间隙
@@ -304,22 +324,7 @@ class HudRenderer:
             self.app._buff_icon_rects.append((ix, iy, p, b))
 
             # ---- 绘制图标 ----
-            icon_surf = pygame.Surface((p, p))
-            try:
-                icon = btype.icon
-                fmt = icon[0]
-                if fmt == "vector":
-                    psurf = _draw_vector(icon, p, p)
-                elif fmt == "bitmap":
-                    psurf = _draw_bitmap(icon, p, p)
-                else:
-                    psurf = None
-                if psurf is not None:
-                    icon_surf.blit(psurf, (0, 0))
-                else:
-                    icon_surf.fill((60, 60, 80))
-            except Exception:
-                icon_surf.fill((60, 60, 80))
+            icon_surf = self._buff_icon(btype, p)
             surf.blit(icon_surf, (ix, iy))
             pygame.draw.rect(surf, (100, 100, 130), (ix, iy, p, p), 1)
 
