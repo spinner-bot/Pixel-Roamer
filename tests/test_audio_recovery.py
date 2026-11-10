@@ -70,3 +70,26 @@ assert not music._pending_tracks
                                 cwd=Path(__file__).resolve().parents[1],
                                 capture_output=True, text=True, timeout=10)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_critical_effects_cannot_steal_music_and_repeated_play_does_not_stack(self):
+        self.assertTrue(sfx._ensure_init())
+        sfx.play_death()
+        first = music._render_note(220, 1)
+        second = music._render_note(330, 1)
+        music._music_cache.update(probe=first, other=second)
+        try:
+            music.play('probe', fade_in_ms=0)
+            channel_id = music._current_channel_id
+            self.assertIn(channel_id, sfx.MUSIC_CHANNEL_IDS)
+            sfx.play_death()
+            self.assertEqual(first.get_num_channels(), 1)
+            for _ in range(4):
+                music.play('probe', fade_in_ms=0)
+            self.assertEqual(first.get_num_channels(), 1)
+            music.play('other', fade_in_ms=0)
+            self.assertNotEqual(channel_id, music._current_channel_id)
+            self.assertIs(pygame.mixer.Channel(music._current_channel_id).get_sound(), second)
+            sfx.play_win()
+            self.assertEqual(second.get_num_channels(), 1)
+        finally:
+            music.stop(0)
