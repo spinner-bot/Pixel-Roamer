@@ -103,7 +103,7 @@ class MapSelector:
             self.app._dev_selected_id = ids[max(0, min(len(ids) - 1, index - event.y))]
             return True
         if event.type in (pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN):
-            pos = getattr(event, "pos", pygame.mouse.get_pos())
+            pos = event.pos if hasattr(event, "pos") else pygame.mouse.get_pos()
             point = ((pos[0] - self.app.draw_offset_x) / self.app.scale,
                      (pos[1] - self.app.draw_offset_y) / self.app.scale)
             for map_id, rect in rows:
