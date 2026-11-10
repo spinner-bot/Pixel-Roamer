@@ -56,7 +56,7 @@ def scenarios(g):
     assert g["page"] == g["PAGE_HOME"]
     yield [pygame.event.Event(pygame.VIDEORESIZE, w=0, h=0)]
     assert g["scale"] > 0
-    yield key(pygame.K_RETURN)
+    yield key(pygame.K_KP_ENTER)
     assert g["page"] == g["PAGE_DEV"]
     capture(g, "maps")
     yield key(pygame.K_b)
@@ -231,9 +231,36 @@ def scenarios(g):
     yield key(pygame.K_s)
     assert g["_dev_error"] and g["_dev_edit_dirty"]
     yield key(pygame.K_ESCAPE)
+    yield key(pygame.K_e)
+    from pixel_roamer.ui.config import _EDITABLE_FIELDS
+    fields = _EDITABLE_FIELDS
+    g['_dev_edit_field_idx'] = next(i for i, field in enumerate(fields) if field[0] == 'player.f_y')
+    g['_dev_edit_config']['player']['f_y'] = .9965
+    yield key(pygame.K_KP_ENTER)
+    assert g['_dev_inputting'] and g['_dev_input_text'] == '0.9965'
+    capture(g, 'editor_value')
+    yield [pygame.event.Event(pygame.TEXTINPUT, text='0.9965')]
+    yield key(pygame.K_KP_ENTER)
+    assert g['_dev_edit_config']['player']['f_y'] == .9965
+    original_folder = g['list_maps']()[1]
+    yield key(pygame.K_r)
+    yield [pygame.event.Event(pygame.TEXTEDITING, text='晨', start=0, length=1)]
+    capture(g, 'editor_ime')
+    yield key(pygame.K_RETURN)
+    assert g['_dev_renaming'], 'IME confirmation submitted the rename prematurely'
+    yield [pygame.event.Event(pygame.TEXTINPUT, text='晨光演示')]
+    assert g['_dev_input_text'] == '晨光演示'
+    yield [pygame.event.Event(pygame.WINDOWFOCUSLOST), pygame.event.Event(pygame.TEXTINPUT, text='应忽略')]
+    assert g['_dev_input_text'] == '晨光演示'
+    yield [pygame.event.Event(pygame.WINDOWFOCUSGAINED)]
+    yield key(pygame.K_ESCAPE)
+    assert not g['_dev_renaming'] and not g['_dev_inputting']
+    yield key(pygame.K_ESCAPE)
+    assert g['list_maps']()[1] == original_folder
     print(json.dumps({"maps_navigated": len(map_ids), "settings_resume": "passed",
                       "terminal_freeze": "passed", "finite_lives": "passed",
-                      "confusion_input": "passed", "invalid_editor_save": "passed"}))
+                      "confusion_input": "passed", "invalid_editor_save": "passed",
+                      "editor_text_input": "passed"}))
     yield [pygame.event.Event(pygame.QUIT)]
 
 
