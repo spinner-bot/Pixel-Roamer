@@ -34,6 +34,10 @@ def scenarios(g):
     assert g["page"] == g["PAGE_INIT"]
     yield key(pygame.K_ESCAPE)
     assert g["page"] == g["PAGE_HOME"]
+    yield [pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=(5, 5))]
+    assert g["page"] == g["PAGE_HOME"], "background click activated menu selection"
+    yield [pygame.event.Event(pygame.VIDEORESIZE, w=0, h=0)]
+    assert g["scale"] > 0
     yield key(pygame.K_RETURN)
     assert g["page"] == g["PAGE_DEV"]
     map_ids = sorted(g["list_maps"]())
@@ -44,8 +48,9 @@ def scenarios(g):
         player = g["player1"]
         timer = g["_game_timer"]
         position = player.get_center()
-        yield key(pygame.K_BACKSPACE)
+        yield key(pygame.K_SPACE) + key(pygame.K_BACKSPACE)
         assert g["page"] == g["PAGE_SETTING"]
+        assert not g["jump_pressed"]
         for _ in range(3):
             yield []
             assert g["_game_timer"] == timer
@@ -69,12 +74,19 @@ def scenarios(g):
     yield []
     assert player.a_x < 0, "confusion did not reverse input"
     held_keys.clear()
+    player._confused = False
+    player.apply_buff(27, (), 0.05)
+    yield key(pygame.K_SPACE)
+    for _ in range(5):
+        yield []
+    assert not g["jump_pressed"] and player.v_y <= 0, "blocked jump leaked into a later frame"
     yield key(pygame.K_ESCAPE)
 
     # Timed failure and target victory must freeze damage-over-time effects.
     for map_id, terminal in ((8, "_game_over"), (9, "_game_win")):
         g["_dev_selected_id"] = map_id
         yield key(pygame.K_RETURN)
+        assert not g["_win_played"] and not g["_death_played"]
         player = g["player1"]
         if map_id == 8:
             g["_game_timer"] = g["_current_map"].time_limit
