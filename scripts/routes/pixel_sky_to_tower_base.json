@@ -1,0 +1,85 @@
+{
+  "map_id": 3,
+  "scope": "normal forest spawn through original sky branch, ice roof and pyramid to tower base; same continuous session",
+  "waypoints": [
+    {
+      "name": "above_t2",
+      "x": 217.5,
+      "y": 115.0,
+      "kind": "air",
+      "speed": 5
+    },
+    {
+      "name": "east_island_booster",
+      "x": 241.5,
+      "y": 70.9,
+      "kind": "ground",
+      "speed": 5
+    },
+    {
+      "name": "ice_vine",
+      "x": 268.5,
+      "y": 64.98,
+      "kind": "climb",
+      "speed": 5
+    },
+    {
+      "name": "ice_roof",
+      "x": 275.5,
+      "y": 76.9,
+      "kind": "rest",
+      "speed": 5,
+      "stamina_min": 95
+    },
+    {
+      "name": "ice_east_runup",
+      "x": 303.5,
+      "y": 76.9,
+      "kind": "ground",
+      "speed": 5
+    },
+    {
+      "name": "pyramid_west",
+      "x": 330.5,
+      "y": 80.9,
+      "kind": "ground",
+      "speed": 12
+    },
+    {
+      "name": "before_t3",
+      "x": 372.5,
+      "y": 80.9,
+      "kind": "ground",
+      "speed": 10
+    },
+    {
+      "name": "above_t3",
+      "x": 372.5,
+      "y": 85.0,
+      "kind": "air",
+      "speed": 5
+    },
+    {
+      "name": "after_t3",
+      "x": 380.5,
+      "y": 80.9,
+      "kind": "ground",
+      "speed": 8
+    },
+    {
+      "name": "pyramid_east",
+      "x": 420.5,
+      "y": 80.9,
+      "kind": "rest",
+      "speed": 10,
+      "stamina_min": 95
+    },
+    {
+      "name": "tower_base",
+      "x": 433.5,
+      "y": 11.9,
+      "kind": "ground",
+      "speed": 6
+    }
+  ]
+}
