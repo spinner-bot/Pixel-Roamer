@@ -1,0 +1,1361 @@
+{
+  "code_revision": "67ad84d81f35c2bb13f08902692fa89589aa5c8c",
+  "scope": "signed-response API contract probes and actual386/403/411 contact fixtures; no injected Buff for source rows, no key input, not original-map reachability evidence",
+  "parameters": [
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.18693377147834056,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.14788564129093373,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.267914716080206,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.4296145924693562,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.267914716080206,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.4296145924693562,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.4296145924693562,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.267914716080206,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.4296145924693562,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 30,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.267914716080206,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 60,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 0,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 0,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        0
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.0,
+      "dx": 0.0,
+      "description": "被附近的磁矿石吸引或排斥（中性，不受磁力）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -1,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.043357613596947606,
+      "dx": 0.1621421094837494,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -1,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.043357613596947606,
+      "dx": -0.1320175380657922,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": 2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -2,
+      "side": -1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": -1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": 0.08671522719389521,
+      "dx": 0.365404998305209,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": -2,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": null,
+      "actual_params": [
+        -2
+      ],
+      "actual_source": null,
+      "first_tick_vx": -0.08671522719389521,
+      "dx": -0.24165597269820438,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向，响应强度2倍）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    }
+  ],
+  "sources": [
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 386,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 386,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.14523981772626016,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 386,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 386,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.15678265643457046,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 386,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 386,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.15678265643457046,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 403,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 403,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.27668844993544717,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 403,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 403,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.27056518015789344,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 403,
+      "actual_params": [
+        1
+      ],
+      "actual_source": 403,
+      "first_tick_vx": 0.1637425005692962,
+      "dx": 0.27056518015789344,
+      "description": "被附近的磁矿石吸引或排斥（磁极正向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 30,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 411,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": 411,
+      "first_tick_vx": -0.1637425005692962,
+      "dx": -0.5096074825353387,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.26666666666666666
+    },
+    {
+      "fps": 60,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 411,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": 411,
+      "first_tick_vx": -0.1637425005692962,
+      "dx": -0.4593337698809119,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    },
+    {
+      "fps": 144,
+      "response_parameter": null,
+      "side": 1,
+      "ore_polarity": 1,
+      "source_block": 411,
+      "actual_params": [
+        -1
+      ],
+      "actual_source": 411,
+      "first_tick_vx": -0.1637425005692962,
+      "dx": -0.4593337698809119,
+      "description": "被附近的磁矿石吸引或排斥（磁极反向）",
+      "hp": 150.0,
+      "respawns": 0,
+      "elapsed": 0.24999999999999997
+    }
+  ]
+}
