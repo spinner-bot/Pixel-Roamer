@@ -35,8 +35,16 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
     min_hp, min_stamina = player.hp, player.stamina
     contacts_seen, draws, max_frame_dx, max_frame_dy = set(), 0, 0, 0
     y_wraps = []
+    draw_trace = []
     world = app._current_map
     surface = pygame.Surface((1600, 900)) if draw_every else None
+
+    def capture_draw(reason, waypoint):
+        nonlocal draws
+        world.draw(surface, app.camera)
+        draws += 1
+        draw_trace.append({'reason': reason, 'waypoint': waypoint, 'timer': app._game_timer,
+                           'position': player.get_center()})
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
         for frame in range(duration * fps):
@@ -61,6 +69,8 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
                 arrived &= can_place(player, world, player._x, player._y + waypoint['headroom'])
             jump = False
             if arrived:
+                if draw_every:
+                    capture_draw('waypoint', waypoint['name'])
                 arrivals.append({'name': waypoint['name'], 'time': app._game_timer,
                                  'position': player.get_center(), 'stamina': player.stamina,
                                  'hp': player.hp, 'shield': player.shield,
@@ -99,8 +109,7 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
             if player.stand_pool is not None:
                 contacts_seen.add(player.stand_pool)
             if draw_every and frame % (draw_every * fps) == 0:
-                session.app._current_map.draw(surface, app.camera)
-                draws += 1
+                capture_draw('interval', waypoint['name'])
             min_hp, min_stamina = min(min_hp, player.hp), min(min_stamina, player.stamina)
             if frame % fps == 0:
                 trace.append({'time': app._game_timer, 'phase': waypoint['name'],
@@ -119,7 +128,7 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
             'timer': app._game_timer, 'elapsed_timer': app._game_timer - start_timer, 'control_frames': frame if reached else frame + 1,
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'final_hp': player.hp, 'final_stamina': player.stamina,
-            'contacts_seen': sorted(contacts_seen), 'native_draws': draws,
+            'contacts_seen': sorted(contacts_seen), 'native_draws': draws, 'draw_trace': draw_trace,
             'max_frame_dx': max_frame_dx, 'max_frame_dy': max_frame_dy, 'y_wraps': y_wraps,
             'checkpoint_seen': 302 in player.contact_pool or player.stand_pool == 302,
             'respawns': respawns, 'arrivals': arrivals, 'saved_checkpoint': player.spawn_pos,
