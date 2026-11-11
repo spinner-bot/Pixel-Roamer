@@ -482,6 +482,8 @@ class Creature:
             self.contact_pool.add(1)
 
         if self.on_ground:
+            # Recharge on actual support, before a spring/catapult can launch us.
+            self._air_jumps_used = 0
             foot_gx = grect.x + grect.w / 2
             foot_gy = grect.y - 0.001
             bt_foot = world.get_block_type(foot_gx, foot_gy)
@@ -1080,6 +1082,7 @@ class Player(Creature):
                 return False
             best_x = min(candidates, key=lambda x: (abs(x - self._x), x))
         self.is_climbing = True
+        self._air_jumps_used = 0
         self.v_x = self.v_y = self.a_x = self.a_y = 0.0
         self._x = best_x
         return True
