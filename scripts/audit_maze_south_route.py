@@ -21,7 +21,7 @@ from scripts.maze_controls import west_departure
 from scripts.audit_session_soak import errors_for
 
 
-def run(fps, world=None):
+def run(fps, world=None, finish='portal'):
     session = create_control_session(4, world=world)
     app, player = session.app, session.app.player1
     keys = defaultdict(bool)
@@ -35,6 +35,7 @@ def run(fps, world=None):
             previous_phase = phase
             target_x, jump = 20.5, False
             keys[pygame.K_w] = False
+            keys[pygame.K_s] = False
             if phase == 'west_exit':
                 departure, target_x, jump, done = west_departure(player, departure)
                 if done:
@@ -44,11 +45,16 @@ def run(fps, world=None):
                     phase = 'south_climb'
             elif phase == 'south_climb':
                 keys[pygame.K_w] = True
-                if player.is_climbing and player._y >= 8:
-                    phase, jump, target_x = 'south_portal', True, 23.5
+                target_height = 8 if finish == 'portal' else 22.98
+                if player.is_climbing and player._y >= target_height:
+                    phase = 'south_portal' if finish == 'portal' else 'west_return'
+                    jump, target_x = finish == 'portal', 23.5 if finish == 'portal' else 19.5
                     keys[pygame.K_w] = False
             elif phase == 'south_portal':
                 target_x = 23.5
+            elif phase == 'west_return':
+                target_x = 19.5
+                keys[pygame.K_s] = True
             if phase != previous_phase:
                 transitions.append({'time': app._game_timer, 'from': previous_phase, 'to': phase,
                                     'position': player.get_center(), 'stamina': player.stamina})
@@ -74,11 +80,15 @@ def run(fps, world=None):
             if phase == 'south_portal' and hops and abs(player._x - 2.5) < .01 and abs(player._y - 8.9) < .01:
                 reached = True
                 break
+            if phase == 'west_return' and player.on_ground and player._x < 20 and abs(player._y - 22.9) < .1:
+                reached = True
+                break
             if frame - phase_start > 20 * fps:
                 failure = f'{phase} timed out'
                 break
         respawns = reset.call_count
-    return {'fps': fps, 'reached_T2_destination': reached, 'failure': failure,
+    return {'fps': fps, 'reached_T2_destination': reached and finish == 'portal',
+            'returned_to_west_corridor': reached and finish == 'return', 'failure': failure,
             'phase': phase, 'timer': app._game_timer, 'control_frames': frame + 1,
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'climb_input_seconds': climb_frames / fps, 'respawns': respawns,
@@ -100,10 +110,11 @@ def main():
                if old.world.get_tile(x, y).type_id != current.get_tile(x, y).type_id]
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'legacy_revision': 'b745778',
-              'scope': 'normal spawn to original south T2 destination via existing controls; vertical wrap and upper hidden rooms separate',
+              'scope': 'normal spawn to original south T2 and full-shaft return via existing controls; vertical wrap and upper hidden rooms separate',
               'tile_changes': changes,
               'before': [run(fps, old.world.create_session()) for fps in (30, 60, 144)],
-              'after': [run(fps) for fps in (30, 60, 144)]}
+              'after': [run(fps) for fps in (30, 60, 144)],
+              'return_runs': [run(fps, finish='return') for fps in (30, 60, 144)]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({name: [{'fps': r['fps'], 'goal': r['reached_T2_destination'], 'phase': r['phase']} for r in report[name]] for name in ('before', 'after')}))
