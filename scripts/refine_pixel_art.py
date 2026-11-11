@@ -16,6 +16,7 @@ import game_text as gt
 from pattern import _draw_vector, _draw_bitmap, _draw_texture
 from scripts.format_catalogs import formatted
 from scripts.pickup_art import PICKUP_IDS, pickup
+from scripts.decorative_art import DECORATION_IDS, decoration
 
 BASELINE_REF = "e53ea03"
 BLOCK_IDS = (2, 3, 4, 5, 7, 9, 16, 17, 18, 19, 20, 22)
@@ -31,16 +32,17 @@ def pattern_image(pattern, size):
     return renderer(pattern, size, size)
 
 
-def vector(image):
+def vector(image, alpha=False):
+    channels = 4 if alpha else 3
     width, height = image.get_size()
-    base = tuple(image.get_at((0, 0)))[:3]
+    base = tuple(image.get_at((0, 0)))[:channels]
     commands = [["fill", list(base)]]
     for y in range(height):
         x = 0
         while x < width:
-            color = tuple(image.get_at((x, y)))[:3]
+            color = tuple(image.get_at((x, y)))[:channels]
             end = x + 1
-            while end < width and tuple(image.get_at((end, y)))[:3] == color:
+            while end < width and tuple(image.get_at((end, y)))[:channels] == color:
                 end += 1
             if color != base:
                 commands.append(["rect", x, y, end - x, 1, list(color)])
@@ -209,23 +211,25 @@ def main():
     for kind in ('blocks', 'buffs'):
         document = original(kind)
         before = {entry['id']: json.loads(json.dumps(entry)) for entry in document['entries']}
-        chosen = BLOCK_IDS + PICKUP_IDS if kind == 'blocks' else tuple(before)
+        chosen = BLOCK_IDS + PICKUP_IDS + DECORATION_IDS if kind == 'blocks' else tuple(before)
         for entry in document['entries']:
             if entry['id'] not in chosen:
                 continue
             field = 'pattern' if kind == 'blocks' else 'icon'
-            image = terrain(entry['id']) if kind == 'blocks' else status_icon(entry)
-            entry[field] = vector(image)
+            is_decoration = kind == 'blocks' and entry['id'] in DECORATION_IDS
+            image = (decoration(entry['id']) if is_decoration else terrain(entry['id'])) if kind == 'blocks' else status_icon(entry)
+            entry[field] = vector(image, alpha=is_decoration)
             rgba = pattern_image(entry[field], 32)
             overrides[kind][str(entry['id'])] = {
                 'definition': digest(entry), 'rgba32': hashlib.sha256(pygame.image.tobytes(rgba, 'RGBA')).hexdigest(),
-                'reason': ('Distinct silhouette for existing score pickup' if entry['id'] in PICKUP_IDS
+                'reason': 'Upright transparent existing decoration' if is_decoration else ('Distinct silhouette for existing score pickup' if entry['id'] in PICKUP_IDS
                            else 'Reviewed pixel texture refinement') if kind == 'blocks' else 'Consistent category frame and refined status motif'}
         (ROOT / 'data/catalogs' / f'{kind}.json').write_text(formatted(document) + '\n')
         after = {entry['id']: entry for entry in document['entries']}
         gallery(kind, before, after, BLOCK_IDS if kind == 'blocks' else chosen)
         if kind == 'blocks':
             gallery(kind, before, after, PICKUP_IDS, 'pickups_before_after.png')
+            gallery(kind, before, after, DECORATION_IDS, 'decorations_before_after.png')
     (ROOT / 'tests/fixtures/catalog_art_overrides.json').write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + '\n')
 
 
