@@ -13,7 +13,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import pygame
-from scripts.control_session import create_control_session
+from scripts.control_session import create_control_session, available_score, terminal_snapshot
 from teleport import can_place
 
 
@@ -21,9 +21,7 @@ def run(map_id, fps):
     session = create_control_session(map_id)
     app, player = session.app, session.app.player1
     world = app._current_map
-    available_score = sum(world.block_types[tile.type_id].special_data
-                          for tile in world.grid.values()
-                          if world.block_types[tile.type_id].special == 'score')
+    initial_score = available_score(world)
     keys = defaultdict(bool)
     teleported = False
     direction = 1
@@ -72,23 +70,15 @@ def run(map_id, fps):
                               'hp': player.hp, 'stamina': player.stamina, 'score': player.score})
             if app._game_win or app._game_over:
                 break
-        def snapshot():
-            return {'timer': app._game_timer, 'position': player.get_center(),
-                    'velocity': (player.v_x, player.v_y), 'score': player.score,
-                    'hp': player.hp, 'stamina': player.stamina, 'shield': player.shield,
-                    'buffs': [(buff.buff_id, buff.duration, buff.stacks) for buff in player.buffs]}
-
-        final = snapshot()
+        final = terminal_snapshot(session)
         frozen = None
         if app._game_over or app._game_win:
             for _ in range(2 * fps):
                 session.advance(1 / fps)
-            frozen = final == snapshot()
+            frozen = final == terminal_snapshot(session)
         respawns = reset.call_count
-    remaining_score = sum(world.block_types[tile.type_id].special_data
-                          for tile in world.grid.values()
-                          if world.block_types[tile.type_id].special == 'score')
-    return {'available_score': available_score, 'remaining_score': remaining_score, 'map': map_id, 'fps': fps, 'game_win': app._game_win, 'game_over': app._game_over,
+    remaining_score = available_score(world)
+    return {'available_score': initial_score, 'remaining_score': remaining_score, 'map': map_id, 'fps': fps, 'game_win': app._game_win, 'game_over': app._game_over,
             'timer': app._game_timer, 'time_limit': world.time_limit, 'score': player.score,
             'position': player.get_center(), 'reached_end': player._reached_end,
             'teleported': teleported, 'respawns': respawns, 'lives_left': app._player_lives_left,
