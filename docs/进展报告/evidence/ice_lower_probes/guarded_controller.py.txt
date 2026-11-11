@@ -1,0 +1,22 @@
+import json
+from pathlib import Path
+from maps import get_map
+from maps.layout import apply_layout
+from scripts.control_session import create_control_session
+from scripts.audit_endless_climb import run
+route=dict(map_id=3,scope='local legal lower ice palace doorway fixture; not normal forest path proof',waypoints=[])
+for name,x,y,kind in [('lower_entry',276.5,40.9,'ground'),('over_ice_pillar',281.5,49.9,'ground'),('left_ice_gap',279.45,43.,'fall'),('low_checkpoint',289.75,40.9,'rest'),('return_gap',279.45,40.9,'rest'),('pillar_clearance',279.45,51.2,'air'),('west_interior',276.5,40.9,'ground'),('outside_return',269.5,39.9,'rest')]:
+ point=dict(name=name,x=x,y=y,kind=kind)
+ if kind=='rest':point['stamina_min']=95
+ if name=='low_checkpoint':point['contact_id']=302
+ if name=='return_gap':point['headroom']=.5
+ route['waypoints'].append(point)
+Path('/tmp/pixel-ice-lower-route.json').write_text(json.dumps(route,indent=2)+'\n')
+results=[]
+for candidate in (False,True):
+ w=get_map(3).create_session();w.spawn_points=(269.5,39.9)
+ if candidate:apply_layout(w,'/tmp/pixel-ice-lower-candidate.json')
+ s=create_control_session(3,world=w)
+ r=run(30,route,240,5,session=s);r['candidate']=candidate;results.append(r)
+ print(candidate,{k:r[k] for k in ('completed_route','failure','timer','position','min_hp','min_stamina','saved_checkpoint')},flush=True)
+Path('/tmp/pixel-ice-lower-controls-guarded.json').write_text(json.dumps(results,indent=2)+'\n')
