@@ -70,7 +70,9 @@ def run(fps, body, gap, intent, valid_banks, offset):
             patch.object(session, '_advance_step', side_effect=observe_step), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
         for frame in range(2 * fps):
-            keys[pygame.K_a], keys[pygame.K_d] = frame == 0 and intent < 0, frame == 0 and intent > 0
+            # A 144Hz render frame can contain no physics step. Retain the
+            # directional hold until the queued Space is actually consumed.
+            keys[pygame.K_a], keys[pygame.K_d] = not choices and intent < 0, not choices and intent > 0
             events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if frame == 0 else []
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
