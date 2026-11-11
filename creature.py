@@ -356,6 +356,8 @@ class Creature:
         if not self.alive:
             return
 
+        from phase_collision import prepare_phase_collision, remember_phase_position
+        ghost_mode = prepare_phase_collision(self, world)
         grect = self.get_game_rect()
 
         # ---------- 阶段1：预收集接触方块 ----------
@@ -431,8 +433,6 @@ class Creature:
         self.on_ceiling = False
 
         # ---- Buff: 幽灵 (48) / 幻影方块效果 ----
-        ghost_mode = self.has_buff(48) or getattr(self, '_phantom_active', False)
-
         if not ghost_mode:
             dx = self.v_x * dt
             swept_x = GameRect(grect.x + min(0, dx), grect.y,
@@ -472,6 +472,8 @@ class Creature:
                         self.on_wall_left = True
 
         self.set_from_game_rect(grect)
+        if ghost_mode:
+            remember_phase_position(self, world)
 
         # ---------- 阶段3：最终收集接触池与站立池 ----------
         self.contact_pool = self._sample_contact_tiles(grect, world)
@@ -950,6 +952,9 @@ class Creature:
         self._weakness_mult = 1.0
         self._phantom_active = False
         self._phantom_timer = 0.0
+        self._phase_active = False
+        self._phase_anchor = None
+        self._phase_world = None
         self._confused = False
         self._confusion_timer = 0.0
         self._berserk_active = False
