@@ -15,7 +15,7 @@ import magnetized_field
 from teleport import can_place
 
 
-def continue_from_hall(app, session, keys, fps):
+def continue_from_hall(app, session, keys, fps, frame_hook=None):
     actor = app.player1
     start = app._game_timer
     phase = 'ladder_align'
@@ -107,6 +107,8 @@ def continue_from_hall(app, session, keys, fps):
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
             session.advance(1 / fps)
+            if frame_hook is not None:
+                frame_hook(app, phase)
             min_hp, min_stamina = min(min_hp, actor.hp), min(min_stamina, actor.stamina)
             if not can_place(actor, app._current_map, *actor.get_center()):
                 errors.append({'reason': 'terrain_overlap', 'position': actor.get_center()})
