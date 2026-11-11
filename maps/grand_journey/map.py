@@ -475,6 +475,14 @@ def generate():
     for climb_y in range(98, 105):
         p(w, 2996, climb_y, 9)
 
+    # Optional west gallery: real Buff49 polarity beside an ore, with a safe
+    # floor/roof and a separate short ladder. Keep the main north shaft intact.
+    from pathlib import Path
+    from maps.placement import load_feature_plan
+    gallery, _ = load_feature_plan(w, Path(__file__).with_name('polarity_gallery.json'))
+    for gx, gy, block_id in gallery:
+        p(w, gx, gy, block_id)
+
     # Finalize after random scenery: arrival space must not be filled again.
     from maps.portal_pad import prepare_portal_pad
     for first, second in portal_pairs:
