@@ -20,9 +20,9 @@ def continue_from_hall(app, session, keys, fps):
     start = app._game_timer
     phase = 'ladder_align'
     trace, errors = [], []
-    force_samples = []
+    force_samples, positive_force_samples = [], []
     sources = Counter()
-    reverse_seen = False
+    reverse_seen, positive_seen = False, False
     returned = False
     min_hp, min_stamina = actor.hp, actor.stamina
     real_force = magnetized_field.apply_field
@@ -37,6 +37,10 @@ def continue_from_hall(app, session, keys, fps):
                 if len(force_samples) < 12:
                     force_samples.append({'position': creature.get_center(), 'source': buff.source,
                                           'params': list(buff.params), 'delta_vx': creature.v_x - before})
+        if buff is not None and buff.source == 403 and buff.params and buff.params[0] > 0:
+            if abs(creature.v_x - before) > 1e-8 and len(positive_force_samples) < 12:
+                positive_force_samples.append({'position': creature.get_center(), 'source': buff.source,
+                                               'params': list(buff.params), 'delta_vx': creature.v_x - before})
         return result
 
     with patch.object(magnetized_field, 'apply_field', side_effect=observed_force):
@@ -65,7 +69,18 @@ def continue_from_hall(app, session, keys, fps):
             if phase == 'observe':
                 tx = actor._x
                 if frame >= observe_until:
+                    phase = 'positive_source'
+            if phase == 'positive_source':
+                tx = 2980.5
+                if any(b.buff_id == 49 and b.source == 403 and b.params and b.params[0] > 0 for b in actor.buffs):
+                    positive_seen = True
+                    phase = 'positive_observe'
+                    positive_until = frame + fps // 2
+            if phase == 'positive_observe':
+                tx = actor._x
+                if frame >= positive_until:
                     phase = 'return_ladder'
+                    tx = 2993.5
             if phase == 'return_ladder':
                 if abs(actor._x - tx) < .15 and abs(actor.v_x) < .5:
                     phase = 'descend'
@@ -87,7 +102,7 @@ def continue_from_hall(app, session, keys, fps):
             if actor.has_buff(23) and not actor.has_buff(8) and not actor.has_buff(40):
                 right, left = left, right
             keys[pygame.K_d], keys[pygame.K_a] = right, left
-            if phase == 'observe':
+            if phase in ('observe', 'positive_observe'):
                 keys[pygame.K_d] = keys[pygame.K_a] = False
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
@@ -107,7 +122,9 @@ def continue_from_hall(app, session, keys, fps):
         errors.append({'reason': 'route_incomplete', 'phase': phase, 'position': actor.get_center()})
     if not force_samples:
         errors.append({'reason': 'no_observed_reverse_force'})
-    return {'returned': returned, 'reverse_seen': reverse_seen, 'seconds': app._game_timer - start,
+    if not positive_force_samples:
+        errors.append({'reason': 'no_observed_positive_source_force'})
+    return {'positive_seen': positive_seen, 'positive_force_samples': positive_force_samples, 'returned': returned, 'reverse_seen': reverse_seen, 'seconds': app._game_timer - start,
             'phase': phase, 'position': actor.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'force_samples': force_samples, 'source_calls': dict(sources), 'errors': errors, 'trace': trace}
 
@@ -122,7 +139,7 @@ def main():
     report = {'code_revision': revision, 'scope': 'original spawn and presets, production input/session, no Buff injection or position transfer; polarity observation calls original field unchanged', 'runs': rows}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps([{'fps':r['fps'],'route_failure':r['failure'],'gallery':{k:v for k,v in r['hall_extension'].items() if k not in ('trace','force_samples')}} for r in rows],ensure_ascii=False))
+    print(json.dumps([{'fps':r['fps'],'route_failure':r['failure'],'gallery':{k:v for k,v in r['hall_extension'].items() if k not in ('trace','force_samples','positive_force_samples')}} for r in rows],ensure_ascii=False))
     return 0 if all(r['failure'] is None and not r['hall_extension']['errors'] for r in rows) else 1
 
 
