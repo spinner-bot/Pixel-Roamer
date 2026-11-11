@@ -36,6 +36,30 @@ def loop_probe(period, side, offset):
             'expected_vx_one_physical_source': expected, 'error': abs(actor.v_x - expected)}
 
 
+def reversed_source_probe(fps):
+    world = World(0, 'original411 and338 interaction', 40, 16, gravity=-9.8,
+                  spawn_points=(15.5, 5.9))
+    for x in range(40):
+        world.set_tile(x, 4, 411 if x == 15 else 2)
+    world.set_tile(18, 5, 338)
+    session = create_control_session(0, world=world)
+    actor = session.app.player1
+    keys = defaultdict(bool)
+    with patch('pygame.key.get_pressed', return_value=keys), patch.object(actor, 'reset', wraps=actor.reset) as reset:
+        session.advance(1 / 120)
+        obtained = {str(b.buff_id): b.source for b in actor.buffs}
+        # Reversed23 turns held D into effective left, away from the ore.
+        keys[pygame.K_d] = True
+        min_foot = actor._y - actor._h / 2
+        for _ in range(2 * fps):
+            session.advance(1 / fps)
+            min_foot = min(min_foot, actor._y - actor._h / 2)
+        respawns = reset.call_count
+    return {'fps': fps, 'obtained': obtained, 'retreat': 15.5 - actor._x,
+            'position': actor.get_center(), 'hp': actor.hp, 'respawns': respawns,
+            'min_foot_y': min_foot, 'remaining49': actor.has_buff(49), 'remaining23': actor.has_buff(23)}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
@@ -51,7 +75,8 @@ if __name__ == '__main__':
         'escape': [escape(kind, side, fps) for kind in (338, 386, 403)
                    for side in ('left', 'right') for fps in (30, 60, 144)],
         'loop': [loop_probe(period, side, offset) for period in (3, 5, 8)
-                 for side in (-1, 1) for offset in (-2, 0, 3)]}
+                 for side in (-1, 1) for offset in (-2, 0, 3)],
+        'reversed_source': [reversed_source_probe(fps) for fps in (30, 60, 144)]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'active_nearby_with_motion': sum(r['active'] and r['distance'] in (1.5, 3.5) and abs(r['dx']) > 1e-8 for r in report['runs']),
