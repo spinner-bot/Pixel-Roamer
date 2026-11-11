@@ -1,0 +1,589 @@
+{
+  "code_revision": "cf1600e06992596749bd5f6fc2ef83d42e181af2",
+  "baseline": "a1349ea",
+  "checks": {
+    "all_changes_inside_plan": true,
+    "all_plan_points_match": true,
+    "spawn_preserved": true,
+    "gravity_preserved": true,
+    "west_ruby_preserved": true,
+    "west_silver_preserved": true,
+    "original_reverse_preserved": true,
+    "original_ore_preserved": true
+  },
+  "planned_cells": 120,
+  "changed_cells": 57,
+  "differences": [
+    {
+      "position": [
+        2971,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2971,
+        83
+      ],
+      "before": 0,
+      "after": 81,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2971,
+        84
+      ],
+      "before": 0,
+      "after": 81,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2971,
+        85
+      ],
+      "before": 0,
+      "after": 81,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2971,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2972,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2972,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2973,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2973,
+        86
+      ],
+      "before": 0,
+      "after": 66,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2974,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2974,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2975,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2975,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2976,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2976,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2977,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2977,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2978,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2978,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2979,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2979,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2980,
+        82
+      ],
+      "before": 0,
+      "after": 403,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2980,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2981,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2981,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2982,
+        82
+      ],
+      "before": 0,
+      "after": 411,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2982,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2983,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2983,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2984,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2984,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2985,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2985,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2986,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2986,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2987,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2987,
+        86
+      ],
+      "before": 0,
+      "after": 66,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2988,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2988,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2989,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2989,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2990,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2990,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2991,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2991,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2992,
+        82
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2992,
+        86
+      ],
+      "before": 0,
+      "after": 34,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        76
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        77
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        78
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        79
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        80
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        81
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        82
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        83
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        84
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        2993,
+        85
+      ],
+      "before": 0,
+      "after": 9,
+      "before_meta": null,
+      "after_meta": null
+    }
+  ],
+  "outside_plan": []
+}
