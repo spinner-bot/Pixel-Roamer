@@ -15,6 +15,7 @@ import pygame
 import game_text as gt
 from pattern import _draw_vector, _draw_bitmap, _draw_texture
 from scripts.format_catalogs import formatted
+from scripts.pickup_art import PICKUP_IDS, pickup
 
 BASELINE_REF = "e53ea03"
 BLOCK_IDS = (2, 3, 4, 5, 7, 9, 16, 17, 18, 19, 20, 22)
@@ -48,6 +49,8 @@ def vector(image):
 
 
 def terrain(tile_id):
+    if tile_id in PICKUP_IDS:
+        return pickup(tile_id)
     palettes = {2: ((105, 116, 124), (76, 88, 98), (146, 158, 163)),
                 3: ((85, 174, 199), (50, 123, 162), (187, 235, 232)),
                 4: ((143, 95, 70), (102, 65, 57), (190, 139, 93)),
@@ -184,7 +187,7 @@ def digest(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
-def gallery(kind, old, new, ids):
+def gallery(kind, old, new, ids, filename=None):
     cols, width, height = 6, 192, 120
     surface = pygame.Surface((cols * width, 60 + ((len(ids) + cols - 1) // cols) * height))
     surface.fill((11, 18, 29))
@@ -198,7 +201,7 @@ def gallery(kind, old, new, ids):
         gt.draw(surface, f"{item_id} {new[item_id]['name2']}", x + 8, y + 82, 18, (224, 235, 230), 'sans')
     directory = ROOT / 'docs/进展报告/evidence/art'
     directory.mkdir(parents=True, exist_ok=True)
-    pygame.image.save(surface, str(directory / f'{kind}_before_after.png'))
+    pygame.image.save(surface, str(directory / (filename or f'{kind}_before_after.png')))
 
 
 def main():
@@ -206,7 +209,7 @@ def main():
     for kind in ('blocks', 'buffs'):
         document = original(kind)
         before = {entry['id']: json.loads(json.dumps(entry)) for entry in document['entries']}
-        chosen = BLOCK_IDS if kind == 'blocks' else tuple(before)
+        chosen = BLOCK_IDS + PICKUP_IDS if kind == 'blocks' else tuple(before)
         for entry in document['entries']:
             if entry['id'] not in chosen:
                 continue
@@ -216,9 +219,13 @@ def main():
             rgba = pattern_image(entry[field], 32)
             overrides[kind][str(entry['id'])] = {
                 'definition': digest(entry), 'rgba32': hashlib.sha256(pygame.image.tobytes(rgba, 'RGBA')).hexdigest(),
-                'reason': 'Reviewed pixel texture refinement' if kind == 'blocks' else 'Consistent category frame and refined status motif'}
+                'reason': ('Distinct silhouette for existing score pickup' if entry['id'] in PICKUP_IDS
+                           else 'Reviewed pixel texture refinement') if kind == 'blocks' else 'Consistent category frame and refined status motif'}
         (ROOT / 'data/catalogs' / f'{kind}.json').write_text(formatted(document) + '\n')
-        gallery(kind, before, {entry['id']: entry for entry in document['entries']}, chosen)
+        after = {entry['id']: entry for entry in document['entries']}
+        gallery(kind, before, after, BLOCK_IDS if kind == 'blocks' else chosen)
+        if kind == 'blocks':
+            gallery(kind, before, after, PICKUP_IDS, 'pickups_before_after.png')
     (ROOT / 'tests/fixtures/catalog_art_overrides.json').write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + '\n')
 
 
