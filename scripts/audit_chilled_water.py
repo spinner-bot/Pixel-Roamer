@@ -35,8 +35,21 @@ def run(source, liquid, fps, immune=False):
     if immune:
         actor.apply_buff(40, (), None)
     trace, first_water, frozen_frames = [], None, 0
+    freeze_applications = []
+    apply_buff = actor.apply_buff
+
+    def observe_apply(buff_id, *args, **kwargs):
+        result = apply_buff(buff_id, *args, **kwargs)
+        effect = next((b for b in actor.buffs if b.buff_id == buff_id), None)
+        if effect and effect.buff_type and effect.buff_type.tick == 'frozen':
+            freeze_applications.append({'time': actor._buff_game_time,
+                                        'duration': effect.duration, 'source': effect.source})
+        return result
+
     acquisition = None
-    with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'):
+    was_frozen = False
+    with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
+            patch.object(actor, 'apply_buff', new=observe_apply):
         # Let the original410 entry-root expire while51 keeps refreshing.
         for _ in range(math.ceil(5.2 * fps)):
             session.advance(1 / fps)
@@ -51,16 +64,17 @@ def run(source, liquid, fps, immune=False):
             if in_water and first_water is None:
                 first_water = elapsed
             frozen_frames += bool(frozen)
-            if frame % max(1, fps // 10) == 0 or frozen and not frozen_frames > 1:
+            if frame % max(1, fps // 10) == 0 or bool(frozen) != was_frozen:
                 trace.append({'time': elapsed, 'position': actor.get_center(),
                               'velocity': [actor.v_x, actor.v_y], 'water': in_water,
                               'cold': actor.has_buff(51), 'root': actor.has_buff(21),
                               'frozen': [{'id': b.buff_id, 'remaining': b.duration,
                                           'initial': b.initial_duration} for b in frozen],
                               'hp': actor.hp, 'stamina': actor.stamina})
+            was_frozen = bool(frozen)
     return {'source': source, 'liquid': liquid, 'fps': fps, 'immune_api40': immune,
             'source_acquisition': acquisition, 'first_water': first_water,
-            'frozen_frames': frozen_frames, 'trace': trace}
+            'frozen_frames': frozen_frames, 'freeze_applications': freeze_applications, 'trace': trace}
 
 
 if __name__ == '__main__':
