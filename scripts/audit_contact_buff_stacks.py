@@ -1,6 +1,7 @@
 """Observe first contact and continued refresh for every stackable authored source."""
 import argparse
 from collections import defaultdict
+from contextlib import nullcontext
 import json
 import os
 from pathlib import Path
@@ -46,14 +47,17 @@ def measure(source,fps):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--exposure-candidate',action='store_true')
     args=parser.parse_args()
     blocks,buffs=load_blocks(),load_buffs()
     sources=[b.id for b in blocks.values() if any(buffs[i].max_stacks>1 for i in b.buff_ids)]
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    rows=[measure(source,fps) for source in sources for fps in (30,60,144)]
+    from scripts.contact_exposure_candidate import exposure_candidate
+    with exposure_candidate() if args.exposure_candidate else nullcontext():
+        rows=[measure(source,fps) for source in sources for fps in (30,60,144)]
     inflated=[{'source':r['source'],'fps':r['fps'],'step':s['step'],'buff':b['id'],'stacks':b['stacks']}
               for r in rows for s in r['samples'] for b in s['buffs'] if b['source']==r['source'] and b['stacks']>1]
-    report={'code_revision':revision,'scope':'actual source contact without Buff injection or input; source may legitimately launch/clear/conflict, samples record actual contact; stack observations alone are not whole-effect acceptance','source_count':len(sources),'runs':rows,'multiple_stack_samples':inflated}
+    report={'exposure_candidate':args.exposure_candidate,'code_revision':revision,'scope':'actual source contact without Buff injection or input; source may legitimately launch/clear/conflict, samples record actual contact; stack observations alone are not whole-effect acceptance','source_count':len(sources),'runs':rows,'multiple_stack_samples':inflated}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'sources':len(sources),'runs':len(rows),'multiple_stack_samples':len(inflated),'affected_sources':len({r['source'] for r in inflated})}))
