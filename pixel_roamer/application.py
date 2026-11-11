@@ -208,9 +208,22 @@ class GameApp:
 
     def launch_world(self, map_id: int):
         """启动器：游戏世界。传入地图ID，加载地图、创建相机和玩家。"""
-        self._current_map = get_map(map_id)
+        from spawn_placement import SpawnPlacementError
+        world = get_map(map_id)
+        try:
+            player = create_world_player(world, self.p1_keys)
+        except SpawnPlacementError as error:
+            self._dev_selected_id = map_id
+            self._dev_error = str(error)
+            self._dev_edit_mode = self._dev_block_browser = self._dev_buff_browser = False
+            self._world_initialized = False
+            self.page = PAGE_DEV
+            music.stop(fade_out_ms=400)
+            return False
+        self._dev_error = ''
+        self._current_map = world
         self.camera = Camera(LOGIC_WIDTH, LOGIC_HEIGHT, self._current_map)
-        self.player1 = create_world_player(self._current_map, self.p1_keys)
+        self.player1 = player
 
         # 初始化游戏状态
         self._game_over = False
