@@ -662,6 +662,7 @@ world.end_bulk_load()
 
 # Restore reviewed connections while preserving the authored world colors.
 _connection_fill_color = world.fill_color
-for _connection_file in ("tower_connections.json", "pyramid_connections.json", "ice_lower_connections.json"):
+for _connection_file in ("tower_connections.json", "pyramid_connections.json", "ice_lower_connections.json",
+                         "lake_connections.json"):
     apply_layout(world, Path(__file__).with_name(_connection_file))
 world.fill_color = _connection_fill_color
