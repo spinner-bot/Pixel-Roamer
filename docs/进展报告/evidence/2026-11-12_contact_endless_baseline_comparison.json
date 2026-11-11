@@ -1,0 +1,72 @@
+{
+  "scope": "matched complete fee2fda sparse worktree versus production contact fix; same route and draw interval, no hybrid module loading",
+  "before_revision": "fee2fda6d520ffb1c46e25f6a9aee3b1fff5ca5b",
+  "after_revision": "de1b6dad3bf621111c6640a558024a9f04d7ae0c",
+  "same_route": true,
+  "same_controller": true,
+  "pairs": [
+    {
+      "fps": 30,
+      "before": {
+        "timer": 87.03333333334866,
+        "min_hp": 97.03553192634054,
+        "min_stamina": 152.71648815125548,
+        "native_draws": 18,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "after": {
+        "timer": 83.20000000001228,
+        "min_hp": 128.18755586131718,
+        "min_stamina": 154.37869977212932,
+        "native_draws": 17,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "before_arrivals": 29,
+      "after_arrivals": 29
+    },
+    {
+      "fps": 60,
+      "before": {
+        "timer": 86.41666666668151,
+        "min_hp": 97.21906879439183,
+        "min_stamina": 152.28845941883722,
+        "native_draws": 18,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "after": {
+        "timer": 82.56666666667844,
+        "min_hp": 128.24391027183043,
+        "min_stamina": 153.93336704338773,
+        "native_draws": 17,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "before_arrivals": 29,
+      "after_arrivals": 29
+    },
+    {
+      "fps": 144,
+      "before": {
+        "timer": 86.40833333334817,
+        "min_hp": 97.36428122446524,
+        "min_stamina": 152.16541859631243,
+        "native_draws": 18,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "after": {
+        "timer": 82.58333333334512,
+        "min_hp": 128.30681710732793,
+        "min_stamina": 153.8020381536558,
+        "native_draws": 17,
+        "respawns": 0,
+        "completed_route": true
+      },
+      "before_arrivals": 29,
+      "after_arrivals": 29
+    }
+  ]
+}
