@@ -11,12 +11,12 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from maps import get_map
+from maps import get_map, list_maps
 from maps.placement import is_air_cell, load_feature_plan
 from player_factory import create_world_player
 from scripts.control_session import available_score
 from teleport import can_place
-PLAN = ROOT / 'maps/collector/features.json'
+PLAN = ROOT / 'maps' / list_maps()[9] / 'features.json'
 
 
 def inspect_world(world):
