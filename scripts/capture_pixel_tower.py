@@ -17,7 +17,7 @@ from maps import get_map
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--before', action='store_true')
-    parser.add_argument('--region', choices=('tower', 'pyramid', 'pyramid_bottom', 'ice_lower'), default='tower')
+    parser.add_argument('--region', choices=('tower', 'pyramid', 'pyramid_bottom', 'ice_lower', 'lake'), default='tower')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     stage, scale, center = {
@@ -25,6 +25,7 @@ def main():
         'pyramid': ('A69', 16, (375, 60)),
         'pyramid_bottom': ('A70', 12, (375, 50)),
         'ice_lower': ('A71', 16, (288, 54)),
+        'lake': ('A73', 16, (282, 27)),
     }[args.region]
     world = get_map(3).create_session()
     if args.before:
@@ -32,7 +33,7 @@ def main():
         for change in reviews['maps']['3']:
             if change['stage'] == stage:
                 world.set_tile(*change['position'], change['before'])
-    size = (800, 900) if args.region == 'ice_lower' else (640, 900)
+    size = (800, 900) if args.region in ('ice_lower', 'lake') else (640, 900)
     surface = pygame.Surface(size)
     camera = Camera(*size, world)
     camera.scale = scale
