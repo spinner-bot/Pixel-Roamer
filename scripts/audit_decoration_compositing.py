@@ -22,23 +22,24 @@ from world import World
 DECORATIONS = (43, 50, 51, 52, 53, 54)
 
 
-def scene(default_id, image_path=None):
-    world = World(0, 'decoration composition', 8, 4, default_block_id=default_id,
+def scene(default_id, image_path=None, decorations=DECORATIONS):
+    width = len(decorations) + 2
+    world = World(0, 'decoration composition', width, 4, default_block_id=default_id,
                   view_blocks_h=4)
-    for x, tile_id in enumerate(DECORATIONS, 1):
+    for x, tile_id in enumerate(decorations, 1):
         world.set_tile(x, 1, tile_id)
     world.set_tile(0, 1, 12)
-    world.set_tile(7, 1, 2)
-    surface = pygame.Surface((128, 64))
-    camera = Camera(128, 64, world)
-    camera.follow(4, 2)
+    world.set_tile(width - 1, 1, 2)
+    surface = pygame.Surface((width * 16, 64))
+    camera = Camera(width * 16, 64, world)
+    camera.follow(width / 2, 2)
     world.draw(surface, camera)
     if image_path:
         image_path.parent.mkdir(parents=True, exist_ok=True)
-        pygame.image.save(pygame.transform.scale(surface, (512, 256)), str(image_path))
+        pygame.image.save(pygame.transform.scale(surface, (width * 64, 256)), str(image_path))
     background = tuple(world._default_bt.color)
     entries = []
-    for x, tile_id in enumerate(DECORATIONS, 1):
+    for x, tile_id in enumerate(decorations, 1):
         texture = world._terrain_texture(BLOCK_TYPES[tile_id])
         corner = tuple(surface.get_at((x * 16, 32)))[:3]
         alpha = texture.get_at((0, 0)).a
@@ -87,11 +88,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--images-dir', type=Path)
+    parser.add_argument('--blocks', type=int, nargs='+', default=DECORATIONS)
     args = parser.parse_args()
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'controller_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'scope': 'actual direct pattern and cached world rendering, day/night/black backgrounds; not gameplay or device acceptance',
-              'scenes': [scene(i, args.images_dir / f'decorations_background_{i}.png' if args.images_dir else None)
+              'scenes': [scene(i, args.images_dir / f'decorations_background_{i}.png' if args.images_dir else None, args.blocks)
                          for i in (0, 11, 12)],
               'rgba_cases': [rgba_case(i, alpha) for i in (0, 11, 12) for alpha in (0, 128)]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
