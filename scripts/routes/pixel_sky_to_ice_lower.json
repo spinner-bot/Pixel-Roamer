@@ -1,0 +1,24 @@
+{
+  "map_id": 3,
+  "scope": "normal forest sky branch, original east island and outside lower ice doorway",
+  "waypoints": [
+    {
+      "name": "above_t2",
+      "x": 217.5,
+      "y": 115.0,
+      "kind": "air"
+    },
+    {
+      "name": "east_island_booster",
+      "x": 241.5,
+      "y": 70.9,
+      "kind": "ground"
+    },
+    {
+      "name": "lower_ice_outside_drop",
+      "x": 269.5,
+      "y": 41.5,
+      "kind": "fall"
+    }
+  ]
+}
