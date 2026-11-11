@@ -3,6 +3,7 @@ import inspect
 from creature import Player
 from map_config import validate_config
 from resource_catalog import player_defaults
+from spawn_placement import place_world_spawn
 
 _INPUT_FIELDS = {'player_id', 'player_name', 'spawn_x', 'spawn_y', 'key_bind'}
 _PLAYER_FIELDS = set(inspect.signature(Player).parameters) - _INPUT_FIELDS
@@ -23,4 +24,6 @@ def create_world_player(world, key_bind, *, player_id=0, player_name='玩家1', 
     x, y = world.spawn_points if position is None else position
     player = Player(player_id, player_name, float(x), float(y), key_bind, **options)
     player.costume_id = costume_id
+    if position is None:
+        place_world_spawn(player, world, player_defaults()['h'])
     return player
