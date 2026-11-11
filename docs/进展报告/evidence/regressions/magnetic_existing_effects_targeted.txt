@@ -1,0 +1,57 @@
+test_bleeding_is_independent_of_frame_partition (tests.test_status_effects.BuffTimeTests) ... ok
+test_damage_matches_active_duration_for_short_and_long_frames (tests.test_status_effects.BuffTimeTests) ... ok
+test_environment_timers_expire_without_any_collision_updates (tests.test_status_effects.BuffTimeTests) ... ok
+test_expiring_immunity_only_protects_its_active_interval (tests.test_status_effects.BuffTimeTests) ... ok
+test_invalid_time_steps_are_rejected (tests.test_status_effects.BuffTimeTests) ... ok
+test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply (tests.test_status_effects.BuffTimeTests) ... ok
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (tests.test_status_effects.BuffTimeTests) ... ok
+test_regeneration_and_shield_gain_respect_elapsed_time (tests.test_status_effects.BuffTimeTests) ... ok
+test_stacks_affect_continuous_damage_and_stat_modifiers (tests.test_status_effects.BuffTimeTests) ... ok
+test_armor_break_is_a_victim_debuff (tests.test_status_effects.DamageTests) ... ok
+test_capped_shield_regeneration_does_not_remove_existing_shield (tests.test_status_effects.DamageTests) ... ok
+test_damage_return_value_counts_shield_and_caps_overkill (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_actual_lava_contact (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_burning_and_direct_fire (tests.test_status_effects.DamageTests) ... ok
+test_lifesteal_and_thorns_use_actual_damage_not_requested_overkill (tests.test_status_effects.DamageTests) ... ok
+test_extreme_runtime_velocity_cannot_hang_collision_loop (tests.test_gameplay.CollisionTests) ... ok
+test_fast_fall_lands_without_crossing_floor (tests.test_gameplay.CollisionTests) ... ok
+test_fast_movement_does_not_cross_a_one_tile_wall (tests.test_gameplay.CollisionTests) ... ok
+test_negative_fractional_coordinates_use_floor (tests.test_gameplay.CollisionTests) ... ok
+test_one_way_platform_allows_jumping_from_below (tests.test_gameplay.CollisionTests) ... ok
+test_one_way_platform_stays_solid_at_exact_rest (tests.test_gameplay.CollisionTests) ... ok
+test_single_loop_axis_does_not_disable_void_on_other_axis (tests.test_gameplay.CollisionTests) ... ok
+test_solid_default_tile_collides (tests.test_gameplay.CollisionTests) ... ok
+test_default_ladder_world_has_climbable_contacts (tests.test_gameplay.EnvironmentTests) ... ok
+test_environment_modifiers_restore_after_leaving (tests.test_gameplay.EnvironmentTests) ... ok
+test_leaving_water_and_ladder_clears_contact_state (tests.test_gameplay.EnvironmentTests) ... ok
+test_respawn_clears_environment_timers_and_modifiers (tests.test_gameplay.EnvironmentTests) ... ok
+test_temporary_effects_expire_in_empty_air (tests.test_gameplay.EnvironmentTests) ... ok
+test_friction_buffs_damp_without_inverting_or_amplifying_motion (tests.test_gameplay.FrameRateTests) ... ok
+test_horizontal_movement_matches_across_frame_rates (tests.test_gameplay.FrameRateTests) ... ok
+test_speed_and_jump_tiles_combine_with_buffs_and_restore (tests.test_gameplay.FrameRateTests) ... ok
+test_coin_across_negative_loop_seam_is_consumed_once (tests.test_gameplay.PickupTests) ... ok
+test_each_touched_coin_scores_once (tests.test_gameplay.PickupTests) ... ok
+test_only_touched_coin_is_consumed (tests.test_gameplay.PickupTests) ... ok
+test_score_block_without_consumed_variant_restores_default (tests.test_gameplay.PickupTests) ... ok
+test_teleport_uses_touched_portal_metadata (tests.test_gameplay.PickupTests) ... ok
+test_poison_bypasses_half_shield_and_respects_immunity (tests.test_gameplay.PoisonTests) ... ok
+test_poison_lethal_second_half_marks_player_dead (tests.test_gameplay.PoisonTests) ... ok
+test_clarity_suppresses_blindness_and_vision_mask (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_glow_adds_subtle_premultiplied_light_without_white_disk (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_large_vision_radius_is_full_vision_without_huge_allocation (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_vision_radius_uses_tiles_once_at_multiple_zoom_levels (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_complete_steps_end_at_the_exact_selected_center (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_mirrors_bodies_input_modes_and_loop_translations (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_new_wall_cancels_alignment_before_entering_it (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_out_of_band_relocation_cannot_be_pulled_back_to_old_ladder (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_pause_focus_and_terminal_guards_freeze_pending_alignment (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_releasing_and_jumping_cancel_incomplete_alignment (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_respawn_portal_and_spawn_callback_drop_old_destination (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_stun_freezes_alignment_and_iron_will_resumes_it (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 11.912s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
