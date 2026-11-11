@@ -3,6 +3,7 @@ import argparse
 from collections import defaultdict
 from contextlib import nullcontext
 import json
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -21,8 +22,9 @@ from world import World
 
 
 def strip(fps,direction,loop):
-    world=World(0,'continuous cold strip',12 if loop else 60,32,gravity=-9.8,
-                spawn_points=(5.5 if direction>0 else 6.5,5.9),loop_x=loop)
+    width=12 if loop else 60
+    world=World(0,'continuous cold strip',width,32,gravity=-9.8,
+                spawn_points=(5.5 if direction>0 else width-5.5,5.9),loop_x=loop)
     for x in range(world.width):
         world.set_tile(x,4,373)
     session=create_control_session(0,world=world)
@@ -37,9 +39,9 @@ def strip(fps,direction,loop):
             before=actor._x
             session.advance(1/fps)
             dx=actor._x-before
-            if loop and abs(dx)>world.width/2:
-                wraps+=1
-                dx=(dx+world.width/2)%world.width-world.width/2
+            if loop:
+                # Player coordinates stay unwrapped; tile lookup wraps.
+                wraps+=abs(math.floor(actor._x/world.width)-math.floor(before/world.width))
             distance+=direction*dx
             max_stacks=max(max_stacks,max((b.stacks for b in actor.buffs if b.buff_id==51),default=0))
     return {'fps':fps,'direction':direction,'loop':loop,'distance':distance,'wraps':wraps,
