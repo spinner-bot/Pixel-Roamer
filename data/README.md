@@ -28,3 +28,9 @@
 地图的运行配置仍放在 `maps/<目录>/config.json`，沿用地图编辑器保存/加载和 `map_config.py` 数值校验。生成地图的算法保留在 Python 中，内容定义和执行逻辑分离。
 
 `interface.json` 中的 player 字段默认值是游戏角色预设的统一来源，由 `resource_catalog.player_defaults()` 校验加载；`player_factory.create_world_player()` 用于实际启动和地图审计，地图 config.json 的 player 值覆盖该预设。编辑器读取同一份默认值，避免仅保存默认配置就改变物理参数。
+
+方块与Buff允许分包：`catalogs/extensions/blocks_*.json`、`buffs_*.json`使用相同的schema头部，启动时按文件名排序合并到主目录。包内及跨包ID均须唯一，不能覆盖旧ID；关联项在合并后统一校验，可跨包引用。显式传入独立JSON路径时仅加载该文件，避免隐式污染编辑/测试数据。
+
+新增效果方块优先通过`buff_ids`、`buff_params_list`和`buff_durations`关联已有Buff，保持参数/持续时间按位置对应；接触时记录来源方块ID。`blocks_magnetic.json`中的439磁引花仅关联14，不含特殊效果处理器；磁引的执行由Buff和世界上下文负责。新增行为仍需实现消费者并验证真实来源、效果及清理。
+
+旧目录哈希基线保留；新ID在`tests/fixtures/catalog_extensions.json`单独登记完整定义、像素及非美术字段哈希。美术生成器重建主目录时不读取/覆写扩展包；新增包使用独立生成器（例如`python3 scripts/build_magnetic_block.py`）。新增数据须同时更新相关审计器，使静态盘点覆盖运行时有效目录。
