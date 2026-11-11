@@ -29,14 +29,14 @@ def exposure_candidate(entry_buffs=(), compound_slow=False):
         finally:
             actor._research_in_contact=False
 
-    def contact_apply(actor,buff_id,params=(),duration=None,source=None):
+    def contact_apply(actor,buff_id,params=(),duration=None,source=None,*,add_stack=True):
         old=next((b for b in actor.buffs if b.buff_id==buff_id),None)
         previous_stacks=old.stacks if old else 0
         if (buff_id in entry_buffs and getattr(actor,'_research_in_contact',False)
                 and source in getattr(actor,'_research_contact_kinds',())
                 and (source not in getattr(actor,'_research_new_kinds',()) or old is not None)):
             return
-        result=original_apply(actor,buff_id,params,duration,source)
+        result=original_apply(actor,buff_id,params,duration,source,add_stack=add_stack)
         if (old is not None and old in actor.buffs and getattr(actor,'_research_in_contact',False)
                 and source in getattr(actor,'_research_contact_kinds',())
                 and source not in getattr(actor,'_research_new_kinds',())):
