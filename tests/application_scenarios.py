@@ -183,6 +183,11 @@ def scenarios(g):
     assert not player.has_buff(28) and not player.is_climbing
     assert player._x == before_x, 'blocked climb leaked after stun expiry'
     yield key(pygame.K_w)
+    assert player.is_climbing and 5.5 <= player._x <= before_x
+    for _ in range(12):
+        if abs(player._x - 5.5) < 1e-8:
+            break
+        yield []
     assert player.is_climbing and player._x == 5.5
     yield key(pygame.K_ESCAPE)
 

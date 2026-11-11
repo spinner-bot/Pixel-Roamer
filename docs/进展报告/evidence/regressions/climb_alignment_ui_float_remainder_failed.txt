@@ -1,0 +1,72 @@
+test_entry_import_does_not_initialize_a_window (test_ui.ApplicationFlowTests) ... ok
+test_navigation_and_gameplay_survive_missing_audio_device (test_ui.ApplicationFlowTests) ... FAIL
+test_real_main_loop_navigation_and_game_rules (test_ui.ApplicationFlowTests) ... FAIL
+
+======================================================================
+FAIL: test_navigation_and_gameplay_survive_missing_audio_device (test_ui.ApplicationFlowTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_ui.py", line 14, in test_navigation_and_gameplay_survive_missing_audio_device
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 1 != 0 : pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 303, in <module>
+    runpy.run_path(str(ROOT / "main.py"), run_name="__main__")
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data/Users/zrh/repo/Pixel-Roamer/main.py", line 10, in <module>
+    main()
+  File "/data/Users/zrh/repo/Pixel-Roamer/main.py", line 6, in main
+    GameApp().run()
+  File "/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py", line 497, in run
+    self._handle_events()
+  File "/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py", line 285, in _handle_events
+    for event in pygame.event.get():
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 297, in events
+    return next(driver)
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 191, in scenarios
+    assert player.is_climbing and player._x == 5.5
+AssertionError
+
+
+======================================================================
+FAIL: test_real_main_loop_navigation_and_game_rules (test_ui.ApplicationFlowTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_ui.py", line 31, in test_real_main_loop_navigation_and_game_rules
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 1 != 0 : pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 303, in <module>
+    runpy.run_path(str(ROOT / "main.py"), run_name="__main__")
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data/Users/zrh/repo/Pixel-Roamer/main.py", line 10, in <module>
+    main()
+  File "/data/Users/zrh/repo/Pixel-Roamer/main.py", line 6, in main
+    GameApp().run()
+  File "/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py", line 497, in run
+    self._handle_events()
+  File "/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py", line 285, in _handle_events
+    for event in pygame.event.get():
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 297, in events
+    return next(driver)
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/application_scenarios.py", line 191, in scenarios
+    assert player.is_climbing and player._x == 5.5
+AssertionError
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 9.068s
+
+FAILED (failures=2)
