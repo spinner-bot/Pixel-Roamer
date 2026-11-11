@@ -36,6 +36,10 @@ class EndlessFullLoopTests(unittest.TestCase):
                 self.assertGreaterEqual(crossing['to'][1], 120)
                 self.assertLess(run['max_frame_dy'], 1)
                 self.assertGreaterEqual(run['native_draws'], 18)
+                self.assertEqual([d['waypoint'] for d in run['draw_trace'] if d['reason']=='waypoint'],
+                                 [w['name'] for w in report['route']['waypoints']])
+                self.assertEqual(run['draw_trace'][-1]['reason'], 'waypoint')
+                self.assertEqual(run['draw_trace'][-1]['waypoint'], 'original_terrace_above_wrap')
                 self.assertEqual(run['position'][1], 124.9)
                 self.assertEqual([a['name'] for a in run['arrivals']],
                                  [w['name'] for w in report['route']['waypoints']])
