@@ -13,16 +13,36 @@ def _short_delta(delta, period, looping):
 
 
 def _clear_path(world, start, delta):
-    distance = math.hypot(*delta)
-    steps = max(1, math.ceil(distance * 4))
-    for step in range(steps + 1):
-        fraction = step / steps
-        gx = math.floor(start[0] + delta[0] * fraction)
-        gy = math.floor(start[1] + delta[1] * fraction)
+    def blocked(gx, gy):
         coord = world._wrap_grid_coord(gx, gy)
-        if coord is None or world.get_block_type_by_coord(*coord).is_solid:
+        return coord is None or world.get_block_type_by_coord(*coord).is_solid
+
+    x, y = start
+    dx, dy = delta
+    gx, gy = math.floor(x), math.floor(y)
+    end_x, end_y = math.floor(x + dx), math.floor(y + dy)
+    sx, sy = (1 if dx > 0 else -1), (1 if dy > 0 else -1)
+    step_x = 1 / abs(dx) if dx else math.inf
+    step_y = 1 / abs(dy) if dy else math.inf
+    next_x = ((gx + 1 - x) / dx if dx > 0 else (x - gx) / -dx) if dx else math.inf
+    next_y = ((gy + 1 - y) / dy if dy > 0 else (y - gy) / -dy) if dy else math.inf
+    # Traverse every crossed grid cell, including both sides of a corner;
+    # fixed-distance sampling can miss a thin diagonal intersection.
+    for _ in range(abs(end_x - gx) + abs(end_y - gy) + 3):
+        if blocked(gx, gy):
             return False
-    return True
+        if (gx, gy) == (end_x, end_y):
+            return True
+        if abs(next_x - next_y) <= 1e-12:
+            if blocked(gx + sx, gy) or blocked(gx, gy + sy):
+                return False
+            gx, gy = gx + sx, gy + sy
+            next_x, next_y = next_x + step_x, next_y + step_y
+        elif next_x < next_y:
+            gx, next_x = gx + sx, next_x + step_x
+        else:
+            gy, next_y = gy + sy, next_y + step_y
+    return False
 
 
 def attract_pickups(actor, buff, elapsed, world):
