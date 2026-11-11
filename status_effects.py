@@ -3,6 +3,7 @@ import math
 import random
 
 from buff_system import BUFF_TYPES, CAT_NEGATIVE
+from buff_parameters import DEFAULT_PARAMETERS
 
 
 def _tick_effect(actor, buff, elapsed, world=None):
@@ -10,7 +11,7 @@ def _tick_effect(actor, buff, elapsed, world=None):
     if kind is None:
         return
     params = buff.params
-    value = float(params[0]) if params else None
+    value = float(params[0]) if params else DEFAULT_PARAMETERS.get(kind.tick)
     stacks = buff.stacks
     if kind.tick == "magnetic":
         from magnetic_pickups import attract_pickups
@@ -83,6 +84,13 @@ _DECREASE = {
     "gravity": {"feather": 50}, "damage_taken": {"fortify": 30},
     "healing_received": {"grievous_wound": 50},
 }
+
+# The tables declare which stats each effect modifies; defaults have one
+# source shared with the actual Buff/source descriptions.
+for _table in (_INCREASE, _DECREASE):
+    for _modifiers in _table.values():
+        for _tick in _modifiers:
+            _modifiers[_tick] = DEFAULT_PARAMETERS[_tick]
 
 
 def modified_stat(actor, stat_name, base_value):
