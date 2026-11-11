@@ -15,7 +15,7 @@ class BuffDescriptionTests(unittest.TestCase):
         self.assertEqual(result['issues'], [])
 
     def test_default_and_explicit_zero_stat_descriptions_match_effects(self):
-        for buff_id, stat, sign in ((3, 'v_max', 1), (4, 'v_jump', 1),
+        for buff_id, stat, sign in ((3, 'v_max', 1), (4, 'jump_height', 1),
                                     (5, 'stamina_recovery', 1), (6, 'stamina_cost', -1),
                                     (7, 'damage_taken', -1), (13, 'gravity', -1),
                                     (19, 'stamina_recovery', -1), (20, 'healing_received', -1),
