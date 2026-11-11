@@ -45,6 +45,32 @@ def _read(kind, path=None):
     return document
 
 
+def catalog_document(kind, path=None, *, directory=None):
+    """Read a catalog plus explicitly named data packages without overriding IDs.
+
+    An explicit file remains isolated. Built-in block/Buff packages are loaded
+    in filename order from extensions/{kind}_*.json using the same v1 schema.
+    """
+    if path is not None:
+        if directory is not None:
+            raise ValueError('choose either a catalog file or a catalog directory')
+        return _read(kind, path)
+    root = Path(directory) if directory is not None else CATALOG_DIR
+    document = _read(kind, root / f'{kind}.json')
+    if kind not in ('blocks', 'buffs'):
+        return document
+    entries = list(document['entries'])
+    seen = {entry['id'] for entry in entries}
+    for package in sorted((root / 'extensions').glob(f'{kind}_*.json')):
+        extra = _read(kind, package)
+        for entry in extra['entries']:
+            if entry['id'] in seen:
+                raise ValueError(f'{package}: id {entry["id"]} overrides an existing {kind} entry')
+            seen.add(entry['id'])
+            entries.append(entry)
+    return {**document, 'entries': entries}
+
+
 def _tuples(value):
     if isinstance(value, list):
         return tuple(_tuples(item) for item in value)
@@ -92,7 +118,7 @@ def _pattern(value):
 
 
 def _definitions(kind, cls, path=None):
-    document = _read(kind, path)
+    document = catalog_document(kind, path)
     allowed = {field.name for field in fields(cls)}
     result = {}
     for entry in document["entries"]:
