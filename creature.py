@@ -48,6 +48,7 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False       # 接触池中有可攀爬方块
         self.is_climbing = False     # 主动攀爬中
+        self._climb_align_target = None
         self.can_swim = False        # 接触池中有可游泳方块
         self._swim_force = 0.0       # 当前最大浮力值
         self._stamina_mult = 1.0     # 当前体力消耗倍率
@@ -219,6 +220,7 @@ class Creature:
     def reset_motion(self):
         self.v_x = 0.0
         self.v_y = 0.0
+        self._climb_align_target = None
 
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
@@ -243,6 +245,7 @@ class Creature:
             self.v_y = self.v_jump
             self.on_ground = False
             self.is_climbing = False
+            self._climb_align_target = None
             if can_air_jump:
                 self._air_jumps_used += 1
             return True
@@ -256,11 +259,15 @@ class Creature:
             return
         # 攀爬中：无重力，加速度归零防止残余滑动
         if self.is_climbing:
-            self.a_x = 0.0
-            self.a_y = 0.0
-            self.v_x = 0.0
-            self.clamp_velocity()
-            return
+            from climb_alignment import advance_climb_alignment
+            advance_climb_alignment(self, world, dt)
+            if self.is_climbing:
+                self.a_x = 0.0
+                self.a_y = 0.0
+                self.v_x = 0.0
+                self.clamp_velocity()
+                return
+        self._climb_align_target = None
         self.v_x += self.a_x * dt
         self.v_y += self.a_y * dt
 
@@ -586,6 +593,8 @@ class Creature:
         if self.is_climbing and not self.can_climb:
             self.is_climbing = False
             self.v_y = 0.0
+        if not self.is_climbing:
+            self._climb_align_target = None
 
         self._environment_speed_mult = 1.0
         self._environment_jump_mult = 1.0
@@ -885,6 +894,7 @@ class Creature:
             pass
         elif callback == "teleport_spawn":
             if hasattr(self, 'spawn_pos'):
+                self._climb_align_target = None
                 self._x, self._y = self.spawn_pos
 
     def has_buff(self, buff_id: int) -> bool:
@@ -936,6 +946,7 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False
         self.is_climbing = False
+        self._climb_align_target = None
         self.can_swim = False
         self._swim_force = 0.0
         self._liquid_space_f = 1.0
@@ -1060,7 +1071,7 @@ class Player(Creature):
 
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
-        """若可攀爬则进入攀爬中状态，强制居中防止卡墙。
+        """若可攀爬则进入攀爬中状态，沿物理步安全居中防止卡墙。
         必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
         if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
             return False
@@ -1089,7 +1100,7 @@ class Player(Creature):
         self.is_climbing = True
         self._air_jumps_used = 0
         self.v_x = self.v_y = self.a_x = self.a_y = 0.0
-        self._x = best_x
+        self._climb_align_target = best_x if abs(best_x - self._x) > CONTACT_EPSILON else None
         return True
 
     def stop_climbing(self):
@@ -1097,6 +1108,7 @@ class Player(Creature):
         if self.is_climbing:
             self.is_climbing = False
             self.v_y = 0.0
+        self._climb_align_target = None
 
     def climb_move(self, dy: float, speed: float = 3.0):
         """攀爬中上下移动。dy>0 向上，dy<0 向下。"""
