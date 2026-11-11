@@ -45,7 +45,15 @@ class PhaseExpiryTests(unittest.TestCase):
                 self.assertEqual(run['respawns'], 0)
                 self.assertEqual(run['first_expired']['hp'], 150)
                 self.assertEqual(run['first_expired']['stamina'], 200)
-                self.assertEqual(run['first_expired']['position'], run['first_expired']['last_clear'])
+                restored = run['first_expired']['restoration']
+                self.assertIsNotNone(restored)
+                self.assertTrue(restored['clear'])
+                self.assertEqual(restored['target'], run['first_expired']['last_clear'])
+                self.assertEqual(restored['target'], restored['anchor'])
+                # The session can process this tick's held input after restoring placement.
+                for axis in (0, 1):
+                    delta = abs(run['first_expired']['position'][axis] - restored['target'][axis])
+                    self.assertLessEqual(delta, abs(run['first_expired']['velocity'][axis]) / 120 + 1e-8)
 
     def test_expiry_after_clearing_wall_preserves_position_and_velocity(self):
         player, world = fixture()
