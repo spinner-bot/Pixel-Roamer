@@ -46,7 +46,8 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
             elif waypoint['kind'] == 'air':
                 arrived &= not player.on_ground and player._y >= waypoint['y']
             elif waypoint['kind'] == 'climb':
-                arrived &= player.is_climbing and player._y >= waypoint['y']
+                arrived &= (player.is_climbing and player._y >= waypoint['y']
+                            and player.stamina >= waypoint.get('stamina_min', 0))
             else:
                 arrived &= player.on_ground and abs(player._y - waypoint['y']) < .02
                 if waypoint['kind'] == 'rest':
