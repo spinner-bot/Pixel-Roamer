@@ -8,7 +8,7 @@ import unittest
 
 
 class NightAirFeatureTests(unittest.TestCase):
-    def test_temple_and_maze_restore_only_their_declared_empty_healing_point(self):
+    def test_healing_and_separately_reviewed_maze_exit_are_the_only_map_differences(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'night-air.json'
@@ -23,4 +23,9 @@ class NightAirFeatureTests(unittest.TestCase):
                 self.assertEqual(entry['before'], 11)
                 self.assertEqual(entry['after'], 290)
                 self.assertFalse(entry['healing_is_solid'])
-                self.assertEqual(entry['changes'], [{'position': entry['point'], 'before': 11, 'after': 290}])
+                expected = [{'position': entry['point'], 'before': 11, 'after': 290}]
+                if entry['map_id'] == 4:
+                    # A45 intentionally clears the two cells sealing the west spawn exit.
+                    expected = [{'position': [21, 21], 'before': 254, 'after': 0},
+                                {'position': [21, 22], 'before': 19, 'after': 0}] + expected
+                self.assertEqual(entry['changes'], expected)

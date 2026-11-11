@@ -153,7 +153,9 @@ for hx, hy in [(24,15),(3,29),(15,34),(44,34),(2,7),(30,17),(18,21),(40,30)]:
         world.set_tile(hx, hy, 290)
 
 # 保留角色可通过的枢纽出口，避免墙壁封死已有通道。
-fill(21, 18, 21, 20, 0)
+# The west corridor is four blocks above the hub floor. Open the headroom
+# through this edge of the roof so the existing door can actually reach it.
+fill(21, 18, 21, 22, 0)
 fill(27, 18, 27, 20, 0)
 
 world.end_bulk_load()

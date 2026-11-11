@@ -1,4 +1,4 @@
-"""Verify optional healing on night backgrounds without altering other geometry."""
+"""Expose night-air healing and every later intentional map difference explicitly."""
 import argparse
 import json
 import os
@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-              'legacy_revision': '3e5204b', 'scope': 'exact map diff for missed night-air healing; actual control routes separate',
+              'legacy_revision': '3e5204b', 'scope': 'full map diff for missed night-air healing plus reviewed west hub exit; actual control routes separate',
               'maps': []}
     for map_id, legacy_folder, point in CASES:
         old = ModuleType(f'legacy_night_{map_id}')
