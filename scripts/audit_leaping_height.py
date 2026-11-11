@@ -21,7 +21,9 @@ from world import World
 def measure(fps, source=2, parameter=None):
     world = World(0, 'leaping height contract', 40, 80, gravity=-9.8, spawn_points=(10.5, 5.9))
     for x in range(40):
-        world.set_tile(x, 4, source if x == 10 else 2)
+        world.set_tile(x, 4, 2)
+    # A non-solid source is a contact volume above support, not a floor.
+    world.set_tile(10, 4 if world.block_types[source].is_solid else 5, source)
     session = create_control_session(0, world=world)
     actor = session.app.player1
     original = session._advance_step
@@ -41,6 +43,8 @@ def measure(fps, source=2, parameter=None):
             actor.apply_buff(4, (parameter,), 30)
         actor.refresh_movement_stats()
         applied = [{'id': b.buff_id, 'params': b.params, 'source': b.source} for b in actor.buffs]
+        initial_vertical_velocity = actor.v_y
+        initially_supported = actor.on_ground
         launch_speed = actor.v_jump
         with patch('pygame.event.get', return_value=[pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)]):
             session.app._handle_events()
@@ -52,6 +56,7 @@ def measure(fps, source=2, parameter=None):
         respawns = reset.call_count
     return {'fps': fps, 'source_block': source, 'injected_parameter': parameter, 'applied': applied,
             'launch_speed': launch_speed, 'height': peak - 5.9, 'landed': landed,
+            'initial_vertical_velocity': initial_vertical_velocity, 'initially_supported': initially_supported,
             'elapsed': session.app._game_timer, 'respawns': respawns, 'hp': actor.hp,
             'physics': {'gravity': world.gravity, 'vertical_damping': actor.f_y}}
 
