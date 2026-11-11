@@ -1,0 +1,31 @@
+{
+  "scope": "isolated wind direction candidate; real source53, API23/8/40 explicitly labeled; not production or original-map acceptance",
+  "cases": [
+    {
+      "case": "reverse",
+      "api_control_buffs": [
+        23
+      ],
+      "source_reversals": 4,
+      "all_turn_within_1_5_seconds": true
+    },
+    {
+      "case": "clarity",
+      "api_control_buffs": [
+        23,
+        8
+      ],
+      "source_reversals": 4,
+      "all_turn_within_1_5_seconds": true
+    },
+    {
+      "case": "iron_will",
+      "api_control_buffs": [
+        23,
+        40
+      ],
+      "source_reversals": 4,
+      "all_turn_within_1_5_seconds": true
+    }
+  ]
+}
