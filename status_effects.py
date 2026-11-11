@@ -75,22 +75,15 @@ def advance_buffs(actor, dt, world=None):
 
 
 _INCREASE = {
-    "v_max": {"swiftness": 30}, "v_jump": {"leaping": 50},
-    "stamina_recovery": {"vigor": 50}, "gravity": {"anchored": 100},
+    "v_max": ('swiftness',), "v_jump": ('leaping',),
+    "stamina_recovery": ('vigor',), "gravity": ('anchored',),
 }
 _DECREASE = {
-    "v_max": {"slowed": 50, "chilled": 40},
-    "stamina_recovery": {"fatigue": 50}, "stamina_cost": {"endurance": 30},
-    "gravity": {"feather": 50}, "damage_taken": {"fortify": 30},
-    "healing_received": {"grievous_wound": 50},
+    "v_max": ('slowed', 'chilled'),
+    "stamina_recovery": ('fatigue',), "stamina_cost": ('endurance',),
+    "gravity": ('feather',), "damage_taken": ('fortify',),
+    "healing_received": ('grievous_wound',),
 }
-
-# The tables declare which stats each effect modifies; defaults have one
-# source shared with the actual Buff/source descriptions.
-for _table in (_INCREASE, _DECREASE):
-    for _modifiers in _table.values():
-        for _tick in _modifiers:
-            _modifiers[_tick] = DEFAULT_PARAMETERS[_tick]
 
 
 def modified_stat(actor, stat_name, base_value):
@@ -100,9 +93,8 @@ def modified_stat(actor, stat_name, base_value):
         if kind is None:
             continue
         for table, sign in ((_INCREASE, 1), (_DECREASE, -1)):
-            default = table.get(stat_name, {}).get(kind.tick)
-            if default is not None:
-                value = float(buff.params[0]) if buff.params else default
+            if kind.tick in table.get(stat_name, ()):
+                value = float(buff.params[0]) if buff.params else DEFAULT_PARAMETERS[kind.tick]
                 result *= max(0, 1 + sign * value * buff.stacks / 100)
         if stat_name == "v_max" and kind.tick == "stone_skin":
             result *= 0.4
