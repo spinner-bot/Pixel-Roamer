@@ -41,7 +41,9 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
         for frame in range(duration * fps):
             waypoint = route['waypoints'][stage]
             arrived = abs(player._x - waypoint['x']) < .18
-            if waypoint['kind'] == 'air':
+            if waypoint['kind'] == 'fall':
+                arrived &= not player.on_ground and player._y <= waypoint['y']
+            elif waypoint['kind'] == 'air':
                 arrived &= not player.on_ground and player._y >= waypoint['y']
             elif waypoint['kind'] == 'climb':
                 arrived &= player.is_climbing and player._y >= waypoint['y']
