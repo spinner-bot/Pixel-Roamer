@@ -1,6 +1,7 @@
 from __future__ import annotations
 import math
 from buff_contacts import apply_contact_buffs, clear_contact_buffs
+from wind_walk import advance_wind_walk
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
 import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
@@ -306,19 +307,7 @@ class Creature:
         buf_grav = self.get_buff_stat("gravity", 1.0)
         self.v_y += world.gravity * buf_grav * dt
 
-        # ---- Buff: 风步 (53) 连续移动加速 ----
-        if self.has_buff(53):
-            moving = abs(self.v_x) > 0.1
-            if moving:
-                self._wind_walk_timer = getattr(self, '_wind_walk_timer', 0.0) + dt
-                bonus = min(self._wind_walk_timer * 0.5, self._get_buff_param(53, 0, 0.5) * self.v_max)
-                # 按当前移动方向加速
-                direction = 1.0 if self.v_x > 0 else -1.0
-                self.v_x += direction * bonus * dt * 3
-            else:
-                self._wind_walk_timer = 0.0
-        else:
-            self._wind_walk_timer = 0.0
+        advance_wind_walk(self, dt)
 
         self.clamp_velocity()
 
