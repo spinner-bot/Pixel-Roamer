@@ -2,6 +2,8 @@
 像素启程 —— 大型探索冒险地图 (480×280 = 134,400)
 模式：有限 (finite) | 6大主题区域 | 多层结构 | 传送网络
 """
+from pathlib import Path
+from maps.layout import apply_layout
 from world import World
 from random import Random
 
@@ -657,3 +659,8 @@ world.grid[(375, py_base + 40)].meta = {"tp_x": 289.5, "tp_y": 63.9}
 fill(275, 63, 277, 65, 0)
 fill(269, 62, 277, 62, 244)
 world.end_bulk_load()
+
+# Restore a usable west-side connection through the existing tower floors.
+_tower_fill_color = world.fill_color
+apply_layout(world, Path(__file__).with_name("tower_connections.json"))
+world.fill_color = _tower_fill_color
