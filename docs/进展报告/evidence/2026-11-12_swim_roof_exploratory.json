@@ -1,0 +1,76 @@
+[
+  {
+    "height": 1.8,
+    "before": {
+      "position": [
+        5.5,
+        9.97
+      ],
+      "clear": true,
+      "surface": 10.0,
+      "can_swim": true
+    },
+    "after": [
+      5.5,
+      9.999552009319208
+    ],
+    "errors": []
+  },
+  {
+    "height": 2.02,
+    "before": {
+      "position": [
+        5.5,
+        9.97
+      ],
+      "clear": true,
+      "surface": 10.0,
+      "can_swim": true
+    },
+    "after": [
+      5.5,
+      9.999552009319208
+    ],
+    "errors": [
+      "solid overlap: 2 at 5,11"
+    ]
+  },
+  {
+    "height": 2.04,
+    "before": {
+      "position": [
+        5.5,
+        9.97
+      ],
+      "clear": true,
+      "surface": 10.0,
+      "can_swim": true
+    },
+    "after": [
+      5.5,
+      9.999552009319208
+    ],
+    "errors": [
+      "solid overlap: 2 at 5,11"
+    ]
+  },
+  {
+    "height": 2.08,
+    "before": {
+      "position": [
+        5.5,
+        9.959
+      ],
+      "clear": true,
+      "surface": 10.0,
+      "can_swim": true
+    },
+    "after": [
+      5.5,
+      9.99955200931921
+    ],
+    "errors": [
+      "solid overlap: 2 at 5,11"
+    ]
+  }
+]
