@@ -23,6 +23,25 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 class BuffBehaviorTests(unittest.TestCase):
+    def test_control_restrictions_are_immutable_validated_and_default_to_no_locks(self):
+        self.assertEqual(behavior_for(59).control_locks,('horizontal','jump','climb','swim'))
+        self.assertEqual(behavior_for(4).control_locks,())
+        self.assertEqual(behavior_for(51).control_locks,())
+        with self.assertRaises(FrozenInstanceError):behavior_for(59).control_locks=()
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'controls.json'
+            for value in ('jump',['jump','jump'],['attack'],[True],[[]],None):
+                with self.subTest(value=value):
+                    data={'schema_version':1,'kind':'buff_behavior',
+                          'entries':[{'buff_id':59,'control_locks':value}]}
+                    path.write_text(json.dumps(data))
+                    with self.assertRaises(ValueError):load_behaviors(path)
+            data['entries'][0]['control_locks']=['jump']
+            path.write_text(json.dumps(data))
+            isolated=load_behaviors(path)
+            self.assertEqual(isolated[59].control_locks,('jump',))
+            self.assertEqual(behavior_for(59).control_locks,('horizontal','jump','climb','swim'))
+
     def probe(self,script,*flags):
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory)/'report.json'
