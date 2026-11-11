@@ -1,0 +1,49 @@
+{
+  "code_revision": "b67dd15ac127b66bd5e0adac3a7810fc7ede4f20",
+  "legacy_revision": "3e5204b",
+  "scope": "exact map diff for missed night-air healing; actual control routes separate",
+  "maps": [
+    {
+      "map_id": 7,
+      "folder": "end_temple",
+      "point": [
+        36,
+        29
+      ],
+      "before": 11,
+      "after": 290,
+      "changes": [
+        {
+          "position": [
+            36,
+            29
+          ],
+          "before": 11,
+          "after": 290
+        }
+      ],
+      "healing_is_solid": false
+    },
+    {
+      "map_id": 4,
+      "folder": "loop_maze",
+      "point": [
+        40,
+        30
+      ],
+      "before": 11,
+      "after": 290,
+      "changes": [
+        {
+          "position": [
+            40,
+            30
+          ],
+          "before": 11,
+          "after": 290
+        }
+      ],
+      "healing_is_solid": false
+    }
+  ]
+}
