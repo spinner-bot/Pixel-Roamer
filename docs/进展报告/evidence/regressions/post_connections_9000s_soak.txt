@@ -1,0 +1,15 @@
+{"map_id": 1, "input_seconds": 600.0, "respawns": 1, "errors": []}
+{"map_id": 2, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 3, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 4, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 5, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 6, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 7, "input_seconds": 600.0, "respawns": 1, "errors": []}
+{"map_id": 8, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 9, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 19, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 20, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 21, "input_seconds": 600.0, "respawns": 1, "errors": []}
+{"map_id": 1001, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 1002, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 1003, "input_seconds": 600.0, "respawns": 0, "errors": []}
