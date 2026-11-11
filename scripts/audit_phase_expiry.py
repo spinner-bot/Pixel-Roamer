@@ -23,6 +23,9 @@ from world import World
 
 def measure(player_class, source, direction, fps, wall='single_layer'):
     spawn = 3.5 if direction == 1 else 60.5
+    if source == 'phantom_gate':
+        # Start beside the solid gate, touching its face, rather than inside it.
+        spawn = 4.4 if direction == 1 else 59.6
     world = World(0, 'phase expiry fixture', 64, 16, gravity=0, spawn_points=(spawn, 5.5))
     wall_x = 8 if source == 'ghost_buff' else 31
     if direction == -1:
@@ -32,7 +35,7 @@ def measure(player_class, source, direction, fps, wall='single_layer'):
         for y in range(2, 10):
             world.set_tile(x, y, 19)
     if source == 'phantom_gate':
-        world.set_tile(int(spawn), 5, 349)
+        world.set_tile(int(spawn) - direction, 5, 349)
     with patch('player_factory.Player', player_class):
         session = create_control_session(0, world=world)
     app, player = session.app, session.app.player1
