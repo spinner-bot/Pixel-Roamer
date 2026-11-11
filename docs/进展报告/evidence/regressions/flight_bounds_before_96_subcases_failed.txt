@@ -1,0 +1,773 @@
+test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) ... 
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.2, 0.2], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[0.8, 1.8], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[2.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=30, size=[4.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 30, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.2, 0.2], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[0.8, 1.8], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[2.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=60, size=[4.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 60, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': True, 'expected_edge': 0.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 0.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.2, 0.2], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.2, 0.2], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': True, 'expected_edge': 9.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [5.0, 9.5], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 0.4, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [0.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 24, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['edge_matches_body'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': True, 'expected_edge': 9.6, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': True, 'after_exit': [9.5, 5.0], 'exit_shift': 0.0, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 0.9, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 0.9333333333333311], 'exit_shift': 0.4333333333333311, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[0.8, 1.8], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [0.8, 1.8], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 9.1, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 9.066666666666652], 'exit_shift': 0.4333333333333478, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 1.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [0.9999999999999978, 5.0], 'exit_shift': 0.4999999999999978, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 9.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [8.999999999999986, 5.0], 'exit_shift': 0.5000000000000142, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[2.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [2.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='left', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, False], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='left', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'left', 'loops': [False, True], 'flight_position': [0.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [1.9999999999999976, 5.0], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='right', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, False], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='right', loops=[False, True])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'right', 'loops': [False, True], 'flight_position': [9.5, 5.0], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [7.999999999999989, 5.0], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='down', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [False, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='down', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'down', 'loops': [True, False], 'flight_position': [5.0, 0.5], 'flight_body_in_bounds': False, 'expected_edge': 2.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 1.9999999999999976], 'exit_shift': 1.4999999999999976, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='up', loops=[False, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [False, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+======================================================================
+FAIL: test_dimensions_edges_loop_axes_and_collision_reentry (test_flight_bounds.FlightBoundsTests) (fps=144, size=[4.0, 4.0], direction='up', loops=[True, False])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_flight_bounds.py", line 23, in test_dimensions_edges_loop_axes_and_collision_reentry
+    self.assertTrue(run['flight_body_in_bounds'], run)
+AssertionError: False is not true : {'fps': 144, 'size': [4.0, 4.0], 'direction': 'up', 'loops': [True, False], 'flight_position': [5.0, 9.5], 'flight_body_in_bounds': False, 'expected_edge': 8.0, 'edge_matches_body': False, 'loop_crossed': True, 'exit_immediate_clear': False, 'after_exit': [5.0, 7.999999999999989], 'exit_shift': 1.5000000000000107, 'exit_clear': True, 'hp': 150.0, 'stamina': 200.0, 'alive': True}
+
+----------------------------------------------------------------------
+Ran 1 test in 3.633s
+
+FAILED (failures=96)
