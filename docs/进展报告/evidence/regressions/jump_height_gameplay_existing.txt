@@ -1,0 +1,30 @@
+test_extreme_runtime_velocity_cannot_hang_collision_loop (test_gameplay.CollisionTests) ... ok
+test_fast_fall_lands_without_crossing_floor (test_gameplay.CollisionTests) ... ok
+test_fast_movement_does_not_cross_a_one_tile_wall (test_gameplay.CollisionTests) ... ok
+test_negative_fractional_coordinates_use_floor (test_gameplay.CollisionTests) ... ok
+test_one_way_platform_allows_jumping_from_below (test_gameplay.CollisionTests) ... ok
+test_one_way_platform_stays_solid_at_exact_rest (test_gameplay.CollisionTests) ... ok
+test_single_loop_axis_does_not_disable_void_on_other_axis (test_gameplay.CollisionTests) ... ok
+test_solid_default_tile_collides (test_gameplay.CollisionTests) ... ok
+test_default_ladder_world_has_climbable_contacts (test_gameplay.EnvironmentTests) ... ok
+test_environment_modifiers_restore_after_leaving (test_gameplay.EnvironmentTests) ... ok
+test_leaving_water_and_ladder_clears_contact_state (test_gameplay.EnvironmentTests) ... ok
+test_respawn_clears_environment_timers_and_modifiers (test_gameplay.EnvironmentTests) ... ok
+test_temporary_effects_expire_in_empty_air (test_gameplay.EnvironmentTests) ... ok
+test_friction_buffs_damp_without_inverting_or_amplifying_motion (test_gameplay.FrameRateTests) ... ok
+test_horizontal_movement_matches_across_frame_rates (test_gameplay.FrameRateTests) ... ok
+test_speed_and_jump_tiles_combine_with_buffs_and_restore (test_gameplay.FrameRateTests) ... ok
+test_coin_across_negative_loop_seam_is_consumed_once (test_gameplay.PickupTests) ... ok
+test_each_touched_coin_scores_once (test_gameplay.PickupTests) ... ok
+test_only_touched_coin_is_consumed (test_gameplay.PickupTests) ... ok
+test_score_block_without_consumed_variant_restores_default (test_gameplay.PickupTests) ... ok
+test_teleport_uses_touched_portal_metadata (test_gameplay.PickupTests) ... ok
+test_poison_bypasses_half_shield_and_respects_immunity (test_gameplay.PoisonTests) ... ok
+test_poison_lethal_second_half_marks_player_dead (test_gameplay.PoisonTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.222s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
