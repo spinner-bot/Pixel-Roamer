@@ -40,11 +40,11 @@ class GrandPolarityGalleryTests(unittest.TestCase):
                 for sample in result['force_samples']:
                     self.assertEqual(sample['source'],411)
                     self.assertEqual(sample['params'],[-1])
-                    self.assertGreater(sample['delta_vx'],0)
+                    self.assertGreater(sample['delta_vx'] * (sample['position'][0]-2980.5),0)
                 for sample in result['positive_force_samples']:
                     self.assertEqual(sample['source'],403)
                     self.assertEqual(sample['params'],[1])
-                    self.assertLess(sample['delta_vx'],0)
+                    self.assertGreater(sample['delta_vx'] * (2980.5-sample['position'][0]),0)
                 self.assertAlmostEqual(result['position'][1],76.9)
                 self.assertLess(abs(result['position'][0]-3002.5),.4)
                 self.assertEqual(result['trace'][-1]['buffs'],{})
