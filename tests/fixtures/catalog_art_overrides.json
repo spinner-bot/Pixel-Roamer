@@ -61,6 +61,56 @@
       "definition": "2565c1081c4b194e22526934b1cef30069c6abb315676d1a5651921ce21f7c17",
       "rgba32": "d5caae48e88fab6065937a01044137bfbdd7775e5b032a41d17a914e7cef0709",
       "reason": "Reviewed pixel texture refinement"
+    },
+    "310": {
+      "definition": "6c2e56eea50a2b894a690a2e1fc3a34a837b36e12cbbd0adf724a7cfc54e08b2",
+      "rgba32": "b07d3f445e5d9878bee8ba1ce1065ff5c35ca7b2ab60a934a4d0c38e34437dfd",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "311": {
+      "definition": "bae52c11652709ea2b08a8f60a24df7835788a1dd434c99f78d5fd5d5edc47cf",
+      "rgba32": "71554cc7aa6d628b0197fd99262a4d26e6c6eef894b4b7e770fa9d14029fc538",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "312": {
+      "definition": "daec56a33bbc560f7c101796b857b36c0aafac09221a28aa05326c9e921197fc",
+      "rgba32": "69443bab95ba727d57aa08b64f33fd1acf81ec4b71bf52a4414a7abbbb4f7f1d",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "313": {
+      "definition": "09067d9f6972ab63c8f63c5fc1e06a2344212cd2f6063045f7e8bb279dc71eb6",
+      "rgba32": "fd4b91c7bc8fb11334ceed937e9a48803421758b3445d399b475aad05f0fbfe0",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "314": {
+      "definition": "cf1d5dd13af71ce426df94c8d26cd4b89dc33e7f6bb292df2cf3912cb8696160",
+      "rgba32": "b41dfd3d8fcc821465568a459a7e0d4c06257cba201740c26eaf1f9cff95abcb",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "315": {
+      "definition": "f69603ec4df45026c3866800a79234f89d08f8cd6e5f6e241e66ab4b63dbd09e",
+      "rgba32": "58d989bd4ca7dc8d0b6b6515c6c96bf8dc615c482d08c95b179e3fcbb7242598",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "316": {
+      "definition": "7aab37739c5b0410a16b5e1f75393603ebdb4a2bf74bf719458e4f69c40f50e7",
+      "rgba32": "e2dc3d899ad8d3a9c17dd06f8ac109eaaa981283ce02ccf0de2e92913d508f7f",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "317": {
+      "definition": "c63c372ecc1e3fe21a28504dc52b4d83fd7455965b8f54c1e069721425c7f70e",
+      "rgba32": "5e3af5d32fe18ac5f533bab595ab4ef0675a451e49f7ab0680865bc94b90092d",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "318": {
+      "definition": "5eb5e29a700bb63077a9b7f0cfd85921251ea80dff4021dcbc440a1a7a65bb32",
+      "rgba32": "e1d50add27320c6489cb633897f6d6c771ab1e720735518313075eefe2af6d66",
+      "reason": "Distinct silhouette for existing score pickup"
+    },
+    "319": {
+      "definition": "c5e9d5e25979010fbf3cae989c0a1e17f1e0957ababbb83a42133e13d66d8072",
+      "rgba32": "7e70c586d7ff494077e6a2644e7a32ec5240f4eff84ef40cbcc8a7649665935e",
+      "reason": "Distinct silhouette for existing score pickup"
     }
   },
   "buffs": {
