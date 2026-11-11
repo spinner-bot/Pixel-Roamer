@@ -1,0 +1,547 @@
+{
+  "code_revision": "7990b59bebc427f2da87832f539c55ef35813e07",
+  "probe_sha256": "87d59f670e442d39a1b4182c95fb44a62c697fde50c7a3dc49bf48c06e8df9ee",
+  "scope": "isolated low-level real contact and consumer probes; explicit coordinates and input values; not original-map normal routes or full buff acceptance",
+  "rows": [
+    {
+      "tile_id": 363,
+      "buff_id": 5,
+      "active": {
+        "value": 1.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 364,
+      "buff_id": 7,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 364,
+      "buff_id": 6,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 373,
+      "buff_id": 51,
+      "active": {
+        "value": 0.6,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 373,
+      "buff_id": 42,
+      "active": {
+        "value": 0.9993201175234485,
+        "params": []
+      },
+      "control": {
+        "value": 0.9954761721314361,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 375,
+      "buff_id": 44,
+      "active": {
+        "value": 1,
+        "params": [
+          3
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          3
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "different": true
+    },
+    {
+      "tile_id": 381,
+      "buff_id": 45,
+      "active": {
+        "value": 4.0,
+        "params": []
+      },
+      "control": {
+        "value": 0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 382,
+      "buff_id": 43,
+      "active": {
+        "value": 0.9731621627338503,
+        "params": []
+      },
+      "control": {
+        "value": 0.985,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 383,
+      "buff_id": 42,
+      "active": {
+        "value": 0.9977355221357191,
+        "params": []
+      },
+      "control": {
+        "value": 0.985,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 387,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 388,
+      "buff_id": 54,
+      "active": {
+        "value": 2.0,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 388,
+      "buff_id": 7,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 389,
+      "buff_id": 13,
+      "active": {
+        "value": 0.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 390,
+      "buff_id": 47,
+      "active": {
+        "value": 20,
+        "params": []
+      },
+      "control": {
+        "value": 10,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 391,
+      "buff_id": 7,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 394,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 395,
+      "buff_id": 51,
+      "active": {
+        "value": 0.6,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 396,
+      "buff_id": 45,
+      "active": {
+        "value": 4.0,
+        "params": []
+      },
+      "control": {
+        "value": 0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 397,
+      "buff_id": 55,
+      "active": {
+        "value": 1.991270799520791,
+        "params": []
+      },
+      "control": {
+        "value": 0.49875208073176225,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 400,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 401,
+      "buff_id": 44,
+      "active": {
+        "value": 1,
+        "params": [
+          3
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          3
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "different": true
+    },
+    {
+      "tile_id": 402,
+      "buff_id": 42,
+      "active": {
+        "value": 0.9977355221357191,
+        "params": []
+      },
+      "control": {
+        "value": 0.985,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 405,
+      "buff_id": 5,
+      "active": {
+        "value": 1.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 406,
+      "buff_id": 6,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 410,
+      "buff_id": 51,
+      "active": {
+        "value": 0.6,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 412,
+      "buff_id": 45,
+      "active": {
+        "value": 4.0,
+        "params": []
+      },
+      "control": {
+        "value": 0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 416,
+      "buff_id": 13,
+      "active": {
+        "value": 0.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 416,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 417,
+      "buff_id": 54,
+      "active": {
+        "value": 2.0,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 418,
+      "buff_id": 13,
+      "active": {
+        "value": 0.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 419,
+      "buff_id": 5,
+      "active": {
+        "value": 1.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 421,
+      "buff_id": 47,
+      "active": {
+        "value": 20,
+        "params": []
+      },
+      "control": {
+        "value": 10,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 422,
+      "buff_id": 44,
+      "active": {
+        "value": 1,
+        "params": [],
+        "opportunities_first_half_second": 0
+      },
+      "control": {
+        "value": 0,
+        "params": [],
+        "opportunities_first_half_second": 0
+      },
+      "different": true
+    },
+    {
+      "tile_id": 423,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 424,
+      "buff_id": 7,
+      "active": {
+        "value": 0.7,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 425,
+      "buff_id": 53,
+      "active": {
+        "value": 2.375,
+        "params": []
+      },
+      "control": {
+        "value": 2.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 432,
+      "buff_id": 44,
+      "active": {
+        "value": 2,
+        "params": [
+          2
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          2
+        ],
+        "opportunities_first_half_second": 0
+      },
+      "different": true
+    },
+    {
+      "tile_id": 433,
+      "buff_id": 13,
+      "active": {
+        "value": 0.5,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 435,
+      "buff_id": 42,
+      "active": {
+        "value": 0.9977355221357191,
+        "params": []
+      },
+      "control": {
+        "value": 0.985,
+        "params": []
+      },
+      "different": true
+    },
+    {
+      "tile_id": 438,
+      "buff_id": 54,
+      "active": {
+        "value": 2.0,
+        "params": []
+      },
+      "control": {
+        "value": 1.0,
+        "params": []
+      },
+      "different": true
+    }
+  ]
+}
