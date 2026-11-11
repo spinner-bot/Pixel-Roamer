@@ -1,0 +1,9 @@
+test_existing_hall_is_reached_without_increasing_stamina (test_grand_entrance.GrandEntranceTests) ... ok
+test_existing_portal_route_reaches_formal_victory_from_spawn (test_grand_entrance.GrandEntranceTests) ... ok
+test_north_shaft_and_existing_platforms_reach_first_portal (test_grand_entrance.GrandEntranceTests) ... ok
+test_spawn_to_first_cave_uses_real_ladder_and_rest_stops (test_grand_entrance.GrandEntranceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 29.979s
+
+OK
