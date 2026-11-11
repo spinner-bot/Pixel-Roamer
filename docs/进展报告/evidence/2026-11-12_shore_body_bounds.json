@@ -1,0 +1,5893 @@
+{
+  "code_revision": "ecd4c2f7b3e773fbf86bd8a0156a33e7798cb62b",
+  "scope": "294 legal fixture combinations sampled through allowed 0.1..10 dimensions, exact 0.2 shore margin; not every real size/map/buff",
+  "sources": {
+    "scripts/audit_shore_body_bounds.py": "9a374176d41f85fb9e7ad1c9de75be121e6e82ff0a813411b3122f2dbc5cad59",
+    "shore_detection.py": "fd202d86dcc385d6c82212598da560d9e476cdb0727f8ad456d2756e368a0196",
+    "shore_exit.py": "e51aa78b6ce97be6008839960f0942c2eefc189419e5bc5cebad076172470be8",
+    "pixel_roamer/world_session.py": "00da8161d42f129f32c2c2b3aff7573aabab681e1e96cadf08702c5b239afd83",
+    "creature.py": "271d961cbeb473a9533bb99d8b972edf3e0498096c0ef29842b5a587fce6e702"
+  },
+  "runs": [
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.05
+      ],
+      "elapsed": 0.03333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.3
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.3
+      ],
+      "elapsed": 0.041666666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.3
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.3
+      ],
+      "elapsed": 0.041666666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.4
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.4
+      ],
+      "elapsed": 0.041666666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.4
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.4
+      ],
+      "elapsed": 0.041666666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.9
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.9
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        30.9
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.9
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.9
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        30.9
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        31.3
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        31.3
+      ],
+      "elapsed": 0.075,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        31.3
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        31.3
+      ],
+      "elapsed": 0.075,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        32.5
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        32.5
+      ],
+      "elapsed": 0.10833333333333332,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.95309188990564,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        32.5
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.88908093805588,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        32.5
+      ],
+      "elapsed": 0.10833333333333332,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.25,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.861880449999997,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.1,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.75,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.13811954999999,
+        35.0
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.05
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.05
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.05
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.05
+      ],
+      "elapsed": 0.049999999999999996,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.3
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.3
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.4
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.4
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.9
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        30.9
+      ],
+      "elapsed": 0.075,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.9
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        30.9
+      ],
+      "elapsed": 0.075,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        31.3
+      ],
+      "elapsed": 0.09166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        31.3
+      ],
+      "elapsed": 0.09166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        32.5
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        32.5
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        35.0
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.86274004293458,
+        35.0
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        35.0
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.6,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.1372599570654,
+        35.0
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.05
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.05
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.05
+      ],
+      "elapsed": 0.05833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.3
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.4
+      ],
+      "elapsed": 0.06666666666666667,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.9
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.9
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        30.9
+      ],
+      "elapsed": 0.08333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        31.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        32.5
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        20.599999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.840965608957227,
+        35.0
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        35.0
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 0.8,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        59.4,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.15903439104275,
+        35.0
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.05
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.05
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.05
+      ],
+      "elapsed": 0.09166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.05
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.05
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.05
+      ],
+      "elapsed": 0.09166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.3
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.4
+      ],
+      "elapsed": 0.09999999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.9
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.9
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        30.9
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.9
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.9
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        30.9
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        31.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        32.5
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        35.0
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        35.0
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.099999999999998,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.871862094446715,
+        35.0
+      ],
+      "elapsed": 0.2583333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        35.0
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        35.0
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 1.8,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.9,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.12813790555327,
+        35.0
+      ],
+      "elapsed": 0.2583333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.05
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.05
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.05
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.05
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.05
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.05
+      ],
+      "elapsed": 0.11666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.3
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.3
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.3
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.4
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.4
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.4
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.4
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.4
+      ],
+      "elapsed": 0.13333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.4
+      ],
+      "elapsed": 0.12499999999999999,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.9
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.9
+      ],
+      "elapsed": 0.15,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        30.9
+      ],
+      "elapsed": 0.14166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.9
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.9
+      ],
+      "elapsed": 0.15,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        30.9
+      ],
+      "elapsed": 0.14166666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        31.3
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        31.3
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        31.3
+      ],
+      "elapsed": 0.15833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        31.3
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        31.3
+      ],
+      "elapsed": 0.16666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        31.3
+      ],
+      "elapsed": 0.15833333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        32.5
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        32.5
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        32.5
+      ],
+      "elapsed": 0.19166666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        32.5
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        32.5
+      ],
+      "elapsed": 0.19999999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        32.5
+      ],
+      "elapsed": 0.19166666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        35.0
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        35.0
+      ],
+      "elapsed": 0.2833333333333334,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        21.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.938183902075796,
+        35.0
+      ],
+      "elapsed": 0.2833333333333334,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        35.0
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        35.0
+      ],
+      "elapsed": 0.2833333333333334,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 2.6,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        58.5,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.061816097924186,
+        35.0
+      ],
+      "elapsed": 0.2833333333333334,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.05
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.05
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.05
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.05
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.05
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.05
+      ],
+      "elapsed": 0.21666666666666665,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.3
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.3
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.3
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.3
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.3
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.3
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.4
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.4
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.4
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.4
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.4
+      ],
+      "elapsed": 0.2333333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.4
+      ],
+      "elapsed": 0.22499999999999998,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.9
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.9
+      ],
+      "elapsed": 0.24999999999999997,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        30.9
+      ],
+      "elapsed": 0.24166666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.9
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.9
+      ],
+      "elapsed": 0.24999999999999997,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        30.9
+      ],
+      "elapsed": 0.24166666666666664,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        31.3
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        31.3
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        31.3
+      ],
+      "elapsed": 0.2583333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        31.3
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        31.3
+      ],
+      "elapsed": 0.26666666666666666,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        31.3
+      ],
+      "elapsed": 0.2583333333333333,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        32.5
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        32.5
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        19.944972497969914,
+        32.5
+      ],
+      "elapsed": 0.29166666666666674,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        32.5
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        32.5
+      ],
+      "elapsed": 0.3000000000000001,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        60.055027502030065,
+        32.5
+      ],
+      "elapsed": 0.29166666666666674,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        20.92399030972482,
+        35.0
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        20.92399030972482,
+        35.0
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        22.7,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        20.92399030972482,
+        35.0
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        59.07600969027516,
+        35.0
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        59.07600969027516,
+        35.0
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 5,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        57.3,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        59.07600969027516,
+        35.0
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.60328108169029,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.60328108169029,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.60328108169029,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.39671891830969,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.39671891830969,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.1,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.39671891830969,
+        30.05
+      ],
+      "elapsed": 1.6666666666666632,
+      "stamina": 179.6938330177056,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.3
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.3
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.3
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.3
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.3
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.3
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.4
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.4
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.681842045709264,
+        30.4
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.4
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.4
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 0.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.31815795429072,
+        30.4
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.84257127199972,
+        30.9
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.84257127199972,
+        30.9
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        21.84257127199972,
+        30.9
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.157428728000255,
+        30.9
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.157428728000255,
+        30.9
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 1.8,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        58.157428728000255,
+        30.9
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.008233078581142,
+        31.3
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.008233078581142,
+        31.3
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.008233078581142,
+        31.3
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.99176692141884,
+        31.3
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.99176692141884,
+        31.3
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 2.6,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.99176692141884,
+        31.3
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.35496457716703,
+        32.5
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.35496457716703,
+        32.5
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        22.35496457716703,
+        32.5
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.64503542283295,
+        32.5
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.64503542283295,
+        32.5
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 5,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        57.64503542283295,
+        32.5
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": -1,
+      "fps": 30,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        23.42399030972482,
+        35.0
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": -1,
+      "fps": 60,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        23.42399030972482,
+        35.0
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": -1,
+      "fps": 144,
+      "initial": [
+        25.2,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        23.42399030972482,
+        35.0
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": -1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": 1,
+      "fps": 30,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        56.57600969027516,
+        35.0
+      ],
+      "elapsed": 0.33333333333333354,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": 1,
+      "fps": 60,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        56.57600969027516,
+        35.0
+      ],
+      "elapsed": 0.3166666666666668,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    },
+    {
+      "width": 10,
+      "height": 10,
+      "side": 1,
+      "fps": 144,
+      "initial": [
+        54.8,
+        30.0
+      ],
+      "completed": true,
+      "final": [
+        56.57600969027516,
+        35.0
+      ],
+      "elapsed": 0.30833333333333346,
+      "stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0,
+      "chosen": 1
+    }
+  ]
+}
