@@ -10,6 +10,19 @@
       "stamina_min": 95
     },
     {
+      "name": "entrance_mid_rope",
+      "x": 373.5,
+      "y": 43.98,
+      "kind": "climb"
+    },
+    {
+      "name": "original_entrance_platform",
+      "x": 375.5,
+      "y": 40.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
       "name": "entrance_rope",
       "x": 373.5,
       "y": 48.98,
