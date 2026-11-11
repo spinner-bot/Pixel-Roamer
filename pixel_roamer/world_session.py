@@ -4,6 +4,7 @@ import sfx
 from game_state import resolve_player_death
 from simulation import FixedStepClock
 from shore_exit import begin_shore_exit, advance_shore_exit, after_shore_physics
+from phase_collision import prepare_phase_collision, remember_phase_position
 
 class WorldSession:
     """Existing world rules and input."""
@@ -52,6 +53,8 @@ class WorldSession:
         # ---- Buff 系统 tick ----
         if not self.app._game_over and not self.app._game_win and self.app.player1.alive:
             self.app.player1.tick_buffs(dt)
+            # Placement safety must run even when stun blocks voluntary motion.
+            prepare_phase_collision(self.app.player1, self.app._current_map)
         # buff 属性修正
         self.app.player1.refresh_movement_stats()
         # 体力恢复速度（动态公式，三层结构）
@@ -109,6 +112,7 @@ class WorldSession:
                 # 更新接触池（用于绘制等）
                 grect = self.app.player1.get_game_rect()
                 self.app.player1.clear_environment_contacts(self.app._current_map)
+                remember_phase_position(self.app.player1, self.app._current_map)
             else:
                 # ---- 正常模式 ----
                 dir_x = 0.0
