@@ -25,10 +25,10 @@ def continue_from_hall(app, session, keys, fps):
     reverse_seen = False
     returned = False
     min_hp, min_stamina = actor.hp, actor.stamina
-    real_force = magnetized_field.apply_magnetized_field
+    real_force = magnetized_field.apply_field
 
     def observed_force(creature, world, *args, **kwargs):
-        buff = creature.buffs.get(49)
+        buff = next((b for b in creature.buffs if b.buff_id == 49), None)
         before = creature.v_x
         result = real_force(creature, world, *args, **kwargs)
         if buff is not None:
@@ -39,7 +39,7 @@ def continue_from_hall(app, session, keys, fps):
                                           'params': list(buff.params), 'delta_vx': creature.v_x - before})
         return result
 
-    with patch.object(magnetized_field, 'apply_magnetized_field', side_effect=observed_force):
+    with patch.object(magnetized_field, 'apply_field', side_effect=observed_force):
         for frame in range(120 * fps):
             events = []
             for key in tuple(keys):
@@ -57,7 +57,7 @@ def continue_from_hall(app, session, keys, fps):
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_s))
             if phase == 'source':
                 tx = 2982.5
-                if actor.buffs.get(49) is not None and actor.buffs[49].params[0] < 0:
+                if any(b.buff_id == 49 and b.params and b.params[0] < 0 for b in actor.buffs):
                     reverse_seen = True
                     phase = 'observe'
                     observe_until = frame + fps // 2
@@ -79,13 +79,13 @@ def continue_from_hall(app, session, keys, fps):
                 tx = 3002.5
                 if actor.on_ground and abs(actor._x - tx) < .4 and abs(actor._y - 76.9) < .1:
                     phase = 'expire'
-                    if 23 not in actor.buffs and 49 not in actor.buffs:
+                    if not actor.has_buff(23) and not actor.has_buff(49):
                         returned = True
                         break
             desired = max(-4, min(4, (tx - actor._x) * 3))
             error = desired - actor.v_x
             right, left = error > .3, error < -.3
-            if getattr(actor, '_is_reversed', False):
+            if actor.has_buff(23) and not actor.has_buff(8) and not actor.has_buff(40):
                 right, left = left, right
             keys[pygame.K_d], keys[pygame.K_a] = right, left
             if phase == 'observe':
@@ -103,7 +103,7 @@ def continue_from_hall(app, session, keys, fps):
             if frame % fps == 0:
                 trace.append({'seconds': frame / fps, 'phase': phase, 'position': actor.get_center(),
                               'hp': actor.hp, 'stamina': actor.stamina,
-                              'buffs': {str(i): {'params': list(b.params), 'source': b.source} for i,b in actor.buffs.items()}})
+                              'buffs': {str(i): {'params': list(b.params), 'source': b.source} for b in actor.buffs for i in (b.buff_id,)}})
     if not returned:
         errors.append({'reason': 'route_incomplete', 'phase': phase, 'position': actor.get_center()})
     if not force_samples:
