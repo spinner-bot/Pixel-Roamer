@@ -4,6 +4,8 @@ test_world_2 —— 主题大地图（650x80）
 """
 from world import World
 from random import Random
+from pathlib import Path
+from maps.layout import apply_layout
 
 MAP_ID = 2
 world = World(map_id=MAP_ID, name="主题大地图", w=650, h=80,
@@ -201,6 +203,9 @@ def generate(world):
     fill(5, 52, 15, 56, 0)  # 清理出生区
     fill(5, 50, 15, 51, 2)  # 石头平台
     world.set_tile(10, 52, 43)  # 火把照明
+
+    # A short data-defined ladder links the existing exit to its sky island.
+    apply_layout(world, Path(__file__).with_name('connections.json'))
 
 
 # 调用生成

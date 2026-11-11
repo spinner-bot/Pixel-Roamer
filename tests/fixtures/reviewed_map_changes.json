@@ -2,6 +2,22 @@
   "schema_version": 1,
   "baseline_ref": "3e5204b",
   "maps": {
+    "2": [
+      {"position": [599, 10], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 11], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 12], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 13], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 14], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 15], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 16], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 17], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 18], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 19], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 20], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 21], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 22], "before": 11, "after": 9, "stage": "A57"},
+      {"position": [599, 23], "before": 11, "after": 9, "stage": "A57"}
+    ],
     "3": [
       {"position": [447, 201], "before": 255, "after": 302, "stage": "A52"},
       {"position": [450, 201], "before": 302, "after": 255, "stage": "A52"}
