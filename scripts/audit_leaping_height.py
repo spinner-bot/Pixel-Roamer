@@ -18,8 +18,8 @@ from scripts.control_session import create_control_session
 from world import World
 
 
-def measure(fps, source=2, parameter=None, press_jump=True):
-    world = World(0, 'leaping height contract', 40, 80, gravity=-9.8, spawn_points=(10.5, 5.9))
+def measure(fps, source=2, parameter=None, press_jump=True, *, world_height=80, time_limit=12):
+    world = World(0, 'leaping height contract', 40, world_height, gravity=-9.8, spawn_points=(10.5, 5.9))
     for x in range(40):
         world.set_tile(x, 4, 2)
     # A non-solid source is a contact volume above support, not a floor.
@@ -50,7 +50,7 @@ def measure(fps, source=2, parameter=None, press_jump=True):
         with patch('pygame.event.get', return_value=events):
             session.app._handle_events()
         with patch.object(session, '_advance_step', side_effect=observe):
-            for _ in range(12 * fps):
+            for _ in range(time_limit * fps):
                 session.advance(1 / fps)
                 if landed:
                     break
