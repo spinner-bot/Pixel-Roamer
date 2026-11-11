@@ -1,0 +1,19 @@
+import json
+from pathlib import Path
+from maps import get_map
+from maps.layout import apply_layout
+from scripts.control_session import create_control_session
+from scripts.audit_pixel_normal_tower import measure
+w=get_map(3).create_session();apply_layout(w,'/tmp/pixel-pyramid-bottom-candidate.json');s=create_control_session(3,world=w)
+base=json.loads(Path('scripts/routes/pixel_sky_to_tower_base.json').read_text())
+back=dict(map_id=3,scope='actual tower base back to desert bank and original bottom entrance without state transfer',waypoints=[])
+for name,x,y,kind,speed in [('desert_bank',419.5,22.9,'rest',8),('above_oasis',419.5,27.,'air',5),('west_of_oasis',396.5,22.9,'ground',10),('bottom_entrance_ground',373.5,22.9,'rest',8)]:
+ p=dict(name=name,x=x,y=y,kind=kind,speed=speed)
+ if kind=='rest':p['stamina_min']=95
+ back['waypoints'].append(p)
+bottom=json.loads(Path('/tmp/pixel-pyramid-bottom-route.json').read_text())
+Path('/tmp/pixel-pyramid-bottom-approach-route.json').write_text(json.dumps(back,indent=2)+'\n')
+r=measure(30,routes=[base,back,bottom],session=s)
+Path('/tmp/pixel-pyramid-bottom-normal-first.json').write_text(json.dumps(r,indent=2)+'\n')
+print({k:r[k] for k in ('completed','position','timer','min_hp','min_stamina','respawns')})
+for segment in r['segments'][1:]:print(segment['failure'],segment['position'],flush=True)

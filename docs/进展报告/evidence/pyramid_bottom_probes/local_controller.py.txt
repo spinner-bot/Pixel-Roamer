@@ -1,0 +1,24 @@
+import json
+from pathlib import Path
+from maps import get_map
+from maps.layout import apply_layout
+from scripts.control_session import create_control_session
+from scripts.audit_endless_climb import run
+layout=dict(schema_version=1,palette={},rectangles=[[372,39,374,39,0],[372,45,374,46,0],[373,22,373,48,31]])
+Path('/tmp/pixel-pyramid-bottom-candidate.json').write_text(json.dumps(layout,indent=2)+'\n')
+rooms=json.loads(Path('scripts/routes/pixel_pyramid_rooms.json').read_text())
+route=dict(map_id=3,scope='explicit local desert-ground fixture to original bottom entry, rooms and roof return',waypoints=[])
+for name,x,y,kind in [('entrance_approach',373.5,22.9,'rest'),('entrance_rope',373.5,48.98,'climb'),('entrance_departure',373.5,51.,'air'),('entrance_checkpoint',375.5,48.9,'rest')]:
+ point=dict(name=name,x=x,y=y,kind=kind)
+ if kind=='rest':point['stamina_min']=95
+ route['waypoints'].append(point)
+route['waypoints']+=rooms['waypoints'][2:]
+Path('/tmp/pixel-pyramid-bottom-route.json').write_text(json.dumps(route,indent=2)+'\n')
+results=[]
+for candidate in (False,True):
+ world=get_map(3).create_session();world.spawn_points=(370.5,22.9)
+ if candidate:apply_layout(world,'/tmp/pixel-pyramid-bottom-candidate.json')
+ session=create_control_session(3,world=world)
+ result=run(30,route,240,5,session=session);result['candidate']=candidate;results.append(result)
+ print(candidate,{k:result[k] for k in ('completed_route','failure','position','min_hp','min_stamina','timer')},flush=True)
+Path('/tmp/pixel-pyramid-bottom-first.json').write_text(json.dumps(results,indent=2)+'\n')
