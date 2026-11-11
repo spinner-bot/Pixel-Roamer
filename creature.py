@@ -95,6 +95,7 @@ class Creature:
         self._effect_world = None
         self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
+        self._jump_escape_active = False
 
     @property
     def phys_atk(self):
@@ -241,6 +242,7 @@ class Creature:
         self.v_x = 0.0
         self.v_y = 0.0
         self._climb_align_target = None
+        self._jump_escape_active = False
 
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
@@ -263,6 +265,7 @@ class Creature:
 
         if (not_on_ground_ok or on_ground_or_climb or can_air_jump) and self.alive:
             self.v_y = self.v_jump
+            self._jump_escape_active = True
             self.on_ground = False
             self.is_climbing = False
             self._climb_align_target = None
@@ -274,6 +277,8 @@ class Creature:
     def update_physics(self, dt: float, world):
         if not self.alive:
             return
+        if self.on_ground or self.v_y <= 0:
+            self._jump_escape_active = False
         # 飞行模式：完全跳过物理
         if getattr(self, 'fly_mode', False):
             return
