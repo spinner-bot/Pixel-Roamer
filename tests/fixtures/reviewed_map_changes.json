@@ -53,6 +53,14 @@
       {"position": [46, 0], "before": 68, "after": 11, "stage": "A50"},
       {"position": [46, 35], "before": 254, "after": 11, "stage": "A50"}
     ],
+    "5": [
+      {"position": [2, 0], "before": 68, "after": 11, "stage": "A56"},
+      {"position": [2, 1], "before": 67, "after": 11, "stage": "A56"},
+      {"position": [3, 0], "before": 68, "after": 11, "stage": "A56"},
+      {"position": [3, 1], "before": 67, "after": 11, "stage": "A56"},
+      {"position": [4, 0], "before": 68, "after": 11, "stage": "A56"},
+      {"position": [4, 1], "before": 67, "after": 11, "stage": "A56"}
+    ],
     "7": [
       {"position": [36, 29], "before": 11, "after": 290, "stage": "A37"},
       {"position": [40, 22], "before": 19, "after": 10, "stage": "A51"},
