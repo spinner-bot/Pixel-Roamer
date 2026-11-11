@@ -1,0 +1,1109 @@
+{
+  "code_revision": "6b0908f183a1615befe7df106533bf11fb376e3e",
+  "scope": "normal spawn to score-target victory using production controls; optional loot excluded; no device acceptance",
+  "plan": "scripts/routes/collector.json",
+  "plan_sha256": "36b187d08a66e0d70aa972febb67861aa8bb3ec1189b6747cea9e6cbcb01aaa2",
+  "runs": [
+    {
+      "map_id": 9,
+      "mode": "score_target",
+      "fps": 30,
+      "game_win": false,
+      "game_over": false,
+      "timer": 30.0666666666656,
+      "control_frames": 902,
+      "score": 40,
+      "score_goal": 500,
+      "available_score": 1195,
+      "remaining_score": 1155,
+      "position": [
+        17.4,
+        18.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "terminal_state_frozen": null,
+      "failure": "waypoint time budget exceeded",
+      "leg": 0,
+      "arrivals": [],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "leg": 0,
+          "position": [
+            26.991261296006407,
+            21.995486111111113
+          ],
+          "score": 15,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 1.033333333333332,
+          "leg": 0,
+          "position": [
+            22.981916986019606,
+            19.9
+          ],
+          "score": 20,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 2.0333333333333288,
+          "leg": 0,
+          "position": [
+            18.06554321117045,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 3.033333333333325,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 4.0333333333333234,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 5.033333333333373,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 6.033333333333423,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 7.033333333333473,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 8.033333333333518,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 9.033333333333461,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 10.033333333333404,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 11.033333333333347,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.03333333333329,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 13.033333333333234,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 14.033333333333177,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 15.03333333333312,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 16.033333333333065,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 17.033333333333008,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 18.03333333333295,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 19.033333333332894,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 20.033333333332838,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 21.03333333333278,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 22.033333333332724,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 23.033333333332667,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 24.03333333333261,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 25.033333333332553,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 26.033333333332497,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 27.03333333333244,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 28.033333333332383,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 29.033333333332326,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 30.03333333333227,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    },
+    {
+      "map_id": 9,
+      "mode": "score_target",
+      "fps": 60,
+      "game_win": false,
+      "game_over": false,
+      "timer": 30.03333333333227,
+      "control_frames": 1802,
+      "score": 40,
+      "score_goal": 500,
+      "available_score": 1195,
+      "remaining_score": 1155,
+      "position": [
+        17.4,
+        18.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "terminal_state_frozen": null,
+      "failure": "waypoint time budget exceeded",
+      "leg": 0,
+      "arrivals": [],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "leg": 0,
+          "position": [
+            26.997365206530155,
+            21.998645833333335
+          ],
+          "score": 15,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 1.0166666666666655,
+          "leg": 0,
+          "position": [
+            23.083872477424656,
+            19.968958333333337
+          ],
+          "score": 20,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 2.016666666666662,
+          "leg": 0,
+          "position": [
+            18.206310843625577,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 3.0166666666666586,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 4.016666666666656,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 5.016666666666706,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 6.016666666666755,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 7.016666666666805,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 8.016666666666852,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 9.016666666666795,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 10.016666666666739,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 11.016666666666682,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.016666666666625,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 13.016666666666568,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 14.016666666666511,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 15.016666666666454,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 16.0166666666664,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 17.016666666666342,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 18.016666666666286,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 19.01666666666623,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 20.016666666666172,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 21.016666666666115,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 22.016666666666058,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 23.016666666666,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 24.016666666665945,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 25.016666666665888,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 26.01666666666583,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 27.016666666665774,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 28.016666666665717,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 29.01666666666566,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 30.016666666665603,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    },
+    {
+      "map_id": 9,
+      "mode": "score_target",
+      "fps": 144,
+      "game_win": false,
+      "game_over": false,
+      "timer": 30.00833333333227,
+      "control_frames": 4322,
+      "score": 40,
+      "score_goal": 500,
+      "available_score": 1195,
+      "remaining_score": 1155,
+      "position": [
+        17.4,
+        18.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "terminal_state_frozen": null,
+      "failure": "waypoint time budget exceeded",
+      "leg": 0,
+      "arrivals": [],
+      "trace": [
+        {
+          "time": 0.0,
+          "leg": 0,
+          "position": [
+            27.0,
+            22.0
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 0.9999999999999989,
+          "leg": 0,
+          "position": [
+            23.17490140524026,
+            20.051562500000003
+          ],
+          "score": 20,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 1.9999999999999953,
+          "leg": 0,
+          "position": [
+            18.308655319515484,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 2.999999999999992,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 3.9999999999999885,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 5.000000000000038,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 6.000000000000088,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 7.000000000000138,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 8.000000000000187,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 9.00000000000013,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 10.000000000000073,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 11.000000000000016,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 11.99999999999996,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.999999999999902,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 13.999999999999845,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 14.999999999999789,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 15.999999999999732,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 16.999999999999677,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 17.99999999999962,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 18.999999999999563,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 19.999999999999506,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 20.99999999999945,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 21.999999999999392,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 22.999999999999336,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 23.99999999999928,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 24.999999999999222,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 25.999999999999165,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 26.99999999999911,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 27.99999999999905,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 28.999999999998995,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 29.999999999998938,
+          "leg": 0,
+          "position": [
+            17.4,
+            18.9
+          ],
+          "score": 40,
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    }
+  ]
+}
