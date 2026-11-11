@@ -47,7 +47,7 @@ def measure(fps, source=2, parameter=None, press_jump=True, *, world_height=80, 
         if parameter is not None:
             actor.apply_buff(4, (parameter,), 30)
         actor.refresh_movement_stats()
-        applied = [{'id': b.buff_id, 'params': b.params, 'source': b.source} for b in actor.buffs]
+        applied = [{'id': b.buff_id, 'params': b.params, 'source': b.source, 'stacks': b.stacks} for b in actor.buffs]
         initial_vertical_velocity = actor.v_y
         initially_supported = actor.on_ground
         launch_speed = actor.v_jump
