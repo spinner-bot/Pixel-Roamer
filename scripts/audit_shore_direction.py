@@ -22,7 +22,7 @@ from scripts.audit_session_soak import errors_for
 from teleport import can_place
 
 
-def run(fps, body, gap, intent, valid_banks, offset):
+def run(fps, body, gap, intent, valid_banks, offset, reversed_input=False):
     width, height = body
     dx, dy = offset
     expected_start = (5 + gap / 2 + dx, 20 + dy)
@@ -38,6 +38,8 @@ def run(fps, body, gap, intent, valid_banks, offset):
         world.set_tile(5 + gap, 21, 2)
     session = create_control_session(0, world=world)
     app, player = session.app, session.app.player1
+    if reversed_input:
+        player.apply_buff(23, (), 5)
     player.collide_with_world(app._current_map, 0)
     initial = player.get_center()
     if (any(abs(a - b) > 1e-12 for a, b in zip(initial, expected_start))
@@ -45,7 +47,8 @@ def run(fps, body, gap, intent, valid_banks, offset):
         raise AssertionError('shore fixture was invalid or relocated')
     detected = list(getattr(player, '_shore_directions', (player._shore_dir,)))
     fallback = 1 if 1 in valid_banks else -1
-    expected_direction = intent if intent in valid_banks else fallback
+    effective_intent = -intent if reversed_input else intent
+    expected_direction = effective_intent if effective_intent in valid_banks else fallback
     keys = defaultdict(bool, {pygame.K_w: True})
     choices, failures = [], []
     step = session._advance_step
@@ -87,6 +90,7 @@ def run(fps, body, gap, intent, valid_banks, offset):
     chosen = choices[0]['direction'] if choices else None
     return dict(fps=fps, body=body, gap=gap, intent=intent, valid_banks=valid_banks,
                 offset=offset, initial=initial, detected=detected, expected_direction=expected_direction,
+                reversed_input=reversed_input, effective_intent=effective_intent,
                 choices=choices, chosen=chosen, matched=chosen == expected_direction,
                 completed=completed, elapsed=app._game_timer, final=player.get_center(),
                 final_stamina=player.stamina, errors=failures, respawns=respawns)
@@ -108,9 +112,14 @@ if __name__ == '__main__':
                  for fps in (30, 60, 144)
                  for body, gap in (((.6, 1.5), 1), ((.8, 1.8), 1), ((1.8, 2.6), 2))
                  for intent in (-1, 0, 1) for banks in ((1, -1), (-1,), (1,))
-                 for offset in ((-20, -40), (0, 0), (20, 40))]}
+                 for offset in ((-20, -40), (0, 0), (20, 40))],
+        'reversed_runs': [run(fps, body, gap, intent, (1, -1), (0, 0), True)
+                          for fps in (30, 60, 144)
+                          for body, gap in (((.6, 1.5), 1), ((.8, 1.8), 1), ((1.8, 2.6), 2))
+                          for intent in (-1, 1)]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    print(json.dumps({'cases': len(report['runs']), 'matched': sum(r['matched'] for r in report['runs']),
-                      'completed': sum(r['completed'] for r in report['runs']),
-                      'clear': sum(not r['errors'] for r in report['runs'])}))
+    print(json.dumps({name: {'cases': len(report[name]), 'matched': sum(r['matched'] for r in report[name]),
+                      'completed': sum(r['completed'] for r in report[name]),
+                      'clear': sum(not r['errors'] for r in report[name])}
+                      for name in ('runs', 'reversed_runs')}))
