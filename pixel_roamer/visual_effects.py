@@ -41,6 +41,10 @@ class WorldEffects:
                 continue
             # Flight icons stay pixel-sized even at extreme map zoom.
             size = max(4, min(32, round(camera.scale * (1 - .65 * progress))))
+            if (sx + size / 2 < 0 or sy + size / 2 < 0
+                    or sx - size / 2 >= surface.get_width()
+                    or sy - size / 2 >= surface.get_height()):
+                continue
             image = pygame.transform.scale(world._terrain_texture(kind), (size, size))
             surface.blit(image, (round(sx - size / 2), round(sy - size / 2)))
 
