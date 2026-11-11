@@ -1,0 +1,1649 @@
+{
+  "code_revision": "9542440c6b2e858daff1a44a27d69dab71212583",
+  "probe_sha256": "96c274e5311dbdaf36571ebf61106f3b35985854c6385160346de9cb445b1c36",
+  "scope": "actual registered BuffInstance descriptions, no pixel/physical device claim",
+  "buff_definitions": 58,
+  "rows": [
+    {
+      "block_id": 6,
+      "buff_id": 16,
+      "params": [
+        5
+      ],
+      "duration": 10.0,
+      "description": "每秒损失 5 点生命值，遇水清除",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 10,
+      "buff_id": 17,
+      "params": [
+        0.5
+      ],
+      "duration": 3.0,
+      "description": "每秒损失当前生命值的 0.5%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 360,
+      "buff_id": 1,
+      "params": [
+        8
+      ],
+      "duration": 6.0,
+      "description": "每秒恢复 8 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 361,
+      "buff_id": 2,
+      "params": [
+        5
+      ],
+      "duration": 8.0,
+      "description": "每秒获得 5 点护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 361,
+      "buff_id": 1,
+      "params": [
+        3
+      ],
+      "duration": 8.0,
+      "description": "每秒恢复 3 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 362,
+      "buff_id": 12,
+      "params": [
+        2
+      ],
+      "duration": 4.0,
+      "description": "每 2 秒移除一个负面效果",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 363,
+      "buff_id": 5,
+      "params": [],
+      "duration": 10.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 364,
+      "buff_id": 7,
+      "params": [],
+      "duration": 12.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 364,
+      "buff_id": 6,
+      "params": [],
+      "duration": 12.0,
+      "description": "体力消耗 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 365,
+      "buff_id": 1,
+      "params": [
+        12
+      ],
+      "duration": 5.0,
+      "description": "每秒恢复 12 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 365,
+      "buff_id": 2,
+      "params": [
+        4
+      ],
+      "duration": 5.0,
+      "description": "每秒获得 4 点护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 366,
+      "buff_id": 50,
+      "params": [
+        0
+      ],
+      "duration": 15.0,
+      "description": "自身发出光芒照亮周围",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 366,
+      "buff_id": 1,
+      "params": [
+        5
+      ],
+      "duration": 15.0,
+      "description": "每秒恢复 5 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 367,
+      "buff_id": 1,
+      "params": [
+        20
+      ],
+      "duration": 3.0,
+      "description": "每秒恢复 20 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 368,
+      "buff_id": 16,
+      "params": [
+        15
+      ],
+      "duration": 12.0,
+      "description": "每秒损失 15 点生命值，遇水清除",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 369,
+      "buff_id": 16,
+      "params": [
+        5
+      ],
+      "duration": 3.0,
+      "description": "每秒损失 5 点生命值，遇水清除",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 370,
+      "buff_id": 21,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "无法左右移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 370,
+      "buff_id": 22,
+      "params": [
+        50
+      ],
+      "duration": 4.0,
+      "description": "移动速度 -50%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 371,
+      "buff_id": 17,
+      "params": [
+        2
+      ],
+      "duration": 6.0,
+      "description": "每秒损失当前生命值的 2%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 372,
+      "buff_id": 22,
+      "params": [
+        30
+      ],
+      "duration": 5.0,
+      "description": "移动速度 -30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 372,
+      "buff_id": 46,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "受到的治疗效果减半，火焰伤害翻倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 373,
+      "buff_id": 51,
+      "params": [],
+      "duration": 6.0,
+      "description": "移动速度降低，入水后冻结加倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 373,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 374,
+      "buff_id": 17,
+      "params": [
+        3
+      ],
+      "duration": 4.0,
+      "description": "每秒损失当前生命值的 3%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 374,
+      "buff_id": 29,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "伤害优先消耗血量，无视护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 375,
+      "buff_id": 23,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "操作方向左右反转",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 375,
+      "buff_id": 44,
+      "params": [
+        3
+      ],
+      "duration": 5.0,
+      "description": "每 3 秒有概率短暂晕眩",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 376,
+      "buff_id": 57,
+      "params": [
+        0
+      ],
+      "duration": 15.0,
+      "description": "无法获得任何有益状态",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 376,
+      "buff_id": 18,
+      "params": [
+        3
+      ],
+      "duration": 15.0,
+      "description": "体力消耗速度 ×3",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 377,
+      "buff_id": 27,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法跳跃",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 378,
+      "buff_id": 24,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "屏幕变亮黄色，仅能看清主角",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 378,
+      "buff_id": 25,
+      "params": [
+        8
+      ],
+      "duration": 6.0,
+      "description": "视野缩小为半径 8 格",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 379,
+      "buff_id": 32,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法交互",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 379,
+      "buff_id": 30,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法使用道具",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 380,
+      "buff_id": 18,
+      "params": [
+        2.5
+      ],
+      "duration": 8.0,
+      "description": "体力消耗速度 ×2.5",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 380,
+      "buff_id": 19,
+      "params": [
+        40
+      ],
+      "duration": 8.0,
+      "description": "体力恢复速度 -40%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 381,
+      "buff_id": 45,
+      "params": [],
+      "duration": 8.0,
+      "description": "接触水体时持续受到伤害",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 382,
+      "buff_id": 43,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力大幅增加，不易滑动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 382,
+      "buff_id": 22,
+      "params": [
+        20
+      ],
+      "duration": 6.0,
+      "description": "移动速度 -20%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 383,
+      "buff_id": 42,
+      "params": [],
+      "duration": 8.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 384,
+      "buff_id": 48,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "可以穿过单层薄墙，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 385,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 10.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 386,
+      "buff_id": 49,
+      "params": [
+        0
+      ],
+      "duration": 8.0,
+      "description": "被附近的磁矿石吸引或排斥",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 387,
+      "buff_id": 53,
+      "params": [],
+      "duration": 5.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 388,
+      "buff_id": 54,
+      "params": [],
+      "duration": 15.0,
+      "description": "重力大幅增加，不会被水流风力移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 388,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 389,
+      "buff_id": 13,
+      "params": [],
+      "duration": 10.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 390,
+      "buff_id": 47,
+      "params": [],
+      "duration": 10.0,
+      "description": "攻击力大幅提升，但持续损失生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 390,
+      "buff_id": 17,
+      "params": [
+        1
+      ],
+      "duration": 10.0,
+      "description": "每秒损失当前生命值的 1%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 391,
+      "buff_id": 39,
+      "params": [
+        0
+      ],
+      "duration": 15.0,
+      "description": "移动速度大幅下降，但免疫击退",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 391,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 392,
+      "buff_id": 10,
+      "params": [
+        30
+      ],
+      "duration": 10.0,
+      "description": "反弹 30% 受到的伤害",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 392,
+      "buff_id": 2,
+      "params": [
+        3
+      ],
+      "duration": 10.0,
+      "description": "每秒获得 3 点护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 393,
+      "buff_id": 8,
+      "params": [
+        0
+      ],
+      "duration": 20.0,
+      "description": "免疫方向反转和视野干扰",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 393,
+      "buff_id": 40,
+      "params": [
+        0
+      ],
+      "duration": 20.0,
+      "description": "免疫定身、晕眩、压制、混乱",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 394,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 12.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 394,
+      "buff_id": 53,
+      "params": [],
+      "duration": 12.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 395,
+      "buff_id": 51,
+      "params": [],
+      "duration": 6.0,
+      "description": "移动速度降低，入水后冻结加倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 395,
+      "buff_id": 46,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "受到的治疗效果减半，火焰伤害翻倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 396,
+      "buff_id": 45,
+      "params": [],
+      "duration": 8.0,
+      "description": "接触水体时持续受到伤害",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 397,
+      "buff_id": 55,
+      "params": [],
+      "duration": 8.0,
+      "description": "每秒损失生命，被治愈时额外扣除等量生命",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 397,
+      "buff_id": 17,
+      "params": [
+        1
+      ],
+      "duration": 8.0,
+      "description": "每秒损失当前生命值的 1%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 398,
+      "buff_id": 52,
+      "params": [
+        0
+      ],
+      "duration": 30.0,
+      "description": "效果结束时随机清除一个负面状态",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 399,
+      "buff_id": 56,
+      "params": [
+        0
+      ],
+      "duration": 20.0,
+      "description": "行动时发出声响，可能惊动敌人",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 400,
+      "buff_id": 53,
+      "params": [],
+      "duration": 8.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 400,
+      "buff_id": 3,
+      "params": [
+        30
+      ],
+      "duration": 8.0,
+      "description": "移动速度 +30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 401,
+      "buff_id": 44,
+      "params": [
+        3
+      ],
+      "duration": 6.0,
+      "description": "每 3 秒有概率短暂晕眩",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 401,
+      "buff_id": 19,
+      "params": [
+        30
+      ],
+      "duration": 6.0,
+      "description": "体力恢复速度 -30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 402,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 403,
+      "buff_id": 49,
+      "params": [
+        0
+      ],
+      "duration": 10.0,
+      "description": "被附近的磁矿石吸引或排斥",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 404,
+      "buff_id": 2,
+      "params": [
+        8
+      ],
+      "duration": 6.0,
+      "description": "每秒获得 8 点护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 404,
+      "buff_id": 36,
+      "params": [
+        0
+      ],
+      "duration": 3.0,
+      "description": "免疫所有伤害（包括环境伤害）",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 405,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 405,
+      "buff_id": 34,
+      "params": [
+        0
+      ],
+      "duration": 8.0,
+      "description": "免疫物理伤害",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 406,
+      "buff_id": 40,
+      "params": [
+        0
+      ],
+      "duration": 15.0,
+      "description": "免疫定身、晕眩、压制、混乱",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 406,
+      "buff_id": 6,
+      "params": [],
+      "duration": 15.0,
+      "description": "体力消耗 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 407,
+      "buff_id": 12,
+      "params": [
+        1.5
+      ],
+      "duration": 4.0,
+      "description": "每 1.5 秒移除一个负面效果",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 407,
+      "buff_id": 1,
+      "params": [
+        6
+      ],
+      "duration": 6.0,
+      "description": "每秒恢复 6 点生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 408,
+      "buff_id": 17,
+      "params": [
+        5
+      ],
+      "duration": 5.0,
+      "description": "每秒损失当前生命值的 5%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 408,
+      "buff_id": 29,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "伤害优先消耗血量，无视护盾",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 409,
+      "buff_id": 46,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "受到的治疗效果减半，火焰伤害翻倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 409,
+      "buff_id": 26,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无视所有免伤属性",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 410,
+      "buff_id": 51,
+      "params": [],
+      "duration": 5.0,
+      "description": "移动速度降低，入水后冻结加倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 410,
+      "buff_id": 21,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "无法左右移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 411,
+      "buff_id": 23,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "操作方向左右反转",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 411,
+      "buff_id": 49,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "被附近的磁矿石吸引或排斥",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 412,
+      "buff_id": 27,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法跳跃",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 412,
+      "buff_id": 45,
+      "params": [],
+      "duration": 3.0,
+      "description": "接触水体时持续受到伤害",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 413,
+      "buff_id": 30,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "无法使用道具",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 413,
+      "buff_id": 31,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "无法使用技能",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 414,
+      "buff_id": 31,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法使用技能",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 414,
+      "buff_id": 32,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法交互",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 415,
+      "buff_id": 4,
+      "params": [
+        50
+      ],
+      "duration": 5.0,
+      "description": "跳跃高度 +50%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 416,
+      "buff_id": 13,
+      "params": [],
+      "duration": 4.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 416,
+      "buff_id": 53,
+      "params": [],
+      "duration": 4.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 417,
+      "buff_id": 54,
+      "params": [],
+      "duration": 10.0,
+      "description": "重力大幅增加，不会被水流风力移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 417,
+      "buff_id": 27,
+      "params": [
+        0
+      ],
+      "duration": 10.0,
+      "description": "无法跳跃",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 418,
+      "buff_id": 13,
+      "params": [],
+      "duration": 6.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 418,
+      "buff_id": 4,
+      "params": [
+        30
+      ],
+      "duration": 6.0,
+      "description": "跳跃高度 +30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 419,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 420,
+      "buff_id": 3,
+      "params": [
+        40
+      ],
+      "duration": 3.0,
+      "description": "移动速度 +40%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 421,
+      "buff_id": 11,
+      "params": [
+        20
+      ],
+      "duration": 10.0,
+      "description": "造成伤害时回复其 20% 为生命",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 421,
+      "buff_id": 47,
+      "params": [],
+      "duration": 10.0,
+      "description": "攻击力大幅提升，但持续损失生命值",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 422,
+      "buff_id": 39,
+      "params": [
+        0
+      ],
+      "duration": 18.0,
+      "description": "移动速度大幅下降，但免疫击退",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 422,
+      "buff_id": 44,
+      "params": [],
+      "duration": 8.0,
+      "description": "每 {0} 秒有概率短暂晕眩",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 423,
+      "buff_id": 53,
+      "params": [],
+      "duration": 10.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 423,
+      "buff_id": 3,
+      "params": [
+        50
+      ],
+      "duration": 10.0,
+      "description": "移动速度 +50%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 424,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 424,
+      "buff_id": 40,
+      "params": [
+        0
+      ],
+      "duration": 15.0,
+      "description": "免疫定身、晕眩、压制、混乱",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 425,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 8.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 425,
+      "buff_id": 53,
+      "params": [],
+      "duration": 8.0,
+      "description": "连续移动时获得越来越快的加速",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 426,
+      "buff_id": 46,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "受到的治疗效果减半，火焰伤害翻倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 426,
+      "buff_id": 15,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "处于潮湿状态（清除着火）",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 427,
+      "buff_id": 16,
+      "params": [
+        12
+      ],
+      "duration": 6.0,
+      "description": "每秒损失 12 点生命值，遇水清除",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 427,
+      "buff_id": 27,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "无法跳跃",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 428,
+      "buff_id": 50,
+      "params": [
+        0
+      ],
+      "duration": 12.0,
+      "description": "自身发出光芒照亮周围",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 428,
+      "buff_id": 41,
+      "params": [
+        0
+      ],
+      "duration": 8.0,
+      "description": "免疫风力、水流、磁力等环境位移",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 429,
+      "buff_id": 22,
+      "params": [
+        40
+      ],
+      "duration": 5.0,
+      "description": "移动速度 -40%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 429,
+      "buff_id": 21,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "无法左右移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 430,
+      "buff_id": 17,
+      "params": [
+        2
+      ],
+      "duration": 4.0,
+      "description": "每秒损失当前生命值的 2%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 430,
+      "buff_id": 46,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "受到的治疗效果减半，火焰伤害翻倍",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 431,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 431,
+      "buff_id": 23,
+      "params": [
+        0
+      ],
+      "duration": 3.0,
+      "description": "操作方向左右反转",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 432,
+      "buff_id": 17,
+      "params": [
+        3
+      ],
+      "duration": 4.0,
+      "description": "每秒损失当前生命值的 3%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 432,
+      "buff_id": 44,
+      "params": [
+        2
+      ],
+      "duration": 4.0,
+      "description": "每 2 秒有概率短暂晕眩",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 433,
+      "buff_id": 13,
+      "params": [],
+      "duration": 5.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 434,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 434,
+      "buff_id": 50,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "自身发出光芒照亮周围",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 435,
+      "buff_id": 42,
+      "params": [],
+      "duration": 4.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 436,
+      "buff_id": 18,
+      "params": [
+        2.0
+      ],
+      "duration": 5.0,
+      "description": "体力消耗速度 ×2",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 436,
+      "buff_id": 19,
+      "params": [
+        30
+      ],
+      "duration": 5.0,
+      "description": "体力恢复速度 -30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 437,
+      "buff_id": 3,
+      "params": [
+        30
+      ],
+      "duration": 3.0,
+      "description": "移动速度 +30%",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 438,
+      "buff_id": 27,
+      "params": [
+        0
+      ],
+      "duration": 4.0,
+      "description": "无法跳跃",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 438,
+      "buff_id": 54,
+      "params": [],
+      "duration": 4.0,
+      "description": "重力大幅增加，不会被水流风力移动",
+      "unresolved": false,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 439,
+      "buff_id": 14,
+      "params": [
+        4.0
+      ],
+      "duration": 8.0,
+      "description": "自动吸引附近掉落物",
+      "unresolved": false,
+      "false_zero_duration": false
+    }
+  ],
+  "issues": [
+    {
+      "block_id": 363,
+      "buff_id": 5,
+      "params": [],
+      "duration": 10.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 364,
+      "buff_id": 7,
+      "params": [],
+      "duration": 12.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 364,
+      "buff_id": 6,
+      "params": [],
+      "duration": 12.0,
+      "description": "体力消耗 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 373,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 383,
+      "buff_id": 42,
+      "params": [],
+      "duration": 8.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 384,
+      "buff_id": 48,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "可以穿过单层薄墙，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 385,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 10.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 388,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 389,
+      "buff_id": 13,
+      "params": [],
+      "duration": 10.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 391,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 394,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 12.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 402,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 405,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 406,
+      "buff_id": 6,
+      "params": [],
+      "duration": 15.0,
+      "description": "体力消耗 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 416,
+      "buff_id": 13,
+      "params": [],
+      "duration": 4.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 418,
+      "buff_id": 13,
+      "params": [],
+      "duration": 6.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 419,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 422,
+      "buff_id": 44,
+      "params": [],
+      "duration": 8.0,
+      "description": "每 {0} 秒有概率短暂晕眩",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 424,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 425,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 8.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 431,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 6.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 433,
+      "buff_id": 13,
+      "params": [],
+      "duration": 5.0,
+      "description": "重力降低 {0}%",
+      "unresolved": true,
+      "false_zero_duration": false
+    },
+    {
+      "block_id": 434,
+      "buff_id": 38,
+      "params": [
+        0
+      ],
+      "duration": 5.0,
+      "description": "不会被敌人发现，持续 0.000 秒",
+      "unresolved": false,
+      "false_zero_duration": true
+    },
+    {
+      "block_id": 435,
+      "buff_id": 42,
+      "params": [],
+      "duration": 4.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上",
+      "unresolved": true,
+      "false_zero_duration": false
+    }
+  ]
+}
