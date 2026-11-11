@@ -30,6 +30,8 @@ def advance_climb_alignment(actor, world, dt):
         return
     distance = min(abs(delta), ALIGN_SPEED * dt)
     next_x = target if distance == abs(delta) else actor._x + math.copysign(distance, delta)
+    if abs(target - next_x) <= CONTACT_EPSILON:
+        next_x = target
     if not can_place(actor, world, next_x, actor._y):
         # A changed wall may invalidate an already selected destination.
         _cancel(actor)
