@@ -226,7 +226,9 @@ def main():
                 image = transparent_sprite(entry['id']) if is_sprite else (
                     decoration(entry['id']) if is_decoration else terrain(entry['id']))
             else:
-                image = status_icon(entry)
+                # Fallback motifs always derive from original pixels, rather
+                # than repeatedly nesting the previously refined frame.
+                image = status_icon({**entry, 'icon': before[entry['id']]['icon']})
             entry[field] = vector(image, alpha=is_decoration or is_sprite)
             rgba = pattern_image(entry[field], 32)
             overrides[kind][str(entry['id'])] = {
