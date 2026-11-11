@@ -21,7 +21,7 @@ from pixel_roamer.world_session import WorldSession
 from teleport import can_place
 
 
-def run(fps, legacy=False, upper=False, portal=False, finish=False):
+def run(fps, legacy=False, upper=False, portal=False, finish=False, hall_hook=None):
     portal = portal or finish
     upper = upper or portal
     app = GameApp.__new__(GameApp)
@@ -48,6 +48,7 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
     tops = (45, 56, 71) if upper else (45, 56)
     heights = tuple(top + player._h / 2 for top in tops)
     rest_goal = 100 if portal else 95
+    hall_extension = None
     reached_hall = False
     reached_portal = False
     hops = []
@@ -109,6 +110,8 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
                 if player.on_ground and abs(player._y - 76.9) < .1 and abs(player._x - tx) < .4:
                     reached_hall = True
                     if not portal:
+                        if hall_hook is not None:
+                            hall_extension = hall_hook(app, session, keys, fps)
                         break
                     phase = 'north_align'
             if phase == 'north_align':
@@ -182,7 +185,7 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
     reached_goal = app._game_win if finish else (reached_portal if portal else (reached_hall if upper else rest >= 2))
     if not reached_goal and failure is None:
         failure = {'reason': 'route time budget exceeded', 'phase': phase, 'position': player.get_center()}
-    return {'game_win': app._game_win, 'reached_end': player._reached_end, 'hops': hops, 'fps': fps, 'simulation_seconds': session.app._game_timer, 'reached_cave': rest >= 2, 'reached_hall': reached_hall, 'reached_portal': reached_portal, 'north_climb_bound': north_climb_bound, 'failure': failure, 'phase': phase, 'seconds': frame / fps,
+    return {'hall_extension': hall_extension, 'game_win': app._game_win, 'reached_end': player._reached_end, 'hops': hops, 'fps': fps, 'simulation_seconds': session.app._game_timer, 'reached_cave': rest >= 2, 'reached_hall': reached_hall, 'reached_portal': reached_portal, 'north_climb_bound': north_climb_bound, 'failure': failure, 'phase': phase, 'seconds': frame / fps,
             'position': player.get_center(), 'peak': peak, 'rest_stops': rest_stops,
             'distinct_rest_heights': sorted({round(stop['position'][1], 1) for stop in rest_stops}),
             'min_hp': min_hp, 'min_stamina': min_stamina, 'lives_left': app._player_lives_left,
