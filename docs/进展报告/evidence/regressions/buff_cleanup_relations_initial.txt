@@ -1,0 +1,1 @@
+{"edges": 2, "api_bad": 1, "source_rows": 24, "source_bad": 12}
