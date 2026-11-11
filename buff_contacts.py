@@ -1,4 +1,5 @@
-"""Apply source Buffs once per continuous kind exposure, refreshing while touched."""
+"""Apply source Buffs under data-defined contact and continuous exposure rules."""
+from buff_behavior import behavior_for
 
 
 def clear_contact_buffs(actor):
@@ -17,6 +18,9 @@ def apply_contact_buffs(actor,world,types):
     actor._buff_contact_kinds=current
     for kind in types:
         for index,buff_id in enumerate(kind.buff_ids):
+            if (behavior_for(buff_id).contact_trigger=='entry'
+                    and (kind.id not in entered or actor.has_buff(buff_id))):
+                continue
             params=kind.buff_params_list[index] if index<len(kind.buff_params_list) else ()
             duration=kind.buff_durations[index] if index<len(kind.buff_durations) else None
             actor.apply_buff(buff_id,params,duration,source=kind.id,add_stack=kind.id in entered)
