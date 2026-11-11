@@ -15,9 +15,15 @@ ROOT = Path(__file__).resolve().parents[1]
 BASELINE = json.loads((ROOT / "tests/fixtures/catalog_baseline.json").read_text())
 ART = json.loads((ROOT / "tests/fixtures/catalog_art_overrides.json").read_text())
 NON_ART = json.loads((ROOT / "tests/fixtures/catalog_non_art_baseline.json").read_text())
+EXTENSIONS = json.loads((ROOT / "tests/fixtures/catalog_extensions.json").read_text())
 
 
 def expected(kind, entry_id):
+    key = str(entry_id)
+    if key in EXTENSIONS[kind]:
+        if key in BASELINE[kind]:
+            raise AssertionError(f'extension overrides legacy {kind} id {key}')
+        return EXTENSIONS[kind][key]
     return {**BASELINE[kind][str(entry_id)], **ART[kind].get(str(entry_id), {})}
 
 
@@ -43,7 +49,7 @@ class CatalogTests(unittest.TestCase):
     def test_all_block_definitions_and_pixels_match_pre_migration(self):
         from pattern import render_block_pattern
         blocks = load_blocks()
-        self.assertEqual(set(map(str, blocks)), set(BASELINE["blocks"]))
+        self.assertEqual(set(map(str, blocks)), set(BASELINE["blocks"]) | set(EXTENSIONS['blocks']))
         for block_id, block in blocks.items():
             with self.subTest(block_id=block_id):
                 self.assertEqual(digest(asdict(block)), expected("blocks", block_id)["definition"])
@@ -55,7 +61,7 @@ class CatalogTests(unittest.TestCase):
     def test_all_buff_definitions_and_icons_match_pre_migration(self):
         from pattern import _draw_vector
         buffs = load_buffs()
-        self.assertEqual(set(map(str, buffs)), set(BASELINE["buffs"]))
+        self.assertEqual(set(map(str, buffs)), set(BASELINE["buffs"]) | set(EXTENSIONS['buffs']))
         for buff_id, buff in buffs.items():
             with self.subTest(buff_id=buff_id):
                 self.assertEqual(digest(asdict(buff)), expected("buffs", buff_id)["definition"])
@@ -70,7 +76,10 @@ class CatalogTests(unittest.TestCase):
                 definition = asdict(entry)
                 definition.pop(art_field)
                 with self.subTest(kind=kind, entry_id=entry_id):
-                    self.assertEqual(digest(definition), NON_ART[kind][str(entry_id)])
+                    key = str(entry_id)
+                    baseline = (NON_ART[kind][key] if key in NON_ART[kind]
+                                else EXTENSIONS[kind][key]['non_art'])
+                    self.assertEqual(digest(definition), baseline)
 
     def test_costume_frames_match_pre_migration_pixels(self):
         from costumes import _pixels_to_surface
