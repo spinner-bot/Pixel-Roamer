@@ -158,4 +158,9 @@ for hx, hy in [(24,15),(3,29),(15,34),(44,34),(2,7),(30,17),(18,21),(40,30)]:
 fill(21, 18, 21, 22, 0)
 fill(27, 18, 27, 20, 0)
 
+# Connect the west corridor to the existing south platform, with a visible
+# climbable return instead of another one-way fall into the lower chamber.
+for y in range(1, 23):
+    world.set_tile(20, y, 31)
+
 world.end_bulk_load()
