@@ -1,0 +1,767 @@
+[
+  {
+    "tick": 1,
+    "position": [
+      5.5,
+      20.26421111920293
+    ],
+    "velocity": [
+      0.0,
+      31.705334304351602
+    ],
+    "phase": "rise",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.825
+  },
+  {
+    "tick": 2,
+    "position": [
+      5.5,
+      20.525985177133247
+    ],
+    "velocity": [
+      0.0,
+      31.412886951638203
+    ],
+    "phase": "rise",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.825
+  },
+  {
+    "tick": 3,
+    "position": [
+      5.5,
+      20.75
+    ],
+    "velocity": [
+      16.0,
+      0.0
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": false,
+    "stamina": 174.825
+  },
+  {
+    "tick": 4,
+    "position": [
+      5.631333333333333,
+      20.749552009319206
+    ],
+    "velocity": [
+      15.76,
+      -0.05375888169513119
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 5,
+    "position": [
+      5.7,
+      20.74865940058286
+    ],
+    "velocity": [
+      0.0,
+      -0.10711304836179786
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 6,
+    "position": [
+      5.7,
+      20.74732552102593
+    ],
+    "velocity": [
+      0.0,
+      -0.1600655468315021
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 7,
+    "position": [
+      5.7,
+      20.74555369268428
+    ],
+    "velocity": [
+      0.0,
+      -0.21261940099816876
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 8,
+    "position": [
+      5.7,
+      20.743347212584354
+    ],
+    "velocity": [
+      0.0,
+      -0.26477761199082744
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 9,
+    "position": [
+      5.7,
+      20.74070935293148
+    ],
+    "velocity": [
+      0.0,
+      -0.3165431583449941
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 10,
+    "position": [
+      5.7,
+      20.737643361296705
+    ],
+    "velocity": [
+      0.0,
+      -0.36791899617276286
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 11,
+    "position": [
+      5.7,
+      20.734152460802274
+    ],
+    "velocity": [
+      0.0,
+      -0.418908059331617
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 12,
+    "position": [
+      5.7,
+      20.730239850305676
+    ],
+    "velocity": [
+      0.0,
+      -0.4695132595919693
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 13,
+    "position": [
+      5.7,
+      20.725908704582313
+    ],
+    "velocity": [
+      0.0,
+      -0.5197374868034407
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 14,
+    "position": [
+      5.7,
+      20.721162174506812
+    ],
+    "velocity": [
+      0.0,
+      -0.5695836090598877
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 15,
+    "position": [
+      5.7,
+      20.716003387232952
+    ],
+    "velocity": [
+      0.0,
+      -0.619054472863187
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 16,
+    "position": [
+      5.7,
+      20.710435446372237
+    ],
+    "velocity": [
+      0.0,
+      -0.6681529032857874
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 17,
+    "position": [
+      5.7,
+      20.704461432171136
+    ],
+    "velocity": [
+      0.0,
+      -0.7168817041320372
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 18,
+    "position": [
+      5.7,
+      20.698084401686984
+    ],
+    "velocity": [
+      0.0,
+      -0.7652436580982985
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 19,
+    "position": [
+      5.7,
+      20.691307388962553
+    ],
+    "velocity": [
+      0.0,
+      -0.8132415269318546
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 20,
+    "position": [
+      5.7,
+      20.684133405199315
+    ],
+    "velocity": [
+      0.0,
+      -0.860878051588622
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 21,
+    "position": [
+      5.7,
+      20.6765654389294
+    ],
+    "velocity": [
+      0.0,
+      -0.9081559523896747
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 22,
+    "position": [
+      5.7,
+      20.668606456186264
+    ],
+    "velocity": [
+      0.0,
+      -0.9550779291765906
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 23,
+    "position": [
+      5.7,
+      20.66025940067405
+    ],
+    "velocity": [
+      0.0,
+      -1.0016466614656274
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 24,
+    "position": [
+      5.7,
+      20.65152719393571
+    ],
+    "velocity": [
+      0.0,
+      -1.0478648086007396
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 25,
+    "position": [
+      5.7,
+      20.64241273551983
+    ],
+    "velocity": [
+      0.0,
+      -1.093735009905441
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 26,
+    "position": [
+      5.7,
+      20.632918903146216
+    ],
+    "velocity": [
+      0.0,
+      -1.1392598848335265
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 27,
+    "position": [
+      5.7,
+      20.623048552870227
+    ],
+    "velocity": [
+      0.0,
+      -1.1844420331186574
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 28,
+    "position": [
+      5.7,
+      20.61280451924587
+    ],
+    "velocity": [
+      0.0,
+      -1.2292840349228216
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 29,
+    "position": [
+      5.7,
+      20.602189615487674
+    ],
+    "velocity": [
+      0.0,
+      -1.2737884509836754
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 30,
+    "position": [
+      5.7,
+      20.591206633631334
+    ],
+    "velocity": [
+      0.0,
+      -1.317957822760777
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 31,
+    "position": [
+      5.7,
+      20.57985834469316
+    ],
+    "velocity": [
+      0.0,
+      -1.3617946725807182
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 32,
+    "position": [
+      5.7,
+      20.568147498828317
+    ],
+    "velocity": [
+      0.0,
+      -1.4053015037811634
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 33,
+    "position": [
+      5.7,
+      20.556076825487867
+    ],
+    "velocity": [
+      0.0,
+      -1.4484808008538055
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 34,
+    "position": [
+      5.7,
+      20.54364903357465
+    ],
+    "velocity": [
+      0.0,
+      -1.491335029586244
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 35,
+    "position": [
+      5.7,
+      20.53086681159796
+    ],
+    "velocity": [
+      0.0,
+      -1.5338666372027965
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 36,
+    "position": [
+      5.7,
+      20.517732827827093
+    ],
+    "velocity": [
+      0.0,
+      -1.5760780525042484
+    ],
+    "phase": "slide",
+    "buff58": true,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 37,
+    "position": [
+      5.7,
+      20.504249730443703
+    ],
+    "velocity": [
+      0.0,
+      -1.6179716860065525
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 38,
+    "position": [
+      5.7,
+      20.49042014769305
+    ],
+    "velocity": [
+      0.0,
+      -1.6595499300784826
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 39,
+    "position": [
+      5.7,
+      20.476246688034067
+    ],
+    "velocity": [
+      0.0,
+      -1.700815159078252
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 40,
+    "position": [
+      5.7,
+      20.461731940288324
+    ],
+    "velocity": [
+      0.0,
+      -1.7417697294891032
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 41,
+    "position": [
+      5.7,
+      20.446878473787876
+    ],
+    "velocity": [
+      0.0,
+      -1.7824159800538764
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 42,
+    "position": [
+      5.7,
+      20.43168883852197
+    ],
+    "velocity": [
+      0.0,
+      -1.8227562319085648
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 43,
+    "position": [
+      5.7,
+      20.416165565282682
+    ],
+    "velocity": [
+      0.0,
+      -1.8627927887148663
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 44,
+    "position": [
+      5.7,
+      20.400311165809416
+    ],
+    "velocity": [
+      0.0,
+      -1.9025279367917345
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  },
+  {
+    "tick": 45,
+    "position": [
+      5.7,
+      20.384128132932368
+    ],
+    "velocity": [
+      0.0,
+      -1.9419639452459414
+    ],
+    "phase": false,
+    "buff58": false,
+    "ground": false,
+    "ceiling": false,
+    "swim": true,
+    "stamina": 174.85704922215768
+  }
+]
