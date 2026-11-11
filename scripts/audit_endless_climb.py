@@ -26,6 +26,7 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
     if session is None:
         session = create_control_session(route['map_id'])
     app, player = session.app, session.app.player1
+    start_timer = app._game_timer
     keys = defaultdict(bool)
     trace, arrivals = [], []
     stage, stage_start = 0, 0
@@ -102,7 +103,7 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
         respawns = reset.call_count
     return {'fps': fps, 'completed_route': reached,
             'reached_and_rested': reached and route['waypoints'][-1]['kind'] == 'rest', 'failure': failure,
-            'timer': app._game_timer, 'control_frames': frame if reached else frame + 1,
+            'timer': app._game_timer, 'elapsed_timer': app._game_timer - start_timer, 'control_frames': frame if reached else frame + 1,
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'final_hp': player.hp, 'final_stamina': player.stamina,
             'contacts_seen': sorted(contacts_seen), 'native_draws': draws,
