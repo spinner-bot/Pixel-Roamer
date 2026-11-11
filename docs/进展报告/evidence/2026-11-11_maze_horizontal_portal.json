@@ -1,0 +1,583 @@
+{
+  "code_revision": "6df204c406d8c3fd33ce6e4ad29b3c9bc93d0e8b",
+  "scope": "normal-spawn horizontal wrap and existing T1 portal entry; terrain draws at negative camera coordinates; vertical wrap and other rooms separate",
+  "runs": [
+    {
+      "fps": 30,
+      "reached_hidden_room": true,
+      "failure": null,
+      "crossed_horizontal_seam": true,
+      "portal_hops": [
+        {
+          "time": 14.066666666666508,
+          "from": [
+            -21.517179253643164,
+            17.051562500000003
+          ],
+          "to": [
+            4.5,
+            29.9
+          ]
+        }
+      ],
+      "arrivals": [
+        {
+          "phase": "west_corridor",
+          "time": 4.633333333333353,
+          "position": [
+            19.54117804884761,
+            22.9
+          ]
+        },
+        {
+          "phase": "east_landing",
+          "time": 12.099999999999953,
+          "position": [
+            -19.354601515801292,
+            18.9
+          ]
+        }
+      ],
+      "timer": 14.066666666666508,
+      "control_frames": 422,
+      "position": [
+        4.5,
+        29.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 173.9641038890461,
+      "respawns": 0,
+      "terrain_draws": 16,
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "west_corridor",
+          "position": [
+            22.491261296006407,
+            16.995486111111113
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "west_corridor",
+          "position": [
+            21.4,
+            20.524479166666666
+          ],
+          "hp": 150.0,
+          "stamina": 187.55448023685472
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "west_corridor",
+          "position": [
+            21.22362520670938,
+            24.35770833333332
+          ],
+          "hp": 150.0,
+          "stamina": 176.00994206454098
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "west_corridor",
+          "position": [
+            19.581859157004473,
+            28.897291666666646
+          ],
+          "hp": 150.0,
+          "stamina": 179.65837996923224
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "west_corridor",
+          "position": [
+            19.550181474585585,
+            26.93687499999998
+          ],
+          "hp": 150.0,
+          "stamina": 183.0755386708184
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "east_landing",
+          "position": [
+            18.61418160364124,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 186.27623411824024
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "east_landing",
+          "position": [
+            12.910949577062695,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 189.2743005771406
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "east_landing",
+          "position": [
+            7.062642408988823,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 192.08266283316112
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "east_landing",
+          "position": [
+            1.218566331671274,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 194.71340151429845
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "east_landing",
+          "position": [
+            -4.63157707577758,
+            21.172083333333333
+          ],
+          "hp": 150.0,
+          "stamina": 197.17781250449494
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "east_landing",
+          "position": [
+            -10.476394639385695,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 199.48646123318503
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "east_landing",
+          "position": [
+            -16.326837464179896,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "east_landing",
+          "position": [
+            -19.32883690975087,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "portal",
+          "position": [
+            -21.30203234104682,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "portal",
+          "position": [
+            -21.517179253643164,
+            17.051562500000003
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "reached_hidden_room": true,
+      "failure": null,
+      "crossed_horizontal_seam": true,
+      "portal_hops": [
+        {
+          "time": 13.899999999999851,
+          "from": [
+            -21.530243678319692,
+            16.92697916666667
+          ],
+          "to": [
+            4.5,
+            29.9
+          ]
+        }
+      ],
+      "arrivals": [
+        {
+          "phase": "west_corridor",
+          "time": 4.583333333333351,
+          "position": [
+            19.516178628910172,
+            22.9
+          ]
+        },
+        {
+          "phase": "east_landing",
+          "time": 12.016666666666625,
+          "position": [
+            -19.359491089946253,
+            18.9
+          ]
+        }
+      ],
+      "timer": 13.899999999999851,
+      "control_frames": 834,
+      "position": [
+        4.5,
+        29.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 173.8502150206225,
+      "respawns": 0,
+      "terrain_draws": 15,
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "west_corridor",
+          "position": [
+            22.497365206530155,
+            16.998645833333335
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "west_corridor",
+          "position": [
+            21.4,
+            20.524479166666666
+          ],
+          "hp": 150.0,
+          "stamina": 187.55448023685472
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "west_corridor",
+          "position": [
+            21.18854964557936,
+            24.48663194444443
+          ],
+          "hp": 150.0,
+          "stamina": 176.02571223604087
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "west_corridor",
+          "position": [
+            19.56537235545808,
+            28.917881944444424
+          ],
+          "hp": 150.0,
+          "stamina": 179.67315005488197
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "west_corridor",
+          "position": [
+            19.507750159215046,
+            26.849131944444423
+          ],
+          "hp": 150.0,
+          "stamina": 183.0893728206385
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "east_landing",
+          "position": [
+            18.44864580234319,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 186.2891922132798
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "east_landing",
+          "position": [
+            12.72068050304649,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 189.28643854752937
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "east_landing",
+          "position": [
+            6.902071492951076,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 192.0940329450298
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "east_landing",
+          "position": [
+            1.082137022040167,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 194.7240526300966
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "east_landing",
+          "position": [
+            -4.738647213565251,
+            21.051562500000003
+          ],
+          "hp": 150.0,
+          "stamina": 197.18779032034715
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "east_landing",
+          "position": [
+            -10.557272332737819,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 199.49580849623806
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "east_landing",
+          "position": [
+            -16.376798553657313,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "east_landing",
+          "position": [
+            -19.359491089946253,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "portal",
+          "position": [
+            -21.356626898801338,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "reached_hidden_room": true,
+      "failure": null,
+      "crossed_horizontal_seam": true,
+      "portal_hops": [
+        {
+          "time": 13.816666666666523,
+          "from": [
+            -21.535023432569204,
+            16.92697916666667
+          ],
+          "to": [
+            4.5,
+            29.9
+          ]
+        }
+      ],
+      "arrivals": [
+        {
+          "phase": "west_corridor",
+          "time": 4.55833333333335,
+          "position": [
+            19.45791070600421,
+            22.9
+          ]
+        },
+        {
+          "phase": "east_landing",
+          "time": 11.966666666666628,
+          "position": [
+            -19.350675739500947,
+            18.9
+          ]
+        }
+      ],
+      "timer": 13.816666666666523,
+      "control_frames": 1990,
+      "position": [
+        4.5,
+        29.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 173.79318392774854,
+      "respawns": 0,
+      "terrain_draws": 15,
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "west_corridor",
+          "position": [
+            22.5,
+            17.0
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "west_corridor",
+          "position": [
+            21.4,
+            20.54704861111111
+          ],
+          "hp": 150.0,
+          "stamina": 187.52936034435803
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "west_corridor",
+          "position": [
+            21.18854964557936,
+            24.48663194444443
+          ],
+          "hp": 150.0,
+          "stamina": 176.0021846199959
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "west_corridor",
+          "position": [
+            19.550305226611968,
+            28.917881944444424
+          ],
+          "hp": 150.0,
+          "stamina": 179.65111447438193
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "west_corridor",
+          "position": [
+            19.45370978474225,
+            26.849131944444423
+          ],
+          "hp": 150.0,
+          "stamina": 183.06873356951155
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "east_landing",
+          "position": [
+            18.371073701220208,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 186.26985995434453
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "east_landing",
+          "position": [
+            12.649084346620768,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 189.2683298380708
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "east_landing",
+          "position": [
+            6.841123251512948,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 192.07706980872538
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "east_landing",
+          "position": [
+            1.0319314623543887,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 194.7081621686359
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "east_landing",
+          "position": [
+            -4.776717133478184,
+            21.010486111111113
+          ],
+          "hp": 150.0,
+          "stamina": 197.17290435930923
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "east_landing",
+          "position": [
+            -10.58493975926599,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 199.48186326082327
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "east_landing",
+          "position": [
+            -16.392312471340205,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "portal",
+          "position": [
+            -19.378805827330478,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "portal",
+          "position": [
+            -21.383034417044183,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0
+        }
+      ]
+    }
+  ]
+}
