@@ -96,6 +96,15 @@ def measure(fps, route, layout=None, normal_spawn=False):
             result['after_deliberate_death'] = {
                 'alive': player.alive, 'position': player.get_center(), 'respawns': reset.call_count,
                 'clear': can_place(player, app._current_map, *player.get_center())}
+        # Continue the very same session from its actual respawn, without copying state.
+        return_index = next(i for i, point in enumerate(route['waypoints'])
+                            if point['name'] == 'return_under_cap')
+        return_route = dict(route, waypoints=route['waypoints'][return_index:])
+        result['post_respawn_return'] = route_run(
+            fps, return_route, duration=180, draw_every=5, session=session)
+        result['success'] &= (result['after_deliberate_death']['clear']
+                              and result['after_deliberate_death']['respawns'] == 1
+                              and result['post_respawn_return']['completed_route'])
     return result
 
 
