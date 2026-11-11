@@ -10,7 +10,7 @@ from scripts.audit_buff_descriptions import run
 class BuffDescriptionTests(unittest.TestCase):
     def test_every_source_uses_registered_nonempty_resolved_descriptions(self):
         result = run()
-        self.assertEqual(result['buff_definitions'], 58)
+        self.assertEqual(result['buff_definitions'], 59)
         self.assertGreaterEqual(len(result['rows']), 135)
         self.assertEqual(result['issues'], [])
 
