@@ -1,0 +1,17 @@
+{"map_id": 1, "input_seconds": 600.0, "respawns": 1, "errors": []}
+{"map_id": 2, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 3, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 4, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 5, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 6, "input_seconds": 600.0, "respawns": 0, "errors": []}
+{"map_id": 7, "input_seconds": 600.0, "respawns": 1, "errors": []}
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_session_soak.py", line 169, in <module>
+    main()
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_session_soak.py", line 159, in main
+    result = run(map_id, args.seconds)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_session_soak.py", line 99, in run
+    issues = errors_for(session)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_session_soak.py", line 47, in errors_for
+    if player.alive and not player.has_buff(48) and not player._phantom_active:
+AttributeError: 'Player' object has no attribute '_phantom_active'
