@@ -1,0 +1,29 @@
+{
+  "scope": "only observational draw scheduling changed; full run fields compared excluding native_draws/draw_trace; same gameplay and controller input",
+  "pairs": [
+    {
+      "fps": 30,
+      "physical_differences": [],
+      "old_draws": 17,
+      "new_draws": 46,
+      "waypoint_draws": 29,
+      "same_actual_trajectory": true
+    },
+    {
+      "fps": 60,
+      "physical_differences": [],
+      "old_draws": 17,
+      "new_draws": 46,
+      "waypoint_draws": 29,
+      "same_actual_trajectory": true
+    },
+    {
+      "fps": 144,
+      "physical_differences": [],
+      "old_draws": 17,
+      "new_draws": 46,
+      "waypoint_draws": 29,
+      "same_actual_trajectory": true
+    }
+  ]
+}
