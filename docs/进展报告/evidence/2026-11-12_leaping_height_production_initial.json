@@ -1,0 +1,858 @@
+{
+  "code_revision": "9549600526ddd442476320aca3f2314d0e5b8bb1",
+  "scope": "fixed-tick apex observed inside actual WorldSession after Space event; explicit floor fixture, API injection labeled; sources415/418 acquired only by contact; not original-map route",
+  "runs": [
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3749999999999942,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3749999999999942,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 12.852542462845022,
+      "height": 8.374479166666648,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.64166666666666,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.2500000000000022
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 10.049374999999971,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.8749999999999925,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5000000000000018
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 16.24654040404041,
+      "height": 13.399166666666611,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 3.3416666666666575,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.9999999999999998
+    },
+    {
+      "fps": 30,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        6.264625
+      ],
+      "final_vertical_velocity": 21.836666666666666,
+      "final_support_flag": false,
+      "elapsed": 4.508333333333347,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    },
+    {
+      "fps": 30,
+      "source_block": 418,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 13.109167445482868,
+      "height": 17.48112708333325,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 5.375000000000057,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.609285714285712
+    },
+    {
+      "fps": 30,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": false,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        6.264625
+      ],
+      "final_vertical_velocity": 21.836666666666666,
+      "final_support_flag": false,
+      "elapsed": 4.508333333333347,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3583333333333276,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3583333333333276,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 12.852542462845022,
+      "height": 8.374479166666648,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.6249999999999933,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.2500000000000022
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 10.049374999999971,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.8749999999999925,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5000000000000018
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 16.24654040404041,
+      "height": 13.399166666666611,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 3.324999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.9999999999999998
+    },
+    {
+      "fps": 60,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 22.0,
+      "final_support_flag": true,
+      "elapsed": 4.49166666666668,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    },
+    {
+      "fps": 60,
+      "source_block": 418,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 13.109167445482868,
+      "height": 17.48112708333325,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 5.358333333333389,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.609285714285712
+    },
+    {
+      "fps": 60,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": false,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 22.0,
+      "final_support_flag": true,
+      "elapsed": 4.49166666666668,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3499999999999943,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.3499999999999943,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 12.852542462845022,
+      "height": 8.374479166666648,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.6249999999999933,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.2500000000000022
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 10.049374999999971,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 2.8749999999999925,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5000000000000018
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 16.24654040404041,
+      "height": 13.399166666666611,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 3.3166666666666575,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.9999999999999998
+    },
+    {
+      "fps": 144,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 22.0,
+      "final_support_flag": true,
+      "elapsed": 4.49166666666668,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    },
+    {
+      "fps": 144,
+      "source_block": 418,
+      "injected_parameter": null,
+      "jump_event": true,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 13.109167445482868,
+      "height": 17.48112708333325,
+      "landed": true,
+      "returned_to_source": false,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 0.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 0.0,
+      "final_support_flag": true,
+      "elapsed": 5.358333333333389,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.609285714285712
+    },
+    {
+      "fps": 144,
+      "source_block": 415,
+      "injected_parameter": null,
+      "jump_event": false,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 14.07535852713179,
+      "height": 24.602291666666552,
+      "landed": true,
+      "returned_to_source": true,
+      "cycle_complete": true,
+      "initial_vertical_velocity": 22.0,
+      "initially_supported": true,
+      "final_position": [
+        10.5,
+        5.9
+      ],
+      "final_vertical_velocity": 22.0,
+      "final_support_flag": true,
+      "elapsed": 4.49166666666668,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 3.6722122022513815
+    }
+  ]
+}
