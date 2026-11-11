@@ -4,6 +4,7 @@ import random
 
 from buff_system import BUFF_TYPES, CAT_NEGATIVE
 from buff_parameters import DEFAULT_PARAMETERS
+from buff_behavior import behavior_for
 
 
 def _tick_effect(actor, buff, elapsed, world=None):
@@ -95,7 +96,10 @@ def modified_stat(actor, stat_name, base_value):
         for table, sign in ((_INCREASE, 1), (_DECREASE, -1)):
             if kind.tick in table.get(stat_name, ()):
                 value = float(buff.params[0]) if buff.params else DEFAULT_PARAMETERS[kind.tick]
-                result *= max(0, 1 + sign * value * buff.stacks / 100)
+                if behavior_for(buff.buff_id).stat_stacking == 'multiplicative':
+                    result *= max(0, 1 + sign * value / 100) ** buff.stacks
+                else:
+                    result *= max(0, 1 + sign * value * buff.stacks / 100)
         if stat_name == "v_max" and kind.tick == "stone_skin":
             result *= 0.4
         if stat_name == "stamina_cost" and kind.tick == "weakened":
