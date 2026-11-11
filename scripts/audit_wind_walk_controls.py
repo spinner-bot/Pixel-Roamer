@@ -19,7 +19,7 @@ from scripts.control_session import create_control_session
 from world import World
 
 
-def measure(fps,direction,continuous,with_buff,release):
+def measure(fps,direction,continuous,with_buff,release,control_buffs=()):
     world=World(0,'wind walk response',2000,32,gravity=-9.8,spawn_points=(1000.5,5.9))
     for x in range(2000):world.set_tile(x,4,2)
     if with_buff:
@@ -28,6 +28,7 @@ def measure(fps,direction,continuous,with_buff,release):
         else:world.set_tile(1000,5,394)
     session=create_control_session(0,world=world)
     actor=session.app.player1
+    for buff_id in control_buffs:actor.apply_buff(buff_id,(),60)
     keys=defaultdict(bool)
     charge=16 if continuous else 10
     reverse_at=None
@@ -45,13 +46,14 @@ def measure(fps,direction,continuous,with_buff,release):
             if frame==charge*fps:
                 start_x=actor._x
                 start_velocity=actor.v_x
+                physical_direction=1 if start_velocity>0 else -1
             session.advance(1/fps)
             if responding:
-                if reverse_at is None and actor.v_x*direction < -.1:
+                if reverse_at is None and actor.v_x*physical_direction < -.1:
                     reverse_at=(frame-charge*fps+1)/fps
                 if actor.has_buff(53):
                     active_response_frames+=1
-                    active_opposite_frames+=actor.v_x*direction>0
+                    active_opposite_frames+=actor.v_x*physical_direction>0
             if frame%fps==0:
                 trace.append({'seconds':frame/fps,'position':actor.get_center(),'velocity':actor.v_x,
                               'acceleration':actor.a_x,'wind_time':getattr(actor,'_wind_walk_timer',0),
@@ -59,7 +61,7 @@ def measure(fps,direction,continuous,with_buff,release):
     return {'fps':fps,'direction':direction,'continuous_source':continuous,'with_source':with_buff,
             'response':'release' if release else 'reverse','charge_seconds':charge,'start_velocity':start_velocity,
             'seconds_to_reverse':reverse_at,'active_response_frames':active_response_frames,
-            'active_still_forward_frames':active_opposite_frames,'response_forward_distance':direction*(actor._x-start_x),
+            'active_still_forward_frames':active_opposite_frames,'response_forward_distance':physical_direction*(actor._x-start_x),
             'final_velocity':actor.v_x,'hp':actor.hp,'trace':trace}
 
 
@@ -67,13 +69,15 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--direction-candidate',action='store_true')
+    parser.add_argument('--fps',type=int,nargs='+',default=[30,60,144])
+    parser.add_argument('--control-buffs',type=int,nargs='+',default=[])
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     from scripts.wind_walk_candidate import directional_candidate
     with directional_candidate() if args.direction_candidate else nullcontext():
-        rows=[measure(fps,direction,continuous,with_buff,release) for fps in (30,60,144) for direction in (-1,1)
+        rows=[measure(fps,direction,continuous,with_buff,release,args.control_buffs) for fps in args.fps for direction in (-1,1)
               for continuous in (False,True) for with_buff in (False,True) for release in (False,True)]
-    report={'direction_candidate':args.direction_candidate,'code_revision':revision,'scope':'actual394 source contact or explicit no-source control, native WorldSession held input, no Buff injection; not normal-map acceptance','runs':rows}
+    report={'api_control_buffs':args.control_buffs,'direction_candidate':args.direction_candidate,'code_revision':revision,'scope':('actual394 source contact or no-source control, WorldSession held input, explicit API control Buffs listed; not normal-map acceptance' if args.control_buffs else 'actual394 source contact or explicit no-source control, native WorldSession held input, no Buff injection; not normal-map acceptance'),'runs':rows}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'rows':len(rows),'source_reverse_cases':sum(r['with_source'] and r['response']=='reverse' for r in rows),'source_no_reverse_in_four_seconds':sum(r['with_source'] and r['response']=='reverse' and r['seconds_to_reverse'] is None for r in rows)}))
