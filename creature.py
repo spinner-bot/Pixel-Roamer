@@ -814,15 +814,26 @@ class Creature:
                 self._berserk_active = False
 
         # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
-        self.refresh_movement_stats()
+        self.refresh_movement_stats(world)
 
-    def refresh_movement_stats(self):
-        """Combine environmental modifiers with active buffs."""
+    def refresh_movement_stats(self, world=None):
+        """Combine environmental modifiers and calibrate Buff4's height unit."""
+        if world is not None:
+            self._effect_world = world
         if hasattr(self, '_base_v_max'):
             speed = self._base_v_max * getattr(self, '_environment_speed_mult', 1.0)
             jump = self._base_v_jump * getattr(self, '_environment_jump_mult', 1.0)
             self.v_max = max(0.0, self.get_buff_stat("v_max", speed))
-            self.v_jump = max(0.0, self.get_buff_stat("v_jump", jump))
+            jump = max(0.0, self.get_buff_stat("v_jump", jump))
+            height_mult = self.get_buff_stat("jump_height", 1.0)
+            if height_mult == 1.0:
+                self.v_jump = jump
+            else:
+                from jump_height import launch_speed
+                context = self._effect_world
+                gravity = (context.gravity * self.get_buff_stat("gravity", 1.0)
+                           if context is not None else None)
+                self.v_jump = launch_speed(jump, gravity, self.f_y, height_mult)
 
     # ================================================================
     #  Buff 系统
