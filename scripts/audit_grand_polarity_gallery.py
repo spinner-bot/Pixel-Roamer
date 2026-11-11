@@ -95,6 +95,8 @@ def continue_from_hall(app, session, keys, fps, frame_hook=None):
                     phase = 'expire'
                     if not actor.has_buff(23) and not actor.has_buff(49):
                         returned = True
+                        if frame_hook is not None:
+                            frame_hook(app, phase)
                         break
             desired = max(-4, min(4, (tx - actor._x) * 3))
             error = desired - actor.v_x
