@@ -36,4 +36,4 @@ if __name__ == '__main__':
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'pairs': len(rows), 'lost_height': sum(r['height_lost_by_pressing'] > 1e-7 for r in rows),
-                      'unfinished': sum(not r[k]['landed'] for r in rows for k in ('automatic', 'pressed'))}))
+                      'unfinished': sum(not r[k]['cycle_complete'] for r in rows for k in ('automatic', 'pressed'))}))
