@@ -1,0 +1,821 @@
+{
+  "code_revision": "9fb8f94dbddf042549e4267e3d06a05a50732e72",
+  "scope": "isolated candidate rule metadata and real stat API, explicit Buff injection; not production or map acceptance",
+  "pairs": [
+    {
+      "native": {
+        "buff": 22,
+        "params": [],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 50.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 25.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 12.5
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 75.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 56.25,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 56.25
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 42.1875,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 42.1875
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 50.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 25.0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 12.5
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [],
+        "stacks": 1,
+        "value": 60.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [],
+        "stacks": 1,
+        "value": 60.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 60.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [],
+        "stacks": 2,
+        "value": 19.999999999999996,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [],
+        "stacks": 2,
+        "value": 36.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 36.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [],
+        "stacks": 3,
+        "value": 21.599999999999998,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 21.599999999999998
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 100.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 75.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 56.25,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 56.25
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 42.1875,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 42.1875
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 50.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 25.0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 12.5
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    },
+    {
+      "native": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0.0,
+        "stacks_preserved": true
+      },
+      "expected_candidate": 0
+    }
+  ],
+  "unchanged_controls": [
+    {
+      "native": {
+        "buff": 3,
+        "params": [
+          20
+        ],
+        "stacks": 2,
+        "value": 140.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 3,
+        "params": [
+          20
+        ],
+        "stacks": 2,
+        "value": 140.0,
+        "stacks_preserved": true
+      }
+    },
+    {
+      "native": {
+        "buff": 4,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 200.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 4,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 200.0,
+        "stacks_preserved": true
+      }
+    },
+    {
+      "native": {
+        "buff": 6,
+        "params": [
+          30
+        ],
+        "stacks": 1,
+        "value": 70.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 6,
+        "params": [
+          30
+        ],
+        "stacks": 1,
+        "value": 70.0,
+        "stacks_preserved": true
+      }
+    },
+    {
+      "native": {
+        "buff": 13,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "candidate": {
+        "buff": 13,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      }
+    }
+  ],
+  "errors": []
+}
