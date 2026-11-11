@@ -67,6 +67,8 @@ def run(fps):
                                                         or player.on_wall_left or player.on_wall_right):
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
             elif action in ('ground', 'drop'):
+                if player.on_ground and (player.on_wall_left or player.on_wall_right):
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
                 done = abs(player._x - tx) < .15 and abs(player._y - y) < .1 and player.on_ground
             elif action == 'exit_shaft':
                 if not jump_started and player.on_ground and abs(player._x - tx) < .04 and abs(player.v_x) < .12:
