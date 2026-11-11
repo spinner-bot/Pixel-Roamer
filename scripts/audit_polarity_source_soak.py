@@ -22,13 +22,18 @@ from world import World
 
 
 def run(seconds):
+    revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     template = World(0, 'signed source interaction arena', 64, 32, gravity=-9.8,
                      spawn_points=(31.5, 5.9))
     for x in range(64):
         template.set_tile(x, 4, {22: 411, 31: 403, 37: 386}.get(x, 2))
-    for x in (19, 43):
-        for y in range(5, 8):
-            template.set_tile(x, y, 338)
+    # Sparse floor dots were jumped over by the generic input pattern. Use
+    # observable source walls, with ore behind the reverse wall, to exercise
+    # both real polarities without injecting Buff state or changing physics.
+    for y in range(4, 14):
+        template.set_tile(20, y, 338)
+        template.set_tile(22, y, 411)
+        template.set_tile(43, y, 386)
     factory = audit_session_soak.create_control_session
     original_force = environment_forces.apply_magnetism
     stats = {label: {'calls': 0, 'nonzero_force_calls': 0} for label in ('positive', 'reverse', 'neutral', 'unmagnetized')}
@@ -57,7 +62,7 @@ def run(seconds):
             patch('environment_forces.apply_magnetism', new=observe_force):
         result = audit_session_soak.run(0, seconds)
     pygame.quit()
-    return {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+    return {'code_revision': revision,
             'scope': 'authored fixture of original386/403/411/338, actual source contact only, no Buff injection; original force called unchanged and delta observed; scripted WorldSession controls/pause/focus; not original-map reachability evidence',
             'run': result, 'response_force_calls': stats, 'active_source_calls': dict(sources)}
 
