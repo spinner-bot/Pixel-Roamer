@@ -22,7 +22,8 @@ class WorldView:
         self.app.logic_surface.fill(fill_color)
         self.app._current_map.draw(self.app.logic_surface, self.app.camera)
 
-        self.effects.draw(self.app.logic_surface, self.app.player1, self.app.camera)
+        self.effects.draw(self.app.logic_surface, self.app.player1, self.app.camera,
+                          self.app._current_map)
 
         # 绘制玩家（时装系统）
         grect = self.app.player1.get_game_rect()
