@@ -1,0 +1,8074 @@
+{
+  "code_revision": "c227e2cd25a5d6d40b85ac17c248b05131a7953c",
+  "controller_sha256": "e0a48a662b4d7e9181a2f85260614a4ec8833127d3a211b2372858a112b2b645",
+  "legacy_revision": "2b2a739",
+  "scope": "synthetic legal ladder contacts with actual events/session; four valid bodies, mirror, loop translations and three FPS; no physical device claim",
+  "before": [
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.490000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.490000000000002,
+      "max_frame_dx": 1.490000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0.8899999999999997,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0.8900000000000006,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 1.4900000000000002,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 1.4899999999999984,
+      "max_fixed_step_dx": 0,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8899999999999997,
+      "max_frame_dx": 0.8899999999999997,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.8900000000000006,
+      "max_frame_dx": 0.8900000000000006,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4900000000000002,
+      "max_frame_dx": 1.4900000000000002,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 1.4899999999999984,
+      "max_frame_dx": 1.4899999999999984,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": false
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.1999999999999993,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 30,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.20000000000000284,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.09999999999999964,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 60,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.10000000000000142,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.61,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.39,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.61,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 4.01,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -15.99,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": -1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 24.01,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "keydown",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        1.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.39,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.61,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        0.8,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.39,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "start_x": 6.99,
+      "target_x": 5.5,
+      "position": [
+        5.5,
+        13.000000000000043
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.04999999999999982,
+      "max_frame_dx": 0.04999999999999982,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        -20,
+        -20
+      ],
+      "start_x": -13.01,
+      "target_x": -14.5,
+      "position": [
+        -14.5,
+        -6.999999999999957
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    },
+    {
+      "fps": 144,
+      "side": 1,
+      "mode": "held",
+      "body": [
+        2,
+        2.8
+      ],
+      "offset": [
+        20,
+        20
+      ],
+      "start_x": 26.99,
+      "target_x": 25.5,
+      "position": [
+        25.5,
+        32.99999999999983
+      ],
+      "max_event_dx": 0,
+      "max_fixed_step_dx": 0.05000000000000071,
+      "max_frame_dx": 0.05000000000000071,
+      "stamina": 185.9999999999991,
+      "hp": 150.0,
+      "is_climbing": true,
+      "errors": [],
+      "aligned_final": true,
+      "continuous_capture": true
+    }
+  ]
+}
