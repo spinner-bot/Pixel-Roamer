@@ -24,7 +24,7 @@ from world import World
 CASES = ('flight_embedded', 'flight_clear', 'ghost_stunned', 'ghost_dispelled_stunned', 'flight_stunned')
 
 
-def measure(session_class, case, fps, legacy_phase=None):
+def measure(session_class, case, fps, legacy_phase=None, legacy_player=None):
     world = World(0, 'noclip lifecycle', 20, 20, gravity=0, spawn_points=(3.5, 5.5))
     for x in range(5, 9):
         for y in range(3, 9):
@@ -32,6 +32,8 @@ def measure(session_class, case, fps, legacy_phase=None):
     keys = defaultdict(bool, {pygame.K_d: True})
     with ExitStack() as stack:
         stack.enter_context(patch('scripts.control_session.WorldSession', session_class))
+        if legacy_player:
+            stack.enter_context(patch('player_factory.Player', legacy_player))
         if legacy_phase:
             for name in ('prepare_phase_collision', 'remember_phase_position'):
                 stack.enter_context(patch(f'phase_collision.{name}', getattr(legacy_phase, name)))
@@ -92,10 +94,12 @@ def main():
     args = parser.parse_args()
     old_session = legacy_module('pixel_roamer/world_session.py', 'legacy_noclip_session')
     old_phase = legacy_module('phase_collision.py', 'legacy_noclip_phase')
+    old_player = legacy_module('creature.py', 'legacy_noclip_player')
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'legacy_revision': '913eb87',
               'scope': 'isolated legal-spawn lifecycle fixtures; real flight toggle/control; existing buffs deliberately granted in fixtures',
-              'before': [measure(old_session.WorldSession, case, fps, old_phase) for case in CASES for fps in (30, 60, 144)],
+              'before': [measure(old_session.WorldSession, case, fps, old_phase, old_player.Player)
+                         for case in CASES for fps in (30, 60, 144)],
               'after': [measure(WorldSession, case, fps) for case in CASES for fps in (30, 60, 144)]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
