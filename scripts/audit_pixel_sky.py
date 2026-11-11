@@ -73,6 +73,8 @@ def run(fps):
                                     'position': actor.get_center(), 'stamina': actor.stamina})
                 phase_start = frame
             desired = max(-6, min(6, (target_x - actor._x) * 3))
+            if phase in ('first_booster', 'second_booster'):
+                desired = 6  # Push against the original booster, without a feedback dead zone.
             error = desired - actor.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .2, error < -.2
             before = actor.get_center()
@@ -104,6 +106,9 @@ def run(fps):
     return {'fps': fps, 'returned_to_ruins_via_original_T2': reached, 'failure': failure,
             'phase': phase, 'timer': app._game_timer, 'control_frames': frame + 1,
             'position': actor.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
+            'body': [actor._w, actor._h],
+            'production_options': {'gravity': world.gravity, 'v_jump': actor._base_v_jump,
+                                   'stamina_max': actor.stamina_max, 'f_y': actor.f_y},
             'respawns': respawns, 'hops': hops, 'boosted_launches': launches,
             'transitions': transitions, 'terrain_draws': draws, 'trace': trace}
 
@@ -120,6 +125,8 @@ def main():
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps([{k: r[k] for k in ('fps', 'returned_to_ruins_via_original_T2', 'phase', 'failure', 'position')}
                       for r in report['runs']]))
+    if not all(r['returned_to_ruins_via_original_T2'] and r['failure'] is None for r in report['runs']):
+        raise SystemExit(1)
 
 
 if __name__ == '__main__':
