@@ -5,14 +5,17 @@ import random
 from buff_system import BUFF_TYPES, CAT_NEGATIVE
 
 
-def _tick_effect(actor, buff, elapsed):
+def _tick_effect(actor, buff, elapsed, world=None):
     kind = buff.buff_type
     if kind is None:
         return
     params = buff.params
     value = float(params[0]) if params else None
     stacks = buff.stacks
-    if kind.tick == "regen":
+    if kind.tick == "magnetic":
+        from magnetic_pickups import attract_pickups
+        attract_pickups(actor, buff, elapsed, world)
+    elif kind.tick == "regen":
         actor.heal((value if value is not None else 3) * stacks * elapsed)
     elif kind.tick == "shield_regen":
         actor.add_shield((value if value is not None else 2) * stacks * elapsed)
@@ -39,7 +42,7 @@ def _tick_effect(actor, buff, elapsed):
                 actor.apply_buff(28, (0.5,), 0.5)
 
 
-def advance_buffs(actor, dt):
+def advance_buffs(actor, dt, world=None):
     """Integrate up to each expiry so immunity/damage ordering is deterministic."""
     if not math.isfinite(dt) or dt < 0:
         raise ValueError("buff dt must be finite and nonnegative")
@@ -51,7 +54,7 @@ def advance_buffs(actor, dt):
         actor._buff_game_time += step
         for buff in snapshot:
             if buff in actor.buffs and actor.alive and step > 0:
-                _tick_effect(actor, buff, step)
+                _tick_effect(actor, buff, step, world)
         expired = []
         for buff in snapshot:
             if buff in actor.buffs and buff.tick(step):
