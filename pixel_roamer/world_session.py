@@ -6,6 +6,7 @@ from simulation import FixedStepClock
 from shore_exit import begin_shore_exit, advance_shore_exit, after_shore_physics
 from phase_collision import prepare_phase_collision, remember_phase_position
 from climb_alignment import hold_climb_top
+from teleport import can_place
 
 class WorldSession:
     """Existing world rules and input."""
@@ -191,7 +192,9 @@ class WorldSession:
                             swim_bound = getattr(self.app.player1, '_swim_top_y', None)
                             at_swim_bound = False
                             if swim_bound is not None:
-                                if self.app.player1._y >= swim_bound - 0.05 and self.app.player1._y <= swim_bound + 0.05:
+                                if (swim_bound - 0.05 <= self.app.player1._y <= swim_bound + 0.05
+                                        and can_place(self.app.player1, self.app._current_map,
+                                                      self.app.player1._x, swim_bound)):
                                     self.app.player1._y = swim_bound  # 中心与水面齐平（半腰）
                                     self.app.player1.v_y = 0.0
                                     at_swim_bound = True
