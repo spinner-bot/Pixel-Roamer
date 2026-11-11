@@ -1,0 +1,86 @@
+test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) ... test_dispel_inside_wall_preserves_resources_and_cancels_stale_motion (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_expiry_after_clearing_wall_preserves_position_and_velocity (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_invalidated_anchor_falls_back_to_valid_spawn (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_one_way_crossing_is_not_treated_as_solid_embedding (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_remaining_phase_source_prevents_early_rollback (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_safe_teleport_and_new_life_do_not_reuse_old_phase_anchor (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_stunned_phase_expiry_still_resolves_on_next_physics_step (tests.test_phase_expiry.PhaseExpiryTests) ... ok
+test_all_forty_source_consumer_probes_have_the_claimed_direction (tests.test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_explicit_zero_numeric_parameters_are_not_globally_reinterpreted (tests.test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_api_costs_and_both_existing_sources_at_three_frame_rates (tests.test_berserk_function.BerserkFunctionTests) ... ok
+test_legacy_altar_multiplier_stays_independent_and_fractional (tests.test_berserk_function.BerserkFunctionTests) ... ok
+test_refresh_removal_clear_and_respawn_never_accumulate_attack (tests.test_berserk_function.BerserkFunctionTests) ... ok
+test_bleeding_is_independent_of_frame_partition (tests.test_status_effects.BuffTimeTests) ... ok
+test_damage_matches_active_duration_for_short_and_long_frames (tests.test_status_effects.BuffTimeTests) ... ok
+test_environment_timers_expire_without_any_collision_updates (tests.test_status_effects.BuffTimeTests) ... ok
+test_expiring_immunity_only_protects_its_active_interval (tests.test_status_effects.BuffTimeTests) ... ok
+test_invalid_time_steps_are_rejected (tests.test_status_effects.BuffTimeTests) ... ok
+test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply (tests.test_status_effects.BuffTimeTests) ... ok
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (tests.test_status_effects.BuffTimeTests) ... ok
+test_regeneration_and_shield_gain_respect_elapsed_time (tests.test_status_effects.BuffTimeTests) ... ok
+test_stacks_affect_continuous_damage_and_stat_modifiers (tests.test_status_effects.BuffTimeTests) ... ok
+test_armor_break_is_a_victim_debuff (tests.test_status_effects.DamageTests) ... ok
+test_capped_shield_regeneration_does_not_remove_existing_shield (tests.test_status_effects.DamageTests) ... ok
+test_damage_return_value_counts_shield_and_caps_overkill (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_actual_lava_contact (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_burning_and_direct_fire (tests.test_status_effects.DamageTests) ... ok
+test_lifesteal_and_thorns_use_actual_damage_not_requested_overkill (tests.test_status_effects.DamageTests) ... ok
+test_clarity_suppresses_blindness_and_vision_mask (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_glow_adds_subtle_premultiplied_light_without_white_disk (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_large_vision_radius_is_full_vision_without_huge_allocation (tests.test_visual_effects.WorldEffectsTests) ... ok
+test_vision_radius_uses_tiles_once_at_multiple_zoom_levels (tests.test_visual_effects.WorldEffectsTests) ... ok
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=-1, fps=30)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=-1, fps=60)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=-1, fps=144)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=1, fps=30)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=1, fps=60)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (tests.test_phase_expiry.PhaseExpiryTests) (source='ghost_buff', wall='thick', direction=1, fps=144)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 42, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(run['entered_wall'])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 32 tests in 7.730s
+
+FAILED (failures=6)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
