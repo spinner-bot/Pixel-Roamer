@@ -55,10 +55,29 @@
       "kind": "swim"
     },
     {
+      "name": "shaft_rest_height",
+      "x": 264.5,
+      "y": 34.98,
+      "kind": "climb"
+    },
+    {
+      "name": "original_snow_step",
+      "x": 263.5,
+      "y": 32.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
       "name": "shaft_climb",
       "x": 264.5,
       "y": 38.98,
       "kind": "climb"
+    },
+    {
+      "name": "shaft_exit_clearance",
+      "x": 264.5,
+      "y": 41.5,
+      "kind": "air"
     },
     {
       "name": "outside_return",
