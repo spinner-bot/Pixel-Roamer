@@ -1,0 +1,3870 @@
+{
+  "code_revision": "f0568a0d47f4ea223ac871f0c28ef99ec963946b",
+  "scope": "normal spawn across large-map regions to original sky island, real controls and production config; controller failure alone is not global inaccessibility",
+  "runs": [
+    {
+      "fps": 30,
+      "reached_original_sky_island": false,
+      "failure": "sky_landing timed out",
+      "phase": "sky_landing",
+      "timer": 185.56666666666223,
+      "control_frames": 5567,
+      "position": [
+        605.523491304767,
+        2.9
+      ],
+      "min_hp": 149.53333333333336,
+      "min_stamina": 73.61624251001257,
+      "respawns": 0,
+      "regions": [
+        {
+          "boundary_x": 100,
+          "time": 19.83333333333285,
+          "position": [
+            100.08822963296295,
+            34.868125000000255
+          ],
+          "hp": 150.0,
+          "stamina": 87.53866217599011
+        },
+        {
+          "boundary_x": 200,
+          "time": 40.43333333333168,
+          "position": [
+            200.17997855493658,
+            46.933750000000096
+          ],
+          "hp": 150.0,
+          "stamina": 85.74038493958011
+        },
+        {
+          "boundary_x": 300,
+          "time": 64.03333333333036,
+          "position": [
+            300.00642912297855,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.31130242814721
+        },
+        {
+          "boundary_x": 400,
+          "time": 126.3666666667133,
+          "position": [
+            400.0031443911553,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0
+        },
+        {
+          "boundary_x": 500,
+          "time": 147.6333333333634,
+          "position": [
+            500.1098526803088,
+            28.70562500000003
+          ],
+          "hp": 150.0,
+          "stamina": 82.97430125252163
+        },
+        {
+          "boundary_x": 600,
+          "time": 168.5333333333444,
+          "position": [
+            600.116190304315,
+            30.265625000000277
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 85.94414087403447
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "cross_regions",
+          "position": [
+            10.006344538515897,
+            54.98854166666667
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "forest_lake_jump",
+          "position": [
+            19.473495406408603,
+            74.08125000000005
+          ],
+          "hp": 150.0,
+          "stamina": 88.44169984198678,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "forest_lake_jump",
+          "position": [
+            31.035153684570197,
+            65.24687500000003
+          ],
+          "hp": 150.0,
+          "stamina": 94.46129877586996,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "forest_lake_jump",
+          "position": [
+            40.307123800169684,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 99.4317322204507,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "forest_canopy_jump",
+          "position": [
+            49.37332943972813,
+            45.03687500000014
+          ],
+          "hp": 150.0,
+          "stamina": 91.02256980898989,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "forest_canopy_jump",
+          "position": [
+            55.92644640917677,
+            26.986875
+          ],
+          "hp": 150.0,
+          "stamina": 82.00654397510081,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "forest_canopy_jump",
+          "position": [
+            66.68323497161101,
+            42.94937500000018
+          ],
+          "hp": 150.0,
+          "stamina": 89.15103848895305,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "forest_canopy_jump",
+          "position": [
+            72.47548323318517,
+            35.45937500000003
+          ],
+          "hp": 150.0,
+          "stamina": 81.01258849546126,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "forest_canopy_jump",
+          "position": [
+            83.93888085376561,
+            38.221875000000225
+          ],
+          "hp": 150.0,
+          "stamina": 88.33121983374159,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "forest_finish",
+          "position": [
+            89.6806729856643,
+            41.29187500000006
+          ],
+          "hp": 150.0,
+          "stamina": 80.86693563215528,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 20.033333333332838,
+          "phase": "forest_finish",
+          "position": [
+            101.17619008344955,
+            30.854375000000292
+          ],
+          "hp": 150.0,
+          "stamina": 88.21109468535762,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 22.033333333332724,
+          "phase": "cross_regions",
+          "position": [
+            105.05420554195523,
+            21.104375000000005
+          ],
+          "hp": 150.0,
+          "stamina": 79.87215742252879,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 24.03333333333261,
+          "phase": "cross_regions",
+          "position": [
+            115.76857575928238,
+            32.6668750000002
+          ],
+          "hp": 150.0,
+          "stamina": 87.39073582546636,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 26.033333333332497,
+          "phase": "cross_regions",
+          "position": [
+            127.32536920602766,
+            10.9
+          ],
+          "hp": 150.0,
+          "stamina": 93.5937831081629,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 28.033333333332383,
+          "phase": "cross_regions",
+          "position": [
+            136.26060443915736,
+            36.96375000000015
+          ],
+          "hp": 150.0,
+          "stamina": 86.24708695043351,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 30.03333333333227,
+          "phase": "cross_regions",
+          "position": [
+            145.58306090283142,
+            31.25000000000001
+          ],
+          "hp": 150.0,
+          "stamina": 78.39005445577622,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 32.03333333333216,
+          "phase": "cross_regions",
+          "position": [
+            156.73494120707903,
+            39.5125000000002
+          ],
+          "hp": 150.0,
+          "stamina": 86.16873544007088,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 34.033333333332045,
+          "phase": "cross_regions",
+          "position": [
+            165.98065855284162,
+            43.23062500000003
+          ],
+          "hp": 150.0,
+          "stamina": 78.4623142688123,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 36.03333333333193,
+          "phase": "cross_regions",
+          "position": [
+            177.31131183877318,
+            48.19312500000022
+          ],
+          "hp": 150.0,
+          "stamina": 86.2283070982579,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 38.03333333333182,
+          "phase": "cross_regions",
+          "position": [
+            188.8662311162034,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.63437030804998,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 40.033333333331704,
+          "phase": "cross_regions",
+          "position": [
+            197.86512400695125,
+            43.081250000000054
+          ],
+          "hp": 150.0,
+          "stamina": 84.2855230576527,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 42.03333333333159,
+          "phase": "cross_regions",
+          "position": [
+            209.42402507318354,
+            35.94375000000027
+          ],
+          "hp": 150.0,
+          "stamina": 91.03117158299953,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 44.03333333333148,
+          "phase": "cross_regions",
+          "position": [
+            216.94577271022024,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.59914315547312,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 46.03333333333136,
+          "phase": "cross_regions",
+          "position": [
+            219.970400481561,
+            21.79375
+          ],
+          "hp": 150.0,
+          "stamina": 81.80318742376453,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 48.03333333333125,
+          "phase": "cross_regions",
+          "position": [
+            230.57579827638884,
+            36.65625000000019
+          ],
+          "hp": 150.0,
+          "stamina": 88.98329967085539,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 50.033333333331136,
+          "phase": "cross_regions",
+          "position": [
+            242.13285948680326,
+            17.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.90839635892678,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 52.03333333333102,
+          "phase": "cross_regions",
+          "position": [
+            251.62721075858164,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 99.80099601331312,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 54.03333333333091,
+          "phase": "cross_regions",
+          "position": [
+            254.8898301386481,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 56.033333333330795,
+          "phase": "cross_regions",
+          "position": [
+            258.1348257697688,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 58.03333333333068,
+          "phase": "cross_regions",
+          "position": [
+            267.1124038291098,
+            39.090625000000124
+          ],
+          "hp": 150.0,
+          "stamina": 86.85727746866331,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 60.03333333333057,
+          "phase": "cross_regions",
+          "position": [
+            278.52323815750134,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 93.15347728763679,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 62.033333333330454,
+          "phase": "cross_regions",
+          "position": [
+            289.461401524405,
+            38.87229166666681
+          ],
+          "hp": 150.0,
+          "stamina": 82.20083301710211,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 64.03333333333036,
+          "phase": "cross_regions",
+          "position": [
+            300.00642912297855,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.31130242814721,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 66.03333333333195,
+          "phase": "cross_regions",
+          "position": [
+            304.2884975309355,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.17917808318676,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 68.03333333333354,
+          "phase": "cross_regions",
+          "position": [
+            307.0698865135561,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 70.03333333333514,
+          "phase": "cross_regions",
+          "position": [
+            309.85094991362325,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 72.03333333333673,
+          "phase": "cross_regions",
+          "position": [
+            312.6320133129436,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 74.03333333333832,
+          "phase": "cross_regions",
+          "position": [
+            315.413076712264,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 76.03333333333991,
+          "phase": "cross_regions",
+          "position": [
+            318.1941401115844,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 78.0333333333415,
+          "phase": "cross_regions",
+          "position": [
+            320.97520351090475,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 80.0333333333431,
+          "phase": "cross_regions",
+          "position": [
+            323.7562669102251,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 82.03333333334469,
+          "phase": "cross_regions",
+          "position": [
+            326.5373303095455,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 84.03333333334628,
+          "phase": "cross_regions",
+          "position": [
+            329.31839370886587,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 86.03333333334787,
+          "phase": "cross_regions",
+          "position": [
+            332.09945710818624,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 88.03333333334946,
+          "phase": "cross_regions",
+          "position": [
+            334.8805205075066,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 90.03333333335105,
+          "phase": "cross_regions",
+          "position": [
+            337.661583906827,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 92.03333333335264,
+          "phase": "cross_regions",
+          "position": [
+            340.743777129854,
+            9.762870018308275
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 94.03333333335424,
+          "phase": "cross_regions",
+          "position": [
+            348.51387294530264,
+            22.736151276148988
+          ],
+          "hp": 150.0,
+          "stamina": 89.20493558859008,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 96.03333333335583,
+          "phase": "cross_regions",
+          "position": [
+            357.8099320465216,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.0913663311712,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 98.03333333335742,
+          "phase": "cross_regions",
+          "position": [
+            360.6047462024938,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 99.95211649329278,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 100.03333333335901,
+          "phase": "cross_regions",
+          "position": [
+            363.385809633437,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 102.0333333333606,
+          "phase": "cross_regions",
+          "position": [
+            366.1668730327574,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 104.0333333333622,
+          "phase": "cross_regions",
+          "position": [
+            368.94793643207777,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 106.03333333336379,
+          "phase": "cross_regions",
+          "position": [
+            371.72899983139814,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 108.03333333336538,
+          "phase": "cross_regions",
+          "position": [
+            374.5100632307185,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 110.03333333336697,
+          "phase": "cross_regions",
+          "position": [
+            377.2911266300389,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 112.03333333336856,
+          "phase": "cross_regions",
+          "position": [
+            380.07219002935926,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 114.03333333337015,
+          "phase": "cross_regions",
+          "position": [
+            382.85325342867964,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 116.03333333337174,
+          "phase": "cross_regions",
+          "position": [
+            385.634316828,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 118.03333333337333,
+          "phase": "cross_regions",
+          "position": [
+            388.4153802273204,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 120.03333333337493,
+          "phase": "cross_regions",
+          "position": [
+            391.19644362664076,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 122.03333333337652,
+          "phase": "cross_regions",
+          "position": [
+            393.97750702596113,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 124.03333333337811,
+          "phase": "cross_regions",
+          "position": [
+            396.7585704252815,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 126.0333333333797,
+          "phase": "cross_regions",
+          "position": [
+            399.5396338246019,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 128.03333333338122,
+          "phase": "cross_regions",
+          "position": [
+            403.7624739109839,
+            8.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 130.0333333333794,
+          "phase": "cross_regions",
+          "position": [
+            412.4093834832512,
+            33.21812500000009
+          ],
+          "hp": 150.0,
+          "stamina": 89.41988019420522,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 132.03333333337758,
+          "phase": "cross_regions",
+          "position": [
+            423.96595766120464,
+            16.18062500000035
+          ],
+          "hp": 150.0,
+          "stamina": 95.26881597759247,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 134.03333333337577,
+          "phase": "cross_regions",
+          "position": [
+            432.0651254015601,
+            30.08125000000004
+          ],
+          "hp": 150.0,
+          "stamina": 86.45944531752217,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 136.03333333337395,
+          "phase": "cross_regions",
+          "position": [
+            443.59951411253064,
+            22.943750000000303
+          ],
+          "hp": 150.0,
+          "stamina": 92.82513103230087,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 138.03333333337213,
+          "phase": "cross_regions",
+          "position": [
+            454.6150254686733,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 98.08049790804857,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 140.0333333333703,
+          "phase": "cross_regions",
+          "position": [
+            462.43128801628137,
+            30.906666666666712
+          ],
+          "hp": 150.0,
+          "stamina": 88.66151534233762,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 142.0333333333685,
+          "phase": "cross_regions",
+          "position": [
+            473.9864042054986,
+            21.56916666666698
+          ],
+          "hp": 150.0,
+          "stamina": 94.64275645516528,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 144.03333333336667,
+          "phase": "cross_regions",
+          "position": [
+            482.0651254015601,
+            30.08125000000004
+          ],
+          "hp": 150.0,
+          "stamina": 85.94276779761822,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 146.03333333336485,
+          "phase": "cross_regions",
+          "position": [
+            493.59951411253064,
+            22.943750000000303
+          ],
+          "hp": 150.0,
+          "stamina": 92.39871861496685,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 148.03333333336303,
+          "phase": "cross_regions",
+          "position": [
+            502.4093834832512,
+            33.21812500000009
+          ],
+          "hp": 150.0,
+          "stamina": 84.47874378039327,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 150.0333333333612,
+          "phase": "volcano_runup",
+          "position": [
+            507.50580922634134,
+            16.18062500000035
+          ],
+          "hp": 150.0,
+          "stamina": 91.19060199041591,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 152.0333333333594,
+          "phase": "volcano_platforms",
+          "position": [
+            509.3026737216634,
+            26.854166666666682
+          ],
+          "hp": 150.0,
+          "stamina": 82.65028331595124,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 154.03333333335758,
+          "phase": "volcano_platforms",
+          "position": [
+            523.5644481888261,
+            30.71666666666691
+          ],
+          "hp": 150.0,
+          "stamina": 89.68205867484184,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 156.03333333335576,
+          "phase": "volcano_platforms",
+          "position": [
+            531.328262082276,
+            41.21812500000007
+          ],
+          "hp": 149.8,
+          "stamina": 82.2356403429118,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 158.03333333335394,
+          "phase": "volcano_platforms",
+          "position": [
+            541.4200728241059,
+            24.18062500000032
+          ],
+          "hp": 149.8,
+          "stamina": 89.33606541679714,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 160.03333333335212,
+          "phase": "volcano_platforms",
+          "position": [
+            551.150987176065,
+            46.12812500000013
+          ],
+          "hp": 149.8,
+          "stamina": 82.61297653688821,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 162.0333333333503,
+          "phase": "volcano_platforms",
+          "position": [
+            561.5557901289659,
+            22.576041666666665
+          ],
+          "hp": 149.8,
+          "stamina": 74.87503409328708,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 164.03333333334848,
+          "phase": "volcano_platforms",
+          "position": [
+            573.7386935564361,
+            42.938541666666836
+          ],
+          "hp": 149.8,
+          "stamina": 83.26767224127192,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 166.03333333334666,
+          "phase": "sky_landing",
+          "position": [
+            580.6294996207273,
+            30.250000000000007
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 75.92751036376366,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 168.03333333334484,
+          "phase": "sky_landing",
+          "position": [
+            595.4184724815101,
+            38.512500000000195
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 84.12938619571223,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 170.03333333334302,
+          "phase": "sky_landing",
+          "position": [
+            605.504058621395,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 90.89326271543067,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 172.0333333333412,
+          "phase": "sky_landing",
+          "position": [
+            605.5203226222098,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 96.47666983000367,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 174.03333333333939,
+          "phase": "sky_landing",
+          "position": [
+            605.5229746315359,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 176.03333333333757,
+          "phase": "sky_landing",
+          "position": [
+            605.5234070683973,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 178.03333333333575,
+          "phase": "sky_landing",
+          "position": [
+            605.523477581588,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 180.03333333333393,
+          "phase": "sky_landing",
+          "position": [
+            605.5234890794744,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 182.0333333333321,
+          "phase": "sky_landing",
+          "position": [
+            605.5234909543204,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 184.0333333333303,
+          "phase": "sky_landing",
+          "position": [
+            605.5234912600332,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "reached_original_sky_island": false,
+      "failure": "sky_landing timed out",
+      "phase": "sky_landing",
+      "timer": 185.1333333333293,
+      "control_frames": 11108,
+      "position": [
+        605.5234913135859,
+        2.9
+      ],
+      "min_hp": 149.53333333333336,
+      "min_stamina": 73.45384357651307,
+      "respawns": 0,
+      "regions": [
+        {
+          "boundary_x": 100,
+          "time": 19.733333333332855,
+          "position": [
+            100.0177584278442,
+            35.17281250000025
+          ],
+          "hp": 150.0,
+          "stamina": 87.40157695490427
+        },
+        {
+          "boundary_x": 200,
+          "time": 40.24999999999836,
+          "position": [
+            200.08340920385143,
+            46.825937500000094
+          ],
+          "hp": 150.0,
+          "stamina": 85.61664466603416
+        },
+        {
+          "boundary_x": 300,
+          "time": 63.76666666666369,
+          "position": [
+            300.00319365585636,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.25752130718682
+        },
+        {
+          "boundary_x": 400,
+          "time": 126.10000000004642,
+          "position": [
+            400.0068102979777,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0
+        },
+        {
+          "boundary_x": 500,
+          "time": 147.2166666666971,
+          "position": [
+            500.020702943778,
+            28.46031250000003
+          ],
+          "hp": 150.0,
+          "stamina": 82.85737703841052
+        },
+        {
+          "boundary_x": 600,
+          "time": 168.13333333334475,
+          "position": [
+            600.1171133000756,
+            30.265625000000277
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 85.88185244887154
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "cross_regions",
+          "position": [
+            10.00191293224523,
+            54.9965625
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "forest_lake_jump",
+          "position": [
+            19.38912493276984,
+            74.29447916666672
+          ],
+          "hp": 150.0,
+          "stamina": 88.4967857599497,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "forest_lake_jump",
+          "position": [
+            30.96903256189523,
+            64.8882291666667
+          ],
+          "hp": 150.0,
+          "stamina": 94.50677183101084,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "forest_lake_jump",
+          "position": [
+            40.30296044402269,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 99.46928850891376,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "forest_canopy_jump",
+          "position": [
+            49.47467184689186,
+            45.002604166666806
+          ],
+          "hp": 150.0,
+          "stamina": 91.07353025971803,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "forest_canopy_jump",
+          "position": [
+            56.02152039943547,
+            27.793750000000003
+          ],
+          "hp": 150.0,
+          "stamina": 82.09525390000658,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "forest_canopy_jump",
+          "position": [
+            66.89269613483073,
+            42.65625000000019
+          ],
+          "hp": 150.0,
+          "stamina": 89.22421244287062,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "forest_canopy_jump",
+          "position": [
+            72.73225509062532,
+            36.33281250000003
+          ],
+          "hp": 150.0,
+          "stamina": 81.14034131396363,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "forest_canopy_jump",
+          "position": [
+            84.19097421080644,
+            37.445312500000234
+          ],
+          "hp": 150.0,
+          "stamina": 88.43658429574116,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "forest_finish",
+          "position": [
+            90.07606181856838,
+            42.00729166666673
+          ],
+          "hp": 150.0,
+          "stamina": 81.04030652676329,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 20.016666666666172,
+          "phase": "forest_finish",
+          "position": [
+            101.44492754678609,
+            29.36979166666697
+          ],
+          "hp": 150.0,
+          "stamina": 88.35408018247496,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 22.016666666666058,
+          "phase": "cross_regions",
+          "position": [
+            105.4060411494107,
+            23.59156250000001
+          ],
+          "hp": 150.0,
+          "stamina": 80.15097295766837,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 24.016666666665945,
+          "phase": "cross_regions",
+          "position": [
+            116.45144298562532,
+            31.304062500000228
+          ],
+          "hp": 150.0,
+          "stamina": 87.62065268521158,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 26.01666666666583,
+          "phase": "cross_regions",
+          "position": [
+            127.60381627576686,
+            12.825416666666667
+          ],
+          "hp": 150.0,
+          "stamina": 78.86755090712025,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 28.016666666665717,
+          "phase": "cross_regions",
+          "position": [
+            137.03919700634714,
+            36.48791666666683
+          ],
+          "hp": 150.0,
+          "stamina": 86.56240119983522,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 30.016666666665603,
+          "phase": "cross_regions",
+          "position": [
+            146.1999588611443,
+            34.15906250000003
+          ],
+          "hp": 150.0,
+          "stamina": 78.8549055920936,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 32.01666666666549,
+          "phase": "cross_regions",
+          "position": [
+            157.60888314127845,
+            37.471562500000225
+          ],
+          "hp": 150.0,
+          "stamina": 86.55197553322824,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 34.01666666666538,
+          "phase": "cross_regions",
+          "position": [
+            166.6765780175368,
+            45.89218750000004
+          ],
+          "hp": 150.0,
+          "stamina": 78.98122876907371,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 36.016666666665266,
+          "phase": "cross_regions",
+          "position": [
+            178.18742210516376,
+            45.90468750000025
+          ],
+          "hp": 150.0,
+          "stamina": 86.6561260095932,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 38.01666666666515,
+          "phase": "cross_regions",
+          "position": [
+            189.76665686969957,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.98745743407399,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 40.01666666666504,
+          "phase": "cross_regions",
+          "position": [
+            198.7315374246516,
+            44.83531250000007
+          ],
+          "hp": 150.0,
+          "stamina": 84.77198228255874,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 42.016666666664925,
+          "phase": "cross_regions",
+          "position": [
+            210.31037671082476,
+            32.7478125000003
+          ],
+          "hp": 150.0,
+          "stamina": 91.43256634933768,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 44.01666666666481,
+          "phase": "cross_regions",
+          "position": [
+            217.23302278588451,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.93057467267239,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 46.0166666666647,
+          "phase": "cross_regions",
+          "position": [
+            220.58306090283142,
+            26.250000000000007
+          ],
+          "hp": 150.0,
+          "stamina": 82.58504742492057,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 48.016666666664584,
+          "phase": "cross_regions",
+          "position": [
+            231.73978428759776,
+            34.5125000000002
+          ],
+          "hp": 150.0,
+          "stamina": 89.62824349400282,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 50.01666666666447,
+          "phase": "cross_regions",
+          "position": [
+            243.32030359296715,
+            17.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.44083573974329,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 52.01666666666436,
+          "phase": "cross_regions",
+          "position": [
+            252.00345421643064,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 54.01666666666424,
+          "phase": "cross_regions",
+          "position": [
+            255.25415814654886,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 56.01666666666413,
+          "phase": "cross_regions",
+          "position": [
+            258.4991536096093,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 58.016666666664015,
+          "phase": "cross_regions",
+          "position": [
+            268.45691591669225,
+            38.96375000000015
+          ],
+          "hp": 150.0,
+          "stamina": 87.65564344936712,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 60.0166666666639,
+          "phase": "cross_regions",
+          "position": [
+            279.4277596595659,
+            18.456249999999997
+          ],
+          "hp": 150.0,
+          "stamina": 74.66971177925865,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 62.01666666666379,
+          "phase": "cross_regions",
+          "position": [
+            290.8247196783558,
+            37.71875000000017
+          ],
+          "hp": 150.0,
+          "stamina": 83.10268529975687,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 64.01666666666368,
+          "phase": "cross_regions",
+          "position": [
+            300.4122673083709,
+            12.898862792887218
+          ],
+          "hp": 150.0,
+          "stamina": 90.0552725896497,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 66.01666666666527,
+          "phase": "cross_regions",
+          "position": [
+            304.64179110487987,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.7933909765689,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 68.01666666666686,
+          "phase": "cross_regions",
+          "position": [
+            307.4229188169383,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 70.01666666666846,
+          "phase": "cross_regions",
+          "position": [
+            310.20398221640494,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 72.01666666667005,
+          "phase": "cross_regions",
+          "position": [
+            312.9850456157253,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 74.01666666667164,
+          "phase": "cross_regions",
+          "position": [
+            315.7661090150457,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 76.01666666667323,
+          "phase": "cross_regions",
+          "position": [
+            318.54717241436606,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 78.01666666667482,
+          "phase": "cross_regions",
+          "position": [
+            321.32823581368643,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 80.01666666667641,
+          "phase": "cross_regions",
+          "position": [
+            324.1092992130068,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 82.016666666678,
+          "phase": "cross_regions",
+          "position": [
+            326.8903626123272,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 84.0166666666796,
+          "phase": "cross_regions",
+          "position": [
+            329.67142601164755,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 86.01666666668119,
+          "phase": "cross_regions",
+          "position": [
+            332.4524894109679,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 88.01666666668278,
+          "phase": "cross_regions",
+          "position": [
+            335.2335528102883,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 90.01666666668437,
+          "phase": "cross_regions",
+          "position": [
+            338.0146162096087,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 92.01666666668596,
+          "phase": "cross_regions",
+          "position": [
+            341.7534380821263,
+            8.715206929924824
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 94.01666666668756,
+          "phase": "cross_regions",
+          "position": [
+            349.96286178644203,
+            22.272689630419876
+          ],
+          "hp": 150.0,
+          "stamina": 90.00393380355533,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 96.01666666668915,
+          "phase": "cross_regions",
+          "position": [
+            358.17226900769157,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.7510049549603,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 98.01666666669074,
+          "phase": "cross_regions",
+          "position": [
+            360.95604505961705,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 100.01666666669233,
+          "phase": "cross_regions",
+          "position": [
+            363.7371084651745,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 102.01666666669392,
+          "phase": "cross_regions",
+          "position": [
+            366.5181718644949,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 104.01666666669551,
+          "phase": "cross_regions",
+          "position": [
+            369.29923526381526,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 106.0166666666971,
+          "phase": "cross_regions",
+          "position": [
+            372.08029866313564,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 108.0166666666987,
+          "phase": "cross_regions",
+          "position": [
+            374.861362062456,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 110.01666666670029,
+          "phase": "cross_regions",
+          "position": [
+            377.6424254617764,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 112.01666666670188,
+          "phase": "cross_regions",
+          "position": [
+            380.42348886109676,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 114.01666666670347,
+          "phase": "cross_regions",
+          "position": [
+            383.20455226041713,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 116.01666666670506,
+          "phase": "cross_regions",
+          "position": [
+            385.9856156597375,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 118.01666666670666,
+          "phase": "cross_regions",
+          "position": [
+            388.7666790590579,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 120.01666666670825,
+          "phase": "cross_regions",
+          "position": [
+            391.54774245837825,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 122.01666666670984,
+          "phase": "cross_regions",
+          "position": [
+            394.3288058576986,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 124.01666666671143,
+          "phase": "cross_regions",
+          "position": [
+            397.109869257019,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 126.01666666671302,
+          "phase": "cross_regions",
+          "position": [
+            399.8909326563394,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 128.01666666671457,
+          "phase": "cross_regions",
+          "position": [
+            405.1910765071894,
+            8.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 130.01666666671275,
+          "phase": "cross_regions",
+          "position": [
+            414.04892346318456,
+            34.817187500000124
+          ],
+          "hp": 150.0,
+          "stamina": 90.31820346763928,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 132.01666666671093,
+          "phase": "cross_regions",
+          "position": [
+            425.6270580496477,
+            8.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.01047342972966,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 134.0166666667091,
+          "phase": "cross_regions",
+          "position": [
+            433.7784430502777,
+            33.21812500000009
+          ],
+          "hp": 150.0,
+          "stamina": 87.45847117988635,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 136.0166666667073,
+          "phase": "cross_regions",
+          "position": [
+            445.3579404491665,
+            16.18062500000035
+          ],
+          "hp": 150.0,
+          "stamina": 93.64969228072907,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 138.01666666670548,
+          "phase": "cross_regions",
+          "position": [
+            456.4499972760824,
+            11.8965625
+          ],
+          "hp": 150.0,
+          "stamina": 98.76144463055921,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 140.01666666670366,
+          "phase": "cross_regions",
+          "position": [
+            464.4530544346079,
+            34.036979166666775
+          ],
+          "hp": 150.0,
+          "stamina": 89.79273888238184,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 142.01666666670184,
+          "phase": "cross_regions",
+          "position": [
+            476.0343589785676,
+            13.149479166667039
+          ],
+          "hp": 150.0,
+          "stamina": 95.57664152405556,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 144.01666666670002,
+          "phase": "cross_regions",
+          "position": [
+            484.26125624982484,
+            33.8259375000001
+          ],
+          "hp": 150.0,
+          "stamina": 87.20604149433956,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 146.0166666666982,
+          "phase": "cross_regions",
+          "position": [
+            495.8409848035765,
+            14.038437500000366
+          ],
+          "hp": 150.0,
+          "stamina": 93.44133730015261,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 148.01666666669638,
+          "phase": "volcano_runup",
+          "position": [
+            504.6269461107588,
+            35.06531250000013
+          ],
+          "hp": 150.0,
+          "stamina": 85.81805475038738,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 150.01666666669456,
+          "phase": "volcano_runup",
+          "position": [
+            507.5194607078382,
+            10.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.29579702242175,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 152.01666666669274,
+          "phase": "volcano_platforms",
+          "position": [
+            511.2529267342486,
+            32.503125000000054
+          ],
+          "hp": 150.0,
+          "stamina": 84.04980409754648,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 154.01666666669092,
+          "phase": "volcano_platforms",
+          "position": [
+            524.9951804856502,
+            24.265625000000295
+          ],
+          "hp": 150.0,
+          "stamina": 90.83668018485672,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 156.0166666666891,
+          "phase": "volcano_platforms",
+          "position": [
+            533.9931826393345,
+            43.00093750000011
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 83.62367814031214,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 158.01666666668729,
+          "phase": "volcano_platforms",
+          "position": [
+            541.662998237078,
+            25.0184375
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 75.72981349152174,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 160.01666666668547,
+          "phase": "volcano_platforms",
+          "position": [
+            553.8822531278162,
+            44.83093750000017
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 83.96922623905549,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 162.01666666668365,
+          "phase": "volcano_platforms",
+          "position": [
+            562.7067218657332,
+            31.25000000000001
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 76.50491923068364,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 164.01666666668183,
+          "phase": "volcano_platforms",
+          "position": [
+            576.7312061626494,
+            39.5125000000002
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 84.60800784974302,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 166.01666666668,
+          "phase": "sky_landing",
+          "position": [
+            582.580595366478,
+            36.9463541666667
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 77.5485261285977,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 168.0166666666782,
+          "phase": "sky_landing",
+          "position": [
+            599.0056757361165,
+            32.558854166666926
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 85.46548492355896,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 170.01666666667637,
+          "phase": "sky_landing",
+          "position": [
+            605.5180923986412,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 91.99585450677009,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 172.01666666667455,
+          "phase": "sky_landing",
+          "position": [
+            605.5226109710959,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 97.38717290224301,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 174.01666666667273,
+          "phase": "sky_landing",
+          "position": [
+            605.5233477698976,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 176.01666666667091,
+          "phase": "sky_landing",
+          "position": [
+            605.5234679123702,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 178.0166666666691,
+          "phase": "sky_landing",
+          "position": [
+            605.5234875028116,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 180.01666666666728,
+          "phase": "sky_landing",
+          "position": [
+            605.5234906972304,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 182.01666666666546,
+          "phase": "sky_landing",
+          "position": [
+            605.5234912181133,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 184.01666666666364,
+          "phase": "sky_landing",
+          "position": [
+            605.523491303049,
+            2.9
+          ],
+          "hp": 149.53333333333336,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "reached_original_sky_island": false,
+      "failure": "sky_landing timed out",
+      "phase": "sky_landing",
+      "timer": 184.92499999999615,
+      "control_frames": 26630,
+      "position": [
+        605.5234913416451,
+        2.9
+      ],
+      "min_hp": 149.60000000000002,
+      "min_stamina": 73.3695812077308,
+      "respawns": 0,
+      "regions": [
+        {
+          "boundary_x": 100,
+          "time": 19.683333333332858,
+          "position": [
+            100.02621968744332,
+            35.323437500000246
+          ],
+          "hp": 150.0,
+          "stamina": 87.32272365865747
+        },
+        {
+          "boundary_x": 200,
+          "time": 40.124999999998366,
+          "position": [
+            200.03531398713588,
+            46.770312500000095
+          ],
+          "hp": 150.0,
+          "stamina": 85.49713004518067
+        },
+        {
+          "boundary_x": 300,
+          "time": 63.6166666666637,
+          "position": [
+            300.0089922112728,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.18742544015227
+        },
+        {
+          "boundary_x": 400,
+          "time": 125.93333333337962,
+          "position": [
+            400.0100298647461,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0
+        },
+        {
+          "boundary_x": 500,
+          "time": 147.04166666669727,
+          "position": [
+            500.020702943778,
+            28.46031250000003
+          ],
+          "hp": 150.0,
+          "stamina": 82.83637509675306
+        },
+        {
+          "boundary_x": 600,
+          "time": 167.95000000001158,
+          "position": [
+            600.0378382891715,
+            30.265625000000277
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 85.85052489523241
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "cross_regions",
+          "position": [
+            10.0,
+            55.0
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "forest_lake_jump",
+          "position": [
+            19.299223994577112,
+            74.08125000000005
+          ],
+          "hp": 150.0,
+          "stamina": 88.44169984198678,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "forest_lake_jump",
+          "position": [
+            30.888377318796543,
+            65.24687500000003
+          ],
+          "hp": 150.0,
+          "stamina": 94.46129877586996,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "forest_lake_jump",
+          "position": [
+            40.296499519665566,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 99.4317322204507,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "forest_canopy_jump",
+          "position": [
+            49.52319316930398,
+            45.002604166666806
+          ],
+          "hp": 150.0,
+          "stamina": 91.04253975455917,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "forest_canopy_jump",
+          "position": [
+            56.052700175698746,
+            27.99260416666667
+          ],
+          "hp": 150.0,
+          "stamina": 82.08131163226138,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "forest_canopy_jump",
+          "position": [
+            66.95221976140009,
+            42.58010416666686
+          ],
+          "hp": 150.0,
+          "stamina": 89.21271185615058,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "forest_canopy_jump",
+          "position": [
+            72.82354869049317,
+            36.6147916666667
+          ],
+          "hp": 150.0,
+          "stamina": 81.15324653534067,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "forest_canopy_jump",
+          "position": [
+            84.26113333336383,
+            37.1772916666669
+          ],
+          "hp": 150.0,
+          "stamina": 88.4472280197245,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "forest_finish",
+          "position": [
+            90.27133554149435,
+            42.25666666666674
+          ],
+          "hp": 150.0,
+          "stamina": 81.0813784511649,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 19.999999999999506,
+          "phase": "forest_finish",
+          "position": [
+            101.54499704284304,
+            28.794166666666975
+          ],
+          "hp": 150.0,
+          "stamina": 88.38795427897026,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 21.999999999999392,
+          "phase": "cross_regions",
+          "position": [
+            105.61401498258346,
+            24.750937500000013
+          ],
+          "hp": 150.0,
+          "stamina": 80.25867378537318,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 23.99999999999928,
+          "phase": "cross_regions",
+          "position": [
+            116.79659436768979,
+            30.538437500000235
+          ],
+          "hp": 150.0,
+          "stamina": 87.70946758866226,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 25.999999999999165,
+          "phase": "cross_regions",
+          "position": [
+            127.64114935868453,
+            14.677500000000002
+          ],
+          "hp": 150.0,
+          "stamina": 79.0362746004496,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 27.99999999999905,
+          "phase": "cross_regions",
+          "position": [
+            137.43047064760356,
+            36.140000000000164
+          ],
+          "hp": 150.0,
+          "stamina": 86.70151066966376,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 29.999999999998938,
+          "phase": "cross_regions",
+          "position": [
+            146.55284809523195,
+            35.47437500000003
+          ],
+          "hp": 150.0,
+          "stamina": 79.07092414131459,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 31.999999999998824,
+          "phase": "cross_regions",
+          "position": [
+            158.05185303066656,
+            36.311875000000235
+          ],
+          "hp": 150.0,
+          "stamina": 86.73007902932069,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 33.999999999998714,
+          "phase": "cross_regions",
+          "position": [
+            167.10985268030845,
+            47.21041666666671
+          ],
+          "hp": 150.0,
+          "stamina": 79.23954008276598,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 35.9999999999986,
+          "phase": "cross_regions",
+          "position": [
+            178.68031079770722,
+            44.47291666666692
+          ],
+          "hp": 150.0,
+          "stamina": 86.8691042532896,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 37.99999999999849,
+          "phase": "cross_regions",
+          "position": [
+            190.26921618759067,
+            22.9
+          ],
+          "hp": 150.0,
+          "stamina": 93.16323860703945,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 39.99999999999837,
+          "phase": "cross_regions",
+          "position": [
+            199.31101282034373,
+            45.798437500000084
+          ],
+          "hp": 150.0,
+          "stamina": 85.04554610244281,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 41.99999999999826,
+          "phase": "cross_regions",
+          "position": [
+            210.9010119620948,
+            30.41093750000032
+          ],
+          "hp": 150.0,
+          "stamina": 91.65830397481814,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 43.999999999998145,
+          "phase": "cross_regions",
+          "position": [
+            217.4073359608877,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.1169709702459,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 45.99999999999803,
+          "phase": "cross_regions",
+          "position": [
+            221.01629036200976,
+            28.38822916666668
+          ],
+          "hp": 150.0,
+          "stamina": 83.00229452758623,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 47.99999999999792,
+          "phase": "cross_regions",
+          "position": [
+            232.37564832970932,
+            33.07572916666688
+          ],
+          "hp": 150.0,
+          "stamina": 89.97245218855107,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 49.999999999997804,
+          "phase": "cross_regions",
+          "position": [
+            243.96594669520005,
+            17.9
+          ],
+          "hp": 150.0,
+          "stamina": 95.72501338860602,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 51.99999999999769,
+          "phase": "cross_regions",
+          "position": [
+            252.174707569797,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 53.99999999999758,
+          "phase": "cross_regions",
+          "position": [
+            255.4226947325838,
+            12.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 55.99999999999746,
+          "phase": "cross_regions",
+          "position": [
+            258.6756715741535,
+            14.111979166666668
+          ],
+          "hp": 150.0,
+          "stamina": 80.63555237972629,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 57.99999999999735,
+          "phase": "cross_regions",
+          "position": [
+            269.08244386667377,
+            38.599479166666825
+          ],
+          "hp": 150.0,
+          "stamina": 88.02026995482893,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 59.999999999997236,
+          "phase": "cross_regions",
+          "position": [
+            279.99704811449,
+            21.392604166666665
+          ],
+          "hp": 150.0,
+          "stamina": 75.18484441513229,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 61.99999999999712,
+          "phase": "cross_regions",
+          "position": [
+            291.5366330144288,
+            36.80510416666685
+          ],
+          "hp": 150.0,
+          "stamina": 83.52709474575258,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 63.99999999999701,
+          "phase": "cross_regions",
+          "position": [
+            300.6878472101547,
+            12.713589191128486
+          ],
+          "hp": 150.0,
+          "stamina": 90.40541406843859,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 65.9999999999986,
+          "phase": "cross_regions",
+          "position": [
+            304.84447909299354,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.0824778429463,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 68.00000000000018,
+          "phase": "cross_regions",
+          "position": [
+            307.6255681787156,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 70.00000000000178,
+          "phase": "cross_regions",
+          "position": [
+            310.40663157809354,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 72.00000000000337,
+          "phase": "cross_regions",
+          "position": [
+            313.1876949774139,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 74.00000000000496,
+          "phase": "cross_regions",
+          "position": [
+            315.9687583767343,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 76.00000000000655,
+          "phase": "cross_regions",
+          "position": [
+            318.74982177605466,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 78.00000000000814,
+          "phase": "cross_regions",
+          "position": [
+            321.53088517537503,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 80.00000000000973,
+          "phase": "cross_regions",
+          "position": [
+            324.3119485746954,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 82.00000000001133,
+          "phase": "cross_regions",
+          "position": [
+            327.0930119740158,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 84.00000000001292,
+          "phase": "cross_regions",
+          "position": [
+            329.87407537333615,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 86.00000000001451,
+          "phase": "cross_regions",
+          "position": [
+            332.6551387726565,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 88.0000000000161,
+          "phase": "cross_regions",
+          "position": [
+            335.4362021719769,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 90.00000000001769,
+          "phase": "cross_regions",
+          "position": [
+            338.2172655712973,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 92.00000000001928,
+          "phase": "cross_regions",
+          "position": [
+            342.50469296157416,
+            7.591609076894748
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 94.00000000002088,
+          "phase": "cross_regions",
+          "position": [
+            350.8350859357343,
+            21.499612642982413
+          ],
+          "hp": 150.0,
+          "stamina": 90.47421107405638,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 96.00000000002247,
+          "phase": "cross_regions",
+          "position": [
+            358.3857567635354,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.13927967415934,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 98.00000000002406,
+          "phase": "cross_regions",
+          "position": [
+            361.16784438521785,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 100.00000000002565,
+          "phase": "cross_regions",
+          "position": [
+            363.94890778689194,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 102.00000000002724,
+          "phase": "cross_regions",
+          "position": [
+            366.7299711862123,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 104.00000000002883,
+          "phase": "cross_regions",
+          "position": [
+            369.5110345855327,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 106.00000000003043,
+          "phase": "cross_regions",
+          "position": [
+            372.29209798485306,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 108.00000000003202,
+          "phase": "cross_regions",
+          "position": [
+            375.07316138417343,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 110.00000000003361,
+          "phase": "cross_regions",
+          "position": [
+            377.8542247834938,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 112.0000000000352,
+          "phase": "cross_regions",
+          "position": [
+            380.6352881828142,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 114.00000000003679,
+          "phase": "cross_regions",
+          "position": [
+            383.41635158213455,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 116.00000000003838,
+          "phase": "cross_regions",
+          "position": [
+            386.1974149814549,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 118.00000000003998,
+          "phase": "cross_regions",
+          "position": [
+            388.9784783807753,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 120.00000000004157,
+          "phase": "cross_regions",
+          "position": [
+            391.7595417800957,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 122.00000000004316,
+          "phase": "cross_regions",
+          "position": [
+            394.54060517941605,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 124.00000000004475,
+          "phase": "cross_regions",
+          "position": [
+            397.3216685787364,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 126.00000000004634,
+          "phase": "cross_regions",
+          "position": [
+            400.1027319780568,
+            9.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": true
+        },
+        {
+          "time": 128.00000000004792,
+          "phase": "cross_regions",
+          "position": [
+            406.1019171839472,
+            8.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 130.0000000000461,
+          "phase": "cross_regions",
+          "position": [
+            414.919123659785,
+            35.12750000000014
+          ],
+          "hp": 150.0,
+          "stamina": 90.78399013782412,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 132.00000000004428,
+          "phase": "cross_regions",
+          "position": [
+            426.50891390323557,
+            8.9
+          ],
+          "hp": 150.0,
+          "stamina": 96.39505107904746,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 134.00000000004246,
+          "phase": "cross_regions",
+          "position": [
+            434.69725784979744,
+            34.27500000000011
+          ],
+          "hp": 150.0,
+          "stamina": 87.97559232178169,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 136.00000000004064,
+          "phase": "cross_regions",
+          "position": [
+            446.28727839689304,
+            12.01250000000038
+          ],
+          "hp": 150.0,
+          "stamina": 94.07654008152942,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 138.00000000003882,
+          "phase": "cross_regions",
+          "position": [
+            457.357113387206,
+            11.659374999999999
+          ],
+          "hp": 150.0,
+          "stamina": 99.1139639181624,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 140.000000000037,
+          "phase": "cross_regions",
+          "position": [
+            465.3251404909575,
+            34.759791666666786
+          ],
+          "hp": 150.0,
+          "stamina": 90.26603438966663,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 142.0000000000352,
+          "phase": "cross_regions",
+          "position": [
+            476.91491658603053,
+            8.922291666667068
+          ],
+          "hp": 150.0,
+          "stamina": 95.96740090397768,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 144.00000000003337,
+          "phase": "cross_regions",
+          "position": [
+            485.1321000379675,
+            34.63125000000012
+          ],
+          "hp": 150.0,
+          "stamina": 87.71633692184024,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 146.00000000003155,
+          "phase": "cross_regions",
+          "position": [
+            496.72184824425443,
+            9.893750000000395
+          ],
+          "hp": 150.0,
+          "stamina": 93.86253982012497,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 148.00000000002973,
+          "phase": "volcano_runup",
+          "position": [
+            505.5469281751732,
+            35.12072916666681
+          ],
+          "hp": 150.0,
+          "stamina": 86.35831186461333,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 150.0000000000279,
+          "phase": "volcano_runup",
+          "position": [
+            507.5415741685231,
+            10.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.7416639634916,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 152.0000000000261,
+          "phase": "volcano_platforms",
+          "position": [
+            512.2271963363751,
+            34.17468750000007
+          ],
+          "hp": 150.0,
+          "stamina": 84.6122020529334,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 154.00000000002427,
+          "phase": "volcano_platforms",
+          "position": [
+            525.1890708419049,
+            20.987187500000317
+          ],
+          "hp": 150.0,
+          "stamina": 91.30072337841884,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 156.00000000002245,
+          "phase": "volcano_platforms",
+          "position": [
+            535.1642840271954,
+            43.14625000000012
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 84.18944935672206,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 158.00000000002063,
+          "phase": "volcano_platforms",
+          "position": [
+            542.0151613294303,
+            28.793750000000003
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 76.40850282926064,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 160.00000000001882,
+          "phase": "volcano_platforms",
+          "position": [
+            555.0648413249662,
+            43.65625000000019
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 84.52854396525629,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 162.000000000017,
+          "phase": "volcano_platforms",
+          "position": [
+            563.4773569062024,
+            34.3097916666667
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 77.18246876375832,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 164.00000000001518,
+          "phase": "volcano_platforms",
+          "position": [
+            577.8544299127144,
+            37.34729166666689
+          ],
+          "hp": 149.66666666666669,
+          "stamina": 85.16646582490397,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 166.00000000001336,
+          "phase": "sky_landing",
+          "position": [
+            583.5643074546992,
+            39.10156250000006
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 78.22888225604049,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 168.00000000001154,
+          "phase": "sky_landing",
+          "position": [
+            600.5163427584556,
+            29.214062500000285
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 86.02772883894349,
+          "on_ground": false,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 170.00000000000972,
+          "phase": "sky_landing",
+          "position": [
+            605.5401364199008,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 92.46116602807277,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 172.0000000000079,
+          "phase": "sky_landing",
+          "position": [
+            605.526205471038,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 97.77265716534063,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 174.00000000000608,
+          "phase": "sky_landing",
+          "position": [
+            605.5239338893563,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 176.00000000000426,
+          "phase": "sky_landing",
+          "position": [
+            605.5235634850573,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 178.00000000000244,
+          "phase": "sky_landing",
+          "position": [
+            605.5235030869015,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 180.00000000000063,
+          "phase": "sky_landing",
+          "position": [
+            605.5234932383727,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 181.9999999999988,
+          "phase": "sky_landing",
+          "position": [
+            605.5234916324704,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        },
+        {
+          "time": 183.999999999997,
+          "phase": "sky_landing",
+          "position": [
+            605.5234913706117,
+            2.9
+          ],
+          "hp": 149.60000000000002,
+          "stamina": 100.0,
+          "on_ground": true,
+          "wall_right": false,
+          "swimming": false
+        }
+      ]
+    }
+  ]
+}
