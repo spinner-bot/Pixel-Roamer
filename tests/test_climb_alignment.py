@@ -14,17 +14,26 @@ from teleport import can_place, teleport_to
 from scripts.audit_held_climb import make_session
 
 
-def captured():
-    world = World(0, 'alignment lifecycle', 20, 20, gravity=0)
+def captured(start_x=6.4, loop_x=False):
+    world = World(0, 'alignment lifecycle', 20, 20, gravity=0, loop_x=loop_x)
     for y in range(1, 16):
         world.set_tile(5, y, 9)
-    actor = Player(0, 'alignment', 6.4, 10, {})
+    actor = Player(0, 'alignment', start_x, 10, {})
     actor.collide_with_world(world, 0)
     assert actor.try_start_climbing(world)
     return actor, world
 
 
 class ClimbAlignmentTests(unittest.TestCase):
+    def test_complete_steps_end_at_the_exact_selected_center(self):
+        for dx in (0, -20, 20):
+            actor, world = captured(6.1 + dx, True)
+            for _ in range(12):
+                actor.update_physics(1 / 120, world)
+                actor.collide_with_world(world, 1 / 120)
+            self.assertEqual(actor._x, 5.5 + dx)
+            self.assertIsNone(actor._climb_align_target)
+
     def test_mirrors_bodies_input_modes_and_loop_translations(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:
