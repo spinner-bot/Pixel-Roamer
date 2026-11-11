@@ -1,6 +1,5 @@
 """Controlled contact probes distinguish numeric source placeholders from intentional API zero."""
 import argparse
-from dataclasses import asdict
 import json
 import os
 from pathlib import Path
@@ -49,6 +48,8 @@ def measure(tile_id, buff_id, control):
     elif buff_id == 44:
         with patch('status_effects.random.random', return_value=1.) as draw:
             actor.tick_buffs(.5)
+            early = draw.call_count
+            actor.tick_buffs(3.5)
         value = draw.call_count
     elif buff_id == 47:
         value = actor.phys_atk
@@ -61,7 +62,10 @@ def measure(tile_id, buff_id, control):
         hp = actor.hp
         actor.tick_buffs(.5)
         value = hp - actor.hp
-    return {'value': value, 'params': params}
+    result = {'value': value, 'params': params}
+    if buff_id == 44:
+        result['opportunities_first_half_second'] = early
+    return result
 
 
 def run():
