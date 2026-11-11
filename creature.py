@@ -601,7 +601,7 @@ class Creature:
                 for i, bid in enumerate(bt.buff_ids):
                     params = bt.buff_params_list[i] if i < len(bt.buff_params_list) else ()
                     dur = bt.buff_durations[i] if i < len(bt.buff_durations) else None
-                    self.apply_buff(bid, params, dur)
+                    self.apply_buff(bid, params, dur, source=bt.id)
 
         for bt in types:
             if bt.special is not None:
@@ -816,6 +816,7 @@ class Creature:
         for b in self.buffs:
             if b.buff_id == buff_id:
                 b.refresh(params, duration)
+                b.source = source
                 b.applied_at = self._buff_game_time
                 return
 
