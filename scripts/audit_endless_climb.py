@@ -48,6 +48,8 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
                 arrived &= not player.on_ground and player._y >= waypoint['y']
             elif waypoint['kind'] == 'climb':
                 arrived &= player.is_climbing and player._y >= waypoint['y']
+            elif waypoint['kind'] == 'swim':
+                arrived &= player.can_swim and abs(player._y - waypoint['y']) < .25
             else:
                 arrived &= player.on_ground and abs(player._y - waypoint['y']) < .02
                 if waypoint['kind'] == 'rest':
@@ -72,7 +74,8 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
                     break
                 waypoint = route['waypoints'][stage]
                 jump = (player.on_ground or player.is_climbing) and waypoint['y'] > player._y + .2
-            keys[pygame.K_w] = waypoint['kind'] == 'climb' and player._y <= waypoint['y'] + .1
+            keys[pygame.K_w] = ((waypoint['kind'] == 'climb' and player._y <= waypoint['y'] + .1)
+                               or (waypoint['kind'] == 'swim' and player._y < waypoint['y'] - .1))
             keys[pygame.K_s] = waypoint['kind'] != 'climb' and not jump and not app.jump_pressed
             speed = waypoint.get('speed', 5)
             error = max(-speed, min(speed, (waypoint['x'] - player._x) * 3)) - player.v_x
