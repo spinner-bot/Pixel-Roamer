@@ -55,8 +55,8 @@ def apply_field(actor, world, dt):
         ay += dy / max(.1, distance) * strength
     actor.v_x += opposed_force(ax, actor.a_x) * dt
     if getattr(actor, '_jump_escape_active', False) and actor.v_y > 0 and ay < 0:
-        # An indefinitely refreshed field must not pin a deliberate jump to
-        # its source. Keep modest downward resistance during that ascent;
+        # An indefinitely refreshed field must not pin an explicit jump,
+        # bounce or catapult launch. Keep modest resistance during ascent;
         # passive attraction and falling retain their ordinary field force.
         gravity = abs(world.gravity * actor.get_buff_stat('gravity', 1.))
         ay = max(ay, -.25 * gravity)
