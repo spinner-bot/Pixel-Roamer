@@ -50,7 +50,13 @@
       {"position": [46, 35], "before": 254, "after": 11, "stage": "A50"}
     ],
     "7": [
-      {"position": [36, 29], "before": 11, "after": 290, "stage": "A37"}
+      {"position": [36, 29], "before": 11, "after": 290, "stage": "A37"},
+      {"position": [40, 22], "before": 19, "after": 10, "stage": "A51"},
+      {"position": [40, 28], "before": 19, "after": 10, "stage": "A51"},
+      {"position": [40, 35], "before": 19, "after": 10, "stage": "A51"},
+      {"position": [40, 37], "before": 19, "after": 11, "stage": "A51"},
+      {"position": [41, 37], "before": 19, "after": 11, "stage": "A51"},
+      {"position": [41, 38], "before": 267, "after": 11, "stage": "A51"}
     ]
   }
 }

@@ -167,4 +167,12 @@ for hx, hy in [(6,18),(24,10),(28,20),(43,38),(36,29),(28,15)]:
 for door_x in (12, 20, 21, 35):
     fill(door_x, 17, door_x, 19, 0)
 
+# Platforms used to overwrite the existing climbing vine at each floor.
+# Keep one continuous shaft, then body-sized headroom above the original
+# emerald so the authored tower route can enter the final chamber as well.
+for floor_y in (22, 28, 35):
+    world.set_tile(40, floor_y, 10)
+world.set_tile(40, 37, 11)
+fill(41, 37, 41, 38, 11)
+
 world.end_bulk_load()
