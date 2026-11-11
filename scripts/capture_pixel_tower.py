@@ -17,19 +17,24 @@ from maps import get_map
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--before', action='store_true')
-    parser.add_argument('--region', choices=('tower', 'pyramid'), default='tower')
+    parser.add_argument('--region', choices=('tower', 'pyramid', 'pyramid_bottom'), default='tower')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    stage, scale, center = {
+        'tower': ('A66', 4, (450, 110)),
+        'pyramid': ('A69', 16, (375, 60)),
+        'pyramid_bottom': ('A70', 12, (375, 50)),
+    }[args.region]
     world = get_map(3).create_session()
     if args.before:
         reviews = json.loads((ROOT / 'tests/fixtures/reviewed_map_changes.json').read_text())
         for change in reviews['maps']['3']:
-            if change['stage'] == ('A66' if args.region == 'tower' else 'A69'):
+            if change['stage'] == stage:
                 world.set_tile(*change['position'], change['before'])
     surface = pygame.Surface((640, 900))
     camera = Camera(640, 900, world)
-    camera.scale = 4 if args.region == 'tower' else 16
-    camera.follow(*( (450, 110) if args.region == 'tower' else (375, 60) ))
+    camera.scale = scale
+    camera.follow(*center)
     world.draw(surface, camera)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     pygame.image.save(surface, str(args.output))
