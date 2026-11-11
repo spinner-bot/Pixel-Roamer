@@ -20,10 +20,11 @@ from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
 
 
-def run(fps, route=None, duration=120, draw_every=0):
+def run(fps, route=None, duration=120, draw_every=0, session=None):
     if route is None:
         route = json.loads((ROOT / 'scripts/routes/endless_climb.json').read_text())
-    session = create_control_session(route['map_id'])
+    if session is None:
+        session = create_control_session(route['map_id'])
     app, player = session.app, session.app.player1
     keys = defaultdict(bool)
     trace, arrivals = [], []
@@ -64,7 +65,8 @@ def run(fps, route=None, duration=120, draw_every=0):
                 jump = (player.on_ground or player.is_climbing) and waypoint['y'] > player._y + .2
             keys[pygame.K_w] = waypoint['kind'] == 'climb' and player._y <= waypoint['y'] + .1
             keys[pygame.K_s] = waypoint['kind'] != 'climb' and not jump and not app.jump_pressed
-            error = max(-5, min(5, (waypoint['x'] - player._x) * 3)) - player.v_x
+            speed = waypoint.get('speed', 5)
+            error = max(-speed, min(speed, (waypoint['x'] - player._x) * 3)) - player.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .2, error < -.2
             if not jump and player.on_ground and player._y < waypoint['y'] - .1:
                 jump = True
