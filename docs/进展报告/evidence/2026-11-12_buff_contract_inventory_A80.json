@@ -1,0 +1,2776 @@
+{
+  "code_revision": "9d598911f7c2e84d76fc1d3d8bac491246b5ace8",
+  "scope": "static catalog/code and current map placement inventory; no behavioral pass claims",
+  "source_hashes": {
+    "spawn_placement.py": "f3668e0ac6e73757bcbf56019ff3e1a8ff56f45f65de4cac663f989451f35745",
+    "costumes.py": "4ca5b623a180dde866c1fc745c3767aafb10c081dcb4994c1904e5114033730c",
+    "magnetic_pickups.py": "1ba017fd88b1f1c18132648a0df60c2eac0e83fd4a8350c068eebcfa0ee601c6",
+    "block_types_data.py": "dca32489b2cdf8be6a0e74082b0e09b356c80ada76472c1ac961f63f46b72088",
+    "block_types_extended.py": "41cb56c7884c779064a851b820b76dc43bb919669d9d770104a28b00990b345a",
+    "teleport.py": "c5e7731f38930e7e9a08ca6aeb624fd8b21fb00abc702969906701f616f9d9b1",
+    "environment_forces.py": "259eaf4e439221e18bf31339f7cd67344a73dee85612f359fdb08393aa028b43",
+    "sfx.py": "5f2c8398096c908c81ff55448990c6823221a3b20f8e59fa07681876d11a17b2",
+    "main.py": "780a012c6a4df887a579b906a7c54ba4221fe1d09975fef587837976489b174a",
+    "block_types_buff.py": "2d46d384bc9f061c37f2450cdc218c1e547ce804f122405d34788c39760d24d8",
+    "status_effects.py": "2e60cac7d6a76f5bdc5be354ccb6a7216b6b7d4af96062f7c3b03ddbd23f957a",
+    "climb_alignment.py": "2c53d78c2ec65728f671c3cc094e99144bfa99acbeb31735885cad51fd5afb24",
+    "camera.py": "a7525798bca6bf264719e1276d3c9c50f559e9a5518bd4416f8447e311ca90dc",
+    "home_page.py": "db3e372090917d302690e51e8efcd2315f717b51984953a3175789c42a5f9d51",
+    "creature.py": "7aa93cb08ae4a09034d7d3edb5e2e2c3e76bc7df5d15d76f2da0869cce9fd3d7",
+    "resource_catalog.py": "ca8f82cd3356e69a6c44e4f0ef0c268e515f90f77956d932705f84852ca0109d",
+    "constants.py": "3a14c5c47cc7d952950ee40f742d473c3e18eec69859db21fbf7a6c6b799ec2c",
+    "pattern.py": "6fcb15e23790c697f49518c62c5f4a42e70106198db0bc8e8568bd0201361ad9",
+    "pickup_effects.py": "811fe40d8cc31939a21a8d7e93c3290340b32eabfd491610685c7aa634f72a8d",
+    "music.py": "f32bb2d80c792f9c571f9c8415650e164524b491113947917e34202ad4c884ee",
+    "block_types_functional.py": "5990cfa79e52de68c9d255182bab56bcc9db842684521cc4c3c66b917ee04177",
+    "collision.py": "d880cd0f43f31b698ab43a567f913389a22fb4db052ae55e54498913afc28d6d",
+    "player_factory.py": "57f57fd81cc84235edb223e601d7811c107d81346788033f2ae478748991d1e7",
+    "environment_contacts.py": "71553ab67ca3af5e85a4f234f562378d0798d35fb23683f82f19254a9d335080",
+    "simulation.py": "c59abebe5a8896a20702c3e59ea9044894bb182cb2b88e0f2f3dab4c4c69643e",
+    "block_type.py": "905533593abffca1c8424ed8724a9ac47858cd30c33ecabe7a962d24313a90ac",
+    "game_state.py": "7fbc5ee0de2bb6ef77fdc6f38ff956f1032aa43bdf9f5c3ccaac2155f6cf45ce",
+    "loading_screen.py": "689c2f9c6c1107f44c05811897c87d9cf6ea19d319524d8f178b01e254c864c4",
+    "game_rect.py": "ec92cfc23d61f8ef6867b5a86d9f20830a1ce3a9a556216b8232b2b66a0bff69",
+    "shore_exit.py": "e51aa78b6ce97be6008839960f0942c2eefc189419e5bc5cebad076172470be8",
+    "pixel_font.py": "72c45dcf8f70b8761bd9e87280eee91dc47af16591d3338c597fe68dc8ef681c",
+    "chunk_scaling.py": "6b5f71bcfe15c470e1490eeb94b4b3dd593a3c40537467706742f116ebcdd6f1",
+    "buff_data.py": "aa01537566e4d9ec0299deeb160a0aa1dc9908ff0993201f986d3c1061ee94a6",
+    "shore_detection.py": "fd202d86dcc385d6c82212598da560d9e476cdb0727f8ad456d2756e368a0196",
+    "buff_system.py": "ef11ba1d50d5561c3d913b9e2e992411a29722b24bc4474318227e85df120504",
+    "map_config.py": "46a725c8f79bf7bc97c33c21fd6a65977fb5366c1ba9e4656d17a9f14dfaa54d",
+    "phase_collision.py": "06794afa816dc39ff2c0a88bb29f251c611d2847946cef017113a94f8539c9e6",
+    "game_text.py": "7c84e998ca11417278d2936835a40daf63ea5081a2941bf7e3ce85b927d8416a",
+    "world.py": "c29f456db6fd0adea9380c5bf5ed1e16be8a849bbd9f4c5513d9de826a841b2a",
+    "pixel_roamer/world_session.py": "c340abe24a79255c4ec0bc540b3df907b36b3aa089ab0722f8aea3fa241b51ed",
+    "pixel_roamer/application.py": "7121acd11201598ef90a698067c36184904621eba4bc11817e0d041bb4ed4d74",
+    "pixel_roamer/__init__.py": "8d1ae28eec14cf58e930587981a9d8cfde88d375ff234984e6005f127a8cd374",
+    "pixel_roamer/world_view.py": "4edb2631787c565837766652879fce6342a227157c6f6efe0384f3c8a8c85ada",
+    "pixel_roamer/visual_effects.py": "8b219735f1976382ca2ff41cfcaf65a417ec5194c37b2af709a3902d974c38ec",
+    "pixel_roamer/ui/help_overlay.py": "f897d069ca77627122775a0a40de3aeaa3e75bd74e0f20debb8c93294e8d177e",
+    "pixel_roamer/ui/map_browser.py": "df21fbc9eef087cb108ae44857860848f28bdc930d12acfef20bd218b7e09d58",
+    "pixel_roamer/ui/__init__.py": "057931874de49ea4c6d1444adde74ecdc785812aa5ecc0eee77051bbe82266fd",
+    "pixel_roamer/ui/map_selector.py": "9962068eaa82ddc890d259e0e6137e89e1b0092fcb9a742a7af693ae8c6c289c",
+    "pixel_roamer/ui/hud.py": "5bed38c505d982e074565e9ed4a1f0530ee4a2e5b2a49342fb9da59b7d326a65",
+    "pixel_roamer/ui/theme.py": "f6c663b5972c9cda9ab1560ec1047569f6630268b24cb46709c48330ba0d23d1",
+    "pixel_roamer/ui/editor_input.py": "d8c89e00e35a6e38f2de27fbbf9c4b90c4427d5af3db2dd4a93e3ccf4b46c948",
+    "pixel_roamer/ui/widgets.py": "99acfe5a5dc32022ce8fabdd6fdc7bd72831308b633e1c4e1570e085c44ec236",
+    "pixel_roamer/ui/references.py": "633469af91de1420b57ee14c6d8c4cc7ba12f68821df76617b984dba7561e383",
+    "pixel_roamer/ui/config.py": "9be47da3e9b409aaa3ce221623d5d4d2d40ee7d393fb5b179916f0c823ac6bee",
+    "pixel_roamer/ui/settings.py": "e2e8a203b34a7e2a103f957333be91e89de6d51fae11678ccf4178010771f7cf"
+  },
+  "catalog_hashes": {
+    "blocks": "8594434fca87c7d1259e3f18ab77a80e1dda547bf921e55e50a1fc4ee1799b1f",
+    "buffs": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9"
+  },
+  "extension_hashes": {
+    "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0"
+  },
+  "entries": [
+    {
+      "buff_id": 1,
+      "name": "恢复",
+      "claim": "每秒恢复 {0} 点生命值",
+      "tick": "regen",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 360,
+          "name": "生命之泉",
+          "params": [
+            8
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 361,
+          "name": "护佑花",
+          "params": [
+            3
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 365,
+          "name": "凤栖石",
+          "params": [
+            12
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 366,
+          "name": "圣光之柱",
+          "params": [
+            5
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 367,
+          "name": "重生之锚",
+          "params": [
+            20
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 407,
+          "name": "涤罪之池",
+          "params": [
+            6
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 18
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 2,
+      "name": "护佑",
+      "claim": "每秒获得 {0} 点护盾",
+      "tick": "shield_regen",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 361,
+          "name": "护佑花",
+          "params": [
+            5
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 365,
+          "name": "凤栖石",
+          "params": [
+            4
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 392,
+          "name": "荆棘之壁",
+          "params": [
+            3
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 404,
+          "name": "水晶结界",
+          "params": [
+            8
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 20
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 3,
+      "name": "迅捷",
+      "claim": "移动速度 +{0}%",
+      "tick": "swiftness",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 400,
+          "name": "风佑之路",
+          "params": [
+            30
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 420,
+          "name": "激流",
+          "params": [
+            40
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 423,
+          "name": "风刃锻台",
+          "params": [
+            50
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 437,
+          "name": "浮力海藻",
+          "params": [
+            30
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 77
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 4,
+      "name": "轻身",
+      "claim": "跳跃高度 +{0}%",
+      "tick": "leaping",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 415,
+          "name": "弹跳蘑菇",
+          "params": [
+            50
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 418,
+          "name": "轻云",
+          "params": [
+            30
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 77
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 5,
+      "name": "活力",
+      "claim": "体力恢复速度 +{0}%",
+      "tick": "vigor",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 363,
+          "name": "活力之花",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 405,
+          "name": "安神花",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 419,
+          "name": "攀藤壁",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 78
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 6,
+      "name": "坚忍",
+      "claim": "体力消耗 -{0}%",
+      "tick": "endurance",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 364,
+          "name": "守护士碑",
+          "params": [],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 406,
+          "name": "铁心祭坛",
+          "params": [],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 82
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 7,
+      "name": "坚守",
+      "claim": "受到伤害 -{0}%",
+      "tick": "fortify",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 364,
+          "name": "守护士碑",
+          "params": [],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 388,
+          "name": "定锚岩",
+          "params": [],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 391,
+          "name": "石肤之碑",
+          "params": [],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 424,
+          "name": "要塞符文",
+          "params": [],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 83
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 8,
+      "name": "清明",
+      "claim": "免疫方向反转和视野干扰",
+      "tick": "clarity",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 393,
+          "name": "清明之眼",
+          "params": [
+            0
+          ],
+          "duration": 20.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 83,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 58,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 9,
+      "name": "耐火",
+      "claim": "免疫火焰和熔岩伤害",
+      "tick": "fire_resist",
+      "category": "positive",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 155,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 189,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 10,
+      "name": "荆棘",
+      "claim": "反弹 {0}% 受到的伤害",
+      "tick": "thornmail",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 392,
+          "name": "荆棘之壁",
+          "params": [
+            30
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 177,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 178,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 11,
+      "name": "嗜血",
+      "claim": "造成伤害时回复其 {0}% 为生命",
+      "tick": "lifesteal",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 421,
+          "name": "吸血祭坛",
+          "params": [
+            20
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 179,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 180,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 12,
+      "name": "净化",
+      "claim": "每 {0} 秒移除一个负面效果",
+      "tick": "cleansing",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 362,
+          "name": "净化之泉",
+          "params": [
+            2
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 407,
+          "name": "涤罪之池",
+          "params": [
+            1.5
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 31
+        },
+        {
+          "file": "status_effects.py",
+          "line": 36
+        },
+        {
+          "file": "status_effects.py",
+          "line": 32
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 13,
+      "name": "轻羽",
+      "claim": "重力降低 {0}%",
+      "tick": "feather",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 389,
+          "name": "浮空矿石",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 416,
+          "name": "风之隧道",
+          "params": [],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 418,
+          "name": "轻云",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 433,
+          "name": "重力反转石",
+          "params": [],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1,
+            "21": 12
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 83
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 14,
+      "name": "磁引",
+      "claim": "自动吸引附近掉落物",
+      "tick": "magnetic",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 439,
+          "name": "磁引花",
+          "params": [
+            4.0
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "1": 1,
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "environment_forces.py",
+          "line": 14
+        },
+        {
+          "file": "status_effects.py",
+          "line": 15
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 15,
+      "name": "浸湿",
+      "claim": "处于潮湿状态（清除着火）",
+      "tick": "soaked",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 426,
+          "name": "蒸汽喷口",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 565,
+          "call": "apply_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 16,
+      "name": "着火",
+      "claim": "每秒损失 {0} 点生命值，遇水清除",
+      "tick": "burning",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 6,
+          "name": "熔岩",
+          "params": [
+            5
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "1": 20,
+            "2": 159,
+            "3": 123,
+            "20": 318,
+            "21": 84
+          }
+        },
+        {
+          "block_id": 368,
+          "name": "熔岩流",
+          "params": [
+            15
+          ],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 369,
+          "name": "熔岩砖",
+          "params": [
+            5
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 427,
+          "name": "火山喷口",
+          "params": [
+            12
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 22
+        },
+        {
+          "file": "status_effects.py",
+          "line": 25
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 17,
+      "name": "流血",
+      "claim": "每秒损失当前生命值的 {0}%",
+      "tick": "bleeding",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 10,
+          "name": "藤蔓",
+          "params": [
+            0.5
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "1": 16,
+            "3": 120,
+            "4": 13,
+            "5": 32,
+            "7": 31,
+            "9": 25,
+            "20": 53,
+            "21": 28
+          }
+        },
+        {
+          "block_id": 371,
+          "name": "荆棘丛",
+          "params": [
+            2
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 374,
+          "name": "尖刺陷阱",
+          "params": [
+            3
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 390,
+          "name": "狂暴之血",
+          "params": [
+            1
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 397,
+          "name": "寄生藤",
+          "params": [
+            1
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 408,
+          "name": "尖刺陷坑",
+          "params": [
+            5
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 430,
+          "name": "锐利珊瑚礁",
+          "params": [
+            2
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 432,
+          "name": "宝箱怪",
+          "params": [
+            3
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 26
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 18,
+      "name": "脱力",
+      "claim": "体力消耗速度 ×{0}",
+      "tick": "weakened",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 376,
+          "name": "诅咒石碑",
+          "params": [
+            3
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 380,
+          "name": "虚弱石",
+          "params": [
+            2.5
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 436,
+          "name": "吸力藤",
+          "params": [
+            2.0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 101
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 19,
+      "name": "疲倦",
+      "claim": "体力恢复速度 -{0}%",
+      "tick": "fatigue",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 380,
+          "name": "虚弱石",
+          "params": [
+            40
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 401,
+          "name": "困倦孢子",
+          "params": [
+            30
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 436,
+          "name": "吸力藤",
+          "params": [
+            30
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 82
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 20,
+      "name": "重伤",
+      "claim": "受到的治疗效果 -{0}%",
+      "tick": "grievous_wound",
+      "category": "negative",
+      "linked_blocks": [],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 84
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 21,
+      "name": "定身",
+      "claim": "无法左右移动",
+      "tick": "rooted",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 370,
+          "name": "蛛网陷阱",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 410,
+          "name": "冰霜陷阱",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 429,
+          "name": "流沙",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 78,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 22,
+      "name": "缓步",
+      "claim": "移动速度 -{0}%",
+      "tick": "slowed",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 370,
+          "name": "蛛网陷阱",
+          "params": [
+            50
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 372,
+          "name": "毒沼",
+          "params": [
+            30
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 382,
+          "name": "黏着地面",
+          "params": [
+            20
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 429,
+          "name": "流沙",
+          "params": [
+            40
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 81
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 23,
+      "name": "反向",
+      "claim": "操作方向左右反转",
+      "tick": "reversed",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 375,
+          "name": "混乱之雾",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 411,
+          "name": "反转磁极",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 431,
+          "name": "幻象面纱",
+          "params": [
+            0
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 82,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 24,
+      "name": "失明",
+      "claim": "屏幕变亮黄色，仅能看清主角",
+      "tick": "blinded",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 378,
+          "name": "失明之雾",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 64,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 60,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 25,
+      "name": "视野受限",
+      "claim": "视野缩小为半径 {0} 格",
+      "tick": "narrow_vision",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 378,
+          "name": "失明之雾",
+          "params": [
+            8
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 67,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 60,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 68,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 26,
+      "name": "破甲",
+      "claim": "无视所有免伤属性",
+      "tick": "armor_break",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 409,
+          "name": "腐蚀酸液",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 159,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 27,
+      "name": "压制",
+      "claim": "无法跳跃",
+      "tick": "grounded",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 377,
+          "name": "重力陷阱",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 412,
+          "name": "接地场",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 417,
+          "name": "重锚",
+          "params": [
+            0
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 427,
+          "name": "火山喷口",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 438,
+          "name": "溺水深渊",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 248,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 80,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 28,
+      "name": "晕眩",
+      "claim": "无法移动、跳跃、交互",
+      "tick": "stunned",
+      "category": "negative",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 126,
+          "call": "has_buff"
+        },
+        {
+          "file": "status_effects.py",
+          "line": 42,
+          "call": "apply_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 1067,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 248,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 1109,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 79,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 29,
+      "name": "穿甲",
+      "claim": "伤害优先消耗血量，无视护盾",
+      "tick": "pierced",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 374,
+          "name": "尖刺陷阱",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 408,
+          "name": "尖刺陷坑",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 175,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 195,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 30,
+      "name": "缴械",
+      "claim": "无法使用道具",
+      "tick": "disarmed",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 379,
+          "name": "沉默之墙",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 413,
+          "name": "缴械之雾",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 31,
+      "name": "干扰",
+      "claim": "无法使用技能",
+      "tick": "interfered",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 413,
+          "name": "缴械之雾",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 414,
+          "name": "干扰塔",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 32,
+      "name": "沉默",
+      "claim": "无法交互",
+      "tick": "silenced_debuff",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 379,
+          "name": "沉默之墙",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 414,
+          "name": "干扰塔",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 33,
+      "name": "跳跃锁定",
+      "claim": "只能跳跃攀爬，无法水平移动",
+      "tick": "hopping",
+      "category": "negative",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 81,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 34,
+      "name": "物理免疫",
+      "claim": "免疫物理伤害",
+      "tick": "physical_immune",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 405,
+          "name": "安神花",
+          "params": [
+            0
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 157,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 191,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 35,
+      "name": "法术免疫",
+      "claim": "免疫法术伤害",
+      "tick": "magic_immune",
+      "category": "positive",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 158,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 190,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 36,
+      "name": "完全免疫",
+      "claim": "免疫所有伤害（包括环境伤害）",
+      "tick": "full_immune",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 404,
+          "name": "水晶结界",
+          "params": [
+            0
+          ],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 155,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 187,
+          "call": "has_buff"
+        },
+        {
+          "file": "game_state.py",
+          "line": 20,
+          "call": "apply_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 37,
+      "name": "二段跳",
+      "claim": "可在空中再跳跃一次",
+      "tick": "double_jump",
+      "category": "positive",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 258,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 38,
+      "name": "隐身",
+      "claim": "不会被敌人发现，持续 {0} 秒",
+      "tick": "stealth",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 385,
+          "name": "暗影石",
+          "params": [
+            0
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 394,
+          "name": "隐身之雾",
+          "params": [
+            0
+          ],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 425,
+          "name": "暗影步之门",
+          "params": [
+            0
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1,
+            "21": 2
+          }
+        },
+        {
+          "block_id": 431,
+          "name": "幻象面纱",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 434,
+          "name": "潜隐传送符文",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 39,
+      "name": "石肤",
+      "claim": "移动速度大幅下降，但免疫击退",
+      "tick": "stone_skin",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 391,
+          "name": "石肤之碑",
+          "params": [
+            0
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 422,
+          "name": "石肤之柱",
+          "params": [
+            0
+          ],
+          "duration": 18.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 588,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 99
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 40,
+      "name": "铁意",
+      "claim": "免疫定身、晕眩、压制、混乱",
+      "tick": "iron_will",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 393,
+          "name": "清明之眼",
+          "params": [
+            0
+          ],
+          "duration": 20.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 406,
+          "name": "铁心祭坛",
+          "params": [
+            0
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 424,
+          "name": "要塞符文",
+          "params": [
+            0
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 126,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 821,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 248,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 1067,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 1109,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 776,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 77,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 41,
+      "name": "稳足",
+      "claim": "免疫风力、水流、磁力等环境位移",
+      "tick": "surefooted",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 428,
+          "name": "晶洞壁",
+          "params": [
+            0
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 588,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 42,
+      "name": "滑腻",
+      "claim": "地面摩擦力降低 {0}%，如同在冰面上",
+      "tick": "slick",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 373,
+          "name": "冰封地面",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1,
+            "21": 2
+          }
+        },
+        {
+          "block_id": 383,
+          "name": "滑溜冰道",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 402,
+          "name": "滑溜藻",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 435,
+          "name": "滑溜苔藓",
+          "params": [],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 433,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 434,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 43,
+      "name": "黏着",
+      "claim": "地面摩擦力大幅增加，不易滑动",
+      "tick": "sticky",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 382,
+          "name": "黏着地面",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 437,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 438,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 44,
+      "name": "困倦",
+      "claim": "每 {0} 秒有概率短暂晕眩",
+      "tick": "drowsy",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 375,
+          "name": "混乱之雾",
+          "params": [
+            3
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 401,
+          "name": "困倦孢子",
+          "params": [
+            3
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 422,
+          "name": "石肤之柱",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 432,
+          "name": "宝箱怪",
+          "params": [
+            2
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 31
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 45,
+      "name": "带电",
+      "claim": "接触水体时持续受到伤害",
+      "tick": "electrified",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 381,
+          "name": "带电水域",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 396,
+          "name": "雷鸣晶",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 412,
+          "name": "接地场",
+          "params": [],
+          "duration": 3.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 29
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 46,
+      "name": "发炎",
+      "claim": "受到的治疗效果减半，火焰伤害翻倍",
+      "tick": "inflamed",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 372,
+          "name": "毒沼",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 395,
+          "name": "霜火石",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 409,
+          "name": "腐蚀酸液",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 426,
+          "name": "蒸汽喷口",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 430,
+          "name": "锐利珊瑚礁",
+          "params": [
+            0
+          ],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 205,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 172,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 193,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 47,
+      "name": "狂暴",
+      "claim": "攻击力大幅提升，但持续损失生命值",
+      "tick": "berserk",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 390,
+          "name": "狂暴之血",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 421,
+          "name": "吸血祭坛",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 103
+        },
+        {
+          "file": "status_effects.py",
+          "line": 22
+        },
+        {
+          "file": "creature.py",
+          "line": 789
+        },
+        {
+          "file": "creature.py",
+          "line": 738
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 48,
+      "name": "幽灵",
+      "claim": "可以穿过单层薄墙，持续 {0} 秒",
+      "tick": "ghostly",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 384,
+          "name": "幽灵墙",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "phase_collision.py",
+          "line": 15,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 49,
+      "name": "磁化",
+      "claim": "被附近的磁矿石吸引或排斥",
+      "tick": "magnetized",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 386,
+          "name": "磁石矿",
+          "params": [
+            0
+          ],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1,
+            "21": 16
+          }
+        },
+        {
+          "block_id": 403,
+          "name": "磁化矿脉",
+          "params": [
+            0
+          ],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 411,
+          "name": "反转磁极",
+          "params": [
+            0
+          ],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "environment_forces.py",
+          "line": 19,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 50,
+      "name": "发光",
+      "claim": "自身发出光芒照亮周围",
+      "tick": "glowing",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 366,
+          "name": "圣光之柱",
+          "params": [
+            0
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 428,
+          "name": "晶洞壁",
+          "params": [
+            0
+          ],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1,
+            "21": 1
+          }
+        },
+        {
+          "block_id": 434,
+          "name": "潜隐传送符文",
+          "params": [
+            0
+          ],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "pixel_roamer/visual_effects.py",
+          "line": 54,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 51,
+      "name": "寒冷",
+      "claim": "移动速度降低，入水后冻结加倍",
+      "tick": "chilled",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 373,
+          "name": "冰封地面",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1,
+            "21": 2
+          }
+        },
+        {
+          "block_id": 395,
+          "name": "霜火石",
+          "params": [],
+          "duration": 6.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 410,
+          "name": "冰霜陷阱",
+          "params": [],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 441,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 442,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 81
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 52,
+      "name": "幸运",
+      "claim": "效果结束时随机清除一个负面状态",
+      "tick": "lucky",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 398,
+          "name": "幸运草甸",
+          "params": [
+            0
+          ],
+          "duration": 30.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 65
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 53,
+      "name": "风步",
+      "claim": "连续移动时获得越来越快的加速",
+      "tick": "wind_walk",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 387,
+          "name": "旋风涡",
+          "params": [],
+          "duration": 5.0,
+          "map_cells": {
+            "20": 1,
+            "21": 20
+          }
+        },
+        {
+          "block_id": 394,
+          "name": "隐身之雾",
+          "params": [],
+          "duration": 12.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 400,
+          "name": "风佑之路",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 416,
+          "name": "风之隧道",
+          "params": [],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 423,
+          "name": "风刃锻台",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 425,
+          "name": "暗影步之门",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1,
+            "21": 2
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 299,
+          "call": "has_buff"
+        },
+        {
+          "file": "creature.py",
+          "line": 303,
+          "call": "_get_buff_param"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 54,
+      "name": "定锚",
+      "claim": "重力大幅增加，不会被水流风力移动",
+      "tick": "anchored",
+      "category": "positive",
+      "linked_blocks": [
+        {
+          "block_id": 388,
+          "name": "定锚岩",
+          "params": [],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 417,
+          "name": "重锚",
+          "params": [],
+          "duration": 10.0,
+          "map_cells": {
+            "20": 1
+          }
+        },
+        {
+          "block_id": 438,
+          "name": "溺水深渊",
+          "params": [],
+          "duration": 4.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 588,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 78
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 55,
+      "name": "寄生",
+      "claim": "每秒损失生命，被治愈时额外扣除等量生命",
+      "tick": "parasitic",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 397,
+          "name": "寄生藤",
+          "params": [],
+          "duration": 8.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 216,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 22
+        },
+        {
+          "file": "status_effects.py",
+          "line": 23
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 56,
+      "name": "回声",
+      "claim": "行动时发出声响，可能惊动敌人",
+      "tick": "echo",
+      "category": "neutral",
+      "linked_blocks": [
+        {
+          "block_id": 399,
+          "name": "回声晶簇",
+          "params": [
+            0
+          ],
+          "duration": 20.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [],
+      "tick_hints": [
+        {
+          "file": "creature.py",
+          "line": 770
+        }
+      ],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 57,
+      "name": "诅咒",
+      "claim": "无法获得任何有益状态",
+      "tick": "cursed",
+      "category": "negative",
+      "linked_blocks": [
+        {
+          "block_id": 376,
+          "name": "诅咒石碑",
+          "params": [
+            0
+          ],
+          "duration": 15.0,
+          "map_cells": {
+            "20": 1
+          }
+        }
+      ],
+      "code_hints": [
+        {
+          "file": "creature.py",
+          "line": 817,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    },
+    {
+      "buff_id": 58,
+      "name": "翻身上岸",
+      "claim": "谁也不能阻止我上岸！游泳判定失效",
+      "tick": "shore_exit",
+      "category": "neutral",
+      "linked_blocks": [],
+      "code_hints": [
+        {
+          "file": "status_effects.py",
+          "line": 122,
+          "call": "has_buff"
+        },
+        {
+          "file": "shore_exit.py",
+          "line": 27,
+          "call": "apply_buff"
+        },
+        {
+          "file": "shore_exit.py",
+          "line": 40,
+          "call": "has_buff"
+        },
+        {
+          "file": "pixel_roamer/world_session.py",
+          "line": 188,
+          "call": "has_buff"
+        }
+      ],
+      "tick_hints": [],
+      "functional_verdict": "unverified_by_this_inventory",
+      "note": "Code/data presence and prior invariant matrices are not functional acceptance."
+    }
+  ]
+}
