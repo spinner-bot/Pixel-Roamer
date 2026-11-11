@@ -92,55 +92,135 @@
       "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
       "reason": "Upright transparent existing decoration"
     },
+    "126": {
+      "definition": "555d1031ef0a02bb7116ffa870eb352583bb0f07b17fee525448f914169d51de",
+      "rgba32": "339bec4ac08340c081e7d1bf4c6129af113adc7ee61d5966f36ff36b1dc999b8",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "127": {
+      "definition": "7df8a2b0f05fc7c6fed857f345a7cdc64f97969956c1ccca60ba17ab1fcff917",
+      "rgba32": "bf3edabbb768fbbd8070f021948d6a96987669a1276ddb630d19ac4875b4936e",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "128": {
+      "definition": "81fdb31dd3827d655c9f096f703d43baecd58b6e04044b109dc60dbf17f9cbb4",
+      "rgba32": "8bb8899d57867811c4624398a922612dfcf5ee38efa392cdf2cddd129af0afe5",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "129": {
+      "definition": "ca15ce0ded82f1643b43418d0cf0d5d65aed94b37936d2bd6f2907924a7e838c",
+      "rgba32": "78b816c3bd946f2b19b38f71e59973867113428343f22ceb0bda182716ae5339",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "130": {
+      "definition": "0adaffb498a2b95434ea9ec2d202afd748ea0463f5671dad1217d9f10d51d486",
+      "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "299": {
+      "definition": "53eaa44f2e503a17e5b12b79c0b01dba1d6f7c75d544a2c5f67da2f67baf331c",
+      "rgba32": "e5530795332d3262fa24db4fea62444caa5b42f0fb34969ac4e9cc1547c9baee",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
     "310": {
-      "definition": "6c2e56eea50a2b894a690a2e1fc3a34a837b36e12cbbd0adf724a7cfc54e08b2",
-      "rgba32": "b07d3f445e5d9878bee8ba1ce1065ff5c35ca7b2ab60a934a4d0c38e34437dfd",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "8fb69bed19915095de66af3347e6ce38d58927d99519919ad85424663710d690",
+      "rgba32": "e134fcab92c31e10ecb3554e25b4d2322ad917f326f2f9cc1336e47d76e639a3",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "311": {
-      "definition": "bae52c11652709ea2b08a8f60a24df7835788a1dd434c99f78d5fd5d5edc47cf",
-      "rgba32": "71554cc7aa6d628b0197fd99262a4d26e6c6eef894b4b7e770fa9d14029fc538",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "45c3b8a325a9acde6de8cd864ede4195f78f51851156c8df5fac90abc9cc9928",
+      "rgba32": "d0b095bd0c9e5b25bbc8cdbefc09dc0577b7463d654c11fe1e07bd656567e4af",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "312": {
-      "definition": "daec56a33bbc560f7c101796b857b36c0aafac09221a28aa05326c9e921197fc",
-      "rgba32": "69443bab95ba727d57aa08b64f33fd1acf81ec4b71bf52a4414a7abbbb4f7f1d",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "32b3f47f2b6df4db906683bbe940acf725a0e333d8440f7eaef9ae5aabe6a09a",
+      "rgba32": "7cc6d17ad1a466b9ab7c0fd83a01244d252b8f40c3221c7001b395e9bab6de8c",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "313": {
-      "definition": "09067d9f6972ab63c8f63c5fc1e06a2344212cd2f6063045f7e8bb279dc71eb6",
-      "rgba32": "fd4b91c7bc8fb11334ceed937e9a48803421758b3445d399b475aad05f0fbfe0",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "2488d31f424fc984ed072e39ec49b9bb58ebea5b0612dbeb9119f6d56bc258a7",
+      "rgba32": "8f4149c45bb595220959fbce31cc555228fe1cda5927a2a32f0e87d47c7d283b",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "314": {
-      "definition": "cf1d5dd13af71ce426df94c8d26cd4b89dc33e7f6bb292df2cf3912cb8696160",
-      "rgba32": "b41dfd3d8fcc821465568a459a7e0d4c06257cba201740c26eaf1f9cff95abcb",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "cbc6f657482aaa85ceae5900a58e06c94ff67b2ca3458bbfb4502285462a2adf",
+      "rgba32": "19a39bd9a3b8a96db44a946bafca475d323f42f418cc2f185bf9ae58194240d4",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "315": {
-      "definition": "f69603ec4df45026c3866800a79234f89d08f8cd6e5f6e241e66ab4b63dbd09e",
-      "rgba32": "58d989bd4ca7dc8d0b6b6515c6c96bf8dc615c482d08c95b179e3fcbb7242598",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "791e220fa3bcf701d2eab48fcb113260901a504ce4042dd7a79fc7e92407d091",
+      "rgba32": "541b1c195b4776e8c2840ca6e11c4af06e69a5e7a5846324baea834db8c0521a",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "316": {
-      "definition": "7aab37739c5b0410a16b5e1f75393603ebdb4a2bf74bf719458e4f69c40f50e7",
-      "rgba32": "e2dc3d899ad8d3a9c17dd06f8ac109eaaa981283ce02ccf0de2e92913d508f7f",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "cba24db8fa0e6bf19d2ba396daae2536bccd37edfb311fc935c6ecc819f413f4",
+      "rgba32": "ba98fc8d1b75e755b16f335165b04198c2054a583edfdb725560ee9d2abc6aa7",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "317": {
-      "definition": "c63c372ecc1e3fe21a28504dc52b4d83fd7455965b8f54c1e069721425c7f70e",
-      "rgba32": "5e3af5d32fe18ac5f533bab595ab4ef0675a451e49f7ab0680865bc94b90092d",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "a867397be821e50ea9381c184d23dfbbf61a65bbb0fee814cb2bc25a8ea8c58b",
+      "rgba32": "5ebdccc205219983993166dccd765033d366803a15c4d1bc0a5c92a28d07f9b1",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "318": {
-      "definition": "5eb5e29a700bb63077a9b7f0cfd85921251ea80dff4021dcbc440a1a7a65bb32",
-      "rgba32": "e1d50add27320c6489cb633897f6d6c771ab1e720735518313075eefe2af6d66",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "5ef345bd7db402eabcef1d7f4a42e2d617cb4251c244221267602b9c8f3ebfde",
+      "rgba32": "53f693c8c84800eb72a2309d1096f5f917be23528a7a249306543ce88bd66218",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "319": {
-      "definition": "c5e9d5e25979010fbf3cae989c0a1e17f1e0957ababbb83a42133e13d66d8072",
-      "rgba32": "7e70c586d7ff494077e6a2644e7a32ec5240f4eff84ef40cbcc8a7649665935e",
-      "reason": "Distinct silhouette for existing score pickup"
+      "definition": "897946daf0f50fb7bb4ef339909f2802ddc7fcce77b179f860e262a5ef425973",
+      "rgba32": "7aded334a8f2df138222b12103e8ed12e9453140c3349d7ec676b7877171879f",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "320": {
+      "definition": "e5df320ca24b8cfee789aad62c9ace56aac0e1fcff0b7549a335845a5a4ddc3f",
+      "rgba32": "e9e77f39d3cb02316a1192125cf62ddb9b7dec8fe634805b3ceb8137ff58bd63",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "321": {
+      "definition": "234346dff33e8fbfd56b68aef6762629c46fe55015d8dafcd1554fabcf39dc7d",
+      "rgba32": "34a1ef436bc4c2df82939f35aa36075ea6e11e7829bb6cb0f05de0f9806803cc",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "322": {
+      "definition": "d8bec81d8bc6000c614553857cd9db1e4bfa2be6eca06904aaa340d50b80db32",
+      "rgba32": "0c2ce57630d9edda9a22315b597f0882ab2edf3d194bcfda6ba8fa99e46e05dd",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "323": {
+      "definition": "68399513b1edf1fc29bbd4f66647163a9e3caca37d5af257058811b651245d15",
+      "rgba32": "320a2d91cb348a20471a0982be49b392eea5e0321776fef395e5fdd0a70bba8c",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "324": {
+      "definition": "adc62f55d9c31c6871a5b3b222f65f7566ee094de8272503af12ab510b7394bf",
+      "rgba32": "36dc3ed3166705121e41a94217ecdc0a68d0fdfeabdf5f9f7ccc173ae65c80f0",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "325": {
+      "definition": "17997e585b34756bf33f87cc913b325ceed341f45cde4ff8840a8e3db9acf74d",
+      "rgba32": "1f40199b187601f16e20b286adbdee88a843eea34f1ee90d065d23de205a07c6",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "326": {
+      "definition": "042effe9bcb66d31ba414997bc56271dd16baf800a764214df5f315f54489e52",
+      "rgba32": "4207cbbd797e74a716728e937840c6a5526b1cb7247e7c2aa38881af2f468642",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "327": {
+      "definition": "bfefc90911e1da7ab0beb3cf69e0048b3c2ad6e581406ef4a07591e8caf901d9",
+      "rgba32": "de7f4ac4a5aae53424007b2283394f879413b21277d50668c62d13cbf0cb7b8e",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "328": {
+      "definition": "3b1d9afb0a4219efc47453a020bd45dbc49e666f5fc482d906e3e1a63979db55",
+      "rgba32": "dc2713abad892c76311d625d76aa8325827871a4863d16baeabe49ae1601f78b",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "329": {
+      "definition": "4c729e7a12711afbe2f579bc1a6fb29073071aa1345bf35b0bd722082cfdd0c3",
+      "rgba32": "2bc17d5235666aee0f2ac389e15996c88be767c05a3777d41cf6905c9b265ca0",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     }
   },
   "buffs": {
