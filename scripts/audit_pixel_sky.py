@@ -20,8 +20,9 @@ from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
 
 
-def run(fps):
-    session = create_control_session(3)
+def run(fps, stop_at_upper_cloud=False, session=None):
+    if session is None:
+        session = create_control_session(3)
     app, actor, world = session.app, session.app.player1, session.app._current_map
     keys = defaultdict(bool)
     phase, phase_start = 'forest', 0
@@ -65,6 +66,9 @@ def run(fps):
             elif phase == 'upper_cloud':
                 target_x = 217.5
                 if actor.on_ground and abs(actor._y - 111.9) < .02:
+                    if stop_at_upper_cloud:
+                        reached = True
+                        break
                     phase, target_x = 'sky_portal', 220.5
             elif phase == 'sky_portal':
                 target_x = 220.5
@@ -103,7 +107,8 @@ def run(fps):
                 failure = f'{phase} timed out'
                 break
         respawns = reset.call_count
-    return {'fps': fps, 'returned_to_ruins_via_original_T2': reached, 'failure': failure,
+    return {'fps': fps, 'returned_to_ruins_via_original_T2': reached and not stop_at_upper_cloud,
+            'stopped_on_upper_cloud': reached and stop_at_upper_cloud, 'failure': failure,
             'phase': phase, 'timer': app._game_timer, 'control_frames': frame + 1,
             'position': actor.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'body': [actor._w, actor._h],
