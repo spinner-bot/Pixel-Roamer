@@ -11,6 +11,10 @@ def opposed_force(force, input_acceleration):
 
 
 def apply_magnetism(actor, world, types, dt):
+    if world is not None and actor.has_buff(49):
+        from magnetized_field import apply_field
+        apply_field(actor, world, dt)
+        return
     magnetic = {kind.id: kind for kind in types if kind.special == 'magnetic'
                 and kind.special_data is not None}
     if not magnetic or dt <= 0:
