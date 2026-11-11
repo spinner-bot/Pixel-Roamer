@@ -10,6 +10,7 @@ import unittest
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 from creature import Player
+from game_state import resolve_player_death
 from world import World
 
 
@@ -56,11 +57,17 @@ class BerserkFunctionTests(unittest.TestCase):
                 self.assertEqual(actor.magic_atk, base)
                 actor.tick_buffs(.01)
             for cleanup in (lambda: actor.remove_buff(47), actor.clear_buffs,
-                            lambda: actor.clear_buffs('positive'), lambda: actor.reset(5.5, 6.9)):
+                            lambda: actor.clear_buffs('positive')):
                 actor.apply_buff(47, (0,), 1)
                 cleanup()
                 self.assertEqual(actor.phys_atk, base)
                 self.assertEqual(actor.magic_atk, base / 2)
+            actor.apply_buff(47, (0,), 1)
+            actor.alive = False
+            resolve_player_death(actor, 3, False)
+            self.assertEqual(actor.phys_atk, base)
+            self.assertEqual(actor.magic_atk, base / 2)
+            self.assertFalse(actor.has_buff(47))
 
     def test_legacy_altar_multiplier_stays_independent_and_fractional(self):
         world = World(0, 'altar combination', 20, 20, gravity=0)
