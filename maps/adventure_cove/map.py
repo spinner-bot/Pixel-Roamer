@@ -135,6 +135,9 @@ def generate():
     platform(w, 63, 60, 8, 17)
     p(w, 65, 62, 42)
     p(w, 66, 62, 314)
+    # Connect the existing escape vine through the platform's underside.
+    # Keep the treasure at y=62 and jump out onto the neighbouring grass.
+    vine_col(w, 66, 58, 4)
     # 窄道
     tunnel_h(w, 70, 46, 78, 2)
     p(w, 75, 47, 315)
