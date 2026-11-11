@@ -1,0 +1,8679 @@
+{
+  "code_revision": "686252923478dd18487f96f6efb5410dba64d2dd",
+  "scope": "isolated authored wall/floor fixtures with real WorldSession input; Buff injected in buff mode, source mode obtained by contact; no normal original-map route claim",
+  "walls": [
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.4
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.4
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.4
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.434475532948245
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.565524467051755
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.49833821967082,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.49833821967082
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.594945235655906
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.594945235655906
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.501661780329176,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.501661780329176
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.40505476434409
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.40505476434409
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.4
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.434475532948245
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.565524467051755
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.587328264423117
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.587328264423117
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.587328264423117
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.412671735576883
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.412671735576883
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.412671735576883
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.38351165024729,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1999999999999982,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.38351165024729
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.538334832070912,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.538334832070912
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.538334832070912,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.538334832070912
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        23.61648834975271,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1999999999999982,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.61648834975271
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        23.461665167929088,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.461665167929088
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        23.461665167929088,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 23.461665167929088
+    }
+  ],
+  "floors": [
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    }
+  ],
+  "extended_walls": [
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.434475532948245
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.63819961498041,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.63819961498041
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.565524467051755
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.36180038501959,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.36180038501959
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.681854735031017,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.681854735031017
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.681854735031017,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.681854735031017
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.681854735031017,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.681854735031017
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.318145264968983,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.318145264968983
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.318145264968983,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.318145264968983
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.318145264968983,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.318145264968983
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.5655244670517368,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.5655244670517448
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.4293373127842937,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.42933731278430187
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.36180038501957074,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.36180038501960254
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.5655244670517363,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.5655244670517448
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.4293373127842932,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.4293373127843019
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.3618003850195703,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.3618003850196025
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3000000000000043
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.299999999999997
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.299999999999983
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.2999999999999936
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.2999999999999936
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.29999999999997584
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.31814526496897816,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3181452649689831
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.31814526496897816,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.31814526496898665
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.31814526496897816,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3181452649690115
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.3181452649689749,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.318145264968983
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.3181452649689749,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.318145264968983
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.3181452649689749,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.3181452649690115
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3000000000000043
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.299999999999997
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.299999999999983
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.2999999999999936
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.2999999999999936
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.29999999999997584
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.43447553294827,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.43447553294827
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.570662687215716,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.570662687215716
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.63819961498044,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.63819961498044
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.56552446705173,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.56552446705173
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.429337312784284,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.429337312784284
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.36180038501956,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9416666666666658,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.36180038501956
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.681854735031045,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.681854735031045
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.681854735031045,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.681854735031045
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.681854735031045,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.681854735031045
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.31814526496895,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.31814526496895
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.31814526496895,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.31814526496895
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.31814526496895,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2666666666666646,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.31814526496895
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.699999999999996,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.699999999999996
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.434475532948245
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.570662687215687
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.565524467051755
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.429337312784313
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.49833821967082,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.49833821967082
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.594945235655906
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.594945235655906
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.501661780329176,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.501661780329176
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.40505476434409
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.40505476434409
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.599999999999998
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.5655244670517336,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.5655244670517412
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.42933731278429066,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.42933731278430187
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.42933731278429066,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.4293373127843303
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.5655244670517376,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.5655244670517448
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.4293373127842943,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.4293373127843054
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.4293373127842943,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.4293373127843303
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.4000000000000057
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3999999999999986
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3999999999999844
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.399999999999995
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3999999999999915
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3999999999999737
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.5016617803291694,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.5016617803291759
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.40505476434408305,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.40505476434409005
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.40505476434408305,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.4050547643441256
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.5016617803291696,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.5016617803291759
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.405054764344083,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.40505476434409
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.405054764344083,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.4050547643441256
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.4000000000000057
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3999999999999986
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.3999999999999844
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.399999999999995
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3999999999999915
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.3999999999999737
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.43447553294827,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.43447553294827
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.570662687215716,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.570662687215716
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.570662687215716,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.570662687215716
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.56552446705173,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.56552446705173
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.429337312784284,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.429337312784284
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.429337312784284,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.429337312784284
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.498338219670856,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.498338219670856
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.59494523565594,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.59494523565594
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.59494523565594,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.59494523565594
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.501661780329144,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.501661780329144
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.40505476434406,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.40505476434406
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.40505476434406,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.40505476434406
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.4
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.6,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.6
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.15772571696216,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.15772571696216
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.29682254703886,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.29682254703886
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.29682254703886,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.29682254703886
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.84227428303784,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.84227428303784
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.70317745296114,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.70317745296114
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.70317745296114,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.70317745296114
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.28502108479258,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.28502108479258
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.28502108479258,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.28502108479258
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.28502108479258,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.28502108479258
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.71497891520742,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.71497891520742
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.71497891520742,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.71497891520742
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.71497891520742,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 21.71497891520742
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 22.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.3,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 0,
+      "loop": false,
+      "unwrapped_x": 19.3
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.8422742830378296,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.8422742830378311
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.7031774529611314,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.7031774529611354
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.7031774529611314,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.7031774529611639
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.8422742830378107,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.842274283037817
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.7031774529611126,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.7031774529611248
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.7031774529611126,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.7031774529611425
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.7000000000000064
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.6999999999999993
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.699999999999985
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.6999999999999993
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.6999999999999922
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.699999999999978
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        -0.714978915207408,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.7149789152074106
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        -0.714978915207408,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.7149789152074071
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        -0.714978915207408,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.7149789152074462
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        1.7149789152074086,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.7149789152074142
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        1.7149789152074086,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.7149789152074142
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        1.7149789152074086,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 1.7149789152074462
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.7000000000000064
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.6999999999999993
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        2.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": 2.699999999999985
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.6999999999999993
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.6999999999999922
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        -0.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": -20,
+      "loop": true,
+      "unwrapped_x": -0.699999999999978
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.15772571696218,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.15772571696218
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.29682254703888,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.29682254703888
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.29682254703888,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.29682254703888
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.84227428303782,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9999999999999989,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.84227428303782
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.70317745296112,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.70317745296112
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.70317745296112,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9833333333333323,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.70317745296112
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        46.28502108479262,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.28502108479262
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        46.28502108479262,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.28502108479262
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        46.28502108479262,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.28502108479262
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        48.71497891520739,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.71497891520739
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        48.71497891520739,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.71497891520739
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        48.71497891520739,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.333333333333331,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 48.71497891520739
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        49.7,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 49.7
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        46.300000000000004,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "shift": 27,
+      "loop": true,
+      "unwrapped_x": 46.300000000000004
+    }
+  ],
+  "extended_floors": [
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.75,
+      "position": [
+        10.5,
+        5.75
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.6,
+        1.5
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        0.8,
+        1.8
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": false
+    },
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 6.05,
+      "position": [
+        10.5,
+        6.05
+      ],
+      "respawns": 0,
+      "hp": 150.0,
+      "size": [
+        1.4,
+        2.1
+      ],
+      "isolated": true
+    }
+  ]
+}
