@@ -1,0 +1,18 @@
+test_existing_hall_is_reached_without_increasing_stamina (test_grand_entrance.GrandEntranceTests) ... ok
+test_existing_portal_route_reaches_formal_victory_from_spawn (test_grand_entrance.GrandEntranceTests) ... ok
+test_north_shaft_and_existing_platforms_reach_first_portal (test_grand_entrance.GrandEntranceTests) ... ok
+test_spawn_to_first_cave_uses_real_ladder_and_rest_stops (test_grand_entrance.GrandEntranceTests) ... ok
+test_original_spawn_both_source_effects_and_cleared_return_at_three_rates (test_grand_polarity_gallery.GrandPolarityGalleryTests) ... test_plan_changes_only_reviewed_cells_and_preserves_original_features (test_grand_polarity_gallery.GrandPolarityGalleryTests) ... ok
+
+======================================================================
+FAIL: test_original_spawn_both_source_effects_and_cleared_return_at_three_rates (test_grand_polarity_gallery.GrandPolarityGalleryTests) (fps=60)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_grand_polarity_gallery.py", line 47, in test_original_spawn_both_source_effects_and_cleared_return_at_three_rates
+    self.assertLess(sample['delta_vx'],0)
+AssertionError: 0.00021550252041027673 not less than 0
+
+----------------------------------------------------------------------
+Ran 6 tests in 42.526s
+
+FAILED (failures=1)
