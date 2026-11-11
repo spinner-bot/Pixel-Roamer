@@ -67,7 +67,7 @@ def state(player):
 
 
 def exercise(kind, fps, player_class=Player):
-    session = ability_session(ladder=kind == 'climb_release', floor_id=33 if kind == 'one_way_walkoff' else 2,
+    session = ability_session(ladder=kind == 'climb_release', floor_id=33 if kind == 'cloud_walkoff' else 2,
                               player_class=player_class)
     player = session.app.player1
     spend_air_jump(session, fps)
@@ -109,7 +109,7 @@ def main():
               'legacy_revision': '444f39a', 'scope': 'isolated existing buff 37 fixture with production session inputs; not map victory or device acceptance'}
     for name, player_class in (('before', module.Player), ('after', Player)):
         report[name] = [exercise(kind, fps, player_class) for kind in
-                        ('ground_walkoff', 'one_way_walkoff', 'climb_release') for fps in (30, 60, 144)]
+                        ('ground_walkoff', 'cloud_walkoff', 'climb_release') for fps in (30, 60, 144)]
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({name: sum(run['succeeded'] for run in report[name]) for name in ('before', 'after')}))

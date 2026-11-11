@@ -10,7 +10,7 @@ from scripts.audit_air_jump_cycles import ability_session, advance, keydown, spe
 
 
 class AirJumpCycleTests(unittest.TestCase):
-    def test_ground_oneway_and_climb_cycles_restore_ability_at_three_frame_rates(self):
+    def test_ground_cloud_and_climb_cycles_restore_ability_at_three_frame_rates(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'air.json'
