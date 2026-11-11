@@ -1,0 +1,38 @@
+{
+  "code_revision": "90a106aba7e56846bd4078344e53d86926aa1ee0",
+  "scope": "0.1-cell periodic free-body geometry only; teleport/gravity/stamina/phase effects not modeled; real controls required separately",
+  "map_id": 4,
+  "result": {
+    "legal_samples": 108925,
+    "spawn_component_samples": 108586,
+    "solid_base_cells": 48,
+    "horizontal_seam_in_component": true,
+    "vertical_seam_in_component": false,
+    "targets": {
+      "south_portal_contact": {
+        "position": [
+          23.5,
+          8.9
+        ],
+        "legal": true,
+        "connected": true
+      },
+      "southwest_anchor_top": {
+        "position": [
+          14.5,
+          35.9
+        ],
+        "legal": false,
+        "connected": false
+      },
+      "southeast_anchor_top": {
+        "position": [
+          45.5,
+          35.9
+        ],
+        "legal": false,
+        "connected": false
+      }
+    }
+  }
+}
