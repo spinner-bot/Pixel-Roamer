@@ -54,6 +54,7 @@ class WorldSession:
 
         # ---- Buff 系统 tick ----
         if not self.app._game_over and not self.app._game_win and self.app.player1.alive:
+            self.app.player1._effect_world = self.app._current_map
             self.app.player1.tick_buffs(dt)
             # Placement safety must run even when stun blocks voluntary motion.
             prepare_phase_collision(self.app.player1, self.app._current_map)
