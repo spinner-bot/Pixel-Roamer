@@ -1,0 +1,19 @@
+test_252_legal_surface_contacts_stop_before_roofs_without_changing_open_water (tests.test_swim_surface_roof.SwimSurfaceRoofTests) ... ok
+test_repeated_roof_contact_exhaustion_release_and_recovery_stay_legal (tests.test_swim_surface_roof.SwimSurfaceRoofTests) ... ok
+test_deep_water_never_starts_or_charges_surface_exit (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_exit_handles_character_dimensions_without_embedding (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_expiring_rise_clears_boost_velocity (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_surface_exit_finishes_on_mirrored_banks_at_three_frame_rates (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_teleport_cancels_shore_motion_instead_of_clamping_to_old_surface (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_up_input_above_surface_does_not_snap_character_down (tests.test_swimming_rules.SwimmingRuleTests) ... ok
+test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates (tests.test_forest_lake_loop.ForestLakeLoopTests) ... ok
+test_normal_dive_collects_both_diamonds_and_returns_without_death (tests.test_cove_pool.CovePoolTests) ... ok
+test_local_lake_chamber_checkpoint_and_respawn_return (tests.test_underground_lake.UndergroundLakeTests) ... ok
+test_original_forest_to_lake_and_actual_respawn_return_same_session (tests.test_underground_lake.UndergroundLakeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 62.307s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
