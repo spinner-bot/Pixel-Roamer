@@ -1,0 +1,404 @@
+{
+  "scope": "isolated directional candidate versus original production; all 36 release/no-source control rows compared including full trajectories, not production acceptance",
+  "controls": [
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": false,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": false,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "reverse",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": true,
+      "source": false,
+      "response": "release",
+      "same_all_fields": true
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": true,
+      "source": true,
+      "response": "release",
+      "same_all_fields": true
+    }
+  ],
+  "reversals": [
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.9,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 29.247186143382123,
+      "candidate_forward_distance": -24.157763446013973
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 82.78338942620985,
+      "candidate_forward_distance": -82.21445351988677
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.9,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 29.247186143383715,
+      "candidate_forward_distance": -24.15776344601386
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 82.78338942621349,
+      "candidate_forward_distance": -82.21445351990428
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.8833333333333333,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 29.247186143382123,
+      "candidate_forward_distance": -24.157763446013973
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7166666666666667,
+      "old_forward_distance": 82.78338942620985,
+      "candidate_forward_distance": -82.21445351988677
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.8833333333333333,
+      "candidate_seconds_to_reverse": 0.7333333333333333,
+      "old_forward_distance": 29.247186143383715,
+      "candidate_forward_distance": -24.15776344601386
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7166666666666667,
+      "old_forward_distance": 82.78338942621349,
+      "candidate_forward_distance": -82.21445351990428
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.888888888888889,
+      "candidate_seconds_to_reverse": 0.7361111111111112,
+      "old_forward_distance": 29.247186143382123,
+      "candidate_forward_distance": -24.157763446013973
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7083333333333334,
+      "old_forward_distance": 82.78338942620985,
+      "candidate_forward_distance": -82.21445351988677
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": false,
+      "old_seconds_to_reverse": 2.888888888888889,
+      "candidate_seconds_to_reverse": 0.7361111111111112,
+      "old_forward_distance": 29.247186143383715,
+      "candidate_forward_distance": -24.15776344601386
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "continuous": true,
+      "old_seconds_to_reverse": null,
+      "candidate_seconds_to_reverse": 0.7083333333333334,
+      "old_forward_distance": 82.78338942621349,
+      "candidate_forward_distance": -82.21445351990428
+    }
+  ],
+  "all_controls_unchanged": true
+}
