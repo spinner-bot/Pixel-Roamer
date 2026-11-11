@@ -1,0 +1,66 @@
+{
+  "map_id": 5,
+  "scope": "normal spawn to existing first major rest checkpoint; no full-height or loop claim",
+  "waypoints": [
+    {
+      "name": "start",
+      "x": 10.0,
+      "y": 5.9,
+      "kind": "ground"
+    },
+    {
+      "name": "first_rope",
+      "x": 5.5,
+      "y": 17.98,
+      "kind": "climb"
+    },
+    {
+      "name": "second_platform",
+      "x": 11.5,
+      "y": 19.9,
+      "kind": "ground"
+    },
+    {
+      "name": "third_platform",
+      "x": 15.5,
+      "y": 24.9,
+      "kind": "ground"
+    },
+    {
+      "name": "first_vine",
+      "x": 9.5,
+      "y": 27.98,
+      "kind": "climb"
+    },
+    {
+      "name": "technique_platform",
+      "x": 5.5,
+      "y": 34.9,
+      "kind": "ground"
+    },
+    {
+      "name": "lower_technique_vine",
+      "x": 9.5,
+      "y": 42.0,
+      "kind": "climb"
+    },
+    {
+      "name": "right_technique_platform",
+      "x": 14.5,
+      "y": 39.9,
+      "kind": "ground"
+    },
+    {
+      "name": "upper_technique_vine",
+      "x": 9.5,
+      "y": 47.98,
+      "kind": "climb"
+    },
+    {
+      "name": "rest_checkpoint",
+      "x": 10.5,
+      "y": 50.9,
+      "kind": "rest"
+    }
+  ]
+}
