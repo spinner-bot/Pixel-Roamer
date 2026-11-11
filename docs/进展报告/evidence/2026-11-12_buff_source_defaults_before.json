@@ -1,0 +1,686 @@
+{
+  "code_revision": "d9e367bc4e2eeb79089b2c941074d2285f130430",
+  "scope": "isolated low-level real contact and consumer probes; explicit coordinates and input values; not original-map normal routes or full buff acceptance",
+  "rows": [
+    {
+      "tile_id": 363,
+      "buff_id": 5,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 364,
+      "buff_id": 7,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 364,
+      "buff_id": 6,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 373,
+      "buff_id": 51,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 373,
+      "buff_id": 42,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 375,
+      "buff_id": 44,
+      "active": {
+        "value": 0,
+        "params": [
+          3
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          3
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 381,
+      "buff_id": 45,
+      "active": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 382,
+      "buff_id": 43,
+      "active": {
+        "value": 0.9062,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0.9062,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 383,
+      "buff_id": 42,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 387,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 388,
+      "buff_id": 54,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 388,
+      "buff_id": 7,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 389,
+      "buff_id": 13,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 390,
+      "buff_id": 47,
+      "active": {
+        "value": 10,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 10,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 391,
+      "buff_id": 7,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 394,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 395,
+      "buff_id": 51,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 396,
+      "buff_id": 45,
+      "active": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 397,
+      "buff_id": 55,
+      "active": {
+        "value": 0.49875208073176225,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0.49875208073176225,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 400,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 401,
+      "buff_id": 44,
+      "active": {
+        "value": 0,
+        "params": [
+          3
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          3
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 402,
+      "buff_id": 42,
+      "active": {
+        "value": 0.985,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0.985,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 405,
+      "buff_id": 5,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 406,
+      "buff_id": 6,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 410,
+      "buff_id": 51,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 412,
+      "buff_id": 45,
+      "active": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 416,
+      "buff_id": 13,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 416,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 417,
+      "buff_id": 54,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 418,
+      "buff_id": 13,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 419,
+      "buff_id": 5,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 421,
+      "buff_id": 47,
+      "active": {
+        "value": 10,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 10,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 422,
+      "buff_id": 44,
+      "active": {
+        "value": 50,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          0
+        ]
+      },
+      "different": true
+    },
+    {
+      "tile_id": 423,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 424,
+      "buff_id": 7,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 425,
+      "buff_id": 53,
+      "active": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 2.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 432,
+      "buff_id": 44,
+      "active": {
+        "value": 0,
+        "params": [
+          2
+        ]
+      },
+      "control": {
+        "value": 0,
+        "params": [
+          2
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 433,
+      "buff_id": 13,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 435,
+      "buff_id": 42,
+      "active": {
+        "value": 0.985,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 0.985,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    },
+    {
+      "tile_id": 438,
+      "buff_id": 54,
+      "active": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "control": {
+        "value": 1.0,
+        "params": [
+          0
+        ]
+      },
+      "different": false
+    }
+  ]
+}
