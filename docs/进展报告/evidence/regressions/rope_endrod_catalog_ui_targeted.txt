@@ -1,0 +1,22 @@
+test_all_block_definitions_and_pixels_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_all_buff_definitions_and_icons_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_art_refinement_preserves_every_gameplay_field (tests.test_catalogs.CatalogTests) ... ok
+test_block_status_references_exist (tests.test_catalogs.CatalogTests) ... ok
+test_costume_frames_match_pre_migration_pixels (tests.test_catalogs.CatalogTests) ... ok
+test_interface_fields_have_valid_defaults_and_unique_paths (tests.test_catalogs.CatalogTests) ... ok
+test_rejects_duplicates_unknown_fields_versions_and_invalid_art (tests.test_catalogs.CatalogTests) ... ok
+test_real_pickup_return_scores_once_and_repaints_consumed_marker (tests.test_non_solid_sprites.NonSolidSpriteTests) ... ok
+test_variants_web_and_pickup_states_blend_on_all_three_backgrounds (tests.test_non_solid_sprites.NonSolidSpriteTests) ... ok
+test_existing_decorations_compose_on_all_three_backgrounds (tests.test_decoration_compositing.DecorationCompositingTests) ... ok
+test_opaque_black_and_stone_keep_their_opaque_rendering (tests.test_decoration_compositing.DecorationCompositingTests) ... ok
+test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (tests.test_decoration_compositing.DecorationCompositingTests) ... ok
+test_all_preview_sizes_stay_within_memory_budget (tests.test_reference_browser.ReferenceBrowserTests) ... ok
+test_catalog_switch_scroll_and_end_navigation (tests.test_reference_browser.ReferenceBrowserTests) ... ok
+test_pointer_details_and_back_match_scaled_card_positions (tests.test_reference_browser.ReferenceBrowserTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.254s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
