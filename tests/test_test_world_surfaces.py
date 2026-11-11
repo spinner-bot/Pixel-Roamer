@@ -1,5 +1,6 @@
 """Original clay landings must remain bounded through real-map surface changes."""
 import json
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -31,12 +32,9 @@ class TestWorldSurfaceRouteTests(unittest.TestCase):
                 for entry in run['clay_entries']:
                     self.assertLessEqual(abs(entry['dx']), entry['speed_bound'] + .01)
                 self.assertLessEqual(run['max_clay_frame_dx'], 21.5 / run['fps'] + .01)
-                # The original grab centers the actor on its vine. Keep that
-                # explicit event distinct from a collision-induced clay jump.
-                event = run['max_frame_dx_event']
-                self.assertEqual(event['phase'], 'vine_top')
-                self.assertFalse(event['was_climbing'])
-                self.assertTrue(event['is_climbing'])
+                # Gradual capture now keeps the entire route within a normal
+                # displacement bound, including frames with one 120 Hz step.
+                self.assertLessEqual(run['max_frame_dx'], 21.5 * math.ceil(120 / run['fps']) / 120 + .01)
                 self.assertAlmostEqual(run['position'][1], 14.9)
                 self.assertEqual(run['production_options']['v_jump'], 9)
                 self.assertEqual(run['production_options']['f_y'], .995)
