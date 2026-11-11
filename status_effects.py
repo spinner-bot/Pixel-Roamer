@@ -75,7 +75,7 @@ def advance_buffs(actor, dt, world=None):
 
 
 _INCREASE = {
-    "v_max": ('swiftness',), "v_jump": ('leaping',),
+    "v_max": ('swiftness',), "jump_height": ('leaping',),
     "stamina_recovery": ('vigor',), "gravity": ('anchored',),
 }
 _DECREASE = {
