@@ -1092,7 +1092,12 @@ class Player(Creature):
                     if not block.climbable or not (gy - 0.3 <= self._y <= gy + 1.3):
                         continue
                     center = gx + 0.5
-                    if can_place(self, world, center, self._y):
+                    bound = getattr(self, '_climb_top_y', None)
+                    target_y = min(self._y, bound) if bound is not None else self._y
+                    # Reject an impossible top before capture clears falling velocity
+                    # and air-jump state; repeated held input must not create a hover.
+                    if (can_place(self, world, center, self._y)
+                            and can_place(self, world, center, target_y)):
                         candidates.append(center)
             if not candidates:
                 return False
