@@ -1,6 +1,7 @@
 from __future__ import annotations
 import math
 from buff_contacts import apply_contact_buffs, clear_contact_buffs
+from buff_cleanup import clear_countered_buffs
 from wind_walk import advance_wind_walk
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
@@ -840,14 +841,16 @@ class Creature:
         if buff_id in (21, 27, 28, 23) and self.has_buff(40):
             return
 
-        # 检查冲突：新 buff 会移除冲突列表中的 buff
-        for cid in bt.conflicts:
-            self.remove_buff(cid)
-        # 检查清理：某些 buff 获取时会清除自身
+        # 先验证获取条件，拒绝的效果不能清除冲突或触发移除回调。
         for cid in bt.cleanup_by:
             if self.has_buff(cid):
-                self.remove_buff(buff_id)
+                if self.has_buff(buff_id):
+                    self.remove_buff(buff_id)
                 return
+        for cid in bt.conflicts:
+            if self.has_buff(cid):
+                self.remove_buff(cid)
+        clear_countered_buffs(self, buff_id)
 
         # 已存在则刷新
         for b in self.buffs:
