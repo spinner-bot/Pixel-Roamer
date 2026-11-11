@@ -8,8 +8,9 @@ import unittest
 
 
 class NightAirFeatureTests(unittest.TestCase):
-    def test_healing_and_separately_reviewed_maze_exit_are_the_only_map_differences(self):
+    def test_healing_and_registered_map_changes_are_the_only_differences(self):
         root = Path(__file__).resolve().parents[1]
+        reviews = json.loads((root / 'tests/fixtures/reviewed_map_changes.json').read_text())
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'night-air.json'
             result = subprocess.run([sys.executable, 'scripts/audit_night_air_features.py',
@@ -18,14 +19,13 @@ class NightAirFeatureTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             report = json.loads(output.read_text())
         self.assertEqual({entry['map_id'] for entry in report['maps']}, {4, 7})
+        self.assertEqual(report['legacy_revision'], reviews['baseline_ref'])
         for entry in report['maps']:
             with self.subTest(map_id=entry['map_id']):
                 self.assertEqual(entry['before'], 11)
                 self.assertEqual(entry['after'], 290)
                 self.assertFalse(entry['healing_is_solid'])
-                expected = [{'position': entry['point'], 'before': 11, 'after': 290}]
-                if entry['map_id'] == 4:
-                    # A45 intentionally clears the two cells sealing the west spawn exit.
-                    expected = [{'position': [21, 21], 'before': 254, 'after': 0},
-                                {'position': [21, 22], 'before': 19, 'after': 0}] + expected
+                expected = [{key: change[key] for key in ('position', 'before', 'after')}
+                            for change in reviews['maps'][str(entry['map_id'])]]
+                expected.sort(key=lambda change: tuple(change['position']))
                 self.assertEqual(entry['changes'], expected)

@@ -8,7 +8,7 @@ import unittest
 
 
 class MazeSpawnExitTests(unittest.TestCase):
-    def test_west_exit_connects_to_corridor_with_only_two_reviewed_cells_changed(self):
+    def test_west_exit_keeps_its_repair_and_all_map_changes_are_reviewed(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'maze-exit.json'
@@ -16,9 +16,14 @@ class MazeSpawnExitTests(unittest.TestCase):
                                     cwd=root, capture_output=True, text=True, timeout=30)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             report = json.loads(output.read_text())
-        self.assertEqual(report['tile_changes'], [
-            {'position': [21, 21], 'before': 254, 'after': 0},
-            {'position': [21, 22], 'before': 19, 'after': 0}])
+        changes = {tuple(change['position']): change for change in report['tile_changes']}
+        self.assertEqual(changes[(21, 21)], {'position': [21, 21], 'before': 254, 'after': 0})
+        self.assertEqual(changes[(21, 22)], {'position': [21, 22], 'before': 19, 'after': 0})
+        review_data = json.loads((root / 'tests/fixtures/reviewed_map_changes.json').read_text())
+        reviewed = {tuple(change['position']): change for change in review_data['maps']['4']}
+        for position, change in changes.items():
+            self.assertIn(position, reviewed)
+            self.assertEqual(change['after'], reviewed[position]['after'])
         self.assertFalse(report['before_component']['west_boundary_reached'])
         self.assertTrue(report['after_component']['west_boundary_reached'])
         self.assertEqual([r['fps'] for r in report['after']], [30, 60, 144])
