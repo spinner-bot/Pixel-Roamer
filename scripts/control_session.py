@@ -17,3 +17,16 @@ def create_control_session(map_id, *, world=None):
     app.focused, app.help_open, app.page = True, False, PAGE_WORLD
     app._stamina_flash_duration = .6
     return WorldSession(app)
+
+
+def available_score(world):
+    return sum(world.block_types[tile.type_id].special_data for tile in world.grid.values()
+               if world.block_types[tile.type_id].special == 'score')
+
+
+def terminal_snapshot(session):
+    app, player = session.app, session.app.player1
+    return {'timer': app._game_timer, 'position': player.get_center(),
+            'velocity': (player.v_x, player.v_y), 'score': player.score,
+            'hp': player.hp, 'stamina': player.stamina, 'shield': player.shield,
+            'buffs': [(buff.buff_id, buff.duration, buff.stacks) for buff in player.buffs]}
