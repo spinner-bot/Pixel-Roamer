@@ -56,6 +56,7 @@ def continue_from_hall(app, session, keys, fps):
                     phase = 'source'
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_s))
             if phase == 'source':
+                keys[pygame.K_w] = False
                 tx = 2982.5
                 if any(b.buff_id == 49 and b.params and b.params[0] < 0 for b in actor.buffs):
                     reverse_seen = True
@@ -70,8 +71,6 @@ def continue_from_hall(app, session, keys, fps):
                     phase = 'descend'
             if phase == 'descend':
                 keys[pygame.K_s] = True
-                if actor.can_climb and not actor.is_climbing:
-                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_w))
                 if actor._y < 77.1:
                     events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_s))
                     phase = 'hall'
