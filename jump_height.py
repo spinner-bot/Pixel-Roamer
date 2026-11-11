@@ -80,9 +80,9 @@ def launch_speed(base_speed, gravity, damping, height_multiplier):
         if not math.isfinite(high):
             return fallback
     for _ in range(48):
-        mid=(low+high)/2
+        mid=low+(high-low)/2
         if jump_apex(mid,gravity,damping) < target:
             low=mid
         else:
             high=mid
-    return (low+high)/2
+    return low+(high-low)/2
