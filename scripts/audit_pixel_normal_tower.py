@@ -20,11 +20,13 @@ from scripts.audit_endless_climb import run as route_run
 ROUTES = ('pixel_sky_to_tower_base.json', 'pixel_tower_local.json')
 
 
-def measure(fps):
-    session = create_control_session(3)
+def measure(fps, routes=None, session=None):
+    if session is None:
+        session = create_control_session(3)
     player = session.app.player1
     spawn = player.get_center()
-    routes = [json.loads((ROOT / 'scripts/routes' / name).read_text()) for name in ROUTES]
+    if routes is None:
+        routes = [json.loads((ROOT / 'scripts/routes' / name).read_text()) for name in ROUTES]
     segments = []
     with patch.object(player, 'reset', wraps=player.reset) as reset:
         prefix = sky_run(fps, stop_at_upper_cloud=True, session=session)
