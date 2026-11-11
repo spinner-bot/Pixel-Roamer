@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 import pygame
 from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
+from teleport import can_place
 
 
 def run(fps, route=None, duration=120, draw_every=0, session=None):
@@ -51,6 +52,11 @@ def run(fps, route=None, duration=120, draw_every=0, session=None):
                 arrived &= player.on_ground and abs(player._y - waypoint['y']) < .02
                 if waypoint['kind'] == 'rest':
                     arrived &= player.stamina >= waypoint.get('stamina_min', 195)
+            if 'contact_id' in waypoint:
+                arrived &= (waypoint['contact_id'] in player.contact_pool
+                            or player.stand_pool == waypoint['contact_id'])
+            if 'headroom' in waypoint:
+                arrived &= can_place(player, world, player._x, player._y + waypoint['headroom'])
             jump = False
             if arrived:
                 arrivals.append({'name': waypoint['name'], 'time': app._game_timer,
