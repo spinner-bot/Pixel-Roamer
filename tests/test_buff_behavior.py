@@ -150,9 +150,12 @@ class BuffBehaviorTests(unittest.TestCase):
             self.assertAlmostEqual(root.duration,6.9,places=8)
             self.assertEqual(root.source,9999)
             actor.apply_buff(40,(),1)
-            before=root.duration
+            self.assertNotIn(root,actor.buffs)  # Iron will already clears these conflicts.
             session.advance(.1)
-            self.assertLess(root.duration,before)
+            self.assertFalse(actor.has_buff(21))
+            session.advance(1.1)
+            self.assertFalse(actor.has_buff(40))
+            self.assertFalse(actor.has_buff(21))
 
     def test_pause_and_real_death_preserve_then_rearm_a_fresh_source_timer(self):
         session,world=self.session()
