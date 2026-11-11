@@ -23,7 +23,29 @@ class WorldEffects:
         self._glows.move_to_end(radius)
         return self._glows[radius]
 
-    def draw(self, surface, player, camera):
+    def _draw_pickup_flights(self, surface, player, camera, world):
+        if world is None:
+            return
+        target_x, target_y = player.get_center()
+        for flight in getattr(player, '_pickup_flights', ()):
+            age = player._buff_game_time - flight.started_at
+            if not 0 <= age < flight.duration:
+                continue
+            progress = age / flight.duration
+            easing = 1 - (1 - progress) ** 2
+            x = flight.origin[0] + (target_x - flight.origin[0]) * easing
+            y = flight.origin[1] + (target_y - flight.origin[1]) * easing
+            sx, sy = camera.world_to_screen(x, y)
+            kind = world.block_types.get(flight.tile_id)
+            if kind is None:
+                continue
+            # Flight icons stay pixel-sized even at extreme map zoom.
+            size = max(4, min(32, round(camera.scale * (1 - .65 * progress))))
+            image = pygame.transform.scale(world._terrain_texture(kind), (size, size))
+            surface.blit(image, (round(sx - size / 2), round(sy - size / 2)))
+
+    def draw(self, surface, player, camera, world=None):
+        self._draw_pickup_flights(surface, player, camera, world)
         center = tuple(round(value) for value in camera.world_to_screen(*player.get_center()))
         if player.has_buff(50):
             radius = max(4, min(256, round(3 * camera.scale)))
