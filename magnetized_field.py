@@ -1,7 +1,7 @@
-"""A82 candidate only: not wired into production during A81 regression.
+"""Bounded world-aware ore fields for active magnetized49.
 
-Keep contact strength and opposing-input retreat; add a bounded smooth field
-only for active magnetized49. Callers retain existing immunity checks.
+Keep contact strength and opposing-input retreat. Callers retain existing
+immunity checks; physical sources use their nearest loop image exactly once.
 """
 import math
 from environment_forces import opposed_force
