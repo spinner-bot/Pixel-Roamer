@@ -1,0 +1,1 @@
+{"rows": 48, "source_reverse_cases": 12, "source_no_reverse_in_four_seconds": 0}
