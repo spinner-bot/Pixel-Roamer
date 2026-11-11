@@ -1,0 +1,12 @@
+import json
+from pathlib import Path
+from maps import get_map
+from maps.layout import apply_layout
+from scripts.control_session import create_control_session
+from scripts.audit_pixel_normal_tower import measure
+w=get_map(3).create_session();apply_layout(w,'/tmp/pixel-ice-lower-candidate.json');s=create_control_session(3,world=w)
+routes=[json.loads((Path('scripts/routes')/p).read_text()) for p in ('pixel_sky_to_ice_lower.json','pixel_ice_lower.json')]
+r=measure(30,routes=routes,session=s)
+Path('/tmp/pixel-ice-normal-first.json').write_text(json.dumps(r,indent=2)+'\n')
+print({k:r[k] for k in ('completed','timer','position','saved_checkpoint','min_hp','min_stamina','respawns')})
+for stage in r['segments'][1:]:print(stage['failure'],stage['arrivals'][-1:] if stage['arrivals'] else [],flush=True)
