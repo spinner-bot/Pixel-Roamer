@@ -46,7 +46,7 @@ def run(fps, route=None, duration=120, draw_every=0):
             else:
                 arrived &= player.on_ground and abs(player._y - waypoint['y']) < .02
                 if waypoint['kind'] == 'rest':
-                    arrived &= player.stamina >= 195
+                    arrived &= player.stamina >= waypoint.get('stamina_min', 195)
             jump = False
             if arrived:
                 arrivals.append({'name': waypoint['name'], 'time': app._game_timer,
