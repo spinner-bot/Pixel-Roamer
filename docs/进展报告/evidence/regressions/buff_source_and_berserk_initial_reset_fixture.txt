@@ -1,0 +1,20 @@
+test_all_forty_source_consumer_probes_have_the_claimed_direction (tests.test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_explicit_zero_numeric_parameters_are_not_globally_reinterpreted (tests.test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_api_costs_and_both_existing_sources_at_three_frame_rates (tests.test_berserk_function.BerserkFunctionTests) ... ok
+test_legacy_altar_multiplier_stays_independent_and_fractional (tests.test_berserk_function.BerserkFunctionTests) ... ok
+test_refresh_removal_clear_and_respawn_never_accumulate_attack (tests.test_berserk_function.BerserkFunctionTests) ... FAIL
+
+======================================================================
+FAIL: test_refresh_removal_clear_and_respawn_never_accumulate_attack (tests.test_berserk_function.BerserkFunctionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_berserk_function.py", line 62, in test_refresh_removal_clear_and_respawn_never_accumulate_attack
+    self.assertEqual(actor.phys_atk, base)
+AssertionError: 0.2 != 0.1
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.948s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
