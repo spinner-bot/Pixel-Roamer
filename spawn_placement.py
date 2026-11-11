@@ -1,10 +1,17 @@
-"""Bounded safe placement when editor dimensions change a map's spawn footprint."""
+"""Safe initial placement and storage of existing checkpoint positions."""
 import math
 from teleport import can_place
 
 
 class SpawnPlacementError(ValueError):
     pass
+
+
+def record_checkpoint(player, world):
+    if hasattr(player, 'spawn_pos') and can_place(player, world, *player.get_center()):
+        player.spawn_pos = player.get_center()
+        return True
+    return False
 
 
 def place_world_spawn(player, world, reference_height):
