@@ -1,0 +1,559 @@
+{
+  "code_revision": "a4251c9434ece53f93bbcbb498782f8f32f4354b",
+  "scope": "declared cleanup_by edges and actual7/426 source acquisition of15; target9/16 and damage explicitly injected through API, not a normal target source route",
+  "edges": [
+    [
+      9,
+      15
+    ],
+    [
+      16,
+      15
+    ]
+  ],
+  "api": [
+    {
+      "target": 9,
+      "counter": 15,
+      "order": [
+        9,
+        15
+      ],
+      "active": [
+        9,
+        15
+      ],
+      "relation_satisfied": false
+    },
+    {
+      "target": 9,
+      "counter": 15,
+      "order": [
+        15,
+        9
+      ],
+      "active": [
+        15
+      ],
+      "relation_satisfied": true
+    },
+    {
+      "target": 16,
+      "counter": 15,
+      "order": [
+        16,
+        15
+      ],
+      "active": [
+        15
+      ],
+      "relation_satisfied": true
+    },
+    {
+      "target": 16,
+      "counter": 15,
+      "order": [
+        15,
+        16
+      ],
+      "active": [
+        15
+      ],
+      "relation_satisfied": true
+    }
+  ],
+  "sources": [
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 30,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 4.966666666666665
+        },
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 30,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": 10.0,
+      "hp": 140.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 60,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 4.9833333333333325
+        },
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 60,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": 10.0,
+      "hp": 140.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 144,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 7,
+      "fps": 144,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 30,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 4.966666666666665
+        },
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 30,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": 20.0,
+      "hp": 130.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 60,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 4.9833333333333325
+        },
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 60,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": 20.0,
+      "hp": 130.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 144,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 9,
+      "actual_counter_source": 426,
+      "fps": 144,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 9,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": 0.0,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 30,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 149.95833333333334,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 30,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 60,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 149.95833333333334,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 60,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 15,
+          "source": null,
+          "duration": 1.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 144,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 16,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 7,
+      "fps": 144,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 16,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 30,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 149.95833333333334,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 30,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 60,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 149.95833333333334,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 60,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 46,
+          "source": 426,
+          "duration": 4.0
+        },
+        {
+          "id": 15,
+          "source": 426,
+          "duration": 4.0
+        }
+      ],
+      "wet_observed": true,
+      "target_remains": false,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": true
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 144,
+      "counter_first": false,
+      "active": [
+        {
+          "id": 16,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": false
+    },
+    {
+      "target_api_injection": 16,
+      "actual_counter_source": 426,
+      "fps": 144,
+      "counter_first": true,
+      "active": [
+        {
+          "id": 16,
+          "source": null,
+          "duration": 5
+        }
+      ],
+      "wet_observed": false,
+      "target_remains": true,
+      "post_water_api_fire_loss": null,
+      "hp": 150.0,
+      "relation_satisfied": false
+    }
+  ]
+}
