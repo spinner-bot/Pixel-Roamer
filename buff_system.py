@@ -5,7 +5,7 @@ BuffType 定义模板，BuffInstance 管理实例，可扩展设计。
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Tuple, Any, List, Dict
-from buff_parameters import DEFAULT_PARAMETERS
+from buff_parameters import DEFAULT_PARAMETERS, magnetic_response
 
 # ===================== Buff 类别 =====================
 CAT_POSITIVE = "positive"
@@ -90,6 +90,13 @@ class BuffInstance:
             return ""
         s = bt.desc
         params = self.params
+        if bt.tick == 'magnetized':
+            response = magnetic_response(params)
+            if response == 0:
+                return s + '（中性，不受磁力）'
+            direction = '正向' if response > 0 else '反向'
+            strength = f'，响应强度{abs(response):g}倍' if abs(response) != 1 else ''
+            return s + f'（磁极{direction}{strength}）'
         if bt.tick in ('stealth', 'ghostly'):
             # These effects use the instance lifetime, not the historical
             # unused zero placeholder in source data.
