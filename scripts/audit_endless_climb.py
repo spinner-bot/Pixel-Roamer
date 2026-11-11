@@ -51,7 +51,7 @@ def run(fps):
                 waypoint = route['waypoints'][stage]
                 jump = (player.on_ground or player.is_climbing) and waypoint['y'] > player._y + .2
             keys[pygame.K_w] = waypoint['kind'] == 'climb' and player._y <= waypoint['y'] + .1
-            keys[pygame.K_s] = waypoint['kind'] != 'climb' and not jump
+            keys[pygame.K_s] = waypoint['kind'] != 'climb' and not jump and not app.jump_pressed
             error = max(-5, min(5, (waypoint['x'] - player._x) * 3)) - player.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .2, error < -.2
             if not jump and player.on_ground and player._y < waypoint['y'] - .1:
