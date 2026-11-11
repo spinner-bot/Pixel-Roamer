@@ -1,6 +1,5 @@
-"""Compare isolated rule-data stat semantics against the current native API."""
+"""Check rule-data stat semantics, with explicit production and isolated research modes."""
 import argparse
-from contextlib import nullcontext
 import json
 import math
 from pathlib import Path
@@ -10,8 +9,6 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from creature import Player
-from scripts.buff_behavior_candidate import load_behaviors
-from scripts.contact_exposure_candidate import exposure_candidate
 
 
 def measure(buff_id,params,count,stat):
@@ -26,31 +23,42 @@ def measure(buff_id,params,count,stat):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--production',action='store_true')
     args=parser.parse_args()
-    rules=load_behaviors()
+    if not args.production:
+        from scripts.buff_behavior_candidate import load_behaviors
+        from scripts.contact_exposure_candidate import exposure_candidate
+        rules=load_behaviors()
     rows=[]
     for buff_id,default in ((22,50),(51,40)):
         for params in ((),(0,),(25,),(50,),(100,),(150,)):
             for count in (1,2,3):
-                row={'native':measure(buff_id,params,count,'v_max')}
-                with exposure_candidate(behaviors=rules):
-                    row['candidate']=measure(buff_id,params,count,'v_max')
+                observed=measure(buff_id,params,count,'v_max')
+                row={'production':observed} if args.production else {'native':observed}
+                if not args.production:
+                    with exposure_candidate(behaviors=rules):
+                        row['candidate']=measure(buff_id,params,count,'v_max')
                 value=params[0] if params else default
-                row['expected_candidate']=100*max(0,1-value/100)**row['candidate']['stacks']
+                checked=row['production'] if args.production else row['candidate']
+                row['expected']=100*max(0,1-value/100)**checked['stacks']
                 rows.append(row)
     controls=[]
-    for buff_id,params,count,stat in ((3,(20,),2,'v_max'),(4,(50,),2,'jump_height'),
-                                       (6,(30,),2,'stamina_cost'),(13,(50,),1,'gravity')):
-        native=measure(buff_id,params,count,stat)
-        with exposure_candidate(behaviors=rules):candidate=measure(buff_id,params,count,stat)
-        controls.append({'native':native,'candidate':candidate})
-    errors=[r for r in rows if not math.isclose(r['candidate']['value'],r['expected_candidate'],abs_tol=1e-10)
-            or not r['candidate']['stacks_preserved']]
-    errors.extend(r for r in controls if r['native']!=r['candidate'])
+    for buff_id,params,count,stat,sign in ((3,(20,),2,'v_max',1),(4,(50,),2,'jump_height',1),
+                                          (6,(30,),2,'stamina_cost',-1),(13,(50,),1,'gravity',-1)):
+        observed=measure(buff_id,params,count,stat)
+        row={'production':observed} if args.production else {'native':observed}
+        if not args.production:
+            with exposure_candidate(behaviors=rules):row['candidate']=measure(buff_id,params,count,stat)
+        row['expected']=100*(1+sign*params[0]*observed['stacks']/100)
+        controls.append(row)
+    checked_key='production' if args.production else 'candidate'
+    errors=[r for r in rows+controls if not math.isclose(r[checked_key]['value'],r['expected'],abs_tol=1e-10)
+            or not r[checked_key]['stacks_preserved']]
     result={'code_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
-            'scope':'isolated candidate rule metadata and real stat API, explicit Buff injection; not production or map acceptance',
+            'production':args.production,
+            'scope':('actual unmodified production stat API and startup rule data; explicit Buff injection, not normal map acceptance' if args.production else 'isolated candidate rules and stat API, explicit Buff injection; not production or map acceptance'),
             'pairs':rows,'unchanged_controls':controls,'errors':errors}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps({'pairs':len(rows),'controls':len(controls),'errors':len(errors)}))
+    print(json.dumps({'production':args.production,'pairs':len(rows),'controls':len(controls),'errors':len(errors)}))
     raise SystemExit(1 if errors else 0)
