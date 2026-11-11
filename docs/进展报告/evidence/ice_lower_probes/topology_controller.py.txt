@@ -1,0 +1,25 @@
+from collections import deque
+import json
+from pathlib import Path
+from maps import get_map
+from maps.layout import apply_layout
+from scripts.control_session import create_control_session
+from scripts.audit_feature_clearance import contact_pose
+from teleport import can_place
+s=create_control_session(3);p=s.app.player1;template=s.app._current_map
+layout=dict(schema_version=1,palette={},rectangles=[[270,40,274,42,0]])
+Path('/tmp/pixel-ice-lower-candidate.json').write_text(json.dumps(layout,indent=2)+'\n')
+results=[]
+for candidate in (False,True):
+ w=template.create_session()
+ if candidate:apply_layout(w,'/tmp/pixel-ice-lower-candidate.json')
+ free={(x,y) for x in range(265,316) for y in range(32,81) if can_place(p,w,x+.5,y+.9)}
+ seen={(275,76)};q=deque(seen)
+ while q:
+  x,y=q.popleft()
+  for c in ((x-1,y),(x+1,y),(x,y-1),(x,y+1)):
+   if c in free and c not in seen:seen.add(c);q.append(c)
+ points={name:dict(position=(x+.5,y+.9),legal=(x,y) in free,root_component=(x,y) in seen) for name,x,y in [('lower_checkpoint_side',291,40),('upper_treasure',289,63)]}
+ results.append(dict(candidate=candidate,bounds=(265,315,32,80),points=points,contact_pose=contact_pose(w,p,(290,40)),fixture_legal=can_place(p,w,269.5,39.9),free_count=len(free),root_count=len(seen)))
+print(results)
+Path('/tmp/pixel-ice-lower-topology.json').write_text(json.dumps(dict(scope='static default-body bounded candidates, not gravity/input proof',results=results),indent=2)+'\n')
