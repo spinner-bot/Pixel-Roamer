@@ -97,7 +97,7 @@ class BuffInstance:
             direction = '正向' if response > 0 else '反向'
             strength = f'，响应强度{abs(response):g}倍' if abs(response) != 1 else ''
             return s + f'（磁极{direction}{strength}）'
-        if bt.tick in ('stealth', 'ghostly'):
+        if bt.tick in ('stealth', 'ghostly', 'frozen'):
             # These effects use the instance lifetime, not the historical
             # unused zero placeholder in source data.
             if self.initial_duration is None:
