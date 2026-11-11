@@ -31,6 +31,11 @@ class ClimbPlacementTests(unittest.TestCase):
         player = Player(0, 'ladder', 6.1, 5.7, {})
         player.collide_with_world(world, 0)
         self.assertTrue(player.try_start_climbing(world))
+        self.assertEqual(player._x, 6.1, 'capture must not teleport before a physics step')
+        for _ in range(3):
+            player.update_physics(.05, world)
+            player.collide_with_world(world, .05)
+            self.assertTrue(can_place(player, world, *player.get_center()))
         self.assertEqual(player._x, 5.5)
         self.assertTrue(can_place(player, world, *player.get_center()))
 
@@ -40,6 +45,9 @@ class ClimbPlacementTests(unittest.TestCase):
             player = Player(0, 'default', 5.2 + dx, 5.7 + dy, {})
             player.collide_with_world(world, 0)
             self.assertTrue(player.try_start_climbing(world))
+            self.assertEqual(player.get_center(), (5.2 + dx, 5.7 + dy))
+            player.update_physics(.05, world)
+            player.collide_with_world(world, .05)
             self.assertEqual(player.get_center(), (5.5 + dx, 5.7 + dy))
         world = World(0, 'regular', 20, 20, gravity=0)
         world.set_tile(5, 5, 9)
