@@ -5,7 +5,9 @@
     "4": [
       {"position": [40, 30], "before": 11, "after": 290, "stage": "A37"},
       {"position": [21, 21], "before": 254, "after": 0, "stage": "A45"},
-      {"position": [21, 22], "before": 19, "after": 0, "stage": "A45"}
+      {"position": [21, 22], "before": 19, "after": 0, "stage": "A45"},
+      {"position": [22, 15], "before": 19, "after": 302, "stage": "A48"},
+      {"position": [24, 15], "before": 302, "after": 19, "stage": "A48"}
     ],
     "7": [
       {"position": [36, 29], "before": 11, "after": 290, "stage": "A37"}

@@ -42,7 +42,7 @@ world.set_tile(24, 16, 0)  # 右门
 world.set_tile(24, 20, 0)  # 左门（上方）
 
 # 枢纽内的设施
-world.set_tile(24, 15, 302)  # 检查点
+world.set_tile(22, 15, 302)  # 暴露在出生落脚面，避免被中柱与两侧设施包住。
 world.set_tile(23, 16, 291)  # 再生水晶
 world.set_tile(25, 16, 292)  # 护盾发生器
 # 中间的信息柱
