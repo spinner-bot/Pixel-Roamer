@@ -1,12 +1,58 @@
 {
   "map_id": 1,
-  "waypoints": [
-    {"name": "clay_drop", "x": 12.5, "y": 16.9, "kind": "ground", "jump": false},
-    {"name": "ice_drop", "x": 18.5, "y": 10.9, "kind": "ground", "jump": false},
-    {"name": "stone_takeoff", "x": 21.5, "y": 14.9, "kind": "ground", "jump": true},
-    {"name": "clay_jump", "x": 15.5, "y": 16.9, "kind": "ground", "jump": true},
-    {"name": "stone_return", "x": 23.5, "y": 14.9, "kind": "ground", "jump": true},
-    {"name": "vine_top", "x": 28.5, "y": 24.98, "kind": "climb", "jump": true},
-    {"name": "final_stone", "x": 26.5, "y": 14.9, "kind": "ground", "jump": false}
+  "approach": [
+    {
+      "name": "clay_drop",
+      "x": 12.5,
+      "y": 16.9,
+      "kind": "ground",
+      "jump": false
+    },
+    {
+      "name": "ice_drop",
+      "x": 18.5,
+      "y": 10.9,
+      "kind": "ground",
+      "jump": false
+    }
+  ],
+  "circuit": [
+    {
+      "name": "stone_takeoff",
+      "x": 21.5,
+      "y": 14.9,
+      "kind": "rest",
+      "jump": false
+    },
+    {
+      "name": "clay_jump",
+      "x": 15.5,
+      "y": 16.9,
+      "kind": "ground",
+      "jump": true
+    },
+    {
+      "name": "stone_return",
+      "x": 23.5,
+      "y": 14.9,
+      "kind": "ground",
+      "jump": true
+    }
+  ],
+  "finish": [
+    {
+      "name": "vine_top",
+      "x": 28.5,
+      "y": 24.98,
+      "kind": "climb",
+      "jump": true
+    },
+    {
+      "name": "final_stone",
+      "x": 26.5,
+      "y": 14.9,
+      "kind": "ground",
+      "jump": false
+    }
   ]
 }
