@@ -40,10 +40,10 @@ def run(block_id, background):
     world.set_tile(3, 1, block_id)
     expected_score = world.block_types[block_id].special_data
     consumed_id = world.block_types[block_id].consumed_type_id
-    before = corner(world, block_id)
     session = create_control_session(0, world=world)
     # launch_world uses a private mutable session; inspect that same session.
     world = session.app._current_map
+    before = corner(world, block_id)  # Prime the actual mutable session cache.
     player = session.app.player1
     keys, failure, returning, reached = defaultdict(bool), None, False, False
     with patch('pygame.key.get_pressed', return_value=keys), patch.object(player, 'reset', wraps=player.reset) as reset:
