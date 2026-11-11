@@ -3,15 +3,17 @@ from contextlib import contextmanager
 from unittest.mock import patch
 from creature import Creature
 import status_effects
+from buff_parameters import DEFAULT_PARAMETERS
 
 
 @contextmanager
-def exposure_candidate(entry_buffs=(), compound_slow=False):
+def exposure_candidate(entry_buffs=(), compound_slow=False, behaviors=None):
     original_effects=Creature._apply_tile_effects
     original_apply=Creature.apply_buff
     original_reset=Creature.reset
     original_stat=status_effects.modified_stat
-    entry_buffs=frozenset(entry_buffs)
+    entry_buffs=frozenset(entry_buffs) | frozenset(
+        key for key,rule in (behaviors or {}).items() if rule.contact_trigger=='entry')
 
     def contact_effects(actor,world,dt):
         ids=set(actor.contact_pool)
@@ -51,16 +53,24 @@ def exposure_candidate(entry_buffs=(), compound_slow=False):
         return result
 
     def stat(actor,name,base):
-        if not compound_slow or name != 'v_max':
+        if behaviors is None and (not compound_slow or name != 'v_max'):
             return original_stat(actor,name,base)
         saved=[]
         multiplier=1.
         try:
             for buff in actor.buffs:
-                if buff.buff_type and buff.buff_type.tick in ('slowed','chilled'):
+                kind=buff.buff_type
+                rule=(behaviors or {}).get(buff.buff_id)
+                selected=(rule is not None and rule.stat_stacking=='multiplicative' if behaviors is not None
+                          else kind is not None and kind.tick in ('slowed','chilled'))
+                if not selected or kind is None:
+                    continue
+                sign=(1 if kind.tick in status_effects._INCREASE.get(name,()) else
+                      -1 if kind.tick in status_effects._DECREASE.get(name,()) else 0)
+                if sign:
                     saved.append((buff,buff.stacks))
-                    value=buff.params[0] if buff.params else 40 if buff.buff_id==51 else 50
-                    multiplier*=max(0.,1-value/100)**max(0,buff.stacks-1)
+                    value=buff.params[0] if buff.params else DEFAULT_PARAMETERS[kind.tick]
+                    multiplier*=max(0.,1+sign*value/100)**max(0,buff.stacks-1)
                     buff.stacks=1
             return original_stat(actor,name,base)*multiplier
         finally:
