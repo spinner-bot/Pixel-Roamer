@@ -29,7 +29,25 @@
       {"position": [20, 19], "before": 2, "after": 31, "stage": "A49"},
       {"position": [20, 20], "before": 230, "after": 31, "stage": "A49"},
       {"position": [20, 21], "before": 230, "after": 31, "stage": "A49"},
-      {"position": [20, 22], "before": 11, "after": 31, "stage": "A49"}
+      {"position": [20, 22], "before": 11, "after": 31, "stage": "A49"},
+      {"position": [13, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [13, 35], "before": 230, "after": 11, "stage": "A50"},
+      {"position": [14, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [14, 35], "before": 230, "after": 11, "stage": "A50"},
+      {"position": [15, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [15, 35], "before": 230, "after": 11, "stage": "A50"},
+      {"position": [16, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [16, 35], "before": 230, "after": 11, "stage": "A50"},
+      {"position": [17, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [17, 35], "before": 230, "after": 11, "stage": "A50"},
+      {"position": [43, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [43, 35], "before": 254, "after": 11, "stage": "A50"},
+      {"position": [44, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [44, 35], "before": 254, "after": 11, "stage": "A50"},
+      {"position": [45, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [45, 35], "before": 254, "after": 11, "stage": "A50"},
+      {"position": [46, 0], "before": 68, "after": 11, "stage": "A50"},
+      {"position": [46, 35], "before": 254, "after": 11, "stage": "A50"}
     ],
     "7": [
       {"position": [36, 29], "before": 11, "after": 290, "stage": "A37"}

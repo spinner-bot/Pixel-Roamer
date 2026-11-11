@@ -163,4 +163,10 @@ fill(27, 18, 27, 20, 0)
 for y in range(1, 23):
     world.set_tile(20, y, 31)
 
+# Match the authored y-loop entrances to the two hidden rooms. The original
+# solid base and one-cell interiors prevented any normal-body entry/contact.
+for left, right in ((13, 17), (43, 46)):
+    fill(left, 0, right, 0, 11)
+    fill(left, 35, right, 35, 11)
+
 world.end_bulk_load()
