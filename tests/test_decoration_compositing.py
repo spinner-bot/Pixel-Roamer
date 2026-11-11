@@ -9,6 +9,12 @@ from world import World
 
 
 class DecorationCompositingTests(unittest.TestCase):
+    def test_existing_decorations_compose_on_all_three_backgrounds(self):
+        for background in (0, 11, 12):
+            for entry in scene(background)['decorations']:
+                with self.subTest(background=background, block_id=entry['block_id']):
+                    self.assertTrue(entry['composites_on_background'], entry)
+
     def test_rgba_canvas_matches_reference_for_direct_and_chunk_paths(self):
         for background in (0, 11, 12):
             for alpha in (0, 128):
