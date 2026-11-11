@@ -92,6 +92,8 @@ class Creature:
         self.buffs: list = []          # [BuffInstance, ...]
         self._buff_timer = 0.0         # buff tick 累计时间
         self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
+        self._effect_world = None
+        self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
 
     # ----- 游戏矩形 -----
@@ -637,12 +639,10 @@ class Creature:
                 elif bt.special == "jump" and bt.special_data is not None:
                     self._environment_jump_mult = float(bt.special_data)
                 elif bt.special == "score" and bt.special_data is not None:
-                    consumed_id = (bt.consumed_type_id if bt.consumed_type_id is not None
-                                   else world.default_tile.type_id)
+                    from pickup_effects import collect_score_pickup
                     for gx, gy, _, tile in self._contact_tile_instances(world):
                         if tile.type_id == bt.id:
-                            self.score += int(bt.special_data)
-                            world.set_tile(gx, gy, consumed_id)
+                            collect_score_pickup(self, world, gx, gy)
                 elif bt.special == "end_point":
                     # 终点：触发通关（由 main.py 检测）
                     self._reached_end = True
@@ -875,9 +875,11 @@ class Creature:
                           if BUFF_TYPES.get(b.buff_id) and
                           BUFF_TYPES[b.buff_id].category != category]
 
-    def tick_buffs(self, dt: float):
+    def tick_buffs(self, dt: float, world=None):
         from status_effects import advance_buffs, advance_environment_timers
-        advance_buffs(self, dt)
+        from pickup_effects import prune_pickup_flights
+        advance_buffs(self, dt, world if world is not None else self._effect_world)
+        prune_pickup_flights(self)
         advance_environment_timers(self, dt)
 
     def clear_environment_contacts(self, world):
@@ -899,6 +901,8 @@ class Creature:
 
     def reset(self, x: float, y: float):
         self._teleport_latched = False
+        self._effect_world = None
+        self._pickup_flights = []
         self._x = float(x)
         self._y = float(y)
         self.hp = self.hp_max
