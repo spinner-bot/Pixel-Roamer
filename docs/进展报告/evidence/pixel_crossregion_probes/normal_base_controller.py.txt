@@ -1,0 +1,17 @@
+import json
+from pathlib import Path
+from scripts.control_session import create_control_session
+from scripts.audit_pixel_sky import run as sky
+from scripts.audit_endless_climb import run
+s=create_control_session(3)
+prefix=sky(30,stop_at_upper_cloud=True,session=s)
+print('prefix',prefix['stopped_on_upper_cloud'],prefix['position'],flush=True)
+route=dict(map_id=3,scope='normal forest spawn through original sky branch, ice roof and pyramid to tower base; same continuous session',waypoints=[])
+for name,x,y,kind,speed in [('above_t2',217.5,115.,'air',5),('east_island_booster',241.5,70.9,'ground',5),('ice_vine',268.5,64.98,'climb',5),('ice_roof',275.5,76.9,'rest',5),('ice_east_runup',303.5,76.9,'ground',5),('pyramid_west',330.5,80.9,'ground',12),('before_t3',372.5,80.9,'ground',10),('above_t3',372.5,85.,'air',5),('after_t3',380.5,80.9,'ground',8),('pyramid_east',420.5,80.9,'rest',10),('tower_base',433.5,11.9,'ground',6)]:
+ w=dict(name=name,x=x,y=y,kind=kind,speed=speed)
+ if kind=='rest':w['stamina_min']=95
+ route['waypoints'].append(w)
+r=run(30,route,240,5,session=s)
+Path('/tmp/pixel-normal-cross-route.json').write_text(json.dumps(route,indent=2)+'\n')
+Path('/tmp/pixel-normal-tower-first.json').write_text(json.dumps(dict(prefix=prefix,route=route,result=r),indent=2)+'\n')
+print({k:r[k] for k in ('completed_route','failure','timer','position','min_hp','min_stamina')},flush=True)
