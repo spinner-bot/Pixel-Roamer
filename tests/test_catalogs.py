@@ -16,6 +16,16 @@ BASELINE = json.loads((ROOT / "tests/fixtures/catalog_baseline.json").read_text(
 ART = json.loads((ROOT / "tests/fixtures/catalog_art_overrides.json").read_text())
 NON_ART = json.loads((ROOT / "tests/fixtures/catalog_non_art_baseline.json").read_text())
 EXTENSIONS = json.loads((ROOT / "tests/fixtures/catalog_extensions.json").read_text())
+GAMEPLAY = json.loads((ROOT / "tests/fixtures/catalog_gameplay_changes.json").read_text())
+
+
+def historical_definition(kind, entry_id, definition):
+    """Allow only individually reviewed field changes, then check old hashes."""
+    for field, change in GAMEPLAY[kind].get(str(entry_id), {}).get('fields', {}).items():
+        if json.loads(json.dumps(definition[field])) != change['after']:
+            raise AssertionError(f'{kind} {entry_id}: reviewed {field} changed again')
+        definition[field] = change['before']
+    return definition
 
 
 def expected(kind, entry_id):
@@ -52,7 +62,8 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(set(map(str, blocks)), set(BASELINE["blocks"]) | set(EXTENSIONS['blocks']))
         for block_id, block in blocks.items():
             with self.subTest(block_id=block_id):
-                self.assertEqual(digest(asdict(block)), expected("blocks", block_id)["definition"])
+                self.assertEqual(digest(historical_definition('blocks', block_id, asdict(block))),
+                                 expected("blocks", block_id)["definition"])
                 surface = pygame.Surface((32, 32), pygame.SRCALPHA)
                 render_block_pattern(surface, block, 0, 0, 32, 32, overdraw=False)
                 self.assertEqual(hashlib.sha256(pygame.image.tobytes(surface, "RGBA")).hexdigest(),
@@ -64,22 +75,36 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(set(map(str, buffs)), set(BASELINE["buffs"]) | set(EXTENSIONS['buffs']))
         for buff_id, buff in buffs.items():
             with self.subTest(buff_id=buff_id):
-                self.assertEqual(digest(asdict(buff)), expected("buffs", buff_id)["definition"])
+                self.assertEqual(digest(historical_definition('buffs', buff_id, asdict(buff))),
+                                 expected("buffs", buff_id)["definition"])
                 surface = _draw_vector(buff.icon, 32, 32)
                 self.assertEqual(hashlib.sha256(pygame.image.tobytes(surface, "RGBA")).hexdigest(),
                                  expected("buffs", buff_id)["rgba32"])
 
-    def test_art_refinement_preserves_every_gameplay_field(self):
+    def test_art_refinement_preserves_every_unreviewed_gameplay_field(self):
         for kind, entries, art_field in (("blocks", load_blocks(), "pattern"),
                                          ("buffs", load_buffs(), "icon")):
             for entry_id, entry in entries.items():
-                definition = asdict(entry)
+                definition = historical_definition(kind, entry_id, asdict(entry))
                 definition.pop(art_field)
                 with self.subTest(kind=kind, entry_id=entry_id):
                     key = str(entry_id)
                     baseline = (NON_ART[kind][key] if key in NON_ART[kind]
                                 else EXTENSIONS[kind][key]['non_art'])
                     self.assertEqual(digest(definition), baseline)
+
+    def test_reviewed_gameplay_changes_are_existing_non_art_fields_with_real_differences(self):
+        self.assertEqual(GAMEPLAY['schema_version'], 1)
+        for kind, entries, art_field in (('blocks', load_blocks(), 'pattern'), ('buffs', load_buffs(), 'icon')):
+            for key, change in GAMEPLAY[kind].items():
+                self.assertIn(key, BASELINE[kind])
+                self.assertIn(int(key), entries)
+                self.assertTrue(change['reason'])
+                self.assertTrue(change['fields'])
+                for field, delta in change['fields'].items():
+                    self.assertIn(field, asdict(entries[int(key)]))
+                    self.assertNotIn(field, ('id', art_field))
+                    self.assertNotEqual(delta['before'], delta['after'])
 
     def test_costume_frames_match_pre_migration_pixels(self):
         from costumes import _pixels_to_surface
