@@ -17,6 +17,7 @@ from pattern import _draw_vector, _draw_bitmap, _draw_texture
 from scripts.format_catalogs import formatted
 from scripts.pickup_art import PICKUP_IDS, pickup
 from scripts.decorative_art import DECORATION_IDS, decoration
+from scripts.non_solid_art import SPRITE_IDS, COMPARISON_REF, transparent_sprite
 
 BASELINE_REF = "e53ea03"
 BLOCK_IDS = (2, 3, 4, 5, 7, 9, 16, 17, 18, 19, 20, 22)
@@ -211,18 +212,23 @@ def main():
     for kind in ('blocks', 'buffs'):
         document = original(kind)
         before = {entry['id']: json.loads(json.dumps(entry)) for entry in document['entries']}
-        chosen = BLOCK_IDS + PICKUP_IDS + DECORATION_IDS if kind == 'blocks' else tuple(before)
+        chosen = tuple(dict.fromkeys(BLOCK_IDS + PICKUP_IDS + DECORATION_IDS + SPRITE_IDS)) if kind == 'blocks' else tuple(before)
         for entry in document['entries']:
             if entry['id'] not in chosen:
                 continue
             field = 'pattern' if kind == 'blocks' else 'icon'
             is_decoration = kind == 'blocks' and entry['id'] in DECORATION_IDS
-            image = (decoration(entry['id']) if is_decoration else terrain(entry['id'])) if kind == 'blocks' else status_icon(entry)
-            entry[field] = vector(image, alpha=is_decoration)
+            is_sprite = kind == 'blocks' and entry['id'] in SPRITE_IDS
+            if kind == 'blocks':
+                image = transparent_sprite(entry['id']) if is_sprite else (
+                    decoration(entry['id']) if is_decoration else terrain(entry['id']))
+            else:
+                image = status_icon(entry)
+            entry[field] = vector(image, alpha=is_decoration or is_sprite)
             rgba = pattern_image(entry[field], 32)
             overrides[kind][str(entry['id'])] = {
                 'definition': digest(entry), 'rgba32': hashlib.sha256(pygame.image.tobytes(rgba, 'RGBA')).hexdigest(),
-                'reason': 'Upright transparent existing decoration' if is_decoration else ('Distinct silhouette for existing score pickup' if entry['id'] in PICKUP_IDS
+                'reason': 'Transparent existing non-solid sprite and visible consumed state' if is_sprite else 'Upright transparent existing decoration' if is_decoration else ('Distinct silhouette for existing score pickup' if entry['id'] in PICKUP_IDS
                            else 'Reviewed pixel texture refinement') if kind == 'blocks' else 'Consistent category frame and refined status motif'}
         (ROOT / 'data/catalogs' / f'{kind}.json').write_text(formatted(document) + '\n')
         after = {entry['id']: entry for entry in document['entries']}
@@ -230,6 +236,10 @@ def main():
         if kind == 'blocks':
             gallery(kind, before, after, PICKUP_IDS, 'pickups_before_after.png')
             gallery(kind, before, after, DECORATION_IDS, 'decorations_before_after.png')
+            prior = json.loads(subprocess.check_output(
+                ['git', 'show', f'{COMPARISON_REF}:data/catalogs/blocks.json'], cwd=ROOT, text=True))
+            prior = {entry['id']: entry for entry in prior['entries']}
+            gallery(kind, prior, after, SPRITE_IDS, 'non_solid_sprites_before_after.png')
     (ROOT / 'tests/fixtures/catalog_art_overrides.json').write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + '\n')
 
 
