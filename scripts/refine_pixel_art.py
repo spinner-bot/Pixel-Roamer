@@ -201,7 +201,8 @@ def gallery(kind, old, new, ids, filename=None):
         for offset, catalog in ((8, old), (100, new)):
             image = pattern_image(catalog[item_id][field], 64)
             surface.blit(image, (x + offset, y + 4))
-        gt.draw(surface, f"{item_id} {new[item_id]['name2']}", x + 8, y + 82, 18, (224, 235, 230), 'sans')
+        label = gt.elide(f"{item_id} {new[item_id]['name2']}", width - 16, 18)
+        gt.draw(surface, label, x + 8, y + 82, 18, (224, 235, 230), 'sans')
     directory = ROOT / 'docs/进展报告/evidence/art'
     directory.mkdir(parents=True, exist_ok=True)
     pygame.image.save(surface, str(directory / (filename or f'{kind}_before_after.png')))
