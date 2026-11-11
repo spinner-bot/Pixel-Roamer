@@ -74,6 +74,8 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--single-stack-candidate',action='store_true')
+    parser.add_argument('--bounded-root-candidate',action='store_true')
+    parser.add_argument('--compound-slow-candidate',action='store_true')
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     original_refresh=BuffInstance.refresh
@@ -83,10 +85,13 @@ if __name__=='__main__':
         buff.stacks=previous
     context=(patch.object(BuffInstance,'refresh',refresh_without_automatic_stack)
              if args.single_stack_candidate else nullcontext())
+    if args.bounded_root_candidate or args.compound_slow_candidate:
+        from scripts.contact_exposure_candidate import exposure_candidate
+        context=exposure_candidate(entry_buffs=(21,),compound_slow=args.compound_slow_candidate)
     with context:
         rows=[measure(source,fps,gravity,jump,immune) for source in (370,410,429) for fps in (30,60,144)
               for gravity in (-6.5,-9.8) for jump in (False,True) for immune in (False,True)]
-    result={'single_stack_candidate':args.single_stack_candidate,'code_revision':revision,'scope':'actual source contact at rest, original Buff links, production WorldSession D / D+Space; API40 control explicitly labeled; finite fixture horizon, not all escape abilities or original-map acceptance','runs':rows}
+    result={'bounded_root_candidate':args.bounded_root_candidate or args.compound_slow_candidate,'compound_slow_candidate':args.compound_slow_candidate,'single_stack_candidate':args.single_stack_candidate,'code_revision':revision,'scope':'actual source contact at rest, original Buff links, production WorldSession D / D+Space; API40 control explicitly labeled; finite fixture horizon, not all escape abilities or original-map acceptance','runs':rows}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'rows':len(rows),'ordinary_escaped':sum(r['escaped'] for r in rows if not r['immune_api_injection']),
