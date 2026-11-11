@@ -15,11 +15,12 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from maps import get_map, list_maps
+from resource_catalog import catalog_document
 
 
 def inventory():
-    buffs = json.loads((ROOT / 'data/catalogs/buffs.json').read_text())['entries']
-    blocks = json.loads((ROOT / 'data/catalogs/blocks.json').read_text())['entries']
+    buffs = catalog_document('buffs')['entries']
+    blocks = catalog_document('blocks')['entries']
     paths = list(ROOT.glob('*.py')) + list((ROOT / 'pixel_roamer').rglob('*.py'))
     sources = {str(path.relative_to(ROOT)): path.read_text() for path in paths}
     calls, ticks = {}, {}
@@ -55,7 +56,11 @@ def inventory():
             'scope': 'static catalog/code and current map placement inventory; no behavioral pass claims',
             'source_hashes': {name: hashlib.sha256(text.encode()).hexdigest() for name, text in sources.items()},
             'catalog_hashes': {kind: hashlib.sha256((ROOT / f'data/catalogs/{kind}.json').read_bytes()).hexdigest()
-                               for kind in ('blocks', 'buffs')}, 'entries': entries}
+                               for kind in ('blocks', 'buffs')},
+            'extension_hashes': {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+                                 for kind in ('blocks', 'buffs')
+                                 for path in sorted((ROOT / 'data/catalogs/extensions').glob(f'{kind}_*.json'))},
+            'entries': entries}
 
 
 if __name__ == '__main__':
