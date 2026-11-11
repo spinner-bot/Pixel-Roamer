@@ -22,7 +22,7 @@ from teleport import can_place
 
 
 def spawn_component(world):
-    # An overapproximation of voluntary controls: all legal cardinal 0.1-cell translations.
+    # Sample free-body connectivity separately from gravity and available controls.
     player = create_world_player(world, {})
     start = (round(player._x * 10), round(player._y * 10))
     queue, seen = deque([start]), {start}
@@ -71,6 +71,8 @@ def run(fps, world=None):
                 escaped = True
                 break
         respawns = reset.call_count
+    if not escaped and failure is None:
+        failure = 'west corridor not reached'
     return {'fps': fps, 'escaped_to_west_corridor': escaped, 'failure': failure,
             'timer': app._game_timer, 'control_frames': frame + 1, 'position': player.get_center(),
             'min_hp': min_hp, 'min_stamina': min_stamina, 'respawns': respawns, 'trace': trace}
