@@ -10,5 +10,14 @@
       "non_art": "f3e07a94fddf8531428f90637ed5a06fa35c4d45557747880cd4c94c2e320b1f"
     }
   },
-  "buffs": {}
+  "buffs": {
+    "59": {
+      "stage": "A91",
+      "source": "data/catalogs/extensions/buffs_frozen.json",
+      "reason": "User-authorized finite cold-water outcome for existing51; legacy58 untouched",
+      "definition": "8fd5ab7691c4f0476e1faada947cb0c716e206b71934de077b9547d368d81702",
+      "rgba32": "4d13dfc3cb3b6404d5732d7057af1592ab81345ddbc2cd86e5b5893fb0695a40",
+      "non_art": "ab5b9dbb03f506d6d53fdf888807ee4eb5c1252610d55587bb1c2565d3f24e96"
+    }
+  }
 }
