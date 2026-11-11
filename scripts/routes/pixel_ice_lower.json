@@ -4,9 +4,10 @@
   "waypoints": [
     {
       "name": "lower_entry",
-      "x": 276.5,
-      "y": 40.9,
-      "kind": "ground"
+      "x": 275.7,
+      "y": 39.9,
+      "kind": "ground",
+      "headroom": 3
     },
     {
       "name": "over_ice_pillar",
