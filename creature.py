@@ -1,5 +1,6 @@
 from __future__ import annotations
 import math
+from buff_contacts import apply_contact_buffs, clear_contact_buffs
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
 import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
@@ -93,6 +94,7 @@ class Creature:
         self._buff_timer = 0.0         # buff tick 累计时间
         self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
         self._effect_world = None
+        clear_contact_buffs(self)
         self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
         self._jump_escape_active = False
@@ -635,12 +637,7 @@ class Creature:
             ) else "raw")
 
         # ---- Buff 施加（接触方块时触发，支持复合）----
-        for bt in types:
-            if bt.buff_ids:
-                for i, bid in enumerate(bt.buff_ids):
-                    params = bt.buff_params_list[i] if i < len(bt.buff_params_list) else ()
-                    dur = bt.buff_durations[i] if i < len(bt.buff_durations) else None
-                    self.apply_buff(bid, params, dur, source=bt.id)
+        apply_contact_buffs(self, world, types)
 
         for bt in types:
             if bt.special is not None:
@@ -839,7 +836,7 @@ class Creature:
     #  Buff 系统
     # ================================================================
     def apply_buff(self, buff_id: int, params: tuple = (),
-                   duration: float = None, source=None):
+                   duration: float = None, source=None, *, add_stack=True):
         """给生物添加一个 buff。已存在则刷新时长。"""
         from buff_system import BUFF_TYPES, BuffInstance, CAT_POSITIVE
         bt = BUFF_TYPES.get(buff_id)
@@ -866,7 +863,7 @@ class Creature:
         # 已存在则刷新
         for b in self.buffs:
             if b.buff_id == buff_id:
-                b.refresh(params, duration)
+                b.refresh(params, duration, add_stack=add_stack)
                 b.source = source
                 b.applied_at = self._buff_game_time
                 return
@@ -954,6 +951,7 @@ class Creature:
     def reset(self, x: float, y: float):
         self._teleport_latched = False
         self._effect_world = None
+        clear_contact_buffs(self)
         self._pickup_flights = []
         self._x = float(x)
         self._y = float(y)
