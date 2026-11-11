@@ -1,0 +1,195 @@
+{
+  "code_revision": "d892ac842ce650e5019a3d41523f386511e986ab",
+  "scope": "synthetic source5000 associates original9; actual7/426 supply15; unchanged original apply_buff observed; no actor Buff injection; scripted controls/pause/focus, not normal-map or physical-device acceptance",
+  "run": {
+    "map_id": 0,
+    "requested_seconds": 60.0,
+    "input_seconds": 59.99999999999457,
+    "frames": 4679,
+    "rounds": 1,
+    "respawns": 0,
+    "pause_pairs": 2,
+    "min_hp": 150.0,
+    "min_stamina": 136.4910052863549,
+    "errors": [],
+    "trace": [
+      {
+        "elapsed": 0.03333333333333333,
+        "round": 1,
+        "state": {
+          "timer": 0.03333333333333333,
+          "position": [
+            31.508738703993593,
+            5.9
+          ],
+          "velocity": [
+            0.4178788996540932,
+            0.0
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 200.0,
+          "shield": 0.0,
+          "buffs": [
+            [
+              9,
+              6.0,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "elapsed": 9.999999999999975,
+        "round": 1,
+        "state": {
+          "timer": 10.000000000000073,
+          "position": [
+            62.6,
+            5.9
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 183.81393456518492,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 20.000000000000043,
+        "round": 1,
+        "state": {
+          "timer": 19.999999999999506,
+          "position": [
+            31.667160359996764,
+            5.9
+          ],
+          "velocity": [
+            -11.084759998065476,
+            0.0
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 177.927161798994,
+          "shield": 0.0,
+          "buffs": [
+            [
+              46,
+              2.7000000000000046,
+              1
+            ],
+            [
+              15,
+              2.7000000000000046,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "elapsed": 29.99999999999777,
+        "round": 1,
+        "state": {
+          "timer": 29.999999999998938,
+          "position": [
+            1.4,
+            12.063749999999965
+          ],
+          "velocity": [
+            0.0,
+            -3.2000000000000233
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 162.78658620605484,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 40.00694444444186,
+        "round": 1,
+        "state": {
+          "timer": 39.99999999999837,
+          "position": [
+            62.6,
+            5.9
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 165.00702048902357,
+          "shield": 0.0,
+          "buffs": [
+            [
+              46,
+              0.9250000000000109,
+              1
+            ],
+            [
+              15,
+              0.9250000000000109,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "elapsed": 50.00694444444129,
+        "round": 1,
+        "state": {
+          "timer": 49.999999999997804,
+          "position": [
+            47.435077411462736,
+            10.404583333333324
+          ],
+          "velocity": [
+            -11.746079982822009,
+            6.59999999999998
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 153.65859281541196,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 59.99999999999457,
+        "round": 1,
+        "state": {
+          "timer": 59.999999999997236,
+          "position": [
+            1.4,
+            6.876874999999934
+          ],
+          "velocity": [
+            0.0,
+            -10.550000000000049
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 151.79952626187475,
+          "shield": 0.0,
+          "buffs": []
+        }
+      }
+    ],
+    "wall_seconds": 2.3629877710482106
+  },
+  "observations": {
+    "target_calls": 276,
+    "target_acquired": 2,
+    "wet_calls": 500,
+    "target_cleared_by_wet": 2,
+    "target_blocked_by_wet": 184
+  },
+  "missing_coverage": []
+}
