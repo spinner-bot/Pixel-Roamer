@@ -32,6 +32,9 @@ class CollectorRouteTests(unittest.TestCase):
                 self.assertGreater(run['min_hp'], 80)
                 self.assertGreater(run['min_stamina'], 100)
                 self.assertTrue(run['terminal_state_frozen'])
+                elapsed = run['control_frames'] / run['fps']
+                self.assertGreaterEqual(elapsed + 1e-7, run['timer'])
+                self.assertLessEqual(elapsed - run['timer'], 1 / run['fps'] + 1 / 120 + 1e-7)
                 self.assertIn('exit_shaft', [point['action'] for point in run['arrivals']])
                 scores = [point['score'] for point in run['trace']]
                 self.assertEqual(scores, sorted(scores))
