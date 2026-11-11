@@ -29,8 +29,8 @@ def measure(fps,gravity,damping,parameter,feather,candidate):
     actor=session.app.player1
     original_refresh=actor.refresh_movement_stats
     if candidate:
-        def refresh():
-            original_refresh()
+        def refresh(world_context=None):
+            original_refresh(world_context)
             multiplier=1.
             for buff in actor.buffs:
                 if buff.buff_id==4:
@@ -75,6 +75,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--quick',action='store_true')
+    parser.add_argument('--production',action='store_true')
     parser.add_argument('--retry-incomplete',type=Path)
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
@@ -96,7 +97,7 @@ def main():
         report={'code_revision':revision,'scope':'rerun only incomplete trajectories with calculated observation budget and permanent explicit API Buffs; no production change','parent_report':str(args.retry_incomplete),'parent_completed_rows':sum(r['landed'] for r in parent['runs']),'rerun_rows':rows,'errors':errors}
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-        print(json.dumps({'parent_completed_rows':report['parent_completed_rows'],'rerun_rows':len(rows),'errors':len(errors),'max_candidate_ratio_error':max(abs(r['ratio_error']) for r in rows if r['candidate'])}))
+        print(json.dumps({'parent_completed_rows':report['parent_completed_rows'],'rerun_rows':len(rows),'errors':len(errors),'max_candidate_ratio_error':max(abs(r['ratio_error']) for r in rows if r['candidate'] or args.production)}))
         return 1 if errors else 0
     gravities=(-6.5,-9.8) if args.quick else (-.7,-6.5,-9.8,-20.)
     for fps in ((60,) if args.quick else (30,60,144)):
@@ -105,19 +106,19 @@ def main():
                 for feather in (False,True):
                     baseline=measure(fps,gravity,damping,None,feather,False)
                     for parameter in (-100,-50,0,25,50,100):
-                        for candidate in (False,True):
+                        for candidate in ((False,) if args.production else (False,True)):
                             row=measure(fps,gravity,damping,parameter,feather,candidate)
                             row['baseline_height']=baseline['height']
                             row['height_ratio']=row['height']/baseline['height']
                             row['expected_ratio']=max(0,1+parameter/100)
                             row['ratio_error']=row['height_ratio']-row['expected_ratio']
                             rows.append(row)
-                            if candidate and (abs(row['ratio_error'])>1e-8 or not row['landed'] or row['respawns'] or row['hp']!=150):
+                            if (candidate or args.production) and (abs(row['ratio_error'])>1e-8 or not row['landed'] or row['respawns'] or row['hp']!=150):
                                 errors.append(row)
-    report={'code_revision':revision,'scope':'research only; original production path versus temporary per-instance candidate movement refresh; actual fixed-step WorldSession with explicit parameter injection; no production import or original-map acceptance','runs':rows,'errors':errors}
+    report={'code_revision':revision,'scope':('actual unmodified production movement and fixed-step WorldSession, explicit API Buffs; not original-map route' if args.production else 'research only; production path versus temporary per-instance candidate movement refresh; actual WorldSession with explicit API Buffs; not original-map route'),'runs':rows,'errors':errors}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps({'rows':len(rows),'candidate_errors':len(errors),'native_max_ratio_error':max(abs(r['ratio_error']) for r in rows if not r['candidate']),'candidate_max_ratio_error':max(abs(r['ratio_error']) for r in rows if r['candidate'])}))
+    print(json.dumps({'rows':len(rows),'candidate_errors':len(errors),'native_max_ratio_error':max(abs(r['ratio_error']) for r in rows if not r['candidate']),'candidate_max_ratio_error':max(abs(r['ratio_error']) for r in rows if r['candidate'] or args.production)}))
     return 1 if errors else 0
 
 
