@@ -110,3 +110,33 @@ class MagneticPolarityTests(unittest.TestCase):
                     actor.apply_buff(49, params, 2)
                 session.advance(1 / 120)
                 self.assertAlmostEqual(actor.v_y, expected)
+
+    def test_clarity_and_iron_will_change_controls_without_erasing_reverse_polarity(self):
+        for immunity in (None, 8, 40, 41):
+            with self.subTest(immunity=immunity):
+                world = World(0, 'independent reversal and field', 40, 20, gravity=-9.8,
+                              spawn_points=(10.5, 5.9))
+                for x in range(40):
+                    world.set_tile(x, 4, 411 if x == 10 else 2)
+                world.set_tile(13, 5, 338)
+                session = create_control_session(0, world=world)
+                actor = session.app.player1
+                if immunity:
+                    actor.apply_buff(immunity, (), 5)
+                keys = defaultdict(bool)
+                with patch('pygame.key.get_pressed', return_value=keys):
+                    session.advance(1 / 120)
+                    if immunity == 41:
+                        self.assertEqual(actor.v_x, 0)
+                    else:
+                        self.assertLess(actor.v_x, 0)
+                    actor.reset_motion()
+                    keys[pygame.K_d] = True
+                    session.advance(.25)
+                buff = next(b for b in actor.buffs if b.buff_id == 49)
+                self.assertEqual(buff.params, (-1,))
+                self.assertEqual(buff.source, 411)
+                if immunity in (8, 40):
+                    self.assertGreater(actor._x, 10.5)
+                else:
+                    self.assertLess(actor._x, 10.5)
