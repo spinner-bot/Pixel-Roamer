@@ -28,6 +28,7 @@ def run(fps, stop_at_upper_cloud=False, session=None):
     phase, phase_start = 'forest', 0
     hops, launches, transitions, trace = [], [], [], []
     reached, failure, draws = False, None, 0
+    frames_advanced = 0
     min_hp, min_stamina = actor.hp, actor.stamina
     surface = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT))
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
@@ -86,6 +87,7 @@ def run(fps, stop_at_upper_cloud=False, session=None):
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
             session.advance(1 / fps)
+            frames_advanced += 1
             if abs(actor._x - before[0]) > 50:
                 hops.append({'phase': phase, 'time': app._game_timer, 'from': before, 'to': actor.get_center()})
             min_hp, min_stamina = min(min_hp, actor.hp), min(min_stamina, actor.stamina)
@@ -109,7 +111,7 @@ def run(fps, stop_at_upper_cloud=False, session=None):
         respawns = reset.call_count
     return {'fps': fps, 'returned_to_ruins_via_original_T2': reached and not stop_at_upper_cloud,
             'stopped_on_upper_cloud': reached and stop_at_upper_cloud, 'failure': failure,
-            'phase': phase, 'timer': app._game_timer, 'control_frames': frame + 1,
+            'phase': phase, 'timer': app._game_timer, 'control_frames': frames_advanced,
             'position': actor.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'body': [actor._w, actor._h],
             'production_options': {'gravity': world.gravity, 'v_jump': actor._base_v_jump,
