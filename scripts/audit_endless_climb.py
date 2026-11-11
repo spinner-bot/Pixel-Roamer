@@ -19,7 +19,7 @@ from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
 
 
-def run(fps, route=None, duration=120):
+def run(fps, route=None, duration=120, draw_every=0):
     if route is None:
         route = json.loads((ROOT / 'scripts/routes/endless_climb.json').read_text())
     session = create_control_session(route['map_id'])
@@ -29,6 +29,8 @@ def run(fps, route=None, duration=120):
     stage, stage_start = 0, 0
     reached, failure = False, None
     min_hp, min_stamina = player.hp, player.stamina
+    contacts_seen, draws, max_frame_dx = set(), 0, 0
+    surface = pygame.Surface((1600, 900)) if draw_every else None
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
         for frame in range(duration * fps):
@@ -46,6 +48,9 @@ def run(fps, route=None, duration=120):
             if arrived:
                 arrivals.append({'name': waypoint['name'], 'time': app._game_timer,
                                  'position': player.get_center(), 'stamina': player.stamina,
+                                 'hp': player.hp, 'shield': player.shield,
+                                 'stand_pool': player.stand_pool,
+                                 'contacts': sorted(player.contact_pool),
                                  'saved_spawn': player.spawn_pos})
                 stage += 1
                 stage_start = frame
@@ -63,7 +68,15 @@ def run(fps, route=None, duration=120):
             events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if jump else []
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
+            before_x = player._x
             session.advance(1 / fps)
+            max_frame_dx = max(max_frame_dx, abs(player._x - before_x))
+            contacts_seen.update(player.contact_pool)
+            if player.stand_pool is not None:
+                contacts_seen.add(player.stand_pool)
+            if draw_every and frame % (draw_every * fps) == 0:
+                session.app._current_map.draw(surface, app.camera)
+                draws += 1
             min_hp, min_stamina = min(min_hp, player.hp), min(min_stamina, player.stamina)
             if frame % fps == 0:
                 trace.append({'time': app._game_timer, 'phase': waypoint['name'],
@@ -82,6 +95,8 @@ def run(fps, route=None, duration=120):
             'timer': app._game_timer, 'control_frames': frame if reached else frame + 1,
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'final_hp': player.hp, 'final_stamina': player.stamina,
+            'contacts_seen': sorted(contacts_seen), 'native_draws': draws,
+            'max_frame_dx': max_frame_dx,
             'checkpoint_seen': 302 in player.contact_pool or player.stand_pool == 302,
             'respawns': respawns, 'arrivals': arrivals, 'saved_checkpoint': player.spawn_pos,
             'trace': trace}
@@ -93,13 +108,14 @@ def main():
     parser.add_argument('--route', type=Path, default=ROOT / 'scripts/routes/endless_climb.json')
     parser.add_argument('--fps', type=int, nargs='+', default=(30, 60, 144))
     parser.add_argument('--duration', type=int, default=120)
+    parser.add_argument('--draw-every', type=int, default=0)
     args = parser.parse_args()
     route = json.loads(args.route.read_text())
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'controller_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'route_sha256': hashlib.sha256(args.route.read_bytes()).hexdigest(),
               'route': route, 'scope': route['scope'],
-              'runs': [run(fps, route, args.duration) for fps in args.fps]}
+              'runs': [run(fps, route, args.duration, args.draw_every) for fps in args.fps]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps([{k: r[k] for k in ('fps', 'completed_route', 'failure', 'timer', 'position')}
