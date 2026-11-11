@@ -1,0 +1,945 @@
+{
+  "code_revision": "50197b1f3e89606debb7ce472e9929bcf8f8bd5d",
+  "legacy_revision": "f783e7c",
+  "scope": "isolated existing anchor/ability fixture, real controls and real death recovery; lethal hit deliberately injected",
+  "before": [
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.360192363777274,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.610207620886393,
+          5.5
+        ],
+        "clear": false,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    }
+  ],
+  "after": [
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 302,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          6.400328330030437,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 350,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 30,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 60,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "ghost_buff",
+      "fps": 144,
+      "saved": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          44.6298760939318,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          3.5,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 30,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 60,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    },
+    {
+      "anchor_id": 367,
+      "source": "phantom_gate",
+      "fps": 144,
+      "saved": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "actor_position": [
+          45.52987609393181,
+          5.5
+        ],
+        "actor_clear": true
+      },
+      "respawn": {
+        "position": [
+          4.593536938072504,
+          5.5
+        ],
+        "clear": true,
+        "alive": true,
+        "count": 1
+      }
+    }
+  ]
+}
