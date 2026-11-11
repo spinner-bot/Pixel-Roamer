@@ -3,6 +3,7 @@ from collections import defaultdict
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -29,7 +30,9 @@ def run(fps, route=None, duration=120, draw_every=0):
     stage, stage_start = 0, 0
     reached, failure = False, None
     min_hp, min_stamina = player.hp, player.stamina
-    contacts_seen, draws, max_frame_dx = set(), 0, 0
+    contacts_seen, draws, max_frame_dx, max_frame_dy = set(), 0, 0, 0
+    y_wraps = []
+    world = app._current_map
     surface = pygame.Surface((1600, 900)) if draw_every else None
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
@@ -68,9 +71,14 @@ def run(fps, route=None, duration=120, draw_every=0):
             events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if jump else []
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
-            before_x = player._x
+            before = player.get_center()
             session.advance(1 / fps)
-            max_frame_dx = max(max_frame_dx, abs(player._x - before_x))
+            after = player.get_center()
+            max_frame_dx = max(max_frame_dx, abs(after[0] - before[0]))
+            max_frame_dy = max(max_frame_dy, abs(after[1] - before[1]))
+            if world.loop_y and math.floor(before[1] / world.height) != math.floor(after[1] / world.height):
+                y_wraps.append({'time': app._game_timer, 'from': before, 'to': after,
+                                'phase': waypoint['name'], 'direction': 'up' if after[1] > before[1] else 'down'})
             contacts_seen.update(player.contact_pool)
             if player.stand_pool is not None:
                 contacts_seen.add(player.stand_pool)
@@ -96,7 +104,7 @@ def run(fps, route=None, duration=120, draw_every=0):
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'final_hp': player.hp, 'final_stamina': player.stamina,
             'contacts_seen': sorted(contacts_seen), 'native_draws': draws,
-            'max_frame_dx': max_frame_dx,
+            'max_frame_dx': max_frame_dx, 'max_frame_dy': max_frame_dy, 'y_wraps': y_wraps,
             'checkpoint_seen': 302 in player.contact_pool or player.stand_pool == 302,
             'respawns': respawns, 'arrivals': arrivals, 'saved_checkpoint': player.spawn_pos,
             'trace': trace}
