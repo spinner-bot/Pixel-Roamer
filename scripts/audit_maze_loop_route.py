@@ -17,6 +17,7 @@ import pygame
 from constants import LOGIC_WIDTH, LOGIC_HEIGHT
 from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
+from scripts.maze_controls import west_departure
 
 
 def run(fps):
@@ -25,6 +26,7 @@ def run(fps):
     keys = defaultdict(bool)
     surface = pygame.Surface((LOGIC_WIDTH, LOGIC_HEIGHT))
     phase, phase_start = 0, 0
+    departure_stage = 0
     arrivals, hops, trace = [], [], []
     crossed_seam, reached = False, False
     failure, draws = None, 0
@@ -34,9 +36,12 @@ def run(fps):
             patch.object(player, 'reset', wraps=player.reset) as reset:
         for frame in range(90 * fps):
             name, tx, ty = targets[phase]
+            departure_jump = False
+            if phase == 0:
+                departure_stage, tx, departure_jump, arrived = west_departure(player, departure_stage)
+            elif phase == 1:
+                arrived = player.on_ground and abs(player._y - ty) < .1 and abs(player._x - tx) < .15
             if phase < 2:
-                arrived = (player.on_ground and abs(player._y - ty) < .1
-                           and (player._x < 20.4 if phase == 0 else abs(player._x - tx) < .15))
                 if arrived:
                     arrivals.append({'phase': name, 'time': app._game_timer, 'position': player.get_center()})
                     phase += 1
@@ -44,7 +49,7 @@ def run(fps):
                     name, tx, ty = targets[phase]
             error = max(-6, min(6, (tx - player._x) * 3)) - player.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .2, error < -.2
-            jump = player.on_ground and (phase == 0 or player.on_wall_left or player.on_wall_right)
+            jump = departure_jump if phase == 0 else (player.on_ground and (player.on_wall_left or player.on_wall_right))
             events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if jump else []
             before = player.get_center()
             with patch('pygame.event.get', return_value=events):

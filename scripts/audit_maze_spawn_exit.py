@@ -19,6 +19,7 @@ from maps import get_map, _apply_config
 from player_factory import create_world_player
 from scripts.control_session import create_control_session
 from teleport import can_place
+from scripts.maze_controls import west_departure
 
 
 def spawn_component(world):
@@ -48,12 +49,14 @@ def run(fps, world=None):
     trace = []
     min_hp, min_stamina = player.hp, player.stamina
     escaped, failure = False, None
+    departure_stage = 0
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
         for frame in range(20 * fps):
-            error = max(-5, min(5, (19.5 - player._x) * 3)) - player.v_x
+            departure_stage, target_x, jump, _ = west_departure(player, departure_stage)
+            error = max(-5, min(5, (target_x - player._x) * 3)) - player.v_x
             keys[pygame.K_d], keys[pygame.K_a] = error > .2, error < -.2
-            events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if player.on_ground else []
+            events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if jump else []
             with patch('pygame.event.get', return_value=events):
                 app._handle_events()
             session.advance(1 / fps)
