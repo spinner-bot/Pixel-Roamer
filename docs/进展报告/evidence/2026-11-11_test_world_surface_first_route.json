@@ -1,0 +1,1003 @@
+{
+  "code_revision": "d3306c2ba00b21b94b984f231ba005d72aa489c2",
+  "controller_sha256": "33214ef3ae51ae4ba73e212bb0cc3b93287cff611d08cca3fa67b662235ea042",
+  "scope": "normal map1 spawn, original clay drop and jump landing, ice/stone transitions, vine and return; not all areas or device acceptance",
+  "runs": [
+    {
+      "fps": 30,
+      "returned_after_surface_route": true,
+      "failure": null,
+      "timer": 18.766666666666243,
+      "control_frames": 563,
+      "position": [
+        26.5009552134997,
+        14.9
+      ],
+      "min_hp": 129.68441944490996,
+      "min_stamina": 138.84463295467157,
+      "max_frame_dx": 0.938804038225026,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "clay_drop",
+          "time": 2.6333333333333266,
+          "position": [
+            12.430609224334072,
+            16.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 4
+        },
+        {
+          "name": "ice_drop",
+          "time": 7.166666666666813,
+          "position": [
+            18.492369396513542,
+            10.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 3
+        },
+        {
+          "name": "stone_takeoff",
+          "time": 8.866666666666804,
+          "position": [
+            21.33373563002774,
+            14.9
+          ],
+          "stamina": 190.09362615778986,
+          "standing_block": 2
+        },
+        {
+          "name": "clay_jump",
+          "time": 11.033333333333347,
+          "position": [
+            15.594440677511063,
+            16.9
+          ],
+          "stamina": 182.82143944872962,
+          "standing_block": 4
+        },
+        {
+          "name": "stone_return",
+          "time": 13.766666666666525,
+          "position": [
+            23.449071705339094,
+            14.9
+          ],
+          "stamina": 172.3193197943366,
+          "standing_block": 2
+        },
+        {
+          "name": "vine_top",
+          "time": 16.83333333333302,
+          "position": [
+            28.5,
+            25.0
+          ],
+          "stamina": 138.84463295467157,
+          "standing_block": null
+        },
+        {
+          "name": "final_stone",
+          "time": 18.766666666666243,
+          "position": [
+            26.5009552134997,
+            14.9
+          ],
+          "stamina": 149.76520363635083,
+          "standing_block": 2
+        }
+      ],
+      "clay_entries": [
+        {
+          "time": 2.6333333333333266,
+          "phase": "clay_drop",
+          "from": [
+            12.420877900745072,
+            16.936562295203558
+          ],
+          "to": [
+            12.430609224334072,
+            16.9
+          ],
+          "vx_before": 0.31499517674001587,
+          "vx_after": 0.2718873263046581,
+          "dx": 0.00973132358899953,
+          "speed_bound": 0.7166666666666667
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "clay_jump",
+          "from": [
+            15.610571071565312,
+            16.94943224481612
+          ],
+          "to": [
+            15.594440677511063,
+            16.9
+          ],
+          "vx_before": -0.5073593667267243,
+          "vx_after": -0.4553337859637534,
+          "dx": -0.01613039405424921,
+          "speed_bound": 0.7166666666666667
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "clay_drop",
+          "position": [
+            4.505147455777046,
+            25.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "clay_drop",
+          "position": [
+            7.505467543278645,
+            25.708636871366533
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "clay_drop",
+          "position": [
+            11.899415450487288,
+            21.436482449810722
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "ice_drop",
+          "position": [
+            12.79401476655105,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "ice_drop",
+          "position": [
+            14.090882067372958,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "ice_drop",
+          "position": [
+            15.407174889534001,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "ice_drop",
+          "position": [
+            17.501427318668036,
+            16.524955767176454
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "ice_drop",
+          "position": [
+            18.474935600901432,
+            11.739853835970468
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "stone_takeoff",
+          "position": [
+            19.771118945146956,
+            15.497741993205425
+          ],
+          "hp": 150.0,
+          "stamina": 187.65482304773684,
+          "climbing": false
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "clay_jump",
+          "position": [
+            21.315206245021425,
+            16.268121532983706
+          ],
+          "hp": 150.0,
+          "stamina": 175.72028165482033,
+          "climbing": false
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "clay_jump",
+          "position": [
+            18.0490649045833,
+            19.774338977777496
+          ],
+          "hp": 150.0,
+          "stamina": 179.38708938242345,
+          "climbing": false
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "clay_jump",
+          "position": [
+            15.594440677511063,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 182.82143944872962,
+          "climbing": false
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "stone_return",
+          "position": [
+            18.14850703518623,
+            21.69599979442829
+          ],
+          "hp": 150.0,
+          "stamina": 164.95530730344598,
+          "climbing": false
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "stone_return",
+          "position": [
+            22.734414629344382,
+            19.63972455794828
+          ],
+          "hp": 150.0,
+          "stamina": 169.30576211546384,
+          "climbing": false
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "vine_top",
+          "position": [
+            23.743064900264788,
+            16.97169110027592
+          ],
+          "hp": 150.0,
+          "stamina": 158.63235474286446,
+          "climbing": false
+        },
+        {
+          "time": 15.03333333333312,
+          "phase": "vine_top",
+          "position": [
+            27.561195961774974,
+            19.734507395725824
+          ],
+          "hp": 150.0,
+          "stamina": 163.38537046007278,
+          "climbing": false
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "vine_top",
+          "position": [
+            28.5,
+            22.6643308080241
+          ],
+          "hp": 143.2348036807972,
+          "stamina": 149.69529962133896,
+          "climbing": true
+        },
+        {
+          "time": 17.033333333333008,
+          "phase": "final_stone",
+          "position": [
+            28.353029286207462,
+            24.867479217060428
+          ],
+          "hp": 136.48827798444623,
+          "stamina": 140.04955042863423,
+          "climbing": false
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "final_stone",
+          "position": [
+            26.600944509688176,
+            20.813648084212897
+          ],
+          "hp": 132.0838951212735,
+          "stamina": 145.80407333823246,
+          "climbing": false
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "returned_after_surface_route": true,
+      "failure": null,
+      "timer": 18.683333333332914,
+      "control_frames": 1121,
+      "position": [
+        26.477143193554326,
+        14.9
+      ],
+      "min_hp": 129.8439693291212,
+      "min_stamina": 138.85177234235468,
+      "max_frame_dx": 0.9145702093677741,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "clay_drop",
+          "time": 2.61666666666666,
+          "position": [
+            12.433982245615137,
+            16.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 4
+        },
+        {
+          "name": "ice_drop",
+          "time": 7.133333333333478,
+          "position": [
+            18.514858234764638,
+            10.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 3
+        },
+        {
+          "name": "stone_takeoff",
+          "time": 8.833333333333472,
+          "position": [
+            21.335092975694913,
+            14.9
+          ],
+          "stamina": 190.09362615778986,
+          "standing_block": 2
+        },
+        {
+          "name": "clay_jump",
+          "time": 10.98333333333335,
+          "position": [
+            15.60878384236629,
+            16.9
+          ],
+          "stamina": 182.76602305053754,
+          "standing_block": 4
+        },
+        {
+          "name": "stone_return",
+          "time": 13.716666666666528,
+          "position": [
+            23.456336221719084,
+            14.9
+          ],
+          "stamina": 172.27301660104777,
+          "standing_block": 2
+        },
+        {
+          "name": "vine_top",
+          "time": 16.74999999999969,
+          "position": [
+            28.5,
+            25.0
+          ],
+          "stamina": 138.85177234235468,
+          "standing_block": null
+        },
+        {
+          "name": "final_stone",
+          "time": 18.683333333332914,
+          "position": [
+            26.477143193554326,
+            14.9
+          ],
+          "stamina": 149.77499198874565,
+          "standing_block": 2
+        }
+      ],
+      "clay_entries": [
+        {
+          "time": 2.61666666666666,
+          "phase": "clay_drop",
+          "from": [
+            12.429009969094546,
+            16.936562295203558
+          ],
+          "to": [
+            12.433982245615137,
+            16.9
+          ],
+          "vx_before": 0.30759293512517727,
+          "vx_after": 0.291395910908135,
+          "dx": 0.004972276520591734,
+          "speed_bound": 0.35833333333333334
+        },
+        {
+          "time": 10.98333333333335,
+          "phase": "clay_jump",
+          "from": [
+            15.61724468633944,
+            16.94943224481612
+          ],
+          "to": [
+            15.60878384236629,
+            16.9
+          ],
+          "vx_before": -0.5134340462398768,
+          "vx_after": -0.5057325355462786,
+          "dx": -0.00846084397315039,
+          "speed_bound": 0.35833333333333334
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "clay_drop",
+          "position": [
+            4.501552001632921,
+            25.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "clay_drop",
+          "position": [
+            7.42790976930257,
+            25.73343726320061
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "clay_drop",
+          "position": [
+            11.84626353390823,
+            21.548283988911344
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "ice_drop",
+          "position": [
+            12.800434903633548,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "ice_drop",
+          "position": [
+            14.09766639859017,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "ice_drop",
+          "position": [
+            15.41396058851387,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "ice_drop",
+          "position": [
+            17.5214156307407,
+            16.506983674604328
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "ice_drop",
+          "position": [
+            18.496755018753188,
+            11.679828408866076
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "stone_takeoff",
+          "position": [
+            19.796971685566756,
+            15.529304239840839
+          ],
+          "hp": 150.0,
+          "stamina": 187.70491250281052,
+          "climbing": false
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "clay_jump",
+          "position": [
+            21.324646201376645,
+            16.39138072146682
+          ],
+          "hp": 150.0,
+          "stamina": 175.78338491359992,
+          "climbing": false
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "clay_jump",
+          "position": [
+            18.05107132621745,
+            19.77214016539865
+          ],
+          "hp": 150.0,
+          "stamina": 179.44619062593205,
+          "climbing": false
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "stone_return",
+          "position": [
+            15.597388444485931,
+            17.193636010205996
+          ],
+          "hp": 150.0,
+          "stamina": 160.41368531233243,
+          "climbing": false
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "stone_return",
+          "position": [
+            18.28952827653662,
+            21.726481513977063
+          ],
+          "hp": 150.0,
+          "stamina": 165.05320345231505,
+          "climbing": false
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "stone_return",
+          "position": [
+            22.78491591562897,
+            19.475403430273147
+          ],
+          "hp": 150.0,
+          "stamina": 169.39743199579848,
+          "climbing": false
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "vine_top",
+          "position": [
+            23.83926498204567,
+            17.18724487370125
+          ],
+          "hp": 150.0,
+          "stamina": 158.7504883173745,
+          "climbing": false
+        },
+        {
+          "time": 15.016666666666454,
+          "phase": "vine_top",
+          "position": [
+            28.5,
+            19.803140884198864
+          ],
+          "hp": 149.85418715074158,
+          "stamina": 163.0311056756896,
+          "climbing": true
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "vine_top",
+          "position": [
+            28.5,
+            22.795631485687675
+          ],
+          "hp": 142.95031818249137,
+          "stamina": 149.03110567568868,
+          "climbing": true
+        },
+        {
+          "time": 17.016666666666342,
+          "phase": "final_stone",
+          "position": [
+            28.246311193426877,
+            24.768298689719316
+          ],
+          "hp": 136.21081645812023,
+          "stamina": 140.45450566115042,
+          "climbing": false
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "final_stone",
+          "position": [
+            26.57205459579136,
+            20.36645750289739
+          ],
+          "hp": 132.02616997632987,
+          "stamina": 146.18188532816328,
+          "climbing": false
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "returned_after_surface_route": true,
+      "failure": null,
+      "timer": 18.633333333332917,
+      "control_frames": 2684,
+      "position": [
+        26.46132180993129,
+        14.9
+      ],
+      "min_hp": 129.8439693291212,
+      "min_stamina": 138.76680013510872,
+      "max_frame_dx": 0.889370968061602,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "clay_drop",
+          "time": 2.6083333333333267,
+          "position": [
+            12.435110557549576,
+            16.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 4
+        },
+        {
+          "name": "ice_drop",
+          "time": 7.108333333333476,
+          "position": [
+            18.518478016534992,
+            10.9
+          ],
+          "stamina": 200.0,
+          "standing_block": 3
+        },
+        {
+          "name": "stone_takeoff",
+          "time": 8.800000000000141,
+          "position": [
+            21.33258482868589,
+            14.9
+          ],
+          "stamina": 190.069889855684,
+          "standing_block": 2
+        },
+        {
+          "name": "clay_jump",
+          "time": 10.950000000000019,
+          "position": [
+            15.607010083536505,
+            16.9
+          ],
+          "stamina": 182.74540466532963,
+          "standing_block": 4
+        },
+        {
+          "name": "stone_return",
+          "time": 13.674999999999864,
+          "position": [
+            23.45879810820295,
+            14.9
+          ],
+          "stamina": 172.22231754671728,
+          "standing_block": 2
+        },
+        {
+          "name": "vine_top",
+          "time": 16.699999999999694,
+          "position": [
+            28.5,
+            25.0
+          ],
+          "stamina": 138.76680013510872,
+          "standing_block": null
+        },
+        {
+          "name": "final_stone",
+          "time": 18.633333333332917,
+          "position": [
+            26.46132180993129,
+            14.9
+          ],
+          "stamina": 149.70014218516806,
+          "standing_block": 2
+        }
+      ],
+      "clay_entries": [
+        {
+          "time": 2.6083333333333267,
+          "phase": "clay_drop",
+          "from": [
+            12.432070989316138,
+            16.936562295203558
+          ],
+          "to": [
+            12.435110557549576,
+            16.9
+          ],
+          "vx_before": 0.3675149648646028,
+          "vx_after": 0.3647481880125503,
+          "dx": 0.0030395682334383167,
+          "speed_bound": 0.14930555555555555
+        },
+        {
+          "time": 10.950000000000019,
+          "phase": "clay_jump",
+          "from": [
+            15.611211066584948,
+            16.903397945051655
+          ],
+          "to": [
+            15.607010083536505,
+            16.9
+          ],
+          "vx_before": -0.5079419242709965,
+          "vx_after": -0.5041179658132022,
+          "dx": -0.0042009830484435184,
+          "speed_bound": 0.14930555555555555
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "clay_drop",
+          "position": [
+            4.5,
+            25.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "clay_drop",
+          "position": [
+            7.348710758975936,
+            25.756554459120316
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "clay_drop",
+          "position": [
+            11.80423967937079,
+            21.658839523792405
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "ice_drop",
+          "position": [
+            12.802900132358374,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "ice_drop",
+          "position": [
+            14.100654708904333,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "ice_drop",
+          "position": [
+            15.416950863306296,
+            16.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "ice_drop",
+          "position": [
+            17.52185148877974,
+            16.506983674604328
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "ice_drop",
+          "position": [
+            18.50520104605384,
+            11.679828408866076
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "climbing": false
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "stone_takeoff",
+          "position": [
+            19.810529241741055,
+            15.544351028151198
+          ],
+          "hp": 150.0,
+          "stamina": 187.7299367689997,
+          "climbing": false
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "clay_jump",
+          "position": [
+            21.309599508871443,
+            16.512224832113557
+          ],
+          "hp": 150.0,
+          "stamina": 175.82299210495387,
+          "climbing": false
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "clay_jump",
+          "position": [
+            17.96961962773342,
+            19.76815356518773
+          ],
+          "hp": 150.0,
+          "stamina": 179.48328595429206,
+          "climbing": false
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "stone_return",
+          "position": [
+            15.593215779861684,
+            17.336657881454737
+          ],
+          "hp": 150.0,
+          "stamina": 160.47298932164216,
+          "climbing": false
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "stone_return",
+          "position": [
+            18.368443869718355,
+            21.738912244068953
+          ],
+          "hp": 150.0,
+          "stamina": 165.10873011224226,
+          "climbing": false
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "stone_return",
+          "position": [
+            22.81266955754118,
+            19.39116263714556
+          ],
+          "hp": 150.0,
+          "stamina": 169.4494272010331,
+          "climbing": false
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "vine_top",
+          "position": [
+            23.915000049693894,
+            17.34278406655476
+          ],
+          "hp": 150.0,
+          "stamina": 158.82335064581645,
+          "climbing": false
+        },
+        {
+          "time": 14.999999999999789,
+          "phase": "vine_top",
+          "position": [
+            28.5,
+            19.90906934747934
+          ],
+          "hp": 149.62730004564582,
+          "stamina": 162.47946680177694,
+          "climbing": true
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "vine_top",
+          "position": [
+            28.5,
+            22.90155994896815
+          ],
+          "hp": 142.72294305168802,
+          "stamina": 148.47946680177603,
+          "climbing": true
+        },
+        {
+          "time": 16.999999999999677,
+          "phase": "final_stone",
+          "position": [
+            28.18307789653175,
+            24.708701458690687
+          ],
+          "hp": 135.98905523929898,
+          "stamina": 140.56916483474998,
+          "climbing": false
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "final_stone",
+          "position": [
+            26.55674796377324,
+            20.13545444499951
+          ],
+          "hp": 131.91619399770505,
+          "stamina": 146.28767758346117,
+          "climbing": false
+        }
+      ]
+    }
+  ]
+}
