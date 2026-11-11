@@ -62,6 +62,36 @@
       "rgba32": "d5caae48e88fab6065937a01044137bfbdd7775e5b032a41d17a914e7cef0709",
       "reason": "Reviewed pixel texture refinement"
     },
+    "43": {
+      "definition": "ea4d4bcd2539c65da860fc240fecb9ddf1f28c852bfb747adc88255d65506565",
+      "rgba32": "61ec65db5e92a24f337804e3b47dae676936b69eb964034b7fdc46643bb73ee9",
+      "reason": "Upright transparent existing decoration"
+    },
+    "50": {
+      "definition": "aa0c925ff973d5a2fd058665008ab287d8e8c700a0136b31214d2a9914256eb9",
+      "rgba32": "339bec4ac08340c081e7d1bf4c6129af113adc7ee61d5966f36ff36b1dc999b8",
+      "reason": "Upright transparent existing decoration"
+    },
+    "51": {
+      "definition": "fe249ea362cb0b5992807c8e0be6b8e3c2acb3443d99aec1f1ad13ed1a8524fe",
+      "rgba32": "bf3edabbb768fbbd8070f021948d6a96987669a1276ddb630d19ac4875b4936e",
+      "reason": "Upright transparent existing decoration"
+    },
+    "52": {
+      "definition": "5ab1e75c68d6163144a20618b85fe70a2eee2fa5a8549b7e1a8cb654df3d4a8c",
+      "rgba32": "8bb8899d57867811c4624398a922612dfcf5ee38efa392cdf2cddd129af0afe5",
+      "reason": "Upright transparent existing decoration"
+    },
+    "53": {
+      "definition": "0dcd4eb42c28e16a5b3d987448d53f27c9b2344e55e017a974f89aea48e5feca",
+      "rgba32": "78b816c3bd946f2b19b38f71e59973867113428343f22ceb0bda182716ae5339",
+      "reason": "Upright transparent existing decoration"
+    },
+    "54": {
+      "definition": "153362383d401bc2a3f4207a7304ad490b319cce570732f1c3beca3ad75600eb",
+      "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
+      "reason": "Upright transparent existing decoration"
+    },
     "310": {
       "definition": "6c2e56eea50a2b894a690a2e1fc3a34a837b36e12cbbd0adf724a7cfc54e08b2",
       "rgba32": "b07d3f445e5d9878bee8ba1ce1065ff5c35ca7b2ab60a934a4d0c38e34437dfd",
