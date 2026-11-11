@@ -79,9 +79,9 @@ if __name__=='__main__':
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     original_refresh=BuffInstance.refresh
-    def refresh_without_automatic_stack(buff,params=None,duration=None):
+    def refresh_without_automatic_stack(buff,params=None,duration=None,*,add_stack=True):
         previous=buff.stacks
-        original_refresh(buff,params,duration)
+        original_refresh(buff,params,duration,add_stack=add_stack)
         buff.stacks=previous
     context=(patch.object(BuffInstance,'refresh',refresh_without_automatic_stack)
              if args.single_stack_candidate else nullcontext())
