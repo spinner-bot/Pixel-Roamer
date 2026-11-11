@@ -2,6 +2,7 @@
 import argparse
 from collections import defaultdict
 import json
+import math
 import os
 from pathlib import Path
 import subprocess
@@ -25,7 +26,7 @@ def api_case(target,counter,counter_first):
     order=(counter,target) if counter_first else (target,counter)
     for buff_id in order:actor.apply_buff(buff_id,(),5)
     return {'target':target,'counter':counter,'order':list(order),'active':[b.buff_id for b in actor.buffs],
-            'relation_satisfied':not actor.has_buff(counter) or not actor.has_buff(target)}
+            'relation_satisfied':actor.has_buff(counter) and not actor.has_buff(target)}
 
 
 def source_case(target,source,fps,counter_first):
@@ -36,12 +37,13 @@ def source_case(target,source,fps,counter_first):
     actor=session.app.player1
     with patch('pygame.key.get_pressed',return_value=defaultdict(bool)):
         if not counter_first:actor.apply_buff(target,(),5)
-        session.advance(1/fps)
+        acquisition_frames=math.ceil(fps/120)
+        for _ in range(acquisition_frames):session.advance(1/fps)
         if counter_first:actor.apply_buff(target,(),5)
     fire_loss=actor.take_raw_damage(10,damage_type='fire') if target==9 else None
     return {'target_api_injection':target,'actual_counter_source':source,'fps':fps,'counter_first':counter_first,
             'active':[{'id':b.buff_id,'source':b.source,'duration':b.duration} for b in actor.buffs],
-            'wet_observed':actor.has_buff(15),'target_remains':actor.has_buff(target),
+            'acquisition_frames':acquisition_frames,'physics_time':session.app._game_timer,'wet_observed':actor.has_buff(15),'target_remains':actor.has_buff(target),
             'post_water_api_fire_loss':fire_loss,'hp':actor.hp,
             'relation_satisfied':actor.has_buff(15) and not actor.has_buff(target)}
 
