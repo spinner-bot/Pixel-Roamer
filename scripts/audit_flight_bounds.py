@@ -48,13 +48,14 @@ def run(fps, size, direction, loops):
         expected_edge = None if loops[axis] else (size[axis] / 2 if sign < 0 else 10 - size[axis] / 2)
         keys.clear()
         toggle(session.app)
-        session.advance(1 / fps)
+        immediate_clear = can_place(player, world, *player.get_center())
+        session.advance(1 / 120)  # Guarantee a physics step even at 144 presentation FPS.
     return {'fps': fps, 'size': size, 'direction': direction, 'loops': loops,
             'flight_position': position, 'flight_body_in_bounds': in_bounds,
             'expected_edge': expected_edge,
             'edge_matches_body': expected_edge is None or abs(position[axis] - expected_edge) < 1e-8,
             'loop_crossed': not loops[axis] or (position[axis] < 0 if sign < 0 else position[axis] > 10),
-            'after_exit': player.get_center(),
+            'exit_immediate_clear': immediate_clear, 'after_exit': player.get_center(),
             'exit_shift': max(abs(a - b) for a, b in zip(position, player.get_center())),
             'exit_clear': can_place(player, world, *player.get_center()),
             'hp': player.hp, 'stamina': player.stamina, 'alive': player.alive}
