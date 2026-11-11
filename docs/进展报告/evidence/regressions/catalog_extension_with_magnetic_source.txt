@@ -1,0 +1,16 @@
+test_cross_package_consumed_reference_is_resolved_but_explicit_files_stay_isolated (tests.test_catalog_extensions.CatalogExtensionTests) ... ok
+test_package_order_and_rejection_of_collisions_with_core_or_other_packages (tests.test_catalog_extensions.CatalogExtensionTests) ... ok
+test_all_block_definitions_and_pixels_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_all_buff_definitions_and_icons_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_art_refinement_preserves_every_gameplay_field (tests.test_catalogs.CatalogTests) ... ok
+test_block_status_references_exist (tests.test_catalogs.CatalogTests) ... ok
+test_costume_frames_match_pre_migration_pixels (tests.test_catalogs.CatalogTests) ... ok
+test_interface_fields_have_valid_defaults_and_unique_paths (tests.test_catalogs.CatalogTests) ... ok
+test_rejects_duplicates_unknown_fields_versions_and_invalid_art (tests.test_catalogs.CatalogTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.355s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
