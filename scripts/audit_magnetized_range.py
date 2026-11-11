@@ -50,7 +50,8 @@ def measure(distance, side, polarity, active, fps, immunity=None):
     return {'distance': distance, 'side': side, 'polarity': polarity, 'active': active,
             'fps': fps, 'immunity': immunity, 'initial': initial, 'final': actor.get_center(),
             'dx': actor._x - initial[0], 'max_speed': max_speed, 'touched': touched,
-            'respawns': respawns, 'hp': actor.hp}
+            'respawns': respawns, 'hp': actor.hp, 'elapsed': session.app._game_timer,
+            'control_frames': round(.25 * fps)}
 
 
 if __name__ == '__main__':
