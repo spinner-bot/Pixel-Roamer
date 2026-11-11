@@ -646,8 +646,8 @@ class Creature:
                         # applying source effects after relocation.
                         return
                 elif bt.special == "checkpoint":
-                    if hasattr(self, "spawn_pos"):
-                        self.spawn_pos = (self._x, self._y)
+                    from spawn_placement import record_checkpoint
+                    record_checkpoint(self, world)
                 elif bt.special == "heal" and bt.special_data is not None:
                     self.heal(float(bt.special_data) * dt)
                 elif bt.special == "shield" and bt.special_data is not None:
@@ -726,8 +726,8 @@ class Creature:
                 elif bt.special == "set_spawn":
                     # 设置重生点（一次性）
                     if self._special_cooldowns.get("set_spawn", 0) <= 0:
-                        if hasattr(self, "spawn_pos"):
-                            self.spawn_pos = (self._x, self._y)
+                        from spawn_placement import record_checkpoint
+                        if record_checkpoint(self, world):
                             self._special_cooldowns["set_spawn"] = 3.0
 
                 elif bt.special == "fortune" and bt.special_data is not None:
