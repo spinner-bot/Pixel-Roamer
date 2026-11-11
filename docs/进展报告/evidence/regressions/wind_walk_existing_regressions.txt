@@ -1,0 +1,23 @@
+test_all_forty_source_consumer_probes_have_the_claimed_direction (test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_explicit_zero_numeric_parameters_are_not_globally_reinterpreted (test_buff_source_defaults.BuffSourceDefaultTests) ... ok
+test_actual_stat_api_matches_partial_full_and_zero_reductions_without_mutation (test_buff_behavior.BuffBehaviorTests) ... ok
+test_every_original_trap_escapes_with_and_without_immunity_at_three_rates (test_buff_behavior.BuffBehaviorTests) ... ok
+test_immunity_consumes_entry_and_explicit_api_root_still_refreshes (test_buff_behavior.BuffBehaviorTests) ... ok
+test_pause_and_real_death_preserve_then_rearm_a_fresh_source_timer (test_buff_behavior.BuffBehaviorTests) ... ok
+test_root_does_not_refresh_on_stay_or_active_new_source_and_rearms_after_exit (test_buff_behavior.BuffBehaviorTests) ... ok
+test_startup_rules_are_valid_immutable_and_explicit_files_do_not_change_them (test_buff_behavior.BuffBehaviorTests) ... ok
+test_all_stackable_sources_remain_single_layer_during_continuous_contact (test_buff_contacts.BuffContactTests) ... ok
+test_contiguous_same_kind_strips_and_actual_loop_crossings_do_not_add_layers (test_buff_contacts.BuffContactTests) ... ok
+test_explicit_refresh_changes_params_duration_source_without_implicit_stacking (test_buff_contacts.BuffContactTests) ... ok
+test_pause_actual_respawn_and_flight_reset_exposure_without_losing_api_layers (test_buff_contacts.BuffContactTests) ... ok
+test_root_immunity_controls_can_leave_each_original_source (test_buff_contacts.BuffContactTests) ... ok
+test_all_existing_launch_sources_preserve_height_after_space (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+test_jump_preserves_velocity_and_existing_ground_air_and_status_gates (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+test_source_launches_escape_magnetic_fields_and_immunity_still_blocks_launches (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 23.697s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
