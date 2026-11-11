@@ -9,10 +9,12 @@ from types import MappingProxyType
 class BuffBehavior:
     contact_trigger: str='refresh'
     stat_stacking: str='linear'
+    control_locks: tuple=()
 
 
 DEFAULT_BEHAVIOR=BuffBehavior()
 BEHAVIOR_PATH=Path(__file__).resolve().parent/'data/rules/buff_behavior.json'
+CONTROL_ACTIONS=frozenset({'horizontal','jump','climb','swim'})
 
 
 def load_behaviors(path=BEHAVIOR_PATH,*,known_ids=None):
@@ -26,15 +28,19 @@ def load_behaviors(path=BEHAVIOR_PATH,*,known_ids=None):
         known_ids=load_buffs().keys()
     result={}
     for entry in document['entries']:
-        if (not isinstance(entry,dict) or set(entry)-{'buff_id','contact_trigger','stat_stacking'}
+        if (not isinstance(entry,dict) or set(entry)-{'buff_id','contact_trigger','stat_stacking','control_locks'}
                 or type(entry.get('buff_id')) is not int or entry['buff_id'] not in known_ids
                 or entry['buff_id'] in result):
             raise ValueError('unknown, duplicate or invalid Buff behavior entry')
         contact=entry.get('contact_trigger','refresh')
         stacking=entry.get('stat_stacking','linear')
+        locks=entry.get('control_locks',[])
         if contact not in ('refresh','entry') or stacking not in ('linear','multiplicative'):
             raise ValueError('unsupported Buff behavior policy')
-        result[entry['buff_id']]=BuffBehavior(contact,stacking)
+        if (not isinstance(locks,list) or any(not isinstance(action,str) or action not in CONTROL_ACTIONS
+                                              for action in locks) or len(set(locks))!=len(locks)):
+            raise ValueError('unsupported or duplicate Buff control lock')
+        result[entry['buff_id']]=BuffBehavior(contact,stacking,tuple(locks))
     return MappingProxyType(result)
 
 
