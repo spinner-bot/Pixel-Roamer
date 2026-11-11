@@ -101,6 +101,17 @@ def _make_hashable(obj):
     return obj
 
 
+def pattern_has_alpha_canvas(pattern) -> bool:
+    """An explicit initial RGBA fill opts a vector into background composition."""
+    if not pattern or len(pattern) < 3 or pattern[0] != 'vector' or not pattern[2]:
+        return False
+    command = pattern[2][0]
+    if len(command) != 2 or command[0] != 'fill':
+        return False
+    color = command[1]
+    return isinstance(color, (tuple, list)) and len(color) == 4 and color[3] < 255
+
+
 def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
                          x: float, y: float, w: float, h: float, overdraw: bool = True):
     """
@@ -113,7 +124,8 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
     base_rect = pygame.Rect(x, y, draw_w, draw_h)
 
     # 1. 填充底色
-    pygame.draw.rect(surface, block_type.color, base_rect)
+    if not pattern_has_alpha_canvas(block_type.pattern):
+        pygame.draw.rect(surface, block_type.color, base_rect)
 
     # 2. 没有图案则直接返回
     if block_type.pattern is None:

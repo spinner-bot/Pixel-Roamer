@@ -8,7 +8,7 @@ from typing import Optional, Tuple, Any
 from block_type import BlockType
 from block_types_data import BLOCK_TYPES
 from game_rect import GameRect
-from pattern import render_block_pattern
+from pattern import render_block_pattern, pattern_has_alpha_canvas
 
 
 # ===================== 性能常量 =====================
@@ -307,7 +307,8 @@ class World:
                 and cached[2] is block_type.pattern):
             self._terrain_textures.move_to_end(key)
             return cached[3]
-        texture = pygame.Surface((CHUNK_TEX_PX, CHUNK_TEX_PX))
+        flags = pygame.SRCALPHA if pattern_has_alpha_canvas(block_type.pattern) else 0
+        texture = pygame.Surface((CHUNK_TEX_PX, CHUNK_TEX_PX), flags)
         render_block_pattern(texture, block_type, 0, 0, CHUNK_TEX_PX, CHUNK_TEX_PX,
                              overdraw=False)
         self._terrain_textures[key] = (block_type, tuple(block_type.color),
