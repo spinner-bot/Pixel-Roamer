@@ -115,7 +115,7 @@ def run(fps):
             frozen = final == terminal_snapshot(session)
         respawns = reset.call_count
     return {'map_id': world.map_id, 'mode': world.mode, 'fps': fps, 'game_win': app._game_win, 'game_over': app._game_over,
-            'timer': app._game_timer, 'score': player.score, 'score_goal': world.score_goal,
+            'timer': app._game_timer, 'control_frames': frame + 1, 'score': player.score, 'score_goal': world.score_goal,
             'available_score': initial_score, 'remaining_score': available_score(world),
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'respawns': respawns, 'terminal_state_frozen': frozen, 'failure': failure,
