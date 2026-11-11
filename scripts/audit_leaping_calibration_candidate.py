@@ -50,23 +50,24 @@ def measure(fps,gravity,damping,parameter,feather,candidate):
     with patch('pygame.key.get_pressed',return_value=defaultdict(bool)),patch('sfx.play_jump'):
         session.advance(1/120)
         if feather:
-            actor.apply_buff(13,(50,),120)
+            actor.apply_buff(13,(50,),None)
         if parameter is not None:
-            actor.apply_buff(4,(parameter,),120)
+            actor.apply_buff(4,(parameter,),None)
         actor.refresh_movement_stats()
         initial_speed=actor.v_jump
         events=[pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE)]
         with patch('pygame.event.get',return_value=events):
             session.app._handle_events()
         with patch.object(session,'_advance_step',side_effect=observe),patch.object(actor,'reset',wraps=actor.reset) as reset:
-            for frame in range(80*fps):
+            time_budget=max(12,math.ceil(2*initial_speed/abs(gravity*(.5 if feather else 1))+10))
+            for frame in range(time_budget*fps):
                 session.advance(1/fps)
                 if actor.on_ground and (airborne or initial_speed==0) and session.app._game_timer>.1:
                     break
             respawns=reset.call_count
     return {'fps':fps,'gravity':gravity,'damping':damping,'parameter':parameter,'feather':feather,'candidate':candidate,
             'height':peak-5.9,'launch_speed':initial_speed,'landed':actor.on_ground,'hp':actor.hp,
-            'respawns':respawns,'seconds':session.app._game_timer,
+            'respawns':respawns,'seconds':session.app._game_timer,'time_budget':time_budget,'buff_duration':None,
             'model_height':apex(initial_speed,gravity*(.5 if feather else 1),damping)}
 
 
@@ -74,10 +75,29 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--quick',action='store_true')
+    parser.add_argument('--retry-incomplete',type=Path)
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     rows=[]
     errors=[]
+    if args.retry_incomplete:
+        parent=json.loads(args.retry_incomplete.read_text())
+        for old in parent['runs']:
+            if old['landed']:
+                continue
+            row=measure(old['fps'],old['gravity'],old['damping'],old['parameter'],old['feather'],old['candidate'])
+            row['baseline_height']=old['baseline_height']
+            row['height_ratio']=row['height']/row['baseline_height']
+            row['expected_ratio']=old['expected_ratio']
+            row['ratio_error']=row['height_ratio']-row['expected_ratio']
+            rows.append(row)
+            if not row['landed'] or row['respawns'] or row['hp']!=150 or (row['candidate'] and abs(row['ratio_error'])>1e-8):
+                errors.append(row)
+        report={'code_revision':revision,'scope':'rerun only incomplete trajectories with calculated observation budget and permanent explicit API Buffs; no production change','parent_report':str(args.retry_incomplete),'parent_completed_rows':sum(r['landed'] for r in parent['runs']),'rerun_rows':rows,'errors':errors}
+        args.output.parent.mkdir(parents=True,exist_ok=True)
+        args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+        print(json.dumps({'parent_completed_rows':report['parent_completed_rows'],'rerun_rows':len(rows),'errors':len(errors),'max_candidate_ratio_error':max(abs(r['ratio_error']) for r in rows if r['candidate'])}))
+        return 1 if errors else 0
     gravities=(-6.5,-9.8) if args.quick else (-.7,-6.5,-9.8,-20.)
     for fps in ((60,) if args.quick else (30,60,144)):
         for gravity in gravities:
