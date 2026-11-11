@@ -1,4 +1,4 @@
-"""Restore solid placement when an existing temporary phase ends inside terrain."""
+"""Restore solid placement when existing phase or free flight ends inside terrain."""
 from collision import spans_overlap
 from teleport import can_place
 
@@ -12,7 +12,8 @@ def _embedded(actor, world):
 
 
 def prepare_phase_collision(actor, world):
-    active = actor.has_buff(48) or getattr(actor, '_phantom_active', False)
+    active = (actor.has_buff(48) or getattr(actor, '_phantom_active', False)
+              or getattr(actor, 'fly_mode', False))
     previous = getattr(actor, '_phase_active', False)
     same_world = getattr(actor, '_phase_world', None) is world
     if active and (not previous or not same_world):
@@ -28,6 +29,7 @@ def prepare_phase_collision(actor, world):
             actor.is_climbing = False
             actor._x, actor._y = target
             actor.reset_motion()
+            actor.clear_environment_contacts(world)
     actor._phase_active = active
     if active:
         remember_phase_position(actor, world)
