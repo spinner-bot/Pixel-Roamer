@@ -1,5 +1,14 @@
 {
   "schema_version": 1,
-  "blocks": {},
+  "blocks": {
+    "439": {
+      "stage": "A79",
+      "source": "data/catalogs/extensions/blocks_magnetic.json",
+      "reason": "User-authorized source block for existing magnetic Buff14, with no block special effect",
+      "definition": "e60823ac18c05d8be488ab48e54f252d7b19d9bfd617b1d72dfc5a4892c5dd07",
+      "rgba32": "cda245b3a0a747f29be6be1b71d797d2ebf1bb5ef3e7c24cc9ab7f7b8e578ac3",
+      "non_art": "f3e07a94fddf8531428f90637ed5a06fa35c4d45557747880cd4c94c2e320b1f"
+    }
+  },
   "buffs": {}
 }
