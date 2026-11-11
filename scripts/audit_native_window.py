@@ -109,32 +109,32 @@ def run(output, xdotool):
     def start_move():
         page(PAGE_WORLD)
         require(app._current_map.map_id == 1, "normal first map was not selected")
-        state["move_start"] = app.player1.x
+        state["move_start"] = app.player1.get_center()[0]
         native("keydown", "d")
 
     def stop_move():
         require(pygame.key.get_pressed()[pygame.K_d], "native held D was not observed")
-        state["move_end"] = app.player1.x
+        state["move_end"] = app.player1.get_center()[0]
         require(state["move_end"] > state["move_start"] + .5, "held D did not move player")
         native("keyup", "d")
         key("h")
 
     def help_start():
         require(app.help_open, "help did not open")
-        state["help_start"] = [app._game_timer, app.player1.x, app.player1.y]
+        state["help_start"] = [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]]
 
     def help_end():
-        require(state["help_start"] == [app._game_timer, app.player1.x, app.player1.y],
+        require(state["help_start"] == [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]],
                 "help did not freeze game state")
         key("Escape")
         key("BackSpace")
 
     def pause_start():
         page(PAGE_SETTING)
-        state["pause_start"] = [app._game_timer, app.player1.x, app.player1.y]
+        state["pause_start"] = [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]]
 
     def pause_end():
-        require(state["pause_start"] == [app._game_timer, app.player1.x, app.player1.y],
+        require(state["pause_start"] == [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]],
                 "settings did not freeze game state")
         key("Escape")
         resize(1000, 500)
@@ -156,11 +156,11 @@ def run(output, xdotool):
 
     def unfocused_start():
         require(not app.focused, "native focus loss was not observed")
-        state["unfocused_start"] = [app._game_timer, app.player1.x, app.player1.y]
+        state["unfocused_start"] = [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]]
         native("key", "space")
 
     def unfocused_end():
-        require(state["unfocused_start"] == [app._game_timer, app.player1.x, app.player1.y],
+        require(state["unfocused_start"] == [app._game_timer, app.player1.get_center()[0], app.player1.get_center()[1]],
                 "unfocused game advanced")
         native("windowfocus", "--sync", window())
 
