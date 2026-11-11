@@ -47,7 +47,8 @@ class GhostWallContractTests(unittest.TestCase):
         for width, height in ((.6, 1.5), (.8, 1.8), (1.4, 2.1)):
             for isolated in (False, True):
                 for source in (False, True):
-                    world = World(0, 'ghost ceiling', 24, 16, gravity=-9.8, spawn_points=(10.5, 5.9))
+                    world = World(0, 'ghost ceiling', 24, 16, gravity=-9.8,
+                                  spawn_points=(10.5, 5 + height / 2))
                     world.player_config = {'w': width, 'h': height}
                     for x in range(2, 22):
                         world.set_tile(x, 4, 2)
@@ -76,7 +77,7 @@ class GhostWallContractTests(unittest.TestCase):
                 for fps in (30, 60, 144):
                     for source in (False, True):
                         world = World(0, 'ghost wall and floor', 30, 16, gravity=-9.8,
-                                      spawn_points=(6.5 if direction == 1 else 14.5, 5.9))
+                                      spawn_points=(6.5 if direction == 1 else 14.5, 5 + height / 2))
                         world.player_config = {'w': width, 'h': height}
                         for x in range(2, 28):
                             world.set_tile(x, 4, 2)
