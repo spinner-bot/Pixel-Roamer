@@ -41,12 +41,14 @@ class LaunchJumpOverrideTests(unittest.TestCase):
 
     def test_jump_preserves_velocity_and_existing_ground_air_and_status_gates(self):
         for velocity in (-40, 0, 5, 12, 30, 100):
-            actor = Player(0, 'velocity', 0, 0, {}, v_y=velocity)
+            actor = Player(0, 'velocity', 0, 0, {})
+            actor.v_y = velocity
             actor.on_ground = True
             self.assertTrue(actor.jump())
             self.assertEqual(actor.v_y, max(velocity, actor.v_jump))
         for blocked in ('air', 'grounded', 'stunned', 'exhausted', 'dead'):
-            actor = Player(0, 'blocked', 0, 0, {}, v_y=30)
+            actor = Player(0, 'blocked', 0, 0, {})
+            actor.v_y = 30
             actor.on_ground = blocked != 'air'
             if blocked in ('grounded', 'stunned'):
                 actor.apply_buff(27 if blocked == 'grounded' else 28, (), 5)
@@ -57,7 +59,8 @@ class LaunchJumpOverrideTests(unittest.TestCase):
             self.assertFalse(actor.jump())
             self.assertEqual(actor.v_y, 30)
             self.assertFalse(actor._jump_escape_active)
-        actor = Player(0, 'air charge', 0, 0, {}, v_y=30)
+        actor = Player(0, 'air charge', 0, 0, {})
+        actor.v_y = 30
         actor.apply_buff(37, (), 5)
         self.assertTrue(actor.jump())
         self.assertEqual(actor.v_y, 30)
