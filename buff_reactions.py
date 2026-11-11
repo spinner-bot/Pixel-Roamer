@@ -39,7 +39,8 @@ def load_reactions(path=REACTION_PATH, *, known_ids=None):
     for entry in document['entries']:
         if (not isinstance(entry, dict) or set(entry) != fields
                 or not isinstance(entry['id'], str) or not entry['id'].strip()
-                or entry['id'] in result or entry['contact'] not in CONTACTS
+                or entry['id'] in result or not isinstance(entry['contact'], str)
+                or entry['contact'] not in CONTACTS
                 or type(entry['result_buff']) is not int or entry['result_buff'] not in known_ids):
             raise ValueError('invalid or duplicate Buff reaction')
         for field in ('required_buffs', 'rearm_without'):
@@ -50,13 +51,17 @@ def load_reactions(path=REACTION_PATH, *, known_ids=None):
                 raise ValueError('invalid reaction Buff references')
         for field in ('base_duration', 'duration_multiplier'):
             value = entry[field]
-            if type(value) not in (int, float) or not math.isfinite(value) or value <= 0:
+            try:
+                finite = type(value) in (int, float) and math.isfinite(float(value))
+            except OverflowError:
+                finite = False
+            if not finite or value <= 0:
                 raise ValueError('reaction durations must be finite and positive')
         rule = BuffReaction(tuple(entry['required_buffs']), entry['contact'], entry['result_buff'],
                             float(entry['base_duration']), float(entry['duration_multiplier']),
                             tuple(entry['rearm_without']))
-        if not math.isfinite(rule.duration):
-            raise ValueError('reaction duration product must be finite')
+        if not math.isfinite(rule.duration) or rule.duration <= 0:
+            raise ValueError('reaction duration product must be finite and positive')
         result[entry['id']] = rule
     return MappingProxyType(result)
 
