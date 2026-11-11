@@ -42,3 +42,30 @@ def prepare_phase_collision(actor, world):
 def remember_phase_position(actor, world):
     if can_place(actor, world, *actor.get_center()):
         actor._phase_anchor = actor.get_center()
+
+
+def ghost_wall_blocks(world, rect, blocks, horizontal):
+    """Buff48 passes isolated wall columns, while keeping support/ceilings.
+
+    Query actual neighbors through the world so looping seams and defaults
+    obey the same thickness rule. Vertical movement ignores a wall column
+    only while the body is already traversing it, never a supporting tile.
+    """
+    def full_solid(x, y):
+        kind = world.get_block_type(x, y)
+        return kind.is_solid and not kind.one_way
+
+    def thin(block, kind):
+        return (not kind.one_way
+                and not full_solid(block.x - .5, block.y + .5)
+                and not full_solid(block.x + 1.5, block.y + .5))
+
+    eligible = {(block.x, block.y) for block, kind in blocks if thin(block, kind)}
+    if horizontal:
+        return [(block, kind) for block, kind in blocks if (block.x, block.y) not in eligible]
+    traversing = {block.x for block, kind in blocks
+                  if (block.x, block.y) in eligible
+                  and spans_overlap(rect.x, rect.w, block.x, block.w)
+                  and spans_overlap(rect.y, rect.h, block.y, block.h)}
+    return [(block, kind) for block, kind in blocks
+            if block.x not in traversing or (block.x, block.y) not in eligible]
