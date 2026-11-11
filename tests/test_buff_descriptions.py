@@ -31,7 +31,7 @@ class BuffDescriptionTests(unittest.TestCase):
                     self.assertEqual(instance.params, params)
 
     def test_lifetime_descriptions_follow_refresh_and_do_not_claim_zero_seconds(self):
-        for buff_id in (38, 48):
+        for buff_id in (38, 48, 59):
             for placeholder in ((), (0,), (99,)):
                 buff = BuffInstance(buff_id, placeholder, 7.5)
                 self.assertIn('持续 7.5 秒', buff.format_desc())
