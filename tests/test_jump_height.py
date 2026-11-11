@@ -58,6 +58,7 @@ class JumpHeightTests(unittest.TestCase):
         world=World(0,'height lifecycle',30,80,gravity=-9.8,spawn_points=(10.5,5.9))
         for x in range(30):
             world.set_tile(x,4,2)
+        world.lives=5
         session=create_control_session(0,world=world)
         actor=session.app.player1
         with patch('pygame.key.get_pressed',return_value=defaultdict(bool)):
@@ -86,7 +87,8 @@ class JumpHeightTests(unittest.TestCase):
             actor.apply_buff(4,(100,),5)
             actor.apply_buff(13,(50,),5)
             actor.refresh_movement_stats()
-            actor.alive=False
+            actor.take_damage(actor.hp_max*10,0)
+            self.assertFalse(actor.alive)
             session.advance(1/120)
             self.assertFalse(actor.has_buff(4))
             self.assertFalse(actor.has_buff(13))
