@@ -17,13 +17,14 @@ from maps import get_map
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--before', action='store_true')
-    parser.add_argument('--region', choices=('tower', 'pyramid', 'pyramid_bottom'), default='tower')
+    parser.add_argument('--region', choices=('tower', 'pyramid', 'pyramid_bottom', 'ice_lower'), default='tower')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     stage, scale, center = {
         'tower': ('A66', 4, (450, 110)),
         'pyramid': ('A69', 16, (375, 60)),
         'pyramid_bottom': ('A70', 12, (375, 50)),
+        'ice_lower': ('A71', 16, (288, 54)),
     }[args.region]
     world = get_map(3).create_session()
     if args.before:
@@ -31,8 +32,9 @@ def main():
         for change in reviews['maps']['3']:
             if change['stage'] == stage:
                 world.set_tile(*change['position'], change['before'])
-    surface = pygame.Surface((640, 900))
-    camera = Camera(640, 900, world)
+    size = (800, 900) if args.region == 'ice_lower' else (640, 900)
+    surface = pygame.Surface(size)
+    camera = Camera(*size, world)
     camera.scale = scale
     camera.follow(*center)
     world.draw(surface, camera)
