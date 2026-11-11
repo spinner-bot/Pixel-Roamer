@@ -1,0 +1,24 @@
+test_deliberate_jump_leaves_actual_sources_and_escape_state_ends_on_landing (tests.test_magnetized_field.MagnetizedFieldTests) ... ok
+test_field_strength_decays_to_zero_without_extending_ordinary_contact_range (tests.test_magnetized_field.MagnetizedFieldTests) ... ok
+test_multiple_nearby_sources_are_limited_after_summing (tests.test_magnetized_field.MagnetizedFieldTests) ... ok
+test_pause_focus_removal_clear_expiry_and_real_respawn_leave_no_residual_field (tests.test_magnetized_field.MagnetizedFieldTests) ... ok
+test_range_polarities_immunities_real_source_retreat_and_loop_deduplication (tests.test_magnetized_field.MagnetizedFieldTests) ... ok
+test_force_immunity_still_blocks_magnetic_attraction (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_mixed_sources_are_limited_after_summing_not_per_face (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_only_deliberate_opposing_input_limits_horizontal_attraction (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_passive_and_vertical_attraction_keep_original_strength (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_three_magnet_types_and_both_faces_allow_real_control_retreat (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_spawn_to_formal_victory_at_three_frame_rates (tests.test_cove_route.CoveRouteTests) ... ok
+test_blocked_climb_does_not_recharge_but_valid_iron_will_grip_does (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_ceiling_collision_does_not_recharge_air_charge (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_ground_cloud_and_climb_cycles_restore_ability_at_three_frame_rates (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_landing_recharges_before_catapult_immediately_launches_again (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_regranting_buff_without_support_does_not_refresh_air_charge (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_touching_ladder_without_grabbing_does_not_grant_a_third_jump (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 18.646s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
