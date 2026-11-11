@@ -1,0 +1,24 @@
+import json
+from pathlib import Path
+from unittest.mock import patch
+from scripts.control_session import create_control_session
+from scripts.audit_pixel_sky import run as sky
+from scripts.audit_endless_climb import run
+s=create_control_session(3);p=s.app.player1;original=s.advance
+trace=[]
+class Handoff(Exception):pass
+def observe(dt):
+ original(dt)
+ if len(trace)==0 or s.app._game_timer-trace[-1]['time']>=1:trace.append(dict(time=s.app._game_timer,position=p.get_center(),hp=p.hp,stamina=p.stamina))
+ if p.on_ground and abs(p._x-217.5)<.18 and abs(p._y-111.9)<.02:raise Handoff
+s.advance=observe
+try:
+ with patch('scripts.audit_pixel_sky.create_control_session',return_value=s):sky(30)
+except Handoff:pass
+finally:s.advance=original
+print('handoff',p.get_center(),s.app._game_timer,flush=True)
+route=dict(map_id=3,scope='normal forest spawn, original sky route branching before T2; same continuous actual session',waypoints=[])
+for name,x,y,kind in [('above_t2',217.5,115.,'air'),('east_island_booster',241.5,70.9,'ground'),('ice_vine',268.5,64.98,'climb'),('ice_roof',275.5,76.9,'ground')]:route['waypoints'].append(dict(name=name,x=x,y=y,kind=kind))
+with patch('scripts.audit_endless_climb.create_control_session',return_value=s):r=run(30,route,240,5)
+Path('/tmp/pixel-sky-east-first.json').write_text(json.dumps(dict(prefix_trace=trace,route=route,result=r),indent=2)+'\n')
+print({k:r[k] for k in ('completed_route','failure','timer','position','min_hp','min_stamina')},flush=True)
