@@ -224,11 +224,13 @@ class WorldSession:
                     and self.app.player1.can_swim and swimming_now
                     and getattr(self.app.player1, '_near_shore', False)
                     and self.app.player1.stamina >= 25):
-                    if begin_shore_exit(self.app.player1, suppress_cost=silenced):
+                    preferred_shore = 1 if dir_x > 0 else -1 if dir_x < 0 else 0
+                    if begin_shore_exit(self.app.player1, suppress_cost=silenced,
+                                        preferred_direction=preferred_shore):
                         sfx.play_jump()
                         shore_exit_done = True
                         self.app.jump_pressed = False
-                advance_shore_exit(self.app.player1)
+                advance_shore_exit(self.app.player1, self.app._current_map)
 
                 # ---- 正常跳跃 ----
                 if self.app.jump_pressed and not grounded and not shore_exit_done:
@@ -248,7 +250,7 @@ class WorldSession:
                 # 攀爬中着陆或离开可攀爬方块：自动解除
                 if self.app.player1.is_climbing and (self.app.player1.on_ground or not self.app.player1.can_climb):
                     self.app.player1.is_climbing = False
-                after_shore_physics(self.app.player1)
+                after_shore_physics(self.app.player1, self.app._current_map)
 
         # A keydown is consumed by this world frame even when a status blocks it.
         self.app.jump_pressed = False
