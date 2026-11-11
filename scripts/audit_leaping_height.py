@@ -34,7 +34,9 @@ def measure(fps, source=2, parameter=None, press_jump=True, *, world_height=80, 
         original(dt, keys)
         peak = max(peak, actor._y)
         airborne |= not actor.on_ground and actor._y > 5.9 + 1e-7
-        landed |= airborne and actor.on_ground
+        # A catapult clears on_ground while immediately relaunching on the
+        # landing tick. Its exact supporting height still proves contact.
+        landed |= airborne and abs(actor._y - 5.9) <= 1e-7
 
     with patch('pygame.key.get_pressed', return_value=defaultdict(bool)), \
             patch('sfx.play_jump'), patch.object(actor, 'reset', wraps=actor.reset) as reset:
@@ -58,6 +60,8 @@ def measure(fps, source=2, parameter=None, press_jump=True, *, world_height=80, 
     return {'fps': fps, 'source_block': source, 'injected_parameter': parameter, 'jump_event': press_jump, 'applied': applied,
             'launch_speed': launch_speed, 'height': peak - 5.9, 'landed': landed,
             'initial_vertical_velocity': initial_vertical_velocity, 'initially_supported': initially_supported,
+            'final_position': actor.get_center(), 'final_vertical_velocity': actor.v_y,
+            'final_support_flag': actor.on_ground,
             'elapsed': session.app._game_timer, 'respawns': respawns, 'hp': actor.hp,
             'physics': {'gravity': world.gravity, 'vertical_damping': actor.f_y}}
 
