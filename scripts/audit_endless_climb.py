@@ -1,6 +1,7 @@
-"""Normal multi-platform controls, authored ropes and first major rest point."""
+"""Normal platform/rope controls with route data and explicit air clearances."""
 from collections import defaultdict
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -18,8 +19,9 @@ from scripts.control_session import create_control_session
 from scripts.audit_session_soak import errors_for
 
 
-def run(fps):
-    route = json.loads((ROOT / 'scripts/routes/endless_climb.json').read_text())
+def run(fps, route=None, duration=120):
+    if route is None:
+        route = json.loads((ROOT / 'scripts/routes/endless_climb.json').read_text())
     session = create_control_session(route['map_id'])
     app, player = session.app, session.app.player1
     keys = defaultdict(bool)
@@ -29,10 +31,12 @@ def run(fps):
     min_hp, min_stamina = player.hp, player.stamina
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'), \
             patch.object(player, 'reset', wraps=player.reset) as reset:
-        for frame in range(120 * fps):
+        for frame in range(duration * fps):
             waypoint = route['waypoints'][stage]
             arrived = abs(player._x - waypoint['x']) < .18
-            if waypoint['kind'] == 'climb':
+            if waypoint['kind'] == 'air':
+                arrived &= not player.on_ground and player._y >= waypoint['y']
+            elif waypoint['kind'] == 'climb':
                 arrived &= player.is_climbing and player._y >= waypoint['y']
             else:
                 arrived &= player.on_ground and abs(player._y - waypoint['y']) < .02
@@ -73,7 +77,8 @@ def run(fps):
                 failure = f"{waypoint['name']} timed out"
                 break
         respawns = reset.call_count
-    return {'fps': fps, 'reached_and_rested': reached, 'failure': failure,
+    return {'fps': fps, 'completed_route': reached,
+            'reached_and_rested': reached and route['waypoints'][-1]['kind'] == 'rest', 'failure': failure,
             'timer': app._game_timer, 'control_frames': frame if reached else frame + 1,
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'final_hp': player.hp, 'final_stamina': player.stamina,
@@ -85,13 +90,19 @@ def run(fps):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--route', type=Path, default=ROOT / 'scripts/routes/endless_climb.json')
+    parser.add_argument('--fps', type=int, nargs='+', default=(30, 60, 144))
+    parser.add_argument('--duration', type=int, default=120)
     args = parser.parse_args()
+    route = json.loads(args.route.read_text())
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-              'scope': 'normal spawn and authored platforms/ropes to first major rest checkpoint; not full height or y-wrap',
-              'runs': [run(fps) for fps in (30, 60, 144)]}
+              'controller_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+              'route_sha256': hashlib.sha256(args.route.read_bytes()).hexdigest(),
+              'route': route, 'scope': route['scope'],
+              'runs': [run(fps, route, args.duration) for fps in args.fps]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    print(json.dumps([{k: r[k] for k in ('fps', 'reached_and_rested', 'failure', 'timer', 'position')}
+    print(json.dumps([{k: r[k] for k in ('fps', 'completed_route', 'failure', 'timer', 'position')}
                       for r in report['runs']]))
 
 
