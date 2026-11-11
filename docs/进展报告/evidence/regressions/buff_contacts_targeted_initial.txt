@@ -1,0 +1,12 @@
+test_all_stackable_sources_remain_single_layer_during_continuous_contact (test_buff_contacts.BuffContactTests) ... ok
+test_contiguous_same_kind_strips_and_actual_loop_crossings_do_not_add_layers (test_buff_contacts.BuffContactTests) ... ok
+test_explicit_refresh_changes_params_duration_source_without_implicit_stacking (test_buff_contacts.BuffContactTests) ... ok
+test_pause_actual_respawn_and_flight_reset_exposure_without_losing_api_layers (test_buff_contacts.BuffContactTests) ... ok
+test_root_immunity_controls_can_leave_each_original_source (test_buff_contacts.BuffContactTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 5.800s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
