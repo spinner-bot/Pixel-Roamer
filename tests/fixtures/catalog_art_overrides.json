@@ -62,6 +62,11 @@
       "rgba32": "d5caae48e88fab6065937a01044137bfbdd7775e5b032a41d17a914e7cef0709",
       "reason": "Reviewed pixel texture refinement"
     },
+    "31": {
+      "definition": "2adda9603b1979f90abcf416dca1010a1596035207e5f018851050dc9fbf661a",
+      "rgba32": "bbc7766e114f64c4d03f68ef0a15ded54aa6d3cafc6bcfe8240e8853cb5117ed",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
     "43": {
       "definition": "ea4d4bcd2539c65da860fc240fecb9ddf1f28c852bfb747adc88255d65506565",
       "rgba32": "61ec65db5e92a24f337804e3b47dae676936b69eb964034b7fdc46643bb73ee9",
@@ -91,6 +96,11 @@
       "definition": "153362383d401bc2a3f4207a7304ad490b319cce570732f1c3beca3ad75600eb",
       "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
       "reason": "Upright transparent existing decoration"
+    },
+    "96": {
+      "definition": "908cbceb69466aefbe1ef58afa6d18ccb4a58606584a76760bd662620a29c2de",
+      "rgba32": "9ac9da13c9d1b714da47e09614e9072ad8d6f5ac17d158a08598b3873afc37ec",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
     },
     "126": {
       "definition": "555d1031ef0a02bb7116ffa870eb352583bb0f07b17fee525448f914169d51de",
