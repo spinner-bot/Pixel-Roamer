@@ -1,0 +1,162 @@
+{
+  "map_id": 5,
+  "scope": "normal spawn, first rest and existing upper platforms; web contact/escape and deliberate roof clearance; not all top rewards or full wrap",
+  "waypoints": [
+    {
+      "name": "start",
+      "x": 10.0,
+      "y": 5.9,
+      "kind": "ground"
+    },
+    {
+      "name": "first_rope",
+      "x": 5.5,
+      "y": 17.98,
+      "kind": "climb"
+    },
+    {
+      "name": "second_platform",
+      "x": 11.5,
+      "y": 19.9,
+      "kind": "ground"
+    },
+    {
+      "name": "third_platform",
+      "x": 15.5,
+      "y": 24.9,
+      "kind": "ground"
+    },
+    {
+      "name": "first_vine",
+      "x": 9.5,
+      "y": 27.98,
+      "kind": "climb"
+    },
+    {
+      "name": "technique_platform",
+      "x": 5.5,
+      "y": 34.9,
+      "kind": "ground"
+    },
+    {
+      "name": "lower_technique_vine",
+      "x": 9.5,
+      "y": 42.0,
+      "kind": "climb"
+    },
+    {
+      "name": "right_technique_platform",
+      "x": 14.5,
+      "y": 39.9,
+      "kind": "ground"
+    },
+    {
+      "name": "upper_technique_vine",
+      "x": 9.5,
+      "y": 47.98,
+      "kind": "climb"
+    },
+    {
+      "name": "rest_checkpoint",
+      "x": 10.5,
+      "y": 50.9,
+      "kind": "rest"
+    },
+    {
+      "name": "right_boost_landing",
+      "x": 15.5,
+      "y": 61.9,
+      "kind": "ground"
+    },
+    {
+      "name": "central_upper",
+      "x": 10.5,
+      "y": 68.9,
+      "kind": "ground"
+    },
+    {
+      "name": "east_narrow",
+      "x": 17.5,
+      "y": 71.9,
+      "kind": "ground"
+    },
+    {
+      "name": "clear_shield_roof",
+      "x": 17.5,
+      "y": 80.2,
+      "kind": "air"
+    },
+    {
+      "name": "shield_platform",
+      "x": 13.5,
+      "y": 80.9,
+      "kind": "ground"
+    },
+    {
+      "name": "web_platform",
+      "x": 10.5,
+      "y": 84.9,
+      "kind": "ground"
+    },
+    {
+      "name": "web_return_shield",
+      "x": 13.5,
+      "y": 80.9,
+      "kind": "ground"
+    },
+    {
+      "name": "clear_east_roof",
+      "x": 13.5,
+      "y": 90.2,
+      "kind": "air"
+    },
+    {
+      "name": "east_platform",
+      "x": 16.5,
+      "y": 89.9,
+      "kind": "ground"
+    },
+    {
+      "name": "upper_mid",
+      "x": 10.5,
+      "y": 96.9,
+      "kind": "ground"
+    },
+    {
+      "name": "upper_west_runup",
+      "x": 8.5,
+      "y": 96.9,
+      "kind": "ground"
+    },
+    {
+      "name": "clear_upper_east_roof",
+      "x": 8.5,
+      "y": 103.2,
+      "kind": "air"
+    },
+    {
+      "name": "upper_east",
+      "x": 16.5,
+      "y": 101.9,
+      "kind": "ground"
+    },
+    {
+      "name": "western_upper",
+      "x": 4.5,
+      "y": 106.9,
+      "kind": "ground"
+    },
+    {
+      "name": "clear_last_platform_roof",
+      "x": 4.5,
+      "y": 115.2,
+      "kind": "air"
+    },
+    {
+      "name": "upper_113_platform",
+      "x": 6.5,
+      "y": 114.9,
+      "kind": "ground"
+    }
+  ]
+}
