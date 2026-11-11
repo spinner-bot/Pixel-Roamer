@@ -5,6 +5,7 @@ BuffType 定义模板，BuffInstance 管理实例，可扩展设计。
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Tuple, Any, List, Dict
+from buff_parameters import DEFAULT_PARAMETERS
 
 # ===================== Buff 类别 =====================
 CAT_POSITIVE = "positive"
@@ -88,7 +89,16 @@ class BuffInstance:
         if not bt or not bt.desc:
             return ""
         s = bt.desc
-        for i, p in enumerate(self.params):
+        params = self.params
+        if bt.tick in ('stealth', 'ghostly'):
+            # These effects use the instance lifetime, not the historical
+            # unused zero placeholder in source data.
+            if self.initial_duration is None:
+                return s.replace('持续 {0} 秒', '持续至状态移除')
+            params = (self.initial_duration,) + params[1:]
+        elif not params and bt.tick in DEFAULT_PARAMETERS:
+            params = (DEFAULT_PARAMETERS[bt.tick],)
+        for i, p in enumerate(params):
             placeholder = f"{{{i}}}"
             idx = s.find(placeholder)
             # 检查占位符前后的上下文
