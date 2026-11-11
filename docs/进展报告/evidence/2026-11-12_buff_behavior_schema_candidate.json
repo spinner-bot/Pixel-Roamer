@@ -1,0 +1,51 @@
+{
+  "scope": "isolated metadata loader only, not production or functional gameplay proof",
+  "valid_ids": [
+    21,
+    22,
+    51
+  ],
+  "mapping_immutable": true,
+  "cases": [
+    {
+      "case": "duplicate",
+      "rejected": true
+    },
+    {
+      "case": "unknown_id",
+      "rejected": true
+    },
+    {
+      "case": "bool_id",
+      "rejected": true
+    },
+    {
+      "case": "unsupported_contact",
+      "rejected": true
+    },
+    {
+      "case": "unsupported_stacking",
+      "rejected": true
+    },
+    {
+      "case": "extra_field",
+      "rejected": true
+    },
+    {
+      "case": "bool_version",
+      "rejected": true
+    },
+    {
+      "case": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "case": "wrong_entries",
+      "rejected": true
+    },
+    {
+      "case": "extra_header",
+      "rejected": true
+    }
+  ]
+}
