@@ -3,6 +3,7 @@
 找到终点信标通关。多路线，隐藏房间，3条命。
 """
 from world import World
+from maps.placement import is_air_cell
 
 MAP_ID = 7
 world = World(
@@ -159,7 +160,7 @@ world.set_tile(46, 39, 316)
 
 # ============ 全图治愈分布 ============
 for hx, hy in [(6,18),(24,10),(28,20),(43,38),(36,29),(28,15)]:
-    if world.get_tile(hx, hy).type_id == 0:
+    if is_air_cell(world, hx, hy):
         world.set_tile(hx, hy, 290)
 
 # 连接起始室、东走廊、中央大厅及原有攀爬塔。
