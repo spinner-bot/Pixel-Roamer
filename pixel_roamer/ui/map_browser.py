@@ -113,6 +113,12 @@ class MapBrowser:
 
         if not self.app._dev_edit_mode:
             self.app.map_selector.draw(dt)
+            if self.app._dev_error:
+                pygame.draw.rect(self.app.logic_surface, (20, 20, 40),
+                                 (0, LOGIC_HEIGHT - 38, LOGIC_WIDTH, 38))
+                draw_text_center(self.app.logic_surface, FONT20,
+                                 gt.elide(self.app._dev_error, LOGIC_WIDTH - 80, FONT20),
+                                 LOGIC_HEIGHT - 28, (255, 130, 110))
             return
 
         maps_dict = list_maps()
