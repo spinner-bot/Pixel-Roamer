@@ -1,0 +1,26 @@
+import json
+from pathlib import Path
+from unittest.mock import patch
+from maps import get_map
+from scripts.audit_endless_climb import run
+from scripts.control_session import create_control_session
+route=dict(map_id=3,scope='local legal tower-base fixture; production map config, not normal forest spawn route',waypoints=[])
+def point(name,x,y,kind='ground'):route['waypoints'].append(dict(name=name,x=x,y=y,kind=kind))
+point('underfloor',437.5,11.9)
+point('first_entry_clearance',437.5,20.2,'air');point('first_floor',439.5,18.9)
+for name,air,floor in [('second',43.2,41.9),('third',68.2,66.9),('fourth',93.2,91.9),('fifth',118.2,116.9),('sixth',143.2,141.9),('seventh',168.2,166.9)]:
+ point(name+'_clearance',437.5,air,'air');point(name+'_floor',439.5,floor)
+point('top_clearance',437.5,203.2,'air');point('top_checkpoint',447.5,202.9)
+Path('/tmp/pixel-tower-route.json').write_text(json.dumps(route,indent=2)+'\n')
+results=[]
+for trial in (False,True):
+ world=get_map(3).create_session();world.spawn_points=(433.5,11.9)
+ if trial:
+  for y in [15,16,17,38,40,63,65,88,90,113,115,138,140,163,165,188]:
+   for x in range(436,439):world.set_tile(x,y,0)
+ session=create_control_session(3,world=world)
+ with patch('scripts.audit_endless_climb.create_control_session',return_value=session):r=run(30,route,240,5)
+ r['trial_holes']=trial
+ results.append(r)
+ print(trial,{k:r[k] for k in ('completed_route','failure','timer','position','min_hp','min_stamina')},flush=True)
+Path('/tmp/pixel-tower-first-probe.json').write_text(json.dumps(results,indent=2)+'\n')
