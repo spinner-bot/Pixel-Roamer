@@ -237,6 +237,8 @@ class Creature:
     def apply_impulse(self, impulse_x: float, impulse_y: float):
         self.v_x += impulse_x
         self.v_y += impulse_y
+        if impulse_y > 0 and self.v_y > 0:
+            self._jump_escape_active = True
 
     def reset_motion(self):
         self.v_x = 0.0
@@ -264,7 +266,9 @@ class Creature:
                         self._air_jumps_used < max_air_jumps)
 
         if (not_on_ground_ok or on_ground_or_climb or can_air_jump) and self.alive:
-            self.v_y = self.v_jump
+            # A jump may strengthen a weak launch, but must not brake a
+            # stronger existing ascent from a spring, catapult or air jump.
+            self.v_y = max(self.v_y, self.v_jump)
             self._jump_escape_active = True
             self.on_ground = False
             self.is_climbing = False
@@ -277,7 +281,7 @@ class Creature:
     def update_physics(self, dt: float, world):
         if not self.alive:
             return
-        if self.on_ground or self.v_y <= 0:
+        if self.v_y <= 0:
             self._jump_escape_active = False
         # 飞行模式：完全跳过物理
         if getattr(self, 'fly_mode', False):
@@ -622,8 +626,7 @@ class Creature:
                     bounce_x = bx
                 if abs(by) > abs(bounce_y):
                     bounce_y = by
-            self.v_x += bounce_x
-            self.v_y += bounce_y
+            self.apply_impulse(bounce_x, bounce_y)
 
         max_dps = max((bt.damage_ps for bt in types), default=0.0)
         if max_dps > 0:
@@ -701,6 +704,7 @@ class Creature:
                         self.v_x = float(vx)
                         self.v_y = float(vy)
                         if self.v_y > 0:
+                            self._jump_escape_active = True
                             # The launch has already consumed the grounded state.
                             # A keydown before the next sweep must not replace it
                             # with a weaker ground jump or climbing velocity.
