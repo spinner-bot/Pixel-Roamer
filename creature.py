@@ -383,8 +383,11 @@ class Creature:
         if not self.alive:
             return
 
-        from phase_collision import prepare_phase_collision, remember_phase_position
-        ghost_mode = prepare_phase_collision(self, world)
+        from phase_collision import prepare_phase_collision, remember_phase_position, ghost_wall_blocks
+        phase_active = prepare_phase_collision(self, world)
+        ghost_mode = phase_active and (getattr(self, '_phantom_active', False)
+                                       or getattr(self, 'fly_mode', False))
+        thin_wall_phase = phase_active and not ghost_mode
         grect = self.get_game_rect()
 
         # ---------- 阶段1：预收集接触方块 ----------
@@ -464,7 +467,10 @@ class Creature:
             dx = self.v_x * dt
             swept_x = GameRect(grect.x + min(0, dx), grect.y,
                                grect.w + abs(dx), grect.h)
-            if sweep_axis(grect, dx, world.get_nearby_solid_blocks_game(swept_x), True):
+            horizontal_blocks = world.get_nearby_solid_blocks_game(swept_x)
+            if thin_wall_phase:
+                horizontal_blocks = ghost_wall_blocks(world, grect, horizontal_blocks, True)
+            if sweep_axis(grect, dx, horizontal_blocks, True):
                 self.on_wall_right = dx > 0
                 self.on_wall_left = dx < 0
                 self.v_x = 0
@@ -472,7 +478,10 @@ class Creature:
             dy = self.v_y * dt
             swept_y = GameRect(grect.x, grect.y + min(0, dy),
                                grect.w, grect.h + abs(dy))
-            if sweep_axis(grect, dy, world.get_nearby_solid_blocks_game(swept_y), False):
+            vertical_blocks = world.get_nearby_solid_blocks_game(swept_y)
+            if thin_wall_phase:
+                vertical_blocks = ghost_wall_blocks(world, grect, vertical_blocks, False)
+            if sweep_axis(grect, dy, vertical_blocks, False):
                 self.on_ground = dy < 0
                 self.on_ceiling = dy > 0
                 self.v_y = 0
@@ -484,22 +493,26 @@ class Creature:
         # A later substep can have zero velocity after an earlier collision.
         # Preserve resting contact from geometry rather than clearing its flags.
         if not ghost_mode and (self.v_x == 0 or self.v_y == 0):
-            for block_rect, bt in world.get_nearby_solid_blocks_game(grect):
+            contacts = world.get_nearby_solid_blocks_game(grect)
+            vertical_contacts = ghost_wall_blocks(world, grect, contacts, False) if thin_wall_phase else contacts
+            horizontal_contacts = ghost_wall_blocks(world, grect, contacts, True) if thin_wall_phase else contacts
+            for block_rect, bt in vertical_contacts:
                 overlap_x = spans_overlap(grect.x, grect.w, block_rect.x, block_rect.w)
-                overlap_y = spans_overlap(grect.y, grect.h, block_rect.y, block_rect.h)
                 if overlap_x and self.v_y == 0:
                     if abs(grect.y - block_rect.y - block_rect.h) <= CONTACT_EPSILON:
                         self.on_ground = True
                     if not bt.one_way and abs(grect.y + grect.h - block_rect.y) <= CONTACT_EPSILON:
                         self.on_ceiling = True
-                if overlap_y and self.v_x == 0 and not bt.one_way:
+            for block_rect, bt in horizontal_contacts:
+                if (spans_overlap(grect.y, grect.h, block_rect.y, block_rect.h)
+                        and self.v_x == 0 and not bt.one_way):
                     if abs(grect.x + grect.w - block_rect.x) <= CONTACT_EPSILON:
                         self.on_wall_right = True
                     if abs(grect.x - block_rect.x - block_rect.w) <= CONTACT_EPSILON:
                         self.on_wall_left = True
 
         self.set_from_game_rect(grect)
-        if ghost_mode:
+        if phase_active:
             remember_phase_position(self, world)
 
         # ---------- 阶段3：最终收集接触池与站立池 ----------
