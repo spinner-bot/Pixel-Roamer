@@ -1,0 +1,5 @@
+Capture tool revision: bfbed96
+Command: python3 scripts/capture_ghost_and_buff_details.py --output-dir docs/进展报告/evidence/ui --report docs/进展报告/evidence/2026-11-12_ghost_and_buff_ui.json
+Actual ReferenceBrowser drew the first image, then tool path metadata failed at path.relative_to(ROOT):
+ValueError: docs/进展报告/evidence/ui/A81_block_363.png is not in the subpath of /data/Users/zrh/repo/Pixel-Roamer OR one path is relative and the other is absolute.
+Fix is to resolve the output directory and support external absolute destinations; no production rendering change.
