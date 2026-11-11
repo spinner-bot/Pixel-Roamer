@@ -1,0 +1,53 @@
+{
+  "scope": "isolated candidate formula, not production; real double recurrence comparison",
+  "runs": [
+    {
+      "damping": 0,
+      "model": 0.0,
+      "iterated": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "damping": 1e-06,
+      "model": 9.515277777777778e-05,
+      "iterated": 9.515277777777777e-05,
+      "absolute_error": 1.3552527156068805e-20
+    },
+    {
+      "damping": 0.01,
+      "model": 0.010419041666666667,
+      "iterated": 0.010419041666666665,
+      "absolute_error": 1.734723475976807e-18
+    },
+    {
+      "damping": 0.9,
+      "model": 1.257321632207769,
+      "iterated": 1.2573216322077683,
+      "absolute_error": 6.661338147750939e-16
+    },
+    {
+      "damping": 0.999999,
+      "model": 6.699269374925643,
+      "iterated": 6.6992693749211805,
+      "absolute_error": 4.462208380573429e-12
+    },
+    {
+      "damping": 0.999999999999,
+      "model": 6.699576822916667,
+      "iterated": 6.699583333019318,
+      "absolute_error": -6.51010265162455e-06
+    },
+    {
+      "damping": 0.999999999999999,
+      "model": 6.733333333333333,
+      "iterated": 6.699583333332958,
+      "absolute_error": 0.0337500000003752
+    },
+    {
+      "damping": 1,
+      "model": 6.699583333333333,
+      "iterated": 6.699583333333311,
+      "absolute_error": 2.220446049250313e-14
+    }
+  ]
+}
