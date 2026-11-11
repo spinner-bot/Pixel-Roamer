@@ -22,6 +22,9 @@ from world import World
 
 
 def capture(output):
+    output = output.resolve()
+    def image_ref(path):
+        return str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
     app = GameApp()
     result = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'scope': 'SDL dummy actual ReferenceBrowser and GameApp/WorldView; explicit authored fixture, no physical-device or original-map route claim',
@@ -33,7 +36,7 @@ def capture(output):
         path = output / f'A81_block_{tile_id}.png'
         pygame.image.save(app.logic_surface, str(path))
         result['details'].append({'block_id': tile_id, 'lines': app.references._block_lines(BLOCK_TYPES[tile_id]),
-                                  'image': str(path.relative_to(ROOT))})
+                                  'image': image_ref(path)})
     world = World(0, '幽灵墙接触审计', 36, 18, gravity=-9.8, spawn_points=(6.5, 5.9))
     for x in range(2, 34):
         world.set_tile(x, 4, 2)
@@ -52,7 +55,7 @@ def capture(output):
         shots[label] = {'time': app._game_timer, 'position': actor.get_center(),
                         'source': buff.source if buff else None,
                         'description': buff.format_desc() if buff else None,
-                        'image': str(path.relative_to(ROOT))}
+                        'image': image_ref(path)}
     picture('before')
     with patch('pygame.key.get_pressed', return_value=keys), patch.object(actor, 'reset', wraps=actor.reset) as reset:
         for _ in range(3 * 60):
