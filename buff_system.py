@@ -72,7 +72,7 @@ class BuffInstance:
         self.duration -= dt
         return self.duration <= 1e-12
 
-    def refresh(self, params: tuple = None, duration: Optional[float] = None):
+    def refresh(self, params: tuple = None, duration: Optional[float] = None, *, add_stack=True):
         """刷新 buff（重新获取时调用）。"""
         if params is not None:
             self.params = tuple(params)
@@ -80,7 +80,7 @@ class BuffInstance:
             self.duration = duration
             self.initial_duration = duration
         maximum = self.buff_type.max_stacks if self.buff_type else 1
-        self.stacks = min(maximum, self.stacks + 1)
+        self.stacks = min(maximum, self.stacks + int(add_stack))
 
     def format_desc(self) -> str:
         """将描述模板与 params 拼接，返回最终描述字符串。
