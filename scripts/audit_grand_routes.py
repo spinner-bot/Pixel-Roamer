@@ -1,5 +1,6 @@
 """Production Grand Journey routes through existing mechanics to formal victory."""
 import argparse
+import hashlib
 from collections import defaultdict
 import json
 import os
@@ -72,19 +73,17 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
                 events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
             if phase == 'climb':
                 keys[pygame.K_w] = True
-                if (player.can_climb and not player.is_climbing
-                        and (rest < 2 or (player.v_y <= 0 and not app.jump_pressed))):
-                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_w))
-                drop_to_rest = upper and rest == 2
-                leave_height = 74 - player._h / 2 if drop_to_rest else heights[rest]
+                # Let the intended jump finish its ascent before held W
+                # catches. A release just above each ledge avoids jumping
+                # over the first rest and counting the second ledge twice.
+                leave_height = heights[rest] + .2
                 if player.is_climbing and player._y >= leave_height:
                     phase = 'rest'
-                    key = pygame.K_s if drop_to_rest else pygame.K_SPACE
-                    events.append(pygame.event.Event(pygame.KEYDOWN, key=key))
+                    events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_s))
             if phase == 'rest':
                 tx = 3010.5
                 keys[pygame.K_w] = False
-                if player.on_ground and player._y >= heights[rest] - .1 and player.stamina >= rest_goal:
+                if player.on_ground and abs(player._y - heights[rest]) < .1 and player.stamina >= rest_goal:
                     rest_stops.append({'position': player.get_center(), 'stamina': player.stamina,
                                        'seconds': frame / fps})
                     rest += 1
@@ -94,10 +93,7 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
                         phase = 'landing' if player._y >= 76.8 else 'ascend'
                     else:
                         phase = 'climb'
-                        if upper and rest == 2:
-                            # Jump from the second rest before returning to
-                            # the tall ladder, rather than falling below it.
-                            events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
+                        events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
             if phase == 'ascend':
                 keys[pygame.K_w] = True
                 if player.can_climb and not player.is_climbing:
@@ -188,6 +184,7 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False):
         failure = {'reason': 'route time budget exceeded', 'phase': phase, 'position': player.get_center()}
     return {'game_win': app._game_win, 'reached_end': player._reached_end, 'hops': hops, 'fps': fps, 'simulation_seconds': session.app._game_timer, 'reached_cave': rest >= 2, 'reached_hall': reached_hall, 'reached_portal': reached_portal, 'north_climb_bound': north_climb_bound, 'failure': failure, 'phase': phase, 'seconds': frame / fps,
             'position': player.get_center(), 'peak': peak, 'rest_stops': rest_stops,
+            'distinct_rest_heights': sorted({round(stop['position'][1], 1) for stop in rest_stops}),
             'min_hp': min_hp, 'min_stamina': min_stamina, 'lives_left': app._player_lives_left,
             'trace': trace}
 
@@ -208,6 +205,7 @@ def main():
               'finish': 'spawn to formal victory via existing portals; optional regions excluded'}
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                                      text=True).strip(),
+              'controller_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'goal': goal, 'legacy_map': args.legacy,
               'legacy_map_revision': revisions[goal] if args.legacy else None,
               'scope': scopes[goal] + '; actual application/session synthetic inputs; no device acceptance',
