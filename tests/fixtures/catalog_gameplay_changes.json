@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "baseline_ref": "e1124eb",
+  "blocks": {
+    "363": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "364": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            []
+          ]
+        }
+      }
+    },
+    "373": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            []
+          ]
+        }
+      }
+    },
+    "381": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "382": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              20
+            ]
+          ],
+          "after": [
+            [],
+            [
+              20
+            ]
+          ]
+        }
+      }
+    },
+    "383": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "387": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "388": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            []
+          ]
+        }
+      }
+    },
+    "389": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "390": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "after": [
+            [],
+            [
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "391": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "394": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "395": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "396": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "397": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "after": [
+            [],
+            [
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "400": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              30
+            ]
+          ],
+          "after": [
+            [],
+            [
+              30
+            ]
+          ]
+        }
+      }
+    },
+    "402": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "405": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "406": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "410": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "412": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "416": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            []
+          ]
+        }
+      }
+    },
+    "417": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "418": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              30
+            ]
+          ],
+          "after": [
+            [],
+            [
+              30
+            ]
+          ]
+        }
+      }
+    },
+    "419": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "421": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              20
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              20
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "422": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "423": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              50
+            ]
+          ],
+          "after": [
+            [],
+            [
+              50
+            ]
+          ]
+        }
+      }
+    },
+    "424": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [],
+            [
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "425": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    },
+    "433": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "435": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            []
+          ]
+        }
+      }
+    },
+    "438": {
+      "stage": "A80",
+      "reason": "Use existing numeric Buff defaults instead of inert or zero-interval source placeholders",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            []
+          ]
+        }
+      }
+    }
+  },
+  "buffs": {}
+}
