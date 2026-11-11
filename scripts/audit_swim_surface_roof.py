@@ -40,7 +40,8 @@ def run(fps, height, roof, mode, offset, session_class=None):
     app, player = session.app, session.app.player1
     player.collide_with_world(app._current_map, 0)
     initial = player.get_center()
-    if initial != expected or not can_place(player, app._current_map, *initial):
+    if (any(abs(actual - requested) > 1e-12 for actual, requested in zip(initial, expected))
+            or not can_place(player, app._current_map, *initial)):
         raise AssertionError(f'illegal/repositioned swimming fixture: {initial} != {expected}')
     observations = {'steps': 0, 'errors_total': 0, 'first_errors': [],
                     'max_step_dx': 0, 'max_step_dy': 0, 'max_event_dy': 0}
