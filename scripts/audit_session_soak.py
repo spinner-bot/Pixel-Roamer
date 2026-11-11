@@ -44,7 +44,7 @@ def errors_for(session):
     if player.shield < 0:
         errors.append('negative shield')
     # One-way platforms can be crossed from below; ghost effects allow solid overlap.
-    if player.alive and not player.has_buff(48) and not player._phantom_active:
+    if player.alive and not player.has_buff(48) and not getattr(player, '_phantom_active', False):
         rect = player.get_game_rect()
         for block, kind in world.get_nearby_solid_blocks_game(rect):
             if (not kind.one_way and spans_overlap(rect.x, rect.w, block.x, block.w)
