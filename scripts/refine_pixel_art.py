@@ -240,7 +240,7 @@ def main():
             prior = json.loads(subprocess.check_output(
                 ['git', 'show', f'{COMPARISON_REF}:data/catalogs/blocks.json'], cwd=ROOT, text=True))
             prior = {entry['id']: entry for entry in prior['entries']}
-            gallery(kind, prior, after, SPRITE_IDS, 'non_solid_sprites_before_after.png')
+            gallery(kind, prior, after, SPRITE_IDS, 'non_solid_sprites_A77.png')
     (ROOT / 'tests/fixtures/catalog_art_overrides.json').write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + '\n')
 
 
