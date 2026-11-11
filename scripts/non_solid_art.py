@@ -4,7 +4,7 @@ from scripts.decorative_art import decoration
 from scripts.pickup_art import pickup, BACKGROUND
 
 FLORA_ALIASES = {126: 50, 127: 51, 128: 52, 129: 53, 130: 54}
-SPRITE_IDS = tuple(FLORA_ALIASES) + (299,) + tuple(range(310, 330))
+SPRITE_IDS = (31, 96) + tuple(FLORA_ALIASES) + (299,) + tuple(range(310, 330))
 COMPARISON_REF = 'a8d3e8e'
 
 
@@ -13,6 +13,28 @@ def transparent_sprite(tile_id):
         return decoration(FLORA_ALIASES[tile_id])
     image = pygame.Surface((16, 16), pygame.SRCALPHA)
     image.fill((0, 0, 0, 0))
+    if tile_id == 31:
+        pygame.draw.rect(image, (65, 49, 40), (6, 0, 4, 16))
+        pygame.draw.rect(image, (151, 104, 60), (7, 0, 2, 16))
+        for y in range(0, 16, 2):
+            image.set_at((7, y), (221, 176, 107))
+            image.set_at((8, y + 1), (193, 140, 80))
+        for y in (2, 7, 12):
+            pygame.draw.rect(image, (65, 49, 40), (5, y, 6, 3))
+            pygame.draw.rect(image, (181, 131, 75), (6, y, 4, 2))
+            pygame.draw.line(image, (235, 190, 119), (6, y), (9, y))
+        return image
+    if tile_id == 96:
+        pygame.draw.rect(image, (184, 213, 226, 48), (4, 1, 8, 12))
+        pygame.draw.rect(image, (85, 122, 143), (6, 1, 4, 12))
+        pygame.draw.rect(image, (194, 230, 232), (7, 2, 2, 10))
+        pygame.draw.line(image, (255, 255, 225), (7, 2), (7, 10))
+        pygame.draw.rect(image, (255, 252, 217), (6, 0, 4, 3))
+        pygame.draw.rect(image, (94, 67, 111), (4, 13, 8, 3))
+        pygame.draw.rect(image, (159, 121, 161), (5, 12, 6, 2))
+        pygame.draw.line(image, (217, 177, 190), (5, 12), (10, 12))
+        image.set_at((8, 1), (255, 255, 255))
+        return image
     if tile_id == 299:
         spokes = [((2, 2), (13, 13)), ((13, 2), (2, 13)),
                   ((1, 7), (14, 7)), ((7, 1), (7, 14))]
