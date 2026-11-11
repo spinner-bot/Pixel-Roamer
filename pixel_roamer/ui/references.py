@@ -55,10 +55,11 @@ class ReferenceBrowser:
     def _image(self, kind, item, size):
         key = kind, item.id, size
         if key not in self._images:
-            from pattern import _draw_vector, _draw_bitmap, _draw_texture
+            from pattern import _draw_vector, _draw_bitmap, _draw_texture, pattern_has_alpha_canvas
             pattern = item.pattern if kind == 'block' else item.icon
             native = pygame.Surface((32, 32), pygame.SRCALPHA)
-            native.fill(item.color if kind == 'block' else P['panel'])
+            native.fill((0, 0, 0, 0) if kind == 'block' and pattern_has_alpha_canvas(pattern)
+                        else item.color if kind == 'block' else P['panel'])
             if pattern:
                 renderer = {'vector': _draw_vector, 'bitmap': _draw_bitmap, 'texture': _draw_texture}.get(pattern[0])
                 art = renderer(pattern, 32, 32) if renderer else None
