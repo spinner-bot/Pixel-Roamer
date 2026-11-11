@@ -659,6 +659,66 @@
           ]
         }
       }
+    },
+    "386": {
+      "stage": "A84",
+      "reason": "Explicit Buff49 polarity; reverse pole reverses force as well as controls",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "403": {
+      "stage": "A84",
+      "reason": "Explicit Buff49 polarity; reverse pole reverses force as well as controls",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "411": {
+      "stage": "A84",
+      "reason": "Explicit Buff49 polarity; reverse pole reverses force as well as controls",
+      "fields": {
+        "buff_params_list": {
+          "before": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "after": [
+            [
+              0
+            ],
+            [
+              -1
+            ]
+          ]
+        }
+      }
     }
   },
   "buffs": {}
