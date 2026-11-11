@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_grand_polarity_gallery.py", line 131, in <module>
+    raise SystemExit(main())
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_grand_polarity_gallery.py", line 122, in main
+    rows = [run(fps, upper=True, hall_hook=continue_from_hall) for fps in args.fps]
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_grand_polarity_gallery.py", line 122, in <listcomp>
+    rows = [run(fps, upper=True, hall_hook=continue_from_hall) for fps in args.fps]
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_grand_routes.py", line 114, in run
+    hall_extension = hall_hook(app, session, keys, fps)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_grand_polarity_gallery.py", line 28, in continue_from_hall
+    real_force = magnetized_field.apply_magnetized_field
+AttributeError: module 'magnetized_field' has no attribute 'apply_magnetized_field'
