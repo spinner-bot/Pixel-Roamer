@@ -528,45 +528,10 @@ class Creature:
         if self.can_climb or self.can_swim:
             from environment_contacts import connected_contact_tops
             self._climb_top_y, self._swim_top_y = connected_contact_tops(self, world)
-        # 检测岸边：水面高度处紧邻固体方块（水平距离 ≤0.2 格）
-        self._near_shore = False
-        self._shore_dir = 0  # 1=右侧岸, -1=左侧岸
-        if self._swim_top_y is not None:
-            surface_y = self._swim_top_y
-            shore_margin = 0.2
-            grect = self.get_game_rect()
-            # 检查右侧：水面相邻的固体方块
-            check_gx = math.floor(grect.x + grect.w + shore_margin)
-            for gy in range(math.floor(surface_y - 1), math.floor(surface_y) + 1):
-                coord = world._wrap_grid_coord(check_gx, gy)
-                if coord is None:
-                    continue
-                bt = world.get_block_type_by_coord(coord[0], coord[1])
-                if bt.is_solid:
-                    # 该固体方块顶部应与水面齐平
-                    from teleport import can_place
-                    target_x = self._x + (self._w / 2 + 0.25)
-                    if abs(gy + 1 - surface_y) <= 0.1 and can_place(
-                            self, world, target_x, surface_y + self._h / 2):
-                        self._near_shore = True
-                        self._shore_dir = 1
-                        break
-            # 检查左侧
-            if not self._near_shore:
-                check_gx = math.floor(grect.x - shore_margin)
-                for gy in range(math.floor(surface_y - 1), math.floor(surface_y) + 1):
-                    coord = world._wrap_grid_coord(check_gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.is_solid:
-                        from teleport import can_place
-                        target_x = self._x - (self._w / 2 + 0.25)
-                        if abs(gy + 1 - surface_y) <= 0.1 and can_place(
-                                self, world, target_x, surface_y + self._h / 2):
-                            self._near_shore = True
-                            self._shore_dir = -1
-                            break
+        from shore_detection import shore_directions
+        self._shore_directions = shore_directions(self, world)
+        self._near_shore = bool(self._shore_directions)
+        self._shore_dir = self._shore_directions[0] if self._shore_directions else 0
         # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
         # 仅水系液体触发（排除熔岩/蜂蜜等非水液体）
         if self.can_swim:
@@ -954,6 +919,7 @@ class Creature:
         self._swim_top_y = None
         self._near_shore = False
         self._shore_dir = 0
+        self._shore_directions = ()
         self._shore_exit_pending = False
         self._environment_speed_mult = 1.0
         self._environment_jump_mult = 1.0
