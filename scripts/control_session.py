@@ -4,6 +4,7 @@ from unittest.mock import patch
 import pygame
 from pixel_roamer.application import GameApp, PAGE_WORLD
 from pixel_roamer.world_session import WorldSession
+from spawn_placement import SpawnPlacementError
 
 
 def create_control_session(map_id, *, world=None):
@@ -13,7 +14,8 @@ def create_control_session(map_id, *, world=None):
     app._play_world_music = lambda world: None
     override = patch('pixel_roamer.application.get_map', return_value=world) if world is not None else nullcontext()
     with override:
-        app.launch_world(map_id)
+        if app.launch_world(map_id) is False:
+            raise SpawnPlacementError(app._dev_error)
     app.focused, app.help_open, app.page = True, False, PAGE_WORLD
     app._stamina_flash_duration = .6
     return WorldSession(app)
