@@ -1,0 +1,16 @@
+from collections import deque
+import json
+from pathlib import Path
+from scripts.control_session import create_control_session
+from teleport import can_place
+s=create_control_session(3);w=s.app._current_map;p=s.app.player1
+bounds=(325,425,20,86)
+free={(x,y) for x in range(bounds[0],bounds[1]+1) for y in range(bounds[2],bounds[3]+1) if can_place(p,w,x+.5,y+.9)}
+root=(380,80);seen={root};q=deque([root])
+while q:
+ x,y=q.popleft()
+ for c in ((x-1,y),(x+1,y),(x,y-1),(x,y+1)):
+  if c in free and c not in seen:seen.add(c);q.append(c)
+points={name:dict(position=(x+.5,y+.9),legal=(x,y) in free,root_component=(x,y) in seen) for name,x,y in [('checkpoint',375,48),('second_room',376,55),('treasure',376,62)]}
+r=dict(scope='static full-body integer-cell candidates in bounded region; no gravity/control proof',bounds=bounds,root=(380.5,80.9),free_count=len(free),component_count=len(seen),points=points)
+Path('/tmp/pixel-pyramid-topology-before.json').write_text(json.dumps(r,indent=2)+'\n');print(r)

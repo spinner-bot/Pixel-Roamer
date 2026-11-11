@@ -1,0 +1,41 @@
+{
+  "scope": "static full-body integer-cell candidates in bounded region; no gravity/control proof",
+  "bounds": [
+    325,
+    425,
+    20,
+    86
+  ],
+  "root": [
+    380.5,
+    80.9
+  ],
+  "free_count": 3914,
+  "component_count": 3886,
+  "points": {
+    "checkpoint": {
+      "position": [
+        375.5,
+        48.9
+      ],
+      "legal": true,
+      "root_component": true
+    },
+    "second_room": {
+      "position": [
+        376.5,
+        55.9
+      ],
+      "legal": true,
+      "root_component": true
+    },
+    "treasure": {
+      "position": [
+        376.5,
+        62.9
+      ],
+      "legal": true,
+      "root_component": true
+    }
+  }
+}
