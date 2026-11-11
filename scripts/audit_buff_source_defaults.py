@@ -1,5 +1,6 @@
 """Controlled contact probes distinguish numeric source placeholders from intentional API zero."""
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -38,6 +39,10 @@ def measure(tile_id, buff_id, control):
     if buff_id in STATS:
         value = actor.get_buff_stat(STATS[buff_id], 1.)
     elif buff_id in (42, 43):
+        # On an intrinsically frictionless source, both damping values may
+        # already clamp to one. Retain the acquired Buff on neutral stone.
+        actor._x = 10.5
+        actor.collide_with_world(world, 0)
         actor.v_x = 1
         actor.collide_with_world(world, 1 / 60)
         value = actor.v_x
@@ -87,6 +92,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     result = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+              'probe_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'scope': 'isolated low-level real contact and consumer probes; explicit coordinates and input values; not original-map normal routes or full buff acceptance',
               'rows': run()}
     args.output.parent.mkdir(parents=True, exist_ok=True)
