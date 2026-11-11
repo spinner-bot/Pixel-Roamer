@@ -584,7 +584,7 @@ world.set_tile(450, 203, 265)           # 祝福圣光
 world.set_tile(449, 202, 257)           # 电弧核心
 world.set_tile(451, 202, 257)
 world.set_tile(450, 203, 267)           # 奥术法阵
-world.set_tile(450, 201, 302)           # 最终检查点
+world.set_tile(447, 201, 302)           # 同一奖励台的裸露落脚面，避免被奖品封住。
 
 # 传送门T4（高塔底部 → 沙漠绿洲）
 world.set_tile(468, 17, 300)

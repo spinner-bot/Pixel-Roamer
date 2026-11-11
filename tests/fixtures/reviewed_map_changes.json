@@ -2,6 +2,10 @@
   "schema_version": 1,
   "baseline_ref": "3e5204b",
   "maps": {
+    "3": [
+      {"position": [447, 201], "before": 255, "after": 302, "stage": "A52"},
+      {"position": [450, 201], "before": 302, "after": 255, "stage": "A52"}
+    ],
     "4": [
       {"position": [40, 30], "before": 11, "after": 290, "stage": "A37"},
       {"position": [21, 21], "before": 254, "after": 0, "stage": "A45"},
