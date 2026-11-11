@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "buff_reactions",
+  "entries": [
+    {
+      "id": "cold_water",
+      "required_buffs": [51],
+      "contact": "water",
+      "result_buff": 59,
+      "base_duration": 2.0,
+      "duration_multiplier": 2.0,
+      "rearm_without": [15]
+    }
+  ]
+}
