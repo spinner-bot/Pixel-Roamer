@@ -100,6 +100,9 @@ def modified_stat(actor, stat_name, base_value):
             result *= 0.4
         if stat_name == "stamina_cost" and kind.tick == "weakened":
             result *= max(0, float(buff.params[0]) if buff.params else 2)
+        if stat_name in ('phys_atk', 'magic_atk') and kind.tick == 'berserk':
+            # Berserk's first parameter is its life cost, not attack strength.
+            result *= 2
     return result
 
 
