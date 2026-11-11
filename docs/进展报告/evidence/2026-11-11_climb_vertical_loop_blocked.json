@@ -1,0 +1,760 @@
+{
+  "code_revision": "363054d6bf39d580f91b3c6322fdca8bb314f38a",
+  "legacy_revision": "363054d",
+  "scope": "normal spawn downward y-loop to original upper platform, upward loop and return to starting checkpoint; not full tower ascent",
+  "after": [
+    {
+      "fps": 30,
+      "returned_after_vertical_loop": false,
+      "failure": "bottom_descent timed out",
+      "phase": "bottom_descent",
+      "timer": 20.06666666666617,
+      "control_frames": 602,
+      "position": [
+        3.450540631143316,
+        2.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "transitions": [],
+      "vertical_crossings": [],
+      "terrain_draws": 21,
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "bottom_descent",
+          "position": [
+            9.991261296006408,
+            5.995972222222222
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "bottom_descent",
+          "position": [
+            6.623688081342691,
+            4.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "bottom_descent",
+          "position": [
+            3.747157113349217,
+            3.2868750000000144
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "bottom_descent",
+          "position": [
+            3.530161891770501,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "bottom_descent",
+          "position": [
+            3.4826922432526346,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "bottom_descent",
+          "position": [
+            3.4635236674813608,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "bottom_descent",
+          "position": [
+            3.45578326264224,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "bottom_descent",
+          "position": [
+            3.4526576330812118,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "bottom_descent",
+          "position": [
+            3.4513954820237647,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "bottom_descent",
+          "position": [
+            3.4508858166073373,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "bottom_descent",
+          "position": [
+            3.4506800101508377,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "bottom_descent",
+          "position": [
+            3.450596904065608,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505633452476787,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505497939625043,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "bottom_descent",
+          "position": [
+            3.450544321858856,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 15.03333333333312,
+          "phase": "bottom_descent",
+          "position": [
+            3.450542112185167,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "bottom_descent",
+          "position": [
+            3.450541219903491,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 17.033333333333008,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540859593913,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540714098389,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 19.033333333332894,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505406553462796,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 20.033333333332838,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505406316217657,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "returned_after_vertical_loop": false,
+      "failure": "bottom_descent timed out",
+      "phase": "bottom_descent",
+      "timer": 20.033333333332838,
+      "control_frames": 1202,
+      "position": [
+        3.450540624776328,
+        2.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "transitions": [],
+      "vertical_crossings": [],
+      "terrain_draws": 21,
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "bottom_descent",
+          "position": [
+            9.997365206530157,
+            5.9987916666666665
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "bottom_descent",
+          "position": [
+            6.714848783096444,
+            4.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "bottom_descent",
+          "position": [
+            3.75247123637799,
+            3.393208333333348
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "bottom_descent",
+          "position": [
+            3.4969385056170377,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "bottom_descent",
+          "position": [
+            3.4692764077715514,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "bottom_descent",
+          "position": [
+            3.4581062593693765,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "bottom_descent",
+          "position": [
+            3.453595675391854,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "bottom_descent",
+          "position": [
+            3.4517742700634906,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "bottom_descent",
+          "position": [
+            3.4510387738646155,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "bottom_descent",
+          "position": [
+            3.450741775360143,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "bottom_descent",
+          "position": [
+            3.4506218452887247,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505734166878614,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "bottom_descent",
+          "position": [
+            3.450553860880432,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505459641087435,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505427753371567,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 15.016666666666454,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505414876889073,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505409677275494,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 17.016666666666342,
+          "phase": "bottom_descent",
+          "position": [
+            3.45054075776352,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540672978578,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 19.01666666666623,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540638741825,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 20.016666666666172,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540624916785,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "returned_after_vertical_loop": false,
+      "failure": "bottom_descent timed out",
+      "phase": "bottom_descent",
+      "timer": 20.00833333333284,
+      "control_frames": 2882,
+      "position": [
+        3.4505406198102944,
+        2.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "transitions": [],
+      "vertical_crossings": [],
+      "terrain_draws": 21,
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "bottom_descent",
+          "position": [
+            10.0,
+            6.0
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "bottom_descent",
+          "position": [
+            6.79382480637575,
+            4.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "bottom_descent",
+          "position": [
+            3.772076082627445,
+            3.495916666666681
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": false
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "bottom_descent",
+          "position": [
+            3.4717959342452445,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "bottom_descent",
+          "position": [
+            3.4591236617649344,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "bottom_descent",
+          "position": [
+            3.4540065095883867,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "bottom_descent",
+          "position": [
+            3.4519401677827934,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "bottom_descent",
+          "position": [
+            3.4511057645228878,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "bottom_descent",
+          "position": [
+            3.4507688266560472,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "bottom_descent",
+          "position": [
+            3.450632768791024,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "bottom_descent",
+          "position": [
+            3.450577827674406,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505556420676076,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "bottom_descent",
+          "position": [
+            3.450546683364558,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505430657776675,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505416049708018,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 14.999999999999789,
+          "phase": "bottom_descent",
+          "position": [
+            3.450541015086783,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540776887492,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 16.999999999999677,
+          "phase": "bottom_descent",
+          "position": [
+            3.450540680700954,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505406418601576,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 18.999999999999563,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505406261759703,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        },
+        {
+          "time": 19.999999999999506,
+          "phase": "bottom_descent",
+          "position": [
+            3.4505406198425885,
+            2.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "on_ground": true
+        }
+      ]
+    }
+  ]
+}
