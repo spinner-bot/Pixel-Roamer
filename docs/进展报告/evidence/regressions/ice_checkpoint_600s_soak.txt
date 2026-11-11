@@ -1,0 +1,1 @@
+{"error": null, "physics_steps": 71999, "float_ice_roof_contact_steps": 22, "accepted_jumps": 280, "max_step_dx": 0.13423301887684147, "max_step_dy": 0.9839199816337043, "large_movements": [], "initial_clock_remainder": 0.0, "final_clock_remainder": 0.00833333308471285, "accounted_input_seconds": 599.9999999997514, "clock_accounting_error": -2.4863311409717426e-10}
