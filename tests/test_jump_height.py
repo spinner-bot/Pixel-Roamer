@@ -86,11 +86,14 @@ class JumpHeightTests(unittest.TestCase):
             actor.apply_buff(4,(100,),5)
             actor.apply_buff(13,(50,),5)
             actor.refresh_movement_stats()
-            actor.reset(*world.spawn_points)
+            actor.alive=False
+            session.advance(1/120)
             self.assertFalse(actor.has_buff(4))
             self.assertFalse(actor.has_buff(13))
             self.assertEqual(actor.v_jump,actor._base_v_jump)
-            self.assertIsNone(actor._effect_world)
+            self.assertIs(actor._effect_world,world)
+            self.assertEqual(session.app._player_lives_left,4)
+            self.assertTrue(actor.has_buff(36))
 
     def test_real_tile_jump_modifier_and_feather_combine_without_repeated_scaling(self):
         def measure(with_leaping):
