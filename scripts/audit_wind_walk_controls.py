@@ -1,6 +1,7 @@
 """Observe real wind-walk source acceleration, ordinary reversal and release."""
 import argparse
 from collections import defaultdict
+from contextlib import nullcontext
 import json
 import os
 from pathlib import Path
@@ -65,11 +66,14 @@ def measure(fps,direction,continuous,with_buff,release):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--direction-candidate',action='store_true')
     args=parser.parse_args()
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    rows=[measure(fps,direction,continuous,with_buff,release) for fps in (30,60,144) for direction in (-1,1)
-          for continuous in (False,True) for with_buff in (False,True) for release in (False,True)]
-    report={'code_revision':revision,'scope':'actual394 source contact or explicit no-source control, native WorldSession held input, no Buff injection; not normal-map acceptance','runs':rows}
+    from scripts.wind_walk_candidate import directional_candidate
+    with directional_candidate() if args.direction_candidate else nullcontext():
+        rows=[measure(fps,direction,continuous,with_buff,release) for fps in (30,60,144) for direction in (-1,1)
+              for continuous in (False,True) for with_buff in (False,True) for release in (False,True)]
+    report={'direction_candidate':args.direction_candidate,'code_revision':revision,'scope':'actual394 source contact or explicit no-source control, native WorldSession held input, no Buff injection; not normal-map acceptance','runs':rows}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'rows':len(rows),'source_reverse_cases':sum(r['with_source'] and r['response']=='reverse' for r in rows),'source_no_reverse_in_four_seconds':sum(r['with_source'] and r['response']=='reverse' and r['seconds_to_reverse'] is None for r in rows)}))
