@@ -2,7 +2,9 @@
 收藏家之旅 —— 积分目标模式 (55×40)
 收集500分解锁通关！各个角落都有宝藏，需仔细探索
 """
+from pathlib import Path
 from world import World
+from maps.placement import is_air_cell, load_feature_plan
 from random import Random
 
 _rng = Random(9)
@@ -18,6 +20,8 @@ world = World(
 )
 world.score_goal = 500      # ★ 目标500分
 world.lives = 0               # 无限复活
+feature_points, reserved_cells = load_feature_plan(world, Path(__file__).with_name('features.json'))
+reserved_for_decor = reserved_cells | frozenset((x, y) for x, y, _ in feature_points)
 world.begin_bulk_load()
 
 
@@ -72,7 +76,7 @@ fill(3, 16, 21, 16, 2)
 # 水晶装饰
 for _ in range(15):
     cx, cy = _rng.randint(4, 20), _rng.randint(18, 23)
-    if world.get_tile(cx, cy).type_id == 0:
+    if is_air_cell(world, cx, cy) and (cx, cy) not in reserved_for_decor:
         world.set_tile(cx, cy, _rng.choice([200,201,204,206]))
 # 水晶间的积分
 world.set_tile(8, 18, 312)      # 红宝石
@@ -167,29 +171,10 @@ world.set_tile(48, 8, 315)      # 翡翠×3
 world.set_tile(49, 8, 315)
 world.set_tile(50, 8, 315)
 
-# ============ 散布积分总计 > 500 ============
-# 计算：10×10 + 5×10 + 25×5 + 25×5 + 50×7 + 30×10 + 15×10 + 40×5 + 20×4 + 20×4
-# = 100+50+125+125+350+300+150+200+80+80 = 1560分（远超500目标，有冗余）
-extra_score = [
-    # 金币(10)×散布
-    (3,17,310),(6,17,310),(9,17,310),(12,17,310),(15,17,310),(18,17,310),(21,17,310),
-    (33,17,310),(36,17,310),(39,17,310),(42,17,310),(45,17,310),(48,17,310),(51,17,310),
-    # 银币(5)×散布
-    (5,19,311),(11,19,311),(17,19,311),(23,19,311),(29,19,311),(35,19,311),(41,19,311),(47,19,311),
-    # 星币(15)×散布
-    (27,21,316),(20,18,316),(34,18,316),
-    # 天花板上的隐藏积分（需飞行或借力到达）
-    (27,25,314),(22,26,315),(32,26,315),
-]
-
-for sx, sy, st in extra_score:
-    if 0 <= sx < 55 and 0 <= sy < 40:
-        if world.get_tile(sx, sy).type_id == 0:
-            world.set_tile(sx, sy, st)
-
-# ============ 治愈点 ============
-for hx, hy in [(27,18),(13,18),(37,19),(8,14),(48,8),(50,32)]:
-    if world.get_tile(hx, hy).type_id == 0:
-        world.set_tile(hx, hy, 290)
+# 可选积分和恢复点由已校验的 JSON 加载；只填充真正的空气。
+# 实际积分总量由审计按最终地图统计，避免注释与占用条件产生偏差。
+for x, y, tile_id in feature_points:
+    if is_air_cell(world, x, y):
+        world.set_tile(x, y, tile_id)
 
 world.end_bulk_load()
