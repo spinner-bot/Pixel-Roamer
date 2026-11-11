@@ -26,7 +26,7 @@ if __name__ == '__main__':
             return
         seen.add(phase)
         app.world_view.draw(0)
-        path=args.output.with_name('A85_gallery_'+phase+'.png')
+        path=args.output.with_name(args.output.stem+'_'+phase+'.png')
         pygame.image.save(app.logic_surface,str(path))
         frames.append({'phase':phase,'position':app.player1.get_center(),'time':app._game_timer,
                        'buffs':[{'id':b.buff_id,'params':list(b.params),'source':b.source} for b in app.player1.buffs],
