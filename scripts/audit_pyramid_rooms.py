@@ -23,7 +23,7 @@ from scripts.audit_pixel_normal_tower import measure as normal_measure
 from teleport import can_place
 
 
-def topology(world, player):
+def topology(world, player, include_bottom=False):
     free = {(x, y) for x in range(325, 426) for y in range(20, 87)
             if can_place(player, world, x + .5, y + .9)}
     seen, queue = {(380, 80)}, deque([(380, 80)])
@@ -33,10 +33,13 @@ def topology(world, player):
             if point in free and point not in seen:
                 seen.add(point)
                 queue.append(point)
+    targets = [('checkpoint', 375, 48), ('second_room', 376, 55), ('treasure', 376, 62)]
+    if include_bottom:
+        targets.append(('bottom_entrance', 373, 40))
     return {'scope': 'bounded full-body static candidates; not gravity or input proof',
             'bounds': [325, 425, 20, 86], 'free_count': len(free), 'component_count': len(seen),
             'rooms': {name: {'legal': (x, y) in free, 'connected': (x, y) in seen}
-                      for name, x, y in (('checkpoint', 375, 48), ('second_room', 376, 55), ('treasure', 376, 62))}}
+                      for name, x, y in targets}}
 
 
 def cross_prefix():
@@ -47,7 +50,7 @@ def cross_prefix():
     return route
 
 
-def measure(fps, route, layout=None, normal_spawn=False):
+def measure(fps, route, layout=None, normal_spawn=False, bottom_entry=False):
     world = get_map(3).create_session()
     authored_spawn = world.spawn_points
     if layout:
@@ -55,14 +58,20 @@ def measure(fps, route, layout=None, normal_spawn=False):
         apply_layout(world, layout)
         world.fill_color = fill_color
     if not normal_spawn:
-        world.spawn_points = (380.5, 80.9)
+        world.spawn_points = (370.5, 22.9) if bottom_entry else (380.5, 80.9)
     session = create_control_session(3, world=world)
     player = session.app.player1
-    connectivity = topology(session.app._current_map, player)
-    result = (normal_measure(fps, routes=[cross_prefix(), route], session=session) if normal_spawn
+    connectivity = topology(session.app._current_map, player, include_bottom=bottom_entry)
+    if bottom_entry:
+        approach = [json.loads((ROOT / 'scripts/routes' / name).read_text()) for name in
+                    ('pixel_sky_to_tower_base.json', 'pixel_desert_to_entrance.json')]
+    else:
+        approach = [cross_prefix()]
+    result = (normal_measure(fps, routes=approach + [route], session=session) if normal_spawn
               else route_run(fps, route, duration=240, draw_every=5, session=session))
     result.update(topology=connectivity, original_forest_spawn=authored_spawn,
-                  normal_spawn=normal_spawn, checkpoint_valid=can_place(player, session.app._current_map, *player.spawn_pos))
+                  normal_spawn=normal_spawn, bottom_entry=bottom_entry,
+                  checkpoint_valid=can_place(player, session.app._current_map, *player.spawn_pos))
     complete = result['completed'] if normal_spawn else result['completed_route']
     if complete:
         with patch('pygame.key.get_pressed', return_value=defaultdict(bool)), \
@@ -80,19 +89,24 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--layout', type=Path)
     parser.add_argument('--normal-spawn', action='store_true')
+    parser.add_argument('--bottom-entry', action='store_true')
     parser.add_argument('--fps', type=int, nargs='+', default=(30, 60, 144))
     args = parser.parse_args()
-    route_path = ROOT / 'scripts/routes/pixel_pyramid_rooms.json'
+    route_path = ROOT / 'scripts/routes' / ('pixel_pyramid_bottom.json' if args.bottom_entry else 'pixel_pyramid_rooms.json')
     route = json.loads(route_path.read_text())
     sources = ('scripts/audit_pyramid_rooms.py', 'scripts/audit_pixel_normal_tower.py',
                'scripts/audit_pixel_sky.py', 'scripts/audit_endless_climb.py',
                'scripts/routes/pixel_pyramid_rooms.json', 'scripts/routes/pixel_sky_to_tower_base.json')
+    if args.bottom_entry:
+        sources += ('scripts/routes/pixel_pyramid_bottom.json', 'scripts/routes/pixel_desert_to_entrance.json')
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'source_sha256': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in sources},
-              'scope': 'original forest continuous session' if args.normal_spawn else 'explicit local pyramid roof fixture',
+              'scope': 'original forest continuous session' if args.normal_spawn else (
+                  'explicit local desert-ground fixture' if args.bottom_entry else 'explicit local pyramid roof fixture'),
+              'entry': 'bottom' if args.bottom_entry else 'roof',
               'candidate_layout': json.loads(args.layout.read_text()) if args.layout else None,
-              'route': route, 'cross_prefix': cross_prefix() if args.normal_spawn else None,
-              'runs': [measure(fps, route, args.layout, args.normal_spawn) for fps in args.fps]}
+              'route': route, 'cross_prefix': cross_prefix() if args.normal_spawn and not args.bottom_entry else None,
+              'runs': [measure(fps, route, args.layout, args.normal_spawn, args.bottom_entry) for fps in args.fps]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps([{key: run[key] for key in ('fps', 'timer', 'position', 'min_hp', 'min_stamina', 'respawns')}
