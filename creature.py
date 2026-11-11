@@ -2,10 +2,14 @@ from __future__ import annotations
 import math
 from buff_contacts import apply_contact_buffs, clear_contact_buffs
 from buff_cleanup import clear_countered_buffs
+from buff_controls import action_blocked
+from buff_reactions import apply_contact_reactions, clear_contact_reactions, contact_reactions
 from wind_walk import advance_wind_walk
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
 import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
+
+contact_reactions()  # Validate reaction references/numbers when the game starts.
 
 from constants import RES_NORMAL_SCALE, CORR_FLOOR
 from game_rect import GameRect
@@ -97,6 +101,7 @@ class Creature:
         self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
         self._effect_world = None
         clear_contact_buffs(self)
+        clear_contact_reactions(self)
         self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
         self._jump_escape_active = False
@@ -253,6 +258,8 @@ class Creature:
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
         有二段跳 buff (37) 时，可在空中再跳一次。需体力>0。"""
+        if action_blocked(self, 'jump'):
+            return False
         if (not self.has_buff(40) and (self.has_buff(27) or self.has_buff(28))):
             return False
         if self.stamina < 0.01:
@@ -568,6 +575,7 @@ class Creature:
         self._shore_dir = self._shore_directions[0] if self._shore_directions else 0
         # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
         # 仅水系液体触发（排除熔岩/蜂蜜等非水液体）
+        is_water_liquid = False
         if self.can_swim:
             is_water_liquid = any(
                 bt.swim_f > 0 and bt.id != 8  # 排除蜂蜜
@@ -628,6 +636,7 @@ class Creature:
 
         # ---- Buff 施加（接触方块时触发，支持复合）----
         apply_contact_buffs(self, world, types)
+        apply_contact_reactions(self, world, {'water'} if is_water_liquid else set())
 
         for bt in types:
             if bt.special is not None:
@@ -887,6 +896,12 @@ class Creature:
 
         if callback == "full_heal":
             self.hp = self.hp_max
+        elif callback == "halt_motion":
+            from shore_exit import cancel_shore_exit
+            cancel_shore_exit(self)
+            self.is_climbing = False
+            self.a_x = self.a_y = 0.0
+            self.reset_motion()
         elif callback == "full_stamina":
             self.stamina = self.stamina_max
         elif callback == "clear_negative":
@@ -928,6 +943,7 @@ class Creature:
         self.contact_pool = set()
         self.stand_pool = None
         self._apply_tile_effects(world, 0.0)
+        clear_contact_reactions(self)
 
     def get_buff_stat(self, stat_name: str, base_value: float) -> float:
         from status_effects import modified_stat
@@ -944,6 +960,7 @@ class Creature:
         self._teleport_latched = False
         self._effect_world = None
         clear_contact_buffs(self)
+        clear_contact_reactions(self)
         self._pickup_flights = []
         self._x = float(x)
         self._y = float(y)
@@ -1079,12 +1096,14 @@ class Player(Creature):
         self.stamina = min(self.stamina_max, max(0.0, self.stamina + amount))
 
     def move(self, dir_x: float):
-        self.a_x = dir_x * self.v_max
+        self.a_x = 0.0 if action_blocked(self, 'horizontal') else dir_x * self.v_max
 
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
         """若可攀爬则进入攀爬中状态，沿物理步安全居中防止卡墙。
         必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
+        if action_blocked(self, 'climb'):
+            return False
         if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
             return False
         if self.has_buff(28) and not self.has_buff(40):
@@ -1129,6 +1148,7 @@ class Player(Creature):
 
     def climb_move(self, dy: float, speed: float = 3.0):
         """攀爬中上下移动。dy>0 向上，dy<0 向下。"""
-        if self.is_climbing and self.alive and (not self.has_buff(28) or self.has_buff(40)):
+        if (self.is_climbing and self.alive and not action_blocked(self, 'climb')
+                and (not self.has_buff(28) or self.has_buff(40))):
             self.v_y = dy * speed
             self.v_x = 0.0
