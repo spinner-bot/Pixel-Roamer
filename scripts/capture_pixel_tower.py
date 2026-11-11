@@ -1,4 +1,4 @@
-"""Capture current renderer with optional reversal of the reviewed A66 tiles."""
+"""Capture reviewed tower/pyramid regions with optional stage tile reversal."""
 import argparse
 import json
 import os
@@ -17,18 +17,19 @@ from maps import get_map
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--before', action='store_true')
+    parser.add_argument('--region', choices=('tower', 'pyramid'), default='tower')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     world = get_map(3).create_session()
     if args.before:
         reviews = json.loads((ROOT / 'tests/fixtures/reviewed_map_changes.json').read_text())
         for change in reviews['maps']['3']:
-            if change['stage'] == 'A66':
+            if change['stage'] == ('A66' if args.region == 'tower' else 'A69'):
                 world.set_tile(*change['position'], change['before'])
     surface = pygame.Surface((640, 900))
     camera = Camera(640, 900, world)
-    camera.scale = 4
-    camera.follow(450, 110)
+    camera.scale = 4 if args.region == 'tower' else 16
+    camera.follow(*( (450, 110) if args.region == 'tower' else (375, 60) ))
     world.draw(surface, camera)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     pygame.image.save(surface, str(args.output))
