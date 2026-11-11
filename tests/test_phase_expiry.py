@@ -39,13 +39,17 @@ class PhaseExpiryTests(unittest.TestCase):
         self.assertTrue(all(r['entered_wall'] and not r['first_expired']['clear'] for r in report['before']))
         for run in report['after']:
             with self.subTest(source=run['source'], wall=run['wall'], direction=run['direction'], fps=run['fps']):
-                self.assertTrue(run['entered_wall'])
+                restricted = run['source'] == 'ghost_buff' and run['wall'] == 'thick'
+                self.assertEqual(run['entered_wall'], not restricted)
                 self.assertTrue(run['first_expired']['clear'])
                 self.assertTrue(run['final_clear'])
                 self.assertEqual(run['respawns'], 0)
                 self.assertEqual(run['first_expired']['hp'], 150)
                 self.assertEqual(run['first_expired']['stamina'], 200)
                 restored = run['first_expired']['restoration']
+                if restricted:
+                    self.assertIsNone(restored)
+                    continue
                 self.assertIsNotNone(restored)
                 self.assertTrue(restored['clear'])
                 self.assertEqual(restored['target'], run['first_expired']['last_clear'])
