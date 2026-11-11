@@ -181,7 +181,7 @@ def run(output, xdotool):
 
     def type_number():
         require(app._dev_inputting, "numeric text input did not open")
-        native("type", "--clearmodifiers", "--delay", 15, "-12.25")
+        native("type", "--clearmodifiers", "--delay", 15, "--", "-12.25")
 
     def check_number():
         require(app._dev_input_text == "-12.25", f"native TEXTINPUT: {app._dev_input_text!r}")
