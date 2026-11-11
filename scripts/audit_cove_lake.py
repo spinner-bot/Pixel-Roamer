@@ -15,14 +15,15 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import pygame
-from maps import _apply_config
-from scripts.control_session import create_control_session
+from maps import _apply_config, get_map
+from scripts.control_session import create_control_session, available_score
 from teleport import can_place
 
 
 def run(fps, world=None):
     session = create_control_session(21, world=world)
     app, player = session.app, session.app.player1
+    initial_score = available_score(app._current_map)
     keys = defaultdict(bool)
     leg, leg_start, jumped = 0, 0, False
     arrivals, trace = [], []
@@ -82,7 +83,11 @@ def run(fps, world=None):
         respawns = reset.call_count
     return {'fps': fps, 'branch_goal_reached': len(arrivals) == 3, 'arrivals': arrivals,
             'leg': targets[leg][0], 'failure': failure, 'timer': app._game_timer,
+            'control_frames': frame + 1,
             'score': player.score, 'position': player.get_center(), 'max_exit_y': max_exit_y,
+            'score_balance': player.score == initial_score - available_score(app._current_map),
+            'diamonds_remaining': [app._current_map.get_tile(x, y).type_id == 314
+                                   for x, y in ((55, 51), (66, 62))],
             'min_hp': min_hp, 'min_stamina': min_stamina, 'respawns': respawns, 'trace': trace}
 
 
@@ -95,8 +100,14 @@ def main():
     source = subprocess.check_output(['git', 'show', 'e3ba6ec:maps/adventure_cove/map.py'], cwd=ROOT, text=True)
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     _apply_config(module.world, 'adventure_cove')
+    current = get_map(21)
+    changes = [{'position': [x, y], 'before': module.world.get_tile(x, y).type_id,
+                'after': current.get_tile(x, y).type_id}
+               for x, y in sorted(set(module.world.grid) | set(current.grid))
+               if module.world.get_tile(x, y).type_id != current.get_tile(x, y).type_id]
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'legacy_revision': 'e3ba6ec',
+              'tile_changes': changes,
               'scope': 'normal spawn to optional lake island and existing return platform; not formal victory or whole underground coverage',
               'before': [run(fps, module.world.create_session()) for fps in (30, 60, 144)],
               'after': [run(fps) for fps in (30, 60, 144)]}
