@@ -1,0 +1,1888 @@
+{
+  "code_revision": "07aedee41b2664cb58377454905ef65372f57d86",
+  "scope": "original spawn and presets, production input/session, no Buff injection or position transfer; polarity observation calls original field unchanged",
+  "runs": [
+    {
+      "hall_extension": {
+        "returned": true,
+        "reverse_seen": true,
+        "seconds": 116.3666666666984,
+        "phase": "expire",
+        "position": [
+          3002.1052854642053,
+          76.9
+        ],
+        "min_hp": 150,
+        "min_stamina": 0.018595436862489826,
+        "force_samples": [
+          {
+            "position": [
+              2983.3960809155865,
+              83.9
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.12783360056929238
+          },
+          {
+            "position": [
+              2983.3728298580763,
+              83.90006294113765
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.13467376101916484
+          },
+          {
+            "position": [
+              2983.3508676748133,
+              83.90021984009849
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.14126824865166743
+          },
+          {
+            "position": [
+              2983.3302392030673,
+              83.90050070453314
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.14757026628814263
+          },
+          {
+            "position": [
+              2983.3109865236565,
+              83.90093430209056
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.1535346053488449
+          },
+          {
+            "position": [
+              2983.293148607797,
+              83.9015479332967
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.159118143220504
+          },
+          {
+            "position": [
+              2983.2767609838634,
+              83.90236721124032
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.16428033056605051
+          },
+          {
+            "position": [
+              2983.26185542794,
+              83.90341585106266
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.16898365936823145
+          },
+          {
+            "position": [
+              2983.2484596818563,
+              83.90471547222245
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.17319410260971768
+          },
+          {
+            "position": [
+              2983.236597202133,
+              83.9062854164185
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.17688151684706854
+          },
+          {
+            "position": [
+              2983.226286942941,
+              83.90814258389877
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.18001999952261083
+          },
+          {
+            "position": [
+              2983.2175431757655,
+              83.91030129066661
+            ],
+            "source": 411,
+            "params": [
+              -1
+            ],
+            "delta_vx": 0.18258819367243373
+          }
+        ],
+        "source_calls": {
+          "411": 730
+        },
+        "errors": [],
+        "trace": [
+          {
+            "seconds": 0.0,
+            "phase": "ladder_align",
+            "position": [
+              3002.473979641919,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 58.2413011640355,
+            "buffs": {}
+          },
+          {
+            "seconds": 1.0,
+            "phase": "ladder_align",
+            "position": [
+              2999.2157634107252,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 64.20025762992297,
+            "buffs": {}
+          },
+          {
+            "seconds": 2.0,
+            "phase": "ladder_align",
+            "position": [
+              2995.4717102628315,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 69.5964679224563,
+            "buffs": {}
+          },
+          {
+            "seconds": 3.0,
+            "phase": "ladder_align",
+            "position": [
+              2993.5499719505347,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 74.48802488274225,
+            "buffs": {}
+          },
+          {
+            "seconds": 4.0,
+            "phase": "ladder_align",
+            "position": [
+              2993.4470311804516,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 78.92541654626454,
+            "buffs": {}
+          },
+          {
+            "seconds": 5.0,
+            "phase": "ladder_align",
+            "position": [
+              2993.419636141733,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 82.95300676257882,
+            "buffs": {}
+          },
+          {
+            "seconds": 6.0,
+            "phase": "climb",
+            "position": [
+              2993.5,
+              78.23643181644238
+            ],
+            "hp": 150,
+            "stamina": 78.70792877019555,
+            "buffs": {}
+          },
+          {
+            "seconds": 7.0,
+            "phase": "climb",
+            "position": [
+              2993.5,
+              81.20628029742542
+            ],
+            "hp": 150,
+            "stamina": 64.70792877019635,
+            "buffs": {}
+          },
+          {
+            "seconds": 8.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 50.882595436863,
+            "buffs": {}
+          },
+          {
+            "seconds": 9.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 47.36259543686296,
+            "buffs": {}
+          },
+          {
+            "seconds": 10.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 43.84259543686292,
+            "buffs": {}
+          },
+          {
+            "seconds": 11.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 40.32259543686288,
+            "buffs": {}
+          },
+          {
+            "seconds": 12.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 36.802595436862845,
+            "buffs": {}
+          },
+          {
+            "seconds": 13.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 33.282595436862806,
+            "buffs": {}
+          },
+          {
+            "seconds": 14.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 29.762595436862767,
+            "buffs": {}
+          },
+          {
+            "seconds": 15.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 26.24259543686273,
+            "buffs": {}
+          },
+          {
+            "seconds": 16.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 22.72259543686269,
+            "buffs": {}
+          },
+          {
+            "seconds": 17.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 19.20259543686265,
+            "buffs": {}
+          },
+          {
+            "seconds": 18.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 15.682595436862613,
+            "buffs": {}
+          },
+          {
+            "seconds": 19.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 12.162595436862574,
+            "buffs": {}
+          },
+          {
+            "seconds": 20.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 8.642595436862536,
+            "buffs": {}
+          },
+          {
+            "seconds": 21.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 5.122595436862497,
+            "buffs": {}
+          },
+          {
+            "seconds": 22.0,
+            "phase": "source",
+            "position": [
+              2993.5,
+              84.12663130372542
+            ],
+            "hp": 150,
+            "stamina": 1.6025954368624915,
+            "buffs": {}
+          },
+          {
+            "seconds": 23.0,
+            "phase": "source",
+            "position": [
+              2992.030888546393,
+              83.9
+            ],
+            "hp": 150,
+            "stamina": 6.863161132066892,
+            "buffs": {}
+          },
+          {
+            "seconds": 24.0,
+            "phase": "source",
+            "position": [
+              2988.2864806175294,
+              83.9
+            ],
+            "hp": 150,
+            "stamina": 18.14499238045036,
+            "buffs": {}
+          },
+          {
+            "seconds": 25.0,
+            "phase": "source",
+            "position": [
+              2984.543181434285,
+              83.9
+            ],
+            "hp": 150,
+            "stamina": 28.15471135355395,
+            "buffs": {}
+          },
+          {
+            "seconds": 26.0,
+            "phase": "return_ladder",
+            "position": [
+              2984.68475251851,
+              84.00305169745646
+            ],
+            "hp": 150,
+            "stamina": 37.094920586921454,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 27.0,
+            "phase": "return_ladder",
+            "position": [
+              2988.4295063879013,
+              83.9
+            ],
+            "hp": 150,
+            "stamina": 45.118108858477264,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 28.0,
+            "phase": "return_ladder",
+            "position": [
+              2992.172945264351,
+              83.9
+            ],
+            "hp": 150,
+            "stamina": 52.34326297563372,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 29.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.89331967242441
+            ],
+            "hp": 150,
+            "stamina": 58.86612947603205,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 30.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.81315574151728
+            ],
+            "hp": 150,
+            "stamina": 64.76577335208398,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 31.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.73299181061014
+            ],
+            "hp": 150,
+            "stamina": 70.10889367767244,
+            "buffs": {
+              "23": {
+                "params": [
+                  0
+                ],
+                "source": 411
+              },
+              "49": {
+                "params": [
+                  -1
+                ],
+                "source": 411
+              }
+            }
+          },
+          {
+            "seconds": 32.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.65282787970301
+            ],
+            "hp": 150,
+            "stamina": 74.9527384580546,
+            "buffs": {}
+          },
+          {
+            "seconds": 33.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.57266394879588
+            ],
+            "hp": 150,
+            "stamina": 79.34712279837974,
+            "buffs": {}
+          },
+          {
+            "seconds": 34.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.49250001788874
+            ],
+            "hp": 150,
+            "stamina": 83.33586106497435,
+            "buffs": {}
+          },
+          {
+            "seconds": 35.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.41233608698161
+            ],
+            "hp": 150,
+            "stamina": 86.95780905759625,
+            "buffs": {}
+          },
+          {
+            "seconds": 36.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.33217215607448
+            ],
+            "hp": 150,
+            "stamina": 90.2476422164531,
+            "buffs": {}
+          },
+          {
+            "seconds": 37.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.25200822516734
+            ],
+            "hp": 150,
+            "stamina": 93.23645213294802,
+            "buffs": {}
+          },
+          {
+            "seconds": 38.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.17184429426021
+            ],
+            "hp": 150,
+            "stamina": 95.9522157613236,
+            "buffs": {}
+          },
+          {
+            "seconds": 39.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.09168036335308
+            ],
+            "hp": 150,
+            "stamina": 98.42017370929653,
+            "buffs": {}
+          },
+          {
+            "seconds": 40.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              83.01151643244594
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 41.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.93135250153881
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 42.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.85118857063168
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 43.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.77102463972454
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 44.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.69086070881741
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 45.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.61069677791028
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 46.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.53053284700314
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 47.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.45036891609601
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 48.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.37020498518888
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 49.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.29004105428174
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 50.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.20987712337461
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 51.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.12971319246748
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 52.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              82.04954926156034
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 53.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.96938533065321
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 54.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.88922139974608
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 55.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.80905746883894
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 56.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.72889353793181
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 57.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.64872960702468
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 58.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.56856567611754
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 59.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.48840174521041
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 60.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.40823781430328
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 61.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.32807388339614
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 62.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.24790995248901
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 63.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.16774602158188
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 64.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.08758209067474
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 65.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              81.00741815976761
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 66.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.92725422886048
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 67.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.84709029795334
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 68.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.76692636704621
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 69.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.68676243613908
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 70.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.60659850523194
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 71.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.52643457432481
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 72.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.44627064341768
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 73.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.36610671251054
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 74.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.28594278160341
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 75.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.20577885069628
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 76.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.12561491978914
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 77.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              80.04545098888201
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 78.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.96528705797488
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 79.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.88512312706774
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 80.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.80495919616061
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 81.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.72479526525348
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 82.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.64463133434634
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 83.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.56446740343921
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 84.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.48430347253208
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 85.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.40413954162494
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 86.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.32397561071781
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 87.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.24381167981068
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 88.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.16364774890354
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 89.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.08348381799641
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 90.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              79.00331988708928
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 91.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.92315595618214
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 92.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.84299202527501
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 93.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.76282809436788
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 94.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.68266416346074
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 95.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.60250023255361
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 96.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.52233630164648
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 97.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.44217237073934
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 98.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.36200843983221
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 99.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.28184450892508
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 100.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.20168057801794
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 101.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.12151664711081
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 102.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              78.04135271620368
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 103.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.96118878529654
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 104.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.88102485438941
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 105.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.80086092348228
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 106.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.72069699257514
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 107.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.64053306166801
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 108.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.56036913076088
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 109.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.48020519985374
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 110.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.40004126894661
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 111.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.31987733803948
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 112.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.23971340713234
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 113.0,
+            "phase": "descend",
+            "position": [
+              2993.402492274697,
+              77.15954947622521
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 114.0,
+            "phase": "hall",
+            "position": [
+              2993.78362589845,
+              76.91048128998268
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 115.0,
+            "phase": "hall",
+            "position": [
+              2997.4923377654573,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          },
+          {
+            "seconds": 116.0,
+            "phase": "hall",
+            "position": [
+              3001.235871734981,
+              76.9
+            ],
+            "hp": 150,
+            "stamina": 100,
+            "buffs": {}
+          }
+        ]
+      },
+      "game_win": false,
+      "reached_end": false,
+      "hops": [],
+      "fps": 60,
+      "simulation_seconds": 147.00000000003064,
+      "reached_cave": true,
+      "reached_hall": true,
+      "reached_portal": false,
+      "north_climb_bound": null,
+      "failure": null,
+      "phase": "landing",
+      "seconds": 30.633333333333333,
+      "position": [
+        3002.1052854642053,
+        76.9
+      ],
+      "peak": 82.96268559166185,
+      "rest_stops": [
+        {
+          "position": [
+            3010.5609689812704,
+            45.9
+          ],
+          "stamina": 95.04300263093678,
+          "seconds": 5.55
+        },
+        {
+          "position": [
+            3010.4771118400936,
+            56.9
+          ],
+          "stamina": 95.01616474961176,
+          "seconds": 14.983333333333333
+        },
+        {
+          "position": [
+            3010.477230192475,
+            71.9
+          ],
+          "stamina": 95.0187841317332,
+          "seconds": 24.15
+        }
+      ],
+      "distinct_rest_heights": [
+        45.9,
+        56.9,
+        71.9
+      ],
+      "min_hp": 150,
+      "min_stamina": 45.11594319150031,
+      "lives_left": 5,
+      "trace": [
+        {
+          "t": 0.0,
+          "phase": "altar",
+          "position": [
+            3000.00263479347,
+            39.99866393448489
+          ],
+          "stamina": 100,
+          "hp": 150
+        },
+        {
+          "t": 1.0,
+          "phase": "altar",
+          "position": [
+            3002.314837450457,
+            37.67805979635754
+          ],
+          "stamina": 100,
+          "hp": 150
+        },
+        {
+          "t": 2.0,
+          "phase": "climb",
+          "position": [
+            3003.1309958620263,
+            41.807239312167326
+          ],
+          "stamina": 86.16431277954275,
+          "hp": 150
+        },
+        {
+          "t": 3.0,
+          "phase": "climb",
+          "position": [
+            3006.3323954347034,
+            48.72623126763675
+          ],
+          "stamina": 87.99782261703815,
+          "hp": 150
+        },
+        {
+          "t": 4.0,
+          "phase": "rest",
+          "position": [
+            3009.5555170222087,
+            47.095576896194295
+          ],
+          "stamina": 90.62504279190516,
+          "hp": 150
+        },
+        {
+          "t": 5.0,
+          "phase": "rest",
+          "position": [
+            3010.5107432179675,
+            45.9
+          ],
+          "stamina": 93.57935377804343,
+          "hp": 150
+        },
+        {
+          "t": 6.0,
+          "phase": "climb",
+          "position": [
+            3009.37032452017,
+            54.0933863644391
+          ],
+          "stamina": 81.91022391554235,
+          "hp": 150
+        },
+        {
+          "t": 7.0,
+          "phase": "climb",
+          "position": [
+            3006.5,
+            55.253768476973505
+          ],
+          "stamina": 75.35135416159439,
+          "hp": 150
+        },
+        {
+          "t": 8.0,
+          "phase": "rest",
+          "position": [
+            3007.284608966201,
+            56.9
+          ],
+          "stamina": 68.44415613440295,
+          "hp": 150
+        },
+        {
+          "t": 9.0,
+          "phase": "rest",
+          "position": [
+            3010.3637360283974,
+            56.9
+          ],
+          "stamina": 73.44313084379448,
+          "hp": 150
+        },
+        {
+          "t": 10.0,
+          "phase": "rest",
+          "position": [
+            3010.5355888412328,
+            56.9
+          ],
+          "stamina": 77.97730680735515,
+          "hp": 150
+        },
+        {
+          "t": 11.0,
+          "phase": "rest",
+          "position": [
+            3010.500335138887,
+            56.9
+          ],
+          "stamina": 82.09230264620899,
+          "hp": 150
+        },
+        {
+          "t": 12.0,
+          "phase": "rest",
+          "position": [
+            3010.4860994475416,
+            56.9
+          ],
+          "stamina": 85.82847638634455,
+          "hp": 150
+        },
+        {
+          "t": 13.0,
+          "phase": "rest",
+          "position": [
+            3010.4803509759017,
+            56.9
+          ],
+          "stamina": 89.22177803428913,
+          "hp": 150
+        },
+        {
+          "t": 14.0,
+          "phase": "rest",
+          "position": [
+            3010.478029702886,
+            56.9
+          ],
+          "stamina": 92.30439760123673,
+          "hp": 150
+        },
+        {
+          "t": 15.0,
+          "phase": "climb",
+          "position": [
+            3010.474457563154,
+            57.7569365797572
+          ],
+          "stamina": 80.14128794488343,
+          "hp": 150
+        },
+        {
+          "t": 16.0,
+          "phase": "climb",
+          "position": [
+            3006.5,
+            69.19899494936611
+          ],
+          "stamina": 81.24516464824318,
+          "hp": 150
+        },
+        {
+          "t": 17.0,
+          "phase": "rest",
+          "position": [
+            3006.50263479347,
+            72.11800989015099
+          ],
+          "stamina": 67.56747775482742,
+          "hp": 150
+        },
+        {
+          "t": 18.0,
+          "phase": "rest",
+          "position": [
+            3009.972400704591,
+            71.9
+          ],
+          "stamina": 72.64829628856779,
+          "hp": 150
+        },
+        {
+          "t": 19.0,
+          "phase": "rest",
+          "position": [
+            3010.5421568615016,
+            71.9
+          ],
+          "stamina": 77.25617481451908,
+          "hp": 150
+        },
+        {
+          "t": 20.0,
+          "phase": "rest",
+          "position": [
+            3010.5092542358134,
+            71.9
+          ],
+          "stamina": 81.43770496788663,
+          "hp": 150
+        },
+        {
+          "t": 21.0,
+          "phase": "rest",
+          "position": [
+            3010.4897010412024,
+            71.9
+          ],
+          "stamina": 85.23405081511486,
+          "hp": 150
+        },
+        {
+          "t": 22.0,
+          "phase": "rest",
+          "position": [
+            3010.4818053245885,
+            71.9
+          ],
+          "stamina": 88.68184333750435,
+          "hp": 150
+        },
+        {
+          "t": 23.0,
+          "phase": "rest",
+          "position": [
+            3010.4786169790477,
+            71.9
+          ],
+          "stamina": 91.8138573627614,
+          "hp": 150
+        },
+        {
+          "t": 24.0,
+          "phase": "rest",
+          "position": [
+            3010.477329502842,
+            71.9
+          ],
+          "stamina": 94.65953740989596,
+          "hp": 150
+        },
+        {
+          "t": 25.0,
+          "phase": "ascend",
+          "position": [
+            3007.414708544862,
+            71.9
+          ],
+          "stamina": 97.24541665637477,
+          "hp": 150
+        },
+        {
+          "t": 26.0,
+          "phase": "ascend",
+          "position": [
+            3006.5,
+            74.84509974364153
+          ],
+          "stamina": 83.38260985816595,
+          "hp": 150
+        },
+        {
+          "t": 27.0,
+          "phase": "ascend",
+          "position": [
+            3006.5,
+            77.81494822462457
+          ],
+          "stamina": 69.38260985816675,
+          "hp": 150
+        },
+        {
+          "t": 28.0,
+          "phase": "ascend",
+          "position": [
+            3006.5,
+            80.78479670560762
+          ],
+          "stamina": 55.382609858167015,
+          "hp": 150
+        },
+        {
+          "t": 29.0,
+          "phase": "landing",
+          "position": [
+            3006.069319002794,
+            82.74950679345248
+          ],
+          "stamina": 47.116435495197486,
+          "hp": 150
+        },
+        {
+          "t": 30.0,
+          "phase": "landing",
+          "position": [
+            3002.710687073196,
+            79.64077327124313
+          ],
+          "stamina": 54.14594045076415,
+          "hp": 150
+        }
+      ]
+    }
+  ]
+}
