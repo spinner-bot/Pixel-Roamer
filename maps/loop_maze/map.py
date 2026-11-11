@@ -3,6 +3,7 @@
 利用循环特性：看似走不通的路，跨过边界就通了
 """
 from world import World
+from maps.placement import is_air_cell
 
 MAP_ID = 4
 world = World(
@@ -148,7 +149,7 @@ for y in range(0, 36, 9):
 
 # 治愈点分布
 for hx, hy in [(24,15),(3,29),(15,34),(44,34),(2,7),(30,17),(18,21),(40,30)]:
-    if world.get_tile(hx, hy).type_id == 0:
+    if is_air_cell(world, hx, hy):
         world.set_tile(hx, hy, 290)
 
 # 保留角色可通过的枢纽出口，避免墙壁封死已有通道。
