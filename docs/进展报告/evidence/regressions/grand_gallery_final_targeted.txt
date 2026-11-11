@@ -1,0 +1,7 @@
+test_original_spawn_both_source_effects_and_cleared_return_at_three_rates (test_grand_polarity_gallery.GrandPolarityGalleryTests) ... ok
+test_plan_changes_only_reviewed_cells_and_preserves_original_features (test_grand_polarity_gallery.GrandPolarityGalleryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 10.550s
+
+OK
