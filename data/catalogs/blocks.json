@@ -15967,7 +15967,7 @@
         ]
       ],
       "buff_ids": [49],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[1]],
       "buff_durations": [8.0],
       "consumed_type_id": null
     },
@@ -17431,7 +17431,7 @@
         ]
       ],
       "buff_ids": [49],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[1]],
       "buff_durations": [10.0],
       "consumed_type_id": null
     },
@@ -18204,7 +18204,7 @@
         ]
       ],
       "buff_ids": [23, 49],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], [-1]],
       "buff_durations": [6.0, 6.0],
       "consumed_type_id": null
     },
