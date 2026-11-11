@@ -1,0 +1,3044 @@
+{
+  "code_revision": "df6adbbba749f107d1e11361881e0a98636ecc91",
+  "scope": "isolated ore-derived polarity fixture, actual WorldSession, Buff injected only for controlled comparison; no normal-map source route claim",
+  "runs": [
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.70151957235281,
+        5.5
+      ],
+      "dx": 0.301519572352813,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.683804736037104,
+        5.5
+      ],
+      "dx": 0.283804736037105,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.683804736037104,
+        5.5
+      ],
+      "dx": 0.283804736037105,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.78239359732981,
+        5.5
+      ],
+      "dx": 0.3823935973298127,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.76033371891825,
+        5.5
+      ],
+      "dx": 0.36033371891825183,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.76033371891825,
+        5.5
+      ],
+      "dx": 0.36033371891825183,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        21.4,
+        5.5
+      ],
+      "final": [
+        21.4,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.29848042764719,
+        5.5
+      ],
+      "dx": -0.301519572352813,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.316195263962896,
+        5.5
+      ],
+      "dx": -0.283804736037105,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.316195263962896,
+        5.5
+      ],
+      "dx": -0.283804736037105,
+      "max_speed": 1.3283144413759735,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.21760640267019,
+        5.5
+      ],
+      "dx": -0.3823935973298127,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.23966628108175,
+        5.5
+      ],
+      "dx": -0.36033371891825183,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.23966628108175,
+        5.5
+      ],
+      "dx": -0.36033371891825183,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 0.6666666666666666,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 0.9,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.6,
+        5.5
+      ],
+      "final": [
+        19.599999999999998,
+        5.5
+      ],
+      "dx": -3.552713678800501e-15,
+      "max_speed": 1.6666666666666667,
+      "touched": true,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        24.0,
+        5.5
+      ],
+      "final": [
+        24.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 3.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        17.0,
+        5.5
+      ],
+      "final": [
+        17.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        25.5,
+        5.5
+      ],
+      "final": [
+        25.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": false,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 5.0,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": null,
+      "initial": [
+        15.5,
+        5.5
+      ],
+      "final": [
+        15.5,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    }
+  ],
+  "immune": [
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 39,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 39,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 41,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 41,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": -1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 54,
+      "initial": [
+        22.0,
+        5.5
+      ],
+      "final": [
+        22.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 30,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 60,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": -1,
+      "active": true,
+      "fps": 144,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 30,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.26666666666666666,
+      "control_frames": 8
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 60,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 15
+    },
+    {
+      "distance": 1.5,
+      "side": 1,
+      "polarity": 1,
+      "active": true,
+      "fps": 144,
+      "immunity": 54,
+      "initial": [
+        19.0,
+        5.5
+      ],
+      "final": [
+        19.0,
+        5.5
+      ],
+      "dx": 0.0,
+      "max_speed": 0.0,
+      "touched": false,
+      "respawns": 0,
+      "hp": 150.0,
+      "elapsed": 0.24999999999999997,
+      "control_frames": 36
+    }
+  ]
+}
