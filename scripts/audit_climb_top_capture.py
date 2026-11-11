@@ -22,9 +22,9 @@ from scripts.audit_session_soak import errors_for
 from teleport import can_place
 
 
-def run(fps, mode, body, ledge, offset, gap, session_class=None):
+def run(fps, mode, body, ledge, offset, gap, session_class=None, horizontal_offset=0):
     dx, dy = offset
-    expected = (5.5 + dx, 10 + dy + gap)
+    expected = (5.5 + dx + horizontal_offset, 10 + dy + gap)
     world = World(0, 'finite climb top', 20, 20, gravity=-6.5,
                   spawn_points=expected, loop_x=True, loop_y=True)
     world.player_config = dict(zip(('w', 'h'), body))
@@ -69,6 +69,7 @@ def run(fps, mode, body, ledge, offset, gap, session_class=None):
             session.advance(1 / fps)
         observations['respawns'] = reset.call_count
     return dict(fps=fps, mode=mode, body=body, ledge=ledge, offset=offset, gap=gap,
+                horizontal_offset=horizontal_offset,
                 initial=initial, final=player.get_center(), climbing=player.is_climbing,
                 on_ground=player.on_ground, stamina=player.stamina,
                 final_clear=can_place(player, app._current_map, *player.get_center()),
@@ -83,6 +84,13 @@ def cases(session_class=None):
             for offset in ((-20, -20), (0, 0), (20, 20)) for gap in (.25, .3)]
 
 
+def pending_cases(session_class=None):
+    return [run(fps, mode, (.8, 2.4), ledge, (0, 0), .25, session_class,
+                horizontal_offset=-.5 if ledge == 'left' else .5)
+            for fps in (30, 60, 144) for mode in ('keydown', 'held')
+            for ledge in ('left', 'right')]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
@@ -90,24 +98,34 @@ def main():
     args = parser.parse_args()
     report = {'code_revision': subprocess.check_output(
         ['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        'scope': '216 legal initial fixtures, actual event/held input and 120Hz session; not a normal map route or device acceptance',
+        'scope': '216 legal initial fixtures plus 12 pending lateral alignments, actual event/held input and 120Hz session; not a normal map route or device acceptance',
         'sources': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in
                     ('scripts/audit_climb_top_capture.py', 'pixel_roamer/world_session.py',
-                     'creature.py', 'climb_alignment.py')}, 'current': cases()}
+                     'creature.py', 'climb_alignment.py')}, 'current': cases(),
+        'current_pending': pending_cases()}
     if args.legacy_ref:
         old = ModuleType('legacy_top_capture_session')
         old.__file__ = str(ROOT / 'pixel_roamer/world_session.py')
         source = subprocess.check_output(['git', 'show', args.legacy_ref + ':pixel_roamer/world_session.py'],
                                          cwd=ROOT, text=True)
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
-        report.update(legacy_revision=args.legacy_ref, legacy=cases(old.WorldSession))
+        # Both gameplay modules must match the legacy revision; otherwise new
+        # capture admission would hide the old session's solid-overlap failures.
+        old_actor = ModuleType('legacy_top_capture_creature')
+        old_actor.__file__ = str(ROOT / 'creature.py')
+        actor_source = subprocess.check_output(['git', 'show', args.legacy_ref + ':creature.py'],
+                                               cwd=ROOT, text=True)
+        exec(compile(actor_source, old_actor.__file__, 'exec'), old_actor.__dict__)
+        with patch('player_factory.Player', old_actor.Player):
+            report.update(legacy_revision=args.legacy_ref, legacy=cases(old.WorldSession),
+                          legacy_pending=pending_cases(old.WorldSession))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({name: {'cases': len(report[name]),
         'continuous': sum(r['continuous'] for r in report[name]),
         'clear_all_steps': sum(r['errors_total'] == 0 for r in report[name]),
         'max_step_dy': max(r['max_step_dy'] for r in report[name])}
-        for name in ('current', 'legacy') if name in report}))
+        for name in ('current', 'legacy', 'current_pending', 'legacy_pending') if name in report}))
 
 
 if __name__ == '__main__':
