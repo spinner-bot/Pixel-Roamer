@@ -1,0 +1,428 @@
+{
+  "revision": "6afa360c26505b7d75c678796455d42c035af53a",
+  "display": ":0",
+  "pygame": "2.6.1",
+  "sdl": [
+    2,
+    28,
+    4
+  ],
+  "input": "native XTest via xdotool",
+  "scope": "virtual X11 desktop, not physical-device acceptance",
+  "steps": [
+    {
+      "name": "boot",
+      "elapsed": 0.7058441039989702,
+      "page": 1,
+      "frame": 42
+    },
+    {
+      "name": "home_mouse_settings",
+      "elapsed": 1.1458816590020433,
+      "page": 2,
+      "frame": 59
+    },
+    {
+      "name": "settings_return",
+      "elapsed": 1.7063430940033868,
+      "page": 5,
+      "frame": 77
+    },
+    {
+      "name": "home_resize",
+      "elapsed": 2.0250716689624824,
+      "page": 2,
+      "frame": 89
+    },
+    {
+      "name": "letterbox_mouse_start",
+      "elapsed": 2.4406295969965868,
+      "page": 2,
+      "frame": 107
+    },
+    {
+      "name": "map_select",
+      "elapsed": 2.9752355120144784,
+      "page": 0,
+      "frame": 115
+    },
+    {
+      "name": "held_movement_start",
+      "elapsed": 3.7185875959694386,
+      "page": 3,
+      "frame": 156
+    },
+    {
+      "name": "held_movement_end",
+      "elapsed": 4.546523511002306,
+      "page": 3,
+      "frame": 206
+    },
+    {
+      "name": "help_pause_start",
+      "elapsed": 4.880105707969051,
+      "page": 3,
+      "frame": 219
+    },
+    {
+      "name": "help_pause_end",
+      "elapsed": 5.489853973966092,
+      "page": 3,
+      "frame": 248
+    },
+    {
+      "name": "settings_pause_start",
+      "elapsed": 5.831425851967651,
+      "page": 5,
+      "frame": 262
+    },
+    {
+      "name": "settings_pause_end",
+      "elapsed": 6.44452265498694,
+      "page": 5,
+      "frame": 293
+    },
+    {
+      "name": "world_resize",
+      "elapsed": 6.971574524010066,
+      "page": 3,
+      "frame": 321
+    },
+    {
+      "name": "focus_target",
+      "elapsed": 7.195176070963498,
+      "page": 3,
+      "frame": 334
+    },
+    {
+      "name": "native_focus_loss",
+      "elapsed": 7.4970297800027765,
+      "page": 3,
+      "frame": 351
+    },
+    {
+      "name": "unfocused_start",
+      "elapsed": 7.809216693975031,
+      "page": 3,
+      "frame": 369
+    },
+    {
+      "name": "unfocused_end",
+      "elapsed": 8.33160922996467,
+      "page": 3,
+      "frame": 399
+    },
+    {
+      "name": "native_focus_gain",
+      "elapsed": 8.6407330489601,
+      "page": 3,
+      "frame": 418
+    },
+    {
+      "name": "editor_open",
+      "elapsed": 9.087299613980576,
+      "page": 0,
+      "frame": 428
+    },
+    {
+      "name": "number_begin",
+      "elapsed": 9.413581583998166,
+      "page": 0,
+      "frame": 445
+    },
+    {
+      "name": "number_type",
+      "elapsed": 9.734308245999273,
+      "page": 0,
+      "frame": 462
+    },
+    {
+      "name": "number_check_cancel",
+      "elapsed": 10.197756432986353,
+      "page": 0,
+      "frame": 485
+    },
+    {
+      "name": "minimum_size",
+      "elapsed": 10.640265188005287,
+      "page": 0,
+      "frame": 494
+    },
+    {
+      "name": "native_quit",
+      "elapsed": 10.964682227000594,
+      "page": 2,
+      "frame": 510
+    }
+  ],
+  "errors": [],
+  "video_driver": "x11",
+  "mixer": [
+    22050,
+    -16,
+    2
+  ],
+  "current_step": "native_quit",
+  "completed": true,
+  "state": {
+    "home_screenshot": "2026-11-12_native_x11_formal_home.png",
+    "sizes": [
+      {
+        "size": [
+          800,
+          600
+        ],
+        "scale": 0.5,
+        "offset": [
+          0.0,
+          75.0
+        ]
+      },
+      {
+        "size": [
+          1000,
+          500
+        ],
+        "scale": 0.5555555555555556,
+        "offset": [
+          55.55555555555554,
+          0.0
+        ]
+      },
+      {
+        "size": [
+          320,
+          180
+        ],
+        "scale": 0.2,
+        "offset": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "resized_screenshot": "2026-11-12_native_x11_formal_home_800x600.png",
+    "move_start": 4.5,
+    "move_end": 6.572829186128792,
+    "help_start": [
+      1.5999999999999968,
+      6.572829186128792,
+      25.893268613848516
+    ],
+    "pause_start": [
+      1.5999999999999968,
+      6.572829186128792,
+      25.893268613848516
+    ],
+    "world_screenshot": "2026-11-12_native_x11_formal_world_1000x500.png",
+    "unfocused_start": [
+      2.583333333333327,
+      9.414644267547235,
+      22.790900687671805
+    ],
+    "native_text": "-12.25",
+    "minimum_screenshot": "2026-11-12_native_x11_formal_minimum_320x180.png"
+  },
+  "commands": [
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "2097160"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097160",
+      "288",
+      "356"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "windowsize",
+      "2097160",
+      "800",
+      "600"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097171",
+      "180",
+      "250"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Home"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Return"
+    ],
+    [
+      "keydown",
+      "d"
+    ],
+    [
+      "keyup",
+      "d"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "h"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "BackSpace"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "windowsize",
+      "2097171",
+      "1000",
+      "500"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--name",
+      "^pixel-roamer-audit-focus$"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "6291483"
+    ],
+    [
+      "key",
+      "space"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "2097182"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "e"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Return"
+    ],
+    [
+      "type",
+      "--clearmodifiers",
+      "--delay",
+      "15",
+      "--",
+      "-12.25"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2854362"
+    ],
+    [
+      "windowsize",
+      "2097182",
+      "200",
+      "100"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "4"
+    ]
+  ],
+  "frames": 511,
+  "elapsed": 11.068849686998874
+}
