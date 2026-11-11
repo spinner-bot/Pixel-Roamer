@@ -1,0 +1,206 @@
+{
+  "code_revision": "b74577872fa6415234588a2a49d1db2188085688",
+  "legacy_revision": "3c3f481",
+  "scope": "normal idle spawn checkpoint activation then deliberate lethal test hit and production respawn; not other hidden anchors",
+  "tile_changes": [
+    {
+      "position": [
+        22,
+        15
+      ],
+      "before": 19,
+      "after": 302
+    },
+    {
+      "position": [
+        24,
+        15
+      ],
+      "before": 302,
+      "after": 19
+    }
+  ],
+  "before_contact_pose": null,
+  "after_contact_pose": [
+    22.4,
+    16.9
+  ],
+  "before": [
+    {
+      "fps": 30,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.995486111111113
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 60,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.998645833333335
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 144,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.999548611111113
+        ],
+        "saved_spawn": [
+          22.5,
+          17.0
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "checkpoint_seen": true,
+        "record_calls": 101,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 60,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "checkpoint_seen": true,
+        "record_calls": 101,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 144,
+      "activation": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "checkpoint_seen": true,
+        "record_calls": 101,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "saved_spawn": [
+          22.5,
+          16.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    }
+  ]
+}
