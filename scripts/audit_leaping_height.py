@@ -18,7 +18,7 @@ from scripts.control_session import create_control_session
 from world import World
 
 
-def measure(fps, source=2, parameter=None):
+def measure(fps, source=2, parameter=None, press_jump=True):
     world = World(0, 'leaping height contract', 40, 80, gravity=-9.8, spawn_points=(10.5, 5.9))
     for x in range(40):
         world.set_tile(x, 4, 2)
@@ -46,7 +46,8 @@ def measure(fps, source=2, parameter=None):
         initial_vertical_velocity = actor.v_y
         initially_supported = actor.on_ground
         launch_speed = actor.v_jump
-        with patch('pygame.event.get', return_value=[pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)]):
+        events = [pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE)] if press_jump else []
+        with patch('pygame.event.get', return_value=events):
             session.app._handle_events()
         with patch.object(session, '_advance_step', side_effect=observe):
             for _ in range(12 * fps):
@@ -54,7 +55,7 @@ def measure(fps, source=2, parameter=None):
                 if landed:
                     break
         respawns = reset.call_count
-    return {'fps': fps, 'source_block': source, 'injected_parameter': parameter, 'applied': applied,
+    return {'fps': fps, 'source_block': source, 'injected_parameter': parameter, 'jump_event': press_jump, 'applied': applied,
             'launch_speed': launch_speed, 'height': peak - 5.9, 'landed': landed,
             'initial_vertical_velocity': initial_vertical_velocity, 'initially_supported': initially_supported,
             'elapsed': session.app._game_timer, 'respawns': respawns, 'hp': actor.hp,
@@ -69,8 +70,9 @@ if __name__ == '__main__':
     for fps in (30, 60, 144):
         baseline = measure(fps)
         rows.append(baseline)
-        for source, parameter in [(2, p) for p in (0, 25, 50, 100)] + [(415, None), (418, None)]:
-            row = measure(fps, source, parameter)
+        for source, parameter, press_jump in ([(2, p, True) for p in (0, 25, 50, 100)]
+                                              + [(415, None, True), (418, None, True), (415, None, False)]):
+            row = measure(fps, source, parameter, press_jump)
             row['height_ratio'] = row['height'] / baseline['height']
             rows.append(row)
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
@@ -79,5 +81,5 @@ if __name__ == '__main__':
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps([{'source': r['source_block'], 'parameter': r['injected_parameter'],
-                       'height': r['height'], 'ratio': r.get('height_ratio'), 'landed': r['landed']}
+                       'jump_event': r['jump_event'], 'height': r['height'], 'ratio': r.get('height_ratio'), 'landed': r['landed']}
                       for r in rows if r['fps'] == 60]))
