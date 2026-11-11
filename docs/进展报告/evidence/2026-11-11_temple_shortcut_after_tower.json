@@ -1,0 +1,262 @@
+{
+  "code_revision": "c86b346034b809de2e2a73b5b2a24e0ad42144a4",
+  "scope": "production application/session controls to terminal state; synthetic inputs; no device acceptance",
+  "runs": [
+    {
+      "available_score": 300,
+      "remaining_score": 285,
+      "map": 7,
+      "fps": 30,
+      "game_win": true,
+      "game_over": false,
+      "timer": 5.008333333333372,
+      "time_limit": 0.0,
+      "score": 15,
+      "position": [
+        44.4,
+        40.8309375
+      ],
+      "reached_end": true,
+      "teleported": true,
+      "respawns": 0,
+      "lives_left": 3,
+      "min_hp": 145.69999999999982,
+      "min_stamina": 172.6793602230793,
+      "terminal_state_frozen": true,
+      "x_range": [
+        4.5,
+        44.50088047399186
+      ],
+      "y_range": [
+        17.27798611111111,
+        40.89954861111111
+      ],
+      "trace": [
+        {
+          "t": 0.0,
+          "position": [
+            4.508738703993591,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "score": 0
+        },
+        {
+          "t": 1.0,
+          "position": [
+            6.6000000000000005,
+            20.67298611111111
+          ],
+          "hp": 150.0,
+          "stamina": 186.74381550408182,
+          "score": 0
+        },
+        {
+          "t": 2.0,
+          "position": [
+            8.80371692195361,
+            20.8796875
+          ],
+          "hp": 150.0,
+          "stamina": 175.4076270861069,
+          "score": 0
+        },
+        {
+          "t": 3.0,
+          "position": [
+            11.256113062079036,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 179.09426424655533,
+          "score": 0
+        },
+        {
+          "t": 4.0,
+          "position": [
+            18.496318693521598,
+            17.9
+          ],
+          "hp": 145.69999999999982,
+          "stamina": 182.53778113818592,
+          "score": 0
+        },
+        {
+          "t": 5.0,
+          "position": [
+            44.4,
+            40.8309375
+          ],
+          "hp": 145.69999999999982,
+          "stamina": 185.62676474727866,
+          "score": 15
+        }
+      ]
+    },
+    {
+      "available_score": 300,
+      "remaining_score": 285,
+      "map": 7,
+      "fps": 60,
+      "game_win": true,
+      "game_over": false,
+      "timer": 4.975000000000037,
+      "time_limit": 0.0,
+      "score": 15,
+      "position": [
+        44.4,
+        40.8309375
+      ],
+      "reached_end": true,
+      "teleported": true,
+      "respawns": 0,
+      "lives_left": 3,
+      "min_hp": 145.69999999999982,
+      "min_stamina": 172.56266390622707,
+      "terminal_state_frozen": true,
+      "x_range": [
+        4.5,
+        44.50088047399186
+      ],
+      "y_range": [
+        17.2296875,
+        40.89954861111111
+      ],
+      "trace": [
+        {
+          "t": 0.0,
+          "position": [
+            4.502634793469842,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "score": 0
+        },
+        {
+          "t": 1.0,
+          "position": [
+            6.6000000000000005,
+            20.67298611111111
+          ],
+          "hp": 150.0,
+          "stamina": 186.74381550408182,
+          "score": 0
+        },
+        {
+          "t": 2.0,
+          "position": [
+            8.908378561398369,
+            20.870208333333334
+          ],
+          "hp": 150.0,
+          "stamina": 175.42323012719777,
+          "score": 0
+        },
+        {
+          "t": 3.0,
+          "position": [
+            11.31907893873677,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 179.10887766530925,
+          "score": 0
+        },
+        {
+          "t": 4.0,
+          "position": [
+            18.66119982306492,
+            17.9
+          ],
+          "hp": 145.69999999999982,
+          "stamina": 182.5507369712683,
+          "score": 0
+        }
+      ]
+    },
+    {
+      "available_score": 300,
+      "remaining_score": 285,
+      "map": 7,
+      "fps": 144,
+      "game_win": true,
+      "game_over": false,
+      "timer": 4.950000000000036,
+      "time_limit": 0.0,
+      "score": 15,
+      "position": [
+        44.4,
+        40.84583333333333
+      ],
+      "reached_end": true,
+      "teleported": true,
+      "respawns": 0,
+      "lives_left": 3,
+      "min_hp": 145.69999999999982,
+      "min_stamina": 172.52936034435803,
+      "terminal_state_frozen": true,
+      "x_range": [
+        4.5,
+        44.5
+      ],
+      "y_range": [
+        17.2296875,
+        40.9
+      ],
+      "trace": [
+        {
+          "t": 0.0,
+          "position": [
+            4.5,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 200.0,
+          "score": 0
+        },
+        {
+          "t": 1.0,
+          "position": [
+            6.6000000000000005,
+            20.692395833333332
+          ],
+          "hp": 150.0,
+          "stamina": 186.71825374901996,
+          "score": 0
+        },
+        {
+          "t": 2.0,
+          "position": [
+            8.855803567615304,
+            20.875173611111112
+          ],
+          "hp": 150.0,
+          "stamina": 175.39149031770657,
+          "score": 0
+        },
+        {
+          "t": 3.0,
+          "position": [
+            11.287273054889953,
+            18.9
+          ],
+          "hp": 150.0,
+          "stamina": 179.0791509558471,
+          "score": 0
+        },
+        {
+          "t": 4.0,
+          "position": [
+            18.57862885063649,
+            17.9
+          ],
+          "hp": 145.69999999999982,
+          "stamina": 182.52325890653069,
+          "score": 0
+        }
+      ]
+    }
+  ]
+}
