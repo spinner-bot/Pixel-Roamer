@@ -1,0 +1,20 @@
+test_all_pickup_kinds_mirrors_and_frame_rates_collect_once_with_buff (tests.test_magnetic_pickups.MagneticPickupTests) ... ok
+test_expiry_removal_pause_focus_stun_and_respawn_have_explicit_lifecycles (tests.test_magnetic_pickups.MagneticPickupTests) ... ok
+test_looped_coordinates_are_deduplicated_and_sessions_do_not_share_consumption (tests.test_magnetic_pickups.MagneticPickupTests) ... FAIL
+test_radius_parameters_and_solid_or_closed_corner_paths (tests.test_magnetic_pickups.MagneticPickupTests) ... ok
+test_visible_flights_expire_and_extreme_radius_and_zoom_stay_bounded (tests.test_magnetic_pickups.MagneticPickupTests) ... ok
+
+======================================================================
+FAIL: test_looped_coordinates_are_deduplicated_and_sessions_do_not_share_consumption (tests.test_magnetic_pickups.MagneticPickupTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_magnetic_pickups.py", line 91, in test_looped_coordinates_are_deduplicated_and_sessions_do_not_share_consumption
+    self.assertEqual(template.get_tile(1, 1).type_id, 314)
+AssertionError: 324 != 314
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.906s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
