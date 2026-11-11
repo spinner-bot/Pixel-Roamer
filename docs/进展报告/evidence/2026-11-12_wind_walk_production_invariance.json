@@ -1,0 +1,23 @@
+{
+  "scope": "unmodified production helper compared with recorded isolated candidate and original controls; all actual row fields include complete trajectories",
+  "base_rows": 48,
+  "same_all_48_as_candidate": true,
+  "unchanged_36_original_controls": true,
+  "profiles": [
+    {
+      "profile": "reverse",
+      "rows": 16,
+      "same_as_candidate": true
+    },
+    {
+      "profile": "clarity",
+      "rows": 16,
+      "same_as_candidate": true
+    },
+    {
+      "profile": "iron_will",
+      "rows": 16,
+      "same_as_candidate": true
+    }
+  ]
+}
