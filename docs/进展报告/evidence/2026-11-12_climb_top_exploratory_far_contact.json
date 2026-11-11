@@ -1,0 +1,74 @@
+[
+  {
+    "ledge": false,
+    "mode": "keydown",
+    "start": [
+      5.5,
+      10.8
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.8
+    ],
+    "dy": 0.0,
+    "climbing": false,
+    "errors": [],
+    "can_climb": true,
+    "top": 10.0
+  },
+  {
+    "ledge": false,
+    "mode": "held",
+    "start": [
+      5.5,
+      10.8
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.8
+    ],
+    "dy": 0.0,
+    "climbing": false,
+    "errors": [],
+    "can_climb": true,
+    "top": 10.0
+  },
+  {
+    "ledge": true,
+    "mode": "keydown",
+    "start": [
+      5.5,
+      11.8
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      11.8
+    ],
+    "dy": 0.0,
+    "climbing": false,
+    "errors": [],
+    "can_climb": false,
+    "top": null
+  },
+  {
+    "ledge": true,
+    "mode": "held",
+    "start": [
+      5.5,
+      11.8
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      11.8
+    ],
+    "dy": 0.0,
+    "climbing": false,
+    "errors": [],
+    "can_climb": false,
+    "top": null
+  }
+]
