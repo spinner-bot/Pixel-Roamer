@@ -18,6 +18,7 @@ import pygame
 from scripts import audit_ice_lower as ice_audit
 from scripts import audit_session_soak as soak_audit
 from scripts.control_session import create_control_session, terminal_snapshot
+from simulation import SIMULATION_STEP
 
 
 def measure(seconds, fps):
@@ -35,6 +36,8 @@ def measure(seconds, fps):
         return {'route': route_result, 'error': 'continuous route did not provide one successful session'}
     session = sessions[0]
     start = terminal_snapshot(session)
+    initial_remainder = session.clock.remainder
+    position_bounds = [start['position'][0], start['position'][0], start['position'][1], start['position'][1]]
     steps, roof_contacts, jump_count = 0, 0, 0
     max_dx, max_dy, large_movements = 0., 0., []
     original_step, original_jump = session._advance_step, session.app.player1.jump
@@ -47,6 +50,10 @@ def measure(seconds, fps):
         original_step(dt, held)
         after = player.get_center()
         steps += 1
+        position_bounds[0] = min(position_bounds[0], after[0])
+        position_bounds[1] = max(position_bounds[1], after[0])
+        position_bounds[2] = min(position_bounds[2], after[1])
+        position_bounds[3] = max(position_bounds[3], after[1])
         dx, dy = abs(after[0] - before['position'][0]), abs(after[1] - before['position'][1])
         max_dx, max_dy = max(max_dx, dx), max(max_dy, dy)
         if 75 in player.contact_pool and abs(player._y + player._h / 2 - 42) < 1e-6:
@@ -67,11 +74,16 @@ def measure(seconds, fps):
             patch.object(session.app.player1, 'jump', side_effect=observe_jump):
         soak = soak_audit.run(3, seconds)
         factory_calls = factory.call_count
+    final_remainder = session.clock.remainder
+    accounted_seconds = steps * SIMULATION_STEP + final_remainder - initial_remainder
     return {'route': route_result, 'start_after_deliberate_respawn': start,
             'soak': soak, 'final': terminal_snapshot(session), 'factory_calls': factory_calls,
             'physics_steps': steps, 'float_ice_roof_contact_steps': roof_contacts,
             'accepted_jumps': jump_count, 'max_step_dx': max_dx, 'max_step_dy': max_dy,
-            'large_movements': large_movements}
+            'large_movements': large_movements, 'position_bounds': position_bounds,
+            'initial_clock_remainder': initial_remainder, 'final_clock_remainder': final_remainder,
+            'accounted_input_seconds': accounted_seconds,
+            'clock_accounting_error': accounted_seconds - soak['input_seconds']}
 
 
 def main():
@@ -86,7 +98,7 @@ def main():
     sources = ('scripts/audit_ice_checkpoint_soak.py', 'scripts/audit_ice_lower.py',
                'scripts/audit_endless_climb.py', 'scripts/audit_pixel_normal_tower.py',
                'scripts/audit_pixel_sky.py', 'scripts/audit_session_soak.py',
-               'scripts/routes/pixel_ice_lower.json', 'scripts/routes/pixel_sky_to_ice_lower.json')
+               'scripts/routes/pixel_ice_lower.json', 'scripts/routes/pixel_sky_to_ice_lower.json', 'simulation.py')
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'source_sha256': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in sources},
               'scope': 'same forest-route session after explicit deliberate checkpoint respawn; finite mixed-input stress may leave the initial room',
@@ -95,9 +107,10 @@ def main():
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     result = report['result']
     print(json.dumps({key: result.get(key) for key in ('error', 'physics_steps', 'float_ice_roof_contact_steps',
-                                                     'accepted_jumps', 'max_step_dx', 'max_step_dy', 'large_movements')}))
+                                                     'accepted_jumps', 'max_step_dx', 'max_step_dy', 'large_movements',
+                                                     'initial_clock_remainder', 'final_clock_remainder', 'accounted_input_seconds', 'clock_accounting_error')}))
     pygame.quit()
-    if result.get('error') or result['soak']['errors']:
+    if result.get('error') or result['soak']['errors'] or abs(result['clock_accounting_error']) > 1e-6:
         raise SystemExit(1)
 
 
