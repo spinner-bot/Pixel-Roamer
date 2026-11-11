@@ -1,0 +1,909 @@
+{
+  "code_revision": "82ba2733fa4dce7ed135fd38718979455a1f5235",
+  "legacy_revision": "913eb87",
+  "scope": "isolated legal-spawn lifecycle fixtures; real flight toggle/control; existing buffs deliberately granted in fixtures",
+  "before": [
+    {
+      "case": "flight_embedded",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          5.633333333333329,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.275,
+        "position": [
+          5.634213807325195,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.6000000000000005,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_embedded",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          5.4999999999999964,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          5.500880473991862,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        5.6000000000000005,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_embedded",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          5.4999999999999964,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          5.500880473991862,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        5.6000000000000005,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.14166666666666666,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.14166666666666666,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          4.5,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.13333333333333333,
+        "position": [
+          4.500880473991866,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          6.534657536930831,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          6.534657536930831,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.534657536930831,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.4179025283685975,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.4179025283685975,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          6.534657536930831,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          6.534657536930831,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.534657536930831,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.4179025283685975,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        6.4179025283685975,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.275,
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        5.099999999999998,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        5.099999999999998,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "final_position": [
+        5.099999999999998,
+        5.5
+      ],
+      "final_clear": false,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    }
+  ],
+  "after": [
+    {
+      "case": "flight_embedded",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          5.633333333333329,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.275,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_embedded",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          5.4999999999999964,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_embedded",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          5.4999999999999964,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.14166666666666666,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.14166666666666666,
+        "position": [
+          4.567547140658532,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_clear",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          4.5,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 0.13333333333333333,
+        "position": [
+          4.500880473991866,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": false,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "first_after_change": {
+        "time": 1.0083333333333322,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          6.534657536930831,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "ghost_dispelled_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          6.4179025283685975,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.8083333333333329,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.571609941089649,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 30,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.275,
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.566666666666666,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 60,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.566666666666666,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    },
+    {
+      "case": "flight_stunned",
+      "fps": 144,
+      "before_change": {
+        "position": [
+          5.099999999999998,
+          5.5
+        ],
+        "clear": false
+      },
+      "first_after_change": {
+        "time": 0.2583333333333333,
+        "position": [
+          4.566666666666666,
+          5.5
+        ],
+        "clear": true
+      },
+      "final_position": [
+        4.566666666666666,
+        5.5
+      ],
+      "final_clear": true,
+      "stunned": true,
+      "ghost": false,
+      "flight": false,
+      "hp": 150.0,
+      "stamina": 200.0,
+      "respawns": 0
+    }
+  ]
+}
