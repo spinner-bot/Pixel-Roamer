@@ -39,3 +39,39 @@ def advance_climb_alignment(actor, world, dt):
     actor._x = next_x
     if abs(target - next_x) <= CONTACT_EPSILON:
         actor._climb_align_target = None
+
+
+def hold_climb_top(actor, world, dt):
+    """Settle near the finite ladder cap without snapping or entering a ledge.
+
+    Return True while holding/settling at the top so upward input does not
+    compete with the alignment. Pending horizontal alignment may need to
+    finish before lowering a tall body beside a ledge.
+    """
+    bound = getattr(actor, '_climb_top_y', None)
+    if bound is None or not actor.is_climbing:
+        return False
+    if not math.isfinite(bound) or not math.isfinite(actor._y):
+        actor.stop_climbing()
+        return False
+    if not bound - .05 <= actor._y <= bound + 2.0:
+        return False
+    if not math.isfinite(dt) or dt <= 0:
+        return False
+    pending_x = getattr(actor, '_climb_align_target', None)
+    endpoint_x = actor._x if pending_x is None else pending_x
+    if not can_place(actor, world, endpoint_x, bound):
+        actor.stop_climbing()
+        return False
+    delta = bound - actor._y
+    distance = min(abs(delta), ALIGN_SPEED * dt)
+    next_y = bound if distance == abs(delta) else actor._y + math.copysign(distance, delta)
+    if abs(bound - next_y) <= CONTACT_EPSILON:
+        next_y = bound
+    actor.v_y = 0.0
+    if can_place(actor, world, actor._x, next_y):
+        actor._y = next_y
+    elif pending_x is None:
+        actor.stop_climbing()
+        return False
+    return True
