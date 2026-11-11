@@ -57,9 +57,9 @@ def run(fps):
             elif phase == 'lower_cloud':
                 target_x = 196.5
                 if actor.on_ground and abs(actor._y - 106.9) < .02:
-                    phase, target_x = 'cloud_edge', 204.5
+                    phase, target_x = 'cloud_edge', 204 + actor._w / 2 + .25
             elif phase == 'cloud_edge':
-                target_x = 204.5
+                target_x = 204 + actor._w / 2 + .25
                 if actor.on_ground and abs(actor._x - target_x) < .15:
                     phase, target_x, jump = 'upper_cloud', 217.5, True
             elif phase == 'upper_cloud':
