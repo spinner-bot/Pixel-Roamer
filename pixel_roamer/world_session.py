@@ -106,9 +106,13 @@ class WorldSession:
                 self.app.player1.v_y = 0.0
                 # 钳制在地图边界内（循环世界不钳制）
                 if not self.app._current_map.loop_x:
-                    self.app.player1._x = max(0.5, min(self.app.player1._x, self.app._current_map.width - 0.5))
+                    half_width = self.app.player1._w / 2
+                    self.app.player1._x = max(half_width, min(
+                        self.app.player1._x, self.app._current_map.width - half_width))
                 if not self.app._current_map.loop_y:
-                    self.app.player1._y = max(0.5, min(self.app.player1._y, self.app._current_map.height - 0.5))
+                    half_height = self.app.player1._h / 2
+                    self.app.player1._y = max(half_height, min(
+                        self.app.player1._y, self.app._current_map.height - half_height))
                 # 更新接触池（用于绘制等）
                 grect = self.app.player1.get_game_rect()
                 self.app.player1.clear_environment_contacts(self.app._current_map)
