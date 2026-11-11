@@ -660,7 +660,8 @@ fill(275, 63, 277, 65, 0)
 fill(269, 62, 277, 62, 244)
 world.end_bulk_load()
 
-# Restore a usable west-side connection through the existing tower floors.
-_tower_fill_color = world.fill_color
-apply_layout(world, Path(__file__).with_name("tower_connections.json"))
-world.fill_color = _tower_fill_color
+# Restore reviewed connections while preserving the authored world colors.
+_connection_fill_color = world.fill_color
+for _connection_file in ("tower_connections.json", "pyramid_connections.json"):
+    apply_layout(world, Path(__file__).with_name(_connection_file))
+world.fill_color = _connection_fill_color
