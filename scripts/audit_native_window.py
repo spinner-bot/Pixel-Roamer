@@ -146,12 +146,14 @@ def run(output, xdotool):
 
     def focus_away():
         nonlocal other
-        other = subprocess.Popen(["xmessage", "-name", "pixel-roamer-audit-focus",
+        other = subprocess.Popen(["xmessage", "-title", "pixel-roamer-audit-focus",
                                   "-buttons", "OK", "Private audit focus target"],
                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     def lose_focus():
-        wid = native("search", "--onlyvisible", "--pid", other.pid).splitlines()[0]
+        # Xt xmessage does not publish _NET_WM_PID; match our private title.
+        wid = native("search", "--onlyvisible", "--name",
+                     "^pixel-roamer-audit-focus$").splitlines()[0]
         native("windowfocus", "--sync", wid)
 
     def unfocused_start():
