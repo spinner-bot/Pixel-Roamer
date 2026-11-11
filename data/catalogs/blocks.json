@@ -13997,7 +13997,7 @@
         ]
       ],
       "buff_ids": [5],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [10.0],
       "consumed_type_id": null
     },
@@ -14107,7 +14107,7 @@
         ]
       ],
       "buff_ids": [7, 6],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], []],
       "buff_durations": [12.0, 12.0],
       "consumed_type_id": null
     },
@@ -14938,7 +14938,7 @@
         ]
       ],
       "buff_ids": [51, 42],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], []],
       "buff_durations": [6.0, 6.0],
       "consumed_type_id": null
     },
@@ -15574,7 +15574,7 @@
         ]
       ],
       "buff_ids": [45],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [8.0],
       "consumed_type_id": null
     },
@@ -15644,7 +15644,7 @@
         ]
       ],
       "buff_ids": [43, 22],
-      "buff_params_list": [[0], [20]],
+      "buff_params_list": [[], [20]],
       "buff_durations": [6.0, 6.0],
       "consumed_type_id": null
     },
@@ -15715,7 +15715,7 @@
         ]
       ],
       "buff_ids": [42],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [8.0],
       "consumed_type_id": null
     },
@@ -16038,7 +16038,7 @@
         ]
       ],
       "buff_ids": [53],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [5.0],
       "consumed_type_id": null
     },
@@ -16107,7 +16107,7 @@
         ]
       ],
       "buff_ids": [54, 7],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], []],
       "buff_durations": [15.0, 15.0],
       "consumed_type_id": null
     },
@@ -16180,7 +16180,7 @@
         ]
       ],
       "buff_ids": [13],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [10.0],
       "consumed_type_id": null
     },
@@ -16290,7 +16290,7 @@
         ]
       ],
       "buff_ids": [47, 17],
-      "buff_params_list": [[0], [1]],
+      "buff_params_list": [[], [1]],
       "buff_durations": [10.0, 10.0],
       "consumed_type_id": null
     },
@@ -16399,7 +16399,7 @@
         ]
       ],
       "buff_ids": [39, 7],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [15.0, 15.0],
       "consumed_type_id": null
     },
@@ -16686,7 +16686,7 @@
         ]
       ],
       "buff_ids": [38, 53],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [12.0, 12.0],
       "consumed_type_id": null
     },
@@ -16796,7 +16796,7 @@
         ]
       ],
       "buff_ids": [51, 46],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], [0]],
       "buff_durations": [6.0, 6.0],
       "consumed_type_id": null
     },
@@ -16870,7 +16870,7 @@
         ]
       ],
       "buff_ids": [45],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [8.0],
       "consumed_type_id": null
     },
@@ -16968,7 +16968,7 @@
         ]
       ],
       "buff_ids": [55, 17],
-      "buff_params_list": [[0], [1]],
+      "buff_params_list": [[], [1]],
       "buff_durations": [8.0, 8.0],
       "consumed_type_id": null
     },
@@ -17219,7 +17219,7 @@
         ]
       ],
       "buff_ids": [53, 3],
-      "buff_params_list": [[0], [30]],
+      "buff_params_list": [[], [30]],
       "buff_durations": [8.0, 8.0],
       "consumed_type_id": null
     },
@@ -17357,7 +17357,7 @@
         ]
       ],
       "buff_ids": [42],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [6.0],
       "consumed_type_id": null
     },
@@ -17648,7 +17648,7 @@
         ]
       ],
       "buff_ids": [5, 34],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], [0]],
       "buff_durations": [8.0, 8.0],
       "consumed_type_id": null
     },
@@ -17758,7 +17758,7 @@
         ]
       ],
       "buff_ids": [40, 6],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [15.0, 15.0],
       "consumed_type_id": null
     },
@@ -18134,7 +18134,7 @@
         ]
       ],
       "buff_ids": [51, 21],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], [0]],
       "buff_durations": [5.0, 5.0],
       "consumed_type_id": null
     },
@@ -18273,7 +18273,7 @@
         ]
       ],
       "buff_ids": [27, 45],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [6.0, 3.0],
       "consumed_type_id": null
     },
@@ -18598,7 +18598,7 @@
         ]
       ],
       "buff_ids": [13, 53],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], []],
       "buff_durations": [4.0, 4.0],
       "consumed_type_id": null
     },
@@ -18668,7 +18668,7 @@
         ]
       ],
       "buff_ids": [54, 27],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], [0]],
       "buff_durations": [10.0, 10.0],
       "consumed_type_id": null
     },
@@ -18737,7 +18737,7 @@
         ]
       ],
       "buff_ids": [13, 4],
-      "buff_params_list": [[0], [30]],
+      "buff_params_list": [[], [30]],
       "buff_durations": [6.0, 6.0],
       "consumed_type_id": null
     },
@@ -18824,7 +18824,7 @@
         ]
       ],
       "buff_ids": [5],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [8.0],
       "consumed_type_id": null
     },
@@ -19017,7 +19017,7 @@
         ]
       ],
       "buff_ids": [11, 47],
-      "buff_params_list": [[20], [0]],
+      "buff_params_list": [[20], []],
       "buff_durations": [10.0, 10.0],
       "consumed_type_id": null
     },
@@ -19126,7 +19126,7 @@
         ]
       ],
       "buff_ids": [39, 44],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [18.0, 8.0],
       "consumed_type_id": null
     },
@@ -19236,7 +19236,7 @@
         ]
       ],
       "buff_ids": [53, 3],
-      "buff_params_list": [[0], [50]],
+      "buff_params_list": [[], [50]],
       "buff_durations": [10.0, 10.0],
       "consumed_type_id": null
     },
@@ -19346,7 +19346,7 @@
         ]
       ],
       "buff_ids": [7, 40],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[], [0]],
       "buff_durations": [15.0, 15.0],
       "consumed_type_id": null
     },
@@ -19422,7 +19422,7 @@
         ]
       ],
       "buff_ids": [38, 53],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [8.0, 8.0],
       "consumed_type_id": null
     },
@@ -20110,7 +20110,7 @@
         ]
       ],
       "buff_ids": [13],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [5.0],
       "consumed_type_id": null
     },
@@ -20273,7 +20273,7 @@
         ]
       ],
       "buff_ids": [42],
-      "buff_params_list": [[0]],
+      "buff_params_list": [[]],
       "buff_durations": [4.0],
       "consumed_type_id": null
     },
@@ -20526,7 +20526,7 @@
         ]
       ],
       "buff_ids": [27, 54],
-      "buff_params_list": [[0], [0]],
+      "buff_params_list": [[0], []],
       "buff_durations": [4.0, 4.0],
       "consumed_type_id": null
     }
