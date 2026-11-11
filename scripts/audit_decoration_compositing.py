@@ -66,8 +66,10 @@ def rgba_case(default_id, alpha):
     direct = pygame.Surface((16, 16))
     direct.fill(background)
     render_block_pattern(direct, block, 0, 0, 16, 16, overdraw=False)
-    world = World(0, 'rgba composition', 1, 1, default_block_id=default_id, view_blocks_h=1)
-    world.block_types[block.id] = block
+    catalog = dict(BLOCK_TYPES)
+    catalog[block.id] = block
+    world = World(0, 'rgba composition', 1, 1, block_types=catalog,
+                  default_block_id=default_id, view_blocks_h=1)
     world.set_tile(0, 0, block.id)
     surface = pygame.Surface((16, 16))
     camera = Camera(16, 16, world)
