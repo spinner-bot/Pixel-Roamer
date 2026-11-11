@@ -7,6 +7,7 @@ from shore_exit import begin_shore_exit, advance_shore_exit, after_shore_physics
 from phase_collision import prepare_phase_collision, remember_phase_position
 from climb_alignment import hold_climb_top
 from teleport import can_place
+from buff_controls import action_blocked
 
 class WorldSession:
     """Existing world rules and input."""
@@ -75,9 +76,11 @@ class WorldSession:
         buf_stam_cost = self.app.player1.get_buff_stat("stamina_cost", 1.0)
         # 控制效果检查（铁意 buff 40 免疫定身/晕眩/压制/反向）
         iron_will = self.app.player1.has_buff(40)
-        rooted = self.app.player1.has_buff(21) and not iron_will
+        rooted = ((self.app.player1.has_buff(21) and not iron_will)
+                  or action_blocked(self.app.player1, 'horizontal'))
         stunned = self.app.player1.has_buff(28) and not iron_will
-        grounded = self.app.player1.has_buff(27) and not iron_will
+        grounded = ((self.app.player1.has_buff(27) and not iron_will)
+                    or action_blocked(self.app.player1, 'jump'))
         hopping = self.app.player1.has_buff(33)
         reversed_ctrl = ((self.app.player1.has_buff(23) or getattr(self.app.player1, '_confused', False))
                          and not self.app.player1.has_buff(8) and not iron_will)
@@ -145,10 +148,12 @@ class WorldSession:
                 climb_up_cost = 14.0 * sm * buf_stam_cost * dt + 0.01
                 climb_idle_cost = 3.52 * sm * buf_stam_cost * dt + 0.01
                 up_held = keys[self.app.player1.key_bind["up"]] or keys[pygame.K_UP]
+                climb_up_held = up_held and not action_blocked(self.app.player1, 'climb')
+                swim_up_held = up_held and not action_blocked(self.app.player1, 'swim')
                 down_held = keys[self.app.player1.key_bind["down"]] or keys[pygame.K_DOWN]
                 if down_held:
                     self.app.player1.stop_climbing()
-                elif (up_held and not self.app.player1.is_climbing and self.app.player1.can_climb
+                elif (climb_up_held and not self.app.player1.is_climbing and self.app.player1.can_climb
                       and not self.app.jump_pressed and self.app.player1.v_y <= 0):
                     # Held input must work when contact begins after KEYDOWN.
                     # Keep an intentional jump detached during its ascent.
@@ -158,7 +163,7 @@ class WorldSession:
                         self.app._stamina_flash_timer = self.app._stamina_flash_duration
                 # 攀爬上边界：人物中心到达梯子顶端（半腰位置），消耗挂住体力
                 at_climb_bound = hold_climb_top(self.app.player1, self.app._current_map, dt)
-                if self.app.player1.is_climbing and up_held:
+                if self.app.player1.is_climbing and climb_up_held:
                     if at_climb_bound:
                         # 已到顶端，消耗挂住体力
                         if self.app.player1.stamina >= climb_idle_cost:
@@ -186,7 +191,7 @@ class WorldSession:
                 above_surface = (swim_surface is not None and self.app.player1._y > swim_surface + .05)
                 if (not self.app.player1.is_climbing and self.app.player1.can_swim
                         and not self.app.player1.has_buff(58) and not above_surface):
-                    if up_held:
+                    if swim_up_held:
                         swim_cost = 21.0 * sm * buf_stam_cost * dt + 0.01
                         if self.app.player1.stamina >= swim_cost:
                             # 游泳上边界仅在主动游泳且体力足够时生效
@@ -214,8 +219,8 @@ class WorldSession:
                 # ---- 体力恢复（攀爬中/水中按↑时不恢复，防止耗尽-恢复循环） ----
                 can_recover = (not self.app.player1.is_climbing
                                and not swimming_now
-                               and not (self.app.player1.can_swim and up_held)
-                               and not (self.app.player1.can_climb and up_held and not self.app.player1.is_climbing))
+                               and not (self.app.player1.can_swim and swim_up_held)
+                               and not (self.app.player1.can_climb and climb_up_held and not self.app.player1.is_climbing))
                 if can_recover and self.app.player1.stamina < self.app.player1.stamina_max:
                     self.app.player1.recover_stamina(buf_stam_rec * dt)
 
