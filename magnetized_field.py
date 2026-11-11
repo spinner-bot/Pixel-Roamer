@@ -5,6 +5,7 @@ immunity checks; physical sources use their nearest loop image exactly once.
 """
 import math
 from environment_forces import opposed_force
+from buff_parameters import magnetic_response
 
 RADIUS = 4.
 
@@ -15,6 +16,9 @@ def _delta(value, period, looping):
 
 def apply_field(actor, world, dt):
     if dt <= 0:
+        return
+    response = magnetic_response(next((b.params for b in actor.buffs if b.buff_id == 49), ()))
+    if response == 0:
         return
     x, y = actor.get_center()
     sources = {}
@@ -50,7 +54,7 @@ def apply_field(actor, world, dt):
             # Continuous from the actor/ore contact envelope to zero at R.
             gap = max(0., distance - contact_distance)
             attenuation = max(0., 1 - gap / max(1e-8, RADIUS - contact_distance)) ** 2
-        strength = float(kind.special_data) * 2.5 * 10 * attenuation
+        strength = float(kind.special_data) * 2.5 * 10 * attenuation * response
         ax += dx / max(.1, distance) * strength
         ay += dy / max(.1, distance) * strength
     actor.v_x += opposed_force(ax, actor.a_x) * dt
