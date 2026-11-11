@@ -211,8 +211,10 @@ def gallery(kind, old, new, ids, filename=None):
 def main():
     overrides = {'schema_version': 1, 'baseline_ref': BASELINE_REF, 'blocks': {}, 'buffs': {}}
     for kind in ('blocks', 'buffs'):
-        document = original(kind)
-        before = {entry['id']: json.loads(json.dumps(entry)) for entry in document['entries']}
+        # Refine art on the current authored definitions. Rebuilding from the
+        # old comparison snapshot would silently undo reviewed gameplay fixes.
+        document = json.loads((ROOT / 'data/catalogs' / f'{kind}.json').read_text())
+        before = {entry['id']: entry for entry in original(kind)['entries']}
         chosen = tuple(dict.fromkeys(BLOCK_IDS + PICKUP_IDS + DECORATION_IDS + SPRITE_IDS)) if kind == 'blocks' else tuple(before)
         for entry in document['entries']:
             if entry['id'] not in chosen:
