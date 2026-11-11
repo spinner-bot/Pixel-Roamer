@@ -1,0 +1,12 @@
+test_force_immunity_still_blocks_magnetic_attraction (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_mixed_sources_are_limited_after_summing_not_per_face (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_only_deliberate_opposing_input_limits_horizontal_attraction (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_passive_and_vertical_attraction_keep_original_strength (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+test_three_magnet_types_and_both_faces_allow_real_control_retreat (tests.test_magnetic_escape.MagneticEscapeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.177s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
