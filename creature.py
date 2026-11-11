@@ -96,6 +96,24 @@ class Creature:
         self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
 
+    @property
+    def phys_atk(self):
+        base = self._phys_atk
+        return self.get_buff_stat('phys_atk', base) if getattr(self, 'buffs', ()) else base
+
+    @phys_atk.setter
+    def phys_atk(self, value):
+        self._phys_atk = value
+
+    @property
+    def magic_atk(self):
+        base = self._magic_atk
+        return self.get_buff_stat('magic_atk', base) if getattr(self, 'buffs', ()) else base
+
+    @magic_atk.setter
+    def magic_atk(self, value):
+        self._magic_atk = value
+
     # ----- 游戏矩形 -----
     def get_game_rect(self) -> GameRect:
         return GameRect(self._x - self._w / 2, self._y - self._h / 2, self._w, self._h)
