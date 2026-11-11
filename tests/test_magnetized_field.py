@@ -16,6 +16,7 @@ import pygame
 from block_types_data import BLOCK_TYPES
 from environment_forces import apply_magnetism
 from scripts.control_session import create_control_session
+from scripts.audit_magnetized_field import jump_source_probe
 from world import World
 
 
@@ -30,6 +31,27 @@ def fixture(distance=3.5, duration=2):
 
 
 class MagnetizedFieldTests(unittest.TestCase):
+    def test_deliberate_jump_leaves_actual_sources_and_escape_state_ends_on_landing(self):
+        for kind in (338, 386, 403):
+            for fps in (30, 60, 144):
+                with self.subTest(kind=kind, fps=fps):
+                    row = jump_source_probe(fps, kind)
+                    self.assertTrue(row['landed'])
+                    self.assertGreater(row['height'], 4)
+                    self.assertGreaterEqual(row['min_foot'], 5 - 1e-8)
+                    self.assertEqual(row['buff_source'], kind if kind != 338 else None)
+                    self.assertEqual(row['hp'], 150)
+                    self.assertEqual(row['respawns'], 0)
+                    self.assertFalse(row['escape_flag_at_landing'])
+        session, _ = fixture()
+        actor = session.app.player1
+        self.assertFalse(actor.jump())
+        self.assertFalse(actor._jump_escape_active)
+        self.assertTrue(actor.jump(not_on_ground_ok=True))
+        self.assertTrue(actor._jump_escape_active)
+        actor.reset_motion()
+        self.assertFalse(actor._jump_escape_active)
+
     def test_range_polarities_immunities_real_source_retreat_and_loop_deduplication(self):
         root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:
