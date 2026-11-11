@@ -5,6 +5,7 @@ from game_state import resolve_player_death
 from simulation import FixedStepClock
 from shore_exit import begin_shore_exit, advance_shore_exit, after_shore_physics
 from phase_collision import prepare_phase_collision, remember_phase_position
+from climb_alignment import hold_climb_top
 
 class WorldSession:
     """Existing world rules and input."""
@@ -154,14 +155,7 @@ class WorldSession:
                     else:
                         self.app._stamina_flash_timer = self.app._stamina_flash_duration
                 # 攀爬上边界：人物中心到达梯子顶端（半腰位置），消耗挂住体力
-                climb_bound = getattr(self.app.player1, '_climb_top_y', None)
-                at_climb_bound = False
-                if climb_bound is not None and self.app.player1.is_climbing:
-                    # 仅当靠近边界时吸附（防止远处瞬移）
-                    if self.app.player1._y >= climb_bound - 0.05 and self.app.player1._y <= climb_bound + 2.0:
-                        self.app.player1._y = climb_bound  # 中心与方块上边界齐平（半腰）
-                        self.app.player1.v_y = 0.0
-                        at_climb_bound = True
+                at_climb_bound = hold_climb_top(self.app.player1, self.app._current_map, dt)
                 if self.app.player1.is_climbing and up_held:
                     if at_climb_bound:
                         # 已到顶端，消耗挂住体力
