@@ -21,7 +21,7 @@ from pixel_roamer.world_session import WorldSession
 from teleport import can_place
 
 
-def run(fps=60, legacy=False):
+def run(fps=60, legacy=False, *, world_hook=None, ice_hook=None):
     app = GameApp.__new__(GameApp)
     app.p1_keys = dict(left=pygame.K_a, right=pygame.K_d, up=pygame.K_w,
                        down=pygame.K_s, jump=pygame.K_SPACE, fly=pygame.K_f)
@@ -37,6 +37,8 @@ def run(fps=60, legacy=False):
             app.launch_world(21)
     else:
         app.launch_world(21)
+    if world_hook is not None:
+        world_hook(app._current_map)
     app.focused = True
     app.help_open = False
     app.page = PAGE_WORLD
@@ -61,6 +63,7 @@ def run(fps=60, legacy=False):
     leg_start = jump_frame = 0
     jumped = set()
     min_hp, min_stamina = player.hp, player.stamina
+    ice_extension, extension_seconds = None, 0.
     failure = None
     with patch('pygame.key.get_pressed', return_value=keys), patch('sfx.play_jump'):
         for frame in range(300 * fps):
@@ -105,7 +108,7 @@ def run(fps=60, legacy=False):
                 failure = 'flight, death or respawn'
                 break
             if frame % fps == 0:
-                trace.append({'t': frame / fps, 'target': name, 'position': player.get_center(),
+                trace.append({'t': frame / fps + extension_seconds, 'target': name, 'position': player.get_center(),
                               'velocity': [player.v_x, player.v_y], 'hp': player.hp,
                               'stamina': player.stamina})
             if app._game_win:
@@ -118,17 +121,30 @@ def run(fps=60, legacy=False):
             elif mode == 'climb':
                 reached = player.is_climbing and player._y > ty - .05
             if reached:
-                arrivals.append({'name': name, 'seconds': frame / fps, 'position': player.get_center()})
+                arrivals.append({'name': name, 'seconds': frame / fps + extension_seconds, 'position': player.get_center()})
+                if name == 'ice_245' and ice_hook is not None:
+                    before = app._game_timer
+                    ice_extension = ice_hook(app, session, keys, fps)
+                    extension_seconds += app._game_timer - before
+                    touched.update(ice_extension.get('touched_types', ()))
+                    min_hp = min(min_hp, ice_extension.get('min_hp', player.hp))
+                    min_stamina = min(min_stamina, ice_extension.get('min_stamina', player.stamina))
+                    if ice_extension.get('failure'):
+                        failure = 'ice extension: ' + ice_extension['failure']
+                        break
                 leg += 1
                 leg_start = frame
             elif frame - leg_start >= 45 * fps:
                 failure = 'waypoint time budget exceeded'
                 break
-    return {'fps': fps, 'seconds': (frame + 1) / fps, 'game_win': app._game_win,
+    result = {'fps': fps, 'seconds': (frame + 1) / fps + extension_seconds, 'game_win': app._game_win,
             'reached_end': player._reached_end, 'failure': failure, 'target': targets[leg][0],
             'position': player.get_center(), 'min_hp': min_hp, 'min_stamina': min_stamina,
             'lives_left': app._player_lives_left, 'score': player.score,
             'touched_types': sorted(touched), 'arrivals': arrivals, 'trace': trace}
+    if ice_hook is not None:
+        result['ice_extension'] = ice_extension
+    return result
 
 
 def main():
