@@ -21,8 +21,8 @@ from pixel_roamer.world_session import WorldSession
 from teleport import can_place
 
 
-def run(fps=60, legacy=False, *, world_hook=None, ice_hook=None):
-    app = GameApp.__new__(GameApp)
+def run(fps=60, legacy=False, *, world_hook=None, ice_hook=None, app_factory=None):
+    app = app_factory() if app_factory is not None else GameApp.__new__(GameApp)
     app.p1_keys = dict(left=pygame.K_a, right=pygame.K_d, up=pygame.K_w,
                        down=pygame.K_s, jump=pygame.K_SPACE, fly=pygame.K_f)
     app._play_world_music = lambda world: None
