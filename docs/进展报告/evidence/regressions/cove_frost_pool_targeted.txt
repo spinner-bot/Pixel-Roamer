@@ -1,0 +1,7 @@
+test_normal_spawn_original_cold_source_freezes_thaws_and_returns_to_formal_victory (test_cove_frost_pool.CoveFrostPoolTests) ... ok
+test_only_seventeen_original_air_cells_change_and_every_original_pickup_is_preserved (test_cove_frost_pool.CoveFrostPoolTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 11.511s
+
+OK
