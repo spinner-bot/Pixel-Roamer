@@ -52,7 +52,7 @@ def ice_detour(app, session, keys, fps):
                     and actor._near_shore and actor._x > 247.8):
                 events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
                 phase, shore_event = 'shore', True
-        elif phase == 'shore' and actor.on_ground and actor._x > 249 and not actor._shore_exit_pending:
+        elif phase == 'shore' and actor.on_ground and actor._x > 249 and not getattr(actor, '_shore_exit_pending', False):
             phase, jump_started = 'return', elapsed
             events.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE))
         elif phase == 'return' and actor.on_ground and abs(actor._x - 251.5) < .4 and abs(actor._y - 63.9) < .15:
@@ -81,7 +81,7 @@ def ice_detour(app, session, keys, fps):
         if frame % max(1, fps // 10) == 0 or old_phase != phase:
             trace.append({'time': elapsed, 'phase': phase, 'position': actor.get_center(),
                           'velocity': [actor.v_x, actor.v_y], 'swim': actor.can_swim,
-                          'surface': actor._swim_top_y, 'shore': actor._shore_exit_pending,
+                          'surface': actor._swim_top_y, 'shore': getattr(actor, '_shore_exit_pending', False),
                           'on_ground': actor.on_ground, 'stamina': actor.stamina,
                           'buffs': [{'id': b.buff_id, 'source': b.source, 'remaining': b.duration}
                                     for b in actor.buffs]})
