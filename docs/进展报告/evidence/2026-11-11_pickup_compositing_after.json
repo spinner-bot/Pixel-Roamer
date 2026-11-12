@@ -1,0 +1,937 @@
+{
+  "code_revision": "fcf53cc49281eeae12d60ad753574b61765e18e7",
+  "controller_sha256": "e4b2a50cdfc8fddc27545cc914ddbe9db6a69d3ad9341cdb8747871a7ad30077",
+  "scope": "actual 60FPS controls through pickup and back; synthetic 8x4 worlds with cached rendering",
+  "runs": [
+    {
+      "block_id": 310,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 10,
+      "expected_score": 10,
+      "tile_after": 320,
+      "expected_consumed_id": 320,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 310,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 10,
+      "expected_score": 10,
+      "tile_after": 320,
+      "expected_consumed_id": 320,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 310,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 10,
+      "expected_score": 10,
+      "tile_after": 320,
+      "expected_consumed_id": 320,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 311,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 5,
+      "expected_score": 5,
+      "tile_after": 321,
+      "expected_consumed_id": 321,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 311,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 5,
+      "expected_score": 5,
+      "tile_after": 321,
+      "expected_consumed_id": 321,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 311,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 5,
+      "expected_score": 5,
+      "tile_after": 321,
+      "expected_consumed_id": 321,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 312,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 322,
+      "expected_consumed_id": 322,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 312,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 322,
+      "expected_consumed_id": 322,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 312,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 322,
+      "expected_consumed_id": 322,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 313,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 323,
+      "expected_consumed_id": 323,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 313,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 323,
+      "expected_consumed_id": 323,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 313,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 25,
+      "expected_score": 25,
+      "tile_after": 323,
+      "expected_consumed_id": 323,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 314,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 50,
+      "expected_score": 50,
+      "tile_after": 324,
+      "expected_consumed_id": 324,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 314,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 50,
+      "expected_score": 50,
+      "tile_after": 324,
+      "expected_consumed_id": 324,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 314,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 50,
+      "expected_score": 50,
+      "tile_after": 324,
+      "expected_consumed_id": 324,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 315,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 30,
+      "expected_score": 30,
+      "tile_after": 325,
+      "expected_consumed_id": 325,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 315,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 30,
+      "expected_score": 30,
+      "tile_after": 325,
+      "expected_consumed_id": 325,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 315,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 30,
+      "expected_score": 30,
+      "tile_after": 325,
+      "expected_consumed_id": 325,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 316,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 15,
+      "expected_score": 15,
+      "tile_after": 326,
+      "expected_consumed_id": 326,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 316,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 15,
+      "expected_score": 15,
+      "tile_after": 326,
+      "expected_consumed_id": 326,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 316,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 15,
+      "expected_score": 15,
+      "tile_after": 326,
+      "expected_consumed_id": 326,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 317,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 40,
+      "expected_score": 40,
+      "tile_after": 327,
+      "expected_consumed_id": 327,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 317,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 40,
+      "expected_score": 40,
+      "tile_after": 327,
+      "expected_consumed_id": 327,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 317,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 40,
+      "expected_score": 40,
+      "tile_after": 327,
+      "expected_consumed_id": 327,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 318,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 328,
+      "expected_consumed_id": 328,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 318,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 328,
+      "expected_consumed_id": 328,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 318,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 328,
+      "expected_consumed_id": 328,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 319,
+      "background": 0,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 329,
+      "expected_consumed_id": 329,
+      "before": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          135,
+          255,
+          255
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 319,
+      "background": 11,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 329,
+      "expected_consumed_id": 329,
+      "before": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          11,
+          20,
+          147
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    },
+    {
+      "block_id": 319,
+      "background": 12,
+      "reached_and_returned": true,
+      "failure": null,
+      "score": 20,
+      "expected_score": 20,
+      "tile_after": 329,
+      "expected_consumed_id": 329,
+      "before": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "after": {
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "native_alpha": 0,
+        "composites": true
+      },
+      "respawns": 0,
+      "hp": 150.0,
+      "stamina": 200.0
+    }
+  ]
+}

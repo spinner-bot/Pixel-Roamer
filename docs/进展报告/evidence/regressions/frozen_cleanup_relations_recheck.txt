@@ -1,0 +1,11 @@
+test_declared_orders_and_real_water_steam_sources_clear_and_restore_fire_damage (test_buff_cleanup.BuffCleanupTests) ... ok
+test_refresh_redundant_conflicts_and_callback_side_effects_remove_each_active_effect_once (test_buff_cleanup.BuffCleanupTests) ... ok
+test_rejected_acquisitions_do_not_clear_conflicts_or_reverse_relations (test_buff_cleanup.BuffCleanupTests) ... ok
+test_wet_expiry_reacquisition_pause_and_real_respawn_keep_cleanup_consistent (test_buff_cleanup.BuffCleanupTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.641s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

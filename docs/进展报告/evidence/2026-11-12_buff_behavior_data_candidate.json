@@ -1,0 +1,8680 @@
+{
+  "behavior_rules_candidate": "scripts/fixtures/buff_behavior_candidate.json",
+  "bounded_root_candidate": false,
+  "compound_slow_candidate": false,
+  "single_stack_candidate": false,
+  "code_revision": "c9925ac4944dcc5a44eddfffa1d9e1eab6fffebe",
+  "scope": "actual source contact at rest, original Buff links, production WorldSession D / D+Space; API40 control explicitly labeled; finite fixture horizon, not all escape abilities or original-map acceptance",
+  "runs": [
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.608333333333402,
+      "max_x": 14.647500238607579,
+      "position": [
+        14.647500238607579,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333334504,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.966666666666667,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9666666666666703,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.966666666666674,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666774,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.506311656742806,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.315741996504054,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.60833333333333,
+      "max_x": 14.607595308342042,
+      "position": [
+        14.607595308342042,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50423924596601,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.288312839769405,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.513052809153844,
+      "position": [
+        14.513052809153844,
+        11.652225864658062
+      ],
+      "jumps": 3,
+      "min_root_remaining": 0.03333333333334504,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.263101380702028
+          ],
+          "root_remaining": 3.966666666666667,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.55993621627395
+          ],
+          "root_remaining": 2.9666666666666703,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            9.961136796618003
+          ],
+          "root_remaining": 1.966666666666674,
+          "stamina": 191.0325555449433,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            8.690109119586257
+          ],
+          "root_remaining": 0.9666666666666774,
+          "stamina": 179.0452034088887,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.503268821509032,
+            11.73543993422195
+          ],
+          "root_remaining": null,
+          "stamina": 182.50121973901412,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.799047961580733,
+            8.346337936365552
+          ],
+          "root_remaining": null,
+          "stamina": 185.7382861878299,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.414118661262767,
+            11.45047396917949
+          ],
+          "root_remaining": null,
+          "stamina": 174.371889437627,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3749999999999976,
+      "max_x": 14.56257953317646,
+      "position": [
+        14.56257953317646,
+        11.718648263557277
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50423924596601,
+            6.263101380702028
+          ],
+          "root_remaining": null,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.019365541789785,
+            11.55993621627395
+          ],
+          "root_remaining": null,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.608333333333402,
+      "max_x": 14.647500238607579,
+      "position": [
+        14.647500238607579,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333334504,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.966666666666667,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9666666666666703,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.966666666666674,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666774,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.506311656742806,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.315741996504054,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.60833333333333,
+      "max_x": 14.607595308342042,
+      "position": [
+        14.607595308342042,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50423924596601,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.288312839769405,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.341666666666821,
+      "max_x": 14.528155306260894,
+      "position": [
+        14.528155306260894,
+        9.456606258801342
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.03333333333334504,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.260885925876776
+          ],
+          "root_remaining": 3.966666666666667,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.938748305747565
+          ],
+          "root_remaining": 2.9666666666666703,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.411971716815644
+          ],
+          "root_remaining": 1.966666666666674,
+          "stamina": 176.18717486404256,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.661048516181935
+          ],
+          "root_remaining": 0.9666666666666774,
+          "stamina": 179.82437352498476,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.501634410754518,
+            8.319892347870745
+          ],
+          "root_remaining": null,
+          "stamina": 168.51512399865243,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.149523980790358,
+            9.219378761209521
+          ],
+          "root_remaining": null,
+          "stamina": 172.63928768771962,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.45705933063137,
+            9.749880113869015
+          ],
+          "root_remaining": null,
+          "stamina": 161.91457705018595,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            14.030964255710282,
+            10.94846020985445
+          ],
+          "root_remaining": null,
+          "stamina": 166.4585196958682,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3749999999999976,
+      "max_x": 14.56257953317646,
+      "position": [
+        14.56257953317646,
+        8.938477372142135
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50423924596601,
+            6.260885925876776
+          ],
+          "root_remaining": null,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.019365541789785,
+            9.938748305747565
+          ],
+          "root_remaining": null,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.591666666666734,
+      "max_x": 14.567831257862723,
+      "position": [
+        14.567831257862723,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666678376,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9833333333333334,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.983333333333337,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333333405,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.983333333333344,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.502562646620687,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.261119197098957,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.5916666666666635,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50129098137517,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.234162854971384,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.513052809153844,
+      "position": [
+        14.513052809153844,
+        11.749872879739856
+      ],
+      "jumps": 3,
+      "min_root_remaining": 0.016666666666678376,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.0855286576945025
+          ],
+          "root_remaining": 3.9833333333333334,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.53251908417049
+          ],
+          "root_remaining": 2.983333333333337,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            10.036532587019671
+          ],
+          "root_remaining": 1.9833333333333405,
+          "stamina": 190.98609324853817,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            8.576712451597182
+          ],
+          "root_remaining": 0.983333333333344,
+          "stamina": 178.98566421367588,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.50131409495745,
+            11.741167734969835
+          ],
+          "root_remaining": null,
+          "stamina": 182.44545386325726,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.76339486219846,
+            8.448590592359457
+          ],
+          "root_remaining": null,
+          "stamina": 185.686052109786,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.364857923460113,
+            11.45047396917949
+          ],
+          "root_remaining": null,
+          "stamina": 174.32296815507232,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3749999999999976,
+      "max_x": 14.56257953317646,
+      "position": [
+        14.56257953317646,
+        11.718648263557277
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50129098137517,
+            6.0855286576945025
+          ],
+          "root_remaining": null,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.948871899226228,
+            11.53251908417049
+          ],
+          "root_remaining": null,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.591666666666734,
+      "max_x": 14.567831257862723,
+      "position": [
+        14.567831257862723,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666678376,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9833333333333334,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.983333333333337,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333333405,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.983333333333344,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.502562646620687,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.261119197098957,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.5916666666666635,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50129098137517,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.234162854971384,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.325000000000154,
+      "max_x": 14.500334287424433,
+      "position": [
+        14.500334287424433,
+        9.242882386766523
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.016666666666678376,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.0848565287189835
+          ],
+          "root_remaining": 3.9833333333333334,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.961700766500545
+          ],
+          "root_remaining": 2.983333333333337,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.411971716815644
+          ],
+          "root_remaining": 1.9833333333333405,
+          "stamina": 176.1407140320108,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.661048516181935
+          ],
+          "root_remaining": 0.983333333333344,
+          "stamina": 179.78085897015632,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.500657047478727,
+            8.41943441152735
+          ],
+          "root_remaining": null,
+          "stamina": 168.49044312569086,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.131697431099221,
+            9.152868164357512
+          ],
+          "root_remaining": null,
+          "stamina": 172.61617493767213,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.432428961730043,
+            9.95691729313028
+          ],
+          "root_remaining": null,
+          "stamina": 161.92485009171398,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            14.00358645706939,
+            10.82188326052935
+          ],
+          "root_remaining": null,
+          "stamina": 166.46813872417303,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3749999999999976,
+      "max_x": 14.56257953317646,
+      "position": [
+        14.56257953317646,
+        8.938477372142135
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.50129098137517,
+            6.0848565287189835
+          ],
+          "root_remaining": null,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.948871899226228,
+            9.961700766500545
+          ],
+          "root_remaining": null,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.5833333333334005,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333345043,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.0000000000000036,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.000000000000007,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.0000000000000107,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.500433583157204,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.207445613416601,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.5916666666666635,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.180969286118547,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.513052809153844,
+      "position": [
+        14.513052809153844,
+        11.749872879739856
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.008333333333345043,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.503198515489224
+          ],
+          "root_remaining": 3.0000000000000036,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            10.11038604995419
+          ],
+          "root_remaining": 2.000000000000007,
+          "stamina": 190.93958032142044,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            8.461110361706066
+          ],
+          "root_remaining": 1.0000000000000107,
+          "stamina": 178.9260599872634,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.500220118497966,
+            11.745108513856401
+          ],
+          "root_remaining": null,
+          "stamina": 182.38962712402835,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.728089339717968,
+            8.549395250067922
+          ],
+          "root_remaining": null,
+          "stamina": 185.63376105946026,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.315737539639132,
+            11.346353958664462
+          ],
+          "root_remaining": null,
+          "stamina": 174.25826820761142,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3666666666666643,
+      "max_x": 14.521207845315454,
+      "position": [
+        14.521207845315454,
+        11.723511243008362
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.879085784418532,
+            11.503198515489224
+          ],
+          "root_remaining": null,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 5.5833333333334005,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333345043,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.0000000000000036,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.000000000000007,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.0000000000000107,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.500433583157204,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            12.207445613416601,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.5916666666666635,
+      "max_x": 14.528209155805314,
+      "position": [
+        14.528209155805314,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.180969286118547,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 21,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.325000000000154,
+      "max_x": 14.500334287424433,
+      "position": [
+        14.500334287424433,
+        9.187988258928087
+      ],
+      "jumps": 6,
+      "min_root_remaining": 0.008333333333345043,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.982009232583785
+          ],
+          "root_remaining": 3.0000000000000036,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.284369655024787
+          ],
+          "root_remaining": 2.000000000000007,
+          "stamina": 176.07800135300226,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.704822497401327
+          ],
+          "root_remaining": 1.0000000000000107,
+          "stamina": 179.72212321513834,
+          "buffs": [
+            {
+              "id": 21,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.500110059248984,
+            8.319892347870745
+          ],
+          "root_remaining": null,
+          "stamina": 168.4193599333971,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            11.114044669858975,
+            9.219378761209521
+          ],
+          "root_remaining": null,
+          "stamina": 172.54960814426502,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.407868769819551,
+            9.906313367158196
+          ],
+          "root_remaining": null,
+          "stamina": 161.85454424121914,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            13.976236996387769,
+            10.854463676729091
+          ],
+          "root_remaining": null,
+          "stamina": 166.40230880338214,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 370,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 370,
+          "duration": 4.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.3666666666666643,
+      "max_x": 14.521207845315454,
+      "position": [
+        14.521207845315454,
+        8.975750662368633
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            12.879085784418532,
+            9.982009232583785
+          ],
+          "root_remaining": null,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50794228270902,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.316665847964034,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.1083333333333318,
+      "max_x": 14.732934761778605,
+      "position": [
+        14.732934761778605,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.505298850318422,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.258791760706325,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.408333333333442,
+      "max_x": 14.547961759787878,
+      "position": [
+        14.547961759787878,
+        5.9
+      ],
+      "jumps": 2,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.277159620260448
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            13.316883318120585
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            13.164380811006309
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 191.0325555449433,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            7.184120155692299
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 193.72970324802293,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            12.533174348702895
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 182.043992414041,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.504765369625414,
+            13.700690639365872
+          ],
+          "root_remaining": null,
+          "stamina": 185.3100173373547,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.789999508778413,
+            8.790022358552356
+          ],
+          "root_remaining": null,
+          "stamina": 188.3692411288295,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.1083333333333318,
+      "max_x": 14.732934761778605,
+      "position": [
+        14.732934761778605,
+        13.513821089270277
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.505298850318422,
+            6.277159620260448
+          ],
+          "root_remaining": null,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.258791760706325,
+            13.316883318120585
+          ],
+          "root_remaining": null,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50794228270902,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.316665847964034,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.1083333333333318,
+      "max_x": 14.732934761778605,
+      "position": [
+        14.732934761778605,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.505298850318422,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.258791760706325,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.8750000000001315,
+      "max_x": 14.633265478728054,
+      "position": [
+        14.633265478728054,
+        8.527326151187259
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.274875970919232
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.664748611761949
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.201998874215443
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 191.0325555449433,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            11.44191394476182
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 179.51775901001758,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            8.787456434993063
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 182.94382857804777,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.502859221775248,
+            10.809491290092968
+          ],
+          "root_remaining": null,
+          "stamina": 171.75471854422804,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.873999705267044,
+            10.04103070059703
+          ],
+          "root_remaining": null,
+          "stamina": 175.67314213212848,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.1083333333333318,
+      "max_x": 14.732934761778605,
+      "position": [
+        14.732934761778605,
+        11.650944321925172
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.505298850318422,
+            6.274875970919232
+          ],
+          "root_remaining": null,
+          "stamina": 185.07945073475844,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.258791760706325,
+            11.664748611761949
+          ],
+          "root_remaining": null,
+          "stamina": 188.1532698592117,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50318171001444,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.201318613082,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.0916666666666652,
+      "max_x": 14.612018673451965,
+      "position": [
+        14.612018673451965,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501592056278731,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.144247315070613,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.408333333333442,
+      "max_x": 14.547961759787878,
+      "position": [
+        14.547961759787878,
+        6.277159620260448
+      ],
+      "jumps": 3,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.089812389104868
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            13.26269003396718
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            13.218080267916884
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 190.98609324853817,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            7.32524355936811
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 193.68617946155638,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            12.533174348702895
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 182.00322593849768,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.501909026008665,
+            13.700690639365872
+          ],
+          "root_remaining": null,
+          "stamina": 185.27183292500817,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.720791167849193,
+            8.790022358552356
+          ],
+          "root_remaining": null,
+          "stamina": 188.33347382766073,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.0916666666666652,
+      "max_x": 14.612018673451965,
+      "position": [
+        14.612018673451965,
+        13.467548066580695
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501592056278731,
+            6.089812389104868
+          ],
+          "root_remaining": null,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.144247315070613,
+            13.26269003396718
+          ],
+          "root_remaining": null,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50318171001444,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.201318613082,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.0916666666666652,
+      "max_x": 14.612018673451965,
+      "position": [
+        14.612018673451965,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501592056278731,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.144247315070613,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.858333333333464,
+      "max_x": 14.565911151070217,
+      "position": [
+        14.565911151070217,
+        8.797112690321358
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.089126493974588
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.66140657315637
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.346458977085546
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 190.98609324853817,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            11.44191394476182
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 179.4742417866197,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            8.787456434993063
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 182.90306900469952,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.501145415605198,
+            10.87826174111301
+          ],
+          "root_remaining": null,
+          "stamina": 171.7322636651654,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.832474700709513,
+            9.949586305618377
+          ],
+          "root_remaining": null,
+          "stamina": 175.65211271615325,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.0916666666666652,
+      "max_x": 14.612018673451965,
+      "position": [
+        14.612018673451965,
+        11.658452240358931
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501592056278731,
+            6.089126493974588
+          ],
+          "root_remaining": null,
+          "stamina": 185.0264980164388,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.144247315070613,
+            11.66140657315637
+          ],
+          "root_remaining": null,
+          "stamina": 188.10366923609905,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50053108630397,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.087578778717022,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.083333333333332,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.031313918136078,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.400000000000108,
+      "max_x": 14.503174709080866,
+      "position": [
+        14.503174709080866,
+        6.183793609464006
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            13.206499267543874
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            13.270161193479508
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 190.93958032142044,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            7.465055490214464
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 193.6426082657596,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            12.454542774090891
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 181.9469165218151,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.500318651782383,
+            13.73458809863493
+          ],
+          "root_remaining": null,
+          "stamina": 185.2190900613878,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            12.652547267230204,
+            8.915100486423832
+          ],
+          "root_remaining": null,
+          "stamina": 188.28406966535377,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.083333333333332,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        13.443673363048182
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.031313918136078,
+            13.206499267543874
+          ],
+          "root_remaining": null,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.075000000000092,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50053108630397,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            14.087578778717022,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.083333333333332,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.031313918136078,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.85000000000013,
+      "max_x": 14.532406838613309,
+      "position": [
+        14.532406838613309,
+        8.927227952461243
+      ],
+      "jumps": 5,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            11.655328185894342
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            7.488701855729872
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 190.93958032142044,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            11.423860049035666
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 179.42292627357307,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            8.846411675702447
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 182.85500534409127,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.50019119106943,
+            10.87826174111301
+          ],
+          "root_remaining": null,
+          "stamina": 171.68725050961072,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.79152836033812,
+            9.949586305618377
+          ],
+          "root_remaining": null,
+          "stamina": 175.60995707508678,
+          "buffs": [
+            {
+              "id": 51,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 410,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 51,
+          "source": 410,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.083333333333332,
+      "max_x": 14.55215346576173,
+      "position": [
+        14.55215346576173,
+        11.661194950949723
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 150.0,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            14.031313918136078,
+            11.655328185894342
+          ],
+          "root_remaining": null,
+          "stamina": 188.05401453664052,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 51,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.7083333333334565,
+      "max_x": 14.605764128478423,
+      "position": [
+        14.605764128478423,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.507218641905588,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.864220319213526,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.7083333333333297,
+      "max_x": 14.56182807776725,
+      "position": [
+        14.56182807776725,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.504880704575465,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.84207177556526,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.308333333333486,
+      "max_x": 14.57786691907537,
+      "position": [
+        14.57786691907537,
+        13.206499267543874
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 145.1250000000011,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.244688541969435
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 185.0794187126649,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.259609891136126
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 188.1472667960943,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            6.134366814926643
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 191.01982382233757,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.272844624157607
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 179.54092415615528,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            6.595966511296155
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 182.9377069130521,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.502824261783804,
+            9.169367097136613
+          ],
+          "root_remaining": null,
+          "stamina": 171.82660969524312,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.622377438805755,
+            7.240443963953318
+          ],
+          "root_remaining": null,
+          "stamina": 175.68986206821634,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            13.881798523331028,
+            12.029988420005367
+          ],
+          "root_remaining": null,
+          "stamina": 165.00366702953548,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.274999999999998,
+      "max_x": 14.684993928155336,
+      "position": [
+        14.684993928155336,
+        8.965269596458427
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 149.37500000000014,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.504880704575465,
+            6.244688541969435
+          ],
+          "root_remaining": null,
+          "stamina": 185.0794187126649,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.431157495344591,
+            9.259609891136126
+          ],
+          "root_remaining": null,
+          "stamina": 188.1472667960943,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.7083333333334565,
+      "max_x": 14.605764128478423,
+      "position": [
+        14.605764128478423,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.03333333333329572,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.507218641905588,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.864220319213526,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.7083333333333297,
+      "max_x": 14.56182807776725,
+      "position": [
+        14.56182807776725,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.504880704575465,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.84207177556526,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 12.608333333333258,
+      "max_x": 14.566386288557995,
+      "position": [
+        14.566386288557995,
+        11.634923888211583
+      ],
+      "jumps": 9,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 134.75000000000347,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.242563226151333
+          ],
+          "root_remaining": 4.966666666666665,
+          "stamina": 185.0794187126649,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            7.531614219533394
+          ],
+          "root_remaining": 3.9666666666666175,
+          "stamina": 188.1468933322379,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            8.23542476432678
+          ],
+          "root_remaining": 2.966666666666621,
+          "stamina": 176.54417796575157,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            6.761130684175969
+          ],
+          "root_remaining": 1.9666666666666246,
+          "stamina": 165.21647730759653,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            7.266161505816131
+          ],
+          "root_remaining": 0.9666666666666281,
+          "stamina": 169.49879759513902,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.502824261783804,
+            8.262665892308643
+          ],
+          "root_remaining": null,
+          "stamina": 159.09549545787152,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.123269720353665,
+            7.1214306126693305
+          ],
+          "root_remaining": 4.549999999999978,
+          "stamina": 148.89289642939156,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            11.212603597351405,
+            6.9611920105376015
+          ],
+          "root_remaining": 3.5499999999999523,
+          "stamina": 154.1658924485167,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 8.0,
+          "position": [
+            11.225146452984962,
+            8.246313987789744
+          ],
+          "root_remaining": 2.549999999999956,
+          "stamina": 144.75208539155165,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 9.0,
+          "position": [
+            11.226970422294551,
+            7.423467896672016
+          ],
+          "root_remaining": 1.5499999999999594,
+          "stamina": 135.47808266450974,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 10.0,
+          "position": [
+            11.227126050248968,
+            6.647589783493255
+          ],
+          "root_remaining": 0.549999999999963,
+          "stamina": 141.55794335077624,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 11.0,
+          "position": [
+            11.484004100722801,
+            8.186976156606871
+          ],
+          "root_remaining": null,
+          "stamina": 132.9617532639693,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 12.0,
+          "position": [
+            13.205164264918594,
+            9.53046844906298
+          ],
+          "root_remaining": null,
+          "stamina": 124.5622471912702,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 30,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.274999999999998,
+      "max_x": 14.666041280417915,
+      "position": [
+        14.666041280417915,
+        6.430845566228342
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 149.33333333333348,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.504880704575465,
+            6.242563226151333
+          ],
+          "root_remaining": null,
+          "stamina": 185.0794187126649,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.414664250736577,
+            7.531614219533394
+          ],
+          "root_remaining": null,
+          "stamina": 188.1468933322379,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.691666666666789,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.502970278561301,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.820287517052343,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.7083333333333297,
+      "max_x": 14.56182807776725,
+      "position": [
+        14.56182807776725,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501506523823053,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.798870306939166,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.291666666666819,
+      "max_x": 14.53359515400412,
+      "position": [
+        14.53359515400412,
+        13.206499267543874
+      ],
+      "jumps": 4,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 145.1250000000011,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.0797821036116
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 185.02649089603628,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.267535727376515
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 188.0977649821922,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            6.183625273477894
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 190.97361428762684,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.266359828051002
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 179.48240711885754,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            6.6669878795237105
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 182.88294466564906,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.501135378043237,
+            9.148061741026066
+          ],
+          "root_remaining": null,
+          "stamina": 171.7600583703146,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.59157316093947,
+            7.320792039131296
+          ],
+          "root_remaining": null,
+          "stamina": 175.62752154139994,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            13.839237245869533,
+            12.029988420005367
+          ],
+          "root_remaining": null,
+          "stamina": 164.9452793029373,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.2583333333333313,
+      "max_x": 14.590596960028478,
+      "position": [
+        14.590596960028478,
+        8.997461577397761
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 149.37500000000014,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501506523823053,
+            6.0797821036116
+          ],
+          "root_remaining": null,
+          "stamina": 185.02649089603628,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.347587959438902,
+            9.267535727376515
+          ],
+          "root_remaining": null,
+          "stamina": 188.0977649821922,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.691666666666789,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.502970278561301,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.820287517052343,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.7083333333333297,
+      "max_x": 14.56182807776725,
+      "position": [
+        14.56182807776725,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501506523823053,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.798870306939166,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 12.574999999999926,
+      "max_x": 14.534441977932055,
+      "position": [
+        14.534441977932055,
+        11.665363878931377
+      ],
+      "jumps": 9,
+      "min_root_remaining": 0.016666666666629054,
+      "hp": 135.33333333333667,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            6.079128498068377
+          ],
+          "root_remaining": 4.9833333333333325,
+          "stamina": 185.02649089603628,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            7.591737669693012
+          ],
+          "root_remaining": 3.983333333333284,
+          "stamina": 188.09739813058127,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            8.23542476432678
+          ],
+          "root_remaining": 2.9833333333332877,
+          "stamina": 176.4985316354073,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            6.861746782818506
+          ],
+          "root_remaining": 1.9833333333332912,
+          "stamina": 165.1908233669912,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            7.193602200724921
+          ],
+          "root_remaining": 0.9833333333332948,
+          "stamina": 169.47652254185115,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.501135378043237,
+            8.259900925442594
+          ],
+          "root_remaining": null,
+          "stamina": 159.10797620251063,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.053080252577205,
+            7.352430204253051
+          ],
+          "root_remaining": 4.516666666666643,
+          "stamina": 148.95526520432372,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            11.140034923436053,
+            6.721523152245797
+          ],
+          "root_remaining": 3.516666666666619,
+          "stamina": 154.22800356430992,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 8.0,
+          "position": [
+            11.150656115657585,
+            8.186976156606871
+          ],
+          "root_remaining": 2.5166666666666226,
+          "stamina": 144.87626736019612,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 9.0,
+          "position": [
+            11.152448334089536,
+            7.734407681016029
+          ],
+          "root_remaining": 1.5166666666666262,
+          "stamina": 135.67869616066383,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 10.0,
+          "position": [
+            11.152620594289695,
+            6.316642267133416
+          ],
+          "root_remaining": 0.5166666666666297,
+          "stamina": 141.75113730189443,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 11.0,
+          "position": [
+            11.445106977382999,
+            8.018678063230075
+          ],
+          "root_remaining": null,
+          "stamina": 133.2417273204556,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 12.0,
+          "position": [
+            13.20528244466525,
+            10.151666456658141
+          ],
+          "root_remaining": null,
+          "stamina": 124.9279687859864,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 60,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.2583333333333313,
+      "max_x": 14.571803251653328,
+      "position": [
+        14.571803251653328,
+        6.5252473404500595
+      ],
+      "jumps": 1,
+      "min_root_remaining": null,
+      "hp": 149.33333333333348,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.501506523823053,
+            6.079128498068377
+          ],
+          "root_remaining": null,
+          "stamina": 185.02649089603628,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.331291107032692,
+            7.591737669693012
+          ],
+          "root_remaining": null,
+          "stamina": 188.09739813058127,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.691666666666789,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.500509459020902,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.777822929450709,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.6999999999999964,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.75714818993153,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 7.283333333333485,
+      "max_x": 14.511494888033102,
+      "position": [
+        14.511494888033102,
+        13.234844773946685
+      ],
+      "jumps": 7,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 145.20833333333442,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            9.273682261900317
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 188.0482092232868,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            6.2349368330736334
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 190.92734062012752,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            9.26243161263961
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 179.43186623944885,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            6.70389546386936
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 182.83604073870788,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.500190182382243,
+            9.148061741026066
+          ],
+          "root_remaining": null,
+          "stamina": 171.71698637154907,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.561069189516324,
+            7.320792039131296
+          ],
+          "root_remaining": null,
+          "stamina": 175.5880367274961,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            13.796797234248206,
+            12.029988420005367
+          ],
+          "root_remaining": null,
+          "stamina": 164.9091857358209,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -6.5,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.249999999999998,
+      "max_x": 14.543660210528829,
+      "position": [
+        14.543660210528829,
+        9.012922662293612
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 149.37500000000014,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.264883033010358,
+            9.273682261900317
+          ],
+          "root_remaining": null,
+          "stamina": 188.0482092232868,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 6.691666666666789,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 120.91666666667086,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.500509459020902,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.777822929450709,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": false,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.6999999999999964,
+      "max_x": 14.518091044282807,
+      "position": [
+        14.518091044282807,
+        5.9
+      ],
+      "jumps": 0,
+      "min_root_remaining": null,
+      "hp": 145.87500000000094,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            11.75714818993153,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": false,
+      "contact_buffs": [
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        },
+        {
+          "id": 21,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": true,
+      "escaped": true,
+      "seconds": 12.566666666666594,
+      "max_x": 14.513146279603344,
+      "position": [
+        14.513146279603344,
+        11.665363878931377
+      ],
+      "jumps": 11,
+      "min_root_remaining": 0.008333333333295721,
+      "hp": 135.33333333333667,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": 5.0,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            10.5,
+            7.649347680589736
+          ],
+          "root_remaining": 3.9999999999999507,
+          "stamina": 188.0478489927016,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 1
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 2.0,
+          "position": [
+            10.5,
+            8.221731111102432
+          ],
+          "root_remaining": 2.9999999999999543,
+          "stamina": 176.43668245526757,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 2
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 3.0,
+          "position": [
+            10.5,
+            6.761130684175969
+          ],
+          "root_remaining": 1.9999999999999578,
+          "stamina": 165.11697031382536,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 4.0,
+          "position": [
+            10.5,
+            7.266161505816131
+          ],
+          "root_remaining": 0.9999999999999614,
+          "stamina": 169.40736964959524,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 5.0,
+          "position": [
+            10.500190182382243,
+            8.262640902293608
+          ],
+          "root_remaining": null,
+          "stamina": 159.02786470469445,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 6.0,
+          "position": [
+            11.050855227151795,
+            7.278418396204885
+          ],
+          "root_remaining": 4.53333333333331,
+          "stamina": 148.86441484629793,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 7.0,
+          "position": [
+            11.13924341562326,
+            6.7985256253027
+          ],
+          "root_remaining": 3.5333333333332857,
+          "stamina": 154.1429605214068,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 8.0,
+          "position": [
+            11.15059254255558,
+            8.205807662926292
+          ],
+          "root_remaining": 2.5333333333332893,
+          "stamina": 144.78133292308854,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 9.0,
+          "position": [
+            11.152443835897438,
+            7.678085152420812
+          ],
+          "root_remaining": 1.5333333333332928,
+          "stamina": 135.57404180671318,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 10.0,
+          "position": [
+            11.15261955901424,
+            6.378290702043494
+          ],
+          "root_remaining": 0.5333333333332964,
+          "stamina": 141.6532974213435,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            },
+            {
+              "id": 21,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 11.0,
+          "position": [
+            11.427054820017593,
+            8.053266119955289
+          ],
+          "root_remaining": null,
+          "stamina": 133.13479525627488,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        },
+        {
+          "seconds": 12.0,
+          "position": [
+            13.167870562568956,
+            10.104126461190774
+          ],
+          "root_remaining": null,
+          "stamina": 124.81987189964464,
+          "buffs": [
+            {
+              "id": 22,
+              "stacks": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": 429,
+      "fps": 144,
+      "gravity": -9.8,
+      "jump_input": true,
+      "immune_api_injection": true,
+      "contact_buffs": [
+        {
+          "id": 40,
+          "source": null,
+          "duration": 59.99166666666667,
+          "stacks": 1
+        },
+        {
+          "id": 22,
+          "source": 429,
+          "duration": 5.0,
+          "stacks": 1
+        }
+      ],
+      "root_seen": false,
+      "escaped": true,
+      "seconds": 1.249999999999998,
+      "max_x": 14.524946877192836,
+      "position": [
+        14.524946877192836,
+        6.571551360783023
+      ],
+      "jumps": 2,
+      "min_root_remaining": null,
+      "hp": 149.33333333333348,
+      "errors": [],
+      "trace": [
+        {
+          "seconds": 0.0,
+          "position": [
+            10.5,
+            5.9
+          ],
+          "root_remaining": null,
+          "stamina": 200.0,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        },
+        {
+          "seconds": 1.0,
+          "position": [
+            13.248785563550141,
+            7.649347680589736
+          ],
+          "root_remaining": null,
+          "stamina": 188.0478489927016,
+          "buffs": [
+            {
+              "id": 40,
+              "stacks": 1
+            },
+            {
+              "id": 22,
+              "stacks": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "scope": "isolated revised candidate formula, not production; finite double recurrence comparison",
+  "runs": [
+    {
+      "gravity": -0.7,
+      "damping": 0,
+      "model": 0.0,
+      "iterated": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -0.7,
+      "damping": 1e-06,
+      "model": 9.583189583333333e-05,
+      "iterated": 9.583189583333332e-05,
+      "absolute_error": 1.3552527156068805e-20
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.01,
+      "model": 0.010626078472222222,
+      "iterated": 0.010626078472222222,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.9,
+      "model": 1.6918435865996349,
+      "iterated": 1.6918435865996344,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.98,
+      "model": 7.995895828820788,
+      "iterated": 7.995895828820788,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.9965,
+      "model": 30.992610804339673,
+      "iterated": 30.99261080433966,
+      "absolute_error": 1.4210854715202004e-14
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.999999,
+      "model": 94.35436796487949,
+      "iterated": 94.35436796487923,
+      "absolute_error": 2.5579538487363607e-13
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.999999999999,
+      "model": 94.4163749379382,
+      "iterated": 94.41637493793755,
+      "absolute_error": 6.536993168992922e-13
+    },
+    {
+      "gravity": -0.7,
+      "damping": 0.999999999999999,
+      "model": 94.41637499993111,
+      "iterated": 94.4163749999302,
+      "absolute_error": 9.094947017729282e-13
+    },
+    {
+      "gravity": -0.7,
+      "damping": 1,
+      "model": 94.41637500000002,
+      "iterated": 94.4163749999996,
+      "absolute_error": 4.121147867408581e-13
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0,
+      "model": 0.0,
+      "iterated": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -6.5,
+      "damping": 1e-06,
+      "model": 9.538194444444443e-05,
+      "iterated": 9.538194444444444e-05,
+      "absolute_error": -1.3552527156068805e-20
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.01,
+      "model": 0.010492604166666667,
+      "iterated": 0.010492604166666666,
+      "absolute_error": 1.734723475976807e-18
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.9,
+      "model": 1.3717856181112482,
+      "iterated": 1.3717856181112484,
+      "absolute_error": -2.220446049250313e-16
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.98,
+      "model": 4.381513424496361,
+      "iterated": 4.381513424496364,
+      "absolute_error": -3.552713678800501e-15
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.9965,
+      "model": 8.15104314726024,
+      "iterated": 8.151043147260218,
+      "absolute_error": 2.1316282072803006e-14
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.999999,
+      "model": 10.124489994458532,
+      "iterated": 10.124489994458528,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.999999999999,
+      "model": 10.125208332614902,
+      "iterated": 10.125208332614882,
+      "absolute_error": 1.9539925233402755e-14
+    },
+    {
+      "gravity": -6.5,
+      "damping": 0.999999999999999,
+      "model": 10.125208333332534,
+      "iterated": 10.125208333332514,
+      "absolute_error": 1.9539925233402755e-14
+    },
+    {
+      "gravity": -6.5,
+      "damping": 1,
+      "model": 10.125208333333331,
+      "iterated": 10.125208333333317,
+      "absolute_error": 1.4210854715202004e-14
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0,
+      "model": 0.0,
+      "iterated": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -9.8,
+      "damping": 1e-06,
+      "model": 9.515277777777778e-05,
+      "iterated": 9.515277777777777e-05,
+      "absolute_error": 1.3552527156068805e-20
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.01,
+      "model": 0.010419041666666667,
+      "iterated": 0.010419041666666665,
+      "absolute_error": 1.734723475976807e-18
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.9,
+      "model": 1.257321632207769,
+      "iterated": 1.2573216322077683,
+      "absolute_error": 6.661338147750939e-16
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.98,
+      "model": 3.5482649749944026,
+      "iterated": 3.5482649749943995,
+      "absolute_error": 3.1086244689504383e-15
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.9965,
+      "model": 5.765396494510688,
+      "iterated": 5.765396494510677,
+      "absolute_error": 1.1546319456101628e-14
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.999999,
+      "model": 6.699269374921201,
+      "iterated": 6.6992693749211805,
+      "absolute_error": 2.042810365310288e-14
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.999999999999,
+      "model": 6.699583333019339,
+      "iterated": 6.699583333019318,
+      "absolute_error": 2.042810365310288e-14
+    },
+    {
+      "gravity": -9.8,
+      "damping": 0.999999999999999,
+      "model": 6.699583333332985,
+      "iterated": 6.699583333332958,
+      "absolute_error": 2.6645352591003757e-14
+    },
+    {
+      "gravity": -9.8,
+      "damping": 1,
+      "model": 6.699583333333333,
+      "iterated": 6.699583333333311,
+      "absolute_error": 2.220446049250313e-14
+    },
+    {
+      "gravity": -20,
+      "damping": 0,
+      "model": 0.0,
+      "iterated": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -20,
+      "damping": 1e-06,
+      "model": 9.444444444444446e-05,
+      "iterated": 9.444444444444446e-05,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -20,
+      "damping": 0.01,
+      "model": 0.010250000000000002,
+      "iterated": 0.010250000000000002,
+      "absolute_error": 0.0
+    },
+    {
+      "gravity": -20,
+      "damping": 0.9,
+      "model": 1.0142008431947722,
+      "iterated": 1.0142008431947729,
+      "absolute_error": -6.661338147750939e-16
+    },
+    {
+      "gravity": -20,
+      "damping": 0.98,
+      "model": 2.2490575127110777,
+      "iterated": 2.249057512711077,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "gravity": -20,
+      "damping": 0.9965,
+      "model": 3.016383417754294,
+      "iterated": 3.0163834177542896,
+      "absolute_error": 4.440892098500626e-15
+    },
+    {
+      "gravity": -20,
+      "damping": 0.999999,
+      "model": 3.258258935640526,
+      "iterated": 3.2582589356405287,
+      "absolute_error": -2.6645352591003757e-15
+    },
+    {
+      "gravity": -20,
+      "damping": 0.999999999999,
+      "model": 3.258333333258928,
+      "iterated": 3.2583333332589346,
+      "absolute_error": -6.661338147750939e-15
+    },
+    {
+      "gravity": -20,
+      "damping": 0.999999999999999,
+      "model": 3.2583333333332507,
+      "iterated": 3.2583333333332547,
+      "absolute_error": -3.9968028886505635e-15
+    },
+    {
+      "gravity": -20,
+      "damping": 1,
+      "model": 3.2583333333333337,
+      "iterated": 3.258333333333338,
+      "absolute_error": -4.440892098500626e-15
+    }
+  ],
+  "max_absolute_error": 9.094947017729282e-13
+}

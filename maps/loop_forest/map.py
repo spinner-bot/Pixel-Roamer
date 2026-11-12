@@ -3,7 +3,10 @@
 向左右无限延伸的森林，循环边界无缝衔接
 """
 from world import World
-import math, random
+import math
+from random import Random
+
+_rng = Random(6)
 
 MAP_ID = 6
 world = World(
@@ -102,9 +105,9 @@ for x in range(15, 30):
             world.set_tile(x, y, 0)  # 挖空
 # 洞穴水晶
 for _ in range(20):
-    cx, cy = random.randint(16, 29), random.randint(6, 11)
+    cx, cy = _rng.randint(16, 29), _rng.randint(6, 11)
     if world.get_tile(cx, cy).type_id == 0:
-        world.set_tile(cx, cy, random.choice([200, 201, 204, 206]))
+        world.set_tile(cx, cy, _rng.choice([200, 201, 204, 206]))
 
 # 洞穴2（跨循环边界！x=70~80→0~10）
 for x in list(range(70, 80)) + list(range(0, 10)):
@@ -136,9 +139,7 @@ world.set_tile(75, 19, 22)
 
 # ============ 传送门 ============
 # 森林中央→跨边界湖区
-world.set_tile(40, 21, 300)
-if (40, 21) in world.grid:
-    world.grid[(40, 21)].meta = {"tp_x": 75, "tp_y": 15}
+world.set_tile(39, 22, 300, {"tp_x": 76.5, "tp_y": 15.9})
 
 # ============ 检查点与治愈 ============
 world.set_tile(40, 21, 302)   # 中央检查点

@@ -1,0 +1,15 @@
+import json
+from pathlib import Path
+from unittest.mock import patch
+from scripts.control_session import create_control_session
+from scripts.audit_pixel_sky import run as sky
+from scripts.audit_endless_climb import run
+s=create_control_session(3)
+with patch('scripts.audit_pixel_sky.create_control_session',return_value=s):prefix=sky(30)
+print('prefix',prefix['returned_to_ruins_via_original_T2'],prefix['position'],flush=True)
+route=dict(map_id=3,scope='normal forest spawn then original T5/T2, continuous session into eastern regions',waypoints=[])
+for name,x,y,kind in [('ruins_rooftop',150.5,39.9,'ground'),('booster_terrace',160.5,44.9,'ground'),('eastern_ruins',168.5,48.9,'ground'),('sky_low_island',185.5,38.9,'ground'),('sky_house',210.5,44.9,'ground'),('ice_approach',260.5,38.9,'ground')]:
+ route['waypoints'].append(dict(name=name,x=x,y=y,kind=kind))
+with patch('scripts.audit_endless_climb.create_control_session',return_value=s):result=run(30,route,240,5)
+Path('/tmp/pixel-crossregion-first.json').write_text(json.dumps(dict(prefix=prefix,route=route,result=result),indent=2)+'\n')
+print({k:result[k] for k in ('completed_route','failure','position','min_hp','min_stamina','timer')},flush=True)

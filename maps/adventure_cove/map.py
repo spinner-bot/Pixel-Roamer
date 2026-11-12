@@ -4,13 +4,13 @@
 """
 from __future__ import annotations
 from world import World
-import random
+from random import Random
 
 MAP_ID = 21
 MAP_NAME = "冒险湾"
 MAP_NAME_EN = "Adventure Cove"
 W, H = 420, 100
-random.seed(42)
+_rng = Random(42)
 
 _placed = set()
 def p(w, x, y, bid):
@@ -19,7 +19,7 @@ def p(w, x, y, bid):
         _placed.add(bid)
 
 def pick(pool):
-    return pool[random.randint(0, len(pool)-1)]
+    return pool[_rng.randint(0, len(pool)-1)]
 
 # =========== 笔刷 ===========
 def rect(w, x, y, rw, rh, bid, hollow=False):
@@ -71,6 +71,8 @@ def pillar(w, x, y, h, bid):
 
 # =========== 主生成 ===========
 def generate():
+    _rng.seed(42)
+    _placed.clear()
     w = World(map_id=MAP_ID, name=MAP_NAME, w=W, h=H,
               loop_x=False, loop_y=False, gravity=-6.5,
               spawn_points=(30, 72), mode="explore",
@@ -133,6 +135,9 @@ def generate():
     platform(w, 63, 60, 8, 17)
     p(w, 65, 62, 42)
     p(w, 66, 62, 314)
+    # Connect the existing escape vine through the platform's underside.
+    # Keep the treasure at y=62 and jump out onto the neighbouring grass.
+    vine_col(w, 66, 58, 4)
     # 窄道
     tunnel_h(w, 70, 46, 78, 2)
     p(w, 75, 47, 315)
@@ -265,8 +270,11 @@ def generate():
         pillar(w, cx, 74, 14, 34)
 
     # 风助推 → 最高收集
-    p(w, 355, 77, 387)          # wind_vortex
-    p(w, 409, 77, 387)
+    # 单格风场的有效接触距离太短，实际跳升不足以越过 14 格柱廊。
+    # 连续风柱提供可见的上升通路，保持原风力和角色参数。
+    for wind_x in (355, 409):
+        for wind_y in range(77, 83):
+            p(w, wind_x, wind_y, 387)
 
     # 轻羽buff（低重力 → feather buff 13）
     p(w, 370, 78, 389)          # anti_grav_ore
@@ -284,8 +292,8 @@ def generate():
     p(w, 391, 96, 314)
 
     # 终点传送
-    p(w, 415, 78, 425)          # shadow_slip_gate (teleport)
-    p(w, 415, 79, 425)
+    w.set_tile(415, 78, 425, {"tp_x": 417.5, "tp_y": 81.9})
+    w.set_tile(415, 79, 425, {"tp_x": 417.5, "tp_y": 81.9})
     p(w, 417, 80, 303)          # 终点信标，触碰后通关
 
     # ================================================================
@@ -299,8 +307,8 @@ def generate():
 
     # 散落金币
     for _ in range(50):
-        gx = random.randint(5, 412)
-        gy = random.randint(30, 92)
+        gx = _rng.randint(5, 412)
+        gy = _rng.randint(30, 92)
         bt = w.get_block_type(gx, gy)
         if bt and bt.id == 0:
             p(w, gx, gy, 315)
@@ -309,6 +317,25 @@ def generate():
     hidden = [(20,64), (95,61), (175,56), (238,59), (308,65), (395,94)]
     for hx, hy in hidden:
         p(w, hx, hy, 314)
+
+    # 底层失足后的返回路线：接回海滩，不跳过后续区域。
+    # 57 格连续攀爬会耗尽默认体力；侧台每 16 格提供站立恢复点。
+    ladder_col(w, 20, 10, 59)
+    for rest_y in (26, 42, 58):
+        for rest_x in range(21, 26):
+            p(w, rest_x, rest_y, 19)
+    p(w, 19, 10, 43)
+    p(w, 21, 69, 314)  # 将原 (20,64) 的钻石移出返程梯井。
+
+    # Optional cold-water detour: only fill reviewed empty cells, preserving
+    # the original373, every pickup and the main ice pillars.
+    from pathlib import Path
+    from maps.placement import load_feature_plan
+    frost_pool, _ = load_feature_plan(w, Path(__file__).with_name('frost_pool.json'))
+    if any(w.get_tile(gx, gy).type_id != 0 for gx, gy, _ in frost_pool):
+        raise ValueError('frost pool feature must not overwrite original terrain or pickups')
+    for gx, gy, block_id in frost_pool:
+        p(w, gx, gy, block_id)
 
     w.end_bulk_load()
     w.lives = 3

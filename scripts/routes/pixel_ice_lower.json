@@ -1,0 +1,60 @@
+{
+  "map_id": 3,
+  "scope": "local legal lower ice palace doorway fixture; not normal forest path proof",
+  "waypoints": [
+    {
+      "name": "lower_entry",
+      "x": 275.7,
+      "y": 39.9,
+      "kind": "ground",
+      "headroom": 3
+    },
+    {
+      "name": "over_ice_pillar",
+      "x": 281.5,
+      "y": 49.9,
+      "kind": "ground"
+    },
+    {
+      "name": "left_ice_gap",
+      "x": 279.45,
+      "y": 43.0,
+      "kind": "fall"
+    },
+    {
+      "name": "low_checkpoint",
+      "x": 289.75,
+      "y": 40.9,
+      "kind": "rest",
+      "stamina_min": 95,
+      "contact_id": 302
+    },
+    {
+      "name": "return_gap",
+      "x": 279.3,
+      "y": 40.9,
+      "kind": "rest",
+      "stamina_min": 95,
+      "headroom": 0.5
+    },
+    {
+      "name": "pillar_clearance",
+      "x": 279.45,
+      "y": 51.2,
+      "kind": "air"
+    },
+    {
+      "name": "west_interior",
+      "x": 276.5,
+      "y": 40.9,
+      "kind": "ground"
+    },
+    {
+      "name": "outside_return",
+      "x": 269.5,
+      "y": 39.9,
+      "kind": "rest",
+      "stamina_min": 95
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "code_revision": "4bf895f76b6ab5489adb0552d0c9c2f344816a67",
+  "scope": "real ReferenceBrowser cached icons on the existing panel color, not device acceptance",
+  "sources": {
+    "pixel_roamer/ui/references.py": "e4a3939d187a622bc3bd398406c3dc9eba7eca305e7a91b17b1c74e0888e315d",
+    "data/catalogs/blocks.json": "8e667b69668d4ef641733797b9ecf923da587bae3470bdd097cb9aa1d43e5709"
+  },
+  "entries": [
+    {
+      "block_id": 43,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        200,
+        50
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 50,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        100,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 51,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        255,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 52,
+      "corner_alpha": 255,
+      "card_corner": [
+        200,
+        50,
+        50
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 53,
+      "corner_alpha": 255,
+      "card_corner": [
+        160,
+        120,
+        60
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 54,
+      "corner_alpha": 255,
+      "card_corner": [
+        140,
+        110,
+        70
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 126,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        100,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 127,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        255,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 128,
+      "corner_alpha": 255,
+      "card_corner": [
+        200,
+        50,
+        50
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 129,
+      "corner_alpha": 255,
+      "card_corner": [
+        160,
+        120,
+        60
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 130,
+      "corner_alpha": 255,
+      "card_corner": [
+        140,
+        110,
+        70
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 299,
+      "corner_alpha": 255,
+      "card_corner": [
+        200,
+        200,
+        200
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 310,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        215,
+        0
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 311,
+      "corner_alpha": 255,
+      "card_corner": [
+        210,
+        210,
+        210
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 312,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        50,
+        50
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 313,
+      "corner_alpha": 255,
+      "card_corner": [
+        50,
+        50,
+        255
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 314,
+      "corner_alpha": 255,
+      "card_corner": [
+        100,
+        240,
+        255
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 315,
+      "corner_alpha": 255,
+      "card_corner": [
+        40,
+        200,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 316,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        240,
+        100
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 317,
+      "corner_alpha": 255,
+      "card_corner": [
+        150,
+        50,
+        220
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 318,
+      "corner_alpha": 255,
+      "card_corner": [
+        255,
+        180,
+        50
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 319,
+      "corner_alpha": 255,
+      "card_corner": [
+        180,
+        200,
+        240
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 320,
+      "corner_alpha": 255,
+      "card_corner": [
+        89,
+        75,
+        0
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 321,
+      "corner_alpha": 255,
+      "card_corner": [
+        73,
+        73,
+        73
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 322,
+      "corner_alpha": 255,
+      "card_corner": [
+        89,
+        17,
+        17
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 323,
+      "corner_alpha": 255,
+      "card_corner": [
+        17,
+        17,
+        89
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 324,
+      "corner_alpha": 255,
+      "card_corner": [
+        35,
+        84,
+        89
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 325,
+      "corner_alpha": 255,
+      "card_corner": [
+        14,
+        70,
+        35
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 326,
+      "corner_alpha": 255,
+      "card_corner": [
+        89,
+        84,
+        35
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 327,
+      "corner_alpha": 255,
+      "card_corner": [
+        52,
+        17,
+        77
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 328,
+      "corner_alpha": 255,
+      "card_corner": [
+        89,
+        62,
+        17
+      ],
+      "composites": false
+    },
+    {
+      "block_id": 329,
+      "corner_alpha": 255,
+      "card_corner": [
+        62,
+        70,
+        84
+      ],
+      "composites": false
+    }
+  ],
+  "image": "2026-11-12_reference_alpha_before.png",
+  "opaque_black_preserved": true
+}

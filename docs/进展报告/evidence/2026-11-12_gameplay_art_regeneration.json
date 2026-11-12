@@ -1,0 +1,25 @@
+{
+  "code_revision": "95fe0c9a32164c3692ee895022380e6a0d5a0fd8",
+  "scope": "actual art regeneration must preserve repaired gameplay, all existing icon pixels, reviewed deltas, extension packages and historical baselines",
+  "before": {
+    "data/catalogs/blocks.json": "8594434fca87c7d1259e3f18ab77a80e1dda547bf921e55e50a1fc4ee1799b1f",
+    "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+    "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+    "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+    "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+    "tests/fixtures/catalog_gameplay_changes.json": "438f077116b8ff3927c3100200473623973a304a45741606bf6ff0972d1f533f",
+    "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+    "docs/\u8fdb\u5c55\u62a5\u544a/evidence/art/buffs_before_after.png": "98179038b94553bc0e26c0968d07302391f7ede0303d5e8b6d4e4ed7a6df46e7"
+  },
+  "after": {
+    "data/catalogs/blocks.json": "8594434fca87c7d1259e3f18ab77a80e1dda547bf921e55e50a1fc4ee1799b1f",
+    "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+    "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+    "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+    "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+    "tests/fixtures/catalog_gameplay_changes.json": "438f077116b8ff3927c3100200473623973a304a45741606bf6ff0972d1f533f",
+    "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+    "docs/\u8fdb\u5c55\u62a5\u544a/evidence/art/buffs_before_after.png": "98179038b94553bc0e26c0968d07302391f7ede0303d5e8b6d4e4ed7a6df46e7"
+  },
+  "all_preserved": true
+}

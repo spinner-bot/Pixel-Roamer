@@ -1,0 +1,47 @@
+command: search
+command: windowfocus
+command: key
+command: search
+command: mousemove
+command: click
+command: key
+command: search
+command: windowsize
+command: search
+command: mousemove
+command: click
+command: key
+command: key
+command: keydown
+command: keyup
+command: key
+command: key
+command: key
+command: key
+command: search
+command: windowsize
+command: search
+command: windowfocus
+command: key
+command: search
+command: windowfocus
+command: key
+command: key
+command: key
+command: type
+Exec arg[0]: -12.25
+command: key
+command: key
+command: search
+command: windowsize
+command: key
+command: key
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+{
+  "completed": true,
+  "video_driver": "x11",
+  "frames": 564,
+  "elapsed": 11.063670826028101,
+  "errors": []
+}

@@ -1,0 +1,2299 @@
+{
+  "code_revision": "913eb87c59fd364a8cc5239f23cfb6d9eba447fd",
+  "scope": "existing shallow-pool water diamonds and west-ladder recovery, normal spawn and controls; not all water routes or device acceptance",
+  "runs": [
+    {
+      "fps": 30,
+      "returned_to_beach": true,
+      "failure": null,
+      "phase": "finish",
+      "control_frames": 1449,
+      "timer": 48.2999999999979,
+      "score": 150,
+      "score_balance": true,
+      "water_diamonds_remaining": [
+        false,
+        false
+      ],
+      "position": [
+        23.49024872814306,
+        68.9
+      ],
+      "swim_input_seconds": 2.3,
+      "min_hp": 150,
+      "min_stamina": 63.60325610576044,
+      "respawns": 0,
+      "transitions": [
+        {
+          "time": 4.099999999999993,
+          "from": "descend",
+          "to": "entry_rest",
+          "position": [
+            20.529154830627533,
+            59.71175378141475
+          ],
+          "stamina": 200,
+          "score": 50
+        },
+        {
+          "time": 5.466666666666728,
+          "from": "entry_rest",
+          "to": "entry_edge",
+          "position": [
+            23.3899775830797,
+            59.9
+          ],
+          "stamina": 189.10717696424655,
+          "score": 50
+        },
+        {
+          "time": 6.600000000000118,
+          "from": "entry_edge",
+          "to": "west_diamond",
+          "position": [
+            25.11492051336404,
+            59.9
+          ],
+          "stamina": 192.28824314640087,
+          "score": 50
+        },
+        {
+          "time": 8.400000000000164,
+          "from": "west_diamond",
+          "to": "east_diamond",
+          "position": [
+            34.66070064165228,
+            64.1
+          ],
+          "stamina": 163.8441885025151,
+          "score": 100
+        },
+        {
+          "time": 9.833333333333416,
+          "from": "east_diamond",
+          "to": "return_ladder",
+          "position": [
+            41.59233152890626,
+            64.1
+          ],
+          "stamina": 133.74418850251314,
+          "score": 150
+        },
+        {
+          "time": 13.433333333333211,
+          "from": "return_ladder",
+          "to": "rest_climb",
+          "position": [
+            20.5,
+            43.99982484660645
+          ],
+          "stamina": 153.3865894390926,
+          "score": 150
+        },
+        {
+          "time": 18.766666666666243,
+          "from": "rest_climb",
+          "to": "recover",
+          "position": [
+            20.5,
+            59.97180030363884
+          ],
+          "stamina": 78.7199227724271,
+          "score": 150
+        },
+        {
+          "time": 41.36666666666496,
+          "from": "recover",
+          "to": "return_ladder",
+          "position": [
+            23.491312056955135,
+            59.9
+          ],
+          "stamina": 195.06705698185905,
+          "score": 150
+        },
+        {
+          "time": 42.09999999999825,
+          "from": "return_ladder",
+          "to": "exit_climb",
+          "position": [
+            20.5,
+            59.97486863495484
+          ],
+          "stamina": 196.46324203531339,
+          "score": 150
+        },
+        {
+          "time": 45.09999999999808,
+          "from": "exit_climb",
+          "to": "finish",
+          "position": [
+            20.5,
+            68.95910482953556
+          ],
+          "stamina": 154.46324203531066,
+          "score": 150
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "descend",
+          "position": [
+            29.991261296006407,
+            71.99550190281275
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "descend",
+          "position": [
+            24.932562669147735,
+            68.9
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "descend",
+          "position": [
+            20.724801180596238,
+            68.9
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "descend",
+          "position": [
+            20.527847653262985,
+            67.29497752536372
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "descend",
+          "position": [
+            20.531304144714646,
+            60.34684170104744
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "entry_rest",
+          "position": [
+            23.099986913868086,
+            61.99395204537738
+          ],
+          "hp": 150,
+          "stamina": 187.82724231641504,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "entry_edge",
+          "position": [
+            24.63886102673962,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 190.7271568332166,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "west_diamond",
+          "position": [
+            26.06229749442116,
+            63.0592814615632
+          ],
+          "hp": 150,
+          "stamina": 178.85488586710383,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "west_diamond",
+          "position": [
+            32.95302738171484,
+            63.65054073081501
+          ],
+          "hp": 150,
+          "stamina": 171.5441885025156,
+          "score": 50,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "east_diamond",
+          "position": [
+            37.25734069178599,
+            64.1
+          ],
+          "hp": 150,
+          "stamina": 150.54418850251423,
+          "score": 100,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "return_ladder",
+          "position": [
+            41.861487065583844,
+            64.01137564286239
+          ],
+          "hp": 150,
+          "stamina": 134.13954615137598,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "return_ladder",
+          "position": [
+            38.07245408090676,
+            61.10185564397493
+          ],
+          "hp": 150,
+          "stamina": 140.4619632597831,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "return_ladder",
+          "position": [
+            31.110100618093536,
+            55.559292579659584
+          ],
+          "hp": 150,
+          "stamina": 146.37743944228166,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "return_ladder",
+          "position": [
+            23.326878816829606,
+            45.55107142075323
+          ],
+          "hp": 150,
+          "stamina": 151.91341785161632,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            45.796672085522594
+          ],
+          "hp": 150,
+          "stamina": 144.98658943909206,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 15.03333333333312,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            48.79141748371617
+          ],
+          "hp": 150,
+          "stamina": 130.98658943909115,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            51.78616288190974
+          ],
+          "hp": 150,
+          "stamina": 116.98658943909159,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 17.033333333333008,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            54.78090828010331
+          ],
+          "hp": 150,
+          "stamina": 102.98658943909238,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            57.775653678296884
+          ],
+          "hp": 150,
+          "stamina": 88.98658943909318,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 19.033333333332894,
+          "phase": "recover",
+          "position": [
+            20.83439379177613,
+            62.7177567830087
+          ],
+          "hp": 150,
+          "stamina": 66.2465320619716,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 20.033333333332838,
+          "phase": "recover",
+          "position": [
+            23.34052834637709,
+            60.331998362095945
+          ],
+          "hp": 150,
+          "stamina": 77.08398459270042,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 21.03333333333278,
+          "phase": "recover",
+          "position": [
+            23.48796481263348,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 87.17637652885966,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 22.033333333332724,
+          "phase": "recover",
+          "position": [
+            23.48452955704023,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 96.58507456580227,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 23.033333333332667,
+          "phase": "recover",
+          "position": [
+            23.489986629897505,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 105.36411318681006,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 24.03333333333261,
+          "phase": "recover",
+          "position": [
+            23.490257600560252,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 113.56151804041187,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 25.033333333332553,
+          "phase": "recover",
+          "position": [
+            23.486878399484965,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 121.22032311015245,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 26.033333333332497,
+          "phase": "recover",
+          "position": [
+            23.487051892107015,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 128.3793616216147,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 27.03333333333244,
+          "phase": "recover",
+          "position": [
+            23.48357346773957,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 135.07388801477197,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 28.033333333332383,
+          "phase": "recover",
+          "position": [
+            23.488995080768067,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 141.3360725904551,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 29.033333333332326,
+          "phase": "recover",
+          "position": [
+            23.48923315127187,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 147.19539934991886,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 30.03333333333227,
+          "phase": "recover",
+          "position": [
+            23.485821513415274,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 152.67898961921142,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 31.033333333332212,
+          "phase": "recover",
+          "position": [
+            23.49131205413878,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 157.81186831782176,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 32.03333333333216,
+          "phase": "recover",
+          "position": [
+            23.4916212046273,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 162.61718554427827,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 33.0333333333321,
+          "phase": "recover",
+          "position": [
+            23.48828284304634,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 167.11640306657324,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 34.033333333332045,
+          "phase": "recover",
+          "position": [
+            23.48849902933167,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 171.3294530151432,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 35.03333333333199,
+          "phase": "recover",
+          "position": [
+            23.485064851472657,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 175.27487436472302,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 36.03333333333193,
+          "phase": "recover",
+          "position": [
+            23.490532166855502,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 178.96993150507453,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 37.033333333331875,
+          "phase": "recover",
+          "position": [
+            23.49081738182539,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 182.43071822885616,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 38.03333333333182,
+          "phase": "recover",
+          "position": [
+            23.48745435121585,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 185.67224972746632,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 39.03333333333176,
+          "phase": "recover",
+          "position": [
+            23.487645111831245,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 188.70854462373427,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 40.033333333331704,
+          "phase": "recover",
+          "position": [
+            23.48418472818991,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 191.55269864042282,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 41.03333333333165,
+          "phase": "recover",
+          "position": [
+            23.48962503363609,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 194.21695117336387,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 42.03333333333159,
+          "phase": "return_ladder",
+          "position": [
+            21.511589661334536,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 196.71274578357676,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 43.033333333331534,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            62.769964339935505
+          ],
+          "hp": 150,
+          "stamina": 183.39657536864587,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 44.03333333333148,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            65.76470973812908
+          ],
+          "hp": 150,
+          "stamina": 169.39657536864496,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 45.03333333333142,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            68.75945513632266
+          ],
+          "hp": 150,
+          "stamina": 155.39657536864405,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 46.03333333333136,
+          "phase": "finish",
+          "position": [
+            23.05056635725925,
+            76.06162069415106
+          ],
+          "hp": 150,
+          "stamina": 144.83502017505802,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 47.033333333331306,
+          "phase": "finish",
+          "position": [
+            23.491279000322855,
+            76.56218558720441
+          ],
+          "hp": 150,
+          "stamina": 150.4698419494807,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 48.03333333333125,
+          "phase": "finish",
+          "position": [
+            23.491607857265436,
+            71.11109611674794
+          ],
+          "hp": 150,
+          "stamina": 155.74390911310473,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "returned_to_beach": true,
+      "failure": null,
+      "phase": "finish",
+      "control_frames": 2874,
+      "timer": 47.899999999997924,
+      "score": 150,
+      "score_balance": true,
+      "water_diamonds_remaining": [
+        false,
+        false
+      ],
+      "position": [
+        23.526119671933188,
+        68.9
+      ],
+      "swim_input_seconds": 2.216666666666667,
+      "min_hp": 150,
+      "min_stamina": 64.53174779788776,
+      "respawns": 0,
+      "transitions": [
+        {
+          "time": 4.0333333333333234,
+          "from": "descend",
+          "to": "entry_rest",
+          "position": [
+            20.459853731277633,
+            59.792229240762026
+          ],
+          "stamina": 200,
+          "score": 50
+        },
+        {
+          "time": 5.400000000000058,
+          "from": "entry_rest",
+          "to": "entry_edge",
+          "position": [
+            23.407095912020864,
+            59.9
+          ],
+          "stamina": 189.10717696424655,
+          "score": 50
+        },
+        {
+          "time": 6.433333333333443,
+          "from": "entry_edge",
+          "to": "west_diamond",
+          "position": [
+            25.10033948980111,
+            59.9
+          ],
+          "stamina": 192.01694056488586,
+          "score": 50
+        },
+        {
+          "time": 8.166666666666844,
+          "from": "west_diamond",
+          "to": "east_diamond",
+          "position": [
+            34.62873478355023,
+            64.1
+          ],
+          "stamina": 163.76611919328764,
+          "score": 100
+        },
+        {
+          "time": 9.566666666666764,
+          "from": "east_diamond",
+          "to": "return_ladder",
+          "position": [
+            41.591577426292396,
+            64.1
+          ],
+          "stamina": 134.36611919328573,
+          "score": 150
+        },
+        {
+          "time": 13.133333333333228,
+          "from": "return_ladder",
+          "to": "rest_climb",
+          "position": [
+            20.5,
+            43.92495621165161
+          ],
+          "stamina": 154.5484144645534,
+          "score": 150
+        },
+        {
+          "time": 18.483333333332926,
+          "from": "rest_climb",
+          "to": "recover",
+          "position": [
+            20.5,
+            59.946844091987224
+          ],
+          "stamina": 79.64841446455442,
+          "score": 150
+        },
+        {
+          "time": 40.966666666664985,
+          "from": "recover",
+          "to": "return_ladder",
+          "position": [
+            23.540820428119176,
+            59.9
+          ],
+          "stamina": 195.02038911919487,
+          "score": 150
+        },
+        {
+          "time": 41.68333333333161,
+          "from": "return_ladder",
+          "to": "exit_climb",
+          "position": [
+            20.5,
+            59.92495621165161
+          ],
+          "stamina": 196.6520169519484,
+          "score": 150
+        },
+        {
+          "time": 44.699999999998106,
+          "from": "exit_climb",
+          "to": "finish",
+          "position": [
+            20.5,
+            68.95910482953556
+          ],
+          "stamina": 154.41868361861233,
+          "score": 150
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "descend",
+          "position": [
+            29.997365206530155,
+            71.99864899444036
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "descend",
+          "position": [
+            25.062197143462058,
+            68.9
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "descend",
+          "position": [
+            20.735262628251746,
+            68.9
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "descend",
+          "position": [
+            20.48681835154658,
+            67.10916172088203
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "descend",
+          "position": [
+            20.457055116259678,
+            59.952249056993885
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "entry_rest",
+          "position": [
+            23.136788885255317,
+            61.77209529523563
+          ],
+          "hp": 150,
+          "stamina": 187.97678434730102,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "entry_edge",
+          "position": [
+            24.753993009125946,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 190.867236720082,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "west_diamond",
+          "position": [
+            27.082027808052143,
+            62.88036865482002
+          ],
+          "hp": 150,
+          "stamina": 179.12855375445642,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "west_diamond",
+          "position": [
+            34.11630062849865,
+            64.1
+          ],
+          "hp": 150,
+          "stamina": 166.91611919328784,
+          "score": 50,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "east_diamond",
+          "position": [
+            38.6676217033432,
+            64.1
+          ],
+          "hp": 150,
+          "stamina": 145.91611919328648,
+          "score": 100,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "return_ladder",
+          "position": [
+            41.508084300683656,
+            63.570535056554775
+          ],
+          "hp": 150,
+          "stamina": 136.81116980383118,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "return_ladder",
+          "position": [
+            36.549226127972666,
+            59.918602900668496
+          ],
+          "hp": 150,
+          "stamina": 142.96144877646717,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "return_ladder",
+          "position": [
+            29.13528396193086,
+            53.32627376156337
+          ],
+          "hp": 150,
+          "stamina": 148.71643593063277,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "return_ladder",
+          "position": [
+            21.780621822412066,
+            43.9
+          ],
+          "hp": 150,
+          "stamina": 154.1026606397665,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            46.5703146467226
+          ],
+          "hp": 150,
+          "stamina": 142.18174779788592,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 15.016666666666454,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            49.56506004491617
+          ],
+          "hp": 150,
+          "stamina": 128.181747797885,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            52.559805443109745
+          ],
+          "hp": 150,
+          "stamina": 114.18174779788579,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 17.016666666666342,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            55.55455084130332
+          ],
+          "hp": 150,
+          "stamina": 100.18174779788659,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            58.54929623949689
+          ],
+          "hp": 150,
+          "stamina": 86.18174779788738,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 19.01666666666623,
+          "phase": "recover",
+          "position": [
+            21.974867471789995,
+            62.94412446375629
+          ],
+          "hp": 150,
+          "stamina": 70.2910799499807,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 20.016666666666172,
+          "phase": "recover",
+          "position": [
+            23.458663739780487,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 80.84906066883003,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 21.016666666666115,
+          "phase": "recover",
+          "position": [
+            23.513911867956864,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 90.68531912732647,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 22.016666666666058,
+          "phase": "recover",
+          "position": [
+            23.529954563721965,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 99.8583699938931,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 23.016666666666,
+          "phase": "recover",
+          "position": [
+            23.536432716372136,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 108.41992030538023,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 24.016666666665945,
+          "phase": "recover",
+          "position": [
+            23.539048639679148,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 116.4160700519324,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 25.016666666665888,
+          "phase": "recover",
+          "position": [
+            23.540104967789592,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 123.88823890703053,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 26.01666666666583,
+          "phase": "recover",
+          "position": [
+            23.5405315204618,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 130.87388980675763,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 27.016666666665774,
+          "phase": "recover",
+          "position": [
+            23.54070376541142,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 137.40710031347226,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 28.016666666665717,
+          "phase": "recover",
+          "position": [
+            23.540773319125663,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 143.51901888103376,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 29.01666666666566,
+          "phase": "recover",
+          "position": [
+            23.54080140540149,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 149.2382333414131,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 30.016666666665603,
+          "phase": "recover",
+          "position": [
+            23.540812746835908,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 154.59107189840557,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 31.016666666665547,
+          "phase": "recover",
+          "position": [
+            23.54081732658638,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 159.6018518082817,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 32.01666666666549,
+          "phase": "recover",
+          "position": [
+            23.540819175921634,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 164.29308718548205,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 33.01666666666544,
+          "phase": "recover",
+          "position": [
+            23.54081992269613,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 168.68566460660867,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 34.01666666666538,
+          "phase": "recover",
+          "position": [
+            23.54082022424888,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 172.79899312819893,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 35.01666666666532,
+          "phase": "recover",
+          "position": [
+            23.540820346017984,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 176.65113379263948,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 36.016666666665266,
+          "phase": "recover",
+          "position": [
+            23.54082039518921,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 180.2589125360172,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 37.01666666666521,
+          "phase": "recover",
+          "position": [
+            23.540820415044884,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 183.6380195334699,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 38.01666666666515,
+          "phase": "recover",
+          "position": [
+            23.540820423062737,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 186.80309735008066,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 39.016666666665095,
+          "phase": "recover",
+          "position": [
+            23.540820426300414,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 189.7678197559463,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 40.01666666666504,
+          "phase": "recover",
+          "position": [
+            23.540820427607827,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 192.544962673793,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 41.01666666666498,
+          "phase": "return_ladder",
+          "position": [
+            23.532081724142166,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 195.14646842741809,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 42.016666666664925,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            60.923204677716136
+          ],
+          "hp": 150,
+          "stamina": 191.98535028528144,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 43.01666666666487,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            63.91795007590971
+          ],
+          "hp": 150,
+          "stamina": 177.98535028528053,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 44.01666666666481,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            66.91269547410329
+          ],
+          "hp": 150,
+          "stamina": 163.98535028527962,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 45.016666666664754,
+          "phase": "finish",
+          "position": [
+            21.038030547748427,
+            72.19313813771872
+          ],
+          "hp": 150,
+          "stamina": 141.22661884880267,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 46.0166666666647,
+          "phase": "finish",
+          "position": [
+            23.390043393514322,
+            77.03923496786214
+          ],
+          "hp": 150,
+          "stamina": 147.09297507149293,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 47.01666666666464,
+          "phase": "finish",
+          "position": [
+            23.508069812755213,
+            75.10926794724234
+          ],
+          "hp": 150,
+          "stamina": 152.58312424153252,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "returned_to_beach": true,
+      "failure": null,
+      "phase": "finish",
+      "control_frames": 6869,
+      "timer": 47.699999999997935,
+      "score": 150,
+      "score_balance": true,
+      "water_diamonds_remaining": [
+        false,
+        false
+      ],
+      "position": [
+        23.53664319703031,
+        68.9
+      ],
+      "swim_input_seconds": 2.1875,
+      "min_hp": 150,
+      "min_stamina": 64.98814193670978,
+      "respawns": 0,
+      "transitions": [
+        {
+          "time": 3.983333333333322,
+          "from": "descend",
+          "to": "entry_rest",
+          "position": [
+            20.466501991837145,
+            59.872394514039975
+          ],
+          "stamina": 200,
+          "score": 50
+        },
+        {
+          "time": 5.333333333333388,
+          "from": "entry_rest",
+          "to": "entry_edge",
+          "position": [
+            23.41901689334294,
+            59.9
+          ],
+          "stamina": 189.0586162347302,
+          "score": 50
+        },
+        {
+          "time": 6.325000000000104,
+          "from": "entry_edge",
+          "to": "west_diamond",
+          "position": [
+            25.10265155603486,
+            59.9
+          ],
+          "stamina": 191.85786019575187,
+          "score": 50
+        },
+        {
+          "time": 8.050000000000184,
+          "from": "west_diamond",
+          "to": "east_diamond",
+          "position": [
+            34.609670725217946,
+            64.1
+          ],
+          "stamina": 163.7915546564776,
+          "score": 100
+        },
+        {
+          "time": 9.441666666666771,
+          "from": "east_diamond",
+          "to": "return_ladder",
+          "position": [
+            41.59484247717272,
+            64.1
+          ],
+          "stamina": 134.5665546564757,
+          "score": 150
+        },
+        {
+          "time": 13.008333333333235,
+          "from": "return_ladder",
+          "to": "rest_climb",
+          "position": [
+            20.5,
+            43.92495621165161
+          ],
+          "stamina": 154.8881419367088,
+          "score": 150
+        },
+        {
+          "time": 18.3499999999996,
+          "from": "rest_climb",
+          "to": "recover",
+          "position": [
+            20.5,
+            59.92188788033561
+          ],
+          "stamina": 80.10480860337644,
+          "score": 150
+        },
+        {
+          "time": 40.78333333333166,
+          "from": "recover",
+          "to": "return_ladder",
+          "position": [
+            23.54082042838284,
+            59.9
+          ],
+          "stamina": 195.0167968946339,
+          "score": 150
+        },
+        {
+          "time": 41.491666666664955,
+          "from": "return_ladder",
+          "to": "exit_climb",
+          "position": [
+            20.5,
+            59.92495621165161
+          ],
+          "stamina": 196.6284835990714,
+          "score": 150
+        },
+        {
+          "time": 44.50833333333145,
+          "from": "exit_climb",
+          "to": "finish",
+          "position": [
+            20.5,
+            68.95910482953556
+          ],
+          "stamina": 154.3951502657353,
+          "score": 150
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "descend",
+          "position": [
+            30.0,
+            72.0
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "descend",
+          "position": [
+            25.1910766897959,
+            68.94466302099339
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 0,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "descend",
+          "position": [
+            20.7422178925745,
+            68.9
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "descend",
+          "position": [
+            20.46907990526679,
+            66.99305696597382
+          ],
+          "hp": 150,
+          "stamina": 200,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "entry_rest",
+          "position": [
+            20.500880473991867,
+            60.06220690314485
+          ],
+          "hp": 150,
+          "stamina": 184.9971806692098,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "entry_rest",
+          "position": [
+            23.19175843869093,
+            61.60182197368008
+          ],
+          "hp": 150,
+          "stamina": 188.07620779414884,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "entry_edge",
+          "position": [
+            24.858266703840133,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 190.96036935512765,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "west_diamond",
+          "position": [
+            27.659290446692225,
+            62.70268145982982
+          ],
+          "hp": 150,
+          "stamina": 179.3021618879945,
+          "score": 50,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "west_diamond",
+          "position": [
+            34.45807253767068,
+            64.1
+          ],
+          "hp": 150,
+          "stamina": 164.84155465647765,
+          "score": 50,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "east_diamond",
+          "position": [
+            39.32524554250777,
+            64.1
+          ],
+          "hp": 150,
+          "stamina": 143.8415546564763,
+          "score": 100,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "return_ladder",
+          "position": [
+            41.14843984121301,
+            63.283449445463006
+          ],
+          "hp": 150,
+          "stamina": 137.9118900858927,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "return_ladder",
+          "position": [
+            35.80825447555003,
+            59.37010183452195
+          ],
+          "hp": 150,
+          "stamina": 143.99132521806672,
+          "score": 150,
+          "swimming_contact": true,
+          "climbing": false
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "return_ladder",
+          "position": [
+            28.227343208409156,
+            52.24533709591778
+          ],
+          "hp": 150,
+          "stamina": 149.680245211038,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "return_ladder",
+          "position": [
+            21.38809935008318,
+            43.9
+          ],
+          "hp": 150,
+          "stamina": 155.00480860337547,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            46.89474539819357
+          ],
+          "hp": 150,
+          "stamina": 141.00480860337456,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 14.999999999999789,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            49.88949079638714
+          ],
+          "hp": 150,
+          "stamina": 127.00480860337377,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            52.884236194580716
+          ],
+          "hp": 150,
+          "stamina": 113.00480860337457,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 16.999999999999677,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            55.87898159277429
+          ],
+          "hp": 150,
+          "stamina": 99.00480860337537,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "rest_climb",
+          "position": [
+            20.5,
+            58.87372699096786
+          ],
+          "hp": 150,
+          "stamina": 85.00480860337616,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 18.999999999999563,
+          "phase": "recover",
+          "position": [
+            22.469089177480637,
+            62.738784502897985
+          ],
+          "hp": 150,
+          "stamina": 72.08821028880432,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 19.999999999999506,
+          "phase": "recover",
+          "position": [
+            23.494154387777435,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 82.52256363872424,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 20.99999999999945,
+          "phase": "recover",
+          "position": [
+            23.533993724860167,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 92.24539441418739,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 21.999999999999392,
+          "phase": "recover",
+          "position": [
+            23.53806375786385,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 101.31399528546352,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 22.999999999999336,
+          "phase": "recover",
+          "position": [
+            23.539707265630565,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 109.7790723296778,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 23.99999999999928,
+          "phase": "recover",
+          "position": [
+            23.54037092555097,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 117.68589441193934,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 24.999999999999222,
+          "phase": "recover",
+          "position": [
+            23.54063891606422,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 125.07518208966876,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 25.999999999999165,
+          "phase": "recover",
+          "position": [
+            23.540747132506088,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 131.98380295698306,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 26.99999999999911,
+          "phase": "recover",
+          "position": [
+            23.540790831061493,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 138.44532173287521,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 27.99999999999905,
+          "phase": "recover",
+          "position": [
+            23.540808476843516,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 144.49044035437345,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 28.999999999998995,
+          "phase": "recover",
+          "position": [
+            23.540815602333605,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 150.14735406815385,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 29.999999999998938,
+          "phase": "recover",
+          "position": [
+            23.54081847965628,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 155.4420428474398,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 30.99999999999888,
+          "phase": "recover",
+          "position": [
+            23.54081964153927,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 160.39851261380585,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 31.999999999998824,
+          "phase": "recover",
+          "position": [
+            23.540820110715746,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 165.03899718616532,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 32.99999999999877,
+          "phase": "recover",
+          "position": [
+            23.54082030017248,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 169.3841292473095,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 33.999999999998714,
+          "phase": "recover",
+          "position": [
+            23.54082037667643,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 173.45308665739796,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 34.99999999999866,
+          "phase": "recover",
+          "position": [
+            23.54082040756925,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 177.26371897376148,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 35.9999999999986,
+          "phase": "recover",
+          "position": [
+            23.540820420043985,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 180.8326579284138,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 36.99999999999854,
+          "phase": "recover",
+          "position": [
+            23.540820425081385,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 184.17541477561142,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 37.99999999999849,
+          "phase": "recover",
+          "position": [
+            23.54082042711552,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 187.30646678360728,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 38.99999999999843,
+          "phase": "recover",
+          "position": [
+            23.540820427936914,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 190.23933465741024,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 39.99999999999837,
+          "phase": "recover",
+          "position": [
+            23.540820428268606,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 192.98665230577149,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 40.999999999998316,
+          "phase": "return_ladder",
+          "position": [
+            23.27117854122808,
+            59.9
+          ],
+          "hp": 150,
+          "stamina": 195.5602300781744,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 41.99999999999826,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            61.44728512240001
+          ],
+          "hp": 150,
+          "stamina": 189.51181693240426,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 42.9999999999982,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            64.44203052059359
+          ],
+          "hp": 150,
+          "stamina": 175.51181693240335,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 43.999999999998145,
+          "phase": "exit_climb",
+          "position": [
+            20.5,
+            67.43677591878716
+          ],
+          "hp": 150,
+          "stamina": 161.51181693240244,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": true
+        },
+        {
+          "time": 44.99999999999809,
+          "phase": "finish",
+          "position": [
+            21.81195616510656,
+            73.5956650045138
+          ],
+          "hp": 150,
+          "stamina": 142.3086931321694,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 45.99999999999803,
+          "phase": "finish",
+          "position": [
+            23.463466691667836,
+            77.15076169283594
+          ],
+          "hp": 150,
+          "stamina": 148.10557282674534,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        },
+        {
+          "time": 46.999999999997975,
+          "phase": "finish",
+          "position": [
+            23.53293969103402,
+            74.17471570008622
+          ],
+          "hp": 150,
+          "stamina": 153.530892353152,
+          "score": 150,
+          "swimming_contact": false,
+          "climbing": false
+        }
+      ]
+    }
+  ]
+}

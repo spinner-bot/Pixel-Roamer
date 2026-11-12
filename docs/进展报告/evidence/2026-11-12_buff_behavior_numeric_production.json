@@ -1,0 +1,478 @@
+{
+  "code_revision": "ec95295491c13152257caf9e5b43d329a58d5ddb",
+  "production": true,
+  "scope": "actual unmodified production stat API and startup rule data; explicit Buff injection, not normal map acceptance",
+  "pairs": [
+    {
+      "production": {
+        "buff": 22,
+        "params": [],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected": 50.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected": 25.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected": 12.5
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "expected": 75.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 56.25,
+        "stacks_preserved": true
+      },
+      "expected": 56.25
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 42.1875,
+        "stacks_preserved": true
+      },
+      "expected": 42.1875
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected": 50.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected": 25.0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected": 12.5
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 22,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [],
+        "stacks": 1,
+        "value": 60.0,
+        "stacks_preserved": true
+      },
+      "expected": 60.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [],
+        "stacks": 2,
+        "value": 36.0,
+        "stacks_preserved": true
+      },
+      "expected": 36.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [],
+        "stacks": 3,
+        "value": 21.599999999999998,
+        "stacks_preserved": true
+      },
+      "expected": 21.599999999999998
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 1,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 2,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          0
+        ],
+        "stacks": 3,
+        "value": 100.0,
+        "stacks_preserved": true
+      },
+      "expected": 100.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 1,
+        "value": 75.0,
+        "stacks_preserved": true
+      },
+      "expected": 75.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 2,
+        "value": 56.25,
+        "stacks_preserved": true
+      },
+      "expected": 56.25
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          25
+        ],
+        "stacks": 3,
+        "value": 42.1875,
+        "stacks_preserved": true
+      },
+      "expected": 42.1875
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected": 50.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 25.0,
+        "stacks_preserved": true
+      },
+      "expected": 25.0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          50
+        ],
+        "stacks": 3,
+        "value": 12.5,
+        "stacks_preserved": true
+      },
+      "expected": 12.5
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          100
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 1,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 2,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    },
+    {
+      "production": {
+        "buff": 51,
+        "params": [
+          150
+        ],
+        "stacks": 3,
+        "value": 0,
+        "stacks_preserved": true
+      },
+      "expected": 0
+    }
+  ],
+  "unchanged_controls": [
+    {
+      "production": {
+        "buff": 3,
+        "params": [
+          20
+        ],
+        "stacks": 2,
+        "value": 140.0,
+        "stacks_preserved": true
+      },
+      "expected": 140.0
+    },
+    {
+      "production": {
+        "buff": 4,
+        "params": [
+          50
+        ],
+        "stacks": 2,
+        "value": 200.0,
+        "stacks_preserved": true
+      },
+      "expected": 200.0
+    },
+    {
+      "production": {
+        "buff": 6,
+        "params": [
+          30
+        ],
+        "stacks": 1,
+        "value": 70.0,
+        "stacks_preserved": true
+      },
+      "expected": 70.0
+    },
+    {
+      "production": {
+        "buff": 13,
+        "params": [
+          50
+        ],
+        "stacks": 1,
+        "value": 50.0,
+        "stacks_preserved": true
+      },
+      "expected": 50.0
+    }
+  ],
+  "errors": []
+}

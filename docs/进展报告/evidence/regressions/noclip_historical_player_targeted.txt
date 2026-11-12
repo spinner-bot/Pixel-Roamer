@@ -1,0 +1,12 @@
+test_flight_and_stunned_expiry_are_safe_at_three_frame_rates (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_rechecks_anchor_before_falling_back_to_spawn (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_respects_solid_boundaries_and_preserves_loop_coordinates (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_pause_and_terminal_guards_do_not_relocate_a_frozen_world (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_stunned_rollback_clears_stale_environment_without_waiting_for_stun_to_end (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.012s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

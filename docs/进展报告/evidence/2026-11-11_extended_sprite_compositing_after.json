@@ -1,0 +1,1710 @@
+{
+  "code_revision": "fcf53cc49281eeae12d60ad753574b61765e18e7",
+  "controller_sha256": "023c3f43bc1289c7145a01ee4d7acba12ad1866dcbbabcbcf8404362ed4d1a85",
+  "scope": "actual direct pattern and cached world rendering, day/night/black backgrounds; not gameplay or device acceptance",
+  "scenes": [
+    {
+      "default_id": 0,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 126,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 127,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 128,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 129,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 130,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 299,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 310,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 311,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 312,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 313,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 314,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 315,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 316,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 317,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 318,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 319,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 320,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 321,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 322,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 323,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 324,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 325,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 326,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 327,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 328,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 329,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 11,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 126,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 127,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 128,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 129,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 130,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 299,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 310,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 311,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 312,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 313,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 314,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 315,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 316,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 317,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 318,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 319,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 320,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 321,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 322,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 323,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 324,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 325,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 326,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 327,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 328,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 329,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 12,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 126,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 127,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 128,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 129,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 130,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 299,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 310,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 311,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 312,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 313,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 314,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 315,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 316,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 317,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 318,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 319,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 320,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 321,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 322,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 323,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 324,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 325,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 326,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 327,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 328,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 329,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    }
+  ],
+  "rgba_cases": [
+    {
+      "default_id": 0,
+      "alpha": 0,
+      "expected_corner": [
+        135,
+        255,
+        255
+      ],
+      "direct_corner": [
+        135,
+        255,
+        255
+      ],
+      "chunk_corner": [
+        135,
+        255,
+        255
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 0,
+      "alpha": 128,
+      "expected_corner": [
+        112,
+        198,
+        218
+      ],
+      "direct_corner": [
+        112,
+        198,
+        218
+      ],
+      "chunk_corner": [
+        112,
+        198,
+        218
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 11,
+      "alpha": 0,
+      "expected_corner": [
+        11,
+        20,
+        147
+      ],
+      "direct_corner": [
+        11,
+        20,
+        147
+      ],
+      "chunk_corner": [
+        11,
+        20,
+        147
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 11,
+      "alpha": 128,
+      "expected_corner": [
+        50,
+        80,
+        164
+      ],
+      "direct_corner": [
+        50,
+        80,
+        164
+      ],
+      "chunk_corner": [
+        50,
+        80,
+        164
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 12,
+      "alpha": 0,
+      "expected_corner": [
+        0,
+        0,
+        0
+      ],
+      "direct_corner": [
+        0,
+        0,
+        0
+      ],
+      "chunk_corner": [
+        0,
+        0,
+        0
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 12,
+      "alpha": 128,
+      "expected_corner": [
+        45,
+        70,
+        90
+      ],
+      "direct_corner": [
+        45,
+        70,
+        90
+      ],
+      "chunk_corner": [
+        45,
+        70,
+        90
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    }
+  ]
+}

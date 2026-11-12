@@ -1,0 +1,11 @@
+test_local_lake_chamber_checkpoint_and_respawn_return (tests.test_underground_lake.UndergroundLakeTests) ... ok
+test_original_forest_to_lake_and_actual_respawn_return_same_session (tests.test_underground_lake.UndergroundLakeTests) ... ok
+test_local_walk_activates_exposed_checkpoint_and_respawns_legally (tests.test_tower_checkpoint.TowerCheckpointTests) ... ok
+test_identical_physics_tick_inputs_match_at_three_presentation_rates (tests.test_ice_lower.IceLowerTests) ... ok
+test_local_doorway_checkpoint_and_low_ceiling_return (tests.test_ice_lower.IceLowerTests) ... ok
+test_original_forest_to_lower_checkpoint_and_return (tests.test_ice_lower.IceLowerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 44.094s
+
+OK

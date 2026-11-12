@@ -1,0 +1,24 @@
+[
+  {
+    "buff": null,
+    "active": null,
+    "score": 0,
+    "pickup_tile": 310,
+    "position": [
+      5.5,
+      4.5
+    ],
+    "elapsed": 1.9999999999999953
+  },
+  {
+    "buff": 14,
+    "active": true,
+    "score": 0,
+    "pickup_tile": 310,
+    "position": [
+      5.5,
+      4.5
+    ],
+    "elapsed": 1.9999999999999953
+  }
+]

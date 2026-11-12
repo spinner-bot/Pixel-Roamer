@@ -1,0 +1,1 @@
+[{"fps": 30, "completed_route": true, "failure": null, "timer": 87.03333333334866, "position": [7.4887172154856705, 124.9]}, {"fps": 60, "completed_route": true, "failure": null, "timer": 86.41666666668151, "position": [7.528637411184794, 124.9]}, {"fps": 144, "completed_route": true, "failure": null, "timer": 86.40833333334817, "position": [7.528736241152637, 124.9]}]

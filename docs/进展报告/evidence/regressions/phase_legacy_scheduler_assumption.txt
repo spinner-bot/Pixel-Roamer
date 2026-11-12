@@ -1,0 +1,23 @@
+test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (test_phase_expiry.PhaseExpiryTests) ... FAIL
+test_dispel_inside_wall_preserves_resources_and_cancels_stale_motion (test_phase_expiry.PhaseExpiryTests) ... ok
+test_expiry_after_clearing_wall_preserves_position_and_velocity (test_phase_expiry.PhaseExpiryTests) ... ok
+test_invalidated_anchor_falls_back_to_valid_spawn (test_phase_expiry.PhaseExpiryTests) ... ok
+test_one_way_crossing_is_not_treated_as_solid_embedding (test_phase_expiry.PhaseExpiryTests) ... ok
+test_remaining_phase_source_prevents_early_rollback (test_phase_expiry.PhaseExpiryTests) ... ok
+test_safe_teleport_and_new_life_do_not_reuse_old_phase_anchor (test_phase_expiry.PhaseExpiryTests) ... ok
+test_stunned_phase_expiry_still_resolves_on_next_physics_step (test_phase_expiry.PhaseExpiryTests) ... ok
+
+======================================================================
+FAIL: test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn (test_phase_expiry.PhaseExpiryTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_phase_expiry.py", line 39, in test_actual_phase_sources_exit_walls_at_three_frame_rates_without_respawn
+    self.assertTrue(all(r['entered_wall'] and not r['first_expired']['clear'] for r in report['before']))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.740s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

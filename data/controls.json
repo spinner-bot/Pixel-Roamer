@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "controls": [
+    {"keys": "A D / ← →", "action": "左右移动"},
+    {"keys": "Space", "action": "跳跃；水面靠岸时配合上键上岸"},
+    {"keys": "W / ↑", "action": "按住攀爬或上游，消耗体力"},
+    {"keys": "S / ↓", "action": "松开攀爬（优先于上键）"},
+    {"keys": "C", "action": "切换时装"},
+    {"keys": "Backspace", "action": "暂停并打开设置"},
+    {"keys": "Esc", "action": "返回地图选择"},
+    {"keys": "F", "action": "飞行调试模式"}
+  ]
+}

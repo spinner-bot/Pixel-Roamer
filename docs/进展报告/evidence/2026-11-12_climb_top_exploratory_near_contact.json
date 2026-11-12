@@ -1,0 +1,78 @@
+[
+  {
+    "ledge": false,
+    "mode": "keydown",
+    "start": [
+      5.5,
+      10.25
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.0
+    ],
+    "dy": -0.25,
+    "climbing": true,
+    "errors": [],
+    "can_climb": true,
+    "top": 10.0
+  },
+  {
+    "ledge": false,
+    "mode": "held",
+    "start": [
+      5.5,
+      10.25
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.0
+    ],
+    "dy": -0.25,
+    "climbing": true,
+    "errors": [],
+    "can_climb": true,
+    "top": 10.0
+  },
+  {
+    "ledge": true,
+    "mode": "keydown",
+    "start": [
+      5.5,
+      10.25
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.0
+    ],
+    "dy": -0.25,
+    "climbing": true,
+    "errors": [
+      "solid overlap: 2 at 4,8"
+    ],
+    "can_climb": true,
+    "top": 10.0
+  },
+  {
+    "ledge": true,
+    "mode": "held",
+    "start": [
+      5.5,
+      10.25
+    ],
+    "valid_before": true,
+    "end": [
+      5.5,
+      10.0
+    ],
+    "dy": -0.25,
+    "climbing": true,
+    "errors": [
+      "solid overlap: 2 at 4,8"
+    ],
+    "can_climb": true,
+    "top": 10.0
+  }
+]

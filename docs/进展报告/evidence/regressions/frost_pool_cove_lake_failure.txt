@@ -1,0 +1,20 @@
+test_normal_spawn_lake_island_and_return_at_three_frame_rates (test_cove_lake.CoveLakeTests) ... FAIL
+
+======================================================================
+FAIL: test_normal_spawn_lake_island_and_return_at_three_frame_rates (test_cove_lake.CoveLakeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_cove_lake.py", line 19, in test_normal_spawn_lake_island_and_return_at_three_frame_rates
+    self.assertEqual(report['tile_changes'], [
+AssertionError: Lists differ: [{'po[191 chars]: 10}, {'position': [245, 55], 'before': 0, 'a[805 chars]: 3}] != [{'po[191 chars]: 10}]
+
+First list contains 17 additional elements.
+First extra element 4:
+{'position': [245, 55], 'before': 0, 'after': 3}
+
+Diff is 1279 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 5.890s
+
+FAILED (failures=1)

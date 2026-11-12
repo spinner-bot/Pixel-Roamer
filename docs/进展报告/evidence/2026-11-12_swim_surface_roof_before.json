@@ -1,0 +1,7715 @@
+{
+  "code_revision": "43959750a3007add0fc5811bc799972cb259b3ed",
+  "scope": "252 legal low-roof/open-water fixtures, actual held/keydown session; not all shore exits or device acceptance",
+  "sources": {
+    "scripts/audit_swim_surface_roof.py": "ada856e45e469a5d7c69d46dbb39d18d0d06931d77801c19b4eea0eeffbe0773",
+    "pixel_roamer/world_session.py": "000f779e10831baa68f990e0fa4b8953ce31e493878bb8a28a3a8dda0872e481",
+    "creature.py": "460a47e1ec25ff154155d24d7e1092cdb292e7c3c257333623193f381018f1eb"
+  },
+  "current": [
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 1.8,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.0,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.02,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.04,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.030000000000001
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.969999999999999
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931921098,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.041
+      ],
+      "final": [
+        -14.5,
+        -10.00044799068079
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.959
+      ],
+      "final": [
+        5.5,
+        9.99955200931921
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.040552009319210214,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.08,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.959000000000003
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 120,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.04055200931920311,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.051
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at -15,-9"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.949
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 5,11"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.1,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.948999999999998
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": false,
+      "steps": 120,
+      "errors_total": 119,
+      "first_errors": [
+        "solid overlap: 2 at 25,31"
+      ],
+      "max_step_dx": 0,
+      "max_step_dy": 0.049552009319207,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.03
+      ],
+      "final": [
+        -14.5,
+        -10.000447990680792
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.97
+      ],
+      "final": [
+        5.5,
+        9.999552009319208
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": false,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.97
+      ],
+      "final": [
+        25.5,
+        29.999552009319206
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": false,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.02955200931920743,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "held_w",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        -20,
+        -20
+      ],
+      "initial": [
+        -14.5,
+        -10.061
+      ],
+      "final": [
+        -14.5,
+        -10.059999999999999
+      ],
+      "surface": -10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        9.939
+      ],
+      "final": [
+        5.5,
+        9.940000000000001
+      ],
+      "surface": 10.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0010000000000012221,
+      "max_event_dy": 0,
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "height": 2.12,
+      "roof": true,
+      "mode": "keydown_arrow",
+      "offset": [
+        20,
+        20
+      ],
+      "initial": [
+        25.5,
+        29.939
+      ],
+      "final": [
+        25.5,
+        29.939999999999998
+      ],
+      "surface": 30.0,
+      "can_swim": true,
+      "stamina": 178.99999999999864,
+      "on_ceiling": true,
+      "final_clear": true,
+      "steps": 120,
+      "errors_total": 0,
+      "first_errors": [],
+      "max_step_dx": 0,
+      "max_step_dy": 0.0009999999999976694,
+      "max_event_dy": 0,
+      "respawns": 0
+    }
+  ]
+}

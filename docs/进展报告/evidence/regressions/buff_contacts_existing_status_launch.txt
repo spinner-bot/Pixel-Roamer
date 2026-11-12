@@ -1,0 +1,33 @@
+test_bleeding_is_independent_of_frame_partition (test_status_effects.BuffTimeTests) ... ok
+test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) ... ok
+test_environment_timers_expire_without_any_collision_updates (test_status_effects.BuffTimeTests) ... ok
+test_expiring_immunity_only_protects_its_active_interval (test_status_effects.BuffTimeTests) ... ok
+test_invalid_time_steps_are_rejected (test_status_effects.BuffTimeTests) ... ok
+test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply (test_status_effects.BuffTimeTests) ... ok
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (test_status_effects.BuffTimeTests) ... ok
+test_regeneration_and_shield_gain_respect_elapsed_time (test_status_effects.BuffTimeTests) ... ok
+test_stacks_affect_continuous_damage_and_stat_modifiers (test_status_effects.BuffTimeTests) ... ok
+test_armor_break_is_a_victim_debuff (test_status_effects.DamageTests) ... ok
+test_capped_shield_regeneration_does_not_remove_existing_shield (test_status_effects.DamageTests) ... ok
+test_damage_return_value_counts_shield_and_caps_overkill (test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_actual_lava_contact (test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_burning_and_direct_fire (test_status_effects.DamageTests) ... ok
+test_lifesteal_and_thorns_use_actual_damage_not_requested_overkill (test_status_effects.DamageTests) ... ok
+test_actual_production_apex_matches_height_claim_across_gravity_drag_and_feather (test_jump_height.JumpHeightTests) ... ok
+test_near_unit_damping_apex_matches_independent_tick_recurrence (test_jump_height.JumpHeightTests) ... ok
+test_numeric_fallbacks_large_finite_inputs_and_cache_remain_bounded (test_jump_height.JumpHeightTests) ... ok
+test_real_tile_jump_modifier_and_feather_combine_without_repeated_scaling (test_jump_height.JumpHeightTests) ... ok
+test_refresh_pause_expiry_clear_and_reset_restore_height_context (test_jump_height.JumpHeightTests) ... ok
+test_default_and_explicit_zero_stat_descriptions_match_effects (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_every_source_uses_registered_nonempty_resolved_descriptions (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_lifetime_descriptions_follow_refresh_and_do_not_claim_zero_seconds (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_all_existing_launch_sources_preserve_height_after_space (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+test_jump_preserves_velocity_and_existing_ground_air_and_status_gates (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+test_source_launches_escape_magnetic_fields_and_immunity_still_blocks_launches (test_launch_jump_override.LaunchJumpOverrideTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 10.374s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

@@ -1,0 +1,17 @@
+{
+  "actor_revision": "a9c87514b79fc824f43bca6e0a89d1bb1b29d10b",
+  "runs": [
+    {
+      "kind": 7,
+      "expected_top": 6,
+      "actual_top": 6.0,
+      "near_shore": true
+    },
+    {
+      "kind": 9,
+      "expected_top": 6,
+      "actual_top": 6.0,
+      "near_shore": false
+    }
+  ]
+}

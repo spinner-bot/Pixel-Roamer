@@ -1,0 +1,21 @@
+{
+  "code_revision": "13d9b87308dd88fe5998c23859de27d9799acf86",
+  "runs": [
+    {
+      "kind": 301,
+      "cases": 1000,
+      "unsafe_count": 0,
+      "unsafe_samples": [],
+      "range_violations": [],
+      "moved_count": 1000
+    },
+    {
+      "kind": 358,
+      "cases": 1000,
+      "unsafe_count": 0,
+      "unsafe_samples": [],
+      "range_violations": [],
+      "moved_count": 1000
+    }
+  ]
+}

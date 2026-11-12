@@ -1,0 +1,1376 @@
+{
+  "code_revision": "a3555d3ccabd26051ebe9473bd4d6d1556df3be8",
+  "scope": "isolated authored wall/floor fixtures with real WorldSession input; Buff injected in buff mode, source mode obtained by contact; no normal original-map route claim",
+  "walls": [
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        21.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.966666666666667
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 3.9833333333333334
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": null,
+        "params": [],
+        "duration": 4
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.49833821967082,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.594945235655906,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.501661780329176,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2999999999999978,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.40505476434409,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 1.2833333333333312,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        22.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        23.4,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": false,
+      "position": [
+        19.599999999999998,
+        5.5
+      ],
+      "applied": {
+        "source": 384,
+        "params": [
+          0
+        ],
+        "duration": 5.0
+      },
+      "elapsed": 2.999999999999992,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.434475532948245,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.570662687215687,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        21.565524467051755,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9666666666666657,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 1,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        21.429337312784313,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 0.9499999999999991,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.587328264423117,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 2,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        22.412671735576883,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.0666666666666653,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        19.38351165024729,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1999999999999982,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        19.538334832070912,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": -1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        19.538334832070912,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 30,
+      "crossed": true,
+      "position": [
+        23.61648834975271,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1999999999999982,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 60,
+      "crossed": true,
+      "position": [
+        23.461665167929088,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "phantom",
+      "thickness": 3,
+      "side": 1,
+      "fps": 144,
+      "crossed": true,
+      "position": [
+        23.461665167929088,
+        5.5
+      ],
+      "applied": null,
+      "elapsed": 1.1833333333333316,
+      "respawns": 0,
+      "hp": 150.0
+    }
+  ],
+  "floors": [
+    {
+      "mode": "none",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "none",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "buff",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "fps": 30,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "fps": 60,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    },
+    {
+      "mode": "source",
+      "fps": 144,
+      "dropped_through_floor": false,
+      "min_center_y": 5.9,
+      "position": [
+        10.5,
+        5.9
+      ],
+      "respawns": 0,
+      "hp": 150.0
+    }
+  ]
+}

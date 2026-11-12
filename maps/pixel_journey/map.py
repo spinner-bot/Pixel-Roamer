@@ -2,7 +2,12 @@
 像素启程 —— 大型探索冒险地图 (480×280 = 134,400)
 模式：有限 (finite) | 6大主题区域 | 多层结构 | 传送网络
 """
+from pathlib import Path
+from maps.layout import apply_layout
 from world import World
+from random import Random
+
+_rng = Random(3)
 
 MAP_ID = 3
 
@@ -133,9 +138,9 @@ for x in range(5, 75):
             world.set_tile(x, y, 0)  # 挖空
 # 洞穴中的水晶
 for _ in range(60):
-    cx, cy = __import__('random').randint(8,72), __import__('random').randint(4,18)
+    cx, cy = _rng.randint(8,72), _rng.randint(4,18)
     if world.get_tile(cx, cy).type_id == 0:
-        world.set_tile(cx, cy, __import__('random').choice([200,201,204,206]))  # 水晶
+        world.set_tile(cx, cy, _rng.choice([200,201,204,206]))  # 水晶
 
 # 起始平台（安全区）
 fill(10, 50, 22, 50, 19)   # 木板
@@ -169,14 +174,14 @@ world.set_tile(34, 36, 302)     # 隐藏检查点
 # 主洞窟
 for x in range(20, 70):
     for y in range(10, 25):
-        if __import__('random').random() < 0.6:
+        if _rng.random() < 0.6:
             if world.get_tile(x, y).type_id in (16, 2, 0):
                 world.set_tile(x, y, 0)
 # 水晶簇
 for _ in range(80):
-    cx, cy = __import__('random').randint(22,68), __import__('random').randint(12,24)
+    cx, cy = _rng.randint(22,68), _rng.randint(12,24)
     if world.get_tile(cx, cy).type_id == 0:
-        world.set_tile(cx, cy, __import__('random').choice([200,201,202,203,204,205,206,207,209,211]))
+        world.set_tile(cx, cy, _rng.choice([200,201,202,203,204,205,206,207,209,211]))
 # 治愈之泉（洞窟休息点）
 circle(45, 15, 3, 290)
 world.set_tile(45, 15, 302)  # 检查点
@@ -444,9 +449,9 @@ for x in range(258, 322):
     world.set_tile(x, 25, 2)        # 石顶
 # 湖中珊瑚
 for _ in range(40):
-    cx, cy = __import__('random').randint(262,318), __import__('random').randint(10,24)
+    cx, cy = _rng.randint(262,318), _rng.randint(10,24)
     if world.get_tile(cx, cy).type_id == 7:
-        world.set_tile(cx, cy, __import__('random').choice([237,238,239,242]))
+        world.set_tile(cx, cy, _rng.choice([237,238,239,242]))
 # 气泡柱上浮通道
 for bx in [275, 290, 305]:
     for y in range(10, 25):
@@ -581,7 +586,7 @@ world.set_tile(450, 203, 265)           # 祝福圣光
 world.set_tile(449, 202, 257)           # 电弧核心
 world.set_tile(451, 202, 257)
 world.set_tile(450, 203, 267)           # 奥术法阵
-world.set_tile(450, 201, 302)           # 最终检查点
+world.set_tile(447, 201, 302)           # 同一奖励台的裸露落脚面，避免被奖品封住。
 
 # 传送门T4（高塔底部 → 沙漠绿洲）
 world.set_tile(468, 17, 300)
@@ -627,16 +632,16 @@ for hx, hy, hr in hidden_caves:
             d2 = (x-hx)**2 + (y-hy)**2
             if hr**2 < d2 <= (hr+1)**2:
                 if world.get_tile(x, y).type_id == 0:
-                    world.set_tile(x, y, __import__('random').choice([2,25,34]))
+                    world.set_tile(x, y, _rng.choice([2,25,34]))
     # 洞穴内奖励
-    world.set_tile(hx, hy, __import__('random').choice([200,240,79,207,291]))
+    world.set_tile(hx, hy, _rng.choice([200,240,79,207,291]))
 
 # 全图藤蔓/绳索连接（方便垂直移动）
 for x in range(20, 470, 50):
     if world.get_tile(x, 30).type_id != 0:
         for y in range(31, 45):
             if world.get_tile(x, y).type_id == 0:
-                world.set_tile(x, y, __import__('random').choice([10,31]))
+                world.set_tile(x, y, _rng.choice([10,31]))
 
 # 全局治愈点分布（不至于太难）
 heal_spots = [(30,48), (75,40), (120,42), (175,32), (210,36),
@@ -647,4 +652,17 @@ for hx, hy in heal_spots:
         if world.get_tile(hx, hy).type_id == 0:
             world.set_tile(hx, hy, 290)  # 治愈之泉
 
+# Stand above the forest floor and beside the ice-room treasure, not inside it.
+world.grid[(144, 20)].meta = {"tp_x": 30.5, "tp_y": 50.9}
+world.grid[(375, py_base + 40)].meta = {"tp_x": 289.5, "tp_y": 63.9}
+# The destination treasure room needs a physical exit to its climbing vine.
+fill(275, 63, 277, 65, 0)
+fill(269, 62, 277, 62, 244)
 world.end_bulk_load()
+
+# Restore reviewed connections while preserving the authored world colors.
+_connection_fill_color = world.fill_color
+for _connection_file in ("tower_connections.json", "pyramid_connections.json", "ice_lower_connections.json",
+                         "lake_connections.json"):
+    apply_layout(world, Path(__file__).with_name(_connection_file))
+world.fill_color = _connection_fill_color

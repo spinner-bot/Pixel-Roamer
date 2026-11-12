@@ -1,0 +1,321 @@
+{
+  "code_revision": "66d36a9a6598f0da68290f81a47b04a8e0e9995d",
+  "legacy_revision": "29ba738",
+  "scope": "isolated held input approach, actual application/session; no device acceptance",
+  "before": [
+    {
+      "fps": 30,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.5122690979931805,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.5122690979931805,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.487730902006822,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.487730902006822,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.571958238765505,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.571958238765505,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.428041761234495,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.428041761234495,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.572740336450229,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.572740336450229,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": false,
+      "position": [
+        5.427259663549771,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": false,
+      "position": [
+        5.427259663549771,
+        1.9
+      ],
+      "can_climb": true,
+      "stamina": 200.0,
+      "hp": 150.0
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 30,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 60,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.36133333332845,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "left",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.3906666666618,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "left",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.3906666666618,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "right",
+      "keys": "wasd",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.3906666666618,
+      "hp": 150.0
+    },
+    {
+      "fps": 144,
+      "side": "right",
+      "keys": "arrows",
+      "climbed": true,
+      "position": [
+        5.5,
+        13.0
+      ],
+      "can_climb": true,
+      "stamina": 142.3906666666618,
+      "hp": 150.0
+    }
+  ]
+}

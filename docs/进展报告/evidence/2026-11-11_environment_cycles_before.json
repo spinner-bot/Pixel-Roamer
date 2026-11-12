@@ -1,0 +1,128 @@
+{
+  "code_revision": "ac83fd25d7a853479dc71b3971a8ef6ce4b7967f",
+  "runs": [
+    {
+      "base_attack": 1.25,
+      "records": [
+        {
+          "phase": "first_entry",
+          "attack": 3,
+          "expected": 3.125
+        },
+        {
+          "phase": "continuous_contact",
+          "attack": 3,
+          "expected": 3.125
+        },
+        {
+          "phase": "leave",
+          "attack": 1.25,
+          "expected": 1.25
+        },
+        {
+          "phase": "reenter",
+          "attack": 1.25,
+          "expected": 3.125
+        },
+        {
+          "phase": "after_respawn",
+          "attack": 1.25,
+          "expected": 3.125
+        },
+        {
+          "phase": "teleport_out",
+          "attack": 1.25,
+          "expected": 1.25
+        },
+        {
+          "phase": "teleport_back",
+          "attack": 1.25,
+          "expected": 3.125
+        }
+      ],
+      "failures": 5
+    },
+    {
+      "base_attack": 10,
+      "records": [
+        {
+          "phase": "first_entry",
+          "attack": 25,
+          "expected": 25.0
+        },
+        {
+          "phase": "continuous_contact",
+          "attack": 25,
+          "expected": 25.0
+        },
+        {
+          "phase": "leave",
+          "attack": 10,
+          "expected": 10
+        },
+        {
+          "phase": "reenter",
+          "attack": 10,
+          "expected": 25.0
+        },
+        {
+          "phase": "after_respawn",
+          "attack": 10,
+          "expected": 25.0
+        },
+        {
+          "phase": "teleport_out",
+          "attack": 10,
+          "expected": 10
+        },
+        {
+          "phase": "teleport_back",
+          "attack": 10,
+          "expected": 25.0
+        }
+      ],
+      "failures": 3
+    },
+    {
+      "base_attack": 0.1,
+      "records": [
+        {
+          "phase": "first_entry",
+          "attack": 0,
+          "expected": 0.25
+        },
+        {
+          "phase": "continuous_contact",
+          "attack": 0,
+          "expected": 0.25
+        },
+        {
+          "phase": "leave",
+          "attack": 0.1,
+          "expected": 0.1
+        },
+        {
+          "phase": "reenter",
+          "attack": 0.1,
+          "expected": 0.25
+        },
+        {
+          "phase": "after_respawn",
+          "attack": 0.1,
+          "expected": 0.25
+        },
+        {
+          "phase": "teleport_out",
+          "attack": 0.1,
+          "expected": 0.1
+        },
+        {
+          "phase": "teleport_back",
+          "attack": 0.1,
+          "expected": 0.25
+        }
+      ],
+      "failures": 5
+    }
+  ]
+}

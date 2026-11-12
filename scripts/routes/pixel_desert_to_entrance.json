@@ -1,0 +1,36 @@
+{
+  "map_id": 3,
+  "scope": "actual tower base back to desert bank and original bottom entrance without state transfer",
+  "waypoints": [
+    {
+      "name": "desert_bank",
+      "x": 419.5,
+      "y": 22.9,
+      "kind": "rest",
+      "speed": 8,
+      "stamina_min": 95
+    },
+    {
+      "name": "above_oasis",
+      "x": 419.5,
+      "y": 27.0,
+      "kind": "air",
+      "speed": 5
+    },
+    {
+      "name": "west_of_oasis",
+      "x": 396.5,
+      "y": 22.9,
+      "kind": "ground",
+      "speed": 10
+    },
+    {
+      "name": "bottom_entrance_ground",
+      "x": 373.5,
+      "y": 22.9,
+      "kind": "rest",
+      "speed": 8,
+      "stamina_min": 95
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"rows": 144, "candidate_errors": 0, "native_max_ratio_error": 2.014285714285725, "candidate_max_ratio_error": 1.509903313490213e-14}

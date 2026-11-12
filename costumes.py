@@ -1,223 +1,11 @@
-"""
-时装系统：玩家皮肤渲染
-
-数据格式：
-  每个时装为 16×32 像素位图（宽×高）。
-  像素数据为 list[list[(R,G,B)|0]]，行优先自上而下，0=透明。
-  "frames" 字典按动画状态组织：idle / walk / jump / climb，
-  每个状态是一个帧列表（list of pixel arrays），支持多帧循环动画。
-
-添加新时装：
-  1. 定义颜色常量（建议用前缀区分，如 _ADV_ / _NIN_ / _MAG_）
-  2. 定义 _COSTUME_<NAME> = [[...16 elements...] * 32 rows]
-  3. 调用 register_costume() 或直接在 COSTUMES 字典中添加条目
-
-渲染管线：
-  导入时预渲染所有帧 → 渲染时 scale + cache → blit
-  支持水平翻转（flip_h）和动画状态帧选择（anim_state / anim_frame）
-"""
+"""Load pixel costumes from JSON and render cached animation frames."""
 from __future__ import annotations
 from typing import Tuple, Dict, Optional
 import pygame
+import math
+from resource_catalog import load_costumes
 
-# ===================== 颜色常量 =====================
-_SKIN      = (255, 205, 165)
-_SKIN_D    = (230, 175, 135)
-_SKIN_L    = (255, 225, 195)
-_WHITE     = (255, 255, 255)
-_BLACK     = (25, 22, 28)
-_DARK      = (45, 42, 50)
-_GRAY      = (130, 125, 135)
-
-# ---- 经典冒险家 ----
-_ADV_HAIR   = (130, 85, 40)
-_ADV_HAIR_L = (160, 110, 55)
-_ADV_SHIRT  = (55, 115, 215)
-_ADV_SHIRT_D= (30, 80, 170)
-_ADV_PANTS  = (115, 85, 45)
-_ADV_PANTS_D= (85, 60, 30)
-_ADV_BELT   = (170, 140, 60)
-_ADV_BOOT   = (65, 45, 28)
-
-# ---- 暗影忍者 ----
-_NIN_PURP  = (50, 18, 60)
-_NIN_PURP_M= (70, 30, 85)
-_NIN_PURP_L= (90, 45, 110)
-_NIN_EYE   = (255, 35, 35)
-_NIN_SASH  = (130, 25, 25)
-_NIN_WRAP  = (38, 32, 42)
-_NIN_SKIN  = (220, 190, 155)
-
-# ---- 星辰法师 ----
-_MAG_ROBE   = (45, 85, 205)
-_MAG_ROBE_D = (25, 55, 165)
-_MAG_ROBE_L = (80, 130, 240)
-_MAG_HAT    = (105, 45, 185)
-_MAG_STAR   = (255, 235, 60)
-_MAG_BEARD  = (225, 220, 210)
-_MAG_BEARD_D= (195, 190, 180)
-_MAG_BELT   = (180, 150, 80)
-
-# ========================================================================
-# 时装位图定义（16×32）
-# 每个元素为 (R,G,B) 或 0=透明（渲染时跳过）
-# ========================================================================
-
-# ---------- 时装1：经典冒险家 ----------
-_COSTUME_ADVENTURER = [
-    # Row 0-3: 头发
-    [0,0,0,0, _ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR, 0,0,0,0],
-    [0,0, _ADV_HAIR,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR_L, 0,0,0],
-    [0, _ADV_HAIR,_ADV_HAIR_L,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR, 0,0],
-    [ _ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR_L,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR,_ADV_HAIR, 0],
-    # Row 4-7: 脸部
-    [0, _ADV_HAIR,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_ADV_HAIR, 0],
-    [0, _ADV_HAIR,_SKIN,_SKIN,_SKIN_D,_SKIN,_WHITE,_SKIN,_SKIN,_WHITE,_SKIN,_SKIN_D,_SKIN,_SKIN,_ADV_HAIR, 0],
-    [0, _ADV_HAIR,_SKIN,_SKIN_D,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN_D,_SKIN,_ADV_HAIR, 0],
-    [0, _ADV_HAIR,_SKIN,_SKIN,_SKIN,_SKIN_D,_SKIN,_SKIN,_SKIN,_SKIN_D,_SKIN,_SKIN,_SKIN,_SKIN,_ADV_HAIR, 0],
-    # Row 8-15: 身体（衬衫）
-    [0,0, _ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT_D, 0,0],
-    [0,0, _ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT_D, 0,0],
-    [0,0, _ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT_D, 0,0],
-    [0,0, _ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT_D,_ADV_SHIRT,_ADV_SHIRT,_ADV_SHIRT_D, 0,0],
-    [0,0, _ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT,_ADV_BELT, 0,0],
-    [0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0],
-    [0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0],
-    [0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0],
-    # Row 16-19: 腿
-    [0,0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0,0],
-    [0,0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0,0],
-    [0,0,0,0, _ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS, 0,0,0,0],
-    [0,0,0,0, _ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS,_ADV_PANTS,_ADV_PANTS_D,_ADV_PANTS_D,_ADV_PANTS_D, 0,0,0,0],
-    # Row 20-23: 靴子
-    [0,0,0,0, _ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT, 0,0,0,0],
-    [0,0,0,0, _ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT,_ADV_BOOT, 0,0,0,0],
-    [0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0],
-    [0,0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0,0],
-    # Row 24-31: 阴影/底部（透明占位）
-    [0]*16, [0]*16, [0]*16, [0]*16,
-    [0]*16, [0]*16, [0]*16, [0]*16,
-]
-
-# ---------- 时装2：暗影忍者 ----------
-_COSTUME_NINJA = [
-    # Row 0-3: 兜帽
-    [0,0,0,0,0, _NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP, 0,0,0,0,0],
-    [0,0,0, _NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP, 0,0,0],
-    [0,0, _NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M, 0,0],
-    [0, _NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP_L,_NIN_PURP_L,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M, 0],
-    # Row 4-7: 脸部（蒙面）
-    [0, _NIN_WRAP,_NIN_WRAP,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_WRAP,_NIN_WRAP, 0],
-    [0, _NIN_WRAP,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_EYE,_NIN_SKIN,_NIN_SKIN,_NIN_EYE,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_WRAP, 0],
-    [0, _NIN_WRAP,_NIN_WRAP,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_WRAP,_NIN_WRAP, 0],
-    [0, _NIN_PURP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_SKIN,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_PURP, 0],
-    # Row 8-15: 身体
-    [0,0, _NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP, 0,0],
-    [0,0, _NIN_PURP_M,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP_L,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP_L,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP_M, 0,0],
-    [0,0, _NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP, 0,0],
-    [0,0, _NIN_PURP_M,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP_M,_NIN_PURP,_NIN_PURP_M, 0,0],
-    [0,0, _NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH,_NIN_SASH, 0,0],
-    [0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_PURP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP,_NIN_PURP,_NIN_WRAP,_NIN_WRAP, 0,0,0],
-    [0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP, 0,0,0],
-    [0,0,0, _NIN_PURP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_PURP, 0,0,0],
-    # Row 16-19: 腿
-    [0,0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_PURP,_NIN_WRAP,_NIN_WRAP, 0,0,0,0],
-    [0,0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_PURP,_NIN_PURP_M,_NIN_PURP_M,_NIN_PURP,_NIN_WRAP,_NIN_WRAP, 0,0,0,0],
-    [0,0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_PURP,_NIN_PURP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP, 0,0,0,0],
-    [0,0,0,0, _NIN_PURP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_PURP, 0,0,0,0],
-    # Row 20-23: 足部
-    [0,0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP, 0,0,0,0],
-    [0,0,0,0, _NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP,_NIN_WRAP, 0,0,0,0],
-    [0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0],
-    [0,0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0,0],
-    # Row 24-31: 底部
-    [0]*16, [0]*16, [0]*16, [0]*16,
-    [0]*16, [0]*16, [0]*16, [0]*16,
-]
-
-# ---------- 时装3：星辰法师 ----------
-_COSTUME_MAGE = [
-    # Row 0-5: 法师帽
-    [0,0,0,0,0,0,0, _MAG_HAT,_MAG_HAT, 0,0,0,0,0,0,0],
-    [0,0,0,0,0, _MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_HAT, 0,0,0,0,0],
-    [0,0,0,0, _MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_HAT,_MAG_HAT,_MAG_HAT, 0,0,0,0],
-    [0,0,0, _MAG_HAT,_MAG_HAT,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_HAT,_MAG_HAT, 0,0,0],
-    [0,0, _MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_HAT,_MAG_HAT,_MAG_HAT,_MAG_HAT, 0,0],
-    [ _MAG_HAT,_MAG_HAT,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_HAT,_MAG_HAT, 0],
-    # Row 6-9: 脸部（胡须）
-    [0, _MAG_HAT,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_SKIN,_MAG_HAT, 0],
-    [0, _MAG_HAT,_SKIN,_SKIN_D,_SKIN,_WHITE,_SKIN,_SKIN,_SKIN,_SKIN,_WHITE,_SKIN,_SKIN_D,_SKIN,_MAG_HAT, 0],
-    [0,0, _MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD_D,_SKIN,_SKIN,_SKIN,_SKIN,_MAG_BEARD_D,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD, 0,0],
-    [0,0, _MAG_BEARD_D,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD,_MAG_BEARD_D, 0,0],
-    # Row 10-15: 身体（法袍）
-    [0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0],
-    [0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_L,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_L,_MAG_ROBE,_MAG_ROBE_D, 0,0],
-    [0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_STAR,_MAG_ROBE,_MAG_ROBE,_MAG_STAR,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0],
-    [0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_L,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_L,_MAG_ROBE,_MAG_ROBE_D, 0,0],
-    [0,0, _MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT,_MAG_BELT, 0,0],
-    [0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0,0],
-    # Row 16-21: 法袍下摆
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_L,_MAG_ROBE_L,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE,_MAG_STAR,_MAG_STAR,_MAG_ROBE,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    [0,0,0,0, _MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE,_MAG_ROBE_D, 0,0,0,0],
-    # Row 22-25: 鞋子
-    [0,0,0,0, _DARK,_DARK,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_MAG_ROBE_D,_DARK,_DARK, 0,0,0,0],
-    [0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0],
-    [0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0],
-    [0,0,0,0,0, _DARK,_DARK,_DARK,_DARK,_DARK,_DARK, 0,0,0,0,0],
-    # Row 26-31: 底部
-    [0]*16, [0]*16, [0]*16, [0]*16, [0]*16, [0]*16,
-]
-
-# ========================================================================
-# 时装注册表
-# ========================================================================
-COSTUMES: Dict[int, dict] = {
-    1: {
-        "id": 1,
-        "name": "经典冒险家",
-        "name_en": "Classic Adventurer",
-        "desc": "勇敢的探险者，蓝色衬衫搭配棕色长裤，经典永不过时。",
-        "w": 16, "h": 32,
-        "frames": {
-            "idle":  [_COSTUME_ADVENTURER],
-            "walk":  [_COSTUME_ADVENTURER],
-            "jump":  [_COSTUME_ADVENTURER],
-            "climb": [_COSTUME_ADVENTURER],
-        },
-    },
-    2: {
-        "id": 2,
-        "name": "暗影忍者",
-        "name_en": "Shadow Ninja",
-        "desc": "来自阴影中的战士，紫色兜帽蒙面，红色双目摄人心魄。",
-        "w": 16, "h": 32,
-        "frames": {
-            "idle":  [_COSTUME_NINJA],
-            "walk":  [_COSTUME_NINJA],
-            "jump":  [_COSTUME_NINJA],
-            "climb": [_COSTUME_NINJA],
-        },
-    },
-    3: {
-        "id": 3,
-        "name": "星辰法师",
-        "name_en": "Star Mage",
-        "desc": "掌握星辰之力的智者，蓝色法袍缀有星纹，白须飘然。",
-        "w": 16, "h": 32,
-        "frames": {
-            "idle":  [_COSTUME_MAGE],
-            "walk":  [_COSTUME_MAGE],
-            "jump":  [_COSTUME_MAGE],
-            "climb": [_COSTUME_MAGE],
-        },
-    },
-}
-
-DEFAULT_COSTUME_ID = 1
+COSTUMES, DEFAULT_COSTUME_ID = load_costumes()
 
 # ===================== 预渲染辅助 =====================
 def _pixels_to_surface(pixels: list, w: int, h: int) -> pygame.Surface:
@@ -334,6 +122,50 @@ def render_costume_direct(surface: pygame.Surface, costume_id: int,
                    dest_rect.x, dest_rect.y,
                    dest_rect.w, dest_rect.h, flip_h=flip_h,
                    anim_state=anim_state, anim_frame=anim_frame)
+
+
+def render_costume_at_feet(surface, costume_id, center_x, feet_y, w, h,
+                            flip_h=False, anim_state="idle", anim_frame=0):
+    """Anchor the visible sprite to the physical feet, regardless of padding."""
+    costume = COSTUMES.get(costume_id)
+    if costume is None or w < 1 or h < 1:
+        return pygame.Rect(0, 0, 0, 0)
+    frames = costume["src_frames"].get(anim_state, costume["src_frames"]["idle"])
+    index = anim_frame % len(frames)
+    key = (costume_id, anim_state, index, int(w), int(h))
+    if key not in _costume_cache:
+        _costume_cache[key] = pygame.transform.scale(frames[index], (int(w), int(h)))
+    image = _costume_cache[key]
+    if flip_h:
+        image = pygame.transform.flip(image, True, False)
+    visible = image.get_bounding_rect()
+    left = round(center_x - visible.x - visible.w / 2)
+    top = round(feet_y - visible.bottom)
+    surface.blit(image, (left, top))
+    return visible.move(left, top)
+
+
+def advance_costume_animation(player, state, dt):
+    if not math.isfinite(dt) or dt < 0:
+        raise ValueError("animation dt must be finite and nonnegative")
+    info = get_costume_anim_info(player.costume_id) or {"idle": 1}
+    if state not in info:
+        state = "idle"
+    if (getattr(player, "_anim_state", None) != state
+            or getattr(player, "_anim_costume", None) != player.costume_id):
+        player._anim_timer = 0.0
+        player._anim_frame = 0
+        player._anim_state = state
+        player._anim_costume = player.costume_id
+    count = info[state]
+    if count <= 1:
+        player._anim_frame = 0
+        player._anim_timer = 0.0
+        return
+    player._anim_timer += dt
+    advanced = int((player._anim_timer + 1e-12) / 0.15)
+    player._anim_timer = max(0.0, player._anim_timer - advanced * 0.15)
+    player._anim_frame = (player._anim_frame + advanced) % count
 
 
 def get_costume_anim_info(costume_id: int) -> Optional[dict]:

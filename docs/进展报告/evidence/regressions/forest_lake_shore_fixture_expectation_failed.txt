@@ -1,0 +1,21 @@
+test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates (test_forest_lake_loop.ForestLakeLoopTests) ... 
+======================================================================
+FAIL: test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates (test_forest_lake_loop.ForestLakeLoopTests) (fps=30)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_forest_lake_loop.py", line 35, in test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates
+    self.assertTrue(run['shore_exits'])
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates (test_forest_lake_loop.ForestLakeLoopTests) (fps=144)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_forest_lake_loop.py", line 35, in test_normal_lake_rest_wrap_and_shore_exit_at_three_frame_rates
+    self.assertTrue(run['shore_exits'])
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 2.922s
+
+FAILED (failures=2)

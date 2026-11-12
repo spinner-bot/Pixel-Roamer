@@ -1,0 +1,462 @@
+{
+  "code_revision": "a6c3a2be98e98e337640e9ce7c12a7bad781772d",
+  "controller_sha256": "c37a8fa4cf3e15fa5b861f1e17c90d6d7f20174800f1bd67aa4c411ca9be8ecb",
+  "scope": "actual direct pattern and cached world rendering, day/night/black backgrounds; not gameplay or device acceptance",
+  "scenes": [
+    {
+      "default_id": 0,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            135,
+            255,
+            255
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 11,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            11,
+            20,
+            147
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 12,
+      "decorations": [
+        {
+          "block_id": 43,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 50,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 51,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 52,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 53,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        },
+        {
+          "block_id": 54,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 0,
+          "composites_on_background": true
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    }
+  ],
+  "rgba_cases": [
+    {
+      "default_id": 0,
+      "alpha": 0,
+      "expected_corner": [
+        135,
+        255,
+        255
+      ],
+      "direct_corner": [
+        135,
+        255,
+        255
+      ],
+      "chunk_corner": [
+        135,
+        255,
+        255
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 0,
+      "alpha": 128,
+      "expected_corner": [
+        112,
+        198,
+        218
+      ],
+      "direct_corner": [
+        112,
+        198,
+        218
+      ],
+      "chunk_corner": [
+        112,
+        198,
+        218
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 11,
+      "alpha": 0,
+      "expected_corner": [
+        11,
+        20,
+        147
+      ],
+      "direct_corner": [
+        11,
+        20,
+        147
+      ],
+      "chunk_corner": [
+        11,
+        20,
+        147
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 11,
+      "alpha": 128,
+      "expected_corner": [
+        50,
+        80,
+        164
+      ],
+      "direct_corner": [
+        50,
+        80,
+        164
+      ],
+      "chunk_corner": [
+        50,
+        80,
+        164
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 12,
+      "alpha": 0,
+      "expected_corner": [
+        0,
+        0,
+        0
+      ],
+      "direct_corner": [
+        0,
+        0,
+        0
+      ],
+      "chunk_corner": [
+        0,
+        0,
+        0
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    },
+    {
+      "default_id": 12,
+      "alpha": 128,
+      "expected_corner": [
+        45,
+        70,
+        90
+      ],
+      "direct_corner": [
+        45,
+        70,
+        90
+      ],
+      "chunk_corner": [
+        45,
+        70,
+        90
+      ],
+      "direct_matches": true,
+      "chunk_matches": true,
+      "opaque_motif_preserved": true
+    }
+  ]
+}

@@ -1,11 +1,19 @@
 from __future__ import annotations
 import math
+from buff_contacts import apply_contact_buffs, clear_contact_buffs
+from buff_cleanup import clear_countered_buffs
+from buff_controls import action_blocked
+from buff_reactions import apply_contact_reactions, clear_contact_reactions, contact_reactions
+from wind_walk import advance_wind_walk
 import pygame
 from typing import TYPE_CHECKING, Optional, Tuple, Any
 import buff_data  # 确保 BUFF_TYPES 在生物模块加载时即被填充
 
+contact_reactions()  # Validate reaction references/numbers when the game starts.
+
 from constants import RES_NORMAL_SCALE, CORR_FLOOR
 from game_rect import GameRect
+from collision import CONTACT_EPSILON, spans_overlap, sweep_axis
 from block_type import BlockType
 
 if TYPE_CHECKING:
@@ -47,6 +55,7 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False       # 接触池中有可攀爬方块
         self.is_climbing = False     # 主动攀爬中
+        self._climb_align_target = None
         self.can_swim = False        # 接触池中有可游泳方块
         self._swim_force = 0.0       # 当前最大浮力值
         self._stamina_mult = 1.0     # 当前体力消耗倍率
@@ -90,7 +99,30 @@ class Creature:
         self.buffs: list = []          # [BuffInstance, ...]
         self._buff_timer = 0.0         # buff tick 累计时间
         self._buff_game_time = 0.0     # 累计游戏时间（计算时长用）
+        self._effect_world = None
+        clear_contact_buffs(self)
+        clear_contact_reactions(self)
+        self._pickup_flights = []
         self._air_jumps_used = 0       # 空中已跳跃次数（二段跳用）
+        self._jump_escape_active = False
+
+    @property
+    def phys_atk(self):
+        base = self._phys_atk
+        return self.get_buff_stat('phys_atk', base) if getattr(self, 'buffs', ()) else base
+
+    @phys_atk.setter
+    def phys_atk(self, value):
+        self._phys_atk = value
+
+    @property
+    def magic_atk(self):
+        base = self._magic_atk
+        return self.get_buff_stat('magic_atk', base) if getattr(self, 'buffs', ()) else base
+
+    @magic_atk.setter
+    def magic_atk(self, value):
+        self._magic_atk = value
 
     # ----- 游戏矩形 -----
     def get_game_rect(self) -> GameRect:
@@ -111,136 +143,66 @@ class Creature:
                 return float(b.params[idx])
         return default
 
+    def _receive_damage(self, amount: float, bypass_shield: bool = False) -> float:
+        """Return resources actually lost, including shield and capped overkill."""
+        if not self.alive or amount <= 0:
+            return 0.0
+        shield_lost = 0.0 if bypass_shield else min(self.shield, amount)
+        self.shield -= shield_lost
+        health_lost = min(self.hp, amount - shield_lost)
+        self.hp -= health_lost
+        if self.hp <= 0:
+            self.hp = 0.0
+            self.alive = False
+            self.on_death()
+        return shield_lost + health_lost
+
     def take_damage(self, phys_damage: float, magic_damage: float,
                     phys_pen: float = 0.0, magic_pen: float = 0.0,
                     source: "Creature" = None, damage_type: str = "physical") -> float:
-        if not self.alive:
+        if not all(math.isfinite(value) for value in (phys_damage, magic_damage, phys_pen, magic_pen)):
+            raise ValueError("damage inputs must be finite")
+        if not self.alive or self.has_buff(36) or (damage_type == "fire" and self.has_buff(9)):
             return 0.0
+        phys_damage = 0.0 if self.has_buff(34) else max(0.0, phys_damage)
+        magic_damage = 0.0 if self.has_buff(35) else max(0.0, magic_damage)
+        armor_broken = self.has_buff(26)
 
-        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
-        if self.has_buff(36):
-            return 0.0
+        def resistance_multiplier(penetration, resistance):
+            if armor_broken:
+                return 1.0
+            x = max(-1.0, min((penetration - resistance) / RES_NORMAL_SCALE, 1.0))
+            correction = max(x, CORR_FLOOR, 0.95 * math.sin(x) + 0.15 * x ** 2)
+            return 1.0 + correction
 
-        # ---- Buff: 物理免疫 (34) / 法术免疫 (35) ----
-        if phys_damage > 0 and self.has_buff(34):
-            phys_damage = 0.0
-        if magic_damage > 0 and self.has_buff(35):
-            magic_damage = 0.0
-
-        if phys_damage <= 0 and magic_damage <= 0:
-            return 0.0
-
-        # ---- Buff: 破甲 (26) 无视目标抗性 ----
-        if source is not None and source.has_buff(26):
-            phys_pen = max(phys_pen, self.phys_res + RES_NORMAL_SCALE)
-            magic_pen = max(magic_pen, self.magic_res + RES_NORMAL_SCALE)
-
-        x_phys = (phys_pen - self.phys_res) / RES_NORMAL_SCALE
-        x_phys = max(-1.0, min(x_phys, 1.0))
-        phys_correction = max(x_phys, CORR_FLOOR, 0.95 * math.sin(x_phys) + 0.15 * (x_phys ** 2))
-        phys_mult = 1.0 + phys_correction
-
-        x_magic = (magic_pen - self.magic_res) / RES_NORMAL_SCALE
-        x_magic = max(-1.0, min(x_magic, 1.0))
-        magic_correction = max(x_magic, CORR_FLOOR, 0.95 * math.sin(x_magic) + 0.15 * (x_magic ** 2))
-        magic_mult = 1.0 + magic_correction
-
-        total_raw = phys_damage * phys_mult + magic_damage * magic_mult
-        # 勇气效果：额外减伤
-        courage_val = getattr(self, '_courage_dr', 0.0)
-        weakness_mult = getattr(self, '_weakness_mult', 1.0)
-
-        # ---- Buff: 坚守 (7) 受到伤害减少 ----
-        fortify_mult = self.get_buff_stat("damage_taken", 1.0)
-
-        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
+        total = (phys_damage * resistance_multiplier(phys_pen, self.phys_res)
+                 + magic_damage * resistance_multiplier(magic_pen, self.magic_res))
+        reduction = 0.0 if armor_broken else max(0.0, min(1.0, self.dr + getattr(self, '_courage_dr', 0.0)))
+        fortify = 1.0 if armor_broken else self.get_buff_stat("damage_taken", 1.0)
         if self.has_buff(46) and damage_type == "fire":
-            fortify_mult *= 2.0
-
-        effective_dr = max(0.0, min(1.0, self.dr + courage_val))
-        damage = total_raw * (1 - effective_dr) * weakness_mult * fortify_mult
-
-        if damage <= 0:
-            return 0.0
-
-        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if self.has_buff(29):
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-        elif self.shield > 0:
-            if self.shield >= damage:
-                self.shield -= damage
-            else:
-                damage -= self.shield
-                self.shield = 0
-                self.hp -= damage
-                if self.hp <= 0:
-                    self.hp = 0
-                    self.alive = False
-                    self.on_death()
-        else:
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-
-        # 实际受到的总伤害（用于荆棘反弹、嗜血回复计算）
-        actual_damage = max(0.0, total_raw * (1 - effective_dr) * weakness_mult * fortify_mult)
-
-        # ---- Buff: 荆棘 (10) 反弹伤害 ----
-        if source is not None and source.alive and self.has_buff(10) and actual_damage > 0:
-            thorn_pct = self._get_buff_param(10, 0, 30.0)
-            reflect = actual_damage * thorn_pct / 100.0
-            if reflect > 0:
-                source.take_raw_damage(reflect)
-
-        # ---- Buff: 嗜血 (11) 造成伤害时回血（由攻击者触发） ----
-        if source is not None and source.alive and source.has_buff(11) and actual_damage > 0:
-            lifesteal_pct = source._get_buff_param(11, 0, 15.0)
-            heal_amt = actual_damage * lifesteal_pct / 100.0
-            source.heal(heal_amt)
-
-        return actual_damage
+            total *= 2
+        amount = total * (1 - reduction) * getattr(self, '_weakness_mult', 1.0) * fortify
+        actual = self._receive_damage(amount, bypass_shield=self.has_buff(29))
+        if source is not None and source.alive and actual > 0:
+            if self.has_buff(10):
+                source.take_raw_damage(actual * max(0, self._get_buff_param(10, 0, 30)) / 100)
+            if source.alive and source.has_buff(11):
+                source.heal(actual * max(0, source._get_buff_param(11, 0, 15)) / 100)
+        return actual
 
     def take_raw_damage(self, damage: float, damage_type: str = "raw",
                         bypass_shield: bool = False) -> float:
-        if not self.alive or damage <= 0:
+        if not math.isfinite(damage):
+            raise ValueError("damage must be finite")
+        if not self.alive or damage <= 0 or self.has_buff(36):
             return 0.0
-
-        # ---- Buff: 完全免疫 (36) 免疫所有伤害 ----
-        if self.has_buff(36):
+        if ((damage_type == "fire" and self.has_buff(9))
+                or (damage_type == "magic" and self.has_buff(35))
+                or (damage_type == "physical" and self.has_buff(34))):
             return 0.0
-
-        # ---- Buff: 发炎 (46) 火焰伤害翻倍 ----
         if self.has_buff(46) and damage_type == "fire":
-            damage *= 2.0
-
-        # ---- Buff: 穿甲 (29) 伤害优先消耗血量，无视护盾 ----
-        if bypass_shield or self.has_buff(29):
-            self.hp -= damage
-            if self.hp <= 0:
-                self.hp = 0
-                self.alive = False
-                self.on_death()
-            return damage
-
-        if self.shield > 0:
-            if self.shield >= damage:
-                self.shield -= damage
-                return damage
-            else:
-                damage -= self.shield
-                self.shield = 0
-        self.hp -= damage
-        if self.hp <= 0:
-            self.hp = 0
-            self.alive = False
-            self.on_death()
-        return damage
+            damage *= 2
+        return self._receive_damage(damage, bypass_shield=bypass_shield or self.has_buff(29))
 
     def heal(self, amount: float) -> float:
         if not self.alive or amount <= 0:
@@ -270,7 +232,7 @@ class Creature:
         if not self.alive or amount <= 0:
             return 0.0
         if max_shield is not None:
-            target = min(self.shield + amount, max_shield)
+            target = max(self.shield, min(self.shield + amount, max_shield))
         else:
             target = self.shield + amount
         add = target - self.shield
@@ -284,14 +246,22 @@ class Creature:
     def apply_impulse(self, impulse_x: float, impulse_y: float):
         self.v_x += impulse_x
         self.v_y += impulse_y
+        if impulse_y > 0 and self.v_y > 0:
+            self._jump_escape_active = True
 
     def reset_motion(self):
         self.v_x = 0.0
         self.v_y = 0.0
+        self._climb_align_target = None
+        self._jump_escape_active = False
 
     def jump(self, not_on_ground_ok=False) -> bool:
         """跳跃。可从地面或攀爬中起跳；攀爬中跳跃会解除攀爬状态。
         有二段跳 buff (37) 时，可在空中再跳一次。需体力>0。"""
+        if action_blocked(self, 'jump'):
+            return False
+        if (not self.has_buff(40) and (self.has_buff(27) or self.has_buff(28))):
+            return False
         if self.stamina < 0.01:
             return False
 
@@ -307,9 +277,13 @@ class Creature:
                         self._air_jumps_used < max_air_jumps)
 
         if (not_on_ground_ok or on_ground_or_climb or can_air_jump) and self.alive:
-            self.v_y = self.v_jump
+            # A jump may strengthen a weak launch, but must not brake a
+            # stronger existing ascent from a spring, catapult or air jump.
+            self.v_y = max(self.v_y, self.v_jump)
+            self._jump_escape_active = True
             self.on_ground = False
             self.is_climbing = False
+            self._climb_align_target = None
             if can_air_jump:
                 self._air_jumps_used += 1
             return True
@@ -318,16 +292,22 @@ class Creature:
     def update_physics(self, dt: float, world):
         if not self.alive:
             return
+        if self.v_y <= 0:
+            self._jump_escape_active = False
         # 飞行模式：完全跳过物理
         if getattr(self, 'fly_mode', False):
             return
         # 攀爬中：无重力，加速度归零防止残余滑动
         if self.is_climbing:
-            self.a_x = 0.0
-            self.a_y = 0.0
-            self.v_x = 0.0
-            self.clamp_velocity()
-            return
+            from climb_alignment import advance_climb_alignment
+            advance_climb_alignment(self, world, dt)
+            if self.is_climbing:
+                self.a_x = 0.0
+                self.a_y = 0.0
+                self.v_x = 0.0
+                self.clamp_velocity()
+                return
+        self._climb_align_target = None
         self.v_x += self.a_x * dt
         self.v_y += self.a_y * dt
 
@@ -335,19 +315,7 @@ class Creature:
         buf_grav = self.get_buff_stat("gravity", 1.0)
         self.v_y += world.gravity * buf_grav * dt
 
-        # ---- Buff: 风步 (53) 连续移动加速 ----
-        if self.has_buff(53):
-            moving = abs(self.v_x) > 0.1
-            if moving:
-                self._wind_walk_timer = getattr(self, '_wind_walk_timer', 0.0) + dt
-                bonus = min(self._wind_walk_timer * 0.5, self._get_buff_param(53, 0, 0.5) * self.v_max)
-                # 按当前移动方向加速
-                direction = 1.0 if self.v_x > 0 else -1.0
-                self.v_x += direction * bonus * dt * 3
-            else:
-                self._wind_walk_timer = 0.0
-        else:
-            self._wind_walk_timer = 0.0
+        advance_wind_walk(self, dt)
 
         self.clamp_velocity()
 
@@ -423,6 +391,11 @@ class Creature:
         if not self.alive:
             return
 
+        from phase_collision import prepare_phase_collision, remember_phase_position, ghost_wall_blocks
+        phase_active = prepare_phase_collision(self, world)
+        ghost_mode = phase_active and (getattr(self, '_phantom_active', False)
+                                       or getattr(self, 'fly_mode', False))
+        thin_wall_phase = phase_active and not ghost_mode
         grect = self.get_game_rect()
 
         # ---------- 阶段1：预收集接触方块 ----------
@@ -461,26 +434,32 @@ class Creature:
             final_fx = self.f_x
             final_fy = self.f_y
 
-        # 液体空间阻力
-        liquid_space = min((bt.space_f for bt in block_types_list if bt.space_f != 1.0), default=1.0)
-        if liquid_space < 1.0:
-            final_fx *= liquid_space
-            final_fy *= liquid_space
+        # Surface modifiers can reduce damping to zero; passive friction must
+        # never turn into an energy source (ice surface_f can be greater than 1).
+        final_fx = max(0.0, min(1.0, final_fx))
+        final_fy = max(0.0, min(1.0, final_fy))
 
         # ---- Buff: 摩擦修正（滑腻42/黏着43/寒冷51） ----
         # 滑腻 (42)：系数越高越滑，param[0]=滑腻度%，默认85%→15%摩擦
         if self.has_buff(42):
             slick_pct = min(99.0, max(0.0, self._get_buff_param(42, 0, 85.0)))
             slick_mult = 1.0 - slick_pct / 100.0
-            final_fx = self.f_x ** slick_mult
+            final_fx = final_fx ** slick_mult
         if self.has_buff(43):  # 黏着：高摩擦
-            sticky_pct = self._get_buff_param(43, 0, 80.0)
+            sticky_pct = max(0.0, self._get_buff_param(43, 0, 80.0))
             sticky_mult = 1.0 + sticky_pct / 100.0
-            final_fx = self.f_x ** sticky_mult
+            final_fx = final_fx ** sticky_mult
         if self.has_buff(51):  # 寒冷：冰面摩擦
-            chill_pct = self._get_buff_param(51, 0, 70.0)
+            chill_pct = min(99.0, max(0.0, self._get_buff_param(51, 0, 70.0)))
             chill_mult = 1.0 - chill_pct / 100.0
-            final_fx = self.f_x ** max(0.01, chill_mult)
+            final_fx = final_fx ** chill_mult
+
+        # Liquid drag remains active when a friction buff is present.
+        liquid_space = min((bt.space_f for bt in block_types_list if bt.space_f != 1.0), default=1.0)
+        if liquid_space < 1.0:
+            liquid_space = max(0.0, liquid_space)
+            final_fx *= liquid_space
+            final_fy *= liquid_space
 
         self.v_x *= pow(final_fx, dt * 60)
         self.v_y *= pow(final_fy, dt * 60)
@@ -492,38 +471,28 @@ class Creature:
         self.on_ceiling = False
 
         # ---- Buff: 幽灵 (48) / 幻影方块效果 ----
-        ghost_mode = self.has_buff(48) or getattr(self, '_phantom_active', False)
-
         if not ghost_mode:
-            # X轴
-            grect.x += self.v_x * dt
-            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-                if grect.collides(block_grect) and not bt.one_way:
-                    if self.v_x > 0:
-                        grect.x = block_grect.x - grect.w
-                        self.on_wall_right = True
-                    elif self.v_x < 0:
-                        grect.x = block_grect.x + block_grect.w
-                        self.on_wall_left = True
-                    self.v_x = 0
+            dx = self.v_x * dt
+            swept_x = GameRect(grect.x + min(0, dx), grect.y,
+                               grect.w + abs(dx), grect.h)
+            horizontal_blocks = world.get_nearby_solid_blocks_game(swept_x)
+            if thin_wall_phase:
+                horizontal_blocks = ghost_wall_blocks(world, grect, horizontal_blocks, True)
+            if sweep_axis(grect, dx, horizontal_blocks, True):
+                self.on_wall_right = dx > 0
+                self.on_wall_left = dx < 0
+                self.v_x = 0
 
-            # Y轴
-            grect.y += self.v_y * dt
-            for block_grect, bt in world.get_nearby_solid_blocks_game(grect):
-                if grect.collides(block_grect):
-                    if bt.one_way:
-                        if self.v_y < 0 and (grect.y - self.v_y * dt) >= block_grect.y + block_grect.h - 1e-9:
-                            grect.y = block_grect.y + block_grect.h
-                            self.v_y = 0
-                            self.on_ground = True
-                        continue
-                    if self.v_y < 0:
-                        grect.y = block_grect.y + block_grect.h
-                        self.on_ground = True
-                    elif self.v_y > 0:
-                        grect.y = block_grect.y - grect.h
-                        self.on_ceiling = True
-                    self.v_y = 0
+            dy = self.v_y * dt
+            swept_y = GameRect(grect.x, grect.y + min(0, dy),
+                               grect.w, grect.h + abs(dy))
+            vertical_blocks = world.get_nearby_solid_blocks_game(swept_y)
+            if thin_wall_phase:
+                vertical_blocks = ghost_wall_blocks(world, grect, vertical_blocks, False)
+            if sweep_axis(grect, dy, vertical_blocks, False):
+                self.on_ground = dy < 0
+                self.on_ceiling = dy > 0
+                self.v_y = 0
         else:
             # 幽灵模式：自由穿过固体，但仍受重力影响
             grect.x += self.v_x * dt
@@ -532,21 +501,27 @@ class Creature:
         # A later substep can have zero velocity after an earlier collision.
         # Preserve resting contact from geometry rather than clearing its flags.
         if not ghost_mode and (self.v_x == 0 or self.v_y == 0):
-            for block_rect, bt in world.get_nearby_solid_blocks_game(grect):
-                overlap_x = grect.x < block_rect.x + block_rect.w and grect.x + grect.w > block_rect.x
-                overlap_y = grect.y < block_rect.y + block_rect.h and grect.y + grect.h > block_rect.y
+            contacts = world.get_nearby_solid_blocks_game(grect)
+            vertical_contacts = ghost_wall_blocks(world, grect, contacts, False) if thin_wall_phase else contacts
+            horizontal_contacts = ghost_wall_blocks(world, grect, contacts, True) if thin_wall_phase else contacts
+            for block_rect, bt in vertical_contacts:
+                overlap_x = spans_overlap(grect.x, grect.w, block_rect.x, block_rect.w)
                 if overlap_x and self.v_y == 0:
-                    if abs(grect.y - block_rect.y - block_rect.h) < 1e-8:
+                    if abs(grect.y - block_rect.y - block_rect.h) <= CONTACT_EPSILON:
                         self.on_ground = True
-                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) < 1e-8:
+                    if not bt.one_way and abs(grect.y + grect.h - block_rect.y) <= CONTACT_EPSILON:
                         self.on_ceiling = True
-                if overlap_y and self.v_x == 0 and not bt.one_way:
-                    if abs(grect.x + grect.w - block_rect.x) < 1e-8:
+            for block_rect, bt in horizontal_contacts:
+                if (spans_overlap(grect.y, grect.h, block_rect.y, block_rect.h)
+                        and self.v_x == 0 and not bt.one_way):
+                    if abs(grect.x + grect.w - block_rect.x) <= CONTACT_EPSILON:
                         self.on_wall_right = True
-                    if abs(grect.x - block_rect.x - block_rect.w) < 1e-8:
+                    if abs(grect.x - block_rect.x - block_rect.w) <= CONTACT_EPSILON:
                         self.on_wall_left = True
 
         self.set_from_game_rect(grect)
+        if phase_active:
+            remember_phase_position(self, world)
 
         # ---------- 阶段3：最终收集接触池与站立池 ----------
         self.contact_pool = self._sample_contact_tiles(grect, world)
@@ -557,6 +532,8 @@ class Creature:
             self.contact_pool.add(1)
 
         if self.on_ground:
+            # Recharge on actual support, before a spring/catapult can launch us.
+            self._air_jumps_used = 0
             foot_gx = grect.x + grect.w / 2
             foot_gy = grect.y - 0.001
             bt_foot = world.get_block_type(foot_gx, foot_gy)
@@ -575,13 +552,11 @@ class Creature:
             bt = world.block_types.get(bid)
             if bt:
                 types.append(bt)
+        if not any(bt.special in ("teleport", "ender") for bt in types):
+            self._teleport_latched = False
         # ---- 一次性效果冷却系统 ----
         if not hasattr(self, '_special_cooldowns'):
             self._special_cooldowns = {}
-        for k in list(self._special_cooldowns):
-            self._special_cooldowns[k] -= dt
-            if self._special_cooldowns[k] <= 0:
-                del self._special_cooldowns[k]
 
         self.can_climb = any(bt.climbable for bt in types)
         self.can_swim = any(bt.swim_f > 0 for bt in types)
@@ -592,62 +567,15 @@ class Creature:
         self._climb_top_y = None
         self._swim_top_y = None
         if self.can_climb or self.can_swim:
-            grect = self.get_game_rect()
-            min_gx = int(grect.x) - 1
-            max_gx = int(grect.x + grect.w) + 1
-            min_gy = int(grect.y) - 1
-            max_gy = int(grect.y + grect.h) + 1
-            climb_top = -999.0
-            swim_top = -999.0
-            for gx in range(min_gx, max_gx + 1):
-                for gy in range(min_gy, max_gy + 1):
-                    coord = world._wrap_grid_coord(gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        climb_top = max(climb_top, float(gy + 1))
-                    if bt.swim_f > 0:
-                        swim_top = max(swim_top, float(gy + 1))
-            if climb_top > -999:
-                self._climb_top_y = climb_top
-            if swim_top > -999:
-                self._swim_top_y = swim_top
-        # 检测岸边：水面高度处紧邻固体方块（水平距离 ≤0.2 格）
-        self._near_shore = False
-        self._shore_dir = 0  # 1=右侧岸, -1=左侧岸
-        if self._swim_top_y is not None:
-            surface_y = self._swim_top_y
-            shore_margin = 0.2
-            grect = self.get_game_rect()
-            # 检查右侧：水面相邻的固体方块
-            check_gx = int(grect.x + grect.w + shore_margin)
-            for gy in range(int(surface_y - 1), int(surface_y) + 1):
-                coord = world._wrap_grid_coord(check_gx, gy)
-                if coord is None:
-                    continue
-                bt = world.get_block_type_by_coord(coord[0], coord[1])
-                if bt.is_solid:
-                    # 该固体方块顶部应与水面齐平
-                    if gy + 1 >= surface_y - 0.1:
-                        self._near_shore = True
-                        self._shore_dir = 1
-                        break
-            # 检查左侧
-            if not self._near_shore:
-                check_gx = int(grect.x - shore_margin)
-                for gy in range(int(surface_y - 1), int(surface_y) + 1):
-                    coord = world._wrap_grid_coord(check_gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.is_solid:
-                        if gy + 1 >= surface_y - 0.1:
-                            self._near_shore = True
-                            self._shore_dir = -1
-                            break
+            from environment_contacts import connected_contact_tops
+            self._climb_top_y, self._swim_top_y = connected_contact_tops(self, world)
+        from shore_detection import shore_directions
+        self._shore_directions = shore_directions(self, world)
+        self._near_shore = bool(self._shore_directions)
+        self._shore_dir = self._shore_directions[0] if self._shore_directions else 0
         # 水中自动浸湿（清除着火 buff 16），离开水后 1 秒消失
         # 仅水系液体触发（排除熔岩/蜂蜜等非水液体）
+        is_water_liquid = False
         if self.can_swim:
             is_water_liquid = any(
                 bt.swim_f > 0 and bt.id != 8  # 排除蜂蜜
@@ -672,6 +600,8 @@ class Creature:
         if self.is_climbing and not self.can_climb:
             self.is_climbing = False
             self.v_y = 0.0
+        if not self.is_climbing:
+            self._climb_align_target = None
 
         self._environment_speed_mult = 1.0
         self._environment_jump_mult = 1.0
@@ -696,24 +626,24 @@ class Creature:
                     bounce_x = bx
                 if abs(by) > abs(bounce_y):
                     bounce_y = by
-            self.v_x += bounce_x
-            self.v_y += bounce_y
+            self.apply_impulse(bounce_x, bounce_y)
 
         max_dps = max((bt.damage_ps for bt in types), default=0.0)
         if max_dps > 0:
-            self.take_raw_damage(max_dps * dt)
+            self.take_raw_damage(max_dps * dt, damage_type="fire" if any(
+                bt.damage_ps == max_dps and bt.buff_ids and 16 in bt.buff_ids for bt in types
+            ) else "raw")
 
         # ---- Buff 施加（接触方块时触发，支持复合）----
-        for bt in types:
-            if bt.buff_ids:
-                for i, bid in enumerate(bt.buff_ids):
-                    params = bt.buff_params_list[i] if i < len(bt.buff_params_list) else ()
-                    dur = bt.buff_durations[i] if i < len(bt.buff_durations) else None
-                    self.apply_buff(bid, params, dur)
+        apply_contact_buffs(self, world, types)
+        apply_contact_reactions(self, world, {'water'} if is_water_liquid else set())
 
         for bt in types:
             if bt.special is not None:
                 if bt.special == "teleport" and bt.special_data is not None:
+                    if getattr(self, '_teleport_latched', False):
+                        continue
+                    self._teleport_latched = True
                     # 支持 meta 覆盖目标坐标
                     tx, ty = bt.special_data
                     for _, _, _, tile in self._contact_tile_instances(world):
@@ -721,12 +651,14 @@ class Creature:
                             tx = tile.meta.get("tp_x", tx)
                             ty = tile.meta.get("tp_y", ty)
                             break
-                    self._x = float(tx)
-                    self._y = float(ty)
-                    self.reset_motion()
+                    from teleport import teleport_to
+                    if teleport_to(self, world, tx, ty):
+                        # Placement refreshed target contacts; never continue
+                        # applying source effects after relocation.
+                        return
                 elif bt.special == "checkpoint":
-                    if hasattr(self, "spawn_pos"):
-                        self.spawn_pos = (self._x, self._y)
+                    from spawn_placement import record_checkpoint
+                    record_checkpoint(self, world)
                 elif bt.special == "heal" and bt.special_data is not None:
                     self.heal(float(bt.special_data) * dt)
                 elif bt.special == "shield" and bt.special_data is not None:
@@ -742,12 +674,10 @@ class Creature:
                 elif bt.special == "jump" and bt.special_data is not None:
                     self._environment_jump_mult = float(bt.special_data)
                 elif bt.special == "score" and bt.special_data is not None:
-                    consumed_id = (bt.consumed_type_id if bt.consumed_type_id is not None
-                                   else world.default_tile.type_id)
+                    from pickup_effects import collect_score_pickup
                     for gx, gy, _, tile in self._contact_tile_instances(world):
                         if tile.type_id == bt.id:
-                            self.score += int(bt.special_data)
-                            world.set_tile(gx, gy, consumed_id)
+                            collect_score_pickup(self, world, gx, gy)
                 elif bt.special == "end_point":
                     # 终点：触发通关（由 main.py 检测）
                     self._reached_end = True
@@ -755,11 +685,12 @@ class Creature:
                     # 破坏时爆炸（由方块破坏逻辑处理）
                     pass
                 elif bt.special == "ender" and bt.special_data is not None:
-                    # 随机传送：special_data = (x_range, y_range) 最大偏移
-                    import random
-                    rx, ry = bt.special_data
-                    self._x += random.uniform(-rx, rx)
-                    self._y += random.uniform(-ry, ry)
+                    if getattr(self, '_teleport_latched', False):
+                        continue
+                    self._teleport_latched = True
+                    from teleport import random_teleport
+                    if random_teleport(self, world, bt.special_data):
+                        return
 
                 # ========== 新增功能方块特效 ==========
                 elif bt.special == "catapult" and bt.special_data is not None:
@@ -768,6 +699,13 @@ class Creature:
                         vx, vy = bt.special_data
                         self.v_x = float(vx)
                         self.v_y = float(vy)
+                        if self.v_y > 0:
+                            self._jump_escape_active = True
+                            # The launch has already consumed the grounded state.
+                            # A keydown before the next sweep must not replace it
+                            # with a weaker ground jump or climbing velocity.
+                            self.on_ground = False
+                            self.is_climbing = False
                         self._special_cooldowns["catapult"] = 0.4
 
                 elif bt.special == "dash" and bt.special_data is not None:
@@ -795,30 +733,11 @@ class Creature:
                         self.stamina = self.stamina_max
                         self._special_cooldowns["full_stamina"] = 2.0
 
-                elif bt.special == "magnetic" and bt.special_data is not None:
-                    if immune_forces:
-                        continue
-                    # 磁力吸引：向方块中心加速，special_data = 力度
-                    force = float(bt.special_data)
-                    # Buff: 磁化 (49) 磁力效果加倍
-                    if self.has_buff(49):
-                        force *= 2.5
-                    grect = self.get_game_rect()
-                    cx, cy = self._x, self._y
-                    # 在接触池中找到该方块坐标
-                    for gx, gy, _, tile in self._contact_tile_instances(world):
-                        if tile.type_id == bt.id:
-                            dx = gx + 0.5 - cx
-                            dy = gy + 0.5 - cy
-                            dist = max(0.1, (dx*dx + dy*dy) ** 0.5)
-                            self.v_x += dx / dist * force * dt * 10
-                            self.v_y += dy / dist * force * dt * 10
-
                 elif bt.special == "set_spawn":
                     # 设置重生点（一次性）
                     if self._special_cooldowns.get("set_spawn", 0) <= 0:
-                        if hasattr(self, "spawn_pos"):
-                            self.spawn_pos = (self._x, self._y)
+                        from spawn_placement import record_checkpoint
+                        if record_checkpoint(self, world):
                             self._special_cooldowns["set_spawn"] = 3.0
 
                 elif bt.special == "fortune" and bt.special_data is not None:
@@ -837,7 +756,7 @@ class Creature:
                 elif bt.special == "berserk" and bt.special_data is not None:
                     # 狂暴：攻击翻倍但持续受伤
                     mult = float(bt.special_data)
-                    self.phys_atk = int(self.phys_atk * mult) if not hasattr(self, '_berserk_active') else self.phys_atk
+                    self.phys_atk = self._base_phys_atk * mult
                     self._berserk_active = True
                     self.take_raw_damage(3.0 * dt)
 
@@ -879,6 +798,10 @@ class Creature:
                         self._confusion_timer = 2.0
                         self._special_cooldowns["confusion"] = 8.0
 
+        if not immune_forces:
+            from environment_forces import apply_magnetism
+            apply_magnetism(self, world, types, dt)
+
         # ---- 时效状态清理 ----
         # 狂暴：离开狂暴方块后重置
         if not any(bt.special == "berserk" for bt in types):
@@ -886,34 +809,33 @@ class Creature:
                 self.phys_atk = getattr(self, '_base_phys_atk', self.phys_atk)
                 self._berserk_active = False
 
-        # 幻影：计时衰减
-        if hasattr(self, '_phantom_timer') and self._phantom_timer > 0:
-            self._phantom_timer -= dt
-            if self._phantom_timer <= 0:
-                self._phantom_active = False
-
-        # 混乱：计时衰减
-        if hasattr(self, '_confusion_timer') and self._confusion_timer > 0:
-            self._confusion_timer -= dt
-            if self._confusion_timer <= 0:
-                self._confused = False
-
         # 沉默/勇气/虚弱效果在下次 _apply_tile_effects 时重新计算
-        self.refresh_movement_stats()
+        self.refresh_movement_stats(world)
 
-    def refresh_movement_stats(self):
-        """Combine environmental modifiers with active buffs."""
+    def refresh_movement_stats(self, world=None):
+        """Combine environmental modifiers and calibrate Buff4's height unit."""
+        if world is not None:
+            self._effect_world = world
         if hasattr(self, '_base_v_max'):
             speed = self._base_v_max * getattr(self, '_environment_speed_mult', 1.0)
             jump = self._base_v_jump * getattr(self, '_environment_jump_mult', 1.0)
             self.v_max = max(0.0, self.get_buff_stat("v_max", speed))
-            self.v_jump = max(0.0, self.get_buff_stat("v_jump", jump))
+            jump = max(0.0, self.get_buff_stat("v_jump", jump))
+            height_mult = self.get_buff_stat("jump_height", 1.0)
+            if height_mult == 1.0:
+                self.v_jump = jump
+            else:
+                from jump_height import launch_speed
+                context = self._effect_world
+                gravity = (context.gravity * self.get_buff_stat("gravity", 1.0)
+                           if context is not None else None)
+                self.v_jump = launch_speed(jump, gravity, self.f_y, height_mult)
 
     # ================================================================
     #  Buff 系统
     # ================================================================
     def apply_buff(self, buff_id: int, params: tuple = (),
-                   duration: float = None, source=None):
+                   duration: float = None, source=None, *, add_stack=True):
         """给生物添加一个 buff。已存在则刷新时长。"""
         from buff_system import BUFF_TYPES, BuffInstance, CAT_POSITIVE
         bt = BUFF_TYPES.get(buff_id)
@@ -928,19 +850,22 @@ class Creature:
         if buff_id in (21, 27, 28, 23) and self.has_buff(40):
             return
 
-        # 检查冲突：新 buff 会移除冲突列表中的 buff
-        for cid in bt.conflicts:
-            self.remove_buff(cid)
-        # 检查清理：某些 buff 获取时会清除自身
+        # 先验证获取条件，拒绝的效果不能清除冲突或触发移除回调。
         for cid in bt.cleanup_by:
             if self.has_buff(cid):
-                self.remove_buff(buff_id)
+                if self.has_buff(buff_id):
+                    self.remove_buff(buff_id)
                 return
+        for cid in bt.conflicts:
+            if self.has_buff(cid):
+                self.remove_buff(cid)
+        clear_countered_buffs(self, buff_id)
 
         # 已存在则刷新
         for b in self.buffs:
             if b.buff_id == buff_id:
-                b.refresh(params, duration)
+                b.refresh(params, duration, add_stack=add_stack)
+                b.source = source
                 b.applied_at = self._buff_game_time
                 return
 
@@ -971,6 +896,12 @@ class Creature:
 
         if callback == "full_heal":
             self.hp = self.hp_max
+        elif callback == "halt_motion":
+            from shore_exit import cancel_shore_exit
+            cancel_shore_exit(self)
+            self.is_climbing = False
+            self.a_x = self.a_y = 0.0
+            self.reset_motion()
         elif callback == "full_stamina":
             self.stamina = self.stamina_max
         elif callback == "clear_negative":
@@ -984,6 +915,7 @@ class Creature:
             pass
         elif callback == "teleport_spawn":
             if hasattr(self, 'spawn_pos'):
+                self._climb_align_target = None
                 self._x, self._y = self.spawn_pos
 
     def has_buff(self, buff_id: int) -> bool:
@@ -999,138 +931,23 @@ class Creature:
                           if BUFF_TYPES.get(b.buff_id) and
                           BUFF_TYPES[b.buff_id].category != category]
 
-    def tick_buffs(self, dt: float):
-        """每帧处理 buff 的持续时间衰减和 tick 效果。"""
-        self._buff_game_time += dt
+    def tick_buffs(self, dt: float, world=None):
+        from status_effects import advance_buffs, advance_environment_timers
+        from pickup_effects import prune_pickup_flights
+        advance_buffs(self, dt, world if world is not None else self._effect_world)
+        prune_pickup_flights(self)
+        advance_environment_timers(self, dt)
 
-        # 过期检测
-        expired = []
-        for b in self.buffs:
-            if b.tick(dt):
-                expired.append(b)
-        for b in expired:
-            # ---- Buff: 幸运 (52) 过期时随机清除一个负面效果 ----
-            from buff_system import BUFF_TYPES, CAT_NEGATIVE
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt and bt.tick == "lucky":
-                import random
-                negatives = [cb for cb in self.buffs
-                            if BUFF_TYPES.get(cb.buff_id) and
-                            BUFF_TYPES[cb.buff_id].category == CAT_NEGATIVE]
-                if negatives:
-                    self.remove_buff(random.choice(negatives).buff_id)
-            self.remove_buff(b.buff_id)
-
-        # Tick 效果（每秒处理一次，累积 dt）
-        self._buff_timer += dt
-        tick_interval = 0.25  # 每 0.25 秒 tick 一次
-        if self._buff_timer < tick_interval:
-            return
-        self._buff_timer -= tick_interval
-
-        from buff_system import BUFF_TYPES, CAT_NEGATIVE
-        for b in self.buffs:
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt is None or bt.tick is None:
-                continue
-            p = b.params
-
-            # ---- 恢复/伤害类 ----
-            if bt.tick == "regen":
-                amt = float(p[0]) if p else 3.0
-                self.heal(amt * tick_interval)
-            elif bt.tick == "shield_regen":
-                amt = float(p[0]) if p else 2.0
-                self.add_shield(amt * tick_interval, None)
-            elif bt.tick == "burning":
-                amt = float(p[0]) if p else 5.0
-                self.take_raw_damage(amt * tick_interval, damage_type="fire")
-            elif bt.tick == "bleeding":
-                pct = float(p[0]) if p else 1.0
-                self.take_raw_damage(self.hp * pct / 100.0 * tick_interval)
-            elif bt.tick == "berserk":
-                # 狂暴：持续损失生命值（每秒 {0} 点）
-                amt = float(p[0]) if p else 5.0
-                self.take_raw_damage(amt * tick_interval)
-            elif bt.tick == "parasitic":
-                # 寄生：每秒损失生命（每秒 {0} 点）
-                amt = float(p[0]) if p else 3.0
-                self.take_raw_damage(amt * tick_interval)
-            elif bt.tick == "cleansing":
-                interval = float(p[0]) if p else 5.0
-                self._buff_timer_cleanse = getattr(self, '_buff_timer_cleanse', 0) + tick_interval
-                if self._buff_timer_cleanse >= interval:
-                    self._buff_timer_cleanse -= interval
-                    for cb in self.buffs:
-                        cbt = BUFF_TYPES.get(cb.buff_id)
-                        if cbt and cbt.category == CAT_NEGATIVE and cb.buff_id != bt.id:
-                            self.remove_buff(cb.buff_id)
-                            break
-            elif bt.tick == "drowsy":
-                # 困倦 (44)：每隔 {0} 秒有概率短暂晕眩
-                interval = float(p[0]) if p else 4.0
-                self._buff_timer_drowsy = getattr(self, '_buff_timer_drowsy', 0) + tick_interval
-                if self._buff_timer_drowsy >= interval:
-                    self._buff_timer_drowsy -= interval
-                    import random
-                    if random.random() < 0.4:
-                        # 短暂晕眩 0.5 秒
-                        self.apply_buff(28, (0.5,), 0.5)
-            elif bt.tick == "electrified":
-                # 带电 (45)：接触水体时持续受到伤害
-                if getattr(self, 'can_swim', False):
-                    amt = float(p[0]) if p else 8.0
-                    self.take_raw_damage(amt * tick_interval, damage_type="magic")
+    def clear_environment_contacts(self, world):
+        """Drop stale surface modifiers when free flight bypasses collision."""
+        self.contact_pool = set()
+        self.stand_pool = None
+        self._apply_tile_effects(world, 0.0)
+        clear_contact_reactions(self)
 
     def get_buff_stat(self, stat_name: str, base_value: float) -> float:
-        """根据活跃 buff 计算修改后的属性值。"""
-        from buff_system import BUFF_TYPES
-        result = base_value
-        for b in self.buffs:
-            bt = BUFF_TYPES.get(b.buff_id)
-            if bt is None:
-                continue
-            p = b.params
-            # 速度修正
-            if stat_name == "v_max":
-                if bt.tick == "swiftness":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.3
-                elif bt.tick == "slowed":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-                elif bt.tick == "stone_skin":
-                    # 石肤：大幅减速但免疫击退
-                    result *= 0.4
-                elif bt.tick == "chilled":
-                    # 寒冷：减速
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.6
-            elif stat_name == "v_jump":
-                if bt.tick == "leaping":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
-            elif stat_name == "stamina_recovery":
-                if bt.tick == "vigor":
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 1.5
-                elif bt.tick == "fatigue":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-            elif stat_name == "stamina_cost":
-                if bt.tick == "endurance":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
-                elif bt.tick == "weakened":
-                    result *= float(p[0]) if p else 2.0
-            elif stat_name == "gravity":
-                if bt.tick == "feather":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-                elif bt.tick == "anchored":
-                    # 定锚：重力大幅增加
-                    result *= 1.0 + float(p[0]) / 100.0 if p else 2.0
-            elif stat_name == "damage_taken":
-                # 坚守 (7)：受到伤害乘数
-                if bt.tick == "fortify":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.7
-            elif stat_name == "healing_received":
-                # 重伤 (20)：受到治疗乘数
-                if bt.tick == "grievous_wound":
-                    result *= 1.0 - float(p[0]) / 100.0 if p else 0.5
-        return result
+        from status_effects import modified_stat
+        return modified_stat(self, stat_name, base_value)
 
     # ----- 工具 -----
     def get_center(self) -> Tuple[float, float]:
@@ -1140,6 +957,11 @@ class Creature:
         return self.get_game_rect().collides(other.get_game_rect())
 
     def reset(self, x: float, y: float):
+        self._teleport_latched = False
+        self._effect_world = None
+        clear_contact_buffs(self)
+        clear_contact_reactions(self)
+        self._pickup_flights = []
         self._x = float(x)
         self._y = float(y)
         self.hp = self.hp_max
@@ -1152,6 +974,7 @@ class Creature:
         self.on_ceiling = False
         self.can_climb = False
         self.is_climbing = False
+        self._climb_align_target = None
         self.can_swim = False
         self._swim_force = 0.0
         self._liquid_space_f = 1.0
@@ -1159,6 +982,7 @@ class Creature:
         self._swim_top_y = None
         self._near_shore = False
         self._shore_dir = 0
+        self._shore_directions = ()
         self._shore_exit_pending = False
         self._environment_speed_mult = 1.0
         self._environment_jump_mult = 1.0
@@ -1168,6 +992,9 @@ class Creature:
         self._weakness_mult = 1.0
         self._phantom_active = False
         self._phantom_timer = 0.0
+        self._phase_active = False
+        self._phase_anchor = None
+        self._phase_world = None
         self._confused = False
         self._confusion_timer = 0.0
         self._berserk_active = False
@@ -1175,6 +1002,9 @@ class Creature:
         self._special_cooldowns = {}
         self._air_jumps_used = 0
         self._wind_walk_timer = 0.0
+        self._anim_timer = 0.0
+        self._anim_frame = 0
+        self._anim_state = "idle"
         if hasattr(self, '_base_v_max'):
             self.v_max = self._base_v_max
             self.v_jump = self._base_v_jump
@@ -1266,58 +1096,47 @@ class Player(Creature):
         self.stamina = min(self.stamina_max, max(0.0, self.stamina + amount))
 
     def move(self, dir_x: float):
-        self.a_x = dir_x * self.v_max
+        self.a_x = 0.0 if action_blocked(self, 'horizontal') else dir_x * self.v_max
 
     # ----- 攀爬控制 -----
     def try_start_climbing(self, world=None) -> bool:
-        """若可攀爬则进入攀爬中状态，强制居中防止卡墙。
+        """若可攀爬则进入攀爬中状态，沿物理步安全居中防止卡墙。
         必须人物中心在可攀爬方块的垂直范围内（±0.3格容差），防止离梯子很远时误触发。"""
+        if action_blocked(self, 'climb'):
+            return False
         if not (self.can_climb and not self.is_climbing and self.alive and self.stamina >= 1.0):
             return False
-        # 垂直邻近判定：人物中心必须在可攀爬方块的垂直跨度内
+        if self.has_buff(28) and not self.has_buff(40):
+            return False
+        best_x = self._x
         if world is not None:
-            grect = self.get_game_rect()
-            cy = self._y
-            in_range = False
-            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
+            from teleport import can_place
+            rect = self.get_game_rect()
+            candidates = []
+            # Only actually touched ladder cells may capture the character.
+            for gx in range(math.floor(rect.x - 0.01), math.floor(rect.x + rect.w + 0.01 - 1e-9) + 1):
+                for gy in range(math.floor(rect.y - 0.01), math.floor(rect.y + rect.h + 0.01 - 1e-9) + 1):
                     coord = world._wrap_grid_coord(gx, gy)
                     if coord is None:
                         continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        if gy - 0.3 <= cy <= gy + 1 + 0.3:
-                            in_range = True
-                            break
-                if in_range:
-                    break
-            if not in_range:
+                    block = world.get_block_type_by_coord(*coord)
+                    if not block.climbable or not (gy - 0.3 <= self._y <= gy + 1.3):
+                        continue
+                    center = gx + 0.5
+                    bound = getattr(self, '_climb_top_y', None)
+                    target_y = min(self._y, bound) if bound is not None else self._y
+                    # Reject an impossible top before capture clears falling velocity
+                    # and air-jump state; repeated held input must not create a hover.
+                    if (can_place(self, world, center, self._y)
+                            and can_place(self, world, center, target_y)):
+                        candidates.append(center)
+            if not candidates:
                 return False
+            best_x = min(candidates, key=lambda x: (abs(x - self._x), x))
         self.is_climbing = True
-        self.v_x = 0.0
-        self.v_y = 0.0
-        self.a_x = 0.0
-        self.a_y = 0.0
-        # 强制居中到最近的 climbable 方块中心
-        if world is not None:
-            grect = self.get_game_rect()
-            cx = grect.x + grect.w / 2
-            best_x = None
-            best_dist = 999.0
-            for gx in range(int(grect.x) - 1, int(grect.x + grect.w) + 2):
-                for gy in range(int(grect.y) - 1, int(grect.y + grect.h) + 2):
-                    coord = world._wrap_grid_coord(gx, gy)
-                    if coord is None:
-                        continue
-                    bt = world.get_block_type_by_coord(coord[0], coord[1])
-                    if bt.climbable:
-                        block_cx = gx + 0.5
-                        dist = abs(cx - block_cx)
-                        if dist < best_dist:
-                            best_dist = dist
-                            best_x = block_cx
-            if best_x is not None:
-                self._x = best_x
+        self._air_jumps_used = 0
+        self.v_x = self.v_y = self.a_x = self.a_y = 0.0
+        self._climb_align_target = best_x if abs(best_x - self._x) > CONTACT_EPSILON else None
         return True
 
     def stop_climbing(self):
@@ -1325,9 +1144,11 @@ class Player(Creature):
         if self.is_climbing:
             self.is_climbing = False
             self.v_y = 0.0
+        self._climb_align_target = None
 
     def climb_move(self, dy: float, speed: float = 3.0):
         """攀爬中上下移动。dy>0 向上，dy<0 向下。"""
-        if self.is_climbing:
+        if (self.is_climbing and self.alive and not action_blocked(self, 'climb')
+                and (not self.has_buff(28) or self.has_buff(40))):
             self.v_y = dy * speed
             self.v_x = 0.0

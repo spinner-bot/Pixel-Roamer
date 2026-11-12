@@ -1,0 +1,352 @@
+{
+  "code_revision": "edc5b06c87a8a62caaeab59704a37158b60ae339",
+  "scope": "real ReferenceBrowser cached icons on the existing panel color, not device acceptance",
+  "sources": {
+    "pixel_roamer/ui/references.py": "633469af91de1420b57ee14c6d8c4cc7ba12f68821df76617b984dba7561e383",
+    "data/catalogs/blocks.json": "e45c3e338ad8e155804e170b90c1850334c328bddb568ddc0d846c2d4e7940b6"
+  },
+  "entries": [
+    {
+      "block_id": 31,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 43,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 50,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 51,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 52,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 53,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 54,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 96,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 126,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 127,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 128,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 129,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 130,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 299,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 310,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 311,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 312,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 313,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 314,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 315,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 316,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 317,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 318,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 319,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 320,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 321,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 322,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 323,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 324,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 325,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 326,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 327,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 328,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    },
+    {
+      "block_id": 329,
+      "corner_alpha": 0,
+      "card_corner": [
+        19,
+        29,
+        42
+      ],
+      "composites": true
+    }
+  ],
+  "image": "2026-11-12_reference_alpha_after.png",
+  "opaque_black_preserved": true
+}

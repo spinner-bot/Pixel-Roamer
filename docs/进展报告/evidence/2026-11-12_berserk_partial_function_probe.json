@@ -1,0 +1,38 @@
+{
+  "code_revision": "4f4306f89384a43cc2e6844dff4f9e90c3522b74",
+  "scope": "existing combat API probe, not a playable combat encounter or full buff47 source route",
+  "buff_id": 47,
+  "claim": "攻击力大幅提升，但持续损失生命值",
+  "runs": [
+    {
+      "active": false,
+      "before": {
+        "phys_atk": 10,
+        "magic_atk": 0,
+        "hp": 100
+      },
+      "after": {
+        "phys_atk": 10,
+        "magic_atk": 0,
+        "hp": 100
+      },
+      "damage": 10.0,
+      "target_hp": 90.0
+    },
+    {
+      "active": true,
+      "before": {
+        "phys_atk": 10,
+        "magic_atk": 0,
+        "hp": 100
+      },
+      "after": {
+        "phys_atk": 10,
+        "magic_atk": 0,
+        "hp": 98.5
+      },
+      "damage": 10.0,
+      "target_hp": 90.0
+    }
+  ]
+}

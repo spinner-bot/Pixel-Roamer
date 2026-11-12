@@ -1,0 +1,11 @@
+test_contact_jitter_does_not_refresh_or_rearm_until_completely_dry (test_buff_reactions.BuffReactionTests) ... ok
+test_immune_rejection_consumes_exposure_and_world_reset_rearms (test_buff_reactions.BuffReactionTests) ... ok
+test_loader_rejects_bad_references_types_duplicates_and_numeric_products (test_buff_reactions.BuffReactionTests) ... ok
+test_no_contact_or_required_buff_no_reaction_and_longer_effect_not_shortened (test_buff_reactions.BuffReactionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

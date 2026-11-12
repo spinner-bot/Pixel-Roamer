@@ -1,0 +1,474 @@
+{
+  "code_revision": "88d3ae39ecde8fd07b010473dd64470b766fc650",
+  "scope": "original map20/21 generated-world geometry and links; no controls, no gameplay or reachability acceptance",
+  "sources": [
+    {
+      "map": 20,
+      "source": 415,
+      "name": "弹跳蘑菇",
+      "position": [
+        396,
+        101
+      ],
+      "source_solid": true,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "duration": 5.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          415,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 395,
+      "name": "霜火石",
+      "position": [
+        931,
+        54
+      ],
+      "source_solid": true,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 51,
+          "params": [],
+          "duration": 6.0
+        },
+        {
+          "id": 46,
+          "params": [
+            0
+          ],
+          "duration": 6.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          395,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 370,
+      "name": "蛛网陷阱",
+      "position": [
+        1309,
+        77
+      ],
+      "source_solid": false,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 21,
+          "params": [
+            0
+          ],
+          "duration": 4.0
+        },
+        {
+          "id": 22,
+          "params": [
+            50
+          ],
+          "duration": 4.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          370,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 429,
+      "name": "流沙",
+      "position": [
+        2098,
+        96
+      ],
+      "source_solid": false,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 22,
+          "params": [
+            40
+          ],
+          "duration": 5.0
+        },
+        {
+          "id": 21,
+          "params": [
+            0
+          ],
+          "duration": 5.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          429,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 373,
+      "name": "冰封地面",
+      "position": [
+        2520,
+        44
+      ],
+      "source_solid": true,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 51,
+          "params": [],
+          "duration": 6.0
+        },
+        {
+          "id": 42,
+          "params": [],
+          "duration": 6.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          373,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 418,
+      "name": "轻云",
+      "position": [
+        3491,
+        53
+      ],
+      "source_solid": false,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 13,
+          "params": [],
+          "duration": 6.0
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "duration": 6.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          418,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 20,
+      "source": 410,
+      "name": "冰霜陷阱",
+      "position": [
+        4855,
+        41
+      ],
+      "source_solid": false,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 51,
+          "params": [],
+          "duration": 5.0
+        },
+        {
+          "id": 21,
+          "params": [
+            0
+          ],
+          "duration": 5.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          410,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 21,
+      "source": 415,
+      "name": "弹跳蘑菇",
+      "position": [
+        90,
+        60
+      ],
+      "source_solid": true,
+      "below_id": 0,
+      "below_solid": false,
+      "buffs": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "duration": 5.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          415,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "map": 21,
+      "source": 373,
+      "name": "冰封地面",
+      "position": [
+        246,
+        55
+      ],
+      "source_solid": true,
+      "below_id": 3,
+      "below_solid": true,
+      "buffs": [
+        {
+          "id": 51,
+          "params": [],
+          "duration": 6.0
+        },
+        {
+          "id": 42,
+          "params": [],
+          "duration": 6.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          373,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "map": 21,
+      "source": 373,
+      "name": "冰封地面",
+      "position": [
+        260,
+        55
+      ],
+      "source_solid": true,
+      "below_id": 3,
+      "below_solid": true,
+      "buffs": [
+        {
+          "id": 51,
+          "params": [],
+          "duration": 6.0
+        },
+        {
+          "id": 42,
+          "params": [],
+          "duration": 6.0
+        }
+      ],
+      "neighbors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          315,
+          0
+        ],
+        [
+          0,
+          373,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "map_id": 3,
+  "scope": "explicit local west lake entry fixture, original air chamber and checkpoint, return by normal controls",
+  "waypoints": [
+    {
+      "name": "shaft_descent",
+      "x": 264.5,
+      "y": 22.8,
+      "kind": "fall"
+    },
+    {
+      "name": "under_lake_cap",
+      "x": 278.5,
+      "y": 22.0,
+      "kind": "swim"
+    },
+    {
+      "name": "chamber_west_mouth",
+      "x": 278.5,
+      "y": 16.8,
+      "kind": "swim"
+    },
+    {
+      "name": "air_chamber_rest",
+      "x": 284.5,
+      "y": 15.9,
+      "kind": "rest",
+      "stamina_min": 95,
+      "swim_height": 17.2
+    },
+    {
+      "name": "chamber_exit",
+      "x": 278.5,
+      "y": 16.8,
+      "kind": "swim"
+    },
+    {
+      "name": "above_chamber_roof",
+      "x": 278.5,
+      "y": 22.0,
+      "kind": "swim"
+    },
+    {
+      "name": "lake_checkpoint",
+      "x": 287.5,
+      "y": 20.9,
+      "kind": "rest",
+      "stamina_min": 95,
+      "contact_id": 302
+    },
+    {
+      "name": "return_under_cap",
+      "x": 264.5,
+      "y": 22.0,
+      "kind": "swim"
+    },
+    {
+      "name": "shaft_rest_height",
+      "x": 264.5,
+      "y": 34.98,
+      "kind": "climb"
+    },
+    {
+      "name": "original_snow_step",
+      "x": 263.5,
+      "y": 32.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "shaft_climb",
+      "x": 264.5,
+      "y": 38.98,
+      "kind": "climb"
+    },
+    {
+      "name": "shaft_exit_clearance",
+      "x": 264.5,
+      "y": 41.5,
+      "kind": "air"
+    },
+    {
+      "name": "outside_return",
+      "x": 261.5,
+      "y": 38.9,
+      "kind": "rest",
+      "stamina_min": 95
+    }
+  ]
+}

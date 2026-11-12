@@ -1,0 +1,198 @@
+{
+  "code_revision": "ad992f7669afb9f7c9dd864f0c6638b98a5f37c6",
+  "scope": "native World texture composition and explicit opaque-black control; not device acceptance",
+  "catalog_sha256": "8e667b69668d4ef641733797b9ecf923da587bae3470bdd097cb9aa1d43e5709",
+  "scenes": [
+    {
+      "default_id": 0,
+      "decorations": [
+        {
+          "block_id": 31,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            180,
+            150,
+            100
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        },
+        {
+          "block_id": 96,
+          "default_id": 0,
+          "background": [
+            135,
+            255,
+            255
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 11,
+      "decorations": [
+        {
+          "block_id": 31,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            180,
+            150,
+            100
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        },
+        {
+          "block_id": 96,
+          "default_id": 11,
+          "background": [
+            11,
+            20,
+            147
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    },
+    {
+      "default_id": 12,
+      "decorations": [
+        {
+          "block_id": 31,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            180,
+            150,
+            100
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        },
+        {
+          "block_id": 96,
+          "default_id": 12,
+          "background": [
+            0,
+            0,
+            0
+          ],
+          "rendered_corner": [
+            0,
+            0,
+            0
+          ],
+          "native_corner_alpha": 255,
+          "composites_on_background": false
+        }
+      ],
+      "opaque_black_corner": [
+        0,
+        0,
+        0
+      ],
+      "opaque_black_preserved": true
+    }
+  ],
+  "map_usage": {
+    "21": {
+      "31": 0,
+      "96": 0
+    },
+    "1001": {
+      "31": 0,
+      "96": 0
+    },
+    "9": {
+      "31": 7,
+      "96": 0
+    },
+    "7": {
+      "31": 31,
+      "96": 0
+    },
+    "5": {
+      "31": 19,
+      "96": 0
+    },
+    "1002": {
+      "31": 0,
+      "96": 0
+    },
+    "20": {
+      "31": 50,
+      "96": 0
+    },
+    "6": {
+      "31": 0,
+      "96": 0
+    },
+    "4": {
+      "31": 33,
+      "96": 0
+    },
+    "19": {
+      "31": 0,
+      "96": 0
+    },
+    "3": {
+      "31": 311,
+      "96": 0
+    },
+    "8": {
+      "31": 35,
+      "96": 0
+    },
+    "1003": {
+      "31": 0,
+      "96": 0
+    },
+    "1": {
+      "31": 0,
+      "96": 0
+    },
+    "2": {
+      "31": 0,
+      "96": 0
+    }
+  }
+}

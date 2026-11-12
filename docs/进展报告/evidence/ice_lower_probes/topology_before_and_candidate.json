@@ -1,0 +1,73 @@
+{
+  "scope": "static default-body bounded candidates, not gravity/input proof",
+  "results": [
+    {
+      "candidate": false,
+      "bounds": [
+        265,
+        315,
+        32,
+        80
+      ],
+      "points": {
+        "lower_checkpoint_side": {
+          "position": [
+            291.5,
+            40.9
+          ],
+          "legal": true,
+          "root_component": false
+        },
+        "upper_treasure": {
+          "position": [
+            289.5,
+            63.9
+          ],
+          "legal": true,
+          "root_component": true
+        }
+      },
+      "contact_pose": [
+        289.6,
+        40.9
+      ],
+      "fixture_legal": true,
+      "free_count": 1439,
+      "root_count": 1002
+    },
+    {
+      "candidate": true,
+      "bounds": [
+        265,
+        315,
+        32,
+        80
+      ],
+      "points": {
+        "lower_checkpoint_side": {
+          "position": [
+            291.5,
+            40.9
+          ],
+          "legal": true,
+          "root_component": true
+        },
+        "upper_treasure": {
+          "position": [
+            289.5,
+            63.9
+          ],
+          "legal": true,
+          "root_component": true
+        }
+      },
+      "contact_pose": [
+        289.6,
+        40.9
+      ],
+      "fixture_legal": true,
+      "free_count": 1449,
+      "root_count": 1449
+    }
+  ]
+}

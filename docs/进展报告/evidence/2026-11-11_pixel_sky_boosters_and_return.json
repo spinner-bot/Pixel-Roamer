@@ -1,0 +1,1597 @@
+{
+  "code_revision": "27f2669a5883029002c9351d6770b7073cdd79f2",
+  "controller_sha256": "ae8dc0220fac3061c9d588066831462beaa6dcd9be5650d54de6da8d4ca07699",
+  "scope": "normal forest spawn, T5, existing jump boosters and original sky T2 to ruins; no debug flight/positions or buff injection",
+  "runs": [
+    {
+      "fps": 30,
+      "returned_to_ruins_via_original_T2": true,
+      "failure": null,
+      "phase": "sky_portal",
+      "timer": 30.833333333332224,
+      "control_frames": 925,
+      "position": [
+        130.0,
+        39.99872559904713
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 84.76642629225451,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "production_options": {
+        "gravity": -6.2,
+        "v_jump": 27.0,
+        "stamina_max": 100.0,
+        "f_y": 0.98
+      },
+      "respawns": 0,
+      "hops": [
+        {
+          "phase": "forest",
+          "time": 12.93333333333324,
+          "from": [
+            69.5622885580923,
+            51.112650285737566
+          ],
+          "to": [
+            184.99725692734648,
+            69.99872559904713
+          ]
+        },
+        {
+          "phase": "sky_portal",
+          "time": 30.833333333332224,
+          "from": [
+            219.56341817400224,
+            111.9
+          ],
+          "to": [
+            130.0,
+            39.99872559904713
+          ]
+        }
+      ],
+      "boosted_launches": [
+        {
+          "phase": "first_booster",
+          "time": 15.466666666666429,
+          "position": [
+            185.6,
+            61.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        },
+        {
+          "phase": "second_booster",
+          "time": 20.899999999999455,
+          "position": [
+            190.6,
+            78.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        }
+      ],
+      "transitions": [
+        {
+          "time": 12.93333333333324,
+          "from": "forest",
+          "to": "sky_landing",
+          "position": [
+            184.99725692734648,
+            69.99872559904713
+          ],
+          "stamina": 95.26881597759247
+        },
+        {
+          "time": 15.299999999999772,
+          "from": "sky_landing",
+          "to": "first_booster",
+          "position": [
+            185.4966892816088,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 15.466666666666429,
+          "from": "first_booster",
+          "to": "first_island",
+          "position": [
+            185.6,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.79999999999946,
+          "from": "first_island",
+          "to": "second_booster",
+          "position": [
+            190.54956928255783,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.899999999999455,
+          "from": "second_booster",
+          "to": "lower_cloud",
+          "position": [
+            190.6,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 23.79999999999929,
+          "from": "lower_cloud",
+          "to": "cloud_edge",
+          "position": [
+            196.4888841680306,
+            106.9
+          ],
+          "stamina": 94.18693132906704
+        },
+        {
+          "time": 25.999999999999165,
+          "from": "cloud_edge",
+          "to": "upper_cloud",
+          "position": [
+            204.51530954949973,
+            106.9
+          ],
+          "stamina": 99.65617541096924
+        },
+        {
+          "time": 30.166666666665595,
+          "from": "upper_cloud",
+          "to": "sky_portal",
+          "position": [
+            216.86513135957355,
+            111.9
+          ],
+          "stamina": 97.25729578391325
+        }
+      ],
+      "terrain_draws": 7,
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "forest",
+          "position": [
+            15.509097828815245,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "forest",
+          "position": [
+            18.599999999999998,
+            53.86952040956625
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "forest",
+          "position": [
+            18.924915657338946,
+            59.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "forest",
+          "position": [
+            24.25872736247085,
+            66.28838498021868
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "forest",
+          "position": [
+            30.09000226483154,
+            64.58938513879308
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "forest",
+          "position": [
+            35.929178187906075,
+            60.50906491677656
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "forest",
+          "position": [
+            41.7715445983542,
+            58.04889558061232
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "forest",
+          "position": [
+            45.6,
+            54.406649436020906
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "forest",
+          "position": [
+            47.96587217189175,
+            49.74811016947247
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "forest",
+          "position": [
+            53.776147987366244,
+            44.78716969058935
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "forest",
+          "position": [
+            54.6,
+            49.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "forest",
+          "position": [
+            58.96808491082977,
+            56.288384980218574
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "forest",
+          "position": [
+            64.82555055472943,
+            54.58938513879297
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "sky_landing",
+          "position": [
+            185.04594568422766,
+            69.9571376753859
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "sky_landing",
+          "position": [
+            185.49397758274623,
+            67.41537390193473
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 15.03333333333312,
+          "phase": "sky_landing",
+          "position": [
+            185.4995843327946,
+            63.08428662339644
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "first_island",
+          "position": [
+            187.28464438544705,
+            80.91230959894614
+          ],
+          "hp": 150.0,
+          "stamina": 86.97805553382204,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 17.033333333333008,
+          "phase": "first_island",
+          "position": [
+            190.34465568512908,
+            91.39832539936778
+          ],
+          "hp": 150.0,
+          "stamina": 90.26603438966663,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "first_island",
+          "position": [
+            190.50078122342424,
+            90.94369487533538
+          ],
+          "hp": 150.0,
+          "stamina": 93.25316289148567,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 19.033333333332894,
+          "phase": "first_island",
+          "position": [
+            190.55528472784718,
+            87.23364065437892
+          ],
+          "hp": 150.0,
+          "stamina": 95.96740090397768,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 20.033333333332838,
+          "phase": "first_island",
+          "position": [
+            190.54961764011267,
+            82.55492488160822
+          ],
+          "hp": 150.0,
+          "stamina": 98.43397395026278,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 21.03333333333278,
+          "phase": "lower_cloud",
+          "position": [
+            190.68095516357675,
+            84.79817549980068
+          ],
+          "hp": 150.0,
+          "stamina": 85.45212888512171,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 22.033333333332724,
+          "phase": "lower_cloud",
+          "position": [
+            194.6,
+            106.04524382571343
+          ],
+          "hp": 150.0,
+          "stamina": 88.87992775301481,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 23.033333333332667,
+          "phase": "lower_cloud",
+          "position": [
+            196.28128352032206,
+            108.792598299316
+          ],
+          "hp": 150.0,
+          "stamina": 91.9938188852792,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 24.03333333333261,
+          "phase": "cloud_edge",
+          "position": [
+            196.80188664738697,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.8230597165881,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 25.033333333332553,
+          "phase": "cloud_edge",
+          "position": [
+            202.1475941075785,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.39401896357577,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 26.033333333332497,
+          "phase": "upper_cloud",
+          "position": [
+            204.54096630681417,
+            107.77339284014204
+          ],
+          "hp": 150.0,
+          "stamina": 84.76642629225451,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 27.03333333333244,
+          "phase": "upper_cloud",
+          "position": [
+            209.28052715737275,
+            120.45348597640219
+          ],
+          "hp": 150.0,
+          "stamina": 88.25710106860552,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 28.033333333332383,
+          "phase": "upper_cloud",
+          "position": [
+            209.6,
+            120.65171005895816
+          ],
+          "hp": 150.0,
+          "stamina": 91.4279817701339,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 29.033333333332326,
+          "phase": "upper_cloud",
+          "position": [
+            211.00967223802243,
+            117.13591477791292
+          ],
+          "hp": 150.0,
+          "stamina": 94.30891552781009,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 30.03333333333227,
+          "phase": "upper_cloud",
+          "position": [
+            216.52075268887538,
+            112.51500136320882
+          ],
+          "hp": 150.0,
+          "stamina": 96.92678912501263,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "returned_to_ruins_via_original_T2": true,
+      "failure": null,
+      "phase": "sky_portal",
+      "timer": 30.666666666665567,
+      "control_frames": 1840,
+      "position": [
+        130.0,
+        40.0
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 84.518766600797,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "production_options": {
+        "gravity": -6.2,
+        "v_jump": 27.0,
+        "stamina_max": 100.0,
+        "f_y": 0.98
+      },
+      "respawns": 0,
+      "hops": [
+        {
+          "phase": "forest",
+          "time": 12.899999999999908,
+          "from": [
+            69.58302988954665,
+            51.03787781726911
+          ],
+          "to": [
+            184.99908334214547,
+            69.99957377174579
+          ]
+        },
+        {
+          "phase": "sky_portal",
+          "time": 30.666666666665567,
+          "from": [
+            219.55023090490587,
+            111.9
+          ],
+          "to": [
+            130.0,
+            40.0
+          ]
+        }
+      ],
+      "boosted_launches": [
+        {
+          "phase": "first_booster",
+          "time": 15.416666666666432,
+          "position": [
+            185.6,
+            61.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        },
+        {
+          "phase": "second_booster",
+          "time": 20.833333333332792,
+          "position": [
+            190.59714644736272,
+            78.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        }
+      ],
+      "transitions": [
+        {
+          "time": 12.899999999999908,
+          "from": "forest",
+          "to": "sky_landing",
+          "position": [
+            184.99908334214547,
+            69.99957377174579
+          ],
+          "stamina": 95.26881597759247
+        },
+        {
+          "time": 15.26666666666644,
+          "from": "sky_landing",
+          "to": "first_booster",
+          "position": [
+            185.470793083645,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 15.416666666666432,
+          "from": "first_booster",
+          "to": "first_island",
+          "position": [
+            185.6,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.733333333332798,
+          "from": "first_island",
+          "to": "second_booster",
+          "position": [
+            190.5445659765542,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.833333333332792,
+          "from": "second_booster",
+          "to": "lower_cloud",
+          "position": [
+            190.59714644736272,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 23.733333333332627,
+          "from": "lower_cloud",
+          "to": "cloud_edge",
+          "position": [
+            196.49389082406645,
+            106.9
+          ],
+          "stamina": 94.18693132906704
+        },
+        {
+          "time": 25.849999999999174,
+          "from": "cloud_edge",
+          "to": "upper_cloud",
+          "position": [
+            204.50763792012216,
+            106.9
+          ],
+          "stamina": 99.46928850891376
+        },
+        {
+          "time": 30.016666666665603,
+          "from": "upper_cloud",
+          "to": "sky_portal",
+          "position": [
+            216.8521749091766,
+            111.9
+          ],
+          "stamina": 97.13197924742006
+        }
+      ],
+      "terrain_draws": 7,
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "forest",
+          "position": [
+            15.502743072653534,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "forest",
+          "position": [
+            18.599999999999998,
+            53.915567281242105
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "forest",
+          "position": [
+            18.924915657338946,
+            59.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "forest",
+          "position": [
+            24.257729875306865,
+            66.28838498021868
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "forest",
+          "position": [
+            30.088288640298977,
+            64.58938513879308
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "forest",
+          "position": [
+            35.92717538209999,
+            60.50906491677656
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "forest",
+          "position": [
+            41.769425019129194,
+            58.04889558061232
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "forest",
+          "position": [
+            45.6,
+            54.406649436020906
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "forest",
+          "position": [
+            47.96587217189175,
+            49.74811016947247
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "forest",
+          "position": [
+            53.776138625278634,
+            44.78716969058935
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "forest",
+          "position": [
+            54.60274307265354,
+            50.22394057472292
+          ],
+          "hp": 150.0,
+          "stamina": 86.45703419969253,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "forest",
+          "position": [
+            59.053765787201456,
+            56.30008850236027
+          ],
+          "hp": 150.0,
+          "stamina": 89.79273888238184,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "forest",
+          "position": [
+            64.89049404156214,
+            54.533287933924015
+          ],
+          "hp": 150.0,
+          "stamina": 92.823141087057,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "sky_landing",
+          "position": [
+            185.07738745760565,
+            69.9511750396379
+          ],
+          "hp": 150.0,
+          "stamina": 95.57664152405556,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "sky_landing",
+          "position": [
+            185.5024650573335,
+            67.3838098885978
+          ],
+          "hp": 150.0,
+          "stamina": 98.07885460358042,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 15.016666666666454,
+          "phase": "sky_landing",
+          "position": [
+            185.4976411058503,
+            63.04510483970066
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "first_island",
+          "position": [
+            187.47649202447172,
+            81.620708824305
+          ],
+          "hp": 150.0,
+          "stamina": 87.0928208463501,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 17.016666666666342,
+          "phase": "first_island",
+          "position": [
+            190.36860770356728,
+            91.48995256582839
+          ],
+          "hp": 150.0,
+          "stamina": 90.37028918386265,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "first_island",
+          "position": [
+            190.52371554393,
+            90.85179957734614
+          ],
+          "hp": 150.0,
+          "stamina": 93.34788699167089,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 19.01666666666623,
+          "phase": "first_island",
+          "position": [
+            190.50724723379275,
+            87.08713767033804
+          ],
+          "hp": 150.0,
+          "stamina": 96.05347732632865,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 20.016666666666172,
+          "phase": "first_island",
+          "position": [
+            190.52666179587118,
+            82.39217320896752
+          ],
+          "hp": 150.0,
+          "stamina": 98.51220024638167,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 21.016666666666115,
+          "phase": "lower_cloud",
+          "position": [
+            190.7665437127265,
+            86.74855045876801
+          ],
+          "hp": 150.0,
+          "stamina": 85.63146225914097,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 22.016666666666058,
+          "phase": "lower_cloud",
+          "position": [
+            194.6,
+            106.44684515019384
+          ],
+          "hp": 150.0,
+          "stamina": 89.04282179424601,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 23.016666666666,
+          "phase": "lower_cloud",
+          "position": [
+            196.3307000841198,
+            108.73335716153609
+          ],
+          "hp": 150.0,
+          "stamina": 92.14181109029893,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 24.016666666665945,
+          "phase": "cloud_edge",
+          "position": [
+            197.00903351961563,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.9575340519851,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 25.016666666665888,
+          "phase": "cloud_edge",
+          "position": [
+            202.51659102024445,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.51622436206657,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 26.01666666666583,
+          "phase": "upper_cloud",
+          "position": [
+            204.7703459409493,
+            110.8699604058803
+          ],
+          "hp": 150.0,
+          "stamina": 85.06757233543446,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 27.016666666665774,
+          "phase": "upper_cloud",
+          "position": [
+            209.6,
+            120.89824238984386
+          ],
+          "hp": 150.0,
+          "stamina": 88.53062976394787,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 28.016666666665717,
+          "phase": "upper_cloud",
+          "position": [
+            209.6,
+            120.30741173020793
+          ],
+          "hp": 150.0,
+          "stamina": 91.67647976087342,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 29.01666666666566,
+          "phase": "upper_cloud",
+          "position": [
+            211.76759578657828,
+            116.55683073086735
+          ],
+          "hp": 150.0,
+          "stamina": 94.53470995062975,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 30.016666666665603,
+          "phase": "upper_cloud",
+          "position": [
+            216.8521749091766,
+            111.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.13197924742006,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "returned_to_ruins_via_original_T2": true,
+      "failure": null,
+      "phase": "sky_portal",
+      "timer": 30.61666666666557,
+      "control_frames": 4409,
+      "position": [
+        130.0,
+        40.0
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 84.41293163486571,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "production_options": {
+        "gravity": -6.2,
+        "v_jump": 27.0,
+        "stamina_max": 100.0,
+        "f_y": 0.98
+      },
+      "respawns": 0,
+      "hops": [
+        {
+          "phase": "forest",
+          "time": 12.899999999999908,
+          "from": [
+            69.57700019935363,
+            51.00041599400191
+          ],
+          "to": [
+            185.0,
+            70.0
+          ]
+        },
+        {
+          "phase": "sky_portal",
+          "time": 30.61666666666557,
+          "from": [
+            219.57283463002048,
+            111.9
+          ],
+          "to": [
+            130.0,
+            40.0
+          ]
+        }
+      ],
+      "boosted_launches": [
+        {
+          "phase": "first_booster",
+          "time": 15.374999999999767,
+          "position": [
+            185.59422083994525,
+            61.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        },
+        {
+          "phase": "second_booster",
+          "time": 20.816666666666126,
+          "position": [
+            190.59992426014665,
+            78.9
+          ],
+          "jump_velocity": 48.6,
+          "stamina": 100.0
+        }
+      ],
+      "transitions": [
+        {
+          "time": 12.899999999999908,
+          "from": "forest",
+          "to": "sky_landing",
+          "position": [
+            185.0,
+            70.0
+          ],
+          "stamina": 95.26881597759247
+        },
+        {
+          "time": 15.26666666666644,
+          "from": "sky_landing",
+          "to": "first_booster",
+          "position": [
+            185.51597244155585,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 15.374999999999767,
+          "from": "first_booster",
+          "to": "first_island",
+          "position": [
+            185.59422083994525,
+            61.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.6833333333328,
+          "from": "first_island",
+          "to": "second_booster",
+          "position": [
+            190.48103706094537,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 20.816666666666126,
+          "from": "second_booster",
+          "to": "lower_cloud",
+          "position": [
+            190.59992426014665,
+            78.9
+          ],
+          "stamina": 100.0
+        },
+        {
+          "time": 23.71666666666596,
+          "from": "lower_cloud",
+          "to": "cloud_edge",
+          "position": [
+            196.5237363942506,
+            106.9
+          ],
+          "stamina": 94.18693132906704
+        },
+        {
+          "time": 25.799999999999176,
+          "from": "cloud_edge",
+          "to": "upper_cloud",
+          "position": [
+            204.50252463619717,
+            106.9
+          ],
+          "stamina": 99.3941160723637
+        },
+        {
+          "time": 29.966666666665606,
+          "from": "upper_cloud",
+          "to": "sky_portal",
+          "position": [
+            216.8500081190622,
+            111.9
+          ],
+          "stamina": 97.08157385111997
+        }
+      ],
+      "terrain_draws": 7,
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "forest",
+          "position": [
+            15.5,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "forest",
+          "position": [
+            18.599999999999998,
+            53.96082292030183
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "forest",
+          "position": [
+            18.90244278677136,
+            59.862119807909835
+          ],
+          "hp": 150.0,
+          "stamina": 86.36946407151795,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "forest",
+          "position": [
+            24.208040734427833,
+            66.28179703309804
+          ],
+          "hp": 150.0,
+          "stamina": 89.71319173777067,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "forest",
+          "position": [
+            30.018461542848403,
+            64.61721468675483
+          ],
+          "hp": 150.0,
+          "stamina": 92.75086801385307,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "forest",
+          "position": [
+            35.83161408767557,
+            60.54713549856367
+          ],
+          "hp": 150.0,
+          "stamina": 95.51096792491438,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "forest",
+          "position": [
+            41.64534813119395,
+            58.112750577273324
+          ],
+          "hp": 150.0,
+          "stamina": 98.01917138793755,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "forest",
+          "position": [
+            45.6,
+            54.51501912794816
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "forest",
+          "position": [
+            47.838038159733614,
+            49.86972534887217
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "forest",
+          "position": [
+            53.611446044911226,
+            44.912726106412975
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "forest",
+          "position": [
+            54.6,
+            49.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "forest",
+          "position": [
+            58.947466150161326,
+            56.288384980218574
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "forest",
+          "position": [
+            64.7605718717562,
+            54.58938513879297
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "sky_landing",
+          "position": [
+            185.0686456421149,
+            69.96794913134968
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "sky_landing",
+          "position": [
+            185.51967143942355,
+            67.47817050929662
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 14.999999999999789,
+          "phase": "sky_landing",
+          "position": [
+            185.5238861971899,
+            63.16255157593015
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "first_island",
+          "position": [
+            187.62274615581956,
+            82.12911409297949
+          ],
+          "hp": 150.0,
+          "stamina": 87.17865374844756,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 16.999999999999677,
+          "phase": "first_island",
+          "position": [
+            190.38919350168723,
+            91.55186071428955
+          ],
+          "hp": 150.0,
+          "stamina": 90.44826175193315,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "first_island",
+          "position": [
+            190.54059945453702,
+            90.78085110448484
+          ],
+          "hp": 150.0,
+          "stamina": 93.41873183931023,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 18.999999999999563,
+          "phase": "first_island",
+          "position": [
+            190.5192089433013,
+            86.97665729227478
+          ],
+          "hp": 150.0,
+          "stamina": 96.1178547333849,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 19.999999999999506,
+          "phase": "first_island",
+          "position": [
+            190.4901329205076,
+            82.26992998827481
+          ],
+          "hp": 150.0,
+          "stamina": 98.57070661925506,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 20.99999999999945,
+          "phase": "lower_cloud",
+          "position": [
+            190.7665437127265,
+            86.74855045876801
+          ],
+          "hp": 150.0,
+          "stamina": 85.63146225914097,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 21.999999999999392,
+          "phase": "lower_cloud",
+          "position": [
+            194.6,
+            106.44684515019384
+          ],
+          "hp": 150.0,
+          "stamina": 89.04282179424601,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 22.999999999999336,
+          "phase": "lower_cloud",
+          "position": [
+            196.33899923697942,
+            108.73335716153609
+          ],
+          "hp": 150.0,
+          "stamina": 92.14181109029893,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 23.99999999999928,
+          "phase": "cloud_edge",
+          "position": [
+            197.03211670815028,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.9575340519851,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 24.999999999999222,
+          "phase": "cloud_edge",
+          "position": [
+            202.52816873945116,
+            106.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.51622436206657,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        },
+        {
+          "time": 25.999999999999165,
+          "phase": "upper_cloud",
+          "position": [
+            204.87684875882326,
+            111.55255517508256
+          ],
+          "hp": 150.0,
+          "stamina": 85.11471760360183,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 26.99999999999911,
+          "phase": "upper_cloud",
+          "position": [
+            209.6,
+            120.98219135927962
+          ],
+          "hp": 150.0,
+          "stamina": 88.5734519689113,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 27.99999999999905,
+          "phase": "upper_cloud",
+          "position": [
+            209.6,
+            120.21323176056374
+          ],
+          "hp": 150.0,
+          "stamina": 91.71538363662958,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 28.999999999998995,
+          "phase": "upper_cloud",
+          "position": [
+            211.96133862550587,
+            116.4096479355955
+          ],
+          "hp": 150.0,
+          "stamina": 94.57005967954815,
+          "jump_velocity": 27.0,
+          "on_ground": false
+        },
+        {
+          "time": 29.999999999998938,
+          "phase": "sky_portal",
+          "position": [
+            216.92964619283595,
+            111.9
+          ],
+          "hp": 150.0,
+          "stamina": 97.16410338758348,
+          "jump_velocity": 27.0,
+          "on_ground": true
+        }
+      ]
+    }
+  ]
+}

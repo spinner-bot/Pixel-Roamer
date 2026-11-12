@@ -1,0 +1,6 @@
+test_spawn_to_formal_victory_at_three_frame_rates (test_cove_route.CoveRouteTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.581s
+
+OK

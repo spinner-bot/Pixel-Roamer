@@ -1,0 +1,12 @@
+{
+  "code_revision": "16d1934bd63620219c3a6bd5a9270b2bf7b0f52c",
+  "scope": "all input-route result fields and full traces compared after identical17-cell candidate is loaded by the production map instead of a launch hook",
+  "candidate_revision": "3597c0a0ca712f91140a7bf1e0679b9bfbf4be06",
+  "production_revision": "6073ddcfac70cd08e42fdfb991ea111abfea5c9c",
+  "runs_identical": true,
+  "fps": [
+    30,
+    60,
+    144
+  ]
+}

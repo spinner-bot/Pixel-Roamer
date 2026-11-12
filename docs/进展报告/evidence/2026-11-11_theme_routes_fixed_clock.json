@@ -1,0 +1,502 @@
+{
+  "code_revision": "09bc2e57c13706a7704a7d79afb551e31f1ca74d",
+  "scope": "physics route inputs only; no real device visual or control acceptance",
+  "simulation_hz": 120,
+  "runs": [
+    {
+      "id": 1001,
+      "fps": 30,
+      "route": "main",
+      "frames": 450,
+      "seconds": 15.0,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.629,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1001,
+      "fps": 30,
+      "route": "upper",
+      "frames": 513,
+      "seconds": 17.1,
+      "jumps": 2,
+      "score": 140,
+      "waypoint_rewards": [
+        20,
+        30,
+        60,
+        30
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.561,
+          13.9
+        ],
+        [
+          38.316,
+          16.9
+        ],
+        [
+          55.044,
+          13.9
+        ],
+        [
+          89.612,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1001,
+      "fps": 60,
+      "route": "main",
+      "frames": 925,
+      "seconds": 15.417,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.609,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1001,
+      "fps": 60,
+      "route": "upper",
+      "frames": 1038,
+      "seconds": 17.3,
+      "jumps": 2,
+      "score": 140,
+      "waypoint_rewards": [
+        30,
+        20,
+        60,
+        30
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.579,
+          13.9
+        ],
+        [
+          38.303,
+          16.9
+        ],
+        [
+          55.025,
+          13.9
+        ],
+        [
+          89.611,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1001,
+      "fps": 144,
+      "route": "main",
+      "frames": 2260,
+      "seconds": 15.694,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.603,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1001,
+      "fps": 144,
+      "route": "upper",
+      "frames": 2516,
+      "seconds": 17.472,
+      "jumps": 2,
+      "score": 140,
+      "waypoint_rewards": [
+        30,
+        20,
+        60,
+        30
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.595,
+          13.9
+        ],
+        [
+          38.281,
+          16.9
+        ],
+        [
+          55.01,
+          13.9
+        ],
+        [
+          89.603,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 30,
+      "route": "main",
+      "frames": 995,
+      "seconds": 33.167,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.609,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 30,
+      "route": "upper",
+      "frames": 713,
+      "seconds": 23.767,
+      "jumps": 2,
+      "score": 310,
+      "waypoint_rewards": [
+        25,
+        75,
+        150,
+        60
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.561,
+          13.9
+        ],
+        [
+          38.322,
+          16.9
+        ],
+        [
+          55.034,
+          13.9
+        ],
+        [
+          89.6,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 60,
+      "route": "main",
+      "frames": 1988,
+      "seconds": 33.133,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.599,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 60,
+      "route": "upper",
+      "frames": 1441,
+      "seconds": 24.017,
+      "jumps": 2,
+      "score": 310,
+      "waypoint_rewards": [
+        50,
+        50,
+        150,
+        60
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.579,
+          13.9
+        ],
+        [
+          38.303,
+          16.9
+        ],
+        [
+          55.024,
+          13.9
+        ],
+        [
+          89.596,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 144,
+      "route": "main",
+      "frames": 4770,
+      "seconds": 33.125,
+      "jumps": 0,
+      "score": 10,
+      "waypoint_rewards": [
+        10
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.594,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1002,
+      "fps": 144,
+      "route": "upper",
+      "frames": 3470,
+      "seconds": 24.097,
+      "jumps": 2,
+      "score": 310,
+      "waypoint_rewards": [
+        50,
+        50,
+        150,
+        60
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.595,
+          13.9
+        ],
+        [
+          38.281,
+          16.9
+        ],
+        [
+          55.008,
+          13.9
+        ],
+        [
+          89.594,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 30,
+      "route": "main",
+      "frames": 503,
+      "seconds": 16.767,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.595,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 30,
+      "route": "upper",
+      "frames": 535,
+      "seconds": 17.833,
+      "jumps": 2,
+      "score": 80,
+      "waypoint_rewards": [
+        15,
+        15,
+        30,
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.561,
+          13.9
+        ],
+        [
+          38.316,
+          16.9
+        ],
+        [
+          55.044,
+          13.9
+        ],
+        [
+          89.6,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 60,
+      "route": "main",
+      "frames": 993,
+      "seconds": 16.55,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.598,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 60,
+      "route": "upper",
+      "frames": 1071,
+      "seconds": 17.85,
+      "jumps": 2,
+      "score": 80,
+      "waypoint_rewards": [
+        20,
+        10,
+        30,
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.579,
+          13.9
+        ],
+        [
+          38.303,
+          16.9
+        ],
+        [
+          55.025,
+          13.9
+        ],
+        [
+          89.593,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 144,
+      "route": "main",
+      "frames": 2360,
+      "seconds": 16.389,
+      "jumps": 0,
+      "score": 20,
+      "waypoint_rewards": [
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          89.59,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    },
+    {
+      "id": 1003,
+      "fps": 144,
+      "route": "upper",
+      "frames": 2576,
+      "seconds": 17.889,
+      "jumps": 2,
+      "score": 80,
+      "waypoint_rewards": [
+        20,
+        10,
+        30,
+        20
+      ],
+      "min_hp": 100,
+      "waypoints": [
+        [
+          24.595,
+          13.9
+        ],
+        [
+          38.281,
+          16.9
+        ],
+        [
+          55.01,
+          13.9
+        ],
+        [
+          89.595,
+          9.9
+        ]
+      ],
+      "reached_end": true
+    }
+  ]
+}

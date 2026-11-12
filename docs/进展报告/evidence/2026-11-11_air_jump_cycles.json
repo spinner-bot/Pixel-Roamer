@@ -1,0 +1,963 @@
+{
+  "code_revision": "979e4eeb52cb2cbde690538ebff5fabbb52b16cb",
+  "legacy_revision": "444f39a",
+  "scope": "isolated existing buff 37 fixture with production session inputs; not map victory or device acceptance",
+  "before": [
+    {
+      "kind": "ground_walkoff",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.44467393628724,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.534657536930831,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.85018634679744,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          6.2043658841333595,
+          1.8458333333333332
+        ],
+        "vy": -0.8125000000000003,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 187.15515004544807,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "ground_walkoff",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.755153441015008,
+          1.8873611111111108
+        ],
+        "vy": -0.37916666666666676,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.93990502153906,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "ground_walkoff",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.532022743460988,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.8380022679525,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.44467393628724,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.534657536930831,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.85018634679744,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          6.2043658841333595,
+          1.8458333333333332
+        ],
+        "vy": -0.8125000000000003,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 187.15515004544807,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.755153441015008,
+          1.8873611111111108
+        ],
+        "vy": -0.37916666666666676,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.93990502153906,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.532022743460988,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.8380022679525,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "climb_release",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": false,
+        "climbing": true,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          5.510347222222224
+        ],
+        "vy": -0.21666666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.24880396981135,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          5.453472222222223
+        ],
+        "vy": -0.866666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.65562244077822,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "climb_release",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": false,
+        "climbing": true,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          5.129270833333333
+        ],
+        "vy": -0.10833333333333334,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.02808425079357,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          5.114375
+        ],
+        "vy": -0.43333333333333346,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.2325503327891,
+        "ability_active": true
+      },
+      "succeeded": false
+    },
+    {
+      "kind": "climb_release",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 0.0,
+        "air_used": 1,
+        "ground": false,
+        "climbing": true,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          4.754965277777778
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.8571825260901,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          4.752708333333334
+        ],
+        "vy": -0.1625,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.92559930846068,
+        "ability_active": true
+      },
+      "succeeded": false
+    }
+  ],
+  "after": [
+    {
+      "kind": "ground_walkoff",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.44467393628724,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.534657536930831,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.85018634679744,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          6.2043658841333595,
+          3.0120833333333334
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 172.244935522844,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "ground_walkoff",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.755153441015008,
+          2.4650694444444445
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.98078486214237,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "ground_walkoff",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.532022743460988,
+          2.089861111111111
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.8461872763182,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.44467393628724,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.534657536930831,
+          1.8972916666666664
+        ],
+        "vy": -0.1625,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.85018634679744,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          6.2043658841333595,
+          3.0120833333333334
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 172.244935522844,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.755153441015008,
+          2.4650694444444445
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.98078486214237,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "one_way_walkoff",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          1.9
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": true,
+        "climbing": false,
+        "stamina": 184.43186329916088,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          5.4179025283685975,
+          1.899548611111111
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 186.7869675341265,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          5.532022743460988,
+          2.089861111111111
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.8461872763182,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "climb_release",
+      "fps": 30,
+      "spent": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          5.514861111111113
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": false,
+        "climbing": true,
+        "stamina": 171.11260341445055,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          5.510347222222224
+        ],
+        "vy": -0.21666666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.24880396981135,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          6.625138888888891
+        ],
+        "vy": 10.849999999999994,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 156.74581187874915,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "climb_release",
+      "fps": 60,
+      "spent": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          5.130625
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": false,
+        "climbing": true,
+        "stamina": 170.95977964298768,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          5.129270833333333
+        ],
+        "vy": -0.10833333333333334,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 171.02808425079357,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          5.694791666666666
+        ],
+        "vy": 11.174999999999997,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 156.27361787055838,
+        "ability_active": true
+      },
+      "succeeded": true
+    },
+    {
+      "kind": "climb_release",
+      "fps": 144,
+      "spent": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "support": {
+        "position": [
+          2.5,
+          4.755416666666667
+        ],
+        "vy": 0.0,
+        "air_used": 0,
+        "ground": false,
+        "climbing": true,
+        "stamina": 170.82294605740057,
+        "ability_active": true
+      },
+      "before_retry": {
+        "position": [
+          2.5,
+          4.754965277777778
+        ],
+        "vy": -0.05416666666666667,
+        "air_used": 0,
+        "ground": false,
+        "climbing": false,
+        "stamina": 170.8571825260901,
+        "ability_active": true
+      },
+      "after_retry": {
+        "position": [
+          2.5,
+          4.945277777777779
+        ],
+        "vy": 11.391666666666666,
+        "air_used": 1,
+        "ground": false,
+        "climbing": false,
+        "stamina": 155.93382255822007,
+        "ability_active": true
+      },
+      "succeeded": true
+    }
+  ]
+}

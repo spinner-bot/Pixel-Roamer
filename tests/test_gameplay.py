@@ -46,6 +46,7 @@ class EnvironmentTests(unittest.TestCase):
                 self.assertTrue(getattr(player, state))
                 player._x = 20
                 for _ in range(601):
+                    player.tick_buffs(1 / 60)
                     player.collide_with_world(world, 1 / 60)
                 self.assertFalse(getattr(player, state))
                 self.assertEqual(player._special_cooldowns, {})

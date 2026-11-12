@@ -1,0 +1,39 @@
+{
+  "before_revision": "17d8afe",
+  "after_revision": "4ea13eaafabf40922610b964b06d8d8b29f032ed",
+  "block_count": 359,
+  "changed_fields": {
+    "310": [
+      "pattern"
+    ],
+    "311": [
+      "pattern"
+    ],
+    "312": [
+      "pattern"
+    ],
+    "313": [
+      "pattern"
+    ],
+    "314": [
+      "pattern"
+    ],
+    "315": [
+      "pattern"
+    ],
+    "316": [
+      "pattern"
+    ],
+    "317": [
+      "pattern"
+    ],
+    "318": [
+      "pattern"
+    ],
+    "319": [
+      "pattern"
+    ]
+  },
+  "all_non_pattern_fields_unchanged": true,
+  "scope": "catalog diff and pixel comparison; gameplay regression results in companion report"
+}

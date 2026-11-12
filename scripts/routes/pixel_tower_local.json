@@ -1,0 +1,156 @@
+{
+  "map_id": 3,
+  "scope": "local legal tower-base fixture; production map config, not normal forest spawn route",
+  "waypoints": [
+    {
+      "name": "underfloor",
+      "x": 437.5,
+      "y": 11.9,
+      "kind": "ground"
+    },
+    {
+      "name": "first_entry_clearance",
+      "x": 437.5,
+      "y": 20.2,
+      "kind": "air"
+    },
+    {
+      "name": "first_floor",
+      "x": 439.5,
+      "y": 18.9,
+      "kind": "ground"
+    },
+    {
+      "name": "second_clearance",
+      "x": 437.5,
+      "y": 43.2,
+      "kind": "climb"
+    },
+    {
+      "name": "second_departure_jump",
+      "x": 437.5,
+      "y": 45.2,
+      "kind": "air"
+    },
+    {
+      "name": "second_floor",
+      "x": 439.5,
+      "y": 41.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "third_clearance",
+      "x": 437.5,
+      "y": 68.2,
+      "kind": "climb"
+    },
+    {
+      "name": "third_departure_jump",
+      "x": 437.5,
+      "y": 70.2,
+      "kind": "air"
+    },
+    {
+      "name": "third_floor",
+      "x": 439.5,
+      "y": 66.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "fourth_clearance",
+      "x": 437.5,
+      "y": 93.2,
+      "kind": "climb"
+    },
+    {
+      "name": "fourth_departure_jump",
+      "x": 437.5,
+      "y": 95.2,
+      "kind": "air"
+    },
+    {
+      "name": "fourth_floor",
+      "x": 439.5,
+      "y": 91.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "fifth_clearance",
+      "x": 437.5,
+      "y": 118.2,
+      "kind": "climb"
+    },
+    {
+      "name": "fifth_departure_jump",
+      "x": 437.5,
+      "y": 120.2,
+      "kind": "air"
+    },
+    {
+      "name": "fifth_floor",
+      "x": 439.5,
+      "y": 123.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "sixth_clearance",
+      "x": 437.5,
+      "y": 143.2,
+      "kind": "climb"
+    },
+    {
+      "name": "sixth_departure_jump",
+      "x": 437.5,
+      "y": 145.2,
+      "kind": "air"
+    },
+    {
+      "name": "sixth_floor",
+      "x": 439.5,
+      "y": 141.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "seventh_clearance",
+      "x": 437.5,
+      "y": 168.2,
+      "kind": "climb"
+    },
+    {
+      "name": "seventh_departure_jump",
+      "x": 437.5,
+      "y": 170.2,
+      "kind": "air"
+    },
+    {
+      "name": "seventh_floor",
+      "x": 439.5,
+      "y": 166.9,
+      "kind": "rest",
+      "stamina_min": 95
+    },
+    {
+      "name": "top_rope",
+      "x": 437.5,
+      "y": 188.98,
+      "kind": "climb"
+    },
+    {
+      "name": "top_landing",
+      "x": 441.5,
+      "y": 201.9,
+      "kind": "ground"
+    },
+    {
+      "name": "top_checkpoint",
+      "x": 447.5,
+      "y": 202.9,
+      "kind": "ground"
+    }
+  ]
+}

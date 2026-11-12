@@ -118,7 +118,7 @@ class MapSmokeTests(unittest.TestCase):
         registry_start = time.perf_counter()
         maps = list_maps()
         self.assertLess(time.perf_counter() - registry_start, 1.0)
-        self.assertEqual(len(maps), 12)
+        self.assertEqual(len(maps), 15)
         self.assertFalse(any(
             name.startswith("maps.") and name.endswith(".map")
             for name in sys.modules
@@ -137,11 +137,15 @@ class MapSmokeTests(unittest.TestCase):
             if name.startswith("maps.") and name.endswith(".map")
         ]
         self.assertEqual(loaded_map_modules, ["maps.grand_journey.map"])
-        self.assertEqual(len(selected_world.grid), 140372)
+        # Guard sparse generation without freezing the authored terrain count.
+        self.assertLess(len(selected_world.grid), 200000)
+        self.assertNotIn(selected_world.default_tile.type_id,
+                         {tile.type_id for tile in selected_world.grid.values()})
         surface = pygame.Surface((640, 360))
         for map_id in sorted(maps):
             world = get_map(map_id)
             summary = summaries[map_id]
+            self.assertEqual(summary["name"], world.name, maps[map_id])
             self.assertEqual(summary["width"], world.width, maps[map_id])
             self.assertEqual(summary["height"], world.height, maps[map_id])
             self.assertEqual(summary["mode"], world.mode, maps[map_id])

@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "baseline_ref": "e53ea03",
+  "blocks": {
+    "2": {
+      "definition": "58f9f0d9906cbcecf2a857b67548e4cb14787147fe35b36f217d3221e9e4888a",
+      "rgba32": "02dd6a5ce2721ef5cb3f2a8f3e48b4e799cce4cec8c20ecbe2f15f8e7c79ce19",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "3": {
+      "definition": "c522570c05d8366251cd37d82cfbd7330a1c14daba5cb6cff58f69b1133594d1",
+      "rgba32": "d468eafb4f7a0c6a46949bebc7a3bd831c3901d902c48b071fac7beceb6f1f7b",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "4": {
+      "definition": "be646d91a2d62ef284f68229476d565e958f3d7ec061df508e3957f91b86baa7",
+      "rgba32": "3510646290867a2efb54f0908159d7eef7aec757fd0f4f0231dfba00c830ba71",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "5": {
+      "definition": "ffec8653cbfa940901d829ec69fc835d112ff705a25df3f23ab01d9a27328367",
+      "rgba32": "641f9d58d9f7b9e22b2d7adf2ccbb5547628fa758513bb5b8db8687bcf845c98",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "7": {
+      "definition": "7bc85fe0cac6067ab5fe27ecc037e5ae198393b7196e260767f8f0e37febb240",
+      "rgba32": "f6912452d88e2806c870dd7c5b81bf4c954baf9bc938cd929e1e69d2cade865b",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "9": {
+      "definition": "98655def47292bb2c17d95797461e2fe8f7f5e522c6a0c3fc1afb1415f2d4a2f",
+      "rgba32": "354f7eb76c1b7ecbc777afac09acb454a35f77cd683c638cfa18d787a52f9e7f",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "16": {
+      "definition": "82e0e4f5e2c1e6b96ea13b9ef617f6a2b7ad89033ed9717cf69e785821d34156",
+      "rgba32": "bb1903dd9e7a08ed1dba8d5d2e0f22eee7e4d4bfd2a3bce1e7af921fbcca02a9",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "17": {
+      "definition": "536adf4ba96faab168a1fb1ab6ca294cf754d79c260920e50b30e83a627436a7",
+      "rgba32": "1d502e70247bc9deb7630454be45c959655701a18dcb196f53ee9e479facaa8a",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "18": {
+      "definition": "7ab57c0d10c5a0fc67e4fdc84f1ba688191718f416fbc28c51ba9bfe4378349b",
+      "rgba32": "cfb1567d0f5c6f59e6fce75f5e0c8fddb823c4a718064ae211070e5fa7e68f01",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "19": {
+      "definition": "51cb27829536e14d14f04c6f496141ffb1fefc2ff84b31f7a765e0d407efaf66",
+      "rgba32": "bb9575bd7b87ca4ca71115572506a85ac300853b63d70c3114a984e446677565",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "20": {
+      "definition": "4a70ce51bdee7127c44ab6b589eae1280748b00e98703d9f2aa564421431fd19",
+      "rgba32": "5d7d6583fc35173b998512a9f8f1077752c0a2b2828d502d38a67cc42b24d1eb",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "22": {
+      "definition": "2565c1081c4b194e22526934b1cef30069c6abb315676d1a5651921ce21f7c17",
+      "rgba32": "d5caae48e88fab6065937a01044137bfbdd7775e5b032a41d17a914e7cef0709",
+      "reason": "Reviewed pixel texture refinement"
+    },
+    "31": {
+      "definition": "2adda9603b1979f90abcf416dca1010a1596035207e5f018851050dc9fbf661a",
+      "rgba32": "bbc7766e114f64c4d03f68ef0a15ded54aa6d3cafc6bcfe8240e8853cb5117ed",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "43": {
+      "definition": "ea4d4bcd2539c65da860fc240fecb9ddf1f28c852bfb747adc88255d65506565",
+      "rgba32": "61ec65db5e92a24f337804e3b47dae676936b69eb964034b7fdc46643bb73ee9",
+      "reason": "Upright transparent existing decoration"
+    },
+    "50": {
+      "definition": "aa0c925ff973d5a2fd058665008ab287d8e8c700a0136b31214d2a9914256eb9",
+      "rgba32": "339bec4ac08340c081e7d1bf4c6129af113adc7ee61d5966f36ff36b1dc999b8",
+      "reason": "Upright transparent existing decoration"
+    },
+    "51": {
+      "definition": "fe249ea362cb0b5992807c8e0be6b8e3c2acb3443d99aec1f1ad13ed1a8524fe",
+      "rgba32": "bf3edabbb768fbbd8070f021948d6a96987669a1276ddb630d19ac4875b4936e",
+      "reason": "Upright transparent existing decoration"
+    },
+    "52": {
+      "definition": "5ab1e75c68d6163144a20618b85fe70a2eee2fa5a8549b7e1a8cb654df3d4a8c",
+      "rgba32": "8bb8899d57867811c4624398a922612dfcf5ee38efa392cdf2cddd129af0afe5",
+      "reason": "Upright transparent existing decoration"
+    },
+    "53": {
+      "definition": "0dcd4eb42c28e16a5b3d987448d53f27c9b2344e55e017a974f89aea48e5feca",
+      "rgba32": "78b816c3bd946f2b19b38f71e59973867113428343f22ceb0bda182716ae5339",
+      "reason": "Upright transparent existing decoration"
+    },
+    "54": {
+      "definition": "153362383d401bc2a3f4207a7304ad490b319cce570732f1c3beca3ad75600eb",
+      "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
+      "reason": "Upright transparent existing decoration"
+    },
+    "96": {
+      "definition": "908cbceb69466aefbe1ef58afa6d18ccb4a58606584a76760bd662620a29c2de",
+      "rgba32": "9ac9da13c9d1b714da47e09614e9072ad8d6f5ac17d158a08598b3873afc37ec",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "126": {
+      "definition": "555d1031ef0a02bb7116ffa870eb352583bb0f07b17fee525448f914169d51de",
+      "rgba32": "339bec4ac08340c081e7d1bf4c6129af113adc7ee61d5966f36ff36b1dc999b8",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "127": {
+      "definition": "7df8a2b0f05fc7c6fed857f345a7cdc64f97969956c1ccca60ba17ab1fcff917",
+      "rgba32": "bf3edabbb768fbbd8070f021948d6a96987669a1276ddb630d19ac4875b4936e",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "128": {
+      "definition": "81fdb31dd3827d655c9f096f703d43baecd58b6e04044b109dc60dbf17f9cbb4",
+      "rgba32": "8bb8899d57867811c4624398a922612dfcf5ee38efa392cdf2cddd129af0afe5",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "129": {
+      "definition": "ca15ce0ded82f1643b43418d0cf0d5d65aed94b37936d2bd6f2907924a7e838c",
+      "rgba32": "78b816c3bd946f2b19b38f71e59973867113428343f22ceb0bda182716ae5339",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "130": {
+      "definition": "0adaffb498a2b95434ea9ec2d202afd748ea0463f5671dad1217d9f10d51d486",
+      "rgba32": "f6551deaf4d1ef320d218fd031e6278127d42a74be8968caf2216ec3a9bd0a49",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "299": {
+      "definition": "53eaa44f2e503a17e5b12b79c0b01dba1d6f7c75d544a2c5f67da2f67baf331c",
+      "rgba32": "e5530795332d3262fa24db4fea62444caa5b42f0fb34969ac4e9cc1547c9baee",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "310": {
+      "definition": "8fb69bed19915095de66af3347e6ce38d58927d99519919ad85424663710d690",
+      "rgba32": "e134fcab92c31e10ecb3554e25b4d2322ad917f326f2f9cc1336e47d76e639a3",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "311": {
+      "definition": "45c3b8a325a9acde6de8cd864ede4195f78f51851156c8df5fac90abc9cc9928",
+      "rgba32": "d0b095bd0c9e5b25bbc8cdbefc09dc0577b7463d654c11fe1e07bd656567e4af",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "312": {
+      "definition": "32b3f47f2b6df4db906683bbe940acf725a0e333d8440f7eaef9ae5aabe6a09a",
+      "rgba32": "7cc6d17ad1a466b9ab7c0fd83a01244d252b8f40c3221c7001b395e9bab6de8c",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "313": {
+      "definition": "2488d31f424fc984ed072e39ec49b9bb58ebea5b0612dbeb9119f6d56bc258a7",
+      "rgba32": "8f4149c45bb595220959fbce31cc555228fe1cda5927a2a32f0e87d47c7d283b",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "314": {
+      "definition": "cbc6f657482aaa85ceae5900a58e06c94ff67b2ca3458bbfb4502285462a2adf",
+      "rgba32": "19a39bd9a3b8a96db44a946bafca475d323f42f418cc2f185bf9ae58194240d4",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "315": {
+      "definition": "791e220fa3bcf701d2eab48fcb113260901a504ce4042dd7a79fc7e92407d091",
+      "rgba32": "541b1c195b4776e8c2840ca6e11c4af06e69a5e7a5846324baea834db8c0521a",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "316": {
+      "definition": "cba24db8fa0e6bf19d2ba396daae2536bccd37edfb311fc935c6ecc819f413f4",
+      "rgba32": "ba98fc8d1b75e755b16f335165b04198c2054a583edfdb725560ee9d2abc6aa7",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "317": {
+      "definition": "a867397be821e50ea9381c184d23dfbbf61a65bbb0fee814cb2bc25a8ea8c58b",
+      "rgba32": "5ebdccc205219983993166dccd765033d366803a15c4d1bc0a5c92a28d07f9b1",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "318": {
+      "definition": "5ef345bd7db402eabcef1d7f4a42e2d617cb4251c244221267602b9c8f3ebfde",
+      "rgba32": "53f693c8c84800eb72a2309d1096f5f917be23528a7a249306543ce88bd66218",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "319": {
+      "definition": "897946daf0f50fb7bb4ef339909f2802ddc7fcce77b179f860e262a5ef425973",
+      "rgba32": "7aded334a8f2df138222b12103e8ed12e9453140c3349d7ec676b7877171879f",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "320": {
+      "definition": "e5df320ca24b8cfee789aad62c9ace56aac0e1fcff0b7549a335845a5a4ddc3f",
+      "rgba32": "e9e77f39d3cb02316a1192125cf62ddb9b7dec8fe634805b3ceb8137ff58bd63",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "321": {
+      "definition": "234346dff33e8fbfd56b68aef6762629c46fe55015d8dafcd1554fabcf39dc7d",
+      "rgba32": "34a1ef436bc4c2df82939f35aa36075ea6e11e7829bb6cb0f05de0f9806803cc",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "322": {
+      "definition": "d8bec81d8bc6000c614553857cd9db1e4bfa2be6eca06904aaa340d50b80db32",
+      "rgba32": "0c2ce57630d9edda9a22315b597f0882ab2edf3d194bcfda6ba8fa99e46e05dd",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "323": {
+      "definition": "68399513b1edf1fc29bbd4f66647163a9e3caca37d5af257058811b651245d15",
+      "rgba32": "320a2d91cb348a20471a0982be49b392eea5e0321776fef395e5fdd0a70bba8c",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "324": {
+      "definition": "adc62f55d9c31c6871a5b3b222f65f7566ee094de8272503af12ab510b7394bf",
+      "rgba32": "36dc3ed3166705121e41a94217ecdc0a68d0fdfeabdf5f9f7ccc173ae65c80f0",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "325": {
+      "definition": "17997e585b34756bf33f87cc913b325ceed341f45cde4ff8840a8e3db9acf74d",
+      "rgba32": "1f40199b187601f16e20b286adbdee88a843eea34f1ee90d065d23de205a07c6",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "326": {
+      "definition": "042effe9bcb66d31ba414997bc56271dd16baf800a764214df5f315f54489e52",
+      "rgba32": "4207cbbd797e74a716728e937840c6a5526b1cb7247e7c2aa38881af2f468642",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "327": {
+      "definition": "bfefc90911e1da7ab0beb3cf69e0048b3c2ad6e581406ef4a07591e8caf901d9",
+      "rgba32": "de7f4ac4a5aae53424007b2283394f879413b21277d50668c62d13cbf0cb7b8e",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "328": {
+      "definition": "3b1d9afb0a4219efc47453a020bd45dbc49e666f5fc482d906e3e1a63979db55",
+      "rgba32": "dc2713abad892c76311d625d76aa8325827871a4863d16baeabe49ae1601f78b",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    },
+    "329": {
+      "definition": "4c729e7a12711afbe2f579bc1a6fb29073071aa1345bf35b0bd722082cfdd0c3",
+      "rgba32": "2bc17d5235666aee0f2ac389e15996c88be767c05a3777d41cf6905c9b265ca0",
+      "reason": "Transparent existing non-solid sprite and visible consumed state"
+    }
+  },
+  "buffs": {
+    "1": {
+      "definition": "837b82ba05b8374b40611014d4c181f99edd7756558870d0fbb79dc08a62cf56",
+      "rgba32": "99fbdb612f04b2d4bbc10cc0274326dd63ee5f9ecba98dfeb92b924a083ba0dd",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "2": {
+      "definition": "bc8e8b465b2fe44c2509b96ea9116af4ba9c69b08c4c83369626157dbd0f01cc",
+      "rgba32": "19c0274bc3e4e10d22ad4a8d127d945da53299aa74c089d669d4e789bda53455",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "3": {
+      "definition": "10656ae0345c2a621bf29594e2a0dde88425387e5805c62c90b6ef3c68089d2a",
+      "rgba32": "4f72a5a036eb51859f464e125f1bcaeeab605ba8076f48f9bf7cf014b9a0221e",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "4": {
+      "definition": "896c4229169f4fdd2fb27619f271ecac531943969848ca1e03c169972c6a85fa",
+      "rgba32": "7a843f1cb3adda89f784041490fc53341e15777e84ebdb84596c718d16c78fbf",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "5": {
+      "definition": "c2b0b78afc7771d0884fc4b7d82624258818c1de740515c9ccdf009e232bd3db",
+      "rgba32": "90f22c075ed1b2dbdd2c75d296662490e6502d5f7e1fdc068245efb01355b513",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "6": {
+      "definition": "d689868be4c10734dcc0c00ae129ebce6baaa4ab92a3daac0ac248bdd4e861bf",
+      "rgba32": "605ec4d9c8fd48d4bb2ee8262f0a8215a2e90cc82971877fb0d422511c87d531",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "7": {
+      "definition": "7341d58180290fbe3780164f060baea1ad1c9385513f865f36728c08e152be4d",
+      "rgba32": "a03c11d09383ce3af2b695af3a50d7cb48ca6cefc8ca470208a9ad253ced1a54",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "8": {
+      "definition": "7255224eac45dc681f578886f2f90dceead004fcd3eac28a7c7ba0813f488997",
+      "rgba32": "df50ddb5bb468f3998021dd19388905796c79eadd85d42423dbf44212e136174",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "9": {
+      "definition": "e1d0334aac24e409edb9442a45336d20a531b7465a9d15ca9b60749049a2ae90",
+      "rgba32": "ccd62655474251cf44947b671c082162adc3cf99f0bdb598b2d42cde19ed948e",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "10": {
+      "definition": "4a2a520e5275e3d08bb0d3a7d54b062770e281893de786c3aaf03701e5fc8995",
+      "rgba32": "dcb72e66e3dcfd8e61624c9ed890be8a4be45a9304cf1df199c15cd977a39ec7",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "11": {
+      "definition": "56ff403d1ff2fc4449a4b983265626d7bf49aeda8ea24f3c519365dc47d76e37",
+      "rgba32": "2e094fa74f34b361d6c37ded04cf0f46bb7054112c19de8890720ea24b63b99f",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "12": {
+      "definition": "868a090f794380271938d6ab337b253e455ee912236414ad18588b2a80e31fbc",
+      "rgba32": "66222b36fe5103e21d1f6ddba1f9b18bf8ec198770981a48d89c02da17e9573a",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "13": {
+      "definition": "6005d1ffa8b63056217d90837b9d346aabb84569e38411865b33ffa1278397cb",
+      "rgba32": "7bd5fbc83f4c25c95e58d310610bf9d91b61e82c1ff391c1bc1a456e55139adf",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "14": {
+      "definition": "724afb36e0fc83d6c8c098bffeb28432dcc45994099a459a4f67e4a2d28b1987",
+      "rgba32": "2275afb711412106ead861bfe3ea850670eba65b0b3fa10854564692e313f047",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "15": {
+      "definition": "d4830fb829b9820da462dc6d4150644786d29870975e102b3ff541d70bedf24a",
+      "rgba32": "13d4ae746ee72bac95b867bc4b15c0521a5d67e74cc37326769da3ffb3d3f052",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "16": {
+      "definition": "f5e1179e7b8a77b3660f0e553685d3567e91685633e0849562e266443a30685b",
+      "rgba32": "cea628049fd0e6c40288a1511b4fbd9af767e415759012b31c3ce49ccbb72a85",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "17": {
+      "definition": "3ba1d0f9c1c61e001a3cf11065a1a2254820f01084d9abc2bee37e73dfb07c96",
+      "rgba32": "785efe0e8b7bafa75c909b3da0dbb855ba252e5328b66ff71683a26c44103d64",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "18": {
+      "definition": "fb523e22e8237356b50b337c5344f1b2ae1fb99b763d7c0eea15ac1041dda741",
+      "rgba32": "004ed247cb8930177f9eae5e3d8b7671f8dc3fe2040f2af28f09319ff7e8a32b",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "19": {
+      "definition": "c90f45b160a955157a27c0b945cb9dbbff65346e04f81f57fd8ee4577911beec",
+      "rgba32": "b32ec6657953724ac11d55a46201f86cbe08eeae73de584f161607fcabf9686e",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "20": {
+      "definition": "ae34a1e2497664917cd51351c6100b67a2c0301ab392441d2c3e183e5948eb3d",
+      "rgba32": "ae18c917ca25e9d1c788d485732325917d824be041f73c1098807d24042f3a9d",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "21": {
+      "definition": "c5f7c86755f546506907ffb497c45345c0ce8e4d62f44a0cbc47b43ed0da4ff9",
+      "rgba32": "8273458cd9b01591eb01b84d7b76d092c576bd58d39e8f2b29446e01139f4d2b",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "22": {
+      "definition": "929de6d594febb614ee89e6a4e227a9b9cafb70236173f5566ca0a64c4e2b38a",
+      "rgba32": "376ed8ba0fbb987442bd997f553113eb12257f41cf1d8cfe38e3969972eb37ec",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "23": {
+      "definition": "5794b289e292764e6a1ee16735a5e91da8ffc94d7064e785311f012f7bed0527",
+      "rgba32": "5bf428ade8d28b3dedca4effcbea0a1d9fdd07bb88421831c5841129ec171463",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "24": {
+      "definition": "1c9ad4be545065da758fb8b7317f4b721dbca4539adecbc30a2791cff7b54ceb",
+      "rgba32": "eae5de9966ba1e3857bbccf72c35f498a5353091bea0e92f3799df82508f558d",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "25": {
+      "definition": "182296fd4489a92d487c00b317d18aefba5aadb4dff81a05758478f026b51b45",
+      "rgba32": "16aa5bca79b692723ea0163d7e643ae87ddce45586d8dd07d140de144ade34e4",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "26": {
+      "definition": "20df60843f0f3af60f4c9913846db4d5a161b53c0a8774325fdab86483edcf06",
+      "rgba32": "57517a0ee2efe02b3686a047341e80a181fd899032c979c70ef182abbc03a0a4",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "27": {
+      "definition": "2831a2088b032fa2c7f9ac81174e801a62969f851d46177017f4ae87eac79afb",
+      "rgba32": "dd6ad23b90d4284b6b31c872d7f0d62d69696a757562bcb308c7efa095a755a4",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "28": {
+      "definition": "29aae1429bb8591152d2339646d40bb15134a41ab7ba6c63a84a3a94fb939a0a",
+      "rgba32": "e50e0636853ea577549f8c9ab17bb9396cd2631cd6ca2bb2eb3bda825ee522e7",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "29": {
+      "definition": "e6b2d61788ecbcccd949027e2862827d33e9f41e0b2472fc647315108e0d4ff8",
+      "rgba32": "2b12a44316b718c2120fa815f750c802ad84dffbe106d722038215b18a84b019",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "30": {
+      "definition": "06f7ad0f92cc2e996b9b8082d557748cf797494d39b073204d6895a8ac6fba93",
+      "rgba32": "2339f0bb06c55f7f58eb2e3e5bf5587021b4047f6ef7f8e5f24ee324dbc6362d",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "31": {
+      "definition": "88952973ee4625084edbba10edb86e2e09bf305ccfe3d7cf17b7e1d054839c3c",
+      "rgba32": "12b2f0c5f845e0be1d66e4ce4337d8a1a6c1518b6e0337f6b2b9a0067bd5132c",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "32": {
+      "definition": "88123ad65c15797aa0543fd373b00a87632c78fa183bc4bcd7d4a671b104e666",
+      "rgba32": "4e262b886560b65086a749b7d27f8f5eb4abdc8889251e0b7144ae28f20845fd",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "33": {
+      "definition": "9434132c0519b61104cd4cee12cec27abc99b1a756317cfec0877733b381faf7",
+      "rgba32": "20238b2f2370138218e78ad9ea9be142bc733aa65aa238233114bc17097c33c5",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "34": {
+      "definition": "16cd6ee5724f56012ad774a64b3950c4cac6badd133c0b504b126fe0451c6820",
+      "rgba32": "131700d291e4e431bace9a837fbaf2524ad263d482fdc22400df198fe85bd085",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "35": {
+      "definition": "4b31990047c6e70be73491d68c76736055fb0d825f08e17c423b72fe98179747",
+      "rgba32": "864f7b98e5edde4fd4357287200f2fa9312929744dae8b49e4bd7904076aaa64",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "36": {
+      "definition": "8b100c4d4827500d49ce409fb1965e29a83583d4694b46af212395310fd9ad6e",
+      "rgba32": "bcdf4f7c3feb755f1889eb654519e8baa70e8368655cff86b1097bc591dad04a",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "37": {
+      "definition": "861aed90e82a741f05c01b43596218412ba443a5098185ca93bb6b2cf3774def",
+      "rgba32": "37d0fbd7299f2f6a38f82e4fa342e1a64f9ba1483fb200deec8fe32f9269e6c3",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "38": {
+      "definition": "dde831ce2d1aa13cd794f46e72dd3114c707f62420ff34b192ecc80680c2ae44",
+      "rgba32": "190bf122c5faacbac578b9c1fd687ecc550d5e097793bb9c106af3825c0441b2",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "39": {
+      "definition": "ccfd9777f358753822eb61733377dbe0ba8169e3dc26eac41c952bbe2201376b",
+      "rgba32": "f1fa6ee8f95aaf668af687cb113bac7bc5b5febed7b61b6ec8c52c1930ae603d",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "40": {
+      "definition": "bb50041956014166e1608fc39c82e3daccdea2f80848b7237ae32b1ad5fe135d",
+      "rgba32": "d8ca640bd7930a22e8c92d300f27fdc516ce78231c6a61393b2bab7db8ad87a1",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "41": {
+      "definition": "969e38b5108b50672373972a8d4b603854fbc2cfc4d3a90c9fff84fe83d5df64",
+      "rgba32": "a80eb0c3f27b811e762771a5d1e0cf889f41b500a38849783f08239297b142be",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "42": {
+      "definition": "25747beaba528146d90f650d8394b5cf4d36887dd02f538b96f51d1a76b44d52",
+      "rgba32": "56c3ecfbd80a5d05f694315ea048e7b344b6c69363304cb3a32c6e206b8a2a43",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "43": {
+      "definition": "6bab5256c59a49b9bb9d16ffa1009e02147e305348f66b2f9eca5603dd1d8d34",
+      "rgba32": "c81521d77acbd49fd5885f35493358b0f2b99d313b5532e9ab90e86e631e8574",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "44": {
+      "definition": "34213b0e4d5c16b67a7348250121c19e68e7334a0f3cbc53dd69d1adc1ccb301",
+      "rgba32": "b32ec6657953724ac11d55a46201f86cbe08eeae73de584f161607fcabf9686e",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "45": {
+      "definition": "2da646a3750889fb50ea1a2a08ca412619f1cc624924202932bd9579719e4a74",
+      "rgba32": "6f08bf0568ef43f5906897908f6834a21480fe966fccb36ef8d4f9e3a15cbd83",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "46": {
+      "definition": "c6b2286884e9bd3e481345beaa3134ef25bae4d581d8f18c780aa915ad598f7e",
+      "rgba32": "efd481031ab01d2a9f8cb7cfe8cb8db576b10fe34489d5a114f223a44a6ef01c",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "47": {
+      "definition": "feb66547cefce200e2d257b115264259c8ee514a58607881d8cd8c9bbecbaae4",
+      "rgba32": "5bb9aa8047b2bea7f5fc299177f97c7935119d29dec1375533919fd38c9c6ef6",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "48": {
+      "definition": "c1bfb11b0e1eda53840ccb082f1ebd19604226c26fa3924901c5aed92a1b298e",
+      "rgba32": "1d0fcebccb2d06da9f203f5d763689434b99311028f6cd2ae80a483881925385",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "49": {
+      "definition": "36af6ae5545d7e0ef34451b6304fec5f55a1c81abbfe96cbde1e5b4095a1d7e4",
+      "rgba32": "2275afb711412106ead861bfe3ea850670eba65b0b3fa10854564692e313f047",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "50": {
+      "definition": "c92e6c5d4418b0a334b71a0b3e47eb26c5b9ed5d9938af96bfd35e80d6ac8a8b",
+      "rgba32": "68a586f4cad137ddd9258dd5a4f70dba32a801036e99db82ee21a4da822e17b3",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "51": {
+      "definition": "959d7c7279309c693e99b8301b905b6016dbd32acc0fc5c38a92a94b970bb76a",
+      "rgba32": "87ef951477b4177b5fcf95d96b8c3cd3c34ec304989a62d9ef43a3818255cfbd",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "52": {
+      "definition": "d7df2f7cc567bf847550aeeffb39b619ddd3db0672f4ef1026a4738f21327679",
+      "rgba32": "cff159a97258d279cc37a419669f2a96098a73f3608a82ee1d30e0c9c859975c",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "53": {
+      "definition": "47394679512ff18825ac806f91b89095f84c9e684fa446576b01e3f4ef036124",
+      "rgba32": "01c445df2b42cdf3b269672ba6861f1bb68e8717d445f9613f5416f85d6bef58",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "54": {
+      "definition": "13bab0af58a77456a23adead29c304b75876d17b55cebb6a48eadb86ae3c24b8",
+      "rgba32": "e692377d2b34be56ff8227c7919fa5496598f90ba05f2a7941c4fc69f13d0fd3",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "55": {
+      "definition": "73d98c604da4cdc6d151cb3d599a07dea0d5b5a389428a30e39f2d1f2c8c208c",
+      "rgba32": "80091faa93244bb6cc5a18e54c5985ac72c1e3f6aab4d03efc51578346bfdf76",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "56": {
+      "definition": "3855c2c18a8fd93708b2b1749c6e3d70535233531b92080cbe1726fd0f40aab7",
+      "rgba32": "d6d1588660395dff5fcbd785e62d3c7e9c7fd432c0424a9f9aa1a8d7c051065e",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "57": {
+      "definition": "6dc6601e2f0d1f383e26cbba499b62f2ad3d1f123fdb5142bc9049bfc01e7806",
+      "rgba32": "8adc8f34095dd122d0de868c94d64aaf0ff0cd3eadd8a02d33492596fcf44eee",
+      "reason": "Consistent category frame and refined status motif"
+    },
+    "58": {
+      "definition": "35926ed19430e91503af590cf6fda6024ef3f75fd10a57b0398fa13efca8ec6d",
+      "rgba32": "96d5ad15fdb7ab60686d8046c6b649725b33cb944f3815aad514d48120586bae",
+      "reason": "Consistent category frame and refined status motif"
+    }
+  }
+}

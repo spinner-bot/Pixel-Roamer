@@ -4,13 +4,14 @@
 """
 from __future__ import annotations
 from world import World
-import random, math
+import math
+from random import Random
 
 MAP_ID = 20
 MAP_NAME = "宏大旅程"
 MAP_NAME_EN = "Grand Journey"
 W, H = 6000, 150
-random.seed(2026)
+_rng = Random(2026)
 
 _placed = set()
 def p(w, x, y, bid):
@@ -19,7 +20,7 @@ def p(w, x, y, bid):
         _placed.add(bid)
 
 def pick(pool):
-    return pool[random.randint(0, len(pool)-1)]
+    return pool[_rng.randint(0, len(pool)-1)]
 
 # ============================================================
 # 快捷绘制原语（像画家的笔刷）
@@ -86,6 +87,8 @@ def _noise_static(x, y):
 # 绘制画布
 # ============================================================
 def generate():
+    _rng.seed(2026)
+    _placed.clear()
     w = World(map_id=MAP_ID, name=MAP_NAME, w=W, h=H,
               loop_x=False, loop_y=False, gravity=-0.7,
               spawn_points=(3000, 40), mode="explore",
@@ -327,8 +330,8 @@ def generate():
                 w.set_tile(x, y, 0)
     # 晶簇从墙壁生长
     for _ in range(200):
-        cx = Z9 + random.randint(20, 380)
-        cy = random.randint(35, 115)
+        cx = Z9 + _rng.randint(20, 380)
+        cy = _rng.randint(35, 115)
         bt = w.get_block_type(cx, cy)
         bt2 = w.get_block_type(cx+1, cy) if cx+1 < W else None
         if (bt and bt.is_solid) != (bt2 and not bt2.is_solid if bt2 else False):
@@ -427,8 +430,8 @@ def generate():
     needed = sorted(all_ids - {0,1,11,12,13,14,15} - _placed)
     for bid in needed:
         for _ in range(200):
-            rx = random.randint(100, W-100)
-            ry = random.randint(25, 125)
+            rx = _rng.randint(100, W-100)
+            ry = _rng.randint(25, 125)
             bt = w.get_block_type(rx, ry)
             if bt and bt.id == 0:
                 p(w, rx, ry, bid)
@@ -437,10 +440,10 @@ def generate():
     # 散布收集品到空位
     treasures = [310,311,312,313,314,315,316,317,318,319]
     for _ in range(500):
-        tx = random.randint(50, W-50)
-        ty = random.randint(22, 140)
+        tx = _rng.randint(50, W-50)
+        ty = _rng.randint(22, 140)
         bt = w.get_block_type(tx, ty)
-        if bt and bt.id == 0 and random.random() < 0.3:
+        if bt and bt.id == 0 and _rng.random() < 0.3:
             p(w, tx, ty, pick(treasures))
 
     # 检查点
@@ -451,12 +454,46 @@ def generate():
 
     # 散布梯子和藤蔓用于垂直移动
     for _ in range(400):
-        lx = random.randint(50, W-50)
-        ly = random.randint(25, 135)
+        lx = _rng.randint(50, W-50)
+        ly = _rng.randint(25, 135)
         bt = w.get_block_type(lx, ly)
         tb = w.get_block_type(lx, ly+1)
         if (bt and bt.id == 0) and (tb and tb.is_solid if tb else False):
             p(w, lx, ly, pick([9,10,31]))
+
+    # 祭坛最高跳跃仍够不到 y=51 的老根竖井；补齐入口的竖向连接。
+    # 100 体力不能连续爬完整段，侧台允许站立恢复，避免调高角色参数。
+    # 与十字大厅原有 x=3006、y=74..82 的竖井接通。
+    for climb_y in range(33, 83):
+        p(w, 3006, climb_y, 9)
+    for rest_y in (44, 55, 70):
+        for rest_x in range(3007, 3012):
+            p(w, rest_x, rest_y, 19)
+
+    # 裂隙清空和熔岩笔刷会覆盖北侧竖井 y=98..100，恢复并接到落脚石。
+    # 梯顶高出石面一格，允许松梯横移站稳，不强制再付一次跳跃体力。
+    for climb_y in range(98, 105):
+        p(w, 2996, climb_y, 9)
+
+    # Optional west gallery: real Buff49 polarity beside an ore, with a safe
+    # floor/roof and a separate short ladder. Keep the main north shaft intact.
+    from pathlib import Path
+    from maps.placement import load_feature_plan
+    gallery, _ = load_feature_plan(w, Path(__file__).with_name('polarity_gallery.json'))
+    for gx, gy, block_id in gallery:
+        p(w, gx, gy, block_id)
+
+    # Finalize after random scenery: arrival space must not be filled again.
+    from maps.portal_pad import prepare_portal_pad
+    for first, second in portal_pairs:
+        first_landing = prepare_portal_pad(w, *first)
+        second_landing = prepare_portal_pad(w, *second)
+        w.grid[first].meta = dict(zip(("tp_x", "tp_y"), second_landing))
+        w.grid[second].meta = dict(zip(("tp_x", "tp_y"), first_landing))
+    # Unconfigured showcase runes return to the entrance, never world origin.
+    for tile in w.grid.values():
+        if w.block_types[tile.type_id].special == "teleport" and tile.meta is None:
+            tile.meta = dict(zip(("tp_x", "tp_y"), w.spawn_points))
 
     w.end_bulk_load()
     return w

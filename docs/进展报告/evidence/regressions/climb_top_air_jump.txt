@@ -1,0 +1,13 @@
+test_blocked_climb_does_not_recharge_but_valid_iron_will_grip_does (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_ceiling_collision_does_not_recharge_air_charge (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_ground_cloud_and_climb_cycles_restore_ability_at_three_frame_rates (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_landing_recharges_before_catapult_immediately_launches_again (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_regranting_buff_without_support_does_not_refresh_air_charge (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+test_touching_ladder_without_grabbing_does_not_grant_a_third_jump (tests.test_air_jump_cycles.AirJumpCycleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.131s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

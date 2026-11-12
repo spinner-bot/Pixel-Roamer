@@ -1,0 +1,605 @@
+{
+  "code_revision": "89a51ad43929eea25eb91ea37ef7cf9543c28257",
+  "scope": "API numeric effect and isolated real WorldSession contact with existing blocks; no playable combat encounter claim",
+  "api": [
+    {
+      "base": 0.1,
+      "params": [],
+      "initial": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 100
+      },
+      "active": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 97.5
+      },
+      "expired": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 95.0
+      },
+      "buff_after": false
+    },
+    {
+      "base": 0.1,
+      "params": [
+        0
+      ],
+      "initial": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 100
+      },
+      "active": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 100
+      },
+      "expired": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 100
+      },
+      "buff_after": false
+    },
+    {
+      "base": 0.1,
+      "params": [
+        3
+      ],
+      "initial": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 100
+      },
+      "active": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 0.2,
+        "magic": 0.1,
+        "damage": 0.30000000000000004,
+        "hp": 98.5
+      },
+      "expired": {
+        "physical": 0.1,
+        "magic": 0.05,
+        "damage": 0.15000000000000002,
+        "hp": 97.0
+      },
+      "buff_after": false
+    },
+    {
+      "base": 1.25,
+      "params": [],
+      "initial": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 100
+      },
+      "active": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 97.5
+      },
+      "expired": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 95.0
+      },
+      "buff_after": false
+    },
+    {
+      "base": 1.25,
+      "params": [
+        0
+      ],
+      "initial": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 100
+      },
+      "active": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 100
+      },
+      "expired": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 100
+      },
+      "buff_after": false
+    },
+    {
+      "base": 1.25,
+      "params": [
+        3
+      ],
+      "initial": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 100
+      },
+      "active": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 2.5,
+        "magic": 1.25,
+        "damage": 3.75,
+        "hp": 98.5
+      },
+      "expired": {
+        "physical": 1.25,
+        "magic": 0.625,
+        "damage": 1.875,
+        "hp": 97.0
+      },
+      "buff_after": false
+    },
+    {
+      "base": 10,
+      "params": [],
+      "initial": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 100
+      },
+      "active": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 97.5
+      },
+      "expired": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 95.0
+      },
+      "buff_after": false
+    },
+    {
+      "base": 10,
+      "params": [
+        0
+      ],
+      "initial": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 100
+      },
+      "active": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 100
+      },
+      "expired": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 100
+      },
+      "buff_after": false
+    },
+    {
+      "base": 10,
+      "params": [
+        3
+      ],
+      "initial": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 100
+      },
+      "active": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 100
+      },
+      "halfway": {
+        "physical": 20,
+        "magic": 10.0,
+        "damage": 30.0,
+        "hp": 98.5
+      },
+      "expired": {
+        "physical": 10,
+        "magic": 5.0,
+        "damage": 15.0,
+        "hp": 97.0
+      },
+      "buff_after": false
+    }
+  ],
+  "sources": [
+    {
+      "tile_id": 390,
+      "side": -1,
+      "fps": 30,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.666666666666645,
+      "min_hp": 43.120891145354065,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.120891145354065
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 390,
+      "side": -1,
+      "fps": 60,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.583333333333316,
+      "min_hp": 43.7183853073398,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.7183853073398
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 390,
+      "side": -1,
+      "fps": 144,
+      "applied": {
+        "time": 0.508333333333334,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.56666666666665,
+      "min_hp": 43.89811955962052,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.89811955962052
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 390,
+      "side": 1,
+      "fps": 30,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.666666666666645,
+      "min_hp": 43.120891145354065,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.120891145354065
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 390,
+      "side": 1,
+      "fps": 60,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.583333333333316,
+      "min_hp": 43.7183853073398,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.7183853073398
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 390,
+      "side": 1,
+      "fps": 144,
+      "applied": {
+        "time": 0.508333333333334,
+        "source": 390,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.56666666666665,
+      "min_hp": 43.89811955962052,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 43.89811955962052
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": -1,
+      "fps": 30,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.666666666666645,
+      "min_hp": 94.16666666666819,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.16666666666819
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": -1,
+      "fps": 60,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.583333333333316,
+      "min_hp": 94.5833333333349,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.5833333333349
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": -1,
+      "fps": 144,
+      "applied": {
+        "time": 0.508333333333334,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.56666666666665,
+      "min_hp": 94.70833333333492,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.70833333333492
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": 1,
+      "fps": 30,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.666666666666645,
+      "min_hp": 94.16666666666819,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.16666666666819
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": 1,
+      "fps": 60,
+      "applied": {
+        "time": 0.5000000000000007,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.583333333333316,
+      "min_hp": 94.5833333333349,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.5833333333349
+      },
+      "buff_after": false
+    },
+    {
+      "tile_id": 421,
+      "side": 1,
+      "fps": 144,
+      "applied": {
+        "time": 0.508333333333334,
+        "source": 421,
+        "params": [],
+        "duration": 10.0,
+        "physical": 20.0,
+        "magic": 0.0,
+        "damage": 20.0,
+        "hp": 150.0
+      },
+      "completed": true,
+      "elapsed": 11.56666666666665,
+      "min_hp": 94.70833333333492,
+      "respawns": 0,
+      "errors": [],
+      "final": {
+        "physical": 10.0,
+        "magic": 0.0,
+        "damage": 10.0,
+        "hp": 94.70833333333492
+      },
+      "buff_after": false
+    }
+  ]
+}

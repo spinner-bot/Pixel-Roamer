@@ -1,0 +1,128 @@
+{
+  "scope": "isolated temple entrance jump timing samples; no global reachability proof",
+  "code_revision": "197bab8e585f08fda800f5ec504289ad1faf3803",
+  "legacy_map": false,
+  "runs": [
+    {
+      "takeoff": 354,
+      "max_x": 360.89542661028463,
+      "max_y": 92.84924266038028,
+      "jump_requests": 5,
+      "final": [
+        359.8679693196162,
+        85.08809720027413
+      ],
+      "cleared": true
+    },
+    {
+      "takeoff": 354.2,
+      "max_x": 360.89542661028463,
+      "max_y": 95.73513904963065,
+      "jump_requests": 5,
+      "final": [
+        359.8679693196162,
+        81.92523040789567
+      ],
+      "cleared": true
+    },
+    {
+      "takeoff": 354.4,
+      "max_x": 360.89542661028463,
+      "max_y": 96.08679897612991,
+      "jump_requests": 5,
+      "final": [
+        359.8679727771875,
+        81.16563739353607
+      ],
+      "cleared": true
+    },
+    {
+      "takeoff": 354.6,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 354.8,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 355,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 355.2,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 355.4,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 355.6,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 356,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    },
+    {
+      "takeoff": 357,
+      "max_x": 357.59999999999997,
+      "max_y": 86.05104314726036,
+      "jump_requests": 5,
+      "final": [
+        357.59999999999997,
+        78.36991149905464
+      ],
+      "cleared": false
+    }
+  ]
+}

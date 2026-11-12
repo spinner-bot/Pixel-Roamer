@@ -1,0 +1,42 @@
+test_228_legal_contacts_and_pending_alignments_use_safe_physics_steps (tests.test_climb_top_capture.ClimbTopCaptureTests) ... ok
+test_rejected_capture_preserves_falling_velocity_and_air_jump_state (tests.test_climb_top_capture.ClimbTopCaptureTests) ... ok
+test_complete_steps_end_at_the_exact_selected_center (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_mirrors_bodies_input_modes_and_loop_translations (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_new_wall_cancels_alignment_before_entering_it (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_out_of_band_relocation_cannot_be_pulled_back_to_old_ladder (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_pause_focus_and_terminal_guards_freeze_pending_alignment (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_releasing_and_jumping_cancel_incomplete_alignment (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_respawn_portal_and_spawn_callback_drop_old_destination (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_stun_freezes_alignment_and_iron_will_resumes_it (tests.test_climb_alignment.ClimbAlignmentTests) ... ok
+test_capture_uses_touched_vertical_segment_instead_of_nearby_ladder (tests.test_climb_placement.ClimbPlacementTests) ... ok
+test_default_ladder_loop_and_regular_ladder_still_capture (tests.test_climb_placement.ClimbPlacementTests) ... ok
+test_ladder_capture_never_embeds_head_in_neighbor_wall (tests.test_climb_placement.ClimbPlacementTests) ... ok
+test_down_release_dominates_held_up_and_new_up_keydown (tests.test_held_climb.HeldClimbTests) ... ok
+test_ground_jump_with_up_held_remains_airborne_during_ascent (tests.test_held_climb.HeldClimbTests) ... ok
+test_held_up_can_catch_ladder_while_falling (tests.test_held_climb.HeldClimbTests) ... ok
+test_insufficient_stamina_does_not_capture_and_flashes_existing_feedback (tests.test_held_climb.HeldClimbTests) ... ok
+test_jump_from_climb_is_not_immediately_reattached (tests.test_held_climb.HeldClimbTests) ... ok
+test_preheld_w_and_arrow_inputs_grab_from_both_sides_at_three_frame_rates (tests.test_held_climb.HeldClimbTests) ... ok
+test_stun_blocks_held_capture_and_iron_will_still_overrides_stun (tests.test_held_climb.HeldClimbTests) ... ok
+test_up_without_contact_never_snaps_toward_ladder (tests.test_held_climb.HeldClimbTests) ... ok
+test_bank_with_wall_above_surface_is_not_a_clear_shore (tests.test_environment_columns.EnvironmentColumnTests) ... ok
+test_deep_contact_tracks_the_end_of_its_connected_column (tests.test_environment_columns.EnvironmentColumnTests) ... ok
+test_endless_vertical_default_column_has_no_false_surface (tests.test_environment_columns.EnvironmentColumnTests) ... ok
+test_double_jump (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_double_jump (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_double_jump
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'tests.test_double_jump'
+
+
+----------------------------------------------------------------------
+Ran 25 tests in 28.457s
+
+FAILED (errors=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

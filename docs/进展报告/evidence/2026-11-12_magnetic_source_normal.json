@@ -1,0 +1,300 @@
+{
+  "code_revision": "a8ed63328d67d48621977b35dde3f70f139e5725",
+  "scope": "normal authored map1 spawn and real movement; no direct Buff application or position/state transfer",
+  "sources": {
+    "scripts/audit_magnetic_source_route.py": "64723fdfb6ca2fb30d0edeb1923b70bedff9bd94db04e0cc8bb9698653b89fce",
+    "maps/test_world/map.py": "5bcc19199dfea2496d2662f7d6b54f290ca8a4b8eb6cfd0249f95788141651b3",
+    "maps/test_world/buff_sources.json": "586e04d08f73b4e5576c1cd6c2a8ff9420a3b1e52a5dca7450fe773100b551b2",
+    "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0"
+  },
+  "runs": [
+    {
+      "fps": 30,
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "buff14": false,
+        "score": 0
+      },
+      "completed": true,
+      "phase": "wait_for_expiry",
+      "elapsed": 9.46666666666677,
+      "applied": {
+        "time": 0.15833333333333333,
+        "position": [
+          4.405771320431023,
+          25.9
+        ],
+        "source": 439,
+        "params": [
+          4.0
+        ],
+        "remaining": 8.0,
+        "contacts": [
+          0,
+          2,
+          439
+        ]
+      },
+      "reward": {
+        "time": 0.16666666666666666,
+        "position": [
+          4.396107998472652,
+          25.9
+        ],
+        "score": 60,
+        "flights": 2
+      },
+      "expected_score": 60,
+      "final_score": 60,
+      "position": [
+        5.051018228850126,
+        25.9
+      ],
+      "buff14_at_finish": false,
+      "flights_at_finish": 0,
+      "tiles": {
+        "3,25": 439,
+        "1,26": 320,
+        "0,25": 324
+      },
+      "fresh_tiles": {
+        "3,25": 439,
+        "1,26": 310,
+        "0,25": 314
+      },
+      "source_definition": {
+        "buff_ids": [
+          14
+        ],
+        "params": [
+          [
+            4.0
+          ]
+        ],
+        "durations": [
+          8.0
+        ],
+        "special": null
+      },
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "errors": [],
+      "transitions": [
+        {
+          "phase": "leave",
+          "time": 0.866666666666666,
+          "position": [
+            3.5877128593945744,
+            25.9
+          ]
+        },
+        {
+          "phase": "wait_for_expiry",
+          "time": 1.9666666666666621,
+          "position": [
+            4.903225788769052,
+            25.9
+          ]
+        }
+      ],
+      "screenshots": {}
+    },
+    {
+      "fps": 60,
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "buff14": false,
+        "score": 0
+      },
+      "completed": true,
+      "phase": "wait_for_expiry",
+      "elapsed": 9.416666666666773,
+      "applied": {
+        "time": 0.15833333333333333,
+        "position": [
+          4.405771320431023,
+          25.9
+        ],
+        "source": 439,
+        "params": [
+          4.0
+        ],
+        "remaining": 8.0,
+        "contacts": [
+          0,
+          2,
+          439
+        ]
+      },
+      "reward": {
+        "time": 0.16666666666666666,
+        "position": [
+          4.396107998472652,
+          25.9
+        ],
+        "score": 60,
+        "flights": 2
+      },
+      "expected_score": 60,
+      "final_score": 60,
+      "position": [
+        5.051067509734535,
+        25.9
+      ],
+      "buff14_at_finish": false,
+      "flights_at_finish": 0,
+      "tiles": {
+        "3,25": 439,
+        "1,26": 320,
+        "0,25": 324
+      },
+      "fresh_tiles": {
+        "3,25": 439,
+        "1,26": 310,
+        "0,25": 314
+      },
+      "source_definition": {
+        "buff_ids": [
+          14
+        ],
+        "params": [
+          [
+            4.0
+          ]
+        ],
+        "durations": [
+          8.0
+        ],
+        "special": null
+      },
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "errors": [],
+      "transitions": [
+        {
+          "phase": "leave",
+          "time": 0.8333333333333328,
+          "position": [
+            3.5973888777374206,
+            25.9
+          ]
+        },
+        {
+          "phase": "wait_for_expiry",
+          "time": 1.8999999999999957,
+          "position": [
+            4.90442045127855,
+            25.9
+          ]
+        }
+      ],
+      "screenshots": {
+        "attracting": "docs/进展报告/evidence/ui/A79_magnetic_source_attracting.png",
+        "expired": "docs/进展报告/evidence/ui/A79_magnetic_source_expired.png"
+      }
+    },
+    {
+      "fps": 144,
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "buff14": false,
+        "score": 0
+      },
+      "completed": true,
+      "phase": "wait_for_expiry",
+      "elapsed": 9.40833333333344,
+      "applied": {
+        "time": 0.15833333333333333,
+        "position": [
+          4.405771320431023,
+          25.9
+        ],
+        "source": 439,
+        "params": [
+          4.0
+        ],
+        "remaining": 8.0,
+        "contacts": [
+          0,
+          2,
+          439
+        ]
+      },
+      "reward": {
+        "time": 0.16666666666666666,
+        "position": [
+          4.396107998472652,
+          25.9
+        ],
+        "score": 60,
+        "flights": 2
+      },
+      "expected_score": 60,
+      "final_score": 60,
+      "position": [
+        5.051112215061905,
+        25.9
+      ],
+      "buff14_at_finish": false,
+      "flights_at_finish": 0,
+      "tiles": {
+        "3,25": 439,
+        "1,26": 320,
+        "0,25": 324
+      },
+      "fresh_tiles": {
+        "3,25": 439,
+        "1,26": 310,
+        "0,25": 314
+      },
+      "source_definition": {
+        "buff_ids": [
+          14
+        ],
+        "params": [
+          [
+            4.0
+          ]
+        ],
+        "durations": [
+          8.0
+        ],
+        "special": null
+      },
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "respawns": 0,
+      "errors": [],
+      "transitions": [
+        {
+          "phase": "leave",
+          "time": 0.8249999999999995,
+          "position": [
+            3.598855180727653,
+            25.9
+          ]
+        },
+        {
+          "phase": "wait_for_expiry",
+          "time": 1.8916666666666624,
+          "position": [
+            4.902854381638325,
+            25.9
+          ]
+        }
+      ],
+      "screenshots": {}
+    }
+  ]
+}

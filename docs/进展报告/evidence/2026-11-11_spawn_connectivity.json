@@ -1,0 +1,361 @@
+{
+  "code_revision": "6df204c406d8c3fd33ce6e4ad29b3c9bc93d0e8b",
+  "scope": "0.1-cell local free-body screening within five cells, stops at first boundary; no gravity/jump/stamina proof; nonlocal exit contact is only potential",
+  "legacy_maze_revision": "b1e1fb9",
+  "known_closed_maze": {
+    "map_id": 4,
+    "authored_spawn": [
+      22.5,
+      17.0
+    ],
+    "actual_spawn": [
+      22.5,
+      17.0
+    ],
+    "body": [
+      0.8,
+      1.8
+    ],
+    "samples_seen": 589,
+    "local_boundary_reached": false,
+    "search_stopped_on_boundary": false,
+    "potential_nonlocal_exits": [],
+    "small_finite_world": false,
+    "needs_control_audit": true,
+    "unexplained_closed_spawn": true
+  },
+  "maps": [
+    {
+      "map_id": 1,
+      "authored_spawn": [
+        4.5,
+        25.9
+      ],
+      "actual_spawn": [
+        4.5,
+        25.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2780,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 2,
+      "authored_spawn": [
+        10,
+        55
+      ],
+      "actual_spawn": [
+        10.0,
+        55.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 4118,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 3,
+      "authored_spawn": [
+        15.5,
+        54.9
+      ],
+      "actual_spawn": [
+        15.5,
+        54.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2672,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 4,
+      "authored_spawn": [
+        22.5,
+        17.0
+      ],
+      "actual_spawn": [
+        22.5,
+        17.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 713,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 5,
+      "authored_spawn": [
+        10,
+        6
+      ],
+      "actual_spawn": [
+        10.0,
+        6.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 3287,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 6,
+      "authored_spawn": [
+        40.5,
+        22.9
+      ],
+      "actual_spawn": [
+        40.5,
+        22.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 3676,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 7,
+      "authored_spawn": [
+        4.5,
+        18.9
+      ],
+      "actual_spawn": [
+        4.5,
+        18.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 1026,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 8,
+      "authored_spawn": [
+        4.5,
+        5.9
+      ],
+      "actual_spawn": [
+        4.5,
+        5.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 1180,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 9,
+      "authored_spawn": [
+        27,
+        22
+      ],
+      "actual_spawn": [
+        27.0,
+        22.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2381,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 19,
+      "authored_spawn": [
+        0,
+        0
+      ],
+      "actual_spawn": [
+        0.0,
+        0.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 4902,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 20,
+      "authored_spawn": [
+        3000,
+        40
+      ],
+      "actual_spawn": [
+        3000.0,
+        40.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 4523,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 21,
+      "authored_spawn": [
+        30,
+        72
+      ],
+      "actual_spawn": [
+        30.0,
+        72.0
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 4578,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 1001,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "actual_spawn": [
+        4.5,
+        9.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2465,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 1002,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "actual_spawn": [
+        4.5,
+        9.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2465,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    },
+    {
+      "map_id": 1003,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "actual_spawn": [
+        4.5,
+        9.9
+      ],
+      "body": [
+        0.8,
+        1.8
+      ],
+      "samples_seen": 2465,
+      "local_boundary_reached": true,
+      "search_stopped_on_boundary": true,
+      "potential_nonlocal_exits": [],
+      "small_finite_world": false,
+      "needs_control_audit": false,
+      "unexplained_closed_spawn": false
+    }
+  ],
+  "suspect_maps": [],
+  "closed_with_potential_exit": []
+}

@@ -1,0 +1,1746 @@
+{
+  "code_revision": "71d943ef1a3485ffbbd409f054c3dac9bfe5ba76",
+  "scope": "real contact with every authored upward launch source and real Space event in explicit supporting fixtures; 120Hz apex sampling; no original-map route or device claim",
+  "pairs": [
+    {
+      "block_id": 71,
+      "name": "黏液块",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 3.2319861111110892,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 1.6416666666666633,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -3.467597222222217
+    },
+    {
+      "block_id": 71,
+      "name": "黏液块",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 3.2319861111110892,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 1.6416666666666633,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -3.467597222222217
+    },
+    {
+      "block_id": 71,
+      "name": "黏液块",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 3.2319861111110892,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 1.63333333333333,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 71,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 8.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -3.467597222222217
+    },
+    {
+      "block_id": 293,
+      "name": "弹跳蘑菇",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 20.324861111111026,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 4.108333333333327,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 13.62527777777772
+    },
+    {
+      "block_id": 293,
+      "name": "弹跳蘑菇",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 20.324861111111026,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 4.09166666666666,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 13.62527777777772
+    },
+    {
+      "block_id": 293,
+      "name": "弹跳蘑菇",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 20.324861111111026,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 4.083333333333326,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 293,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 20.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 13.62527777777772
+    },
+    {
+      "block_id": 294,
+      "name": "弹射板（上）",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 6.141666666666762,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 39.093861111110954
+    },
+    {
+      "block_id": 294,
+      "name": "弹射板（上）",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 6.125000000000094,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 39.093861111110954
+    },
+    {
+      "block_id": 294,
+      "name": "弹射板（上）",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 6.125000000000094,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 294,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 39.093861111110954
+    },
+    {
+      "block_id": 295,
+      "name": "弹射板（右）",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 295,
+      "name": "弹射板（右）",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 295,
+      "name": "弹射板（右）",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 295,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 296,
+      "name": "弹射板（左）",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 296,
+      "name": "弹射板（左）",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 296,
+      "name": "弹射板（左）",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 296,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": -5.444847222222196
+    },
+    {
+      "block_id": 330,
+      "name": "弹射板(上)",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 330,
+      "name": "弹射板(上)",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 330,
+      "name": "弹射板(上)",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 330,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 45.79344444444426,
+        "landed": false,
+        "initial_vertical_velocity": 30.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 331,
+      "name": "弹射板(右)",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 331,
+      "name": "弹射板(右)",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 331,
+      "name": "弹射板(右)",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 331,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 332,
+      "name": "弹射板(左)",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0416666666666654,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 332,
+      "name": "弹射板(左)",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 332,
+      "name": "弹射板(左)",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 332,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [],
+        "launch_speed": 11.5,
+        "height": 1.25473611111111,
+        "landed": true,
+        "initial_vertical_velocity": 5.0,
+        "initially_supported": false,
+        "elapsed": 1.0249999999999988,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 389,
+      "name": "浮空矿石",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 22.896722222222117,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 6.141666666666762,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 13.44702083333325,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 4.708333333333357,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.449701388888867
+    },
+    {
+      "block_id": 389,
+      "name": "浮空矿石",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 22.896722222222117,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 6.125000000000094,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 13.44702083333325,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 4.708333333333357,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.449701388888867
+    },
+    {
+      "block_id": 389,
+      "name": "浮空矿石",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 22.896722222222117,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 6.125000000000094,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 389,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 389
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 13.44702083333325,
+        "landed": true,
+        "initial_vertical_velocity": 15.0,
+        "initially_supported": true,
+        "elapsed": 4.700000000000023,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.449701388888867
+    },
+    {
+      "block_id": 396,
+      "name": "雷鸣晶",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 7.296958333333302,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.474999999999994,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.3749999999999942,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.597374999999996
+    },
+    {
+      "block_id": 396,
+      "name": "雷鸣晶",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 7.296958333333302,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.4583333333333273,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.3583333333333276,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.597374999999996
+    },
+    {
+      "block_id": 396,
+      "name": "雷鸣晶",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 7.296958333333302,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.449999999999994,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 396,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 45,
+            "params": [],
+            "source": 396
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 6.699583333333306,
+        "landed": true,
+        "initial_vertical_velocity": 12.0,
+        "initially_supported": true,
+        "elapsed": 2.3499999999999943,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.597374999999996
+    },
+    {
+      "block_id": 415,
+      "name": "弹跳蘑菇",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 24.602291666666552,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 4.508333333333347,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 15.109944444444361,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 3.5416666666666567,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.492347222222191
+    },
+    {
+      "block_id": 415,
+      "name": "弹跳蘑菇",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 24.602291666666552,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 4.49166666666668,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 15.109944444444361,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 3.52499999999999,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.492347222222191
+    },
+    {
+      "block_id": 415,
+      "name": "弹跳蘑菇",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 24.602291666666552,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 4.49166666666668,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 415,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 4,
+            "params": [
+              50
+            ],
+            "source": 415
+          }
+        ],
+        "launch_speed": 17.25,
+        "height": 15.109944444444361,
+        "landed": true,
+        "initial_vertical_velocity": 22.0,
+        "initially_supported": true,
+        "elapsed": 3.52499999999999,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 9.492347222222191
+    },
+    {
+      "block_id": 433,
+      "name": "重力反转石",
+      "fps": 30,
+      "automatic": {
+        "fps": 30,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 30,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 433,
+      "name": "重力反转石",
+      "fps": 60,
+      "automatic": {
+        "fps": 60,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 60,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    },
+    {
+      "block_id": 433,
+      "name": "重力反转石",
+      "fps": 144,
+      "automatic": {
+        "fps": 144,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": false,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "pressed": {
+        "fps": 144,
+        "source_block": 433,
+        "injected_parameter": null,
+        "jump_event": true,
+        "applied": [
+          {
+            "id": 13,
+            "params": [],
+            "source": 433
+          }
+        ],
+        "launch_speed": 11.5,
+        "height": 119.18741060044148,
+        "landed": false,
+        "initial_vertical_velocity": 35.0,
+        "initially_supported": false,
+        "elapsed": 24.00833333333261,
+        "respawns": 0,
+        "hp": 150.0,
+        "physics": {
+          "gravity": -9.8,
+          "vertical_damping": 1.0
+        }
+      },
+      "height_lost_by_pressing": 0.0
+    }
+  ]
+}

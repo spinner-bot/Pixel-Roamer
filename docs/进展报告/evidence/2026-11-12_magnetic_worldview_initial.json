@@ -1,0 +1,40 @@
+{
+  "code_revision": "9475bbae361028cb4cf1d2105e3a0779d54ca71d",
+  "scope": "actual GameApp draw/current WorldSession and WorldView in SDL dummy fixture; direct Buff injection, not native desktop or normal source route",
+  "sources": {
+    "scripts/capture_magnetic_pickups.py": "9745272c4ddf6ef2b521f9a3bed5179e7e88f6d5a7d990121b7f82047c202720",
+    "pixel_roamer/world_view.py": "4edb2631787c565837766652879fce6342a227157c6f6efe0384f3c8a8c85ada",
+    "pixel_roamer/visual_effects.py": "8b219735f1976382ca2ff41cfcaf65a417ec5194c37b2af709a3902d974c38ec",
+    "magnetic_pickups.py": "1ba017fd88b1f1c18132648a0df60c2eac0e83fd4a8350c068eebcfa0ee601c6"
+  },
+  "frames": [
+    {
+      "time": 0.0,
+      "image": "2026-11-12_magnetic_worldview_initial_before.png",
+      "score": 0,
+      "pickup_tile": 310,
+      "flights": 0
+    },
+    {
+      "time": 0.008333333333333333,
+      "image": "2026-11-12_magnetic_worldview_initial_start.png",
+      "score": 10,
+      "pickup_tile": 320,
+      "flights": 1
+    },
+    {
+      "time": 0.11666666666666665,
+      "image": "2026-11-12_magnetic_worldview_initial_flying.png",
+      "score": 10,
+      "pickup_tile": 320,
+      "flights": 1
+    },
+    {
+      "time": 0.37500000000000033,
+      "image": "2026-11-12_magnetic_worldview_initial_settled.png",
+      "score": 10,
+      "pickup_tile": 320,
+      "flights": 1
+    }
+  ]
+}

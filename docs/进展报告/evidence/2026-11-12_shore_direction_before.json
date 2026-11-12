@@ -1,0 +1,10821 @@
+{
+  "code_revision": "3c9c5cdffdbae72d2ee210290b854e8d1a3c4122",
+  "scope": "243 legal narrow-water fixtures with normal input and actual exit landing; not original map routes or device acceptance",
+  "sources": {
+    "scripts/audit_shore_direction.py": "e38032890ac88a886f5736668298bdfcd078c0268f456f6061a4df0246fba80d",
+    "creature.py": "460a47e1ec25ff154155d24d7e1092cdb292e7c3c257333623193f381018f1eb",
+    "pixel_roamer/world_session.py": "db3a14ffe6754a5b9182c83b3f06b2f9b163e640df674411511c47326c1bdc1c",
+    "shore_exit.py": "44845de5ac72099abe00c9a50db63fbc8bc903b4983254b52a485b71f32b8811"
+  },
+  "runs": [
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.7,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.7,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.3,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.3,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.7,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.5,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.5,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.299999999999999,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.299999999999999,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.299999999999999,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.749573967122368,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.25042603287763,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.25042603287763,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -15.267642749207907,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        4.732357250792093,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        24.732357250792088,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.749573967122368,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.25042603287763,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.25042603287763,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -15.25903439104277,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        4.740965608957231,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        24.74096560895723,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.732357250792093,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.267642749207907,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.267642749207912,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -15.250426032877632,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        4.74957396712237,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        24.74957396712237,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        -13.732357250792093,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        6.267642749207907,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.09999999999999999,
+      "final": [
+        26.267642749207912,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.787152471907211,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.212847528092787,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.212847528092784,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.243428283013772,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.756571716986226,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.75657171698622,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.787152471907211,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.212847528092787,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.212847528092784,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.22813790555328,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.771862094446719,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.771862094446718,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.756571716986228,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.243428283013774,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.24342828301378,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.212847528092789,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.787152471907213,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.787152471907216,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.756571716986228,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.243428283013774,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.24342828301378,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.613391234004911,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.613391234004911,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.386608765995086,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.386608765995074,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.613391234004911,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.5,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.5,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.386608765995089,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.386608765995089,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.613391234004914,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.613391234004926,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.386608765995089,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.746965538346329,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.253034461653673,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.253034461653673,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.265034320431868,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.734965679568136,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.73496567956813,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.746965538346329,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.253034461653673,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.253034461653673,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.25903439104277,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.740965608957231,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.74096560895723,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.734965679568132,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.265034320431864,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.26503432043187,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.253034461653671,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.746965538346327,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.746965538346327,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.734965679568132,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.265034320431864,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.26503432043187,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.78115254251812,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.218847457481885,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.218847457481882,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.237428353624681,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.762571646375323,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.762571646375317,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.78115254251812,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.218847457481885,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.218847457481882,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.22813790555328,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.771862094446719,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.771862094446718,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.762571646375319,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.237428353624677,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.237428353624683,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.21884745748188,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.781152542518115,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.781152542518118,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.762571646375319,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.237428353624677,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.237428353624683,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.5,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.5,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.5,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.5,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.5,
+        19.999552009319206
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": -1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.5,
+        59.99955200931921
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        0
+      ],
+      "expected_direction": 1,
+      "choices": [],
+      "chosen": null,
+      "matched": false,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        -14.5,
+        -20.000447990680794
+      ],
+      "final_stamina": 157.99999999999727,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        5.7,
+        19.999552009319206
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.6,
+        1.5
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": false,
+      "elapsed": 1.9999999999999953,
+      "final": [
+        25.7,
+        59.99955200931921
+      ],
+      "final_stamina": 143.88204922215567,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.25903439104277,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.740965608957231,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.74096560895723,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.25903439104277,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.740965608957231,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.74096560895723,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -15.25903439104277,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        4.740965608957231,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        24.74096560895723,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.5,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.5,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        -13.74096560895723,
+        -19.1
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        5.5,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            5.5,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        6.259034391042769,
+        20.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "gap": 1,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        25.5,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            25.5,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.08333333333333333,
+      "final": [
+        26.25903439104277,
+        60.9
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": false,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.22813790555328,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.771862094446719,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.771862094446718,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": -1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.22813790555328,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.771862094446719,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.771862094446718,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 0,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1,
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -15.22813790555328,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        4.771862094446719,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        -1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        -1
+      ],
+      "expected_direction": -1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": -1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": -1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        24.771862094446718,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        -20,
+        -40
+      ],
+      "initial": [
+        -14.0,
+        -20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            -14.0,
+            -20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        -12.77186209444672,
+        -18.7
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "initial": [
+        6.0,
+        20.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            6.0,
+            20.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        7.228137905553281,
+        21.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "body": [
+        1.8,
+        2.6
+      ],
+      "gap": 2,
+      "intent": 1,
+      "valid_banks": [
+        1
+      ],
+      "offset": [
+        20,
+        40
+      ],
+      "initial": [
+        26.0,
+        60.0
+      ],
+      "detected": [
+        1
+      ],
+      "expected_direction": 1,
+      "choices": [
+        {
+          "time": 0.008333333333333333,
+          "direction": 1,
+          "position": [
+            26.0,
+            60.0
+          ],
+          "stamina": 174.825
+        }
+      ],
+      "chosen": 1,
+      "matched": true,
+      "completed": true,
+      "elapsed": 0.13333333333333333,
+      "final": [
+        27.228137905553282,
+        61.3
+      ],
+      "final_stamina": 174.85704922215768,
+      "errors": [],
+      "respawns": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+test_normal_full_climb_wraps_upward_and_returns_to_start (test_endless_full_loop.EndlessFullLoopTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.408s
+
+OK

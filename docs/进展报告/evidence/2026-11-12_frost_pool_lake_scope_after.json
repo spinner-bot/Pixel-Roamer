@@ -1,0 +1,2608 @@
+{
+  "code_revision": "4369acb0b9dca408147bb788d054eda056333c71",
+  "legacy_revision": "e3ba6ec",
+  "lake_fix_reference": "dd277a4",
+  "tile_changes": [
+    {
+      "position": [
+        66,
+        58
+      ],
+      "before": 0,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        59
+      ],
+      "before": 0,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        60
+      ],
+      "before": 17,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        61
+      ],
+      "before": 17,
+      "after": 10
+    }
+  ],
+  "later_map_changes": [
+    {
+      "position": [
+        245,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        245,
+        56
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        245,
+        57
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        246,
+        56
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        246,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        246,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        247,
+        56
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        248,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        248,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        248,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        249,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        56
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        57
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        58
+      ],
+      "before": 0,
+      "after": 3
+    }
+  ],
+  "all_map_changes": [
+    {
+      "position": [
+        66,
+        58
+      ],
+      "before": 0,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        59
+      ],
+      "before": 0,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        60
+      ],
+      "before": 17,
+      "after": 10
+    },
+    {
+      "position": [
+        66,
+        61
+      ],
+      "before": 17,
+      "after": 10
+    },
+    {
+      "position": [
+        245,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        245,
+        56
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        245,
+        57
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        246,
+        56
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        246,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        246,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        247,
+        56
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        247,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        248,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        248,
+        57
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        248,
+        58
+      ],
+      "before": 0,
+      "after": 7
+    },
+    {
+      "position": [
+        249,
+        55
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        56
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        57
+      ],
+      "before": 0,
+      "after": 3
+    },
+    {
+      "position": [
+        249,
+        58
+      ],
+      "before": 0,
+      "after": 3
+    }
+  ],
+  "scope": "normal spawn to optional lake island and existing return platform; not formal victory or whole underground coverage",
+  "before": [
+    {
+      "fps": 30,
+      "branch_goal_reached": false,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.8000000000001775,
+          "position": [
+            55.496958549191724,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 12.366666666666605,
+          "position": [
+            66.5,
+            58.0
+          ],
+          "score": 80,
+          "climb_bound": 58.0
+        }
+      ],
+      "leg": "return_platform",
+      "failure": "branch waypoint timed out",
+      "timer": 32.399999999998805,
+      "control_frames": 972,
+      "score": 80,
+      "position": [
+        68.46872292166093,
+        10.9
+      ],
+      "max_exit_y": 59.1,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        true
+      ],
+      "min_hp": 138.74943227266127,
+      "min_stamina": 155.35131268317622,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "leg": "island",
+          "position": [
+            30.008738703993593,
+            71.99550190281275
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.033333333333332,
+          "leg": "island",
+          "position": [
+            34.478099393325145,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.0333333333333288,
+          "leg": "island",
+          "position": [
+            40.32432417463992,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.033333333333325,
+          "leg": "island",
+          "position": [
+            46.16518470121914,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 4.0333333333333234,
+          "leg": "island",
+          "position": [
+            52.01640431522489,
+            75.533174348703
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.55448023685472,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.033333333333373,
+          "leg": "island",
+          "position": [
+            55.31557952987724,
+            76.70069063936604
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.47165411039498,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.033333333333423,
+          "leg": "island",
+          "position": [
+            55.49495306269369,
+            71.79002235855252
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.2042773393873,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.033333333333473,
+          "leg": "island",
+          "position": [
+            55.49510583767418,
+            61.95428795034369
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.7640953061449,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.033333333333518,
+          "leg": "vine",
+          "position": [
+            55.87579797563394,
+            54.336154667419635
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.38105514501942,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.033333333333461,
+          "leg": "vine",
+          "position": [
+            59.71977590809601,
+            59.81391958025291
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.56240411259938,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.033333333333404,
+          "leg": "vine",
+          "position": [
+            62.79353693807249,
+            58.39578418324195
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.54235912678286,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.033333333333347,
+          "leg": "vine",
+          "position": [
+            66.5,
+            54.0691314610023
+          ],
+          "score": 80,
+          "hp": 149.07343795257935,
+          "stamina": 188.57150515437215,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 12.03333333333329,
+          "leg": "vine",
+          "position": [
+            66.5,
+            57.06387685919587
+          ],
+          "score": 80,
+          "hp": 145.08797501440242,
+          "stamina": 174.57150515437124,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 13.033333333333234,
+          "leg": "return_platform",
+          "position": [
+            68.03448160937779,
+            58.08307945642465
+          ],
+          "score": 80,
+          "hp": 142.59422285524292,
+          "stamina": 158.48286972069766,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 14.033333333333177,
+          "leg": "return_platform",
+          "position": [
+            68.46545175563662,
+            51.9018758022221
+          ],
+          "score": 80,
+          "hp": 141.17538663142503,
+          "stamina": 163.15662892335942,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.03333333333312,
+          "leg": "return_platform",
+          "position": [
+            68.46599540231773,
+            41.036644731391206
+          ],
+          "score": 80,
+          "hp": 139.77066806391696,
+          "stamina": 167.51933830837726,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 16.033333333333065,
+          "leg": "return_platform",
+          "position": [
+            68.46621493064639,
+            26.376013159284764
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 171.59235181556292,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 17.033333333333008,
+          "leg": "return_platform",
+          "position": [
+            68.4663035777195,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 175.40481660348277,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 18.03333333333295,
+          "leg": "return_platform",
+          "position": [
+            68.46633937402704,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 178.97720498823173,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 19.033333333332894,
+          "leg": "return_platform",
+          "position": [
+            68.46635382882609,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 182.32482756423983,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 20.033333333332838,
+          "leg": "return_platform",
+          "position": [
+            68.46635966577506,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 185.46197809329743,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 21.03333333333278,
+          "leg": "return_platform",
+          "position": [
+            68.46636202277573,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 188.40200983498278,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 22.033333333332724,
+          "leg": "return_platform",
+          "position": [
+            68.46636297454909,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 191.15740425238204,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 23.033333333332667,
+          "leg": "return_platform",
+          "position": [
+            68.46636335888171,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 193.7398332231947,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 24.03333333333261,
+          "leg": "return_platform",
+          "position": [
+            68.46636351407791,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 196.16021566374437,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 25.033333333332553,
+          "leg": "return_platform",
+          "position": [
+            68.46636357674724,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 198.42876930052702,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 26.033333333332497,
+          "leg": "return_platform",
+          "position": [
+            68.46636360205352,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 27.03333333333244,
+          "leg": "return_platform",
+          "position": [
+            68.46636361227243,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 28.033333333332383,
+          "leg": "return_platform",
+          "position": [
+            68.46636361639885,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 29.033333333332326,
+          "leg": "return_platform",
+          "position": [
+            68.46636361806516,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 30.03333333333227,
+          "leg": "return_platform",
+          "position": [
+            68.46636361873801,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 31.033333333332212,
+          "leg": "return_platform",
+          "position": [
+            68.46636361900964,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 32.03333333333216,
+          "leg": "return_platform",
+          "position": [
+            68.4663636191193,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "branch_goal_reached": false,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.8000000000001775,
+          "position": [
+            55.496571170910734,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 12.38333333333327,
+          "position": [
+            66.5,
+            58.0
+          ],
+          "score": 80,
+          "climb_bound": 58.0
+        }
+      ],
+      "leg": "return_platform",
+      "failure": "branch waypoint timed out",
+      "timer": 32.399999999998805,
+      "control_frames": 1944,
+      "score": 80,
+      "position": [
+        68.4674414322462,
+        10.9
+      ],
+      "max_exit_y": 59.1,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        true
+      ],
+      "min_hp": 138.71740983597337,
+      "min_stamina": 154.9986704643004,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "leg": "island",
+          "position": [
+            30.002634793469845,
+            71.99864899444036
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.0166666666666655,
+          "leg": "island",
+          "position": [
+            34.374493700711874,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.016666666666662,
+          "leg": "island",
+          "position": [
+            40.19185969316786,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.0166666666666586,
+          "leg": "island",
+          "position": [
+            46.011048003249364,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 4.016666666666656,
+          "leg": "island",
+          "position": [
+            51.83129150214048,
+            75.454542774091
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.5042267609203,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.016666666666706,
+          "leg": "island",
+          "position": [
+            55.30406325063551,
+            76.7345880986351
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.42458056576558,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.016666666666755,
+          "leg": "island",
+          "position": [
+            55.49843475116975,
+            71.915100486424
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.16018120022073,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.016666666666805,
+          "leg": "island",
+          "position": [
+            55.49704859968998,
+            62.153248471407764
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.7227872074716,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.016666666666852,
+          "leg": "vine",
+          "position": [
+            55.78699311775115,
+            54.177724905119135
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.32624943827977,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.016666666666795,
+          "leg": "vine",
+          "position": [
+            59.54869745704617,
+            59.78315770800768
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.51106883572305,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.016666666666739,
+          "leg": "vine",
+          "position": [
+            62.75996961880313,
+            58.468469778488554
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.49427275171624,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.016666666666682,
+          "leg": "vine",
+          "position": [
+            66.5,
+            53.92419263900682
+          ],
+          "score": 80,
+          "hp": 149.17333006817069,
+          "stamina": 188.94434228369755,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 12.016666666666625,
+          "leg": "vine",
+          "position": [
+            66.5,
+            56.91893803720039
+          ],
+          "score": 80,
+          "hp": 145.18736891598874,
+          "stamina": 174.94434228369664,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 13.016666666666568,
+          "leg": "return_platform",
+          "position": [
+            67.97913771091517,
+            58.19631325894815
+          ],
+          "score": 80,
+          "hp": 142.60884142536406,
+          "stamina": 158.06353150756604,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 14.016666666666511,
+          "leg": "return_platform",
+          "position": [
+            68.49817570895163,
+            52.188850536534005
+          ],
+          "score": 80,
+          "hp": 141.18985974434332,
+          "stamina": 162.76403297422547,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.016666666666454,
+          "leg": "return_platform",
+          "position": [
+            68.51242555741692,
+            41.464399260727554
+          ],
+          "score": 80,
+          "hp": 139.7849971669555,
+          "stamina": 167.151720652735,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 16.0166666666664,
+          "leg": "return_platform",
+          "position": [
+            68.51070590018756,
+            26.91783954539727
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 171.24795141223288,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 17.016666666666342,
+          "leg": "return_platform",
+          "position": [
+            68.49648919042332,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 175.08178666645574,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 18.016666666666286,
+          "leg": "return_platform",
+          "position": [
+            68.52152153689165,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 178.67418525328932,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 19.01666666666623,
+          "leg": "return_platform",
+          "position": [
+            68.48225163085606,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 182.04054835647932,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 20.016666666666172,
+          "leg": "return_platform",
+          "position": [
+            68.53105854190646,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 185.19525342173097,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 21.016666666666115,
+          "leg": "return_platform",
+          "position": [
+            68.46961658935184,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 188.15173120031042,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 22.016666666666058,
+          "leg": "return_platform",
+          "position": [
+            68.53950177486962,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 190.92253505862217,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 23.016666666666,
+          "leg": "return_platform",
+          "position": [
+            68.46105220201828,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 193.51940370576065,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 24.016666666665945,
+          "leg": "return_platform",
+          "position": [
+            68.5469821993652,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 195.9533182635473,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 25.016666666665888,
+          "leg": "return_platform",
+          "position": [
+            68.47746675041378,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 198.23455442689655,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 26.01666666666583,
+          "leg": "return_platform",
+          "position": [
+            68.54072369379051,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 27.016666666665774,
+          "leg": "return_platform",
+          "position": [
+            68.49201183769641,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 28.016666666665717,
+          "leg": "return_platform",
+          "position": [
+            68.52142584991721,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 29.01666666666566,
+          "leg": "return_platform",
+          "position": [
+            68.50490043707863,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 30.016666666665603,
+          "leg": "return_platform",
+          "position": [
+            68.50432574520751,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 31.016666666665547,
+          "leg": "return_platform",
+          "position": [
+            68.51632120971313,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 32.01666666666549,
+          "leg": "return_platform",
+          "position": [
+            68.489173093565,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.71740983597337,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "branch_goal_reached": false,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.78333333333351,
+          "position": [
+            55.5074307422783,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 12.358333333333272,
+          "position": [
+            66.5,
+            58.0
+          ],
+          "score": 80,
+          "climb_bound": 58.0
+        }
+      ],
+      "leg": "return_platform",
+      "failure": "branch waypoint timed out",
+      "timer": 32.36666666666547,
+      "control_frames": 4661,
+      "score": 80,
+      "position": [
+        68.4882287474479,
+        10.9
+      ],
+      "max_exit_y": 59.1,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        true
+      ],
+      "min_hp": 138.74943227266127,
+      "min_stamina": 154.9695513512352,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.0,
+          "leg": "island",
+          "position": [
+            30.0,
+            72.0
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 0.9999999999999989,
+          "leg": "island",
+          "position": [
+            34.27329697761916,
+            68.94466302099339
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.9999999999999953,
+          "leg": "island",
+          "position": [
+            40.081975512350766,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.999999999999992,
+          "leg": "island",
+          "position": [
+            45.889575240014125,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.9999999999999885,
+          "leg": "island",
+          "position": [
+            51.69801312584643,
+            75.41444619974473
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.47907947901876,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.000000000000038,
+          "leg": "island",
+          "position": [
+            55.29370118126714,
+            76.75090416768496
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.40102455895249,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.000000000000088,
+          "leg": "island",
+          "position": [
+            55.5381222010826,
+            71.97712691452595
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.13811512026263,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.000000000000138,
+          "leg": "island",
+          "position": [
+            55.51914440580315,
+            62.25231335044703
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.70211629252918,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.000000000000187,
+          "leg": "vine",
+          "position": [
+            55.79591555865675,
+            54.177724905119135
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.30688569159798,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.00000000000013,
+          "leg": "vine",
+          "position": [
+            59.54130741778369,
+            59.78315770800768
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.49293125649268,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.000000000000073,
+          "leg": "vine",
+          "position": [
+            62.75996961880313,
+            58.468469778488554
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.47728306825775,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.000000000000016,
+          "leg": "vine",
+          "position": [
+            66.5,
+            53.92419263900682
+          ],
+          "score": 80,
+          "hp": 149.17333006817069,
+          "stamina": 188.9282180179031,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 11.99999999999996,
+          "leg": "vine",
+          "position": [
+            66.5,
+            56.91893803720039
+          ],
+          "score": 80,
+          "hp": 145.18736891598874,
+          "stamina": 174.9282180179022,
+          "climbing": true,
+          "bound": 58.0
+        },
+        {
+          "time": 12.999999999999902,
+          "leg": "return_platform",
+          "position": [
+            67.99499925694907,
+            58.16860720965665
+          ],
+          "score": 80,
+          "hp": 142.62987586739754,
+          "stamina": 158.11696076867236,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 13.999999999999845,
+          "leg": "return_platform",
+          "position": [
+            68.51796540231204,
+            52.11759497015562
+          ],
+          "score": 80,
+          "hp": 141.2106848901814,
+          "stamina": 162.81430223428248,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 14.999999999999789,
+          "leg": "return_platform",
+          "position": [
+            68.52789303117964,
+            41.35785614278722
+          ],
+          "score": 80,
+          "hp": 139.8056150991303,
+          "stamina": 167.19903150869564,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.999999999999732,
+          "leg": "return_platform",
+          "position": [
+            68.50424545895504,
+            26.782703428532223
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 171.2925209043692,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 16.999999999999677,
+          "leg": "return_platform",
+          "position": [
+            68.4946964040505,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 175.12387616795377,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 17.99999999999962,
+          "leg": "return_platform",
+          "position": [
+            68.49084042895491,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 178.71394825982665,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 18.999999999999563,
+          "leg": "return_platform",
+          "position": [
+            68.48928335926728,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 182.07812836894996,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 19.999999999999506,
+          "leg": "return_platform",
+          "position": [
+            68.48865460364718,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 185.23078470474425,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 20.99999999999945,
+          "leg": "return_platform",
+          "position": [
+            68.48840070773431,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 188.18533946043902,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 21.999999999999392,
+          "leg": "return_platform",
+          "position": [
+            68.48829818279052,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 190.95433805506738,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 22.999999999999336,
+          "leg": "return_platform",
+          "position": [
+            68.4882567825018,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 193.5495118035366,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 23.99999999999928,
+          "leg": "return_platform",
+          "position": [
+            68.48824006477591,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 195.98183493729115,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 24.999999999999222,
+          "leg": "return_platform",
+          "position": [
+            68.48823331404141,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 198.26157672186807,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 25.999999999999165,
+          "leg": "return_platform",
+          "position": [
+            68.48823058804761,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 26.99999999999911,
+          "leg": "return_platform",
+          "position": [
+            68.48822948727232,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 27.99999999999905,
+          "leg": "return_platform",
+          "position": [
+            68.48822904277156,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 28.999999999998995,
+          "leg": "return_platform",
+          "position": [
+            68.4882288632791,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 29.999999999998938,
+          "leg": "return_platform",
+          "position": [
+            68.48822879079889,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 30.99999999999888,
+          "leg": "return_platform",
+          "position": [
+            68.48822876153083,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 31.999999999998824,
+          "leg": "return_platform",
+          "position": [
+            68.48822874971222,
+            10.9
+          ],
+          "score": 80,
+          "hp": 138.74943227266127,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "branch_goal_reached": true,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.8000000000001775,
+          "position": [
+            55.496958549191724,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 13.699999999999863,
+          "position": [
+            66.5,
+            62.0
+          ],
+          "score": 130,
+          "climb_bound": 62.0
+        },
+        {
+          "leg": "return_platform",
+          "time": 16.799999999999688,
+          "position": [
+            68.46275767000684,
+            62.9
+          ],
+          "score": 130,
+          "climb_bound": null
+        }
+      ],
+      "leg": "return_platform",
+      "failure": null,
+      "timer": 16.799999999999688,
+      "control_frames": 504,
+      "score": 130,
+      "position": [
+        68.46275767000684,
+        62.9
+      ],
+      "max_exit_y": 70.1510431472604,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        false
+      ],
+      "min_hp": 136.13658591871138,
+      "min_stamina": 136.71381639185861,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "leg": "island",
+          "position": [
+            30.008738703993593,
+            71.99550190281275
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.033333333333332,
+          "leg": "island",
+          "position": [
+            34.478099393325145,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.0333333333333288,
+          "leg": "island",
+          "position": [
+            40.32432417463992,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.033333333333325,
+          "leg": "island",
+          "position": [
+            46.16518470121914,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 4.0333333333333234,
+          "leg": "island",
+          "position": [
+            52.01640431522489,
+            75.533174348703
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.55448023685472,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.033333333333373,
+          "leg": "island",
+          "position": [
+            55.31557952987724,
+            76.70069063936604
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.47165411039498,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.033333333333423,
+          "leg": "island",
+          "position": [
+            55.49495306269369,
+            71.79002235855252
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.2042773393873,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.033333333333473,
+          "leg": "island",
+          "position": [
+            55.49510583767418,
+            61.95428795034369
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.7640953061449,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.033333333333518,
+          "leg": "vine",
+          "position": [
+            55.87579797563394,
+            54.336154667419635
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.38105514501942,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.033333333333461,
+          "leg": "vine",
+          "position": [
+            59.71977590809601,
+            59.81391958025291
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.56240411259938,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.033333333333404,
+          "leg": "vine",
+          "position": [
+            62.79353693807249,
+            58.39578418324195
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.54235912678286,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.033333333333347,
+          "leg": "vine",
+          "position": [
+            66.5,
+            54.0691314610023
+          ],
+          "score": 80,
+          "hp": 149.07343795257935,
+          "stamina": 188.57150515437215,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 12.03333333333329,
+          "leg": "vine",
+          "position": [
+            66.5,
+            57.06387685919587
+          ],
+          "score": 80,
+          "hp": 145.08797501440242,
+          "stamina": 174.57150515437124,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 13.033333333333234,
+          "leg": "vine",
+          "position": [
+            66.5,
+            60.058622257389445
+          ],
+          "score": 80,
+          "hp": 141.12238965555636,
+          "stamina": 160.57150515437033,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 14.033333333333177,
+          "leg": "return_platform",
+          "position": [
+            67.15611306207903,
+            65.33755906618066
+          ],
+          "score": 130,
+          "hp": 138.01564155216565,
+          "stamina": 138.56056431881206,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.03333333333312,
+          "leg": "return_platform",
+          "position": [
+            68.45595886614838,
+            70.05864568217342
+          ],
+          "score": 130,
+          "hp": 137.3272856681889,
+          "stamina": 144.45348809413434,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 16.033333333333065,
+          "leg": "return_platform",
+          "position": [
+            68.46586544746329,
+            68.02738467088062
+          ],
+          "score": 130,
+          "hp": 136.64236297350638,
+          "stamina": 149.9632863949385,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "branch_goal_reached": true,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.8000000000001775,
+          "position": [
+            55.496571170910734,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 13.716666666666528,
+          "position": [
+            66.5,
+            62.0
+          ],
+          "score": 130,
+          "climb_bound": 62.0
+        },
+        {
+          "leg": "return_platform",
+          "time": 16.799999999999688,
+          "position": [
+            68.46513043801562,
+            62.9
+          ],
+          "score": 130,
+          "climb_bound": null
+        }
+      ],
+      "leg": "return_platform",
+      "failure": null,
+      "timer": 16.799999999999688,
+      "control_frames": 1008,
+      "score": 130,
+      "position": [
+        68.46513043801562,
+        62.9
+      ],
+      "max_exit_y": 70.1510431472604,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        false
+      ],
+      "min_hp": 136.10423356410612,
+      "min_stamina": 136.3417337408587,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "leg": "island",
+          "position": [
+            30.002634793469845,
+            71.99864899444036
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.0166666666666655,
+          "leg": "island",
+          "position": [
+            34.374493700711874,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.016666666666662,
+          "leg": "island",
+          "position": [
+            40.19185969316786,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.0166666666666586,
+          "leg": "island",
+          "position": [
+            46.011048003249364,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 4.016666666666656,
+          "leg": "island",
+          "position": [
+            51.83129150214048,
+            75.454542774091
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.5042267609203,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.016666666666706,
+          "leg": "island",
+          "position": [
+            55.30406325063551,
+            76.7345880986351
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.42458056576558,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.016666666666755,
+          "leg": "island",
+          "position": [
+            55.49843475116975,
+            71.915100486424
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.16018120022073,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.016666666666805,
+          "leg": "island",
+          "position": [
+            55.49704859968998,
+            62.153248471407764
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.7227872074716,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.016666666666852,
+          "leg": "vine",
+          "position": [
+            55.78699311775115,
+            54.177724905119135
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.32624943827977,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.016666666666795,
+          "leg": "vine",
+          "position": [
+            59.54869745704617,
+            59.78315770800768
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.51106883572305,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.016666666666739,
+          "leg": "vine",
+          "position": [
+            62.75996961880313,
+            58.468469778488554
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.49427275171624,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.016666666666682,
+          "leg": "vine",
+          "position": [
+            66.5,
+            53.92419263900682
+          ],
+          "score": 80,
+          "hp": 149.17333006817069,
+          "stamina": 188.94434228369755,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 12.016666666666625,
+          "leg": "vine",
+          "position": [
+            66.5,
+            56.91893803720039
+          ],
+          "score": 80,
+          "hp": 145.18736891598874,
+          "stamina": 174.94434228369664,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 13.016666666666568,
+          "leg": "vine",
+          "position": [
+            66.5,
+            59.91368343539396
+          ],
+          "score": 80,
+          "hp": 141.2212878279904,
+          "stamina": 160.94434228369573,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 14.016666666666511,
+          "leg": "return_platform",
+          "position": [
+            67.03803054774842,
+            65.04640282106115
+          ],
+          "score": 130,
+          "hp": 138.00584170393614,
+          "stamina": 138.0937310174549,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.016666666666454,
+          "leg": "return_platform",
+          "position": [
+            68.46040947285135,
+            70.01794893785852
+          ],
+          "score": 130,
+          "hp": 137.31753469690628,
+          "stamina": 144.01632469995002,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 16.0166666666664,
+          "leg": "return_platform",
+          "position": [
+            68.54672266083645,
+            68.18963168208869
+          ],
+          "score": 130,
+          "hp": 136.63266063539592,
+          "stamina": 149.55380265100885,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "branch_goal_reached": true,
+      "arrivals": [
+        {
+          "leg": "island",
+          "time": 7.78333333333351,
+          "position": [
+            55.5074307422783,
+            51.9
+          ],
+          "score": 50,
+          "climb_bound": null
+        },
+        {
+          "leg": "vine",
+          "time": 13.69166666666653,
+          "position": [
+            66.5,
+            62.0
+          ],
+          "score": 130,
+          "climb_bound": 62.0
+        },
+        {
+          "leg": "return_platform",
+          "time": 16.77499999999969,
+          "position": [
+            68.5148029164915,
+            62.9
+          ],
+          "score": 130,
+          "climb_bound": null
+        }
+      ],
+      "leg": "return_platform",
+      "failure": null,
+      "timer": 16.77499999999969,
+      "control_frames": 2416,
+      "score": 130,
+      "position": [
+        68.5148029164915,
+        62.9
+      ],
+      "max_exit_y": 70.1510431472604,
+      "score_balance": true,
+      "diamonds_remaining": [
+        false,
+        false
+      ],
+      "min_hp": 136.13658591871138,
+      "min_stamina": 136.30288468456732,
+      "respawns": 0,
+      "trace": [
+        {
+          "time": 0.0,
+          "leg": "island",
+          "position": [
+            30.0,
+            72.0
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 0.9999999999999989,
+          "leg": "island",
+          "position": [
+            34.27329697761916,
+            68.94466302099339
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 1.9999999999999953,
+          "leg": "island",
+          "position": [
+            40.081975512350766,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 2.999999999999992,
+          "leg": "island",
+          "position": [
+            45.889575240014125,
+            68.9
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 200,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 3.9999999999999885,
+          "leg": "island",
+          "position": [
+            51.69801312584643,
+            75.41444619974473
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 187.47907947901876,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 5.000000000000038,
+          "leg": "island",
+          "position": [
+            55.29370118126714,
+            76.75090416768496
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 190.40102455895249,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 6.000000000000088,
+          "leg": "island",
+          "position": [
+            55.5381222010826,
+            71.97712691452595
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 193.13811512026263,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 7.000000000000138,
+          "leg": "island",
+          "position": [
+            55.51914440580315,
+            62.25231335044703
+          ],
+          "score": 0,
+          "hp": 150,
+          "stamina": 195.70211629252918,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 8.000000000000187,
+          "leg": "vine",
+          "position": [
+            55.79591555865675,
+            54.177724905119135
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 183.30688569159798,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 9.00000000000013,
+          "leg": "vine",
+          "position": [
+            59.54130741778369,
+            59.78315770800768
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 186.49293125649268,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 10.000000000000073,
+          "leg": "vine",
+          "position": [
+            62.75996961880313,
+            58.468469778488554
+          ],
+          "score": 80,
+          "hp": 150,
+          "stamina": 189.47728306825775,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 11.000000000000016,
+          "leg": "vine",
+          "position": [
+            66.5,
+            53.92419263900682
+          ],
+          "score": 80,
+          "hp": 149.17333006817069,
+          "stamina": 188.9282180179031,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 11.99999999999996,
+          "leg": "vine",
+          "position": [
+            66.5,
+            56.91893803720039
+          ],
+          "score": 80,
+          "hp": 145.18736891598874,
+          "stamina": 174.9282180179022,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 12.999999999999902,
+          "leg": "vine",
+          "position": [
+            66.5,
+            59.91368343539396
+          ],
+          "score": 80,
+          "hp": 141.2212878279904,
+          "stamina": 160.9282180179013,
+          "climbing": true,
+          "bound": 62.0
+        },
+        {
+          "time": 13.999999999999845,
+          "leg": "return_platform",
+          "position": [
+            67.06655760966409,
+            65.12006028529703
+          ],
+          "score": 130,
+          "hp": 138.0328945856518,
+          "stamina": 138.1578216534318,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 14.999999999999789,
+          "leg": "return_platform",
+          "position": [
+            68.47314589959953,
+            70.02882677844678
+          ],
+          "score": 130,
+          "hp": 137.34445265181154,
+          "stamina": 144.07664020216095,
+          "climbing": false,
+          "bound": null
+        },
+        {
+          "time": 15.999999999999732,
+          "leg": "return_platform",
+          "position": [
+            68.54189175665677,
+            68.14964009048359
+          ],
+          "score": 130,
+          "hp": 136.659444336441,
+          "stamina": 149.61058914884305,
+          "climbing": false,
+          "bound": null
+        }
+      ]
+    }
+  ]
+}

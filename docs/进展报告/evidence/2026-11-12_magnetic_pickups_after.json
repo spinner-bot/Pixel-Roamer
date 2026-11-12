@@ -1,0 +1,2174 @@
+{
+  "code_revision": "6891a97843deec28b60fb23326e70559fbecc0ae",
+  "scope": "explicit Buff14 fixture, existing ten score-pickup kinds just outside body contact; no loose-item/inventory subsystem or original-map-source claim",
+  "source_hashes": {
+    "scripts/audit_magnetic_pickups.py": "5bf6a932ffbe64b45907adc873b5597b59a815ff2e2070d4402c9187b8ad2dce",
+    "creature.py": "ab12983dff47fcc49a8d012a94e3fb6b7778246c98bfb299c714208229486f25",
+    "status_effects.py": "d9473b2ce0b4224c9425f40c46d104e309b41d34537d5c6623dee6bb70929474",
+    "pixel_roamer/world_session.py": "c340abe24a79255c4ec0bc540b3df907b36b3aa089ab0722f8aea3fa241b51ed",
+    "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+    "magnetic_pickups.py": "1ba017fd88b1f1c18132648a0df60c2eac0e83fd4a8350c068eebcfa0ee601c6"
+  },
+  "runs": [
+    {
+      "fps": 30,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 30,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 60,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 310,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 310,
+      "consumed_type_id": 320,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 310,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 10,
+      "expected_score": 10,
+      "final_tile": 320,
+      "consumed_type_id": 320,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 311,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 311,
+      "consumed_type_id": 321,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 311,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 5,
+      "expected_score": 5,
+      "final_tile": 321,
+      "consumed_type_id": 321,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 312,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 312,
+      "consumed_type_id": 322,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 312,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 322,
+      "consumed_type_id": 322,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 313,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 313,
+      "consumed_type_id": 323,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 313,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 25,
+      "expected_score": 25,
+      "final_tile": 323,
+      "consumed_type_id": 323,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 314,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 314,
+      "consumed_type_id": 324,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 314,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 50,
+      "expected_score": 50,
+      "final_tile": 324,
+      "consumed_type_id": 324,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 315,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 315,
+      "consumed_type_id": 325,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 315,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 30,
+      "expected_score": 30,
+      "final_tile": 325,
+      "consumed_type_id": 325,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 316,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 316,
+      "consumed_type_id": 326,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 316,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 15,
+      "expected_score": 15,
+      "final_tile": 326,
+      "consumed_type_id": 326,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 317,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 317,
+      "consumed_type_id": 327,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 317,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 40,
+      "expected_score": 40,
+      "final_tile": 327,
+      "consumed_type_id": 327,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 318,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 318,
+      "consumed_type_id": 328,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 318,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 328,
+      "consumed_type_id": 328,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 319,
+      "side": -1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": false,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 0,
+      "expected_score": 0,
+      "final_tile": 319,
+      "consumed_type_id": 329,
+      "attracted": false,
+      "buff_remaining": false,
+      "errors": [],
+      "respawns": 0
+    },
+    {
+      "fps": 144,
+      "tile_id": 319,
+      "side": 1,
+      "buff_active": true,
+      "position": [
+        5.5,
+        4.5
+      ],
+      "score": 20,
+      "expected_score": 20,
+      "final_tile": 329,
+      "consumed_type_id": 329,
+      "attracted": true,
+      "buff_remaining": true,
+      "errors": [],
+      "respawns": 0
+    }
+  ]
+}

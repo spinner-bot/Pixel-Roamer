@@ -1,0 +1,58 @@
+test_actual_stat_api_matches_partial_full_and_zero_reductions_without_mutation (test_buff_behavior.BuffBehaviorTests) ... ok
+test_control_restrictions_are_immutable_validated_and_default_to_no_locks (test_buff_behavior.BuffBehaviorTests) ... ok
+test_every_original_trap_escapes_with_and_without_immunity_at_three_rates (test_buff_behavior.BuffBehaviorTests) ... ok
+test_immunity_consumes_entry_and_explicit_api_root_still_refreshes (test_buff_behavior.BuffBehaviorTests) ... ok
+test_pause_and_real_death_preserve_then_rearm_a_fresh_source_timer (test_buff_behavior.BuffBehaviorTests) ... ok
+test_root_does_not_refresh_on_stay_or_active_new_source_and_rearms_after_exit (test_buff_behavior.BuffBehaviorTests) ... ok
+test_startup_rules_are_valid_immutable_and_explicit_files_do_not_change_them (test_buff_behavior.BuffBehaviorTests) ... ok
+test_default_and_explicit_zero_stat_descriptions_match_effects (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_every_source_uses_registered_nonempty_resolved_descriptions (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_lifetime_descriptions_follow_refresh_and_do_not_claim_zero_seconds (test_buff_descriptions.BuffDescriptionTests) ... ok
+test_declared_orders_and_real_water_steam_sources_clear_and_restore_fire_damage (test_buff_cleanup.BuffCleanupTests) ... FAIL
+test_refresh_redundant_conflicts_and_callback_side_effects_remove_each_active_effect_once (test_buff_cleanup.BuffCleanupTests) ... ok
+test_rejected_acquisitions_do_not_clear_conflicts_or_reverse_relations (test_buff_cleanup.BuffCleanupTests) ... ok
+test_wet_expiry_reacquisition_pause_and_real_respawn_keep_cleanup_consistent (test_buff_cleanup.BuffCleanupTests) ... ok
+test_contact_jitter_does_not_refresh_or_rearm_until_completely_dry (test_buff_reactions.BuffReactionTests) ... ok
+test_immune_rejection_consumes_exposure_and_world_reset_rearms (test_buff_reactions.BuffReactionTests) ... ok
+test_loader_rejects_bad_references_types_duplicates_and_numeric_products (test_buff_reactions.BuffReactionTests) ... ok
+test_no_contact_or_required_buff_no_reaction_and_longer_effect_not_shortened (test_buff_reactions.BuffReactionTests) ... ok
+test_all_block_definitions_and_pixels_match_pre_migration (test_catalogs.CatalogTests) ... ok
+test_all_buff_definitions_and_icons_match_pre_migration (test_catalogs.CatalogTests) ... ok
+test_art_refinement_preserves_every_unreviewed_gameplay_field (test_catalogs.CatalogTests) ... ok
+test_block_status_references_exist (test_catalogs.CatalogTests) ... ok
+test_costume_frames_match_pre_migration_pixels (test_catalogs.CatalogTests) ... ok
+test_interface_fields_have_valid_defaults_and_unique_paths (test_catalogs.CatalogTests) ... ok
+test_rejects_duplicates_unknown_fields_versions_and_invalid_art (test_catalogs.CatalogTests) ... ok
+test_reviewed_gameplay_changes_are_existing_non_art_fields_with_real_differences (test_catalogs.CatalogTests) ... ok
+test_cross_package_consumed_reference_is_resolved_but_explicit_files_stay_isolated (test_catalog_extensions.CatalogExtensionTests) ... ok
+test_package_order_and_rejection_of_collisions_with_core_or_other_packages (test_catalog_extensions.CatalogExtensionTests) ... ok
+test_bleeding_is_independent_of_frame_partition (test_status_effects.BuffTimeTests) ... ok
+test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) ... ok
+test_environment_timers_expire_without_any_collision_updates (test_status_effects.BuffTimeTests) ... ok
+test_expiring_immunity_only_protects_its_active_interval (test_status_effects.BuffTimeTests) ... ok
+test_invalid_time_steps_are_rejected (test_status_effects.BuffTimeTests) ... ok
+test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply (test_status_effects.BuffTimeTests) ... ok
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (test_status_effects.BuffTimeTests) ... ok
+test_regeneration_and_shield_gain_respect_elapsed_time (test_status_effects.BuffTimeTests) ... ok
+test_stacks_affect_continuous_damage_and_stat_modifiers (test_status_effects.BuffTimeTests) ... ok
+test_armor_break_is_a_victim_debuff (test_status_effects.DamageTests) ... ok
+test_capped_shield_regeneration_does_not_remove_existing_shield (test_status_effects.DamageTests) ... ok
+test_damage_return_value_counts_shield_and_caps_overkill (test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_actual_lava_contact (test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_burning_and_direct_fire (test_status_effects.DamageTests) ... ok
+test_lifesteal_and_thorns_use_actual_damage_not_requested_overkill (test_status_effects.DamageTests) ... ok
+
+======================================================================
+FAIL: test_declared_orders_and_real_water_steam_sources_clear_and_restore_fire_damage (test_buff_cleanup.BuffCleanupTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_buff_cleanup.py", line 39, in test_declared_orders_and_real_water_steam_sources_clear_and_restore_fire_damage
+    self.assertEqual(len(report['edges']),2)
+AssertionError: 3 != 2
+
+----------------------------------------------------------------------
+Ran 43 tests in 15.360s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

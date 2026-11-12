@@ -1,0 +1,1 @@
+{"errors": [], "sources": {"403": 388, "386": 5652, "411": 1896}, "response_force_calls": {"positive": {"calls": 6040, "nonzero_force_calls": 5418}, "reverse": {"calls": 1896, "nonzero_force_calls": 353}, "neutral": {"calls": 0, "nonzero_force_calls": 0}, "unmagnetized": {"calls": 64063, "nonzero_force_calls": 27514}}}

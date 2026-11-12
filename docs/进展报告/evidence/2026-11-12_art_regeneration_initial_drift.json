@@ -1,0 +1,68 @@
+{
+  "generator_revision": "89a51ad",
+  "scope": "Initial current-catalog art rebuild preserved gameplay but fed already-refined icons back into fallback motifs, changing old artwork; discarded these task-generated changes.",
+  "changed_buff_ids": [
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "hashes": {
+    "data/catalogs/buffs.json": {
+      "expected": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+      "unexpected": "a0afa476fdd215eb95c6a68866530a35ad9295f0635e166927574d8ce6066b28"
+    },
+    "tests/fixtures/catalog_art_overrides.json": {
+      "expected": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+      "unexpected": "8224ab79526b8c4cfc502f57f4b1fe6c19c7ee0b105692097e77079686ec30b2"
+    },
+    "docs/\u8fdb\u5c55\u62a5\u544a/evidence/art/buffs_before_after.png": {
+      "expected": "98179038b94553bc0e26c0968d07302391f7ede0303d5e8b6d4e4ed7a6df46e7",
+      "unexpected": "765c76465fb15be288153852dd13e2f07089f5cf2b5202389cc92078c33a5099"
+    }
+  }
+}

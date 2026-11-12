@@ -1,0 +1,63 @@
+test_all_block_definitions_and_pixels_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_all_buff_definitions_and_icons_match_pre_migration (tests.test_catalogs.CatalogTests) ... ok
+test_art_refinement_preserves_every_unreviewed_gameplay_field (tests.test_catalogs.CatalogTests) ... ok
+test_block_status_references_exist (tests.test_catalogs.CatalogTests) ... ok
+test_costume_frames_match_pre_migration_pixels (tests.test_catalogs.CatalogTests) ... ok
+test_interface_fields_have_valid_defaults_and_unique_paths (tests.test_catalogs.CatalogTests) ... ok
+test_rejects_duplicates_unknown_fields_versions_and_invalid_art (tests.test_catalogs.CatalogTests) ... ok
+test_reviewed_gameplay_changes_are_existing_non_art_fields_with_real_differences (tests.test_catalogs.CatalogTests) ... ok
+test_cross_package_consumed_reference_is_resolved_but_explicit_files_stay_isolated (tests.test_catalog_extensions.CatalogExtensionTests) ... ok
+test_package_order_and_rejection_of_collisions_with_core_or_other_packages (tests.test_catalog_extensions.CatalogExtensionTests) ... ok
+test_bleeding_is_independent_of_frame_partition (tests.test_status_effects.BuffTimeTests) ... ok
+test_damage_matches_active_duration_for_short_and_long_frames (tests.test_status_effects.BuffTimeTests) ... ok
+test_environment_timers_expire_without_any_collision_updates (tests.test_status_effects.BuffTimeTests) ... ok
+test_expiring_immunity_only_protects_its_active_interval (tests.test_status_effects.BuffTimeTests) ... ok
+test_invalid_time_steps_are_rejected (tests.test_status_effects.BuffTimeTests) ... ok
+test_periodic_cleanse_uses_instance_time_and_does_not_leak_after_reapply (tests.test_status_effects.BuffTimeTests) ... ok
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (tests.test_status_effects.BuffTimeTests) ... ok
+test_regeneration_and_shield_gain_respect_elapsed_time (tests.test_status_effects.BuffTimeTests) ... ok
+test_stacks_affect_continuous_damage_and_stat_modifiers (tests.test_status_effects.BuffTimeTests) ... ok
+test_armor_break_is_a_victim_debuff (tests.test_status_effects.DamageTests) ... ok
+test_capped_shield_regeneration_does_not_remove_existing_shield (tests.test_status_effects.DamageTests) ... ok
+test_damage_return_value_counts_shield_and_caps_overkill (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_actual_lava_contact (tests.test_status_effects.DamageTests) ... ok
+test_fire_resistance_blocks_burning_and_direct_fire (tests.test_status_effects.DamageTests) ... ok
+test_lifesteal_and_thorns_use_actual_damage_not_requested_overkill (tests.test_status_effects.DamageTests) ... ok
+test_altar_entry_leave_respawn_and_teleports_preserve_fractional_stats (tests.test_environment_cycles.EnvironmentCycleTests) ... ok
+test_fractional_base_attacks_keep_numeric_precision (tests.test_environment_cycles.EnvironmentCycleTests) ... ok
+test_repeated_contact_and_flight_cleanup_do_not_accumulate_or_disable_multiplier (tests.test_environment_cycles.EnvironmentCycleTests) ... ok
+test_flight_and_stunned_expiry_are_safe_at_three_frame_rates (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_rechecks_anchor_before_falling_back_to_spawn (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_respects_solid_boundaries_and_preserves_loop_coordinates (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_pause_and_terminal_guards_do_not_relocate_a_frozen_world (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_stunned_rollback_clears_stale_environment_without_waiting_for_stun_to_end (tests.test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_extreme_runtime_velocity_cannot_hang_collision_loop (tests.test_gameplay.CollisionTests) ... ok
+test_fast_fall_lands_without_crossing_floor (tests.test_gameplay.CollisionTests) ... ok
+test_fast_movement_does_not_cross_a_one_tile_wall (tests.test_gameplay.CollisionTests) ... ok
+test_negative_fractional_coordinates_use_floor (tests.test_gameplay.CollisionTests) ... ok
+test_one_way_platform_allows_jumping_from_below (tests.test_gameplay.CollisionTests) ... ok
+test_one_way_platform_stays_solid_at_exact_rest (tests.test_gameplay.CollisionTests) ... ok
+test_single_loop_axis_does_not_disable_void_on_other_axis (tests.test_gameplay.CollisionTests) ... ok
+test_solid_default_tile_collides (tests.test_gameplay.CollisionTests) ... ok
+test_default_ladder_world_has_climbable_contacts (tests.test_gameplay.EnvironmentTests) ... ok
+test_environment_modifiers_restore_after_leaving (tests.test_gameplay.EnvironmentTests) ... ok
+test_leaving_water_and_ladder_clears_contact_state (tests.test_gameplay.EnvironmentTests) ... ok
+test_respawn_clears_environment_timers_and_modifiers (tests.test_gameplay.EnvironmentTests) ... ok
+test_temporary_effects_expire_in_empty_air (tests.test_gameplay.EnvironmentTests) ... ok
+test_friction_buffs_damp_without_inverting_or_amplifying_motion (tests.test_gameplay.FrameRateTests) ... ok
+test_horizontal_movement_matches_across_frame_rates (tests.test_gameplay.FrameRateTests) ... ok
+test_speed_and_jump_tiles_combine_with_buffs_and_restore (tests.test_gameplay.FrameRateTests) ... ok
+test_coin_across_negative_loop_seam_is_consumed_once (tests.test_gameplay.PickupTests) ... ok
+test_each_touched_coin_scores_once (tests.test_gameplay.PickupTests) ... ok
+test_only_touched_coin_is_consumed (tests.test_gameplay.PickupTests) ... ok
+test_score_block_without_consumed_variant_restores_default (tests.test_gameplay.PickupTests) ... ok
+test_teleport_uses_touched_portal_metadata (tests.test_gameplay.PickupTests) ... ok
+test_poison_bypasses_half_shield_and_respects_immunity (tests.test_gameplay.PoisonTests) ... ok
+test_poison_lethal_second_half_marks_player_dead (tests.test_gameplay.PoisonTests) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 2.846s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

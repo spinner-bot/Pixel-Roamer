@@ -1,0 +1,420 @@
+{
+  "code_revision": "3f9b6627b1aaf02ea3ebfd1a92c1d06ebf92725e",
+  "scope": "actual session controls, synthetic held keys; no physical device acceptance",
+  "runs": [
+    {
+      "side": "left",
+      "fps": 30,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          11.037752625681566
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        1.4,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "left",
+      "fps": 30,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          21.037752625681566
+        ],
+        "pending": false,
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "left",
+      "fps": 30,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          19.999552793990087
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 199.29999999999995
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    },
+    {
+      "side": "left",
+      "fps": 60,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          10.524605409892553
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        1.4,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "left",
+      "fps": 60,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          20.524605409892555
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "left",
+      "fps": 60,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          19.999552793990087
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 199.64999999999998
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    },
+    {
+      "side": "left",
+      "fps": 144,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          10.0
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        1.4,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "left",
+      "fps": 144,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          20.0
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "left",
+      "fps": 144,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          1.4499999999999997,
+          20.7
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        1.4499999999999997,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    },
+    {
+      "side": "right",
+      "fps": 30,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          11.037752625681566
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        8.6,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "right",
+      "fps": 30,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          21.037752625681566
+        ],
+        "pending": false,
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        8.549999999999999,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "right",
+      "fps": 30,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          19.999552793990087
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 199.29999999999995
+      },
+      "after_one_second": [
+        8.549999999999999,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    },
+    {
+      "side": "right",
+      "fps": 60,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          10.524605409892553
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        8.6,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "right",
+      "fps": 60,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          20.524605409892555
+        ],
+        "pending": "rise",
+        "exit_buff": true,
+        "stamina": 174.825
+      },
+      "after_one_second": [
+        8.549999999999999,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "right",
+      "fps": 60,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          19.999552793990087
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 199.64999999999998
+      },
+      "after_one_second": [
+        8.549999999999999,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    },
+    {
+      "side": "right",
+      "fps": 144,
+      "start_y": 10,
+      "initial_surface": 11.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          10.0
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        8.6,
+        14.946464325265179
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 160.12499999999903
+    },
+    {
+      "side": "right",
+      "fps": 144,
+      "start_y": 20,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          20.0
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        8.549999999999999,
+        27.636658537521573
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.4283638933683
+    },
+    {
+      "side": "right",
+      "fps": 144,
+      "start_y": 20.7,
+      "initial_surface": 20.0,
+      "first_frame": {
+        "position": [
+          8.549999999999999,
+          20.7
+        ],
+        "pending": false,
+        "exit_buff": false,
+        "stamina": 200.0
+      },
+      "after_one_second": [
+        8.549999999999999,
+        19.999552793990087
+      ],
+      "on_ground": false,
+      "pending": false,
+      "hp": 100,
+      "stamina": 178.99999999999864
+    }
+  ]
+}

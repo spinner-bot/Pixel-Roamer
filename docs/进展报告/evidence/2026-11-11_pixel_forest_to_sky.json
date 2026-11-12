@@ -1,0 +1,591 @@
+{
+  "code_revision": "687ceff4ff7c3d8dd3acb5847c09b87a72763bd3",
+  "scope": "normal forest spawn to original T5 sky destination, production controls/config; not whole-map traversal",
+  "runs": [
+    {
+      "fps": 30,
+      "reached_T5_sky_destination": true,
+      "landed_on_original_sky_island": true,
+      "failure": null,
+      "timer": 14.266666666666497,
+      "control_frames": 428,
+      "position": [
+        185.47431974633278,
+        61.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 85.09086169849283,
+      "respawns": 0,
+      "portal_hops": [
+        {
+          "time": 11.899999999999965,
+          "from": [
+            69.78735761992007,
+            51.99267036547159
+          ],
+          "to": [
+            185.0,
+            69.99957377174579
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "position": [
+            15.509097828815245,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": true,
+          "wall_right": false
+        },
+        {
+          "time": 1.033333333333332,
+          "position": [
+            18.599999999999998,
+            53.86952040956625
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 2.0333333333333288,
+          "position": [
+            18.924915657338946,
+            59.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 3.033333333333325,
+          "position": [
+            24.858184297491604,
+            66.28838498021868
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "position": [
+            31.67575661917576,
+            64.58938513879308
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 5.033333333333373,
+          "position": [
+            38.49395072717271,
+            60.50906491677656
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 6.033333333333423,
+          "position": [
+            45.31239591682754,
+            55.720175331758306
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 7.033333333333473,
+          "position": [
+            48.058483633436104,
+            50.720448705963584
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 8.033333333333518,
+          "position": [
+            54.6,
+            45.65798685608989
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 9.033333333333461,
+          "position": [
+            54.6,
+            47.201401663651
+          ],
+          "hp": 150.0,
+          "stamina": 85.80993453327768,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 10.033333333333404,
+          "position": [
+            58.189744586846025,
+            56.05609842175221
+          ],
+          "hp": 150.0,
+          "stamina": 89.20493558859008,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 11.033333333333347,
+          "position": [
+            65.00092020740445,
+            55.11606378994399
+          ],
+          "hp": 150.0,
+          "stamina": 92.28909572392644,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 12.03333333333329,
+          "position": [
+            185.1109962829998,
+            69.93815454741238
+          ],
+          "hp": 150.0,
+          "stamina": 95.0913663311712,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 13.033333333333234,
+          "position": [
+            185.44810811683683,
+            67.32035597555391
+          ],
+          "hp": 150.0,
+          "stamina": 97.63784689194985,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 14.033333333333177,
+          "position": [
+            185.4713213863519,
+            62.96664430379556
+          ],
+          "hp": 150.0,
+          "stamina": 99.95211649329278,
+          "ground": false,
+          "wall_right": false
+        }
+      ]
+    },
+    {
+      "fps": 60,
+      "reached_T5_sky_destination": true,
+      "landed_on_original_sky_island": true,
+      "failure": null,
+      "timer": 14.233333333333166,
+      "control_frames": 854,
+      "position": [
+        185.470793083645,
+        61.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 85.03031154427083,
+      "respawns": 0,
+      "portal_hops": [
+        {
+          "time": 11.866666666666633,
+          "from": [
+            69.80468668916434,
+            51.92065364017629
+          ],
+          "to": [
+            184.99908334214547,
+            69.99957377174579
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "position": [
+            15.502743072653534,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": true,
+          "wall_right": false
+        },
+        {
+          "time": 1.0166666666666655,
+          "position": [
+            18.599999999999998,
+            53.915567281242105
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 2.016666666666662,
+          "position": [
+            18.924915657338946,
+            59.98437615218132
+          ],
+          "hp": 150.0,
+          "stamina": 86.39867751966142,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "position": [
+            24.858517199604442,
+            66.28838498021868
+          ],
+          "hp": 150.0,
+          "stamina": 89.73972866473945,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 4.016666666666656,
+          "position": [
+            31.667287217972206,
+            64.58938513879308
+          ],
+          "hp": 150.0,
+          "stamina": 92.77497827745762,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 5.016666666666706,
+          "position": [
+            38.47792509880041,
+            60.50906491677656
+          ],
+          "hp": 150.0,
+          "stamina": 95.53287658437216,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 6.016666666666755,
+          "position": [
+            45.287209041868934,
+            55.720175331758306
+          ],
+          "hp": 150.0,
+          "stamina": 98.03908164467089,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 7.016666666666805,
+          "position": [
+            48.058483633436104,
+            50.720448705963584
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 8.016666666666852,
+          "position": [
+            54.6,
+            45.65798685608989
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 9.016666666666795,
+          "position": [
+            54.6,
+            47.51358902993639
+          ],
+          "hp": 150.0,
+          "stamina": 85.86923467194468,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 10.016666666666739,
+          "position": [
+            58.30711962203576,
+            56.08941112903643
+          ],
+          "hp": 150.0,
+          "stamina": 89.25880079243795,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 11.016666666666682,
+          "position": [
+            65.11885850797793,
+            55.06639646602521
+          ],
+          "hp": 150.0,
+          "stamina": 92.33803395849147,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 12.016666666666625,
+          "position": [
+            185.11496301319139,
+            69.92369811963404
+          ],
+          "hp": 150.0,
+          "stamina": 95.13583494858248,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 13.016666666666568,
+          "position": [
+            185.50563132713137,
+            67.25647479537358
+          ],
+          "hp": 150.0,
+          "stamina": 97.6782586943221,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 14.016666666666511,
+          "position": [
+            185.4937001420516,
+            62.88805663321124
+          ],
+          "hp": 150.0,
+          "stamina": 99.98884475433177,
+          "ground": false,
+          "wall_right": false
+        }
+      ]
+    },
+    {
+      "fps": 144,
+      "reached_T5_sky_destination": true,
+      "landed_on_original_sky_island": true,
+      "failure": null,
+      "timer": 14.208333333333167,
+      "control_frames": 2046,
+      "position": [
+        185.51597244155585,
+        61.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 85.0,
+      "respawns": 0,
+      "portal_hops": [
+        {
+          "time": 11.841666666666635,
+          "from": [
+            69.79992178523742,
+            51.92065364017629
+          ],
+          "to": [
+            185.0,
+            70.0
+          ]
+        }
+      ],
+      "trace": [
+        {
+          "time": 0.0,
+          "position": [
+            15.5,
+            54.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "position": [
+            18.599999999999998,
+            53.96082292030183
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 1.9999999999999953,
+          "position": [
+            18.90244278677136,
+            59.862119807909835
+          ],
+          "hp": 150.0,
+          "stamina": 86.36946407151795,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 2.999999999999992,
+          "position": [
+            24.79889804910336,
+            66.28179703309804
+          ],
+          "hp": 150.0,
+          "stamina": 89.71319173777067,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "position": [
+            31.602966664696254,
+            64.61721468675483
+          ],
+          "hp": 150.0,
+          "stamina": 92.75086801385307,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 5.000000000000038,
+          "position": [
+            38.4072996928552,
+            60.54713549856367
+          ],
+          "hp": 150.0,
+          "stamina": 95.51096792491438,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 6.000000000000088,
+          "position": [
+            45.21163911910357,
+            55.76129316534457
+          ],
+          "hp": 150.0,
+          "stamina": 98.01917138793755,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 7.000000000000138,
+          "position": [
+            48.00324343378459,
+            50.76247325889926
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 8.000000000000187,
+          "position": [
+            54.6,
+            45.700281206217525
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 9.00000000000013,
+          "position": [
+            54.6,
+            47.51358902993639
+          ],
+          "hp": 150.0,
+          "stamina": 85.86923467194468,
+          "ground": false,
+          "wall_right": true
+        },
+        {
+          "time": 10.000000000000073,
+          "position": [
+            58.303789183721676,
+            56.08941112903643
+          ],
+          "hp": 150.0,
+          "stamina": 89.25880079243795,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 11.000000000000016,
+          "position": [
+            65.10864262591345,
+            55.06639646602521
+          ],
+          "hp": 150.0,
+          "stamina": 92.33803395849147,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 11.99999999999996,
+          "position": [
+            185.13411720944504,
+            69.92369811963404
+          ],
+          "hp": 150.0,
+          "stamina": 95.13583494858248,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 12.999999999999902,
+          "position": [
+            185.52426386387356,
+            67.25647479537358
+          ],
+          "hp": 150.0,
+          "stamina": 97.6782586943221,
+          "ground": false,
+          "wall_right": false
+        },
+        {
+          "time": 13.999999999999845,
+          "position": [
+            185.52198797412527,
+            62.88805663321124
+          ],
+          "hp": 150.0,
+          "stamina": 99.98884475433177,
+          "ground": false,
+          "wall_right": false
+        }
+      ]
+    }
+  ]
+}

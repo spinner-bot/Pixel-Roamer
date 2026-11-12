@@ -1,0 +1,192 @@
+{
+  "code_revision": "cb56bd8766b6bd0a014070e70bfb095aa81ee39e",
+  "scope": "authored fixture of original386/403/411/338, actual source contact only, no Buff injection; original force called unchanged and delta observed; scripted WorldSession controls/pause/focus; not original-map reachability evidence",
+  "run": {
+    "map_id": 0,
+    "requested_seconds": 60.0,
+    "input_seconds": 59.99999999999457,
+    "frames": 4679,
+    "rounds": 1,
+    "respawns": 0,
+    "pause_pairs": 2,
+    "min_hp": 150.0,
+    "min_stamina": 159.67795253925127,
+    "errors": [],
+    "trace": [
+      {
+        "elapsed": 0.03333333333333333,
+        "round": 1,
+        "state": {
+          "timer": 0.03333333333333333,
+          "position": [
+            31.50857806493005,
+            5.9
+          ],
+          "velocity": [
+            0.3923037099376226,
+            -2.083294227717826
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 200.0,
+          "shield": 0.0,
+          "buffs": [
+            [
+              49,
+              10.0,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "elapsed": 9.999999999999975,
+        "round": 1,
+        "state": {
+          "timer": 10.000000000000073,
+          "position": [
+            63.6,
+            12.459166666666643
+          ],
+          "velocity": [
+            0.0,
+            1.699999999999973
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 171.9279622481056,
+          "shield": 0.0,
+          "buffs": [
+            [
+              49,
+              0.674999999999927,
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "elapsed": 20.000000000000043,
+        "round": 1,
+        "state": {
+          "timer": 19.999999999999506,
+          "position": [
+            22.47012390606819,
+            9.218333333333284
+          ],
+          "velocity": [
+            -13.66139676266961,
+            -8.100000000000039
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 168.6815878650541,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 29.99999999999777,
+        "round": 1,
+        "state": {
+          "timer": 29.999999999998938,
+          "position": [
+            20.4,
+            5.905086725330664
+          ],
+          "velocity": [
+            -1.1640724252493482,
+            -0.04696225695074442
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 199.8643963261196,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 40.00694444444186,
+        "round": 1,
+        "state": {
+          "timer": 39.99999999999837,
+          "position": [
+            42.6,
+            5.924096521584286
+          ],
+          "velocity": [
+            1.164607592248416,
+            0.2556030839081014
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 200.0,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 50.00694444444129,
+        "round": 1,
+        "state": {
+          "timer": 49.999999999997804,
+          "position": [
+            28.26098634448394,
+            12.567708333333306
+          ],
+          "velocity": [
+            -11.592970436977831,
+            -0.750000000000026
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 184.7160392588133,
+          "shield": 0.0,
+          "buffs": []
+        }
+      },
+      {
+        "elapsed": 59.99999999999457,
+        "round": 1,
+        "state": {
+          "timer": 59.999999999997236,
+          "position": [
+            0.4,
+            6.876874999999934
+          ],
+          "velocity": [
+            0.0,
+            -10.550000000000049
+          ],
+          "score": 0,
+          "hp": 150.0,
+          "stamina": 175.85271886925986,
+          "shield": 0.0,
+          "buffs": []
+        }
+      }
+    ],
+    "wall_seconds": 2.3704731320030987
+  },
+  "response_force_calls": {
+    "positive": {
+      "calls": 1280,
+      "nonzero_force_calls": 176
+    },
+    "reverse": {
+      "calls": 0,
+      "nonzero_force_calls": 0
+    },
+    "neutral": {
+      "calls": 0,
+      "nonzero_force_calls": 0
+    },
+    "unmagnetized": {
+      "calls": 5920,
+      "nonzero_force_calls": 3045
+    }
+  },
+  "active_source_calls": {
+    "403": 1280
+  }
+}

@@ -1,0 +1,1506 @@
+{
+  "code_revision": "5e215f80c2d338bf86d3ab17b8a37225081cc2b6",
+  "scope": "isolated in-memory editor dimension overrides and normal launch, no saved map changes",
+  "runs": [
+    {
+      "map_id": 1,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        25.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        25.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          22.933061373389798
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        25.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          22.933061373389798
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        25.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          25.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 2,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        10,
+        55
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          55.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          52.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 2,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        10,
+        55
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          55.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          53.4
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 2,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        10,
+        55
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          55.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          54.0
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 2,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        10,
+        55
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          55.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          52.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 3,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        15.5,
+        54.9
+      ],
+      "initial": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 3,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        15.5,
+        54.9
+      ],
+      "initial": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          15.5,
+          52.74518509396627
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 3,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        15.5,
+        54.9
+      ],
+      "initial": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          15.5,
+          52.74518509396627
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 3,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        15.5,
+        54.9
+      ],
+      "initial": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          15.5,
+          54.9
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 4,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        22.5,
+        17.0
+      ],
+      "initial": {
+        "position": [
+          22.5,
+          17.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 4,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        22.5,
+        17.0
+      ],
+      "initial": {
+        "position": [
+          22.5,
+          17.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          22.5,
+          16.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 4,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        22.5,
+        17.0
+      ],
+      "initial": {
+        "position": [
+          22.5,
+          17.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          22.5,
+          17.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 4,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        22.5,
+        17.0
+      ],
+      "initial": {
+        "position": [
+          22.5,
+          17.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          22.5,
+          16.9
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 5,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        10,
+        6
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          6.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          5.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 5,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        10,
+        6
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          6.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          5.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 5,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        10,
+        6
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          6.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          6.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 5,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        10,
+        6
+      ],
+      "initial": {
+        "position": [
+          10.0,
+          6.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          10.0,
+          5.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 6,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        40.5,
+        22.9
+      ],
+      "initial": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 6,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        40.5,
+        22.9
+      ],
+      "initial": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          40.5,
+          21.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 6,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        40.5,
+        22.9
+      ],
+      "initial": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          40.5,
+          22.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 6,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        40.5,
+        22.9
+      ],
+      "initial": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          40.5,
+          22.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 7,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        18.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 7,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        18.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          18.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 7,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        18.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          18.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 7,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        18.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          18.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 8,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        5.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 8,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        5.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          5.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 8,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        5.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          5.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 8,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        5.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          5.9
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 9,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        27,
+        22
+      ],
+      "initial": {
+        "position": [
+          27.0,
+          22.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          27.0,
+          21.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 9,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        27,
+        22
+      ],
+      "initial": {
+        "position": [
+          27.0,
+          22.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          27.0,
+          21.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 9,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        27,
+        22
+      ],
+      "initial": {
+        "position": [
+          27.0,
+          22.0
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          27.0,
+          22.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 9,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        27,
+        22
+      ],
+      "initial": {
+        "position": [
+          27.0,
+          22.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          27.0,
+          21.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 19,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        0,
+        0
+      ],
+      "initial": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          0.0,
+          -0.9401036858482049
+        ],
+        "clear": true,
+        "hp": 16.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 19,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        0,
+        0
+      ],
+      "initial": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          0.0,
+          -0.9401036858482046
+        ],
+        "clear": true,
+        "hp": 16.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 19,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        0,
+        0
+      ],
+      "initial": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          0.0,
+          -0.940103685848205
+        ],
+        "clear": true,
+        "hp": 16.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 19,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        0,
+        0
+      ],
+      "initial": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          0.0,
+          -0.9401036858482049
+        ],
+        "clear": true,
+        "hp": 16.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 20,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        3000,
+        40
+      ],
+      "initial": {
+        "position": [
+          3000.0,
+          40.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          3000.0,
+          37.9
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 20,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        3000,
+        40
+      ],
+      "initial": {
+        "position": [
+          3000.0,
+          40.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          3000.0,
+          38.4
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 20,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        3000,
+        40
+      ],
+      "initial": {
+        "position": [
+          3000.0,
+          40.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          3000.0,
+          39.0
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 20,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        3000,
+        40
+      ],
+      "initial": {
+        "position": [
+          3000.0,
+          40.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          3000.0,
+          37.9
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 21,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        30,
+        72
+      ],
+      "initial": {
+        "position": [
+          30.0,
+          72.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          30.0,
+          68.94466302099339
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 21,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        30,
+        72
+      ],
+      "initial": {
+        "position": [
+          30.0,
+          72.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          30.0,
+          69.4
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 21,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        30,
+        72
+      ],
+      "initial": {
+        "position": [
+          30.0,
+          72.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          30.0,
+          70.0
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 21,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        30,
+        72
+      ],
+      "initial": {
+        "position": [
+          30.0,
+          72.0
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          30.0,
+          68.94466302099339
+        ],
+        "clear": true,
+        "hp": 150,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1001,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1001,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1001,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1001,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1002,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1002,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1002,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1002,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1003,
+      "width": 0.8,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1003,
+      "width": 0.8,
+      "height": 2.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.4
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1003,
+      "width": 0.8,
+      "height": 4.0,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": false
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.0
+        ],
+        "clear": false,
+        "hp": 150.0,
+        "alive": true
+      }
+    },
+    {
+      "map_id": 1003,
+      "width": 2.0,
+      "height": 1.8,
+      "authored_spawn": [
+        4.5,
+        9.9
+      ],
+      "initial": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true
+      },
+      "after_one_second": {
+        "position": [
+          4.5,
+          9.9
+        ],
+        "clear": true,
+        "hp": 150.0,
+        "alive": true
+      }
+    }
+  ]
+}

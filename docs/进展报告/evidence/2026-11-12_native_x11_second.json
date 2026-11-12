@@ -1,0 +1,159 @@
+{
+  "revision": "66cda429006ad6716fcfd44f0c1ad33c51f62243",
+  "display": ":0",
+  "pygame": "2.6.1",
+  "sdl": [
+    2,
+    28,
+    4
+  ],
+  "input": "native XTest via xdotool",
+  "scope": "virtual X11 desktop, not physical-device acceptance",
+  "steps": [
+    {
+      "name": "boot",
+      "elapsed": 0.7149758049636148,
+      "page": 1,
+      "frame": 42
+    },
+    {
+      "name": "home_mouse_settings",
+      "elapsed": 1.1522422849666327,
+      "page": 2,
+      "frame": 59
+    },
+    {
+      "name": "settings_return",
+      "elapsed": 1.7156948780175298,
+      "page": 5,
+      "frame": 77
+    },
+    {
+      "name": "home_resize",
+      "elapsed": 2.048461492988281,
+      "page": 2,
+      "frame": 90
+    },
+    {
+      "name": "letterbox_mouse_start",
+      "elapsed": 2.4737820419832133,
+      "page": 2,
+      "frame": 109
+    },
+    {
+      "name": "map_select",
+      "elapsed": 3.016026691009756,
+      "page": 0,
+      "frame": 117
+    }
+  ],
+  "errors": [
+    "Traceback (most recent call last):\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 237, in run\n    app.run()\n  File \"/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py\", line 501, in run\n    self._present_frame(dt)\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 228, in observe\n    action()\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 112, in start_move\n    state[\"move_start\"] = app.player1.x\nAttributeError: 'Player' object has no attribute 'x'\n"
+  ],
+  "video_driver": "x11",
+  "mixer": [
+    22050,
+    -16,
+    2
+  ],
+  "current_step": "held_movement_start",
+  "completed": false,
+  "state": {
+    "home_screenshot": "2026-11-12_native_x11_second_home.png",
+    "sizes": [
+      {
+        "size": [
+          800,
+          600
+        ],
+        "scale": 0.5,
+        "offset": [
+          0.0,
+          75.0
+        ]
+      }
+    ],
+    "resized_screenshot": "2026-11-12_native_x11_second_home_800x600.png"
+  },
+  "commands": [
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2852133"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "2097160"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2852133"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097160",
+      "288",
+      "356"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2852133"
+    ],
+    [
+      "windowsize",
+      "2097160",
+      "800",
+      "600"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2852133"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097171",
+      "180",
+      "250"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Home"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Return"
+    ]
+  ],
+  "frames": 159,
+  "elapsed": 3.8449104279861785
+}

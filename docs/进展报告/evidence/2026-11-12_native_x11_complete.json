@@ -1,0 +1,360 @@
+{
+  "revision": "05f4a550c3e07b76d2aa2b307481dc3a6522f1a3",
+  "display": ":0",
+  "pygame": "2.6.1",
+  "sdl": [
+    2,
+    28,
+    4
+  ],
+  "input": "native XTest via xdotool",
+  "scope": "virtual X11 desktop, not physical-device acceptance",
+  "steps": [
+    {
+      "name": "boot",
+      "elapsed": 0.7133653789642267,
+      "page": 1,
+      "frame": 42
+    },
+    {
+      "name": "home_mouse_settings",
+      "elapsed": 1.143087554955855,
+      "page": 2,
+      "frame": 57
+    },
+    {
+      "name": "settings_return",
+      "elapsed": 1.7002618690021336,
+      "page": 5,
+      "frame": 74
+    },
+    {
+      "name": "home_resize",
+      "elapsed": 2.022802983992733,
+      "page": 2,
+      "frame": 84
+    },
+    {
+      "name": "letterbox_mouse_start",
+      "elapsed": 2.4402147689834237,
+      "page": 2,
+      "frame": 102
+    },
+    {
+      "name": "map_select",
+      "elapsed": 2.98290541395545,
+      "page": 0,
+      "frame": 110
+    },
+    {
+      "name": "held_movement_start",
+      "elapsed": 3.7229056149953976,
+      "page": 3,
+      "frame": 150
+    },
+    {
+      "name": "held_movement_end",
+      "elapsed": 4.546846058976371,
+      "page": 3,
+      "frame": 199
+    },
+    {
+      "name": "help_pause_start",
+      "elapsed": 4.901256293989718,
+      "page": 3,
+      "frame": 213
+    },
+    {
+      "name": "help_pause_end",
+      "elapsed": 5.514295865956228,
+      "page": 3,
+      "frame": 239
+    },
+    {
+      "name": "settings_pause_start",
+      "elapsed": 5.85365358798299,
+      "page": 5,
+      "frame": 251
+    },
+    {
+      "name": "settings_pause_end",
+      "elapsed": 6.472743135993369,
+      "page": 5,
+      "frame": 280
+    },
+    {
+      "name": "world_resize",
+      "elapsed": 7.001516458985861,
+      "page": 3,
+      "frame": 307
+    },
+    {
+      "name": "focus_target",
+      "elapsed": 7.227453749976121,
+      "page": 3,
+      "frame": 320
+    },
+    {
+      "name": "native_focus_loss",
+      "elapsed": 7.533072119986173,
+      "page": 3,
+      "frame": 338
+    },
+    {
+      "name": "unfocused_start",
+      "elapsed": 7.854376724979375,
+      "page": 3,
+      "frame": 355
+    },
+    {
+      "name": "unfocused_end",
+      "elapsed": 8.376857978000771,
+      "page": 3,
+      "frame": 380
+    },
+    {
+      "name": "native_focus_gain",
+      "elapsed": 8.689761968969833,
+      "page": 3,
+      "frame": 398
+    },
+    {
+      "name": "editor_open",
+      "elapsed": 9.115272135008126,
+      "page": 0,
+      "frame": 407
+    },
+    {
+      "name": "number_begin",
+      "elapsed": 9.45273461699253,
+      "page": 0,
+      "frame": 423
+    }
+  ],
+  "errors": [
+    "Traceback (most recent call last):\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 239, in run\n    app.run()\n  File \"/data/Users/zrh/repo/Pixel-Roamer/pixel_roamer/application.py\", line 501, in run\n    self._present_frame(dt)\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 230, in observe\n    action()\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 184, in type_number\n    native(\"type\", \"--clearmodifiers\", \"--delay\", 15, \"-12.25\")\n  File \"/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_native_window.py\", line 44, in native\n    return subprocess.check_output([xdotool, *map(str, args)], text=True).strip()\n  File \"/usr/lib/python3.10/subprocess.py\", line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/data/Users/zrh/.cache/pixel-roamer-audit/x11/usr/bin/xdotool', 'type', '--clearmodifiers', '--delay', '15', '-12.25']' returned non-zero exit status 1.\n"
+  ],
+  "video_driver": "x11",
+  "mixer": [
+    22050,
+    -16,
+    2
+  ],
+  "current_step": "number_type",
+  "completed": false,
+  "state": {
+    "home_screenshot": "2026-11-12_native_x11_complete_home.png",
+    "sizes": [
+      {
+        "size": [
+          800,
+          600
+        ],
+        "scale": 0.5,
+        "offset": [
+          0.0,
+          75.0
+        ]
+      },
+      {
+        "size": [
+          1000,
+          500
+        ],
+        "scale": 0.5555555555555556,
+        "offset": [
+          55.55555555555554,
+          0.0
+        ]
+      }
+    ],
+    "resized_screenshot": "2026-11-12_native_x11_complete_home_800x600.png",
+    "move_start": 4.5,
+    "move_end": 6.463966539291456,
+    "help_start": [
+      1.5749999999999968,
+      6.463966539291456,
+      25.898650350050477
+    ],
+    "pause_start": [
+      1.5749999999999968,
+      6.463966539291456,
+      25.898650350050477
+    ],
+    "world_screenshot": "2026-11-12_native_x11_complete_world_1000x500.png",
+    "unfocused_start": [
+      2.5749999999999935,
+      9.27708458321083,
+      22.83861950293533
+    ]
+  },
+  "commands": [
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "2097160"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097160",
+      "288",
+      "356"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "windowsize",
+      "2097160",
+      "800",
+      "600"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "mousemove",
+      "--window",
+      "2097171",
+      "180",
+      "250"
+    ],
+    [
+      "click",
+      "1"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Home"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Return"
+    ],
+    [
+      "keydown",
+      "d"
+    ],
+    [
+      "keyup",
+      "d"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "h"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "BackSpace"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "windowsize",
+      "2097171",
+      "1000",
+      "500"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--name",
+      "^pixel-roamer-audit-focus$"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "6291483"
+    ],
+    [
+      "key",
+      "space"
+    ],
+    [
+      "search",
+      "--onlyvisible",
+      "--pid",
+      "2853907"
+    ],
+    [
+      "windowfocus",
+      "--sync",
+      "2097182"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Escape"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "e"
+    ],
+    [
+      "key",
+      "--clearmodifiers",
+      "Return"
+    ],
+    [
+      "type",
+      "--clearmodifiers",
+      "--delay",
+      "15",
+      "-12.25"
+    ]
+  ],
+  "frames": 439,
+  "elapsed": 9.860775796987582
+}

@@ -3,6 +3,7 @@
 利用循环特性：看似走不通的路，跨过边界就通了
 """
 from world import World
+from maps.placement import is_air_cell
 
 MAP_ID = 4
 world = World(
@@ -41,7 +42,7 @@ world.set_tile(24, 16, 0)  # 右门
 world.set_tile(24, 20, 0)  # 左门（上方）
 
 # 枢纽内的设施
-world.set_tile(24, 15, 302)  # 检查点
+world.set_tile(22, 15, 302)  # 暴露在出生落脚面，避免被中柱与两侧设施包住。
 world.set_tile(23, 16, 291)  # 再生水晶
 world.set_tile(25, 16, 292)  # 护盾发生器
 # 中间的信息柱
@@ -119,15 +120,21 @@ fill(45, 30, 47, 30, 33)    # 右边缘
 world.set_tile(1, 31, 297)   # 加速之路
 
 # ============ 传送门网络（利用meta设置目标）============
+# Keep a two-block-high route out of the hidden room across the loop seam.
+# The old cloud row sealed it against the ceiling.
+fill(0, 30, 3, 30, 11)
+fill(0, 29, 0, 31, 11)
+fill(45, 29, 47, 31, 11)
+fill(45, 28, 47, 28, 33)
 # T1: 枢纽 → 东北隐藏室
 world.set_tile(26, 15, 300)
 if (26, 15) in world.grid:
-    world.grid[(26, 15)].meta = {"tp_x": 3, "tp_y": 30}
+    world.grid[(26, 15)].meta = {"tp_x": 4.5, "tp_y": 29.9}
 
 # T2: 南通道 → 西北隐藏点
 world.set_tile(23, 8, 300)
 if (23, 8) in world.grid:
-    world.grid[(23, 8)].meta = {"tp_x": 2, "tp_y": 8}
+    world.grid[(23, 8)].meta = {"tp_x": 2.5, "tp_y": 8.9}
 
 # ============ 装饰 ============
 # 中央天花板的星夜装饰
@@ -142,11 +149,24 @@ for y in range(0, 36, 9):
 
 # 治愈点分布
 for hx, hy in [(24,15),(3,29),(15,34),(44,34),(2,7),(30,17),(18,21),(40,30)]:
-    if world.get_tile(hx, hy).type_id == 0:
+    if is_air_cell(world, hx, hy):
         world.set_tile(hx, hy, 290)
 
 # 保留角色可通过的枢纽出口，避免墙壁封死已有通道。
-fill(21, 18, 21, 20, 0)
+# The west corridor is four blocks above the hub floor. Open the headroom
+# through this edge of the roof so the existing door can actually reach it.
+fill(21, 18, 21, 22, 0)
 fill(27, 18, 27, 20, 0)
+
+# Connect the west corridor to the existing south platform, with a visible
+# climbable return instead of another one-way fall into the lower chamber.
+for y in range(1, 23):
+    world.set_tile(20, y, 31)
+
+# Match the authored y-loop entrances to the two hidden rooms. The original
+# solid base and one-cell interiors prevented any normal-body entry/contact.
+for left, right in ((13, 17), (43, 46)):
+    fill(left, 0, right, 0, 11)
+    fill(left, 35, right, 35, 11)
 
 world.end_bulk_load()

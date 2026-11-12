@@ -1,0 +1,132 @@
+{
+  "code_revision": "9542440c6b2e858daff1a44a27d69dab71212583",
+  "scope": "actual BuffInstance.format_desc consumed by HUD and source block reference view, buff_data registry loaded",
+  "rows": [
+    {
+      "block_id": 363,
+      "buff_id": 5,
+      "params": [],
+      "duration": 10.0,
+      "description": "体力恢复速度 +{0}%"
+    },
+    {
+      "block_id": 364,
+      "buff_id": 7,
+      "params": [],
+      "duration": 12.0,
+      "description": "受到伤害 -{0}%"
+    },
+    {
+      "block_id": 364,
+      "buff_id": 6,
+      "params": [],
+      "duration": 12.0,
+      "description": "体力消耗 -{0}%"
+    },
+    {
+      "block_id": 373,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上"
+    },
+    {
+      "block_id": 383,
+      "buff_id": 42,
+      "params": [],
+      "duration": 8.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上"
+    },
+    {
+      "block_id": 388,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%"
+    },
+    {
+      "block_id": 389,
+      "buff_id": 13,
+      "params": [],
+      "duration": 10.0,
+      "description": "重力降低 {0}%"
+    },
+    {
+      "block_id": 391,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%"
+    },
+    {
+      "block_id": 402,
+      "buff_id": 42,
+      "params": [],
+      "duration": 6.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上"
+    },
+    {
+      "block_id": 405,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%"
+    },
+    {
+      "block_id": 406,
+      "buff_id": 6,
+      "params": [],
+      "duration": 15.0,
+      "description": "体力消耗 -{0}%"
+    },
+    {
+      "block_id": 416,
+      "buff_id": 13,
+      "params": [],
+      "duration": 4.0,
+      "description": "重力降低 {0}%"
+    },
+    {
+      "block_id": 418,
+      "buff_id": 13,
+      "params": [],
+      "duration": 6.0,
+      "description": "重力降低 {0}%"
+    },
+    {
+      "block_id": 419,
+      "buff_id": 5,
+      "params": [],
+      "duration": 8.0,
+      "description": "体力恢复速度 +{0}%"
+    },
+    {
+      "block_id": 422,
+      "buff_id": 44,
+      "params": [],
+      "duration": 8.0,
+      "description": "每 {0} 秒有概率短暂晕眩"
+    },
+    {
+      "block_id": 424,
+      "buff_id": 7,
+      "params": [],
+      "duration": 15.0,
+      "description": "受到伤害 -{0}%"
+    },
+    {
+      "block_id": 433,
+      "buff_id": 13,
+      "params": [],
+      "duration": 5.0,
+      "description": "重力降低 {0}%"
+    },
+    {
+      "block_id": 435,
+      "buff_id": 42,
+      "params": [],
+      "duration": 4.0,
+      "description": "地面摩擦力降低 {0}%，如同在冰面上"
+    }
+  ]
+}

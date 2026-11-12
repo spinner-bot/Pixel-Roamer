@@ -1,0 +1,14 @@
+test_actual_respawn_rearms_new_exposure_and_flight_clears_memory (test_chilled_water.ChilledWaterTests) ... ok
+test_all_original_cold_sources_freeze_once_for_four_seconds_then_restore_controls (test_chilled_water.ChilledWaterTests) ... ok
+test_continuous_contact_cleanse_immunity_and_complete_dry_reentry (test_chilled_water.ChilledWaterTests) ... ok
+test_halt_cancels_climb_and_shore_but_gravity_and_recovery_continue (test_chilled_water.ChilledWaterTests) ... ok
+test_original_sources_still_apply_cold_under_iron_will_without_freezing (test_chilled_water.ChilledWaterTests) ... ok
+test_pause_focus_and_terminal_state_preserve_frozen_lifetime_and_motion (test_chilled_water.ChilledWaterTests) ... ok
+test_water_semantics_exclude_lava_and_damage_liquid_without_source_id_special_case (test_chilled_water.ChilledWaterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 13.350s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

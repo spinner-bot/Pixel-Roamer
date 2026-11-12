@@ -1,0 +1,3 @@
+{"fps": 30, "win": true, "failure": null, "detour": "complete"}
+{"fps": 60, "win": true, "failure": null, "detour": "complete"}
+{"fps": 144, "win": true, "failure": null, "detour": "complete"}

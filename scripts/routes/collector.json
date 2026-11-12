@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "map_id": 9,
+  "waypoints": [
+    {
+      "action": "drop",
+      "x": 13.5,
+      "y": 12.9
+    },
+    {
+      "action": "collect",
+      "x": 12,
+      "y": 13
+    },
+    {
+      "action": "collect",
+      "x": 15,
+      "y": 13
+    },
+    {
+      "action": "exit_shaft",
+      "x": 13.5,
+      "y": 19.1
+    },
+    {
+      "action": "collect",
+      "x": 8,
+      "y": 18
+    },
+    {
+      "action": "collect",
+      "x": 10,
+      "y": 22
+    },
+    {
+      "action": "collect",
+      "x": 17,
+      "y": 21
+    },
+    {
+      "action": "ground",
+      "x": 1.4,
+      "y": 1.9
+    },
+    {
+      "action": "collect",
+      "x": 6,
+      "y": 6
+    },
+    {
+      "action": "collect",
+      "x": 7,
+      "y": 6
+    },
+    {
+      "action": "collect",
+      "x": 6,
+      "y": 8
+    },
+    {
+      "action": "collect",
+      "x": 7,
+      "y": 8
+    },
+    {
+      "action": "ground",
+      "x": 21.3,
+      "y": 1.9
+    },
+    {
+      "action": "collect",
+      "x": 25,
+      "y": 7
+    },
+    {
+      "action": "collect",
+      "x": 26,
+      "y": 8
+    },
+    {
+      "action": "collect",
+      "x": 28,
+      "y": 9
+    },
+    {
+      "action": "collect",
+      "x": 30,
+      "y": 11
+    },
+    {
+      "action": "ground",
+      "x": 43.4,
+      "y": 1.9
+    },
+    {
+      "action": "collect",
+      "x": 48,
+      "y": 5
+    },
+    {
+      "action": "collect",
+      "x": 49,
+      "y": 5
+    },
+    {
+      "action": "collect",
+      "x": 48,
+      "y": 8
+    }
+  ]
+}

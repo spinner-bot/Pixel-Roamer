@@ -1,0 +1,1677 @@
+{
+  "code_revision": "82ba2733fa4dce7ed135fd38718979455a1f5235",
+  "scope": "isolated existing buff/surface fixtures; production session controls and fixed-tick invariants; not every semantic effect, frame partition or map path",
+  "python": "3.10.12",
+  "pygame": "2.6.1",
+  "requested_seconds": 8,
+  "expected_cases": 48,
+  "complete": true,
+  "cases": [
+    {
+      "block_id": 4,
+      "buff_id": 1,
+      "seed": 4001,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        1
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 2,
+      "seed": 4002,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        2
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 10.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 13,
+      "seed": 4013,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 177.5,
+      "observed_buffs": [
+        13
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.42858691198929,
+          2.9
+        ],
+        "velocity": [
+          -2.0176178209353184,
+          0.0
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 198.63953792294205,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 21,
+      "seed": 4021,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        21
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.398844835505406,
+          12.163020833333311
+        ],
+        "velocity": [
+          -3.412757492248245,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 27,
+      "seed": 4027,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 177.5,
+      "observed_buffs": [
+        27
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.274957104264487,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.413513735890447,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 181.87847857174307,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 28,
+      "seed": 4028,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 177.5,
+      "observed_buffs": [
+        28
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.398104430623984,
+          12.163020833333311
+        ],
+        "velocity": [
+          -3.4127575663305625,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 181.87847857174307,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 33,
+      "seed": 4033,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        33
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.398844835505406,
+          12.163020833333311
+        ],
+        "velocity": [
+          -3.412757492248245,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 36,
+      "seed": 4036,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 40,
+      "seed": 4040,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        40
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 44,
+      "seed": 4044,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        44
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 48,
+      "seed": 4048,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 177.5,
+      "observed_buffs": [
+        48
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.398104430623984,
+          12.163020833333311
+        ],
+        "velocity": [
+          -3.4127575663305625,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 181.87847857174307,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 4,
+      "buff_id": 58,
+      "seed": 4058,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 173.17847040388867,
+      "observed_buffs": [
+        58
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.2399124118768,
+          12.163020833333311
+        ],
+        "velocity": [
+          -4.503961560342892,
+          3.375
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 177.89460333591748,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 1,
+      "seed": 7001,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        1,
+        15
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 2,
+      "seed": 7002,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        2,
+        15
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 10.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 13,
+      "seed": 7013,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        13,
+        15
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 21,
+      "seed": 7021,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        21
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.32961198352126,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9561480107677975,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 27,
+      "seed": 7027,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        27
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 28,
+      "seed": 7028,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        15,
+        28
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.32961198352126,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9561480107677975,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 188.79318392774854,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 33,
+      "seed": 7033,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        33
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.32961198352126,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9561480107677975,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 36,
+      "seed": 7036,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 40,
+      "seed": 7040,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        40
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 44,
+      "seed": 7044,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        44
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.335363775457289,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9230082694571533,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 48,
+      "seed": 7048,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 126.84999999999535,
+      "observed_buffs": [
+        15,
+        48
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.349381670293106,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.83464278932518,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 137.60646860661305,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 7,
+      "buff_id": 58,
+      "seed": 7058,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        15,
+        58
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.332801905606843,
+          9.998571801455045
+        ],
+        "velocity": [
+          -3.9185782913065976,
+          2.4089904576834433
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 188.79318392774854,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 1,
+      "seed": 349001,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        1
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 2,
+      "seed": 349002,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        2
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 10.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 13,
+      "seed": 349013,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        13
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          7.618784722222135
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -12.089583333333351
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 21,
+      "seed": 349021,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        21
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.29830610439223,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.191913969491466,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 27,
+      "seed": 349027,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        27
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          -26.268750000000022
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -19.445833333333404
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 28,
+      "seed": 349028,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        28
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          12.498239052016267,
+          2.9
+        ],
+        "velocity": [
+          -0.10565687902389244,
+          0.0
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 33,
+      "seed": 349033,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        33
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.29830610439223,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.191913969491466,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 36,
+      "seed": 349036,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 40,
+      "seed": 349040,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        40
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 44,
+      "seed": 349044,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        44
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 48,
+      "seed": 349048,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        48
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.29830610439223,
+          -26.268750000000022
+        ],
+        "velocity": [
+          -4.191913969491466,
+          -19.445833333333404
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 349,
+      "buff_id": 58,
+      "seed": 349058,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 150.0,
+      "min_stamina": 185.0,
+      "observed_buffs": [
+        58
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.289529087970472,
+          1.2113541666666738
+        ],
+        "velocity": [
+          -4.183123207490677,
+          -4.65833333333333
+        ],
+        "score": 0,
+        "hp": 150.0,
+        "stamina": 196.78232114474966,
+        "shield": 0.0,
+        "buffs": []
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 1,
+      "seed": 427001,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        1,
+        16,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.379219810937029,
+          2.8149621072981827
+        ],
+        "velocity": [
+          -3.05603538479563,
+          0.6836549581367158
+        ],
+        "score": 0,
+        "hp": 109.34999999999945,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            6.0,
+            3
+          ],
+          [
+            27,
+            6.0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 2,
+      "seed": 427002,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        2,
+        16,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438479127823966,
+          2.913349372649273
+        ],
+        "velocity": [
+          -2.7168691813185424,
+          1.7102756090717204
+        ],
+        "score": 0,
+        "hp": 105.22499999999948,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.991666666666666,
+            3
+          ],
+          [
+            27,
+            5.991666666666666,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 13,
+      "seed": 427013,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        13,
+        16,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.496393035371764,
+          3.0004765609562347
+        ],
+        "velocity": [
+          -2.9072535511844806,
+          1.3311089424050535
+        ],
+        "score": 0,
+        "hp": 103.1249999999995,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.93333333333333,
+            3
+          ],
+          [
+            27,
+            5.93333333333333,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 21,
+      "seed": 427021,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        21,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.41771536425526,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.449760958109775,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 27,
+      "seed": 427027,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438187606825151,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.440102163333757,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 28,
+      "seed": 427028,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 29.550000000000274,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        28
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.342375476650941,
+          2.7858953161216458
+        ],
+        "velocity": [
+          -3.225351093672559,
+          -1.166334533098557
+        ],
+        "score": 0,
+        "hp": 29.550000000000274,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            6.0,
+            3
+          ],
+          [
+            27,
+            6.0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 33,
+      "seed": 427033,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        33,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.41771536425526,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.449760958109775,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 36,
+      "seed": 427036,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 0,
+      "min_hp": 30.50000000000008,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.298834687330945,
+          2.921215042977366
+        ],
+        "velocity": [
+          -3.707743067648493,
+          -0.5578832823546228
+        ],
+        "score": 0,
+        "hp": 30.50000000000008,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.79999999999999,
+            3
+          ],
+          [
+            27,
+            5.79999999999999,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 40,
+      "seed": 427040,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36,
+        40
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438187606825151,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.440102163333757,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 44,
+      "seed": 427044,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36,
+        44
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438187606825151,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.440102163333757,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 48,
+      "seed": 427048,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36,
+        48
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438187606825151,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.440102163333757,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "block_id": 427,
+      "buff_id": 58,
+      "seed": 427058,
+      "ticks": 960,
+      "input_seconds": 8.0,
+      "control_frames": 624,
+      "respawns": 1,
+      "min_hp": 0.0,
+      "min_stamina": 200.0,
+      "observed_buffs": [
+        16,
+        27,
+        36,
+        58
+      ],
+      "errors": [],
+      "final_state": {
+        "timer": 8.000000000000187,
+        "position": [
+          14.438187606825151,
+          3.1126985120901995
+        ],
+        "velocity": [
+          -3.440102163333757,
+          0.5186089424050531
+        ],
+        "score": 0,
+        "hp": 98.62499999999955,
+        "stamina": 200.0,
+        "shield": 0.0,
+        "buffs": [
+          [
+            16,
+            5.808333333333324,
+            3
+          ],
+          [
+            27,
+            5.808333333333324,
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "wall_seconds": 13.371791245997883
+}

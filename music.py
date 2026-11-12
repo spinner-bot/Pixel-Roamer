@@ -18,6 +18,7 @@ _music_volume = 0.5                   # 音乐音量 (0~1)
 _music_cache: dict[str, pygame.mixer.Sound] = {}  # 曲目缓存
 _pending_tracks = {}
 _requested_track = None
+_current_channel_id = None
 _RENDER_CHUNK_SAMPLES = 512
 _RENDER_FRAME_BUDGET = 0.004
 
@@ -25,10 +26,8 @@ _RENDER_FRAME_BUDGET = 0.004
 def _ensure_init():
     """确保混音器和 sfx 已初始化。"""
     global _music_initialized
-    if _music_initialized:
-        return
-    sfx._ensure_init()
-    _music_initialized = True
+    _music_initialized = sfx._ensure_init()
+    return _music_initialized
 
 
 # ===================== 公开 API =====================
@@ -37,13 +36,17 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     播放指定曲目（自动缓存、无缝循环、淡入）。
     若已有曲目播放中，先淡出旧曲目。
     """
-    global _current_track, _current_sound
+    global _current_track, _current_sound, _current_channel_id
 
-    _ensure_init()
+    if not _ensure_init():
+        return
 
     sound = _music_cache.get(track_key)
     if sound is None:
         return  # 曲目尚未渲染（需先调用 register + render）
+    if _current_sound is sound and is_playing():
+        sound.set_volume(_music_volume)
+        return
 
     # 淡出旧曲目
     if _current_sound is not None and _current_sound is not sound:
@@ -55,7 +58,12 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     # 播放新曲目（Sound.set_volume 影响该 Sound 的所有实例）
     sound.set_volume(_music_volume)
     try:
-        sound.play(loops=loops, fade_ms=fade_in_ms)
+        # Two channels allow crossfades while effects remain in their own pool.
+        first, second = sfx.MUSIC_CHANNEL_IDS
+        _current_channel_id = second if _current_channel_id == first else first
+        channel = pygame.mixer.Channel(_current_channel_id)
+        channel.set_volume(1.0, 1.0)
+        channel.play(sound, loops=loops, fade_ms=fade_in_ms)
     except pygame.error:
         pass
 
@@ -67,6 +75,11 @@ def stop(fade_out_ms: int = 500):
     """停止当前音乐，可选淡出。"""
     global _current_track, _current_sound, _requested_track
     _requested_track = None
+    if pygame.mixer.get_init():
+        if fade_out_ms > 0:
+            pygame.mixer.music.fadeout(fade_out_ms)
+        else:
+            pygame.mixer.music.stop()
     if _current_sound is not None:
         try:
             if fade_out_ms > 0:
@@ -84,6 +97,8 @@ def set_volume(v: float):
     global _music_volume
     _music_volume = max(0.0, min(1.0, v))
     sfx.set_music_volume(_music_volume)
+    if pygame.mixer.get_init():
+        pygame.mixer.music.set_volume(_music_volume)
     # 更新当前播放中 Sound 的音量
     if _current_sound is not None:
         try:
@@ -98,12 +113,26 @@ def get_volume() -> float:
 
 def is_playing() -> bool:
     """检查是否有音乐正在播放。"""
+    if pygame.mixer.get_init() and pygame.mixer.music.get_busy():
+        return True
     if _current_sound is None:
         return False
     try:
         return _current_sound.get_num_channels() > 0
     except pygame.error:
         return False
+
+
+def play_file(filename: str, fade_in_ms: int = 800, loops: int = -1):
+    """Play a streamed file through the same stop/volume lifecycle as synths."""
+    global _current_track
+    if not _ensure_init():
+        return
+    stop(fade_out_ms=0)
+    pygame.mixer.music.load(filename)
+    pygame.mixer.music.set_volume(_music_volume)
+    pygame.mixer.music.play(loops=loops, fade_ms=fade_in_ms)
+    _current_track = f"file:{filename}"
 
 
 def get_current_track() -> str | None:
@@ -735,6 +764,10 @@ _original_play = play
 def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
     """按需逐帧合成曲目，调用时不会同步渲染音频。"""
     global _requested_track
+    if not _ensure_init():
+        return
+    if pygame.mixer.get_init():
+        pygame.mixer.music.stop()
     if track_key in _music_cache:
         _requested_track = None
         _original_play(track_key, fade_in_ms, loops)
@@ -745,7 +778,6 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
         _original_play(track_key, fade_in_ms, loops)
         return
 
-    _ensure_init()
     if track_key not in _pending_tracks:
         pattern_factory, volume = builder
         pattern = pattern_factory()
@@ -756,6 +788,8 @@ def play(track_key: str, fade_in_ms: int = 800, loops: int = -1):
 def update():
     """按每帧 CPU 预算推进曲目合成，并启动最近请求的曲目。"""
     global _requested_track
+    if not _ensure_init():
+        return
 
     deadline = time.perf_counter() + _RENDER_FRAME_BUDGET
     for key, renderer in list(_pending_tracks.items()):

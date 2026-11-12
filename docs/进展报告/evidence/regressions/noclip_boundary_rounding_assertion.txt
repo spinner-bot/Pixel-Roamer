@@ -1,0 +1,19 @@
+test_flight_and_stunned_expiry_are_safe_at_three_frame_rates (test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_rechecks_anchor_before_falling_back_to_spawn (test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_flight_exit_respects_solid_boundaries_and_preserves_loop_coordinates (test_noclip_lifecycle.NoclipLifecycleTests) ... test_pause_and_terminal_guards_do_not_relocate_a_frozen_world (test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+test_stunned_rollback_clears_stale_environment_without_waiting_for_stun_to_end (test_noclip_lifecycle.NoclipLifecycleTests) ... ok
+
+======================================================================
+FAIL: test_flight_exit_respects_solid_boundaries_and_preserves_loop_coordinates (test_noclip_lifecycle.NoclipLifecycleTests) (loop_y=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_noclip_lifecycle.py", line 121, in test_flight_exit_respects_solid_boundaries_and_preserves_loop_coordinates
+    self.assertGreaterEqual(player._y, player._h / 2)
+AssertionError: 0.8999999999999992 not greater than or equal to 0.9
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.888s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

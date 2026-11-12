@@ -1,0 +1,220 @@
+{
+  "code_revision": "23cdf1c1520f57e29aebc6a4e3af4b0013d2a5e9",
+  "exposure_candidate": false,
+  "scope": "strip rows are real WorldSession held input; placements rows deliberately move coordinates in an API fixture to isolate contact memory, not normal gameplay or map acceptance",
+  "strips": [
+    {
+      "fps": 30,
+      "direction": -1,
+      "loop": false,
+      "distance": 0.0038834358644876943,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        54.49611656413551,
+        5.9
+      ]
+    },
+    {
+      "fps": 30,
+      "direction": -1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        6.496116564135514,
+        5.9
+      ]
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "loop": false,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    },
+    {
+      "fps": 30,
+      "direction": 1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "loop": false,
+      "distance": 0.0038834358644876943,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        54.49611656413551,
+        5.9
+      ]
+    },
+    {
+      "fps": 60,
+      "direction": -1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        6.496116564135514,
+        5.9
+      ]
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "loop": false,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    },
+    {
+      "fps": 60,
+      "direction": 1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "loop": false,
+      "distance": 0.0038834358644876943,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        54.49611656413551,
+        5.9
+      ]
+    },
+    {
+      "fps": 144,
+      "direction": -1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        6.496116564135514,
+        5.9
+      ]
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "loop": false,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    },
+    {
+      "fps": 144,
+      "direction": 1,
+      "loop": true,
+      "distance": 0.003883435864485918,
+      "wraps": 0,
+      "max_cold_stacks": 3,
+      "v_max": 0.0,
+      "position": [
+        5.503883435864486,
+        5.9
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "label": "first",
+      "stacks": 1,
+      "duration": 6.0
+    },
+    {
+      "label": "100_continuous_refreshes",
+      "stacks": 3,
+      "duration": 6.0
+    },
+    {
+      "label": "adjacent_same_kind",
+      "stacks": 3,
+      "duration": 6.0
+    },
+    {
+      "label": "different_source_kind",
+      "stacks": 3,
+      "duration": 6.0
+    },
+    {
+      "label": "leave_all_and_reenter",
+      "stacks": 3,
+      "duration": 6.0
+    },
+    {
+      "label": "clear_while_touching",
+      "stacks": 1,
+      "duration": 6.0
+    },
+    {
+      "label": "explicit_api_while_touching",
+      "stacks": 2,
+      "duration": 6
+    },
+    {
+      "label": "continuous_after_explicit_api",
+      "stacks": 3,
+      "duration": 6.0
+    },
+    {
+      "label": "explicit_api_twice",
+      "stacks": 2,
+      "duration": 6
+    },
+    {
+      "label": "new_world_first_contact",
+      "stacks": 1,
+      "duration": 6.0
+    },
+    {
+      "label": "reset_then_contact",
+      "stacks": 1,
+      "duration": 6.0
+    }
+  ]
+}

@@ -1,0 +1,1497 @@
+{
+  "code_revision": "695cacee4a4df28e2d8bb5be833c6ddda4dcdc1d",
+  "legacy_revision": "1db6cd2",
+  "scope": "isolated ability fixture with production controls; phantom uses actual tile; ghost buff granted only in fixture",
+  "before": [
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        55.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        55.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          55.65772571696218,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        55.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        8.6,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        8.6,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          8.342274283037817,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          8.367304114046958,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        8.6,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        32.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        32.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        19.3701239060682,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          32.69010402889771,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          -13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        32.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        31.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        31.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        44.6298760939318,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          31.30989597110223,
+          5.5
+        ],
+        "clear": false,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          13.117410244403105,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": false,
+      "final_position": [
+        31.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    }
+  ],
+  "after": [
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          56.404570231468476,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        56.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          56.404570231468476,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        56.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          56.404570231468476,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          56.404570231468476,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        56.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": -1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          7.595429768531536,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        7.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          7.595429768531536,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        7.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          7.595429768531536,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          7.595429768531536,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        7.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "ghost_buff",
+      "direction": 1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 0.9999999999999989,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          33.4540533168216,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        33.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          33.4540533168216,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        33.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          33.4540533168216,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          33.4540533168216,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        33.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": -1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          59.42839005891038,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          59.42839005891038,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        59.4,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 30,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          30.545946683178332,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        30.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 30,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 60,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          30.545946683178332,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        30.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 60,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 144,
+      "wall": "single_layer",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          30.545946683178332,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          30.545946683178332,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        30.599999999999998,
+        5.5
+      ],
+      "respawns": 0
+    },
+    {
+      "source": "phantom_gate",
+      "direction": 1,
+      "fps": 144,
+      "wall": "thick",
+      "entered_wall": true,
+      "first_expired": {
+        "time": 3.0083333333333253,
+        "position": [
+          4.571609941089649,
+          5.5
+        ],
+        "clear": true,
+        "last_clear": [
+          4.571609941089649,
+          5.5
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ],
+        "hp": 150.0,
+        "stamina": 200.0
+      },
+      "final_clear": true,
+      "final_position": [
+        4.6000000000000005,
+        5.5
+      ],
+      "respawns": 0
+    }
+  ]
+}

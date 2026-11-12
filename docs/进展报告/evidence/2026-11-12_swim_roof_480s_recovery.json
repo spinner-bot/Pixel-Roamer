@@ -1,0 +1,1007 @@
+{
+  "code_revision": "e066f7b4de80c33664593b481c4d019e1c190476",
+  "scope": "four explicit low-roof fixtures with a floor, actual held/release input; not map traversal or device acceptance",
+  "sources": {
+    "scripts/audit_swim_roof_recovery.py": "bbb77b5ebbb811ff26e87215b8a92968d986d68f6f8f9d5f465fc1c694a0e272",
+    "pixel_roamer/world_session.py": "db3a14ffe6754a5b9182c83b3f06b2f9b163e640df674411511c47326c1bdc1c",
+    "creature.py": "460a47e1ec25ff154155d24d7e1092cdb292e7c3c257333623193f381018f1eb"
+  },
+  "runs": [
+    {
+      "height": 1.8,
+      "requested_seconds": 120,
+      "input_seconds": 119.99999999998775,
+      "frames": 9359,
+      "respawns": 0,
+      "errors": [],
+      "final_position": [
+        5.5,
+        8.659865423464817
+      ],
+      "final_stamina": 0.05610328729177566,
+      "transitions": [
+        {
+          "input_time": 0.0,
+          "up": true,
+          "position": [
+            5.5,
+            9.97
+          ],
+          "stamina": 200.0
+        },
+        {
+          "input_time": 12.000000000000073,
+          "up": false,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 0.14999999999679264
+        },
+        {
+          "input_time": 28.006944444442667,
+          "up": true,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 153.38553413532156
+        },
+        {
+          "input_time": 40.00694444444186,
+          "up": false,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 0.08553413532138116
+        },
+        {
+          "input_time": 56.006944444439924,
+          "up": true,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 153.36485958024755
+        },
+        {
+          "input_time": 68.00694444443856,
+          "up": false,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 0.06485958024738564
+        },
+        {
+          "input_time": 84.00694444443697,
+          "up": true,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 153.35822946371027
+        },
+        {
+          "input_time": 96.00694444443526,
+          "up": false,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 0.05822946371010501
+        },
+        {
+          "input_time": 112.00694444443401,
+          "up": true,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 153.35610328729194
+        }
+      ],
+      "trace": [
+        {
+          "input_time": 0.03333333333333333,
+          "position": [
+            5.5,
+            9.999552009319208
+          ],
+          "stamina": 199.47499999999997,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 9.999999999999975,
+          "position": [
+            5.5,
+            9.33246848742132
+          ],
+          "stamina": 0.14999999999679264,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 20.000000000000043,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 97.79503376849864,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 29.99999999999777,
+          "position": [
+            5.5,
+            9.999552009319208
+          ],
+          "stamina": 111.38553413532019,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 40.00694444444186,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 0.08553413532138116,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 50.00694444444129,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 114.58567038249168,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 59.99999999999457,
+          "position": [
+            5.5,
+            9.999552009319208
+          ],
+          "stamina": 69.36485958024687,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 70.00694444443845,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 30.300526837509466,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 80.00694444443788,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 129.2656066461323,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 89.99999999999116,
+          "position": [
+            5.5,
+            9.999552009319208
+          ],
+          "stamina": 27.358229463710177,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 100.00694444443504,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 56.1357478983775,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 110.00694444443447,
+          "position": [
+            5.5,
+            1.9
+          ],
+          "stamina": 142.10914082526884,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 119.99999999998775,
+          "position": [
+            5.5,
+            8.659865423464817
+          ],
+          "stamina": 0.05610328729177566,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        }
+      ],
+      "steps": 14400,
+      "ceiling_steps": 0,
+      "floor_steps": 8685,
+      "exhausted_up_steps": 2078,
+      "min_stamina": 0.05610328729177566,
+      "min_hp": 150.0,
+      "max_release_recovery": 153.29787382358185,
+      "max_step_dy": 0.05030393295058211
+    },
+    {
+      "height": 2.02,
+      "requested_seconds": 120,
+      "input_seconds": 119.99999999998775,
+      "frames": 9359,
+      "respawns": 0,
+      "errors": [],
+      "final_position": [
+        5.5,
+        8.678067963613175
+      ],
+      "final_stamina": 0.05610328729177566,
+      "transitions": [
+        {
+          "input_time": 0.0,
+          "up": true,
+          "position": [
+            5.5,
+            9.97
+          ],
+          "stamina": 200.0
+        },
+        {
+          "input_time": 12.000000000000073,
+          "up": false,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 0.14999999999679264
+        },
+        {
+          "input_time": 28.006944444442667,
+          "up": true,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 153.38553413532156
+        },
+        {
+          "input_time": 40.00694444444186,
+          "up": false,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 0.08553413532138116
+        },
+        {
+          "input_time": 56.006944444439924,
+          "up": true,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 153.36485958024755
+        },
+        {
+          "input_time": 68.00694444443856,
+          "up": false,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 0.06485958024738564
+        },
+        {
+          "input_time": 84.00694444443697,
+          "up": true,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 153.35822946371027
+        },
+        {
+          "input_time": 96.00694444443526,
+          "up": false,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 0.05822946371010501
+        },
+        {
+          "input_time": 112.00694444443401,
+          "up": true,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 153.35610328729194
+        }
+      ],
+      "trace": [
+        {
+          "input_time": 0.03333333333333333,
+          "position": [
+            5.5,
+            9.99
+          ],
+          "stamina": 199.47499999999997,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 9.999999999999975,
+          "position": [
+            5.5,
+            9.343585520257045
+          ],
+          "stamina": 0.14999999999679264,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 20.000000000000043,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 97.79503376849864,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 29.99999999999777,
+          "position": [
+            5.5,
+            9.99
+          ],
+          "stamina": 111.38553413532019,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 40.00694444444186,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 0.08553413532138116,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 50.00694444444129,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 114.58567038249168,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 59.99999999999457,
+          "position": [
+            5.5,
+            9.99
+          ],
+          "stamina": 69.36485958024687,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 70.00694444443845,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 30.300526837509466,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 80.00694444443788,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 129.2656066461323,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 89.99999999999116,
+          "position": [
+            5.5,
+            9.99
+          ],
+          "stamina": 27.358229463710177,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 100.00694444443504,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 56.1357478983775,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 110.00694444443447,
+          "position": [
+            5.5,
+            2.01
+          ],
+          "stamina": 142.10914082526884,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 119.99999999998775,
+          "position": [
+            5.5,
+            8.678067963613175
+          ],
+          "stamina": 0.05610328729177566,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        }
+      ],
+      "steps": 14400,
+      "ceiling_steps": 3778,
+      "floor_steps": 8689,
+      "exhausted_up_steps": 2078,
+      "min_stamina": 0.05610328729177566,
+      "min_hp": 150.0,
+      "max_release_recovery": 153.29787382358185,
+      "max_step_dy": 0.05016378092815632
+    },
+    {
+      "height": 2.08,
+      "requested_seconds": 120,
+      "input_seconds": 119.99999999998775,
+      "frames": 9359,
+      "respawns": 0,
+      "errors": [],
+      "final_position": [
+        5.5,
+        8.648067963613226
+      ],
+      "final_stamina": 0.05610328729177566,
+      "transitions": [
+        {
+          "input_time": 0.0,
+          "up": true,
+          "position": [
+            5.5,
+            9.959000000000001
+          ],
+          "stamina": 200.0
+        },
+        {
+          "input_time": 12.000000000000073,
+          "up": false,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 0.14999999999679264
+        },
+        {
+          "input_time": 28.006944444442667,
+          "up": true,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 153.38553413532156
+        },
+        {
+          "input_time": 40.00694444444186,
+          "up": false,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 0.08553413532138116
+        },
+        {
+          "input_time": 56.006944444439924,
+          "up": true,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 153.36485958024755
+        },
+        {
+          "input_time": 68.00694444443856,
+          "up": false,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 0.06485958024738564
+        },
+        {
+          "input_time": 84.00694444443697,
+          "up": true,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 153.35822946371027
+        },
+        {
+          "input_time": 96.00694444443526,
+          "up": false,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 0.05822946371010501
+        },
+        {
+          "input_time": 112.00694444443401,
+          "up": true,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 153.35610328729194
+        }
+      ],
+      "trace": [
+        {
+          "input_time": 0.03333333333333333,
+          "position": [
+            5.5,
+            9.96
+          ],
+          "stamina": 199.47499999999997,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 9.999999999999975,
+          "position": [
+            5.5,
+            9.313585520257096
+          ],
+          "stamina": 0.14999999999679264,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 20.000000000000043,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 97.79503376849864,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 29.99999999999777,
+          "position": [
+            5.5,
+            9.96
+          ],
+          "stamina": 111.38553413532019,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 40.00694444444186,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 0.08553413532138116,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 50.00694444444129,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 114.58567038249168,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 59.99999999999457,
+          "position": [
+            5.5,
+            9.96
+          ],
+          "stamina": 69.36485958024687,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 70.00694444443845,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 30.300526837509466,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 80.00694444443788,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 129.2656066461323,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 89.99999999999116,
+          "position": [
+            5.5,
+            9.96
+          ],
+          "stamina": 27.358229463710177,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 100.00694444443504,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 56.1357478983775,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 110.00694444443447,
+          "position": [
+            5.5,
+            2.04
+          ],
+          "stamina": 142.10914082526884,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 119.99999999998775,
+          "position": [
+            5.5,
+            8.648067963613226
+          ],
+          "stamina": 0.05610328729177566,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        }
+      ],
+      "steps": 14400,
+      "ceiling_steps": 3786,
+      "floor_steps": 8693,
+      "exhausted_up_steps": 2078,
+      "min_stamina": 0.05610328729177566,
+      "min_hp": 150.0,
+      "max_release_recovery": 153.29787382358185,
+      "max_step_dy": 0.05009290657626808
+    },
+    {
+      "height": 2.12,
+      "requested_seconds": 120,
+      "input_seconds": 119.99999999998775,
+      "frames": 9359,
+      "respawns": 0,
+      "errors": [],
+      "final_position": [
+        5.5,
+        8.62806796361316
+      ],
+      "final_stamina": 0.05610328729177566,
+      "transitions": [
+        {
+          "input_time": 0.0,
+          "up": true,
+          "position": [
+            5.5,
+            9.939
+          ],
+          "stamina": 200.0
+        },
+        {
+          "input_time": 12.000000000000073,
+          "up": false,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 0.14999999999679264
+        },
+        {
+          "input_time": 28.006944444442667,
+          "up": true,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 153.38553413532156
+        },
+        {
+          "input_time": 40.00694444444186,
+          "up": false,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 0.08553413532138116
+        },
+        {
+          "input_time": 56.006944444439924,
+          "up": true,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 153.36485958024755
+        },
+        {
+          "input_time": 68.00694444443856,
+          "up": false,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 0.06485958024738564
+        },
+        {
+          "input_time": 84.00694444443697,
+          "up": true,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 153.35822946371027
+        },
+        {
+          "input_time": 96.00694444443526,
+          "up": false,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 0.05822946371010501
+        },
+        {
+          "input_time": 112.00694444443401,
+          "up": true,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 153.35610328729194
+        }
+      ],
+      "trace": [
+        {
+          "input_time": 0.03333333333333333,
+          "position": [
+            5.5,
+            9.94
+          ],
+          "stamina": 199.47499999999997,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 9.999999999999975,
+          "position": [
+            5.5,
+            9.293585520257045
+          ],
+          "stamina": 0.14999999999679264,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        },
+        {
+          "input_time": 20.000000000000043,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 97.79503376849864,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 29.99999999999777,
+          "position": [
+            5.5,
+            9.94
+          ],
+          "stamina": 111.38553413532019,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 40.00694444444186,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 0.08553413532138116,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 50.00694444444129,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 114.58567038249168,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 59.99999999999457,
+          "position": [
+            5.5,
+            9.94
+          ],
+          "stamina": 69.36485958024687,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 70.00694444443845,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 30.300526837509466,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 80.00694444443788,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 129.2656066461323,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 89.99999999999116,
+          "position": [
+            5.5,
+            9.94
+          ],
+          "stamina": 27.358229463710177,
+          "up": true,
+          "on_ceiling": true,
+          "on_ground": false
+        },
+        {
+          "input_time": 100.00694444443504,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 56.1357478983775,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 110.00694444443447,
+          "position": [
+            5.5,
+            2.06
+          ],
+          "stamina": 142.10914082526884,
+          "up": false,
+          "on_ceiling": false,
+          "on_ground": true
+        },
+        {
+          "input_time": 119.99999999998775,
+          "position": [
+            5.5,
+            8.62806796361316
+          ],
+          "stamina": 0.05610328729177566,
+          "up": true,
+          "on_ceiling": false,
+          "on_ground": false
+        }
+      ],
+      "steps": 14400,
+      "ceiling_steps": 3790,
+      "floor_steps": 8697,
+      "exhausted_up_steps": 2078,
+      "min_stamina": 0.05610328729177566,
+      "min_hp": 150.0,
+      "max_release_recovery": 153.29787382358185,
+      "max_step_dy": 0.05002149461097227
+    }
+  ]
+}

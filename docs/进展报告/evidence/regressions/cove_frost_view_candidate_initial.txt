@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_view.py", line 83, in <module>
+    raise SystemExit(0 if run(args.output, args.candidate) else 1)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_view.py", line 63, in run
+    result = cove_route(60, world_hook=candidate_world if candidate else None,
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_route.py", line 127, in run
+    ice_extension = ice_hook(app, session, keys, fps)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_view.py", line 61, in observe_detour
+    return ice_detour(app, session, keys, fps)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_pool.py", line 75, in ice_detour
+    session.advance(1 / fps)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_view.py", line 56, in capture_advance
+    capture(label, app, session)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_view.py", line 40, in capture
+    captures.append({'phase': label, 'path': str(path.relative_to(ROOT)),
+  File "/usr/lib/python3.10/pathlib.py", line 818, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: 'docs/进展报告/evidence/art/A92_cove_frost_candidate_frozen.png' is not in the subpath of '/data/Users/zrh/repo/Pixel-Roamer' OR one path is relative and the other is absolute.

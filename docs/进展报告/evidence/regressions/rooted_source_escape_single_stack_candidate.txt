@@ -1,0 +1,1 @@
+{"rows": 72, "ordinary_escaped": 0, "ordinary_rows": 36, "immune_escaped": 36, "errors": 0}

@@ -1,0 +1,193 @@
+{
+  "baseline_ref": "f030083",
+  "current_revision": "43a392b2994b160f183fb1631819e3d86ac294c7",
+  "scope": "historical/current Player; shared unchanged World queries; deterministic face contacts",
+  "before": {
+    "contacts": {
+      "cases": 3888,
+      "failed": 2970,
+      "max_reverse_distance": 1.3999999999999995,
+      "failure_samples": [
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 30,
+          "direction": -1,
+          "perturbation": "nextafter",
+          "end": [
+            6.4,
+            5.75
+          ],
+          "dx": 0.9000000000000004
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 30,
+          "direction": 1,
+          "perturbation": "nextafter",
+          "end": [
+            4.6000000000000005,
+            5.75
+          ],
+          "dx": -0.8999999999999995
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 60,
+          "direction": -1,
+          "perturbation": "nextafter",
+          "end": [
+            6.4,
+            5.75
+          ],
+          "dx": 0.9000000000000004
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 60,
+          "direction": 1,
+          "perturbation": "nextafter",
+          "end": [
+            4.6000000000000005,
+            5.75
+          ],
+          "dx": -0.8999999999999995
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 144,
+          "direction": -1,
+          "perturbation": "nextafter",
+          "end": [
+            6.4,
+            5.75
+          ],
+          "dx": 0.9000000000000004
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999999
+          ],
+          "height": 1.5,
+          "fps": 144,
+          "direction": 1,
+          "perturbation": "nextafter",
+          "end": [
+            4.6000000000000005,
+            5.75
+          ],
+          "dx": -0.8999999999999995
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999
+          ],
+          "height": 1.5,
+          "fps": 30,
+          "direction": -1,
+          "perturbation": "1e-12",
+          "end": [
+            6.4,
+            5.75
+          ],
+          "dx": 0.9000000000000004
+        },
+        {
+          "top": 5,
+          "tile_id": 2,
+          "start": [
+            5.5,
+            5.749999999999
+          ],
+          "height": 1.5,
+          "fps": 30,
+          "direction": 1,
+          "perturbation": "1e-12",
+          "end": [
+            4.6000000000000005,
+            5.75
+          ],
+          "dx": -0.8999999999999995
+        }
+      ]
+    },
+    "ice": [
+      {
+        "tile_id": 3,
+        "initial_speed": 2,
+        "final_speed": 15.085571574116141
+      },
+      {
+        "tile_id": 75,
+        "initial_speed": 2,
+        "final_speed": 53.92875
+      },
+      {
+        "tile_id": 86,
+        "initial_speed": 2,
+        "final_speed": 43.142999999999994
+      }
+    ]
+  },
+  "after": {
+    "contacts": {
+      "cases": 3888,
+      "failed": 0,
+      "max_reverse_distance": 0.0,
+      "failure_samples": []
+    },
+    "ice": [
+      {
+        "tile_id": 3,
+        "initial_speed": 2,
+        "final_speed": 2.0
+      },
+      {
+        "tile_id": 75,
+        "initial_speed": 2,
+        "final_speed": 2.0
+      },
+      {
+        "tile_id": 86,
+        "initial_speed": 2,
+        "final_speed": 2.0
+      }
+    ]
+  },
+  "passed": true
+}

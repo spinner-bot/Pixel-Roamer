@@ -1,0 +1,24 @@
+test_mirrors_bodies_input_modes_and_loop_translations (test_climb_alignment.ClimbAlignmentTests) ... ok
+test_new_wall_cancels_alignment_before_entering_it (test_climb_alignment.ClimbAlignmentTests) ... FAIL
+test_out_of_band_relocation_cannot_be_pulled_back_to_old_ladder (test_climb_alignment.ClimbAlignmentTests) ... ok
+test_releasing_and_jumping_cancel_incomplete_alignment (test_climb_alignment.ClimbAlignmentTests) ... ok
+test_respawn_portal_and_spawn_callback_drop_old_destination (test_climb_alignment.ClimbAlignmentTests) ... ok
+test_capture_uses_touched_vertical_segment_instead_of_nearby_ladder (test_climb_placement.ClimbPlacementTests) ... ok
+test_default_ladder_loop_and_regular_ladder_still_capture (test_climb_placement.ClimbPlacementTests) ... ok
+test_ladder_capture_never_embeds_head_in_neighbor_wall (test_climb_placement.ClimbPlacementTests) ... ok
+test_downward_loop_upper_platforms_and_upward_return_at_three_frame_rates (test_climb_vertical_loop.ClimbVerticalLoopTests) ... ok
+
+======================================================================
+FAIL: test_new_wall_cancels_alignment_before_entering_it (test_climb_alignment.ClimbAlignmentTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_climb_alignment.py", line 66, in test_new_wall_cancels_alignment_before_entering_it
+    self.assertEqual(actor._x, 6.4)
+AssertionError: 6.3500000000000005 != 6.4
+
+----------------------------------------------------------------------
+Ran 9 tests in 15.233s
+
+FAILED (failures=1)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

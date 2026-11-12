@@ -1,0 +1,130 @@
+test_bleeding_is_independent_of_frame_partition (test_status_effects.BuffTimeTests) ... FAIL
+test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) ... FAIL
+test_expiring_immunity_only_protects_its_active_interval (test_status_effects.BuffTimeTests) ... FAIL
+test_invalid_time_steps_are_rejected (test_status_effects.BuffTimeTests) ... FAIL
+test_reducing_stats_cannot_invert_healing_cost_or_gravity (test_status_effects.BuffTimeTests) ... FAIL
+test_regeneration_and_shield_gain_respect_elapsed_time (test_status_effects.BuffTimeTests) ... FAIL
+test_stacks_affect_continuous_damage_and_stat_modifiers (test_status_effects.BuffTimeTests) ... FAIL
+test_armor_break_is_a_victim_debuff (test_status_effects.DamageTests) ... FAIL
+test_capped_shield_regeneration_does_not_remove_existing_shield (test_status_effects.DamageTests) ... FAIL
+test_damage_return_value_counts_shield_and_caps_overkill (test_status_effects.DamageTests) ... FAIL
+test_fire_resistance_blocks_burning_and_direct_fire (test_status_effects.DamageTests) ... FAIL
+
+======================================================================
+FAIL: test_bleeding_is_independent_of_frame_partition (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 55, in test_bleeding_is_independent_of_frame_partition
+    self.assertAlmostEqual(max(health), min(health), places=7)
+AssertionError: 100 != 90.3687890625 within 7 places (9.6312109375 difference)
+
+======================================================================
+FAIL: test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) (steps=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 22, in test_damage_matches_active_duration_for_short_and_long_frames
+    self.assertAlmostEqual(actor.hp, 92, places=7)
+AssertionError: 100 != 92 within 7 places (8 difference)
+
+======================================================================
+FAIL: test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) (steps=10)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 23, in test_damage_matches_active_duration_for_short_and_long_frames
+    self.assertFalse(actor.has_buff(16))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests) (steps=60)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 22, in test_damage_matches_active_duration_for_short_and_long_frames
+    self.assertAlmostEqual(actor.hp, 92, places=7)
+AssertionError: 94.0 != 92 within 7 places (2.0 difference)
+
+======================================================================
+FAIL: test_damage_matches_active_duration_for_short_and_long_frames (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 27, in test_damage_matches_active_duration_for_short_and_long_frames
+    self.assertAlmostEqual(actor.hp, 99)
+AssertionError: 100 != 99 within 7 places (1 difference)
+
+======================================================================
+FAIL: test_expiring_immunity_only_protects_its_active_interval (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 36, in test_expiring_immunity_only_protects_its_active_interval
+    self.assertAlmostEqual(actor.hp, 91)
+AssertionError: 100 != 91 within 7 places (9 difference)
+
+======================================================================
+FAIL: test_invalid_time_steps_are_rejected (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 70, in test_invalid_time_steps_are_rejected
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_reducing_stats_cannot_invert_healing_cost_or_gravity (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 79, in test_reducing_stats_cannot_invert_healing_cost_or_gravity
+    self.assertGreaterEqual(actor.get_buff_stat(stat, 1), 0, (buff_id, stat))
+AssertionError: -0.5 not greater than or equal to 0 : (6, 'stamina_cost')
+
+======================================================================
+FAIL: test_regeneration_and_shield_gain_respect_elapsed_time (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 44, in test_regeneration_and_shield_gain_respect_elapsed_time
+    self.assertAlmostEqual(actor.hp, 58)
+AssertionError: 50 != 58 within 7 places (8 difference)
+
+======================================================================
+FAIL: test_stacks_affect_continuous_damage_and_stat_modifiers (test_status_effects.BuffTimeTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 64, in test_stacks_affect_continuous_damage_and_stat_modifiers
+    self.assertAlmostEqual(actor.hp, 90)
+AssertionError: 98.75 != 90 within 7 places (8.75 difference)
+
+======================================================================
+FAIL: test_armor_break_is_a_victim_debuff (test_status_effects.DamageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 93, in test_armor_break_is_a_victim_debuff
+    self.assertAlmostEqual(actor.take_damage(10, 0), 10)
+AssertionError: 1.7530128221624919 != 10 within 7 places (8.246987177837507 difference)
+
+======================================================================
+FAIL: test_capped_shield_regeneration_does_not_remove_existing_shield (test_status_effects.DamageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 110, in test_capped_shield_regeneration_does_not_remove_existing_shield
+    self.assertEqual(actor.add_shield(2, max_shield=50), 0)
+AssertionError: -50 != 0
+
+======================================================================
+FAIL: test_damage_return_value_counts_shield_and_caps_overkill (test_status_effects.DamageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 85, in test_damage_return_value_counts_shield_and_caps_overkill
+    self.assertEqual(actor.take_raw_damage(5), 5)
+AssertionError: 2 != 5
+
+======================================================================
+FAIL: test_fire_resistance_blocks_burning_and_direct_fire (test_status_effects.DamageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_status_effects.py", line 104, in test_fire_resistance_blocks_burning_and_direct_fire
+    self.assertEqual(actor.take_raw_damage(10, damage_type="fire"), 0)
+AssertionError: 10 != 0
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+FAILED (failures=14)
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

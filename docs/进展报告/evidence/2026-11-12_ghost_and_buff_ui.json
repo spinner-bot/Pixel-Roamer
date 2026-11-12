@@ -1,0 +1,69 @@
+{
+  "code_revision": "bec0ceab0422e2d632d55afced714f7bd5cd1d17",
+  "scope": "SDL dummy actual ReferenceBrowser and GameApp/WorldView; explicit authored fixture, no physical-device or original-map route claim",
+  "details": [
+    {
+      "block_id": 363,
+      "lines": [
+        "非实体，可以穿过。",
+        "活力：体力恢复速度 +50%"
+      ],
+      "image": "docs/进展报告/evidence/ui/A81_block_363.png"
+    },
+    {
+      "block_id": 364,
+      "lines": [
+        "实体方块，可以站立。",
+        "坚守：受到伤害 -30%",
+        "坚忍：体力消耗 -30%"
+      ],
+      "image": "docs/进展报告/evidence/ui/A81_block_364.png"
+    },
+    {
+      "block_id": 384,
+      "lines": [
+        "实体方块，可以站立。",
+        "幽灵：可以穿过单层薄墙，持续 5 秒"
+      ],
+      "image": "docs/进展报告/evidence/ui/A81_block_384.png"
+    }
+  ],
+  "traversal": {
+    "shots": {
+      "before": {
+        "time": 0.0,
+        "position": [
+          6.5,
+          5.9
+        ],
+        "source": null,
+        "description": null,
+        "image": "docs/进展报告/evidence/ui/A81_ghost_before.png"
+      },
+      "inside": {
+        "time": 0.783333333333333,
+        "position": [
+          9.653169859320581,
+          5.9
+        ],
+        "source": 384,
+        "description": "可以穿过单层薄墙，持续 5 秒",
+        "image": "docs/进展报告/evidence/ui/A81_ghost_inside.png"
+      },
+      "after": {
+        "time": 1.0166666666666655,
+        "position": [
+          11.48279329961932,
+          5.9
+        ],
+        "source": 384,
+        "description": "可以穿过单层薄墙，持续 5 秒",
+        "image": "docs/进展报告/evidence/ui/A81_ghost_after.png"
+      }
+    },
+    "crossed": true,
+    "min_foot_y": 5.0,
+    "hp": 150.0,
+    "respawns": 0
+  }
+}

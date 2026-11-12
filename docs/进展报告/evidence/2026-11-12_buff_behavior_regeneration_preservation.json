@@ -1,0 +1,80 @@
+{
+  "revision": "6dd919ee1c504b832268a7b2976770c69589c97f",
+  "scope": "actual sequential regeneration, includes startup behavior data and consumers plus immutable catalogs/art/extension fixtures",
+  "before": {
+    "data/catalogs/blocks.json": "0bc2f1ab5aa0ebec336e7cda55c66d288466a4271496f3daf9d6826d2101f01f",
+    "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+    "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+    "tests/fixtures/catalog_gameplay_changes.json": "a956230957700c7891ff05ff43ef4b3916e8078fb565a0cd0ce830c5a63bf6ee",
+    "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+    "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+    "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+    "data/rules/buff_behavior.json": "b6d59d087795db04a2ebcf771e273797f6b4d0cb4ca3d6f85f2864cfec033c30",
+    "buff_behavior.py": "6352dfe717f2b53a9f3a800954886e02deb4e69e650ff767c21c837acdc8d1fe",
+    "buff_contacts.py": "a97fd0d08b371b5fd3005e8bc6e119ce6b2615874afa330bac2f185b303737d4",
+    "status_effects.py": "43512834945badeb52970397871572cbf79ac24cf3098756be892d99f056249d"
+  },
+  "steps": [
+    {
+      "script": "scripts/repair_buff_source_defaults.py",
+      "returncode": 0,
+      "stdout": "{\"links\": 37, \"a80_blocks\": 33, \"all_reviewed_blocks\": 36}\n",
+      "stderr": "",
+      "hashes": {
+        "data/catalogs/blocks.json": "0bc2f1ab5aa0ebec336e7cda55c66d288466a4271496f3daf9d6826d2101f01f",
+        "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+        "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+        "tests/fixtures/catalog_gameplay_changes.json": "a956230957700c7891ff05ff43ef4b3916e8078fb565a0cd0ce830c5a63bf6ee",
+        "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+        "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+        "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+        "data/rules/buff_behavior.json": "b6d59d087795db04a2ebcf771e273797f6b4d0cb4ca3d6f85f2864cfec033c30",
+        "buff_behavior.py": "6352dfe717f2b53a9f3a800954886e02deb4e69e650ff767c21c837acdc8d1fe",
+        "buff_contacts.py": "a97fd0d08b371b5fd3005e8bc6e119ce6b2615874afa330bac2f185b303737d4",
+        "status_effects.py": "43512834945badeb52970397871572cbf79ac24cf3098756be892d99f056249d"
+      },
+      "preserved": true
+    },
+    {
+      "script": "scripts/repair_magnetic_polarity_sources.py",
+      "returncode": 0,
+      "stdout": "{\"386\": 1, \"403\": 1, \"411\": -1}\n",
+      "stderr": "",
+      "hashes": {
+        "data/catalogs/blocks.json": "0bc2f1ab5aa0ebec336e7cda55c66d288466a4271496f3daf9d6826d2101f01f",
+        "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+        "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+        "tests/fixtures/catalog_gameplay_changes.json": "a956230957700c7891ff05ff43ef4b3916e8078fb565a0cd0ce830c5a63bf6ee",
+        "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+        "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+        "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+        "data/rules/buff_behavior.json": "b6d59d087795db04a2ebcf771e273797f6b4d0cb4ca3d6f85f2864cfec033c30",
+        "buff_behavior.py": "6352dfe717f2b53a9f3a800954886e02deb4e69e650ff767c21c837acdc8d1fe",
+        "buff_contacts.py": "a97fd0d08b371b5fd3005e8bc6e119ce6b2615874afa330bac2f185b303737d4",
+        "status_effects.py": "43512834945badeb52970397871572cbf79ac24cf3098756be892d99f056249d"
+      },
+      "preserved": true
+    },
+    {
+      "script": "scripts/refine_pixel_art.py",
+      "returncode": 0,
+      "stdout": "pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)\nHello from the pygame community. https://www.pygame.org/contribute.html\n",
+      "stderr": "",
+      "hashes": {
+        "data/catalogs/blocks.json": "0bc2f1ab5aa0ebec336e7cda55c66d288466a4271496f3daf9d6826d2101f01f",
+        "data/catalogs/buffs.json": "6ab39c1258e2eec0ffafdec80ab69135860442d65a41d8fc2c4d4ce73a7431b9",
+        "data/catalogs/extensions/blocks_magnetic.json": "295f8382ee161a9ba067c6e64860aded9a8d8bfe7ecee4a22ffa44722ff630c0",
+        "tests/fixtures/catalog_gameplay_changes.json": "a956230957700c7891ff05ff43ef4b3916e8078fb565a0cd0ce830c5a63bf6ee",
+        "tests/fixtures/catalog_baseline.json": "38302ed4208e39ab11e3909b209050cdfce713ba8d5ef9866022441aa0364013",
+        "tests/fixtures/catalog_non_art_baseline.json": "a3a4fb25136e9f17053e3b88249d7b0e9d75290180c591b41ff61a54ad1ba8ac",
+        "tests/fixtures/catalog_art_overrides.json": "be0d082b67c834323551a1e821e3e82c0f4437b1a15bd9a77075698b79854bd9",
+        "data/rules/buff_behavior.json": "b6d59d087795db04a2ebcf771e273797f6b4d0cb4ca3d6f85f2864cfec033c30",
+        "buff_behavior.py": "6352dfe717f2b53a9f3a800954886e02deb4e69e650ff767c21c837acdc8d1fe",
+        "buff_contacts.py": "a97fd0d08b371b5fd3005e8bc6e119ce6b2615874afa330bac2f185b303737d4",
+        "status_effects.py": "43512834945badeb52970397871572cbf79ac24cf3098756be892d99f056249d"
+      },
+      "preserved": true
+    }
+  ],
+  "all_preserved": true
+}

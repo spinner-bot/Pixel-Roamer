@@ -1,0 +1,86 @@
+{
+  "shaft_x": 2996,
+  "cells": [
+    {
+      "y": 90,
+      "type": 9,
+      "climbable": true
+    },
+    {
+      "y": 91,
+      "type": 31,
+      "climbable": true
+    },
+    {
+      "y": 92,
+      "type": 31,
+      "climbable": true
+    },
+    {
+      "y": 93,
+      "type": 9,
+      "climbable": true
+    },
+    {
+      "y": 94,
+      "type": 9,
+      "climbable": true
+    },
+    {
+      "y": 95,
+      "type": 10,
+      "climbable": true
+    },
+    {
+      "y": 96,
+      "type": 9,
+      "climbable": true
+    },
+    {
+      "y": 97,
+      "type": 31,
+      "climbable": true
+    },
+    {
+      "y": 98,
+      "type": 0,
+      "climbable": false
+    },
+    {
+      "y": 99,
+      "type": 0,
+      "climbable": false
+    },
+    {
+      "y": 100,
+      "type": 6,
+      "climbable": false
+    },
+    {
+      "y": 101,
+      "type": 6,
+      "climbable": false
+    },
+    {
+      "y": 102,
+      "type": 0,
+      "climbable": false
+    },
+    {
+      "y": 103,
+      "type": 0,
+      "climbable": false
+    },
+    {
+      "y": 104,
+      "type": 0,
+      "climbable": false
+    },
+    {
+      "y": 105,
+      "type": 0,
+      "climbable": false
+    }
+  ],
+  "map_revision": "b93d820"
+}

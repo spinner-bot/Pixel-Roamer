@@ -1,0 +1,438 @@
+{
+  "code_revision": "ae497e89fb4444140e0a5454895fabc8bc9a5b02",
+  "legacy_revision": "6b0908f",
+  "scope": "feature placement and local entrance clearance; full control route tested separately",
+  "before": {
+    "default_tile": 11,
+    "missed_on_air": [
+      {
+        "x": 5,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 11,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 17,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 23,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 29,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 35,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 41,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 47,
+        "y": 19,
+        "expected": 311,
+        "actual": 11
+      },
+      {
+        "x": 27,
+        "y": 21,
+        "expected": 316,
+        "actual": 11
+      },
+      {
+        "x": 20,
+        "y": 18,
+        "expected": 316,
+        "actual": 11
+      },
+      {
+        "x": 34,
+        "y": 18,
+        "expected": 316,
+        "actual": 11
+      },
+      {
+        "x": 27,
+        "y": 25,
+        "expected": 314,
+        "actual": 11
+      },
+      {
+        "x": 22,
+        "y": 26,
+        "expected": 315,
+        "actual": 11
+      },
+      {
+        "x": 32,
+        "y": 26,
+        "expected": 315,
+        "actual": 11
+      },
+      {
+        "x": 13,
+        "y": 18,
+        "expected": 290,
+        "actual": 11
+      },
+      {
+        "x": 37,
+        "y": 19,
+        "expected": 290,
+        "actual": 11
+      },
+      {
+        "x": 8,
+        "y": 14,
+        "expected": 290,
+        "actual": 11
+      }
+    ],
+    "placed": [
+      {
+        "x": 50,
+        "y": 32,
+        "expected": 290,
+        "actual": 290
+      }
+    ],
+    "occupied_preserved": [
+      {
+        "x": 3,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 6,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 12,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 15,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 18,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 21,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 33,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 36,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 39,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 42,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 45,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 48,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 51,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 27,
+        "y": 18,
+        "expected": 290,
+        "actual": 19
+      },
+      {
+        "x": 48,
+        "y": 8,
+        "expected": 290,
+        "actual": 315
+      }
+    ],
+    "crystal_count": 0,
+    "available_score": 1000,
+    "reserved_solid_cells": [],
+    "entrance_body_clear": true
+  },
+  "after": {
+    "default_tile": 11,
+    "missed_on_air": [],
+    "placed": [
+      {
+        "x": 5,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 11,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 17,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 23,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 29,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 35,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 41,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 47,
+        "y": 19,
+        "expected": 311,
+        "actual": 311
+      },
+      {
+        "x": 27,
+        "y": 21,
+        "expected": 316,
+        "actual": 316
+      },
+      {
+        "x": 20,
+        "y": 18,
+        "expected": 316,
+        "actual": 316
+      },
+      {
+        "x": 34,
+        "y": 18,
+        "expected": 316,
+        "actual": 316
+      },
+      {
+        "x": 27,
+        "y": 25,
+        "expected": 314,
+        "actual": 314
+      },
+      {
+        "x": 22,
+        "y": 26,
+        "expected": 315,
+        "actual": 315
+      },
+      {
+        "x": 32,
+        "y": 26,
+        "expected": 315,
+        "actual": 315
+      },
+      {
+        "x": 13,
+        "y": 18,
+        "expected": 290,
+        "actual": 290
+      },
+      {
+        "x": 37,
+        "y": 19,
+        "expected": 290,
+        "actual": 290
+      },
+      {
+        "x": 8,
+        "y": 14,
+        "expected": 290,
+        "actual": 290
+      },
+      {
+        "x": 50,
+        "y": 32,
+        "expected": 290,
+        "actual": 290
+      }
+    ],
+    "occupied_preserved": [
+      {
+        "x": 3,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 6,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 12,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 15,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 18,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 21,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 33,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 36,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 39,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 42,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 45,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 48,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 51,
+        "y": 17,
+        "expected": 310,
+        "actual": 19
+      },
+      {
+        "x": 27,
+        "y": 18,
+        "expected": 290,
+        "actual": 19
+      },
+      {
+        "x": 48,
+        "y": 8,
+        "expected": 290,
+        "actual": 315
+      }
+    ],
+    "crystal_count": 8,
+    "available_score": 1195,
+    "reserved_solid_cells": [],
+    "entrance_body_clear": true
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "code_revision": "122df56029911f922d702222099c7c80dfc20c8a",
+  "baseline": "dd277a4",
+  "checks": {
+    "nonempty_original_cell_rejected": true,
+    "only_seventeen_reviewed_air_cells": true,
+    "no_outside_changes": true,
+    "all_plan_cells_loaded": true,
+    "all_pickups_preserved": true,
+    "both_original_cold_sources_preserved": true,
+    "all_original_pillars_preserved": true,
+    "world_and_player_configuration_preserved": true
+  },
+  "planned_cells": 17,
+  "changed_cells": 17,
+  "pickup_count": 87,
+  "differences": [
+    {
+      "position": [
+        245,
+        55
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        245,
+        56
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        245,
+        57
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        246,
+        56
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        246,
+        57
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        246,
+        58
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        247,
+        55
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        247,
+        56
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        247,
+        57
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        247,
+        58
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        248,
+        55
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        248,
+        57
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        248,
+        58
+      ],
+      "before": 0,
+      "after": 7,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        249,
+        55
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        249,
+        56
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        249,
+        57
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    },
+    {
+      "position": [
+        249,
+        58
+      ],
+      "before": 0,
+      "after": 3,
+      "before_meta": null,
+      "after_meta": null
+    }
+  ],
+  "outside_plan": []
+}

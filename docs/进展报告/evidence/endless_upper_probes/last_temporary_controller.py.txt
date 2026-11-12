@@ -1,0 +1,21 @@
+import json
+from pathlib import Path
+from unittest.mock import patch
+from scripts.audit_endless_climb import ROOT
+source=(ROOT/'scripts/audit_endless_climb.py').read_text().replace("if waypoint['kind'] == 'climb':", "if waypoint['kind'] == 'air':\n                arrived &= not player.on_ground and player._y >= waypoint['y']\n            elif waypoint['kind'] == 'climb':",1)
+namespace={'__file__':str(ROOT/'scripts/audit_endless_climb.py'),'__name__':'upper_probe'}
+exec(compile(source,'<upper probe with air waypoint>','exec'),namespace)
+run=namespace['run']
+from scripts.control_session import create_control_session
+s=create_control_session(5)
+p=s.app.player1
+print({k:getattr(p,k) for k in ('v_jump','v_max','stamina')},s.app._current_map.gravity, flush=True)
+route_path=ROOT/'scripts/routes/endless_climb.json'
+route=json.loads(route_path.read_text())
+for name,x,y,kind in [('right_boost_landing',15.5,61.9,'ground'),('central_upper',10.5,68.9,'ground'),('east_narrow',17.5,71.9,'ground'),('clear_shield_roof',17.5,80.2,'air'),('shield_platform',13.5,80.9,'ground'),('web_platform',10.5,84.9,'ground'),('web_return_shield',13.5,80.9,'ground'),('clear_east_roof',13.5,90.2,'air'),('east_platform',16.5,89.9,'ground'),('upper_mid',10.5,96.9,'ground'),('upper_east',16.5,101.9,'ground')]:
+ route['waypoints'].append(dict(name=name,x=x,y=y,kind=kind))
+original=Path.read_text
+with patch.object(Path,'read_text',lambda self,*a,**kw: json.dumps(route) if self==route_path else original(self,*a,**kw)):
+ result=run(30)
+Path('/tmp/pixel-upper-first.json').write_text(json.dumps(result,indent=2))
+print({k:result[k] for k in ('reached_and_rested','failure','position','timer','min_hp','min_stamina')})

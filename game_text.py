@@ -7,64 +7,41 @@ import pygame
 import pygame.freetype
 from typing import Tuple, Optional
 
-# ===================== 字体缓存 =====================
-_fonts: dict = {}
+# The bundled OFL pixel font keeps CJK and Latin labels readable on a clean OS.
+from pathlib import Path
 
-# 字体优先级链（从左到右尝试，直到找到可用字体）
+_fonts: dict = {}
+_BUNDLED_FONT = Path(__file__).resolve().parent / "assets/fonts/fusion-pixel-12px-zh_hans.otf"
 _FALLBACK = {
-    "mono": ["consolas", "cour", "courier", "monospace", "dejavusansmono", None],
-    "sans": ["simhei", "msyh", "microsoftyahei", "arial", "dejavusans", None],
+    "mono": ["consolas", "courier", "dejavusansmono"],
+    "sans": ["noto sans cjk sc", "microsoftyahei", "simhei", "dejavusans"],
 }
 
 
-def _resolve_chain(chain: list) -> str:
-    """尝试链中的字体名，返回第一个可用的。"""
+def _resolve_chain(chain):
     for name in chain:
         try:
-            if name is None:
-                return None
-            f = pygame.freetype.SysFont(name, 20)
-            return name
-        except (TypeError, ValueError, OSError, Exception):
+            path = pygame.font.match_font(name)
+        except (OSError, pygame.error):
             continue
+        if path is not None:
+            return path
     return None
 
 
 def _get_font(name: str, size: int) -> pygame.freetype.Font:
-    """加载字体（带缓存和回退，处理系统字体扫描异常）。"""
-    key = (name, size)
-    if key in _fonts:
-        return _fonts[key]
-
-    chain = _FALLBACK.get(name, [name])
-    resolved = _resolve_chain(chain)
-
-    # 尝试创建字体，处理 pygame 内部字体扫描异常
-    font = None
-    for attempt_name in [resolved, None]:
-        try:
-            font = pygame.freetype.SysFont(attempt_name, size, bold=True)
-            break
-        except (TypeError, ValueError, OSError, Exception):
-            continue
-
-    if font is None:
-        # 终极回退：直接用已知字体文件，绕过 SysFont 的系统扫描
-        for fallback_file in ["C:/Windows/Fonts/simhei.ttf", "C:/Windows/Fonts/consola.ttf"]:
-            try:
-                font = pygame.freetype.Font(fallback_file, size)
-                font.antialiased = True
-                font.pad = True
-                break
-            except Exception:
-                continue
-        if font is None:
-            font = pygame.freetype.Font(None, size)
-
-    font.antialiased = True
-    font.pad = True
-    _fonts[key] = font
-    return font
+    key = name, max(1, int(size))
+    if key not in _fonts:
+        if _BUNDLED_FONT.is_file():
+            font = pygame.freetype.Font(str(_BUNDLED_FONT), key[1])
+            font.antialiased = False
+        else:
+            path = _resolve_chain(_FALLBACK.get(name, [name]))
+            font = pygame.freetype.Font(path, key[1])
+            font.antialiased = True
+        font.pad = True
+        _fonts[key] = font
+    return _fonts[key]
 
 
 # ===================== 预加载常用字体 =====================
@@ -119,10 +96,14 @@ def draw(
     else:
         sx = x
 
-    # 投影
+    # Match shadow opacity to animated text; a transparent label must not
+    # leave a fully opaque shadow behind.
+    if len(color) == 4 and color[3] == 0:
+        return w, h
     if shadow:
         sr = pygame.Rect(sx + 2, y + 2, w, h)
-        font.render_to(surf, sr, text, fgcolor=shadow_color)
+        shade = (*shadow_color[:3], color[3]) if len(color) == 4 else shadow_color
+        font.render_to(surf, sr, text, fgcolor=shade)
 
     # 正文
     tr = pygame.Rect(sx, y, w, h)
@@ -149,6 +130,26 @@ def draw_multiline(
                     center_x=center_x, shadow=shadow)
         cy += h * line_spacing
     return cy
+
+
+def elide(text: str, max_width: int, size: int, font_family: str = "sans") -> str:
+    """Fit a single label to a column without drawing over neighboring content."""
+    font = _get_font(font_family, size)
+    if max_width <= 0:
+        return ""
+    if font.get_rect(text).width <= max_width:
+        return text
+    suffix = "…"
+    if font.get_rect(suffix).width > max_width:
+        return ""
+    low, high = 0, len(text)
+    while low < high:
+        middle = (low + high + 1) // 2
+        if font.get_rect(text[:middle] + suffix).width <= max_width:
+            low = middle
+        else:
+            high = middle - 1
+    return text[:low] + suffix
 
 
 # ===================== 兼容旧版辅助函数 =====================

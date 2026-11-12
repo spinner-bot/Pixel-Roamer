@@ -1,0 +1,6124 @@
+{
+  "code_revision": "3bc936153729105a94e9b030e367c97ef569239e",
+  "controller_sha256": "c30a245366502f41b344f5747f08f78a9ffe8dcbfc01489680800dae19a2e107",
+  "shared_controller_sha256": "081126afcea1ce7f014c058715d4e29e756de47f696dd04888c0b2cca54addd9",
+  "route_sha256": "0504c9ba3539706d790f3860d06202cd4db382a4127cf1d0cf263bf9c6a37a18",
+  "candidate_layout": {
+    "schema_version": 1,
+    "palette": {},
+    "rectangles": [
+      [
+        436,
+        15,
+        438,
+        15,
+        0
+      ],
+      [
+        436,
+        16,
+        438,
+        16,
+        0
+      ],
+      [
+        436,
+        17,
+        438,
+        17,
+        0
+      ],
+      [
+        436,
+        38,
+        438,
+        38,
+        0
+      ],
+      [
+        436,
+        40,
+        438,
+        40,
+        0
+      ],
+      [
+        436,
+        63,
+        438,
+        63,
+        0
+      ],
+      [
+        436,
+        65,
+        438,
+        65,
+        0
+      ],
+      [
+        436,
+        88,
+        438,
+        88,
+        0
+      ],
+      [
+        436,
+        90,
+        438,
+        90,
+        0
+      ],
+      [
+        436,
+        113,
+        438,
+        113,
+        0
+      ],
+      [
+        436,
+        115,
+        438,
+        115,
+        0
+      ],
+      [
+        436,
+        138,
+        438,
+        138,
+        0
+      ],
+      [
+        436,
+        140,
+        438,
+        140,
+        0
+      ],
+      [
+        436,
+        163,
+        438,
+        163,
+        0
+      ],
+      [
+        436,
+        165,
+        438,
+        165,
+        0
+      ],
+      [
+        436,
+        188,
+        438,
+        188,
+        0
+      ],
+      [
+        437,
+        20,
+        437,
+        188,
+        31
+      ]
+    ]
+  },
+  "scope": "local legal tower-base fixture; production map config, not normal forest spawn route",
+  "route": {
+    "map_id": 3,
+    "scope": "local legal tower-base fixture; production map config, not normal forest spawn route",
+    "waypoints": [
+      {
+        "name": "underfloor",
+        "x": 437.5,
+        "y": 11.9,
+        "kind": "ground"
+      },
+      {
+        "name": "first_entry_clearance",
+        "x": 437.5,
+        "y": 20.2,
+        "kind": "air"
+      },
+      {
+        "name": "first_floor",
+        "x": 439.5,
+        "y": 18.9,
+        "kind": "ground"
+      },
+      {
+        "name": "second_clearance",
+        "x": 437.5,
+        "y": 43.2,
+        "kind": "climb"
+      },
+      {
+        "name": "second_departure_jump",
+        "x": 437.5,
+        "y": 45.2,
+        "kind": "air"
+      },
+      {
+        "name": "second_floor",
+        "x": 439.5,
+        "y": 41.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "third_clearance",
+        "x": 437.5,
+        "y": 68.2,
+        "kind": "climb"
+      },
+      {
+        "name": "third_departure_jump",
+        "x": 437.5,
+        "y": 70.2,
+        "kind": "air"
+      },
+      {
+        "name": "third_floor",
+        "x": 439.5,
+        "y": 66.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "fourth_clearance",
+        "x": 437.5,
+        "y": 93.2,
+        "kind": "climb"
+      },
+      {
+        "name": "fourth_departure_jump",
+        "x": 437.5,
+        "y": 95.2,
+        "kind": "air"
+      },
+      {
+        "name": "fourth_floor",
+        "x": 439.5,
+        "y": 91.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "fifth_clearance",
+        "x": 437.5,
+        "y": 118.2,
+        "kind": "climb"
+      },
+      {
+        "name": "fifth_departure_jump",
+        "x": 437.5,
+        "y": 120.2,
+        "kind": "air"
+      },
+      {
+        "name": "fifth_floor",
+        "x": 439.5,
+        "y": 123.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "sixth_clearance",
+        "x": 437.5,
+        "y": 143.2,
+        "kind": "climb"
+      },
+      {
+        "name": "sixth_departure_jump",
+        "x": 437.5,
+        "y": 145.2,
+        "kind": "air"
+      },
+      {
+        "name": "sixth_floor",
+        "x": 439.5,
+        "y": 141.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "seventh_clearance",
+        "x": 437.5,
+        "y": 168.2,
+        "kind": "climb"
+      },
+      {
+        "name": "seventh_departure_jump",
+        "x": 437.5,
+        "y": 170.2,
+        "kind": "air"
+      },
+      {
+        "name": "seventh_floor",
+        "x": 439.5,
+        "y": 166.9,
+        "kind": "rest",
+        "stamina_min": 95
+      },
+      {
+        "name": "top_rope",
+        "x": 437.5,
+        "y": 188.98,
+        "kind": "climb"
+      },
+      {
+        "name": "top_landing",
+        "x": 441.5,
+        "y": 201.9,
+        "kind": "ground"
+      },
+      {
+        "name": "top_checkpoint",
+        "x": 447.5,
+        "y": 202.9,
+        "kind": "ground"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "fps": 30,
+      "completed_route": true,
+      "reached_and_rested": false,
+      "failure": null,
+      "timer": 128.26666666671434,
+      "control_frames": 3848,
+      "position": [
+        447.4605935120768,
+        202.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 10.933811700768072,
+      "final_hp": 150.0,
+      "final_stamina": 68.58355646277734,
+      "contacts_seen": [
+        0,
+        1,
+        19,
+        25,
+        31,
+        34,
+        254,
+        297,
+        302
+      ],
+      "native_draws": 26,
+      "max_frame_dx": 0.1649107615490948,
+      "max_frame_dy": 0.8733928401420386,
+      "y_wraps": [],
+      "checkpoint_seen": true,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "underfloor",
+          "time": 1.3999999999999975,
+          "position": [
+            437.32460747873006,
+            11.9
+          ],
+          "stamina": 100.0,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 254,
+          "contacts": [
+            0,
+            254
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_entry_clearance",
+          "time": 1.8333333333333293,
+          "position": [
+            437.4568455476558,
+            20.457017363416377
+          ],
+          "stamina": 86.5152973865007,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_floor",
+          "time": 5.166666666666713,
+          "position": [
+            439.4777727934447,
+            18.9
+          ],
+          "stamina": 96.47976592257096,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 297,
+          "contacts": [
+            0,
+            297
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_clearance",
+          "time": 10.033333333333404,
+          "position": [
+            437.5,
+            43.255038212796094
+          ],
+          "stamina": 36.56368571567465,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_departure_jump",
+          "time": 10.133333333333399,
+          "position": [
+            437.5,
+            45.752940714309204
+          ],
+          "stamina": 22.464938793147784,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_floor",
+          "time": 23.36666666666598,
+          "position": [
+            439.44817547960383,
+            41.9
+          ],
+          "stamina": 95.03315318297962,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_clearance",
+          "time": 28.899999999999,
+          "position": [
+            437.5,
+            68.23493720011791
+          ],
+          "stamina": 25.685579656137527,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_departure_jump",
+          "time": 28.999999999998995,
+          "position": [
+            437.5,
+            70.73283970163104
+          ],
+          "stamina": 11.706391278073237,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_floor",
+          "time": 43.23333333333152,
+          "position": [
+            439.4481756620297,
+            66.9
+          ],
+          "stamina": 95.02456420962488,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_clearance",
+          "time": 48.76666666666454,
+          "position": [
+            437.5,
+            93.23493720011533
+          ],
+          "stamina": 25.677349632442606,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_departure_jump",
+          "time": 48.866666666664536,
+          "position": [
+            437.5,
+            95.73283970162845
+          ],
+          "stamina": 11.69825484923866,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_floor",
+          "time": 63.09999999999706,
+          "position": [
+            439.4481756620297,
+            91.9
+          ],
+          "stamina": 95.02265231248109,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_clearance",
+          "time": 68.63333333333402,
+          "position": [
+            437.5,
+            118.23493720011533
+          ],
+          "stamina": 25.67551763755099,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_departure_jump",
+          "time": 68.7333333333341,
+          "position": [
+            437.5,
+            120.73283970162845
+          ],
+          "stamina": 11.696443689160272,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_floor",
+          "time": 82.96666666667876,
+          "position": [
+            439.52526387454026,
+            123.9
+          ],
+          "stamina": 95.0222267316053,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 34,
+          "contacts": [
+            0,
+            34
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_clearance",
+          "time": 86.13333333334795,
+          "position": [
+            437.5,
+            143.2062957951218
+          ],
+          "stamina": 58.939840685116124,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_departure_jump",
+          "time": 86.23333333334803,
+          "position": [
+            437.5,
+            145.7041982966349
+          ],
+          "stamina": 44.615983799340306,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_floor",
+          "time": 96.9666666666899,
+          "position": [
+            439.4481728325717,
+            141.9
+          ],
+          "stamina": 95.07804418282029,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_clearance",
+          "time": 102.50000000002764,
+          "position": [
+            437.5,
+            168.234937200115
+          ],
+          "stamina": 25.728594623536857,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_departure_jump",
+          "time": 102.60000000002772,
+          "position": [
+            437.5,
+            170.7328397016281
+          ],
+          "stamina": 11.748917146221123,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_floor",
+          "time": 116.83333333337238,
+          "position": [
+            439.4481756620297,
+            166.9
+          ],
+          "stamina": 95.03455756922443,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_rope",
+          "time": 120.93333333337564,
+          "position": [
+            437.5,
+            189.0
+          ],
+          "stamina": 45.84092535067301,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_landing",
+          "time": 123.3000000000442,
+          "position": [
+            441.43417814070364,
+            201.9
+          ],
+          "stamina": 49.8571529638081,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_checkpoint",
+          "time": 128.26666666671434,
+          "position": [
+            447.4605935120768,
+            202.9
+          ],
+          "stamina": 68.58355646277734,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 302,
+          "contacts": [
+            0,
+            302
+          ],
+          "saved_spawn": [
+            447.4605935120768,
+            202.9
+          ]
+        }
+      ],
+      "saved_checkpoint": [
+        447.4605935120768,
+        202.9
+      ],
+      "trace": [
+        {
+          "time": 0.03333333333333333,
+          "phase": "underfloor",
+          "position": [
+            433.50909782881524,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 1.033333333333332,
+          "phase": "underfloor",
+          "position": [
+            436.9618557473365,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 2.0333333333333288,
+          "phase": "first_floor",
+          "position": [
+            437.7065737226696,
+            22.792636572188464
+          ],
+          "hp": 150.0,
+          "stamina": 87.20721889596648,
+          "climbing": false
+        },
+        {
+          "time": 3.033333333333325,
+          "phase": "first_floor",
+          "position": [
+            439.41207063889124,
+            26.28987694841069
+          ],
+          "hp": 150.0,
+          "stamina": 90.47421107405638,
+          "climbing": false
+        },
+        {
+          "time": 4.0333333333333234,
+          "phase": "first_floor",
+          "position": [
+            439.47697647682946,
+            23.75571433333841
+          ],
+          "hp": 150.0,
+          "stamina": 93.44230911238633,
+          "climbing": false
+        },
+        {
+          "time": 5.033333333333373,
+          "phase": "first_floor",
+          "position": [
+            439.4772035891334,
+            19.426888803363802
+          ],
+          "hp": 150.0,
+          "stamina": 96.13927967415934,
+          "climbing": false
+        },
+        {
+          "time": 6.033333333333423,
+          "phase": "second_clearance",
+          "position": [
+            437.7691046593064,
+            31.61652355621968
+          ],
+          "hp": 150.0,
+          "stamina": 83.347019049007,
+          "climbing": false
+        },
+        {
+          "time": 7.033333333333473,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            34.3454927698444
+          ],
+          "hp": 150.0,
+          "stamina": 78.56368571567394,
+          "climbing": true
+        },
+        {
+          "time": 8.033333333333518,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            37.3153412508283
+          ],
+          "hp": 150.0,
+          "stamina": 64.56368571567474,
+          "climbing": true
+        },
+        {
+          "time": 9.033333333333461,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            40.285189731812196
+          ],
+          "hp": 150.0,
+          "stamina": 50.56368571567471,
+          "climbing": true
+        },
+        {
+          "time": 10.033333333333404,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            43.255038212796094
+          ],
+          "hp": 150.0,
+          "stamina": 36.56368571567465,
+          "climbing": true
+        },
+        {
+          "time": 11.033333333333347,
+          "phase": "second_floor",
+          "position": [
+            439.26597745057074,
+            56.66780265413467
+          ],
+          "hp": 150.0,
+          "stamina": 31.100350411646307,
+          "climbing": false
+        },
+        {
+          "time": 12.03333333333329,
+          "phase": "second_floor",
+          "position": [
+            439.4392824674778,
+            57.08403538607713
+          ],
+          "hp": 150.0,
+          "stamina": 39.73480748157114,
+          "climbing": false
+        },
+        {
+          "time": 13.033333333333234,
+          "phase": "second_floor",
+          "position": [
+            439.4445846015924,
+            53.63310926379096
+          ],
+          "hp": 150.0,
+          "stamina": 47.493058368947835,
+          "climbing": false
+        },
+        {
+          "time": 14.033333333333177,
+          "phase": "second_floor",
+          "position": [
+            439.4467256403975,
+            49.031497871139386
+          ],
+          "hp": 150.0,
+          "stamina": 54.485815970574656,
+          "climbing": false
+        },
+        {
+          "time": 15.03333333333312,
+          "phase": "second_floor",
+          "position": [
+            439.44759020682807,
+            44.087496460041066
+          ],
+          "hp": 150.0,
+          "stamina": 60.8029497709099,
+          "climbing": false
+        },
+        {
+          "time": 16.033333333333065,
+          "phase": "second_floor",
+          "position": [
+            439.4479393247937,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 66.51921153992137,
+          "climbing": false
+        },
+        {
+          "time": 17.033333333333008,
+          "phase": "second_floor",
+          "position": [
+            439.4480803010677,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 71.69803509406194,
+          "climbing": false
+        },
+        {
+          "time": 18.03333333333295,
+          "phase": "second_floor",
+          "position": [
+            439.44813722827234,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 76.39412320865671,
+          "climbing": false
+        },
+        {
+          "time": 19.033333333332894,
+          "phase": "second_floor",
+          "position": [
+            439.44816021587496,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 80.65525274206787,
+          "climbing": false
+        },
+        {
+          "time": 20.033333333332838,
+          "phase": "second_floor",
+          "position": [
+            439.4481694984296,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 84.52356577714833,
+          "climbing": false
+        },
+        {
+          "time": 21.03333333333278,
+          "phase": "second_floor",
+          "position": [
+            439.44817324679013,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.03651683861665,
+          "climbing": false
+        },
+        {
+          "time": 22.033333333332724,
+          "phase": "second_floor",
+          "position": [
+            439.4481747604042,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.22758608751062,
+          "climbing": false
+        },
+        {
+          "time": 23.033333333332667,
+          "phase": "second_floor",
+          "position": [
+            439.44817537161236,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.1268305444115,
+          "climbing": false
+        },
+        {
+          "time": 24.03333333333261,
+          "phase": "third_clearance",
+          "position": [
+            437.9455303735141,
+            53.107047976377515
+          ],
+          "hp": 150.0,
+          "stamina": 81.80224632280334,
+          "climbing": false
+        },
+        {
+          "time": 25.033333333332553,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            56.75152307364752
+          ],
+          "hp": 150.0,
+          "stamina": 79.81891298947012,
+          "climbing": true
+        },
+        {
+          "time": 26.033333333332497,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            59.72137155463142
+          ],
+          "hp": 150.0,
+          "stamina": 65.81891298947092,
+          "climbing": true
+        },
+        {
+          "time": 27.03333333333244,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            62.691220035615316
+          ],
+          "hp": 150.0,
+          "stamina": 51.81891298947097,
+          "climbing": true
+        },
+        {
+          "time": 28.033333333332383,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            65.66106851659927
+          ],
+          "hp": 150.0,
+          "stamina": 37.81891298947091,
+          "climbing": true
+        },
+        {
+          "time": 29.033333333332326,
+          "phase": "third_floor",
+          "position": [
+            437.50909782881524,
+            71.48716301939301
+          ],
+          "hp": 150.0,
+          "stamina": 12.085300032217154,
+          "climbing": false
+        },
+        {
+          "time": 30.03333333333227,
+          "phase": "third_floor",
+          "position": [
+            439.34219444137847,
+            82.13877465742412
+          ],
+          "hp": 150.0,
+          "stamina": 22.768590147813203,
+          "climbing": false
+        },
+        {
+          "time": 31.033333333332212,
+          "phase": "third_floor",
+          "position": [
+            439.4402952874438,
+            81.73341769528919
+          ],
+          "hp": 150.0,
+          "stamina": 32.27808051910092,
+          "climbing": false
+        },
+        {
+          "time": 32.03333333333216,
+          "phase": "third_floor",
+          "position": [
+            439.44499358537195,
+            78.03802497752675
+          ],
+          "hp": 150.0,
+          "stamina": 40.791320941050856,
+          "climbing": false
+        },
+        {
+          "time": 33.0333333333321,
+          "phase": "third_floor",
+          "position": [
+            439.4468907909056,
+            73.36367178110802
+          ],
+          "hp": 150.0,
+          "stamina": 48.444213077679464,
+          "climbing": false
+        },
+        {
+          "time": 34.033333333332045,
+          "phase": "third_floor",
+          "position": [
+            439.4476568957571,
+            68.39802581769369
+          ],
+          "hp": 150.0,
+          "stamina": 55.344338899553996,
+          "climbing": false
+        },
+        {
+          "time": 35.03333333333199,
+          "phase": "third_floor",
+          "position": [
+            439.4479662542492,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 61.57932709960257,
+          "climbing": false
+        },
+        {
+          "time": 36.03333333333193,
+          "phase": "third_floor",
+          "position": [
+            439.4480911753701,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 67.22227310005039,
+          "climbing": false
+        },
+        {
+          "time": 37.033333333331875,
+          "phase": "third_floor",
+          "position": [
+            439.44814161939144,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 72.33534828457375,
+          "climbing": false
+        },
+        {
+          "time": 38.03333333333182,
+          "phase": "third_floor",
+          "position": [
+            439.44816198903965,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 76.9722651502494,
+          "climbing": false
+        },
+        {
+          "time": 39.03333333333176,
+          "phase": "third_floor",
+          "position": [
+            439.4481702144459,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 81.18000297618964,
+          "climbing": false
+        },
+        {
+          "time": 40.033333333331704,
+          "phase": "third_floor",
+          "position": [
+            439.4481735359225,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.00004616165322,
+          "climbing": false
+        },
+        {
+          "time": 41.03333333333165,
+          "phase": "third_floor",
+          "position": [
+            439.44817487715784,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.46929575410206,
+          "climbing": false
+        },
+        {
+          "time": 42.03333333333159,
+          "phase": "third_floor",
+          "position": [
+            439.4481754187584,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.62075811472484,
+          "climbing": false
+        },
+        {
+          "time": 43.033333333331534,
+          "phase": "third_floor",
+          "position": [
+            439.44817563746005,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.48407898517873,
+          "climbing": false
+        },
+        {
+          "time": 44.03333333333148,
+          "phase": "fourth_clearance",
+          "position": [
+            437.7929543567649,
+            79.18045291037072
+          ],
+          "hp": 150.0,
+          "stamina": 81.79401629910842,
+          "climbing": false
+        },
+        {
+          "time": 45.03333333333142,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            82.14750287111195
+          ],
+          "hp": 150.0,
+          "stamina": 77.94401629910864,
+          "climbing": true
+        },
+        {
+          "time": 46.03333333333136,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            85.117351352095
+          ],
+          "hp": 150.0,
+          "stamina": 63.94401629910943,
+          "climbing": true
+        },
+        {
+          "time": 47.033333333331306,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            88.08719983307805
+          ],
+          "hp": 150.0,
+          "stamina": 49.94401629910937,
+          "climbing": true
+        },
+        {
+          "time": 48.03333333333125,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            91.05704831406109
+          ],
+          "hp": 150.0,
+          "stamina": 35.944016299109315,
+          "climbing": true
+        },
+        {
+          "time": 49.03333333333119,
+          "phase": "fourth_floor",
+          "position": [
+            437.68362307246684,
+            99.15277350361413
+          ],
+          "hp": 150.0,
+          "stamina": 13.577434863949453,
+          "climbing": false
+        },
+        {
+          "time": 50.033333333331136,
+          "phase": "fourth_floor",
+          "position": [
+            439.4097314221971,
+            107.45529843689307
+          ],
+          "hp": 150.0,
+          "stamina": 24.09286009670571,
+          "climbing": false
+        },
+        {
+          "time": 51.03333333333108,
+          "phase": "fourth_floor",
+          "position": [
+            439.4411927619031,
+            106.3509633433029
+          ],
+          "hp": 150.0,
+          "stamina": 33.461096325503036,
+          "climbing": false
+        },
+        {
+          "time": 52.03333333333102,
+          "phase": "fourth_floor",
+          "position": [
+            439.44535599182984,
+            102.44758748585288
+          ],
+          "hp": 150.0,
+          "stamina": 41.853144692052496,
+          "climbing": false
+        },
+        {
+          "time": 53.033333333330965,
+          "phase": "fourth_floor",
+          "position": [
+            439.44703713316585,
+            97.71134825259313
+          ],
+          "hp": 150.0,
+          "stamina": 49.4005202702765,
+          "climbing": false
+        },
+        {
+          "time": 54.03333333333091,
+          "phase": "fourth_floor",
+          "position": [
+            439.4477159897843,
+            92.727287904428
+          ],
+          "hp": 150.0,
+          "stamina": 56.20775705163952,
+          "climbing": false
+        },
+        {
+          "time": 55.03333333333085,
+          "phase": "fourth_floor",
+          "position": [
+            439.4479901168303,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 62.36029281898181,
+          "climbing": false
+        },
+        {
+          "time": 56.033333333330795,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481008112472,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 67.92959683302038,
+          "climbing": false
+        },
+        {
+          "time": 57.03333333333074,
+          "phase": "fourth_floor",
+          "position": [
+            439.44814551042595,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 72.97659621586071,
+          "climbing": false
+        },
+        {
+          "time": 58.03333333333068,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481635602665,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 77.55402390588634,
+          "climbing": false
+        },
+        {
+          "time": 59.033333333330624,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481708489184,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 81.70806765601967,
+          "climbing": false
+        },
+        {
+          "time": 60.03333333333057,
+          "phase": "fourth_floor",
+          "position": [
+            439.44817379212685,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.47955730364988,
+          "climbing": false
+        },
+        {
+          "time": 61.03333333333051,
+          "phase": "fourth_floor",
+          "position": [
+            439.44817498061497,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.90484170668852,
+          "climbing": false
+        },
+        {
+          "time": 62.033333333330454,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481754605351,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.0164535810814,
+          "climbing": false
+        },
+        {
+          "time": 63.0333333333304,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481756543297,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.84362686123147,
+          "climbing": false
+        },
+        {
+          "time": 64.03333333333036,
+          "phase": "fifth_clearance",
+          "position": [
+            437.7041238612133,
+            104.99240315256763
+          ],
+          "hp": 150.0,
+          "stamina": 81.7921843042168,
+          "climbing": false
+        },
+        {
+          "time": 65.03333333333116,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            107.54348266857636
+          ],
+          "hp": 150.0,
+          "stamina": 76.07551763755046,
+          "climbing": true
+        },
+        {
+          "time": 66.03333333333195,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            110.5133311495594
+          ],
+          "hp": 150.0,
+          "stamina": 62.07551763755114,
+          "climbing": true
+        },
+        {
+          "time": 67.03333333333275,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            113.48317963054245
+          ],
+          "hp": 150.0,
+          "stamina": 48.07551763755108,
+          "climbing": true
+        },
+        {
+          "time": 68.03333333333354,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            116.4530281115255
+          ],
+          "hp": 150.0,
+          "stamina": 34.07551763755102,
+          "climbing": true
+        },
+        {
+          "time": 69.03333333333434,
+          "phase": "fifth_floor",
+          "position": [
+            437.7347731862844,
+            126.31931335229669
+          ],
+          "hp": 150.0,
+          "stamina": 15.051558484838168,
+          "climbing": false
+        },
+        {
+          "time": 70.03333333333514,
+          "phase": "fifth_floor",
+          "position": [
+            439.3990114933099,
+            132.62332218033382
+          ],
+          "hp": 150.0,
+          "stamina": 25.402456355009598,
+          "climbing": false
+        },
+        {
+          "time": 71.03333333333593,
+          "phase": "fifth_floor",
+          "position": [
+            439.5229439260412,
+            130.92432233890827
+          ],
+          "hp": 150.0,
+          "stamina": 34.63184468581932,
+          "climbing": false
+        },
+        {
+          "time": 72.03333333333673,
+          "phase": "fifth_floor",
+          "position": [
+            439.5171418550362,
+            126.84400211689147
+          ],
+          "hp": 150.0,
+          "stamina": 42.90450356839908,
+          "climbing": false
+        },
+        {
+          "time": 73.03333333333752,
+          "phase": "fifth_floor",
+          "position": [
+            439.520490103582,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 50.347759715654085,
+          "climbing": false
+        },
+        {
+          "time": 74.03333333333832,
+          "phase": "fifth_floor",
+          "position": [
+            439.5183357139635,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 57.06322335350055,
+          "climbing": false
+        },
+        {
+          "time": 75.03333333333912,
+          "phase": "fifth_floor",
+          "position": [
+            439.52179055504524,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 63.13422146261664,
+          "climbing": false
+        },
+        {
+          "time": 76.03333333333991,
+          "phase": "fifth_floor",
+          "position": [
+            439.5252649539821,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 68.63065010216438,
+          "climbing": false
+        },
+        {
+          "time": 77.0333333333407,
+          "phase": "fifth_floor",
+          "position": [
+            439.51924661054505,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 73.61222794373568,
+          "climbing": false
+        },
+        {
+          "time": 78.0333333333415,
+          "phase": "fifth_floor",
+          "position": [
+            439.5172415476822,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.1307331150104,
+          "climbing": false
+        },
+        {
+          "time": 79.0333333333423,
+          "phase": "fifth_floor",
+          "position": [
+            439.52082411216423,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.23157932682506,
+          "climbing": false
+        },
+        {
+          "time": 80.0333333333431,
+          "phase": "fifth_floor",
+          "position": [
+            439.52399872521147,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.95495449487582,
+          "climbing": false
+        },
+        {
+          "time": 81.03333333334389,
+          "phase": "fifth_floor",
+          "position": [
+            439.51812509459427,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.33666465010155,
+          "climbing": false
+        },
+        {
+          "time": 82.03333333334469,
+          "phase": "fifth_floor",
+          "position": [
+            439.51624796115715,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.40877597518757,
+          "climbing": false
+        },
+        {
+          "time": 83.03333333334548,
+          "phase": "sixth_clearance",
+          "position": [
+            439.50132438246584,
+            125.60548179604108
+          ],
+          "hp": 150.0,
+          "stamina": 80.28401811645493,
+          "climbing": false
+        },
+        {
+          "time": 84.03333333334628,
+          "phase": "sixth_clearance",
+          "position": [
+            437.6539181349966,
+            137.58191741090354
+          ],
+          "hp": 150.0,
+          "stamina": 81.92317401844846,
+          "climbing": false
+        },
+        {
+          "time": 85.03333333334707,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5,
+            139.93946246604045
+          ],
+          "hp": 150.0,
+          "stamina": 74.33984068511556,
+          "climbing": true
+        },
+        {
+          "time": 86.03333333334787,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5,
+            142.9093109470235
+          ],
+          "hp": 150.0,
+          "stamina": 60.33984068511613,
+          "climbing": true
+        },
+        {
+          "time": 87.03333333334866,
+          "phase": "sixth_floor",
+          "position": [
+            439.19688284425,
+            156.1179821365491
+          ],
+          "hp": 150.0,
+          "stamina": 50.49504903374362,
+          "climbing": false
+        },
+        {
+          "time": 88.03333333334946,
+          "phase": "sixth_floor",
+          "position": [
+            439.4384383086045,
+            157.24367335301662
+          ],
+          "hp": 150.0,
+          "stamina": 57.19626317155447,
+          "climbing": false
+        },
+        {
+          "time": 89.03333333335026,
+          "phase": "sixth_floor",
+          "position": [
+            439.4442437243407,
+            154.00384883241054
+          ],
+          "hp": 150.0,
+          "stamina": 63.25459438470416,
+          "climbing": false
+        },
+        {
+          "time": 90.03333333335105,
+          "phase": "sixth_floor",
+          "position": [
+            439.4465879917813,
+            149.4650513847663
+          ],
+          "hp": 150.0,
+          "stamina": 68.7396973928254,
+          "climbing": false
+        },
+        {
+          "time": 91.03333333335185,
+          "phase": "sixth_floor",
+          "position": [
+            439.44753462335495,
+            144.5397404604097
+          ],
+          "hp": 150.0,
+          "stamina": 73.71110506364859,
+          "climbing": false
+        },
+        {
+          "time": 92.03333333335264,
+          "phase": "sixth_floor",
+          "position": [
+            439.4479168797989,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.22044841259637,
+          "climbing": false
+        },
+        {
+          "time": 93.03333333335344,
+          "phase": "sixth_floor",
+          "position": [
+            439.4480712376219,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.31302166686842,
+          "climbing": false
+        },
+        {
+          "time": 94.03333333335424,
+          "phase": "sixth_floor",
+          "position": [
+            439.4481335683896,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.02891349182062,
+          "climbing": false
+        },
+        {
+          "time": 95.03333333335503,
+          "phase": "sixth_floor",
+          "position": [
+            439.44815873798876,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.40384587442442,
+          "climbing": false
+        },
+        {
+          "time": 96.03333333335583,
+          "phase": "sixth_floor",
+          "position": [
+            439.4481689016488,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.46981268452276,
+          "climbing": false
+        },
+        {
+          "time": 97.03333333335662,
+          "phase": "seventh_clearance",
+          "position": [
+            439.41574650252437,
+            143.60548179604103
+          ],
+          "hp": 150.0,
+          "stamina": 80.33947718496339,
+          "climbing": false
+        },
+        {
+          "time": 98.03333333335742,
+          "phase": "seventh_clearance",
+          "position": [
+            437.625408795397,
+            155.58191741090354
+          ],
+          "hp": 150.0,
+          "stamina": 81.84526129020267,
+          "climbing": false
+        },
+        {
+          "time": 99.03333333335821,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            157.93946246604045
+          ],
+          "hp": 150.0,
+          "stamina": 74.26192795686977,
+          "climbing": true
+        },
+        {
+          "time": 100.03333333335901,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            160.9093109470235
+          ],
+          "hp": 150.0,
+          "stamina": 60.26192795687033,
+          "climbing": true
+        },
+        {
+          "time": 101.0333333333598,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            163.87915942800655
+          ],
+          "hp": 150.0,
+          "stamina": 46.261927956870274,
+          "climbing": true
+        },
+        {
+          "time": 102.0333333333606,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            166.8490079089896
+          ],
+          "hp": 150.0,
+          "stamina": 32.26192795687022,
+          "climbing": true
+        },
+        {
+          "time": 103.0333333333614,
+          "phase": "seventh_floor",
+          "position": [
+            438.5369885770072,
+            178.06126235860398
+          ],
+          "hp": 150.0,
+          "stamina": 16.553470381273904,
+          "climbing": false
+        },
+        {
+          "time": 104.0333333333622,
+          "phase": "seventh_floor",
+          "position": [
+            439.4345973613576,
+            182.66500758426744
+          ],
+          "hp": 150.0,
+          "stamina": 26.738043093683466,
+          "climbing": false
+        },
+        {
+          "time": 105.03333333336299,
+          "phase": "seventh_floor",
+          "position": [
+            439.4426927230033,
+            180.46008896455055
+          ],
+          "hp": 150.0,
+          "stamina": 35.82666566143441,
+          "climbing": false
+        },
+        {
+          "time": 106.03333333336379,
+          "phase": "seventh_floor",
+          "position": [
+            439.4459616866033,
+            176.2292310201065
+          ],
+          "hp": 150.0,
+          "stamina": 43.9780246030675,
+          "climbing": false
+        },
+        {
+          "time": 107.03333333336458,
+          "phase": "seventh_floor",
+          "position": [
+            439.4472817169477,
+            171.39554846268632
+          ],
+          "hp": 150.0,
+          "stamina": 51.31532310486353,
+          "climbing": false
+        },
+        {
+          "time": 108.03333333336538,
+          "phase": "seventh_floor",
+          "position": [
+            439.4478147544245,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 57.93727937575749,
+          "climbing": false
+        },
+        {
+          "time": 109.03333333336617,
+          "phase": "seventh_floor",
+          "position": [
+            439.44802999868216,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 63.925123282596445,
+          "climbing": false
+        },
+        {
+          "time": 110.03333333336697,
+          "phase": "seventh_floor",
+          "position": [
+            439.44811691581765,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 69.34718131971987,
+          "climbing": false
+        },
+        {
+          "time": 111.03333333336776,
+          "phase": "seventh_floor",
+          "position": [
+            439.448152013564,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 74.26196173265161,
+          "climbing": false
+        },
+        {
+          "time": 112.03333333336856,
+          "phase": "seventh_floor",
+          "position": [
+            439.4481661862788,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.72028278961112,
+          "climbing": false
+        },
+        {
+          "time": 113.03333333336936,
+          "phase": "seventh_floor",
+          "position": [
+            439.44817190932065,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.76677752360742,
+          "climbing": false
+        },
+        {
+          "time": 114.03333333337015,
+          "phase": "seventh_floor",
+          "position": [
+            439.44817422032463,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.44098458825829,
+          "climbing": false
+        },
+        {
+          "time": 115.03333333337095,
+          "phase": "seventh_floor",
+          "position": [
+            439.44817515352423,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.77815966829101,
+          "climbing": false
+        },
+        {
+          "time": 116.03333333337174,
+          "phase": "seventh_floor",
+          "position": [
+            439.448175530357,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.80989502538517,
+          "climbing": false
+        },
+        {
+          "time": 117.03333333337254,
+          "phase": "top_rope",
+          "position": [
+            439.18841349070493,
+            171.55255517508252
+          ],
+          "hp": 150.0,
+          "stamina": 80.83847760023644,
+          "climbing": false
+        },
+        {
+          "time": 118.03333333337333,
+          "phase": "top_rope",
+          "position": [
+            437.57856521369484,
+            180.98219135927934
+          ],
+          "hp": 150.0,
+          "stamina": 81.80359201733874,
+          "climbing": false
+        },
+        {
+          "time": 119.03333333337413,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            183.33544226350486
+          ],
+          "hp": 150.0,
+          "stamina": 72.35359201733928,
+          "climbing": true
+        },
+        {
+          "time": 120.03333333337493,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            186.3052907444879
+          ],
+          "hp": 150.0,
+          "stamina": 58.35359201733973,
+          "climbing": true
+        },
+        {
+          "time": 121.03333333337572,
+          "phase": "top_landing",
+          "position": [
+            437.5695622999695,
+            191.4979025015131
+          ],
+          "hp": 150.0,
+          "stamina": 31.645939516555615,
+          "climbing": false
+        },
+        {
+          "time": 122.03333333337652,
+          "phase": "top_landing",
+          "position": [
+            439.85976219181924,
+            202.79854543282545
+          ],
+          "hp": 150.0,
+          "stamina": 40.22417118898818,
+          "climbing": false
+        },
+        {
+          "time": 123.03333333337731,
+          "phase": "top_landing",
+          "position": [
+            441.4029926435137,
+            202.58630977171208
+          ],
+          "hp": 150.0,
+          "stamina": 47.93357471484947,
+          "climbing": false
+        },
+        {
+          "time": 124.03333333337811,
+          "phase": "top_checkpoint",
+          "position": [
+            444.0346308395534,
+            213.67912518810522
+          ],
+          "hp": 150.0,
+          "stamina": 40.98023905293074,
+          "climbing": false
+        },
+        {
+          "time": 125.0333333333789,
+          "phase": "top_checkpoint",
+          "position": [
+            447.2685302256841,
+            216.19617667406064
+          ],
+          "hp": 150.0,
+          "stamina": 48.61433087761625,
+          "climbing": false
+        },
+        {
+          "time": 126.0333333333797,
+          "phase": "top_checkpoint",
+          "position": [
+            447.4552510140081,
+            213.37035577425763
+          ],
+          "hp": 150.0,
+          "stamina": 55.49791490183409,
+          "climbing": false
+        },
+        {
+          "time": 127.0333333333805,
+          "phase": "top_checkpoint",
+          "position": [
+            447.45707165702856,
+            208.9547464050693
+          ],
+          "hp": 150.0,
+          "stamina": 61.718225587596336,
+          "climbing": false
+        },
+        {
+          "time": 128.03333333338122,
+          "phase": "top_checkpoint",
+          "position": [
+            447.4590071209887,
+            204.06609048059946
+          ],
+          "hp": 150.0,
+          "stamina": 67.34806624191951,
+          "climbing": false
+        }
+      ],
+      "local_fixture_spawn": [
+        433.5,
+        11.9
+      ],
+      "original_forest_spawn": [
+        15.5,
+        54.9
+      ],
+      "production_configuration": {
+        "v_jump": 27.0,
+        "v_max": 38.0,
+        "f_y": 0.98,
+        "stamina_max": 100.0,
+        "gravity": -6.2
+      },
+      "checkpoint_recorded": true
+    },
+    {
+      "fps": 60,
+      "completed_route": true,
+      "reached_and_rested": false,
+      "failure": null,
+      "timer": 128.18333333338109,
+      "control_frames": 7691,
+      "position": [
+        447.4893640826481,
+        202.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 10.742585385668603,
+      "final_hp": 150.0,
+      "final_stamina": 68.50879002221053,
+      "contacts_seen": [
+        0,
+        1,
+        2,
+        19,
+        25,
+        31,
+        34,
+        254,
+        297,
+        302
+      ],
+      "native_draws": 26,
+      "max_frame_dx": 0.08170854678036221,
+      "max_frame_dy": 0.44196423512088856,
+      "y_wraps": [],
+      "checkpoint_seen": true,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "underfloor",
+          "time": 1.3666666666666643,
+          "position": [
+            437.321311266325,
+            11.9
+          ],
+          "stamina": 100.0,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 254,
+          "contacts": [
+            0,
+            254
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_entry_clearance",
+          "time": 1.7833333333333294,
+          "position": [
+            437.464844134417,
+            20.223940574722928
+          ],
+          "stamina": 86.45703419969253,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_floor",
+          "time": 5.116666666666711,
+          "position": [
+            439.4845694346934,
+            18.9
+          ],
+          "stamina": 96.43744226669338,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 297,
+          "contacts": [
+            0,
+            297
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_clearance",
+          "time": 9.966666666666741,
+          "position": [
+            437.5,
+            43.20554073811303
+          ],
+          "stamina": 36.5978866384115,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_departure_jump",
+          "time": 10.05000000000007,
+          "position": [
+            437.5,
+            45.31209175176489
+          ],
+          "stamina": 22.330383042228483,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_floor",
+          "time": 23.29999999999932,
+          "position": [
+            439.4481775328395,
+            41.9
+          ],
+          "stamina": 95.04212008771059,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_clearance",
+          "time": 28.833333333332337,
+          "position": [
+            437.5,
+            68.23493720011791
+          ],
+          "stamina": 25.694171819913556,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_departure_jump",
+          "time": 28.916666666665666,
+          "position": [
+            437.5,
+            70.34148821376978
+          ],
+          "stamina": 11.524859530108507,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_floor",
+          "time": 43.16666666666486,
+          "position": [
+            439.4481764911412,
+            66.9
+          ],
+          "stamina": 95.02656027764112,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_clearance",
+          "time": 48.69999999999788,
+          "position": [
+            437.5,
+            93.23493720011533
+          ],
+          "stamina": 25.67926228068439,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_departure_jump",
+          "time": 48.78333333333121,
+          "position": [
+            437.5,
+            95.34148821376719
+          ],
+          "stamina": 11.510088946286645,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_floor",
+          "time": 63.0333333333304,
+          "position": [
+            439.4481764911412,
+            91.9
+          ],
+          "stamina": 95.0230966316322,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_clearance",
+          "time": 68.5666666666673,
+          "position": [
+            437.5,
+            118.23493720011533
+          ],
+          "stamina": 25.67594338764561,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_departure_jump",
+          "time": 68.6500000000007,
+          "position": [
+            437.5,
+            120.34148821376719
+          ],
+          "stamina": 11.506800986866436,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_floor",
+          "time": 82.90000000001204,
+          "position": [
+            439.51030821658463,
+            123.9
+          ],
+          "stamina": 95.02232563514087,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 34,
+          "contacts": [
+            0,
+            34
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_clearance",
+          "time": 86.06666666668123,
+          "position": [
+            437.5,
+            143.2062957951218
+          ],
+          "stamina": 58.84142691788315,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_departure_jump",
+          "time": 86.15000000001463,
+          "position": [
+            437.5,
+            145.31284680877363
+          ],
+          "stamina": 44.390578207168325,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_floor",
+          "time": 96.90000000002318,
+          "position": [
+            439.44819264803056,
+            141.9
+          ],
+          "stamina": 95.04404815851704,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_clearance",
+          "time": 102.43333333336092,
+          "position": [
+            437.5,
+            168.234937200115
+          ],
+          "stamina": 25.696019314053665,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_departure_jump",
+          "time": 102.51666666669432,
+          "position": [
+            437.5,
+            170.34148821376684
+          ],
+          "stamina": 11.526689806745175,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_floor",
+          "time": 116.76666666670566,
+          "position": [
+            439.4481764911412,
+            166.9
+          ],
+          "stamina": 95.02698947956591,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_rope",
+          "time": 120.86666666670892,
+          "position": [
+            437.5,
+            189.0
+          ],
+          "stamina": 45.83367354540193,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_landing",
+          "time": 123.2166666667108,
+          "position": [
+            441.4830962015627,
+            201.9
+          ],
+          "stamina": 49.73282472435143,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_checkpoint",
+          "time": 128.18333333338109,
+          "position": [
+            447.4893640826481,
+            202.9
+          ],
+          "stamina": 68.50879002221053,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 302,
+          "contacts": [
+            0,
+            302
+          ],
+          "saved_spawn": [
+            447.4893640826481,
+            202.9
+          ]
+        }
+      ],
+      "saved_checkpoint": [
+        447.4893640826481,
+        202.9
+      ],
+      "trace": [
+        {
+          "time": 0.016666666666666666,
+          "phase": "underfloor",
+          "position": [
+            433.5027430726535,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 1.0166666666666655,
+          "phase": "underfloor",
+          "position": [
+            436.91244403466254,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 2.016666666666662,
+          "phase": "first_floor",
+          "position": [
+            437.8463589998478,
+            22.952286950767448
+          ],
+          "hp": 150.0,
+          "stamina": 87.26428057414302,
+          "climbing": false
+        },
+        {
+          "time": 3.0166666666666586,
+          "phase": "first_floor",
+          "position": [
+            439.4487045149741,
+            26.277801795626072
+          ],
+          "hp": 150.0,
+          "stamina": 90.52604751892984,
+          "climbing": false
+        },
+        {
+          "time": 4.016666666666656,
+          "phase": "first_floor",
+          "position": [
+            439.53365706083315,
+            23.692541709016076
+          ],
+          "hp": 150.0,
+          "stamina": 93.48940723580438,
+          "climbing": false
+        },
+        {
+          "time": 5.016666666666706,
+          "phase": "first_floor",
+          "position": [
+            439.4978623093263,
+            19.3485119658018
+          ],
+          "hp": 150.0,
+          "stamina": 96.18207834597325,
+          "climbing": false
+        },
+        {
+          "time": 6.016666666666755,
+          "phase": "second_clearance",
+          "position": [
+            437.6938624054591,
+            31.811686341427425
+          ],
+          "hp": 150.0,
+          "stamina": 83.14788663841053,
+          "climbing": false
+        },
+        {
+          "time": 7.016666666666805,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            34.44448771921053
+          ],
+          "hp": 150.0,
+          "stamina": 77.89788663841082,
+          "climbing": true
+        },
+        {
+          "time": 8.016666666666852,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            37.41433620019443
+          ],
+          "hp": 150.0,
+          "stamina": 63.89788663841161,
+          "climbing": true
+        },
+        {
+          "time": 9.016666666666795,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            40.384184681178326
+          ],
+          "hp": 150.0,
+          "stamina": 49.897886638411556,
+          "climbing": true
+        },
+        {
+          "time": 10.016666666666739,
+          "phase": "second_departure_jump",
+          "position": [
+            437.5,
+            44.500037265778474
+          ],
+          "hp": 150.0,
+          "stamina": 21.992614941424698,
+          "climbing": false
+        },
+        {
+          "time": 11.016666666666682,
+          "phase": "second_floor",
+          "position": [
+            439.3346157345382,
+            56.82474781547414
+          ],
+          "hp": 150.0,
+          "stamina": 31.585282112268086,
+          "climbing": false
+        },
+        {
+          "time": 12.016666666666625,
+          "phase": "second_floor",
+          "position": [
+            439.49670764914583,
+            56.91722669253987
+          ],
+          "hp": 150.0,
+          "stamina": 40.169758696332735,
+          "climbing": false
+        },
+        {
+          "time": 13.016666666666568,
+          "phase": "second_floor",
+          "position": [
+            439.4677732912152,
+            53.36996659327644
+          ],
+          "hp": 150.0,
+          "stamina": 47.88458958670794,
+          "climbing": false
+        },
+        {
+          "time": 14.016666666666511,
+          "phase": "second_floor",
+          "position": [
+            439.4560893953008,
+            48.739690723027245
+          ],
+          "hp": 150.0,
+          "stamina": 54.839186645213985,
+          "climbing": false
+        },
+        {
+          "time": 15.016666666666454,
+          "phase": "second_floor",
+          "position": [
+            439.4513713564879,
+            43.78716010653613
+          ],
+          "hp": 150.0,
+          "stamina": 61.12248938277029,
+          "climbing": false
+        },
+        {
+          "time": 16.0166666666664,
+          "phase": "second_floor",
+          "position": [
+            439.44946617944765,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 66.80856297401002,
+          "climbing": false
+        },
+        {
+          "time": 17.016666666666342,
+          "phase": "second_floor",
+          "position": [
+            439.44869685564623,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 71.96031851995224,
+          "climbing": false
+        },
+        {
+          "time": 18.016666666666286,
+          "phase": "second_floor",
+          "position": [
+            439.44838619731956,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 76.63204919941151,
+          "climbing": false
+        },
+        {
+          "time": 19.01666666666623,
+          "phase": "second_floor",
+          "position": [
+            439.4482607513163,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 80.87120229302916,
+          "climbing": false
+        },
+        {
+          "time": 20.016666666666172,
+          "phase": "second_floor",
+          "position": [
+            439.4482100953439,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 84.71964834202072,
+          "climbing": false
+        },
+        {
+          "time": 21.016666666666115,
+          "phase": "second_floor",
+          "position": [
+            439.4481896401082,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.21461351700081,
+          "climbing": false
+        },
+        {
+          "time": 22.016666666666058,
+          "phase": "second_floor",
+          "position": [
+            439.44818138014114,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.38938261374112,
+          "climbing": false
+        },
+        {
+          "time": 23.016666666666,
+          "phase": "second_floor",
+          "position": [
+            439.4481780447086,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.2738431479544,
+          "climbing": false
+        },
+        {
+          "time": 24.016666666665945,
+          "phase": "third_clearance",
+          "position": [
+            437.87056593357954,
+            53.54296306639704
+          ],
+          "hp": 150.0,
+          "stamina": 81.81083848657937,
+          "climbing": false
+        },
+        {
+          "time": 25.016666666665888,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            56.900015497696714
+          ],
+          "hp": 150.0,
+          "stamina": 79.12750515324619,
+          "climbing": true
+        },
+        {
+          "time": 26.01666666666583,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            59.86986397868061
+          ],
+          "hp": 150.0,
+          "stamina": 65.12750515324699,
+          "climbing": true
+        },
+        {
+          "time": 27.016666666665774,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            62.83971245966451
+          ],
+          "hp": 150.0,
+          "stamina": 51.12750515324699,
+          "climbing": true
+        },
+        {
+          "time": 28.016666666665717,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            65.80956094064842
+          ],
+          "hp": 150.0,
+          "stamina": 37.127505153246936,
+          "climbing": true
+        },
+        {
+          "time": 29.01666666666566,
+          "phase": "third_floor",
+          "position": [
+            437.5695622999695,
+            72.55049917902831
+          ],
+          "hp": 150.0,
+          "stamina": 12.659142541335601,
+          "climbing": false
+        },
+        {
+          "time": 30.016666666665603,
+          "phase": "third_floor",
+          "position": [
+            439.4030158201631,
+            82.27643479947342
+          ],
+          "hp": 150.0,
+          "stamina": 23.27771512733527,
+          "climbing": false
+        },
+        {
+          "time": 31.016666666665547,
+          "phase": "third_floor",
+          "position": [
+            439.49118057367366,
+            81.59564002919106
+          ],
+          "hp": 150.0,
+          "stamina": 32.73279664415219,
+          "climbing": false
+        },
+        {
+          "time": 32.01666666666549,
+          "phase": "third_floor",
+          "position": [
+            439.4655414195184,
+            77.81828992599812
+          ],
+          "hp": 150.0,
+          "stamina": 41.199387863228125,
+          "climbing": false
+        },
+        {
+          "time": 33.01666666666544,
+          "phase": "third_floor",
+          "position": [
+            439.4551881499141,
+            73.11955005197771
+          ],
+          "hp": 150.0,
+          "stamina": 48.81168565198861,
+          "climbing": false
+        },
+        {
+          "time": 34.01666666666538,
+          "phase": "third_floor",
+          "position": [
+            439.4510074273033,
+            68.14664775600319
+          ],
+          "hp": 150.0,
+          "stamina": 55.67608910032917,
+          "climbing": false
+        },
+        {
+          "time": 35.01666666666532,
+          "phase": "third_floor",
+          "position": [
+            439.44931922229995,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 61.87937777104652,
+          "climbing": false
+        },
+        {
+          "time": 36.016666666665266,
+          "phase": "third_floor",
+          "position": [
+            439.44863751332315,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 67.49401763433855,
+          "climbing": false
+        },
+        {
+          "time": 37.01666666666521,
+          "phase": "third_floor",
+          "position": [
+            439.44836223447487,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 72.58169902421055,
+          "climbing": false
+        },
+        {
+          "time": 38.01666666666515,
+          "phase": "third_floor",
+          "position": [
+            439.4482510749522,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 77.19575614705603,
+          "climbing": false
+        },
+        {
+          "time": 39.016666666665095,
+          "phase": "third_floor",
+          "position": [
+            439.4482061879604,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 81.382862913299,
+          "climbing": false
+        },
+        {
+          "time": 40.01666666666504,
+          "phase": "third_floor",
+          "position": [
+            439.44818806227954,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.18425141566021,
+          "climbing": false
+        },
+        {
+          "time": 41.01666666666498,
+          "phase": "third_floor",
+          "position": [
+            439.44818074300287,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.63661001381344,
+          "climbing": false
+        },
+        {
+          "time": 42.016666666664925,
+          "phase": "third_floor",
+          "position": [
+            439.4481777874276,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.77276274609189,
+          "climbing": false
+        },
+        {
+          "time": 43.01666666666487,
+          "phase": "third_floor",
+          "position": [
+            439.44817659394585,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.62219691301313,
+          "climbing": false
+        },
+        {
+          "time": 44.01666666666481,
+          "phase": "fourth_clearance",
+          "position": [
+            437.7342968738701,
+            79.51333973098176
+          ],
+          "hp": 150.0,
+          "stamina": 81.7959289473502,
+          "climbing": false
+        },
+        {
+          "time": 45.016666666664754,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            82.2959952951611
+          ],
+          "hp": 150.0,
+          "stamina": 77.24592894735046,
+          "climbing": true
+        },
+        {
+          "time": 46.0166666666647,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            85.26584377614415
+          ],
+          "hp": 150.0,
+          "stamina": 63.24592894735121,
+          "climbing": true
+        },
+        {
+          "time": 47.01666666666464,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            88.2356922571272
+          ],
+          "hp": 150.0,
+          "stamina": 49.24592894735115,
+          "climbing": true
+        },
+        {
+          "time": 48.016666666664584,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            91.20554073811024
+          ],
+          "hp": 150.0,
+          "stamina": 35.245928947351096,
+          "climbing": true
+        },
+        {
+          "time": 49.01666666666453,
+          "phase": "fourth_floor",
+          "position": [
+            437.848136002397,
+            100.01944696984299
+          ],
+          "hp": 150.0,
+          "stamina": 14.135548605135915,
+          "climbing": false
+        },
+        {
+          "time": 50.01666666666447,
+          "phase": "fourth_floor",
+          "position": [
+            439.44000951220016,
+            107.534440976469
+          ],
+          "hp": 150.0,
+          "stamina": 24.588531228165724,
+          "climbing": false
+        },
+        {
+          "time": 51.01666666666441,
+          "phase": "fourth_floor",
+          "position": [
+            439.4862829519466,
+            106.195773580686
+          ],
+          "hp": 150.0,
+          "stamina": 33.90411757344449,
+          "climbing": false
+        },
+        {
+          "time": 52.01666666666436,
+          "phase": "fourth_floor",
+          "position": [
+            439.46356372564236,
+            102.22267141028422
+          ],
+          "hp": 150.0,
+          "stamina": 42.25092488341388,
+          "climbing": false
+        },
+        {
+          "time": 53.0166666666643,
+          "phase": "fourth_floor",
+          "position": [
+            439.4543895433075,
+            97.46568489347734
+          ],
+          "hp": 150.0,
+          "stamina": 49.758865752483274,
+          "climbing": false
+        },
+        {
+          "time": 54.01666666666424,
+          "phase": "fourth_floor",
+          "position": [
+            439.4506849443752,
+            92.47545112589044
+          ],
+          "hp": 150.0,
+          "stamina": 56.531357124201804,
+          "climbing": false
+        },
+        {
+          "time": 55.016666666664186,
+          "phase": "fourth_floor",
+          "position": [
+            439.4491890014402,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 62.65303141486268,
+          "climbing": false
+        },
+        {
+          "time": 56.01666666666413,
+          "phase": "fourth_floor",
+          "position": [
+            439.44858492923004,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 68.19475840364031,
+          "climbing": false
+        },
+        {
+          "time": 57.01666666666407,
+          "phase": "fourth_floor",
+          "position": [
+            439.44834100065066,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 73.21700527716389,
+          "climbing": false
+        },
+        {
+          "time": 58.016666666664015,
+          "phase": "fourth_floor",
+          "position": [
+            439.44824250058565,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 77.7721419782167,
+          "climbing": false
+        },
+        {
+          "time": 59.01666666666396,
+          "phase": "fourth_floor",
+          "position": [
+            439.4482027255713,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 81.90606228254155,
+          "climbing": false
+        },
+        {
+          "time": 60.0166666666639,
+          "phase": "fourth_floor",
+          "position": [
+            439.44818666414267,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.65935244165748,
+          "climbing": false
+        },
+        {
+          "time": 61.016666666663845,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481801784254,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.06815548220506,
+          "climbing": false
+        },
+        {
+          "time": 62.01666666666379,
+          "phase": "fourth_floor",
+          "position": [
+            439.4481775594474,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.16482732520396,
+          "climbing": false
+        },
+        {
+          "time": 63.01666666666373,
+          "phase": "fourth_floor",
+          "position": [
+            439.44817650188565,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.97844802355381,
+          "climbing": false
+        },
+        {
+          "time": 64.01666666666368,
+          "phase": "fifth_clearance",
+          "position": [
+            437.6480296094351,
+            105.23763733128533
+          ],
+          "hp": 150.0,
+          "stamina": 81.79261005431142,
+          "climbing": false
+        },
+        {
+          "time": 65.01666666666448,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            107.69197509262551
+          ],
+          "hp": 150.0,
+          "stamina": 75.37594338764512,
+          "climbing": true
+        },
+        {
+          "time": 66.01666666666527,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            110.66182357360856
+          ],
+          "hp": 150.0,
+          "stamina": 61.375943387645755,
+          "climbing": true
+        },
+        {
+          "time": 67.01666666666607,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            113.6316720545916
+          ],
+          "hp": 150.0,
+          "stamina": 47.3759433876457,
+          "climbing": true
+        },
+        {
+          "time": 68.01666666666686,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            116.60152053557465
+          ],
+          "hp": 150.0,
+          "stamina": 33.37594338764564,
+          "climbing": true
+        },
+        {
+          "time": 69.01666666666766,
+          "phase": "fifth_floor",
+          "position": [
+            437.83956593663913,
+            127.01867347105399
+          ],
+          "hp": 150.0,
+          "stamina": 15.599268135819434,
+          "climbing": false
+        },
+        {
+          "time": 70.01666666666846,
+          "phase": "fifth_floor",
+          "position": [
+            439.4353709359368,
+            132.65268010755523
+          ],
+          "hp": 150.0,
+          "stamina": 25.88936088639968,
+          "climbing": false
+        },
+        {
+          "time": 71.01666666666925,
+          "phase": "fifth_floor",
+          "position": [
+            439.48939590650554,
+            130.75431900842756
+          ],
+          "hp": 150.0,
+          "stamina": 35.067334590664174,
+          "climbing": false
+        },
+        {
+          "time": 72.01666666667005,
+          "phase": "fifth_floor",
+          "position": [
+            439.45184701029257,
+            126.61467821765046
+          ],
+          "hp": 150.0,
+          "stamina": 43.29571903379969,
+          "climbing": false
+        },
+        {
+          "time": 73.01666666667084,
+          "phase": "fifth_floor",
+          "position": [
+            439.4366845036242,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 50.70032061604246,
+          "climbing": false
+        },
+        {
+          "time": 74.01666666667164,
+          "phase": "fifth_floor",
+          "position": [
+            439.49228967090346,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 57.38168489199089,
+          "climbing": false
+        },
+        {
+          "time": 75.01666666667244,
+          "phase": "fifth_floor",
+          "position": [
+            439.45301553257707,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 63.422367897078686,
+          "climbing": false
+        },
+        {
+          "time": 76.01666666667323,
+          "phase": "fifth_floor",
+          "position": [
+            439.4371563610878,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 68.89168945801892,
+          "climbing": false
+        },
+        {
+          "time": 77.01666666667403,
+          "phase": "fifth_floor",
+          "position": [
+            439.49534342929974,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 73.84892442565821,
+          "climbing": false
+        },
+        {
+          "time": 78.01666666667482,
+          "phase": "fifth_floor",
+          "position": [
+            439.45424866155537,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.34549939071864,
+          "climbing": false
+        },
+        {
+          "time": 79.01666666667562,
+          "phase": "fifth_floor",
+          "position": [
+            439.43765430718577,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.42654244825192,
+          "climbing": false
+        },
+        {
+          "time": 80.01666666667641,
+          "phase": "fifth_floor",
+          "position": [
+            439.4985405315268,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.13200419226459,
+          "climbing": false
+        },
+        {
+          "time": 81.01666666667721,
+          "phase": "fifth_floor",
+          "position": [
+            439.4555396737747,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.49748964131467,
+          "climbing": false
+        },
+        {
+          "time": 82.016666666678,
+          "phase": "fifth_floor",
+          "position": [
+            439.4381756269411,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.55489198752431,
+          "climbing": false
+        },
+        {
+          "time": 83.0166666666788,
+          "phase": "sixth_clearance",
+          "position": [
+            439.4087071258313,
+            126.77973061421984
+          ],
+          "hp": 150.0,
+          "stamina": 80.48832274583236,
+          "climbing": false
+        },
+        {
+          "time": 84.0166666666796,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5944565095707,
+            137.75257996306675
+          ],
+          "hp": 150.0,
+          "stamina": 81.8247602512155,
+          "climbing": false
+        },
+        {
+          "time": 85.0166666666804,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5,
+            140.0879548900896
+          ],
+          "hp": 150.0,
+          "stamina": 73.54142691788263,
+          "climbing": true
+        },
+        {
+          "time": 86.01666666668119,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5,
+            143.05780337107265
+          ],
+          "hp": 150.0,
+          "stamina": 59.54142691788315,
+          "climbing": true
+        },
+        {
+          "time": 87.01666666668199,
+          "phase": "sixth_floor",
+          "position": [
+            439.26534395385886,
+            156.38381977750888
+          ],
+          "hp": 150.0,
+          "stamina": 50.757350155218276,
+          "climbing": false
+        },
+        {
+          "time": 88.01666666668278,
+          "phase": "sixth_floor",
+          "position": [
+            439.5013143215655,
+            157.14403530454172
+          ],
+          "hp": 150.0,
+          "stamina": 57.43320152654515,
+          "climbing": false
+        },
+        {
+          "time": 89.01666666668358,
+          "phase": "sixth_floor",
+          "position": [
+            439.46963349772795,
+            153.7954623439668
+          ],
+          "hp": 150.0,
+          "stamina": 63.46898248559554,
+          "climbing": false
+        },
+        {
+          "time": 90.01666666668437,
+          "phase": "sixth_floor",
+          "position": [
+            439.45684055968906,
+            149.2243064562469
+          ],
+          "hp": 150.0,
+          "stamina": 68.93392011649186,
+          "climbing": false
+        },
+        {
+          "time": 91.01666666668517,
+          "phase": "sixth_floor",
+          "position": [
+            439.45167468191676,
+            144.28936717635318
+          ],
+          "hp": 150.0,
+          "stamina": 73.88721777819858,
+          "climbing": false
+        },
+        {
+          "time": 92.01666666668596,
+          "phase": "sixth_floor",
+          "position": [
+            439.44958866437526,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.38024539071719,
+          "climbing": false
+        },
+        {
+          "time": 93.01666666668676,
+          "phase": "sixth_floor",
+          "position": [
+            439.4487463159159,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.45808497328287,
+          "climbing": false
+        },
+        {
+          "time": 94.01666666668756,
+          "phase": "sixth_floor",
+          "position": [
+            439.44840616972203,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.16064881175062,
+          "climbing": false
+        },
+        {
+          "time": 95.01666666668835,
+          "phase": "sixth_floor",
+          "position": [
+            439.448268816312,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.52350946099759,
+          "climbing": false
+        },
+        {
+          "time": 96.01666666668915,
+          "phase": "sixth_floor",
+          "position": [
+            439.44821335204546,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.57853216337264,
+          "climbing": false
+        },
+        {
+          "time": 97.01666666668994,
+          "phase": "seventh_clearance",
+          "position": [
+            439.3550120394757,
+            144.7797306142198
+          ],
+          "hp": 150.0,
+          "stamina": 80.50980166241935,
+          "climbing": false
+        },
+        {
+          "time": 98.01666666669074,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5891262203063,
+            155.75257996306675
+          ],
+          "hp": 150.0,
+          "stamina": 81.81268598071948,
+          "climbing": false
+        },
+        {
+          "time": 99.01666666669153,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            158.0879548900896
+          ],
+          "hp": 150.0,
+          "stamina": 73.52935264738662,
+          "climbing": true
+        },
+        {
+          "time": 100.01666666669233,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            161.05780337107265
+          ],
+          "hp": 150.0,
+          "stamina": 59.529352647387135,
+          "climbing": true
+        },
+        {
+          "time": 101.01666666669313,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            164.0276518520557
+          ],
+          "hp": 150.0,
+          "stamina": 45.52935264738708,
+          "climbing": true
+        },
+        {
+          "time": 102.01666666669392,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            166.99750033303874
+          ],
+          "hp": 150.0,
+          "stamina": 31.52935264738702,
+          "climbing": true
+        },
+        {
+          "time": 103.01666666669472,
+          "phase": "seventh_floor",
+          "position": [
+            438.7172962015326,
+            178.61827846814813
+          ],
+          "hp": 150.0,
+          "stamina": 17.061368232753495,
+          "climbing": false
+        },
+        {
+          "time": 104.01666666669551,
+          "phase": "seventh_floor",
+          "position": [
+            439.4940724219465,
+            182.6520106042041
+          ],
+          "hp": 150.0,
+          "stamina": 27.189986419522047,
+          "climbing": false
+        },
+        {
+          "time": 105.01666666669631,
+          "phase": "seventh_floor",
+          "position": [
+            439.47809749107,
+            180.2774827982989
+          ],
+          "hp": 150.0,
+          "stamina": 36.23116325669,
+          "climbing": false
+        },
+        {
+          "time": 106.0166666666971,
+          "phase": "seventh_floor",
+          "position": [
+            439.46025837934366,
+            175.99615710747503
+          ],
+          "hp": 150.0,
+          "stamina": 44.34157888960671,
+          "climbing": false
+        },
+        {
+          "time": 107.0166666666979,
+          "phase": "seventh_floor",
+          "position": [
+            439.45305482137576,
+            171.1474577135149
+          ],
+          "hp": 150.0,
+          "stamina": 51.64307407329401,
+          "climbing": false
+        },
+        {
+          "time": 108.0166666666987,
+          "phase": "seventh_floor",
+          "position": [
+            439.45014597433254,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 58.23340842695852,
+          "climbing": false
+        },
+        {
+          "time": 109.01666666669949,
+          "phase": "seventh_floor",
+          "position": [
+            439.4489713615709,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 64.1931146105649,
+          "climbing": false
+        },
+        {
+          "time": 110.01666666670029,
+          "phase": "seventh_floor",
+          "position": [
+            439.44849704473006,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 69.58999580673158,
+          "climbing": false
+        },
+        {
+          "time": 111.01666666670108,
+          "phase": "seventh_floor",
+          "position": [
+            439.4483055122754,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 74.4821556047741,
+          "climbing": false
+        },
+        {
+          "time": 112.01666666670188,
+          "phase": "seventh_floor",
+          "position": [
+            439.4482281701318,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.92009058998252,
+          "climbing": false
+        },
+        {
+          "time": 113.01666666670268,
+          "phase": "seventh_floor",
+          "position": [
+            439.4481969388339,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.94817158501817,
+          "climbing": false
+        },
+        {
+          "time": 114.01666666670347,
+          "phase": "seventh_floor",
+          "position": [
+            439.4481843274175,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.60571875592956,
+          "climbing": false
+        },
+        {
+          "time": 115.01666666670427,
+          "phase": "seventh_floor",
+          "position": [
+            439.4481792348394,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.92780228985802,
+          "climbing": false
+        },
+        {
+          "time": 116.01666666670506,
+          "phase": "seventh_floor",
+          "position": [
+            439.44817717842056,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.94585450149187,
+          "climbing": false
+        },
+        {
+          "time": 117.01666666670586,
+          "phase": "top_rope",
+          "position": [
+            439.0513796986381,
+            172.51358902993636
+          ],
+          "hp": 150.0,
+          "stamina": 81.03262269208906,
+          "climbing": false
+        },
+        {
+          "time": 118.01666666670666,
+          "phase": "top_rope",
+          "position": [
+            437.5512372141194,
+            181.08941112903628
+          ],
+          "hp": 150.0,
+          "stamina": 81.79634021206766,
+          "climbing": false
+        },
+        {
+          "time": 119.01666666670745,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            183.483934687554
+          ],
+          "hp": 150.0,
+          "stamina": 71.64634021206824,
+          "climbing": true
+        },
+        {
+          "time": 120.01666666670825,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            186.45378316853706
+          ],
+          "hp": 150.0,
+          "stamina": 57.646340212068644,
+          "climbing": true
+        },
+        {
+          "time": 121.01666666670904,
+          "phase": "top_landing",
+          "position": [
+            437.65025840957514,
+            192.61557477483188
+          ],
+          "hp": 150.0,
+          "stamina": 32.09033706036758,
+          "climbing": false
+        },
+        {
+          "time": 122.01666666670984,
+          "phase": "top_landing",
+          "position": [
+            439.9967966493863,
+            202.95237345626296
+          ],
+          "hp": 150.0,
+          "stamina": 40.62286254005836,
+          "climbing": false
+        },
+        {
+          "time": 123.01666666671063,
+          "phase": "top_landing",
+          "position": [
+            441.45789295327404,
+            202.45334290953167
+          ],
+          "hp": 150.0,
+          "stamina": 48.29252887526291,
+          "climbing": false
+        },
+        {
+          "time": 124.01666666671143,
+          "phase": "top_checkpoint",
+          "position": [
+            444.40347411318436,
+            214.18045291037058
+          ],
+          "hp": 150.0,
+          "stamina": 41.40046636190621,
+          "climbing": false
+        },
+        {
+          "time": 125.01666666671223,
+          "phase": "top_checkpoint",
+          "position": [
+            447.33505912168806,
+            216.10702981468825
+          ],
+          "hp": 150.0,
+          "stamina": 48.99278100191694,
+          "climbing": false
+        },
+        {
+          "time": 126.01666666671302,
+          "phase": "top_checkpoint",
+          "position": [
+            447.5364155897778,
+            213.10551134743912
+          ],
+          "hp": 150.0,
+          "stamina": 55.83959319219078,
+          "climbing": false
+        },
+        {
+          "time": 127.01666666671382,
+          "phase": "top_checkpoint",
+          "position": [
+            447.45110819345257,
+            208.63762261489381
+          ],
+          "hp": 150.0,
+          "stamina": 62.02726737543783,
+          "climbing": false
+        },
+        {
+          "time": 128.01666666671457,
+          "phase": "top_checkpoint",
+          "position": [
+            447.5051348250568,
+            203.73341080155916
+          ],
+          "hp": 150.0,
+          "stamina": 67.62796143141897,
+          "climbing": false
+        }
+      ],
+      "local_fixture_spawn": [
+        433.5,
+        11.9
+      ],
+      "original_forest_spawn": [
+        15.5,
+        54.9
+      ],
+      "production_configuration": {
+        "v_jump": 27.0,
+        "v_max": 38.0,
+        "f_y": 0.98,
+        "stamina_max": 100.0,
+        "gravity": -6.2
+      },
+      "checkpoint_recorded": true
+    },
+    {
+      "fps": 144,
+      "completed_route": true,
+      "reached_and_rested": false,
+      "failure": null,
+      "timer": 128.04166666671455,
+      "control_frames": 18438,
+      "position": [
+        447.51720074288255,
+        202.9
+      ],
+      "min_hp": 150.0,
+      "min_stamina": 10.742084105599169,
+      "final_hp": 150.0,
+      "final_stamina": 68.46242456303578,
+      "contacts_seen": [
+        0,
+        1,
+        2,
+        19,
+        25,
+        31,
+        34,
+        254,
+        297,
+        302
+      ],
+      "native_draws": 26,
+      "max_frame_dx": 0.040612613885230076,
+      "max_frame_dy": 0.22231240781954753,
+      "y_wraps": [],
+      "checkpoint_seen": true,
+      "respawns": 0,
+      "arrivals": [
+        {
+          "name": "underfloor",
+          "time": 1.358333333333331,
+          "position": [
+            437.32216245335394,
+            11.9
+          ],
+          "stamina": 100.0,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 254,
+          "contacts": [
+            0,
+            254
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_entry_clearance",
+          "time": 1.7749999999999961,
+          "position": [
+            437.48460369048297,
+            20.223940574722928
+          ],
+          "stamina": 86.45703419969253,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "first_floor",
+          "time": 5.108333333333377,
+          "position": [
+            439.5110795489908,
+            18.9
+          ],
+          "stamina": 96.43744226669338,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 297,
+          "contacts": [
+            0,
+            297
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_clearance",
+          "time": 9.958333333333409,
+          "position": [
+            437.5,
+            43.20554073811303
+          ],
+          "stamina": 36.62968527204308,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_departure_jump",
+          "time": 10.041666666666737,
+          "position": [
+            437.5,
+            45.31209175176489
+          ],
+          "stamina": 22.361904632462664,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "second_floor",
+          "time": 23.27499999999932,
+          "position": [
+            439.4482104958882,
+            41.9
+          ],
+          "stamina": 95.00585280088401,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_clearance",
+          "time": 28.799999999999006,
+          "position": [
+            437.5,
+            68.21018846277639
+          ],
+          "stamina": 25.776086886335463,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_departure_jump",
+          "time": 28.883333333332335,
+          "position": [
+            437.5,
+            70.31673947642825
+          ],
+          "stamina": 11.606011401213271,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "third_floor",
+          "time": 43.11666666666486,
+          "position": [
+            439.4481898018509,
+            66.9
+          ],
+          "stamina": 95.00097969190031,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_clearance",
+          "time": 48.64166666666455,
+          "position": [
+            437.5,
+            93.2101884627738
+          ],
+          "stamina": 25.771417438932502,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_departure_jump",
+          "time": 48.72499999999788,
+          "position": [
+            437.5,
+            95.31673947642567
+          ],
+          "stamina": 11.601385447503006,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fourth_floor",
+          "time": 62.966666666663734,
+          "position": [
+            439.4481896963317,
+            91.9
+          ],
+          "stamina": 95.0222090641489,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_clearance",
+          "time": 68.49166666666724,
+          "position": [
+            437.5,
+            118.2101884627738
+          ],
+          "stamina": 25.791759580198132,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_departure_jump",
+          "time": 68.57500000000064,
+          "position": [
+            437.5,
+            120.31673947642567
+          ],
+          "stamina": 11.621538121181029,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "fifth_floor",
+          "time": 82.8083333333453,
+          "position": [
+            439.5481754683664,
+            123.9
+          ],
+          "stamina": 95.00462734660118,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 34,
+          "contacts": [
+            0,
+            34
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_clearance",
+          "time": 85.97500000001449,
+          "position": [
+            437.5,
+            143.2062957951218
+          ],
+          "stamina": 58.890207766452775,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_departure_jump",
+          "time": 86.05833333334789,
+          "position": [
+            437.5,
+            145.31284680877363
+          ],
+          "stamina": 44.43897624036495,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "sixth_floor",
+          "time": 96.79166666668976,
+          "position": [
+            439.44851076936664,
+            141.9
+          ],
+          "stamina": 95.01631023621047,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_clearance",
+          "time": 102.31666666669416,
+          "position": [
+            437.5,
+            168.2101884627735
+          ],
+          "stamina": 25.7861072778758,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_departure_jump",
+          "time": 102.40000000002756,
+          "position": [
+            437.5,
+            170.3167394764253
+          ],
+          "stamina": 11.61593846208789,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "seventh_floor",
+          "time": 116.63333333337222,
+          "position": [
+            439.4481898018509,
+            166.9
+          ],
+          "stamina": 95.00331181582757,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_rope",
+          "time": 120.73333333337548,
+          "position": [
+            437.5,
+            189.0
+          ],
+          "stamina": 45.810985429743816,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": null,
+          "contacts": [
+            0,
+            31
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_landing",
+          "time": 123.07500000004401,
+          "position": [
+            441.50091280446856,
+            201.9
+          ],
+          "stamina": 49.65571445558257,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 19,
+          "contacts": [
+            0,
+            19
+          ],
+          "saved_spawn": [
+            433.5,
+            11.9
+          ]
+        },
+        {
+          "name": "top_checkpoint",
+          "time": 128.04166666671455,
+          "position": [
+            447.51720074288255,
+            202.9
+          ],
+          "stamina": 68.46242456303578,
+          "hp": 150.0,
+          "shield": 0.0,
+          "stand_pool": 302,
+          "contacts": [
+            0,
+            302
+          ],
+          "saved_spawn": [
+            447.51720074288255,
+            202.9
+          ]
+        }
+      ],
+      "saved_checkpoint": [
+        447.51720074288255,
+        202.9
+      ],
+      "trace": [
+        {
+          "time": 0.0,
+          "phase": "underfloor",
+          "position": [
+            433.5,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 0.9999999999999989,
+          "phase": "underfloor",
+          "position": [
+            436.88122310461995,
+            11.9
+          ],
+          "hp": 150.0,
+          "stamina": 100.0,
+          "climbing": false
+        },
+        {
+          "time": 1.9999999999999953,
+          "phase": "first_floor",
+          "position": [
+            437.83817679736353,
+            22.873079119772264
+          ],
+          "hp": 150.0,
+          "stamina": 87.23576116493265,
+          "climbing": false
+        },
+        {
+          "time": 2.999999999999992,
+          "phase": "first_floor",
+          "position": [
+            439.457522606249,
+            26.28402306891902
+          ],
+          "hp": 150.0,
+          "stamina": 90.50013965742382,
+          "climbing": false
+        },
+        {
+          "time": 3.9999999999999885,
+          "phase": "first_floor",
+          "position": [
+            439.5469277734868,
+            23.72418268076733
+          ],
+          "hp": 150.0,
+          "stamina": 93.46586757280807,
+          "climbing": false
+        },
+        {
+          "time": 5.000000000000038,
+          "phase": "first_floor",
+          "position": [
+            439.51570316750184,
+            19.38771664871561
+          ],
+          "hp": 150.0,
+          "stamina": 96.1606875404363,
+          "climbing": false
+        },
+        {
+          "time": 6.000000000000088,
+          "phase": "second_clearance",
+          "position": [
+            437.7027905813633,
+            31.764272812252937
+          ],
+          "hp": 150.0,
+          "stamina": 83.17968527204211,
+          "climbing": false
+        },
+        {
+          "time": 7.000000000000138,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            34.419738981868996
+          ],
+          "hp": 150.0,
+          "stamina": 78.04635193870907,
+          "climbing": true
+        },
+        {
+          "time": 8.000000000000187,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            37.389587462852894
+          ],
+          "hp": 150.0,
+          "stamina": 64.04635193870986,
+          "climbing": true
+        },
+        {
+          "time": 9.00000000000013,
+          "phase": "second_clearance",
+          "position": [
+            437.5,
+            40.35943594383679
+          ],
+          "hp": 150.0,
+          "stamina": 50.046351938709805,
+          "climbing": true
+        },
+        {
+          "time": 10.000000000000073,
+          "phase": "second_departure_jump",
+          "position": [
+            437.5,
+            44.29076303278161
+          ],
+          "hp": 150.0,
+          "stamina": 21.939642647169418,
+          "climbing": false
+        },
+        {
+          "time": 11.000000000000016,
+          "phase": "second_floor",
+          "position": [
+            439.3393044635337,
+            56.792267422092834
+          ],
+          "hp": 150.0,
+          "stamina": 31.5379990451267,
+          "climbing": false
+        },
+        {
+          "time": 11.99999999999996,
+          "phase": "second_floor",
+          "position": [
+            439.531684456097,
+            56.93735186174478
+          ],
+          "hp": 150.0,
+          "stamina": 40.12734465746281,
+          "climbing": false
+        },
+        {
+          "time": 12.999999999999902,
+          "phase": "second_floor",
+          "position": [
+            439.5544902196582,
+            53.40574471295196
+          ],
+          "hp": 150.0,
+          "stamina": 47.846406818351966,
+          "climbing": false
+        },
+        {
+          "time": 13.999999999999845,
+          "phase": "second_floor",
+          "position": [
+            439.56369934634176,
+            48.7801264273077
+          ],
+          "hp": 150.0,
+          "stamina": 54.804723510200255,
+          "climbing": false
+        },
+        {
+          "time": 14.999999999999789,
+          "phase": "second_floor",
+          "position": [
+            439.5111800445908,
+            43.828981689753135
+          ],
+          "hp": 150.0,
+          "stamina": 61.091324466617436,
+          "climbing": false
+        },
+        {
+          "time": 15.999999999999732,
+          "phase": "second_floor",
+          "position": [
+            439.4736173456238,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 66.78034152394184,
+          "climbing": false
+        },
+        {
+          "time": 16.999999999999677,
+          "phase": "second_floor",
+          "position": [
+            439.4584492653069,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 71.93473657030047,
+          "climbing": false
+        },
+        {
+          "time": 17.99999999999962,
+          "phase": "second_floor",
+          "position": [
+            439.4523242884863,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 76.60884260761198,
+          "climbing": false
+        },
+        {
+          "time": 18.999999999999563,
+          "phase": "second_floor",
+          "position": [
+            439.44985098004736,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 80.8501389792133,
+          "climbing": false
+        },
+        {
+          "time": 19.999999999999506,
+          "phase": "second_floor",
+          "position": [
+            439.44885224081713,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 84.70052265709546,
+          "climbing": false
+        },
+        {
+          "time": 20.99999999999945,
+          "phase": "second_floor",
+          "position": [
+            439.4484489429369,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.19724204902775,
+          "climbing": false
+        },
+        {
+          "time": 21.999999999999392,
+          "phase": "second_floor",
+          "position": [
+            439.4482860884349,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.3736009826121,
+          "climbing": false
+        },
+        {
+          "time": 22.999999999999336,
+          "phase": "second_floor",
+          "position": [
+            439.4482203266494,
+            41.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.25950349114613,
+          "climbing": false
+        },
+        {
+          "time": 23.99999999999928,
+          "phase": "third_clearance",
+          "position": [
+            437.85752017531564,
+            53.61160217025245
+          ],
+          "hp": 150.0,
+          "stamina": 81.77608688633461,
+          "climbing": false
+        },
+        {
+          "time": 24.999999999999222,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            56.924764235038246
+          ],
+          "hp": 150.0,
+          "stamina": 78.97608688633477,
+          "climbing": true
+        },
+        {
+          "time": 25.999999999999165,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            59.894612716022145
+          ],
+          "hp": 150.0,
+          "stamina": 64.97608688633557,
+          "climbing": true
+        },
+        {
+          "time": 26.99999999999911,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            62.864461197006044
+          ],
+          "hp": 150.0,
+          "stamina": 50.976086886335565,
+          "climbing": true
+        },
+        {
+          "time": 27.99999999999905,
+          "phase": "third_clearance",
+          "position": [
+            437.5,
+            65.83430967798995
+          ],
+          "hp": 150.0,
+          "stamina": 36.97608688633551,
+          "climbing": true
+        },
+        {
+          "time": 28.999999999998995,
+          "phase": "third_floor",
+          "position": [
+            437.59317891571135,
+            72.86274363785894
+          ],
+          "hp": 150.0,
+          "stamina": 12.926815297193496,
+          "climbing": false
+        },
+        {
+          "time": 29.999999999998938,
+          "phase": "third_floor",
+          "position": [
+            439.4186961805932,
+            82.292379822056
+          ],
+          "hp": 150.0,
+          "stamina": 23.515268767873795,
+          "climbing": false
+        },
+        {
+          "time": 30.99999999999888,
+          "phase": "third_floor",
+          "position": [
+            439.5368006314927,
+            81.52342022334012
+          ],
+          "hp": 150.0,
+          "stamina": 32.94500761678716,
+          "climbing": false
+        },
+        {
+          "time": 31.999999999998824,
+          "phase": "third_floor",
+          "position": [
+            439.5565561670328,
+            77.71983639837188
+          ],
+          "hp": 150.0,
+          "stamina": 41.38985673715425,
+          "climbing": false
+        },
+        {
+          "time": 32.99999999999877,
+          "phase": "third_floor",
+          "position": [
+            439.5645335903276,
+            73.01329059799272
+          ],
+          "hp": 150.0,
+          "stamina": 48.98322543061553,
+          "climbing": false
+        },
+        {
+          "time": 33.999999999998714,
+          "phase": "third_floor",
+          "position": [
+            439.5027533433434,
+            68.03806562409854
+          ],
+          "hp": 150.0,
+          "stamina": 55.830965614247496,
+          "climbing": false
+        },
+        {
+          "time": 34.99999999999866,
+          "phase": "third_floor",
+          "position": [
+            439.4702145847774,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 62.01946357993234,
+          "climbing": false
+        },
+        {
+          "time": 35.9999999999986,
+          "phase": "third_floor",
+          "position": [
+            439.4570752067,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 67.62089342930594,
+          "climbing": false
+        },
+        {
+          "time": 36.99999999999854,
+          "phase": "third_floor",
+          "position": [
+            439.45176943401947,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 72.69672219382345,
+          "climbing": false
+        },
+        {
+          "time": 37.99999999999849,
+          "phase": "third_floor",
+          "position": [
+            439.44962692593657,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 77.30010829820908,
+          "climbing": false
+        },
+        {
+          "time": 38.99999999999843,
+          "phase": "third_floor",
+          "position": [
+            439.44876176620147,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 81.47758362514212,
+          "climbing": false
+        },
+        {
+          "time": 39.99999999999837,
+          "phase": "third_floor",
+          "position": [
+            439.4484124086549,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.27026282418606,
+          "climbing": false
+        },
+        {
+          "time": 40.999999999998316,
+          "phase": "third_floor",
+          "position": [
+            439.44827133563655,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 88.71473518574219,
+          "climbing": false
+        },
+        {
+          "time": 41.99999999999826,
+          "phase": "third_floor",
+          "position": [
+            439.4482143693663,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 91.84373977486993,
+          "climbing": false
+        },
+        {
+          "time": 42.9999999999982,
+          "phase": "third_floor",
+          "position": [
+            439.44819136598846,
+            66.9
+          ],
+          "hp": 150.0,
+          "stamina": 94.6866900156747,
+          "climbing": false
+        },
+        {
+          "time": 43.999999999998145,
+          "phase": "fourth_clearance",
+          "position": [
+            437.7039662254939,
+            79.71594735955563
+          ],
+          "hp": 150.0,
+          "stamina": 81.77141743893165,
+          "climbing": false
+        },
+        {
+          "time": 44.99999999999809,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            82.39499024452721
+          ],
+          "hp": 150.0,
+          "stamina": 76.75475077226527,
+          "climbing": true
+        },
+        {
+          "time": 45.99999999999803,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            85.36483872551025
+          ],
+          "hp": 150.0,
+          "stamina": 62.754750772265986,
+          "climbing": true
+        },
+        {
+          "time": 46.999999999997975,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            88.3346872064933
+          ],
+          "hp": 150.0,
+          "stamina": 48.75475077226593,
+          "climbing": true
+        },
+        {
+          "time": 47.99999999999792,
+          "phase": "fourth_clearance",
+          "position": [
+            437.5,
+            91.30453568747635
+          ],
+          "hp": 150.0,
+          "stamina": 34.75475077226587,
+          "climbing": true
+        },
+        {
+          "time": 48.99999999999786,
+          "phase": "fourth_floor",
+          "position": [
+            437.9752543676768,
+            100.66639461784641
+          ],
+          "hp": 150.0,
+          "stamina": 14.68476148942814,
+          "climbing": false
+        },
+        {
+          "time": 49.999999999997804,
+          "phase": "fourth_floor",
+          "position": [
+            439.46786949844295,
+            107.56060854786486
+          ],
+          "hp": 150.0,
+          "stamina": 25.07647782564146,
+          "climbing": false
+        },
+        {
+          "time": 50.99999999999775,
+          "phase": "fourth_floor",
+          "position": [
+            439.54123252804317,
+            106.03722608936657
+          ],
+          "hp": 150.0,
+          "stamina": 34.34035059329843,
+          "climbing": false
+        },
+        {
+          "time": 51.99999999999769,
+          "phase": "fourth_floor",
+          "position": [
+            439.5583457978282,
+            102.00916137155133
+          ],
+          "hp": 150.0,
+          "stamina": 42.642685238716574,
+          "climbing": false
+        },
+        {
+          "time": 52.999999999997634,
+          "phase": "fourth_floor",
+          "position": [
+            439.56525625574807,
+            97.23582057603119
+          ],
+          "hp": 150.0,
+          "stamina": 50.11183739488463,
+          "climbing": false
+        },
+        {
+          "time": 53.99999999999758,
+          "phase": "fourth_floor",
+          "position": [
+            439.4954536975529,
+            92.2407205414167
+          ],
+          "hp": 150.0,
+          "stamina": 56.85013680226934,
+          "climbing": false
+        },
+        {
+          "time": 54.99999999999752,
+          "phase": "fourth_floor",
+          "position": [
+            439.4672669368,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 62.94143074753546,
+          "climbing": false
+        },
+        {
+          "time": 55.99999999999746,
+          "phase": "fourth_floor",
+          "position": [
+            439.4558849258496,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 68.45600368484965,
+          "climbing": false
+        },
+        {
+          "time": 56.99999999999741,
+          "phase": "fourth_floor",
+          "position": [
+            439.4512887902948,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 73.45387306936301,
+          "climbing": false
+        },
+        {
+          "time": 57.99999999999735,
+          "phase": "fourth_floor",
+          "position": [
+            439.449432838642,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 77.98705342159377,
+          "climbing": false
+        },
+        {
+          "time": 58.99999999999729,
+          "phase": "fourth_floor",
+          "position": [
+            439.4486833923957,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.10115032376066,
+          "climbing": false
+        },
+        {
+          "time": 59.999999999997236,
+          "phase": "fourth_floor",
+          "position": [
+            439.44838076076456,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 85.83651098113148,
+          "climbing": false
+        },
+        {
+          "time": 60.99999999999718,
+          "phase": "fourth_floor",
+          "position": [
+            439.44825855599726,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.22907624463923,
+          "climbing": false
+        },
+        {
+          "time": 61.99999999999712,
+          "phase": "fourth_floor",
+          "position": [
+            439.4482092088587,
+            91.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.31102825296274,
+          "climbing": false
+        },
+        {
+          "time": 62.999999999997065,
+          "phase": "fifth_clearance",
+          "position": [
+            439.4390914533241,
+            92.77339284014204
+          ],
+          "hp": 150.0,
+          "stamina": 80.1473128483913,
+          "climbing": false
+        },
+        {
+          "time": 63.99999999999701,
+          "phase": "fifth_clearance",
+          "position": [
+            437.61207254126384,
+            105.45348597640219
+          ],
+          "hp": 150.0,
+          "stamina": 81.79175958019728,
+          "climbing": false
+        },
+        {
+          "time": 64.9999999999978,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            107.84046751667466
+          ],
+          "hp": 150.0,
+          "stamina": 74.67509291353102,
+          "climbing": true
+        },
+        {
+          "time": 65.9999999999986,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            110.81031599765771
+          ],
+          "hp": 150.0,
+          "stamina": 60.67509291353161,
+          "climbing": true
+        },
+        {
+          "time": 66.99999999999939,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            113.78016447864076
+          ],
+          "hp": 150.0,
+          "stamina": 46.67509291353155,
+          "climbing": true
+        },
+        {
+          "time": 68.00000000000018,
+          "phase": "fifth_clearance",
+          "position": [
+            437.5,
+            116.7500129596238
+          ],
+          "hp": 150.0,
+          "stamina": 32.67509291353149,
+          "climbing": true
+        },
+        {
+          "time": 69.00000000000098,
+          "phase": "fifth_floor",
+          "position": [
+            437.9967966493863,
+            127.73918562348616
+          ],
+          "hp": 150.0,
+          "stamina": 16.342525717552167,
+          "climbing": false
+        },
+        {
+          "time": 70.00000000000178,
+          "phase": "fifth_floor",
+          "position": [
+            439.4688277096676,
+            132.64115740377164
+          ],
+          "hp": 150.0,
+          "stamina": 26.550380871625027,
+          "climbing": false
+        },
+        {
+          "time": 71.00000000000257,
+          "phase": "fifth_floor",
+          "position": [
+            439.5339919175033,
+            130.52497703261685
+          ],
+          "hp": 150.0,
+          "stamina": 35.65873212915584,
+          "climbing": false
+        },
+        {
+          "time": 72.00000000000337,
+          "phase": "fifth_floor",
+          "position": [
+            439.5424482405444,
+            126.32052343290914
+          ],
+          "hp": 150.0,
+          "stamina": 43.82710728815429,
+          "climbing": false
+        },
+        {
+          "time": 73.00000000000416,
+          "phase": "fifth_floor",
+          "position": [
+            439.54586296287795,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 51.17928010226658,
+          "climbing": false
+        },
+        {
+          "time": 74.00000000000496,
+          "phase": "fifth_floor",
+          "position": [
+            439.5472418516172,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 57.81436976766438,
+          "climbing": false
+        },
+        {
+          "time": 75.00000000000576,
+          "phase": "fifth_floor",
+          "position": [
+            439.5477986565252,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 63.813897485934156,
+          "climbing": false
+        },
+        {
+          "time": 76.00000000000655,
+          "phase": "fifth_floor",
+          "position": [
+            439.5480234982376,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 69.2464081990338,
+          "climbing": false
+        },
+        {
+          "time": 77.00000000000735,
+          "phase": "fifth_floor",
+          "position": [
+            439.5481142908923,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 74.17057890726669,
+          "climbing": false
+        },
+        {
+          "time": 78.00000000000814,
+          "phase": "fifth_floor",
+          "position": [
+            439.5481509536009,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.63736191279898,
+          "climbing": false
+        },
+        {
+          "time": 79.00000000000894,
+          "phase": "fifth_floor",
+          "position": [
+            439.5481657582586,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.6914994164992,
+          "climbing": false
+        },
+        {
+          "time": 80.00000000000973,
+          "phase": "fifth_floor",
+          "position": [
+            439.5481717364831,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.3726209745489,
+          "climbing": false
+        },
+        {
+          "time": 81.00000000001053,
+          "phase": "fifth_floor",
+          "position": [
+            439.54817415053157,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.7160594045944,
+          "climbing": false
+        },
+        {
+          "time": 82.00000000001133,
+          "phase": "fifth_floor",
+          "position": [
+            439.54817512534123,
+            123.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.7534734459203,
+          "climbing": false
+        },
+        {
+          "time": 83.00000000001212,
+          "phase": "sixth_clearance",
+          "position": [
+            439.3086095823372,
+            128.38512378211252
+          ],
+          "hp": 150.0,
+          "stamina": 80.77541334362651,
+          "climbing": false
+        },
+        {
+          "time": 84.00000000001292,
+          "phase": "sixth_clearance",
+          "position": [
+            437.559573089008,
+            137.96216143444718
+          ],
+          "hp": 150.0,
+          "stamina": 81.87354109978511,
+          "climbing": false
+        },
+        {
+          "time": 85.00000000001371,
+          "phase": "sixth_clearance",
+          "position": [
+            437.5,
+            140.31069352616333
+          ],
+          "hp": 150.0,
+          "stamina": 72.54020776645231,
+          "climbing": true
+        },
+        {
+          "time": 86.00000000001451,
+          "phase": "sixth_departure_jump",
+          "position": [
+            437.5,
+            143.86527801720717
+          ],
+          "hp": 150.0,
+          "stamina": 43.98973544181945,
+          "climbing": false
+        },
+        {
+          "time": 87.0000000000153,
+          "phase": "sixth_floor",
+          "position": [
+            439.32837538350753,
+            156.72577303062582
+          ],
+          "hp": 150.0,
+          "stamina": 51.32588002062093,
+          "climbing": false
+        },
+        {
+          "time": 88.0000000000161,
+          "phase": "sixth_floor",
+          "position": [
+            439.53110193351694,
+            156.97767625867795
+          ],
+          "hp": 150.0,
+          "stamina": 57.946817333014,
+          "climbing": false
+        },
+        {
+          "time": 89.0000000000169,
+          "phase": "sixth_floor",
+          "position": [
+            439.5542549929699,
+            153.47785337607218
+          ],
+          "hp": 150.0,
+          "stamina": 63.933754686023654,
+          "climbing": false
+        },
+        {
+          "time": 90.00000000001769,
+          "phase": "sixth_floor",
+          "position": [
+            439.5636043601614,
+            148.86169259872014
+          ],
+          "hp": 150.0,
+          "stamina": 69.35500165279264,
+          "climbing": false
+        },
+        {
+          "time": 91.00000000001849,
+          "phase": "sixth_floor",
+          "position": [
+            439.51213950031166,
+            143.9133619724799
+          ],
+          "hp": 150.0,
+          "stamina": 74.26905340294067,
+          "climbing": false
+        },
+        {
+          "time": 92.00000000001928,
+          "phase": "sixth_floor",
+          "position": [
+            439.47400478054817,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 78.72671781621548,
+          "climbing": false
+        },
+        {
+          "time": 93.00000000002008,
+          "phase": "sixth_floor",
+          "position": [
+            439.4586057142366,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 82.77261946232436,
+          "climbing": false
+        },
+        {
+          "time": 94.00000000002088,
+          "phase": "sixth_floor",
+          "position": [
+            439.4523874636573,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.44628994609272,
+          "climbing": false
+        },
+        {
+          "time": 95.00000000002167,
+          "phase": "sixth_floor",
+          "position": [
+            439.44987649062284,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 89.78297897010383,
+          "climbing": false
+        },
+        {
+          "time": 96.00000000002247,
+          "phase": "sixth_floor",
+          "position": [
+            439.4488625421658,
+            141.9
+          ],
+          "hp": 150.0,
+          "stamina": 92.81427363951953,
+          "climbing": false
+        },
+        {
+          "time": 97.00000000002326,
+          "phase": "seventh_clearance",
+          "position": [
+            439.16773004207334,
+            146.71787756952196
+          ],
+          "hp": 150.0,
+          "stamina": 80.85425055897832,
+          "climbing": false
+        },
+        {
+          "time": 98.00000000002406,
+          "phase": "seventh_clearance",
+          "position": [
+            437.54752928751947,
+            156.0015937449708
+          ],
+          "hp": 150.0,
+          "stamina": 81.78610727787495,
+          "climbing": false
+        },
+        {
+          "time": 99.00000000002485,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            158.36019100084638
+          ],
+          "hp": 150.0,
+          "stamina": 72.21944061120882,
+          "climbing": true
+        },
+        {
+          "time": 100.00000000002565,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            161.33003948182943
+          ],
+          "hp": 150.0,
+          "stamina": 58.219440611209265,
+          "climbing": true
+        },
+        {
+          "time": 101.00000000002645,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            164.29988796281248
+          ],
+          "hp": 150.0,
+          "stamina": 44.21944061120921,
+          "climbing": true
+        },
+        {
+          "time": 102.00000000002724,
+          "phase": "seventh_clearance",
+          "position": [
+            437.5,
+            167.26973644379552
+          ],
+          "hp": 150.0,
+          "stamina": 30.21944061120915,
+          "climbing": true
+        },
+        {
+          "time": 103.00000000002804,
+          "phase": "seventh_floor",
+          "position": [
+            438.9342533257381,
+            179.5672058988515
+          ],
+          "hp": 150.0,
+          "stamina": 18.21156213401377,
+          "climbing": false
+        },
+        {
+          "time": 104.00000000002883,
+          "phase": "seventh_floor",
+          "position": [
+            439.5169974007961,
+            182.55950452265205
+          ],
+          "hp": 150.0,
+          "stamina": 28.213998019884855,
+          "climbing": false
+        },
+        {
+          "time": 105.00000000002963,
+          "phase": "seventh_floor",
+          "position": [
+            439.5485594841,
+            179.87509490227032
+          ],
+          "hp": 150.0,
+          "stamina": 37.14801599857221,
+          "climbing": false
+        },
+        {
+          "time": 106.00000000003043,
+          "phase": "seventh_floor",
+          "position": [
+            439.5613044738818,
+            175.50156290368588
+          ],
+          "hp": 150.0,
+          "stamina": 45.16585127197541,
+          "climbing": false
+        },
+        {
+          "time": 107.00000000003122,
+          "phase": "seventh_floor",
+          "position": [
+            439.5353706591916,
+            170.6254272330755
+          ],
+          "hp": 150.0,
+          "stamina": 52.38631764065006,
+          "climbing": false
+        },
+        {
+          "time": 108.00000000003202,
+          "phase": "seventh_floor",
+          "position": [
+            439.4833856848343,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 58.90503938390289,
+          "climbing": false
+        },
+        {
+          "time": 109.00000000003281,
+          "phase": "seventh_floor",
+          "position": [
+            439.4623937889376,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 64.80099220454032,
+          "climbing": false
+        },
+        {
+          "time": 110.00000000003361,
+          "phase": "seventh_floor",
+          "position": [
+            439.45391711469114,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 70.14080789388845,
+          "climbing": false
+        },
+        {
+          "time": 111.0000000000344,
+          "phase": "seventh_floor",
+          "position": [
+            439.4504941743988,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 74.98168223854302,
+          "climbing": false
+        },
+        {
+          "time": 112.0000000000352,
+          "phase": "seventh_floor",
+          "position": [
+            439.4491119671905,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 79.37338869203614,
+          "climbing": false
+        },
+        {
+          "time": 113.000000000036,
+          "phase": "seventh_floor",
+          "position": [
+            439.4485538222615,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 83.35970756757101,
+          "climbing": false
+        },
+        {
+          "time": 114.00000000003679,
+          "phase": "seventh_floor",
+          "position": [
+            439.44832843943914,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 86.97946621650223,
+          "climbing": false
+        },
+        {
+          "time": 115.00000000003759,
+          "phase": "seventh_floor",
+          "position": [
+            439.4482374282806,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 90.26731587376867,
+          "climbing": false
+        },
+        {
+          "time": 116.00000000003838,
+          "phase": "seventh_floor",
+          "position": [
+            439.448200677339,
+            166.9
+          ],
+          "hp": 150.0,
+          "stamina": 93.25432722273415,
+          "climbing": false
+        },
+        {
+          "time": 117.00000000003918,
+          "phase": "top_rope",
+          "position": [
+            438.6449452933192,
+            174.48525210073555
+          ],
+          "hp": 150.0,
+          "stamina": 81.4763244173936,
+          "climbing": false
+        },
+        {
+          "time": 118.00000000003998,
+          "phase": "top_rope",
+          "position": [
+            437.5085087820526,
+            181.2590282994431
+          ],
+          "hp": 150.0,
+          "stamina": 81.77365209640955,
+          "climbing": false
+        },
+        {
+          "time": 119.00000000004077,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            183.83041701033537
+          ],
+          "hp": 150.0,
+          "stamina": 69.99031876307689,
+          "climbing": true
+        },
+        {
+          "time": 120.00000000004157,
+          "phase": "top_rope",
+          "position": [
+            437.5,
+            186.8002654913184
+          ],
+          "hp": 150.0,
+          "stamina": 55.99031876307719,
+          "climbing": true
+        },
+        {
+          "time": 121.00000000004236,
+          "phase": "top_landing",
+          "position": [
+            437.94838021626873,
+            194.91783630349872
+          ],
+          "hp": 150.0,
+          "stamina": 33.112314327351825,
+          "climbing": false
+        },
+        {
+          "time": 122.00000000004316,
+          "phase": "top_landing",
+          "position": [
+            440.3978430770584,
+            203.2203612367775
+          ],
+          "hp": 150.0,
+          "stamina": 41.54003475360954,
+          "climbing": false
+        },
+        {
+          "time": 123.00000000004395,
+          "phase": "top_landing",
+          "position": [
+            441.48901732377084,
+            202.11602614318738
+          ],
+          "hp": 150.0,
+          "stamina": 49.11848684777411,
+          "climbing": false
+        },
+        {
+          "time": 124.00000000004475,
+          "phase": "top_checkpoint",
+          "position": [
+            445.0438299046074,
+            214.9485465810916
+          ],
+          "hp": 150.0,
+          "stamina": 42.323847345233396,
+          "climbing": false
+        },
+        {
+          "time": 125.00000000004555,
+          "phase": "top_checkpoint",
+          "position": [
+            447.4085779715941,
+            215.88873131532236
+          ],
+          "hp": 150.0,
+          "stamina": 49.82456438097717,
+          "climbing": false
+        },
+        {
+          "time": 126.00000000004634,
+          "phase": "top_checkpoint",
+          "position": [
+            447.5318932424095,
+            212.59370875793698
+          ],
+          "hp": 150.0,
+          "stamina": 56.590689175789564,
+          "climbing": false
+        },
+        {
+          "time": 127.00000000004714,
+          "phase": "top_checkpoint",
+          "position": [
+            447.52150212675605,
+            208.0384869609786
+          ],
+          "hp": 150.0,
+          "stamina": 62.70670739939709,
+          "climbing": false
+        },
+        {
+          "time": 128.00000000004792,
+          "phase": "top_checkpoint",
+          "position": [
+            447.51730612164584,
+            203.10828891986688
+          ],
+          "hp": 150.0,
+          "stamina": 68.24337949781122,
+          "climbing": false
+        }
+      ],
+      "local_fixture_spawn": [
+        433.5,
+        11.9
+      ],
+      "original_forest_spawn": [
+        15.5,
+        54.9
+      ],
+      "production_configuration": {
+        "v_jump": 27.0,
+        "v_max": 38.0,
+        "f_y": 0.98,
+        "stamina_max": 100.0,
+        "gravity": -6.2
+      },
+      "checkpoint_recorded": true
+    }
+  ]
+}

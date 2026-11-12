@@ -160,4 +160,8 @@ world.set_tile(18, 0, 212)
 for y in range(10, 115, 20):
     world.set_tile(10, y + 2, 290)
 
+# Restore the advertised fall-through y-loop beside the starting terrace.
+# The opening aligns with the original upper 108/113 platforms for a return.
+fill(2, 0, 4, 1, 11)
+
 world.end_bulk_load()

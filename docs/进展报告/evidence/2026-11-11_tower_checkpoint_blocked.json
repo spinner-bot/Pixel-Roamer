@@ -1,0 +1,237 @@
+{
+  "code_revision": "19886194c7cecb3b278d91db3ef2df68708cbea4",
+  "legacy_revision": "1988619",
+  "scope": "explicit local tower-top spawn override, production dimensions/config/controls and deliberate death; NOT forest-to-tower reachability",
+  "tile_changes": [],
+  "before_contact_pose": null,
+  "after_contact_pose": [
+    446.6,
+    202.9
+  ],
+  "before": [
+    {
+      "fps": 30,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.45854917102906,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 60,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.4878409414751,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 144,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.55217866309147,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    }
+  ],
+  "after": [
+    {
+      "fps": 30,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.45854917102906,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 60,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.4878409414751,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    },
+    {
+      "fps": 144,
+      "fixture_spawn": [
+        446.5,
+        202.9
+      ],
+      "scope": "local tower-top walk only",
+      "failure": null,
+      "min_hp": 150.0,
+      "normal_respawns": 0,
+      "activation": {
+        "position": [
+          447.55217866309147,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "checkpoint_seen": false,
+        "record_calls": 0,
+        "valid": true
+      },
+      "after_deliberate_death": {
+        "position": [
+          446.5,
+          202.9
+        ],
+        "saved_spawn": [
+          446.5,
+          202.9
+        ],
+        "valid": true,
+        "respawns": 1,
+        "alive": true
+      }
+    }
+  ]
+}

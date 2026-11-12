@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "kind": "buff_behavior",
+  "entries": [
+    {"buff_id": 21, "contact_trigger": "entry", "stat_stacking": "linear"},
+    {"buff_id": 22, "contact_trigger": "refresh", "stat_stacking": "multiplicative"},
+    {"buff_id": 51, "contact_trigger": "refresh", "stat_stacking": "multiplicative"},
+    {"buff_id": 59, "contact_trigger": "entry", "control_locks": ["horizontal", "jump", "climb", "swim"]}
+  ]
+}

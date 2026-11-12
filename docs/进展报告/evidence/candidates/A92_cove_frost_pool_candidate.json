@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "kind": "cove_frost_pool",
+  "scope": "candidate only;17 original-air additions, preserve373 and every original pickup/main pillar",
+  "tiles": [
+    {
+      "x": 245,
+      "y": 55,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 245,
+      "y": 56,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 245,
+      "y": 57,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 246,
+      "y": 56,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 246,
+      "y": 57,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 246,
+      "y": 58,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 247,
+      "y": 55,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 247,
+      "y": 56,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 247,
+      "y": 57,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 247,
+      "y": 58,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 248,
+      "y": 55,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 248,
+      "y": 57,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 248,
+      "y": 58,
+      "before": 0,
+      "after": 7
+    },
+    {
+      "x": 249,
+      "y": 55,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 249,
+      "y": 56,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 249,
+      "y": 57,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "x": 249,
+      "y": 58,
+      "before": 0,
+      "after": 3
+    }
+  ]
+}

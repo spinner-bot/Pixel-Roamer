@@ -1,0 +1,519 @@
+{
+  "code_revision": "fd3b919bfa605ac557854c252cdcb4f9c81167b5",
+  "scope": "fixed-tick apex observed inside actual WorldSession after Space event; explicit floor fixture, API injection labeled; sources415/418 acquired only by contact; not original-map route",
+  "runs": [
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": null,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3749999999999942,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3749999999999942,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.375,
+      "height": 10.482999999999924,
+      "landed": true,
+      "elapsed": 2.941666666666659,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5647241743889495
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.5416666666666567,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 30,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 23.0,
+      "height": 26.89404166666663,
+      "landed": true,
+      "elapsed": 4.708333333333357,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 4.014285714285725
+    },
+    {
+      "fps": 30,
+      "source_block": 415,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.5416666666666567,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 30,
+      "source_block": 418,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 14.950000000000001,
+      "height": 0.0,
+      "landed": false,
+      "elapsed": 12.008333333333292,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 0.0
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": null,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3583333333333276,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3583333333333276,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.375,
+      "height": 10.482999999999924,
+      "landed": true,
+      "elapsed": 2.941666666666659,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5647241743889495
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.52499999999999,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 60,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 23.0,
+      "height": 26.89404166666663,
+      "landed": true,
+      "elapsed": 4.708333333333357,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 4.014285714285725
+    },
+    {
+      "fps": 60,
+      "source_block": 415,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.52499999999999,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 60,
+      "source_block": 418,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 14.950000000000001,
+      "height": 0.0,
+      "landed": false,
+      "elapsed": 12.008333333333292,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 0.0
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": null,
+      "applied": [],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3499999999999943,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      }
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 0,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            0
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 11.5,
+      "height": 6.699583333333306,
+      "landed": true,
+      "elapsed": 2.3499999999999943,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.0
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 25,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            25
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 14.375,
+      "height": 10.482999999999924,
+      "landed": true,
+      "elapsed": 2.941666666666659,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 1.5647241743889495
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 50,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.52499999999999,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 144,
+      "source_block": 2,
+      "injected_parameter": 100,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            100
+          ],
+          "source": null
+        }
+      ],
+      "launch_speed": 23.0,
+      "height": 26.89404166666663,
+      "landed": true,
+      "elapsed": 4.700000000000023,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 4.014285714285725
+    },
+    {
+      "fps": 144,
+      "source_block": 415,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 4,
+          "params": [
+            50
+          ],
+          "source": 415
+        }
+      ],
+      "launch_speed": 17.25,
+      "height": 15.109944444444361,
+      "landed": true,
+      "elapsed": 3.52499999999999,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 2.255355847171255
+    },
+    {
+      "fps": 144,
+      "source_block": 418,
+      "injected_parameter": null,
+      "applied": [
+        {
+          "id": 13,
+          "params": [],
+          "source": 418
+        },
+        {
+          "id": 4,
+          "params": [
+            30
+          ],
+          "source": 418
+        }
+      ],
+      "launch_speed": 14.950000000000001,
+      "height": 0.0,
+      "landed": false,
+      "elapsed": 12.008333333333292,
+      "respawns": 0,
+      "hp": 150.0,
+      "physics": {
+        "gravity": -9.8,
+        "vertical_damping": 1.0
+      },
+      "height_ratio": 0.0
+    }
+  ]
+}

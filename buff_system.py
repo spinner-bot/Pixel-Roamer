@@ -5,6 +5,7 @@ BuffType 定义模板，BuffInstance 管理实例，可扩展设计。
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Tuple, Any, List, Dict
+from buff_parameters import DEFAULT_PARAMETERS, magnetic_response
 
 # ===================== Buff 类别 =====================
 CAT_POSITIVE = "positive"
@@ -40,7 +41,7 @@ def register(buff: BuffType):
 # ===================== Buff 实例（运行在生物上） =====================
 class BuffInstance:
     """生物身上的一个活跃 buff。"""
-    __slots__ = ("buff_id", "params", "applied_at", "duration", "initial_duration", "stacks", "source")
+    __slots__ = ("buff_id", "params", "applied_at", "duration", "initial_duration", "stacks", "source", "tick_elapsed")
 
     def __init__(self, buff_id: int, params: tuple = (),
                  duration: Optional[float] = None, source=None):
@@ -51,6 +52,7 @@ class BuffInstance:
         self.initial_duration = duration  # 记录初始时长（用于进度显示）
         self.stacks = 1
         self.source = source
+        self.tick_elapsed = 0.0
 
     @property
     def buff_type(self) -> Optional[BuffType]:
@@ -68,17 +70,17 @@ class BuffInstance:
         if self.duration is None:
             return False
         self.duration -= dt
-        return self.duration <= 0
+        return self.duration <= 1e-12
 
-    def refresh(self, params: tuple = None, duration: Optional[float] = None):
+    def refresh(self, params: tuple = None, duration: Optional[float] = None, *, add_stack=True):
         """刷新 buff（重新获取时调用）。"""
         if params is not None:
             self.params = tuple(params)
         if duration is not None:
             self.duration = duration
             self.initial_duration = duration
-        if self.stacks < self.buff_type.max_stacks if self.buff_type else 1:
-            self.stacks += 1
+        maximum = self.buff_type.max_stacks if self.buff_type else 1
+        self.stacks = min(maximum, self.stacks + int(add_stack))
 
     def format_desc(self) -> str:
         """将描述模板与 params 拼接，返回最终描述字符串。
@@ -87,7 +89,23 @@ class BuffInstance:
         if not bt or not bt.desc:
             return ""
         s = bt.desc
-        for i, p in enumerate(self.params):
+        params = self.params
+        if bt.tick == 'magnetized':
+            response = magnetic_response(params)
+            if response == 0:
+                return s + '（中性，不受磁力）'
+            direction = '正向' if response > 0 else '反向'
+            strength = f'，响应强度{abs(response):g}倍' if abs(response) != 1 else ''
+            return s + f'（磁极{direction}{strength}）'
+        if bt.tick in ('stealth', 'ghostly', 'frozen'):
+            # These effects use the instance lifetime, not the historical
+            # unused zero placeholder in source data.
+            if self.initial_duration is None:
+                return s.replace('持续 {0} 秒', '持续至状态移除')
+            params = (self.initial_duration,) + params[1:]
+        elif not params and bt.tick in DEFAULT_PARAMETERS:
+            params = (DEFAULT_PARAMETERS[bt.tick],)
+        for i, p in enumerate(params):
             placeholder = f"{{{i}}}"
             idx = s.find(placeholder)
             # 检查占位符前后的上下文
@@ -97,11 +115,9 @@ class BuffInstance:
 
             if isinstance(val, (int, float)):
                 if '%' in after or (before in ('+', '-') and '%' in after):
-                    # 百分比：整数；但小数值保留一位小数（如 0.5%）
-                    if abs(val) < 1 and val != int(val):
-                        formatted = f"{val:.1f}"
-                    else:
-                        formatted = f"{val:.0f}"
+                    # Fractional modifiers remain fractional: 12.5% must not
+                    # become 12% while the numerical effect still uses 12.5.
+                    formatted = str(int(val)) if val == int(val) else str(val)
                 elif abs(val) >= 100:
                     formatted = f"{val:.0f}"
                 elif abs(val) >= 1:

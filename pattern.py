@@ -51,20 +51,44 @@
 #
 # -------------------------------------------------------------------
 # 注意事项：
-# - 所有颜色均为 (R, G, B) 整数元组，范围 0-255。
-# - 解析器会先绘制底色 color，再叠加图案（图案通常不透明）。
+# - 颜色支持 (R, G, B) 或 (R, G, B, A) 整数元组，各通道范围 0-255。
+# - 默认先绘制底色 color，再叠加图案。vector 首条 fill 明确指定 A<255 时，
+#   直接叠加到目标背景；World 原生纹理同时保留 alpha。RGB 黑色仍不透明。
 # - 系统会自动缓存已渲染的图案 Surface，以提升性能。
 # - 扩展新格式只需在解析器中增加分支。
 # ===================================================================
 """
 
 import pygame
+from collections import OrderedDict
 from typing import Optional, Tuple
 from block_type import BlockType
 
 
 # 图案缓存：键为 (pattern, width, height)，值为 pygame.Surface
-_pattern_cache = {}
+_pattern_cache = OrderedDict()
+_pattern_cache_bytes = 0
+MAX_PATTERN_CACHE_BYTES = 16 * 1024 * 1024
+MAX_PATTERN_CACHE_ENTRIES = 512
+
+
+def clear_pattern_cache():
+    global _pattern_cache_bytes
+    _pattern_cache.clear()
+    _pattern_cache_bytes = 0
+
+
+def _remember_pattern(key, surface):
+    global _pattern_cache_bytes
+    size = surface.get_pitch() * surface.get_height()
+    if size > MAX_PATTERN_CACHE_BYTES:
+        return
+    _pattern_cache[key] = surface
+    _pattern_cache_bytes += size
+    while (_pattern_cache_bytes > MAX_PATTERN_CACHE_BYTES
+           or len(_pattern_cache) > MAX_PATTERN_CACHE_ENTRIES):
+        _, removed = _pattern_cache.popitem(last=False)
+        _pattern_cache_bytes -= removed.get_pitch() * removed.get_height()
 
 
 def _make_hashable(obj):
@@ -76,6 +100,17 @@ def _make_hashable(obj):
     if isinstance(obj, dict):
         return tuple(sorted((_make_hashable(k), _make_hashable(v)) for k, v in obj.items()))
     return obj
+
+
+def pattern_has_alpha_canvas(pattern) -> bool:
+    """An explicit initial RGBA fill opts a vector into background composition."""
+    if not pattern or len(pattern) < 3 or pattern[0] != 'vector' or not pattern[2]:
+        return False
+    command = pattern[2][0]
+    if len(command) != 2 or command[0] != 'fill':
+        return False
+    color = command[1]
+    return isinstance(color, (tuple, list)) and len(color) == 4 and color[3] < 255
 
 
 def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
@@ -90,7 +125,8 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
     base_rect = pygame.Rect(x, y, draw_w, draw_h)
 
     # 1. 填充底色
-    pygame.draw.rect(surface, block_type.color, base_rect)
+    if not pattern_has_alpha_canvas(block_type.pattern):
+        pygame.draw.rect(surface, block_type.color, base_rect)
 
     # 2. 没有图案则直接返回
     if block_type.pattern is None:
@@ -101,6 +137,7 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
     cache_key = (hashable_pattern, int(draw_w), int(draw_h))
     if cache_key in _pattern_cache:
         pattern_surf = _pattern_cache[cache_key]
+        _pattern_cache.move_to_end(cache_key)
         surface.blit(pattern_surf, base_rect)
         return
 
@@ -116,7 +153,7 @@ def render_block_pattern(surface: pygame.Surface, block_type: BlockType,
         return
 
     if pattern_surf is not None:
-        _pattern_cache[cache_key] = pattern_surf
+        _remember_pattern(cache_key, pattern_surf)
         surface.blit(pattern_surf, base_rect)
 
 

@@ -1,0 +1,24 @@
+{
+  "code_revision": "73f31f03d592cae4b1589bf8ce6ae8e48158da1d",
+  "scope": "actual ReferenceBrowser detail rendering under SDL dummy; no physical-device or navigation acceptance claim",
+  "sources": [
+    {
+      "block_id": 403,
+      "lines": [
+        "实体方块，可以站立。",
+        "将角色拉向磁力方块中心。",
+        "磁化：被附近的磁矿石吸引或排斥（磁极正向）"
+      ],
+      "image": "docs/进展报告/evidence/ui/A84_block_403.png"
+    },
+    {
+      "block_id": 411,
+      "lines": [
+        "实体方块，可以站立。",
+        "反向：操作方向左右反转",
+        "磁化：被附近的磁矿石吸引或排斥（磁极反向）"
+      ],
+      "image": "docs/进展报告/evidence/ui/A84_block_411.png"
+    }
+  ]
+}

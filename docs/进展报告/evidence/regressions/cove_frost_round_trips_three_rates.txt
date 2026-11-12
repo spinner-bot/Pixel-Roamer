@@ -1,0 +1,3 @@
+{"fps": 30, "win": true, "failure": null, "loops": 3}
+{"fps": 60, "win": true, "failure": null, "loops": 3}
+{"fps": 144, "win": true, "failure": null, "loops": 3}

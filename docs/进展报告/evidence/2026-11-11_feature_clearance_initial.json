@@ -1,0 +1,7293 @@
+{
+  "code_revision": "3c3f4816d61ac34f3d9a293c0fc5498dacc8eae1",
+  "scope": "sampled normal full-body placement plus real contact sampler; not controls/route proof; phase-enabled access not modeled",
+  "maps": [
+    {
+      "map_id": 1,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 0,
+      "phase_sources": [],
+      "features": [],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 2,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 0,
+      "phase_sources": [],
+      "features": [],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 3,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 70,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            14,
+            51
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.4,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            50
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.4,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            51
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.4,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            52
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.4,
+            51.1
+          ]
+        },
+        {
+          "position": [
+            16,
+            49
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.6,
+            48.1
+          ]
+        },
+        {
+          "position": [
+            16,
+            50
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            15.6,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            16,
+            51
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.6,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            16,
+            52
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.6,
+            51.1
+          ]
+        },
+        {
+          "position": [
+            16,
+            53
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            15.6,
+            52.1
+          ]
+        },
+        {
+          "position": [
+            17,
+            50
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            16.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            17,
+            51
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            16.6,
+            51.9
+          ]
+        },
+        {
+          "position": [
+            17,
+            52
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            16.6,
+            51.9
+          ]
+        },
+        {
+          "position": [
+            18,
+            51
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            17.6,
+            50.9
+          ]
+        },
+        {
+          "position": [
+            34,
+            36
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            33.6,
+            35.1
+          ]
+        },
+        {
+          "position": [
+            42,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            43,
+            13
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            43,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            43,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            43,
+            16
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            15.1
+          ]
+        },
+        {
+          "position": [
+            43,
+            17
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.4,
+            16.1
+          ]
+        },
+        {
+          "position": [
+            44,
+            13
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            44,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            44,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            44,
+            16
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.6,
+            15.1
+          ]
+        },
+        {
+          "position": [
+            44,
+            17
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            43.6,
+            16.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            44.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            45,
+            15
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            44.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            16
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            44.6,
+            15.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            17
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            44.6,
+            16.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            18
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            44.6,
+            17.1
+          ]
+        },
+        {
+          "position": [
+            46,
+            13
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.4,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.4,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            45.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            16
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            45.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            17
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            45.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            13
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            47,
+            16
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.6,
+            15.1
+          ]
+        },
+        {
+          "position": [
+            47,
+            17
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            46.6,
+            16.1
+          ]
+        },
+        {
+          "position": [
+            48,
+            15
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            47.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            50,
+            55
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            49.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            70,
+            50
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            69.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            100,
+            20
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            99.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            111,
+            56
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            110.6,
+            56.9
+          ]
+        },
+        {
+          "position": [
+            120,
+            18
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            119.6,
+            17.1
+          ]
+        },
+        {
+          "position": [
+            144,
+            20
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            143.6,
+            20.9
+          ]
+        },
+        {
+          "position": [
+            150,
+            55
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            149.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            160,
+            70
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            159.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            175,
+            32
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            174.6,
+            32.9
+          ]
+        },
+        {
+          "position": [
+            200,
+            85
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            200.4,
+            84.1
+          ]
+        },
+        {
+          "position": [
+            205,
+            38
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            204.6,
+            38.9
+          ]
+        },
+        {
+          "position": [
+            210,
+            37
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            209.6,
+            38.9
+          ]
+        },
+        {
+          "position": [
+            217,
+            121
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            216.6,
+            121.9
+          ]
+        },
+        {
+          "position": [
+            220,
+            110
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            219.6,
+            111.9
+          ]
+        },
+        {
+          "position": [
+            260,
+            38
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            259.6,
+            37.9
+          ]
+        },
+        {
+          "position": [
+            285,
+            63
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            284.6,
+            63.9
+          ]
+        },
+        {
+          "position": [
+            287,
+            19
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            286.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            290,
+            40
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            289.6,
+            40.9
+          ]
+        },
+        {
+          "position": [
+            300,
+            50
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            299.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            375,
+            30
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            374.6,
+            29.1
+          ]
+        },
+        {
+          "position": [
+            375,
+            47
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            374.6,
+            47.9
+          ]
+        },
+        {
+          "position": [
+            375,
+            80
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            374.6,
+            80.9
+          ]
+        },
+        {
+          "position": [
+            407,
+            17
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            406.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            407,
+            23
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            406.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            445,
+            141
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            444.6,
+            141.9
+          ]
+        },
+        {
+          "position": [
+            450,
+            141
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            449.6,
+            141.9
+          ]
+        },
+        {
+          "position": [
+            450,
+            201
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            455,
+            141
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            454.6,
+            141.9
+          ]
+        },
+        {
+          "position": [
+            468,
+            17
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            467.6,
+            16.1
+          ]
+        }
+      ],
+      "no_normal_contact": [
+        {
+          "position": [
+            450,
+            201
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        }
+      ]
+    },
+    {
+      "map_id": 4,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 11,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            2,
+            7
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            1.6,
+            7.9
+          ]
+        },
+        {
+          "position": [
+            3,
+            29
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            2.6,
+            29.9
+          ]
+        },
+        {
+          "position": [
+            14,
+            34
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            23,
+            8
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            22.6,
+            8.9
+          ]
+        },
+        {
+          "position": [
+            23,
+            16
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            22.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            24,
+            15
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            25,
+            16
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            25.4,
+            17.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            15
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            26.4,
+            15.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            30
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            39.6,
+            29.1
+          ]
+        },
+        {
+          "position": [
+            44,
+            34
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            45,
+            34
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        }
+      ],
+      "no_normal_contact": [
+        {
+          "position": [
+            14,
+            34
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            24,
+            15
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            44,
+            34
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            45,
+            34
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": null
+        }
+      ]
+    },
+    {
+      "map_id": 5,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 19,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            9,
+            4
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            8.6,
+            4.9
+          ]
+        },
+        {
+          "position": [
+            9,
+            100
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            8.6,
+            99.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            4
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            4.9
+          ]
+        },
+        {
+          "position": [
+            10,
+            12
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            11.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            26
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            25.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            27
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            26.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            32
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            31.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            48
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            49
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            48.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            52
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            51.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            72
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            71.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            76
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            76.9
+          ]
+        },
+        {
+          "position": [
+            10,
+            92
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            91.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            101
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            101.9
+          ]
+        },
+        {
+          "position": [
+            10,
+            112
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            9.6,
+            111.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            117
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            9.6,
+            116.1
+          ]
+        },
+        {
+          "position": [
+            10,
+            118
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            9.6,
+            117.1
+          ]
+        },
+        {
+          "position": [
+            11,
+            4
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            10.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            13,
+            79
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            12.6,
+            79.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 6,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 8,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            20,
+            20
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            19.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            28,
+            20
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            27.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            39,
+            22
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            38.6,
+            21.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            21
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            39.6,
+            21.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            22
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            39.6,
+            21.9
+          ]
+        },
+        {
+          "position": [
+            60,
+            19
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            59.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            68,
+            10
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            67.6,
+            10.9
+          ]
+        },
+        {
+          "position": [
+            75,
+            15
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            76.4,
+            15.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 7,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 25,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            5,
+            18
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            4.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            6,
+            18
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            5.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            7,
+            19
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            6.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            28
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            14.6,
+            28.9
+          ]
+        },
+        {
+          "position": [
+            16,
+            28
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            15.6,
+            28.9
+          ]
+        },
+        {
+          "position": [
+            17,
+            28
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            28.9
+          ]
+        },
+        {
+          "position": [
+            23,
+            7
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            22.6,
+            6.9
+          ]
+        },
+        {
+          "position": [
+            24,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            23.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            24,
+            9
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            23.6,
+            8.1
+          ]
+        },
+        {
+          "position": [
+            25,
+            26
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            26.9
+          ]
+        },
+        {
+          "position": [
+            27,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            26.6,
+            20.9
+          ]
+        },
+        {
+          "position": [
+            28,
+            17
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            27.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            28,
+            20
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            27.6,
+            20.9
+          ]
+        },
+        {
+          "position": [
+            29,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            28.6,
+            20.9
+          ]
+        },
+        {
+          "position": [
+            31,
+            26
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            30.6,
+            26.9
+          ]
+        },
+        {
+          "position": [
+            36,
+            29
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            35.6,
+            29.9
+          ]
+        },
+        {
+          "position": [
+            39,
+            23
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            38.6,
+            23.9
+          ]
+        },
+        {
+          "position": [
+            41,
+            36
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": null
+        },
+        {
+          "position": [
+            43,
+            38
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            42.6,
+            38.9
+          ]
+        },
+        {
+          "position": [
+            43,
+            39
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            42.6,
+            38.9
+          ]
+        },
+        {
+          "position": [
+            44,
+            38
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            44.4,
+            39.9
+          ]
+        },
+        {
+          "position": [
+            44,
+            39
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            43.6,
+            40.9
+          ]
+        },
+        {
+          "position": [
+            45,
+            39
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            44.6,
+            39.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            29
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            45.6,
+            29.9
+          ]
+        },
+        {
+          "position": [
+            46,
+            39
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            45.6,
+            38.9
+          ]
+        }
+      ],
+      "no_normal_contact": [
+        {
+          "position": [
+            41,
+            36
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": null
+        }
+      ]
+    },
+    {
+      "map_id": 8,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 60,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            2,
+            4
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            1.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            2,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            1.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            3,
+            5
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            2.6,
+            4.9
+          ]
+        },
+        {
+          "position": [
+            3,
+            10
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            3.4,
+            9.1
+          ]
+        },
+        {
+          "position": [
+            3,
+            12
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            3.4,
+            11.1
+          ]
+        },
+        {
+          "position": [
+            5,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            4.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            5,
+            15
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            4.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            6,
+            7
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            5.6,
+            6.1
+          ]
+        },
+        {
+          "position": [
+            6,
+            10
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            5.6,
+            10.9
+          ]
+        },
+        {
+          "position": [
+            7,
+            19
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            6.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            8,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            7.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            8,
+            19
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            7.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            8,
+            22
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            7.6,
+            21.1
+          ]
+        },
+        {
+          "position": [
+            9,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            9.4,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            9,
+            14
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            8.6,
+            13.1
+          ]
+        },
+        {
+          "position": [
+            11,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            10.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            11,
+            12
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            10.6,
+            12.9
+          ]
+        },
+        {
+          "position": [
+            11,
+            20
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            10.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            12,
+            22
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            11.6,
+            21.1
+          ]
+        },
+        {
+          "position": [
+            13,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            12.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            13,
+            15
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            12.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            14,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            13.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            14,
+            7
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            13.6,
+            6.1
+          ]
+        },
+        {
+          "position": [
+            15,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            14.6,
+            12.1
+          ]
+        },
+        {
+          "position": [
+            16,
+            9
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            15.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            16,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            15.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            16,
+            19
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            15.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            17,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            17,
+            19
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            18,
+            19
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            17.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            19,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            18.6,
+            12.1
+          ]
+        },
+        {
+          "position": [
+            19,
+            22
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            18.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            20,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            19.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            20,
+            22
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            19.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            20,
+            23
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            19.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            21,
+            5
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            21,
+            11
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            11.9
+          ]
+        },
+        {
+          "position": [
+            21,
+            12
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            11.9
+          ]
+        },
+        {
+          "position": [
+            21,
+            22
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            21,
+            23
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            22,
+            7
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            21.6,
+            6.1
+          ]
+        },
+        {
+          "position": [
+            23,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            22.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            23,
+            15
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            22.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            25,
+            5
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            25,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            12.1
+          ]
+        },
+        {
+          "position": [
+            26,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            19
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            28,
+            19
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            27.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            29,
+            5
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            28.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            29,
+            20
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            28.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            30,
+            7
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            29.6,
+            6.1
+          ]
+        },
+        {
+          "position": [
+            31,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            30.6,
+            12.1
+          ]
+        },
+        {
+          "position": [
+            32,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            31.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            33,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            32.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            33,
+            15
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            32.6,
+            14.1
+          ]
+        },
+        {
+          "position": [
+            34,
+            19
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            33.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            35,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            34.6,
+            5.9
+          ]
+        },
+        {
+          "position": [
+            35,
+            19
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            34.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            36,
+            19
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            35.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            5
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            5.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 9,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 62,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            5,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            4.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            5,
+            31
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            4.6,
+            30.9
+          ]
+        },
+        {
+          "position": [
+            5,
+            32
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            4.6,
+            31.1
+          ]
+        },
+        {
+          "position": [
+            6,
+            6
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            5.6,
+            5.1
+          ]
+        },
+        {
+          "position": [
+            6,
+            8
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            5.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            7,
+            6
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            6.6,
+            5.1
+          ]
+        },
+        {
+          "position": [
+            7,
+            8
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            6.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            8,
+            14
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            7.6,
+            13.1
+          ]
+        },
+        {
+          "position": [
+            8,
+            18
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            7.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            10,
+            22
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            9.6,
+            21.1
+          ]
+        },
+        {
+          "position": [
+            11,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            10.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            12,
+            13
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            11.6,
+            12.9
+          ]
+        },
+        {
+          "position": [
+            13,
+            12
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            12.6,
+            12.9
+          ]
+        },
+        {
+          "position": [
+            13,
+            18
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            12.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            14,
+            12
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            13.6,
+            12.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            13
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            14.6,
+            12.9
+          ]
+        },
+        {
+          "position": [
+            15,
+            19
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            14.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            17,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            17,
+            21
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            20.1
+          ]
+        },
+        {
+          "position": [
+            20,
+            18
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            19.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            22,
+            26
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            21.6,
+            25.1
+          ]
+        },
+        {
+          "position": [
+            23,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            22.6,
+            18.1
+          ]
+        },
+        {
+          "position": [
+            25,
+            7
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            7.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            8
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            7.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            18
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            25.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            31
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            31.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            34
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            34.9
+          ]
+        },
+        {
+          "position": [
+            27,
+            19
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            26.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            27,
+            21
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            26.6,
+            20.1
+          ]
+        },
+        {
+          "position": [
+            27,
+            25
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            26.6,
+            25.9
+          ]
+        },
+        {
+          "position": [
+            28,
+            9
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            27.6,
+            8.9
+          ]
+        },
+        {
+          "position": [
+            28,
+            18
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            28.4,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            28,
+            34
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            27.6,
+            34.9
+          ]
+        },
+        {
+          "position": [
+            29,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            28.6,
+            19.9
+          ]
+        },
+        {
+          "position": [
+            30,
+            11
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            29.6,
+            11.9
+          ]
+        },
+        {
+          "position": [
+            32,
+            26
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            31.6,
+            25.9
+          ]
+        },
+        {
+          "position": [
+            32,
+            31
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            31.6,
+            31.9
+          ]
+        },
+        {
+          "position": [
+            34,
+            18
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            33.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            35,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            34.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            36,
+            18
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            35.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            18
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            19
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            36.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            22
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            22.9
+          ]
+        },
+        {
+          "position": [
+            38,
+            18
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            37.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            38,
+            31
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            37.6,
+            31.9
+          ]
+        },
+        {
+          "position": [
+            41,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            40.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            42,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            41.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            43,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            42.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            44,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            43.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            20
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            44.6,
+            19.1
+          ]
+        },
+        {
+          "position": [
+            47,
+            19
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            46.6,
+            18.9
+          ]
+        },
+        {
+          "position": [
+            48,
+            5
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            47.6,
+            4.9
+          ]
+        },
+        {
+          "position": [
+            48,
+            8
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            47.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            48,
+            23
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            47.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            49,
+            5
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            48.6,
+            4.9
+          ]
+        },
+        {
+          "position": [
+            49,
+            8
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            48.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            49,
+            23
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            48.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            50,
+            8
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            49.6,
+            7.1
+          ]
+        },
+        {
+          "position": [
+            50,
+            30
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            49.6,
+            30.9
+          ]
+        },
+        {
+          "position": [
+            50,
+            32
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            49.6,
+            31.1
+          ]
+        },
+        {
+          "position": [
+            50,
+            33
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            49.6,
+            32.1
+          ]
+        },
+        {
+          "position": [
+            51,
+            30
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            50.6,
+            29.1
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 19,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 0,
+      "phase_sources": [],
+      "features": [],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 20,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 190,
+      "phase_sources": [
+        {
+          "position": [
+            3016,
+            35
+          ],
+          "block_id": 349
+        },
+        {
+          "position": [
+            3753,
+            119
+          ],
+          "block_id": 384
+        }
+      ],
+      "features": [
+        {
+          "position": [
+            53,
+            30
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            52.6,
+            29.1
+          ]
+        },
+        {
+          "position": [
+            56,
+            36
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            55.6,
+            35.1
+          ]
+        },
+        {
+          "position": [
+            95,
+            102
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            94.6,
+            101.1
+          ]
+        },
+        {
+          "position": [
+            160,
+            108
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            159.6,
+            107.1
+          ]
+        },
+        {
+          "position": [
+            212,
+            43
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            211.6,
+            42.1
+          ]
+        },
+        {
+          "position": [
+            231,
+            125
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            230.6,
+            124.1
+          ]
+        },
+        {
+          "position": [
+            271,
+            117
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            270.6,
+            116.1
+          ]
+        },
+        {
+          "position": [
+            373,
+            82
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            372.6,
+            81.1
+          ]
+        },
+        {
+          "position": [
+            394,
+            127
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            393.6,
+            126.1
+          ]
+        },
+        {
+          "position": [
+            417,
+            134
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            416.6,
+            133.1
+          ]
+        },
+        {
+          "position": [
+            470,
+            120
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            469.6,
+            119.1
+          ]
+        },
+        {
+          "position": [
+            496,
+            127
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            495.6,
+            126.1
+          ]
+        },
+        {
+          "position": [
+            508,
+            84
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            507.6,
+            83.1
+          ]
+        },
+        {
+          "position": [
+            522,
+            31
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            521.6,
+            30.1
+          ]
+        },
+        {
+          "position": [
+            589,
+            127
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            588.6,
+            126.1
+          ]
+        },
+        {
+          "position": [
+            626,
+            29
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            625.6,
+            28.1
+          ]
+        },
+        {
+          "position": [
+            635,
+            94
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            634.6,
+            93.1
+          ]
+        },
+        {
+          "position": [
+            649,
+            110
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            648.6,
+            109.1
+          ]
+        },
+        {
+          "position": [
+            674,
+            27
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            673.6,
+            26.1
+          ]
+        },
+        {
+          "position": [
+            685,
+            136
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            684.6,
+            135.1
+          ]
+        },
+        {
+          "position": [
+            718,
+            140
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            717.6,
+            139.1
+          ]
+        },
+        {
+          "position": [
+            742,
+            34
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            741.6,
+            33.1
+          ]
+        },
+        {
+          "position": [
+            787,
+            134
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            786.6,
+            133.1
+          ]
+        },
+        {
+          "position": [
+            824,
+            123
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            823.6,
+            122.1
+          ]
+        },
+        {
+          "position": [
+            842,
+            135
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            841.6,
+            134.1
+          ]
+        },
+        {
+          "position": [
+            888,
+            110
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            887.6,
+            109.1
+          ]
+        },
+        {
+          "position": [
+            956,
+            87
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            955.6,
+            86.1
+          ]
+        },
+        {
+          "position": [
+            970,
+            22
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            969.6,
+            21.1
+          ]
+        },
+        {
+          "position": [
+            994,
+            137
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            993.6,
+            136.1
+          ]
+        },
+        {
+          "position": [
+            1026,
+            112
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            1025.6,
+            111.1
+          ]
+        },
+        {
+          "position": [
+            1046,
+            55
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            1045.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            1147,
+            118
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            1146.6,
+            117.1
+          ]
+        },
+        {
+          "position": [
+            1177,
+            43
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            1176.6,
+            42.1
+          ]
+        },
+        {
+          "position": [
+            1178,
+            100
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            1177.6,
+            99.1
+          ]
+        },
+        {
+          "position": [
+            1181,
+            56
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            1180.6,
+            55.1
+          ]
+        },
+        {
+          "position": [
+            1326,
+            85
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            1325.6,
+            84.1
+          ]
+        },
+        {
+          "position": [
+            1386,
+            88
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            1385.6,
+            87.1
+          ]
+        },
+        {
+          "position": [
+            1466,
+            88
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            1465.6,
+            87.1
+          ]
+        },
+        {
+          "position": [
+            1482,
+            34
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            1481.6,
+            33.1
+          ]
+        },
+        {
+          "position": [
+            1571,
+            25
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            1570.6,
+            24.1
+          ]
+        },
+        {
+          "position": [
+            1642,
+            65
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            1641.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            1726,
+            55
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            1725.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            1733,
+            130
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            1732.6,
+            129.1
+          ]
+        },
+        {
+          "position": [
+            1752,
+            61
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            1751.6,
+            60.1
+          ]
+        },
+        {
+          "position": [
+            1762,
+            53
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            1761.6,
+            52.1
+          ]
+        },
+        {
+          "position": [
+            1780,
+            58
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            1779.6,
+            57.1
+          ]
+        },
+        {
+          "position": [
+            1823,
+            43
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            1822.6,
+            42.1
+          ]
+        },
+        {
+          "position": [
+            1852,
+            89
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            1851.6,
+            88.1
+          ]
+        },
+        {
+          "position": [
+            1872,
+            28
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            1871.6,
+            27.1
+          ]
+        },
+        {
+          "position": [
+            1897,
+            104
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            1896.6,
+            103.1
+          ]
+        },
+        {
+          "position": [
+            1906,
+            26
+          ],
+          "block_id": 425,
+          "special": "teleport",
+          "normal_contact_pose": [
+            1905.6,
+            25.1
+          ]
+        },
+        {
+          "position": [
+            1970,
+            93
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            1969.6,
+            92.1
+          ]
+        },
+        {
+          "position": [
+            2002,
+            67
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            2001.6,
+            66.1
+          ]
+        },
+        {
+          "position": [
+            2034,
+            52
+          ],
+          "block_id": 432,
+          "special": "score",
+          "normal_contact_pose": [
+            2033.6,
+            51.1
+          ]
+        },
+        {
+          "position": [
+            2055,
+            139
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            2054.6,
+            138.1
+          ]
+        },
+        {
+          "position": [
+            2114,
+            109
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            2113.6,
+            108.1
+          ]
+        },
+        {
+          "position": [
+            2169,
+            62
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            2168.6,
+            61.1
+          ]
+        },
+        {
+          "position": [
+            2241,
+            48
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            2240.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            2245,
+            45
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            2244.6,
+            44.1
+          ]
+        },
+        {
+          "position": [
+            2262,
+            50
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            2261.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            2265,
+            69
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            2264.6,
+            68.1
+          ]
+        },
+        {
+          "position": [
+            2400,
+            74
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            2399.6,
+            73.1
+          ]
+        },
+        {
+          "position": [
+            2413,
+            40
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            2412.6,
+            39.1
+          ]
+        },
+        {
+          "position": [
+            2427,
+            110
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            2426.6,
+            109.1
+          ]
+        },
+        {
+          "position": [
+            2480,
+            63
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            2479.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            2498,
+            44
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            2497.6,
+            43.1
+          ]
+        },
+        {
+          "position": [
+            2546,
+            76
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            2545.6,
+            75.1
+          ]
+        },
+        {
+          "position": [
+            2563,
+            81
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            2562.6,
+            80.1
+          ]
+        },
+        {
+          "position": [
+            2625,
+            75
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            2624.6,
+            74.1
+          ]
+        },
+        {
+          "position": [
+            2625,
+            120
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            2624.6,
+            119.1
+          ]
+        },
+        {
+          "position": [
+            2651,
+            50
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            2650.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            2658,
+            34
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            2657.6,
+            33.1
+          ]
+        },
+        {
+          "position": [
+            2710,
+            54
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            2709.6,
+            53.1
+          ]
+        },
+        {
+          "position": [
+            2759,
+            92
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            2758.6,
+            91.1
+          ]
+        },
+        {
+          "position": [
+            2829,
+            91
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            2828.6,
+            90.1
+          ]
+        },
+        {
+          "position": [
+            2839,
+            24
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            2838.6,
+            23.1
+          ]
+        },
+        {
+          "position": [
+            2917,
+            43
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            2916.6,
+            42.1
+          ]
+        },
+        {
+          "position": [
+            2929,
+            117
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            2928.6,
+            116.1
+          ]
+        },
+        {
+          "position": [
+            2975,
+            83
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            2974.6,
+            82.1
+          ]
+        },
+        {
+          "position": [
+            2975,
+            84
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            2974.6,
+            83.1
+          ]
+        },
+        {
+          "position": [
+            2994,
+            119
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            2993.6,
+            118.1
+          ]
+        },
+        {
+          "position": [
+            2996,
+            82
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            2995.6,
+            81.1
+          ]
+        },
+        {
+          "position": [
+            3000,
+            36
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            2999.6,
+            35.1
+          ]
+        },
+        {
+          "position": [
+            3000,
+            80
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            2999.6,
+            79.1
+          ]
+        },
+        {
+          "position": [
+            3014,
+            37
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            3013.6,
+            36.1
+          ]
+        },
+        {
+          "position": [
+            3018,
+            120
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            3017.6,
+            120.9
+          ]
+        },
+        {
+          "position": [
+            3019,
+            57
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            3019.4,
+            56.9
+          ]
+        },
+        {
+          "position": [
+            3036,
+            80
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            3035.6,
+            79.1
+          ]
+        },
+        {
+          "position": [
+            3064,
+            133
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3063.6,
+            132.1
+          ]
+        },
+        {
+          "position": [
+            3078,
+            63
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3077.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            3130,
+            55
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            3129.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            3177,
+            67
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            3176.6,
+            66.1
+          ]
+        },
+        {
+          "position": [
+            3200,
+            50
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3199.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            3203,
+            56
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            3202.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            3229,
+            26
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3228.6,
+            25.1
+          ]
+        },
+        {
+          "position": [
+            3255,
+            114
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3254.6,
+            113.1
+          ]
+        },
+        {
+          "position": [
+            3290,
+            125
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            3289.6,
+            124.1
+          ]
+        },
+        {
+          "position": [
+            3307,
+            23
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            3306.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            3323,
+            59
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            3323.4,
+            58.1
+          ]
+        },
+        {
+          "position": [
+            3332,
+            51
+          ],
+          "block_id": 398,
+          "special": "score",
+          "normal_contact_pose": [
+            3331.6,
+            50.1
+          ]
+        },
+        {
+          "position": [
+            3358,
+            73
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            3357.6,
+            72.1
+          ]
+        },
+        {
+          "position": [
+            3389,
+            107
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            3388.6,
+            106.1
+          ]
+        },
+        {
+          "position": [
+            3416,
+            84
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3415.6,
+            83.1
+          ]
+        },
+        {
+          "position": [
+            3419,
+            76
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3418.6,
+            75.1
+          ]
+        },
+        {
+          "position": [
+            3446,
+            61
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3445.6,
+            60.1
+          ]
+        },
+        {
+          "position": [
+            3450,
+            55
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3449.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            3479,
+            78
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            3478.6,
+            77.1
+          ]
+        },
+        {
+          "position": [
+            3503,
+            112
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            3502.6,
+            111.1
+          ]
+        },
+        {
+          "position": [
+            3593,
+            47
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            3592.6,
+            46.1
+          ]
+        },
+        {
+          "position": [
+            3669,
+            85
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            3668.6,
+            84.1
+          ]
+        },
+        {
+          "position": [
+            3683,
+            71
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3683.4,
+            70.1
+          ]
+        },
+        {
+          "position": [
+            3684,
+            120
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            3683.6,
+            119.1
+          ]
+        },
+        {
+          "position": [
+            3717,
+            56
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            3716.6,
+            55.1
+          ]
+        },
+        {
+          "position": [
+            3730,
+            82
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3729.6,
+            81.1
+          ]
+        },
+        {
+          "position": [
+            3734,
+            23
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3733.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            3750,
+            65
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3749.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            3788,
+            65
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            3787.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            3819,
+            109
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            3818.6,
+            108.1
+          ]
+        },
+        {
+          "position": [
+            3919,
+            45
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            3918.6,
+            44.1
+          ]
+        },
+        {
+          "position": [
+            3920,
+            45
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            3919.6,
+            44.1
+          ]
+        },
+        {
+          "position": [
+            3941,
+            97
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            3940.6,
+            96.1
+          ]
+        },
+        {
+          "position": [
+            4016,
+            39
+          ],
+          "block_id": 367,
+          "special": "set_spawn",
+          "normal_contact_pose": [
+            4015.6,
+            38.1
+          ]
+        },
+        {
+          "position": [
+            4016,
+            81
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            4015.6,
+            80.1
+          ]
+        },
+        {
+          "position": [
+            4047,
+            83
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            4046.6,
+            82.1
+          ]
+        },
+        {
+          "position": [
+            4055,
+            140
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            4054.6,
+            139.1
+          ]
+        },
+        {
+          "position": [
+            4093,
+            87
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            4092.6,
+            86.1
+          ]
+        },
+        {
+          "position": [
+            4131,
+            88
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            4130.6,
+            87.1
+          ]
+        },
+        {
+          "position": [
+            4157,
+            31
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            4156.6,
+            30.1
+          ]
+        },
+        {
+          "position": [
+            4223,
+            125
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            4222.6,
+            124.1
+          ]
+        },
+        {
+          "position": [
+            4298,
+            80
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            4297.6,
+            79.1
+          ]
+        },
+        {
+          "position": [
+            4300,
+            72
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            4299.6,
+            71.1
+          ]
+        },
+        {
+          "position": [
+            4330,
+            51
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            4329.6,
+            50.1
+          ]
+        },
+        {
+          "position": [
+            4332,
+            99
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            4331.6,
+            98.1
+          ]
+        },
+        {
+          "position": [
+            4342,
+            44
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            4341.6,
+            43.1
+          ]
+        },
+        {
+          "position": [
+            4395,
+            48
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            4394.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            4398,
+            46
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            4397.6,
+            45.1
+          ]
+        },
+        {
+          "position": [
+            4400,
+            48
+          ],
+          "block_id": 291,
+          "special": "heal",
+          "normal_contact_pose": [
+            4399.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            4440,
+            74
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            4439.6,
+            74.9
+          ]
+        },
+        {
+          "position": [
+            4465,
+            93
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            4464.6,
+            92.1
+          ]
+        },
+        {
+          "position": [
+            4475,
+            23
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            4474.6,
+            22.1
+          ]
+        },
+        {
+          "position": [
+            4512,
+            123
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            4511.6,
+            122.1
+          ]
+        },
+        {
+          "position": [
+            4525,
+            55
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            4524.6,
+            54.1
+          ]
+        },
+        {
+          "position": [
+            4537,
+            70
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            4536.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            4584,
+            106
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            4583.6,
+            105.1
+          ]
+        },
+        {
+          "position": [
+            4626,
+            110
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            4625.6,
+            109.1
+          ]
+        },
+        {
+          "position": [
+            4740,
+            47
+          ],
+          "block_id": 357,
+          "special": "teleport",
+          "normal_contact_pose": [
+            4739.6,
+            46.1
+          ]
+        },
+        {
+          "position": [
+            4741,
+            77
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            4740.6,
+            76.1
+          ]
+        },
+        {
+          "position": [
+            4788,
+            61
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            4787.6,
+            60.1
+          ]
+        },
+        {
+          "position": [
+            4800,
+            48
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            4799.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            4800,
+            60
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            4799.6,
+            60.9
+          ]
+        },
+        {
+          "position": [
+            4820,
+            112
+          ],
+          "block_id": 356,
+          "special": "shield",
+          "normal_contact_pose": [
+            4819.6,
+            111.1
+          ]
+        },
+        {
+          "position": [
+            4887,
+            78
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            4886.6,
+            77.1
+          ]
+        },
+        {
+          "position": [
+            4896,
+            95
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            4895.6,
+            94.1
+          ]
+        },
+        {
+          "position": [
+            4919,
+            98
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            4918.6,
+            97.1
+          ]
+        },
+        {
+          "position": [
+            4933,
+            42
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            4932.6,
+            41.1
+          ]
+        },
+        {
+          "position": [
+            4967,
+            73
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            4966.6,
+            72.1
+          ]
+        },
+        {
+          "position": [
+            4971,
+            111
+          ],
+          "block_id": 355,
+          "special": "heal",
+          "normal_contact_pose": [
+            4970.6,
+            110.1
+          ]
+        },
+        {
+          "position": [
+            5005,
+            53
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5004.6,
+            53.9
+          ]
+        },
+        {
+          "position": [
+            5005,
+            57
+          ],
+          "block_id": 292,
+          "special": "shield",
+          "normal_contact_pose": [
+            5004.6,
+            56.1
+          ]
+        },
+        {
+          "position": [
+            5008,
+            57
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            5007.6,
+            56.1
+          ]
+        },
+        {
+          "position": [
+            5017,
+            53
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            5016.6,
+            52.1
+          ]
+        },
+        {
+          "position": [
+            5017,
+            86
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            5016.6,
+            85.1
+          ]
+        },
+        {
+          "position": [
+            5092,
+            50
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            5091.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            5128,
+            69
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            5127.6,
+            68.1
+          ]
+        },
+        {
+          "position": [
+            5140,
+            41
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            5139.6,
+            40.1
+          ]
+        },
+        {
+          "position": [
+            5141,
+            75
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            5140.6,
+            74.1
+          ]
+        },
+        {
+          "position": [
+            5160,
+            75
+          ],
+          "block_id": 434,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5159.6,
+            74.1
+          ]
+        },
+        {
+          "position": [
+            5234,
+            101
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            5233.6,
+            100.1
+          ]
+        },
+        {
+          "position": [
+            5249,
+            38
+          ],
+          "block_id": 317,
+          "special": "score",
+          "normal_contact_pose": [
+            5248.6,
+            37.1
+          ]
+        },
+        {
+          "position": [
+            5250,
+            70
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            5249.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            5300,
+            55
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5299.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            5385,
+            105
+          ],
+          "block_id": 316,
+          "special": "score",
+          "normal_contact_pose": [
+            5384.6,
+            104.1
+          ]
+        },
+        {
+          "position": [
+            5440,
+            33
+          ],
+          "block_id": 290,
+          "special": "heal",
+          "normal_contact_pose": [
+            5439.6,
+            32.1
+          ]
+        },
+        {
+          "position": [
+            5500,
+            90
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5499.6,
+            90.9
+          ]
+        },
+        {
+          "position": [
+            5510,
+            52
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5509.6,
+            52.9
+          ]
+        },
+        {
+          "position": [
+            5563,
+            99
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            5562.6,
+            98.1
+          ]
+        },
+        {
+          "position": [
+            5603,
+            139
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            5602.6,
+            138.1
+          ]
+        },
+        {
+          "position": [
+            5650,
+            85
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            5649.6,
+            84.1
+          ]
+        },
+        {
+          "position": [
+            5684,
+            100
+          ],
+          "block_id": 350,
+          "special": "set_spawn",
+          "normal_contact_pose": [
+            5683.6,
+            99.1
+          ]
+        },
+        {
+          "position": [
+            5685,
+            63
+          ],
+          "block_id": 312,
+          "special": "score",
+          "normal_contact_pose": [
+            5684.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            5700,
+            59
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            5699.6,
+            58.1
+          ]
+        },
+        {
+          "position": [
+            5732,
+            76
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            5731.6,
+            75.1
+          ]
+        },
+        {
+          "position": [
+            5751,
+            50
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            5750.6,
+            49.1
+          ]
+        },
+        {
+          "position": [
+            5778,
+            68
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            5777.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            5863,
+            54
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            5862.6,
+            53.1
+          ]
+        },
+        {
+          "position": [
+            5896,
+            71
+          ],
+          "block_id": 319,
+          "special": "score",
+          "normal_contact_pose": [
+            5895.6,
+            70.1
+          ]
+        },
+        {
+          "position": [
+            5931,
+            37
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            5930.6,
+            36.1
+          ]
+        },
+        {
+          "position": [
+            5931,
+            116
+          ],
+          "block_id": 318,
+          "special": "score",
+          "normal_contact_pose": [
+            5930.6,
+            115.1
+          ]
+        },
+        {
+          "position": [
+            5940,
+            85
+          ],
+          "block_id": 300,
+          "special": "teleport",
+          "normal_contact_pose": [
+            5939.6,
+            85.9
+          ]
+        },
+        {
+          "position": [
+            5940,
+            88
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            5939.6,
+            87.1
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 21,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 90,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            8,
+            78
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            7.6,
+            77.1
+          ]
+        },
+        {
+          "position": [
+            17,
+            77
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            16.6,
+            76.1
+          ]
+        },
+        {
+          "position": [
+            21,
+            31
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            30.1
+          ]
+        },
+        {
+          "position": [
+            21,
+            69
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            20.6,
+            68.1
+          ]
+        },
+        {
+          "position": [
+            27,
+            76
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            26.6,
+            75.1
+          ]
+        },
+        {
+          "position": [
+            35,
+            63
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            34.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            40,
+            32
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            39.6,
+            31.1
+          ]
+        },
+        {
+          "position": [
+            42,
+            63
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            41.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            45,
+            84
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            44.6,
+            83.1
+          ]
+        },
+        {
+          "position": [
+            55,
+            51
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            54.6,
+            51.9
+          ]
+        },
+        {
+          "position": [
+            56,
+            54
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            55.6,
+            53.1
+          ]
+        },
+        {
+          "position": [
+            57,
+            35
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            56.6,
+            34.1
+          ]
+        },
+        {
+          "position": [
+            66,
+            62
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            65.6,
+            63.9
+          ]
+        },
+        {
+          "position": [
+            68,
+            92
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            67.6,
+            91.1
+          ]
+        },
+        {
+          "position": [
+            75,
+            47
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            74.6,
+            46.1
+          ]
+        },
+        {
+          "position": [
+            86,
+            74
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            85.6,
+            73.1
+          ]
+        },
+        {
+          "position": [
+            95,
+            61
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            94.6,
+            60.1
+          ]
+        },
+        {
+          "position": [
+            103,
+            75
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            102.6,
+            74.1
+          ]
+        },
+        {
+          "position": [
+            112,
+            70
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            111.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            112,
+            72
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            111.6,
+            71.1
+          ]
+        },
+        {
+          "position": [
+            113,
+            70
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            112.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            114,
+            70
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            113.6,
+            69.1
+          ]
+        },
+        {
+          "position": [
+            115,
+            91
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            114.6,
+            90.1
+          ]
+        },
+        {
+          "position": [
+            119,
+            38
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            118.6,
+            37.1
+          ]
+        },
+        {
+          "position": [
+            124,
+            85
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            123.6,
+            84.1
+          ]
+        },
+        {
+          "position": [
+            140,
+            81
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            139.6,
+            80.1
+          ]
+        },
+        {
+          "position": [
+            141,
+            74
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            140.6,
+            73.1
+          ]
+        },
+        {
+          "position": [
+            145,
+            45
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            144.6,
+            44.1
+          ]
+        },
+        {
+          "position": [
+            147,
+            39
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            146.6,
+            38.1
+          ]
+        },
+        {
+          "position": [
+            147,
+            59
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            146.6,
+            58.1
+          ]
+        },
+        {
+          "position": [
+            147,
+            81
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            146.6,
+            80.1
+          ]
+        },
+        {
+          "position": [
+            175,
+            56
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            174.6,
+            55.1
+          ]
+        },
+        {
+          "position": [
+            175,
+            62
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            174.6,
+            61.1
+          ]
+        },
+        {
+          "position": [
+            175,
+            63
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            174.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            181,
+            68
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            180.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            188,
+            84
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            187.6,
+            83.1
+          ]
+        },
+        {
+          "position": [
+            190,
+            62
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            189.6,
+            61.1
+          ]
+        },
+        {
+          "position": [
+            190,
+            63
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            189.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            190,
+            66
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            189.6,
+            65.1
+          ]
+        },
+        {
+          "position": [
+            191,
+            40
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            190.6,
+            39.1
+          ]
+        },
+        {
+          "position": [
+            194,
+            52
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            193.6,
+            51.1
+          ]
+        },
+        {
+          "position": [
+            196,
+            85
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            195.6,
+            86.9
+          ]
+        },
+        {
+          "position": [
+            197,
+            85
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            196.6,
+            85.9
+          ]
+        },
+        {
+          "position": [
+            198,
+            35
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            197.6,
+            34.1
+          ]
+        },
+        {
+          "position": [
+            199,
+            36
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            198.6,
+            35.1
+          ]
+        },
+        {
+          "position": [
+            205,
+            62
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            204.6,
+            61.1
+          ]
+        },
+        {
+          "position": [
+            205,
+            63
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            204.6,
+            62.1
+          ]
+        },
+        {
+          "position": [
+            219,
+            44
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            218.6,
+            44.9
+          ]
+        },
+        {
+          "position": [
+            221,
+            51
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            220.6,
+            50.1
+          ]
+        },
+        {
+          "position": [
+            234,
+            67
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            233.6,
+            66.1
+          ]
+        },
+        {
+          "position": [
+            238,
+            59
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            237.6,
+            58.1
+          ]
+        },
+        {
+          "position": [
+            240,
+            64
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            239.6,
+            63.1
+          ]
+        },
+        {
+          "position": [
+            244,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            243.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            248,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            247.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            252,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            251.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            256,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            255.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            260,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            259.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            264,
+            56
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            263.6,
+            55.9
+          ]
+        },
+        {
+          "position": [
+            278,
+            72
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            277.6,
+            71.1
+          ]
+        },
+        {
+          "position": [
+            284,
+            35
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            283.6,
+            34.1
+          ]
+        },
+        {
+          "position": [
+            287,
+            48
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            286.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            292,
+            42
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            291.6,
+            41.1
+          ]
+        },
+        {
+          "position": [
+            306,
+            65
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            305.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            306,
+            68
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            305.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            307,
+            57
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            306.6,
+            56.1
+          ]
+        },
+        {
+          "position": [
+            308,
+            65
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            307.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            313,
+            31
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            312.6,
+            30.1
+          ]
+        },
+        {
+          "position": [
+            316,
+            65
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            315.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            316,
+            68
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            315.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            326,
+            65
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            325.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            326,
+            68
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            325.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            326,
+            69
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            325.6,
+            68.1
+          ]
+        },
+        {
+          "position": [
+            330,
+            83
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            329.6,
+            82.1
+          ]
+        },
+        {
+          "position": [
+            332,
+            37
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            331.6,
+            36.1
+          ]
+        },
+        {
+          "position": [
+            336,
+            65
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            335.6,
+            64.1
+          ]
+        },
+        {
+          "position": [
+            336,
+            68
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            335.6,
+            67.1
+          ]
+        },
+        {
+          "position": [
+            343,
+            44
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            342.6,
+            43.1
+          ]
+        },
+        {
+          "position": [
+            351,
+            77
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            350.6,
+            76.1
+          ]
+        },
+        {
+          "position": [
+            354,
+            71
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            353.6,
+            70.1
+          ]
+        },
+        {
+          "position": [
+            364,
+            64
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            363.6,
+            63.1
+          ]
+        },
+        {
+          "position": [
+            371,
+            71
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            370.6,
+            70.1
+          ]
+        },
+        {
+          "position": [
+            382,
+            36
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            381.6,
+            35.1
+          ]
+        },
+        {
+          "position": [
+            390,
+            96
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            389.6,
+            95.1
+          ]
+        },
+        {
+          "position": [
+            391,
+            96
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            390.6,
+            95.1
+          ]
+        },
+        {
+          "position": [
+            395,
+            51
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            394.6,
+            50.1
+          ]
+        },
+        {
+          "position": [
+            395,
+            94
+          ],
+          "block_id": 314,
+          "special": "score",
+          "normal_contact_pose": [
+            394.6,
+            93.1
+          ]
+        },
+        {
+          "position": [
+            400,
+            48
+          ],
+          "block_id": 315,
+          "special": "score",
+          "normal_contact_pose": [
+            399.6,
+            47.1
+          ]
+        },
+        {
+          "position": [
+            415,
+            78
+          ],
+          "block_id": 425,
+          "special": "teleport",
+          "normal_contact_pose": [
+            414.6,
+            77.1
+          ]
+        },
+        {
+          "position": [
+            415,
+            79
+          ],
+          "block_id": 425,
+          "special": "teleport",
+          "normal_contact_pose": [
+            414.6,
+            78.1
+          ]
+        },
+        {
+          "position": [
+            417,
+            80
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            416.6,
+            79.1
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 1001,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 18,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            4,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            12,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            11.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            24,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            23.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            25,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            16
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            38,
+            16
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            37.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            39,
+            16
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            38.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            16
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            39.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            41,
+            16
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            40.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            46.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            53,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            52.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            54,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            53.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            55,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            54.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            56,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            55.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            57,
+            13
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            56.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            76,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            75.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            90,
+            8
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            89.6,
+            9.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 1002,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 17,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            4,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            24,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            23.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            25,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            16
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            38,
+            16
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            37.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            39,
+            16
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            38.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            16
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            39.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            41,
+            16
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            40.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            46.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            53,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            52.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            54,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            53.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            55,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            54.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            56,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            55.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            57,
+            13
+          ],
+          "block_id": 313,
+          "special": "score",
+          "normal_contact_pose": [
+            56.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            76,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            75.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            90,
+            8
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            89.6,
+            9.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    },
+    {
+      "map_id": 1003,
+      "body": [
+        0.8,
+        1.8
+      ],
+      "feature_count": 18,
+      "phase_sources": [],
+      "features": [
+        {
+          "position": [
+            4,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            3.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            12,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            11.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            24,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            23.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            25,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            24.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            26,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            25.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            37,
+            16
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            36.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            38,
+            16
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            37.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            39,
+            16
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            38.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            40,
+            16
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            39.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            41,
+            16
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            40.6,
+            16.9
+          ]
+        },
+        {
+          "position": [
+            47,
+            8
+          ],
+          "block_id": 302,
+          "special": "checkpoint",
+          "normal_contact_pose": [
+            46.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            53,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            52.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            54,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            53.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            55,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            54.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            56,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            55.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            57,
+            13
+          ],
+          "block_id": 311,
+          "special": "score",
+          "normal_contact_pose": [
+            56.6,
+            13.9
+          ]
+        },
+        {
+          "position": [
+            76,
+            10
+          ],
+          "block_id": 310,
+          "special": "score",
+          "normal_contact_pose": [
+            75.6,
+            9.9
+          ]
+        },
+        {
+          "position": [
+            90,
+            8
+          ],
+          "block_id": 303,
+          "special": "end_point",
+          "normal_contact_pose": [
+            89.6,
+            9.9
+          ]
+        }
+      ],
+      "no_normal_contact": []
+    }
+  ]
+}

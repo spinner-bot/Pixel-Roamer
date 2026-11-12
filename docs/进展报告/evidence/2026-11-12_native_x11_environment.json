@@ -1,0 +1,31 @@
+{
+  "os": "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "packages": [
+    {
+      "name": "libxdo3_1%3a3.20160805.1-4_amd64.deb",
+      "sha256": "69432493950855718836e1aadc4c490c103f35b0c5dacc0e28a0f55fc21d2613",
+      "metadata": "Package: libxdo3\nVersion: 1:3.20160805.1-4\nArchitecture: amd64"
+    },
+    {
+      "name": "xdotool_1%3a3.20160805.1-4_amd64.deb",
+      "sha256": "93198ce669e04f9b9d79f5e5e2d0fcd89fe411e7a7ebc948e9f4cbb563f62967",
+      "metadata": "Package: xdotool\nVersion: 1:3.20160805.1-4\nArchitecture: amd64"
+    },
+    {
+      "name": "xvfb_2%3a21.1.4-2ubuntu1.7~22.04.16_amd64.deb",
+      "sha256": "f857020815dd091b4331cc45b37550a92480178c2931c76b486af2202e4271ec",
+      "metadata": "Package: xvfb\nVersion: 2:21.1.4-2ubuntu1.7~22.04.16\nArchitecture: amd64"
+    }
+  ],
+  "display_server": "private Xvfb -displayfd 1 -screen 0 1920x1080x24 -nolisten tcp -ac",
+  "isolation": "task-local package extraction, no global apt install; private virtual display :0",
+  "tools": {
+    "xmessage": "/usr/bin/xmessage"
+  },
+  "not_covered": [
+    "physical desktop / compositor",
+    "hardware audio",
+    "CJK input method"
+  ]
+}

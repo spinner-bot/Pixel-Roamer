@@ -1,0 +1,13 @@
+test_actual_stat_api_matches_partial_full_and_zero_reductions_without_mutation (test_buff_behavior.BuffBehaviorTests) ... ok
+test_every_original_trap_escapes_with_and_without_immunity_at_three_rates (test_buff_behavior.BuffBehaviorTests) ... ok
+test_immunity_consumes_entry_and_explicit_api_root_still_refreshes (test_buff_behavior.BuffBehaviorTests) ... ok
+test_pause_and_real_death_preserve_then_rearm_a_fresh_source_timer (test_buff_behavior.BuffBehaviorTests) ... ok
+test_root_does_not_refresh_on_stay_or_active_new_source_and_rearms_after_exit (test_buff_behavior.BuffBehaviorTests) ... ok
+test_startup_rules_are_valid_immutable_and_explicit_files_do_not_change_them (test_buff_behavior.BuffBehaviorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 12.586s
+
+OK
+pygame 2.6.1 (SDL 2.28.4, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html

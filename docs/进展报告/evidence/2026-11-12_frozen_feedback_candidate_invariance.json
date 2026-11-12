@@ -1,0 +1,12 @@
+{
+  "code_revision": "a2bd178e4fe1d2b6aac704d15534deac828f2b3d",
+  "scope": "render-only candidate; full initialized GameApp input route and simulation snapshots unchanged; only active frozen screenshot should differ",
+  "route_identical": true,
+  "image_identical": {
+    "frozen": false,
+    "thaw": true,
+    "shore": true,
+    "return": true,
+    "finish": true
+  }
+}

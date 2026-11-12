@@ -1,0 +1,6 @@
+test_normal_spawn_lake_island_and_return_at_three_frame_rates (test_cove_lake.CoveLakeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.006s
+
+OK

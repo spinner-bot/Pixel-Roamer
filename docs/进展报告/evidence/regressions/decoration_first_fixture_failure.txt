@@ -1,0 +1,46 @@
+test_opaque_black_and_stone_keep_their_opaque_rendering (test_decoration_compositing.DecorationCompositingTests) ... ok
+test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) ... 
+======================================================================
+FAIL: test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) (background=0, alpha=128)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_decoration_compositing.py", line 18, in test_rgba_canvas_matches_reference_for_direct_and_chunk_paths
+    self.assertTrue(result['chunk_matches'], result)
+AssertionError: False is not true : {'default_id': 0, 'alpha': 128, 'expected_corner': (112, 198, 218), 'direct_corner': (112, 198, 218), 'chunk_corner': (135, 255, 255), 'direct_matches': True, 'chunk_matches': False, 'opaque_motif_preserved': True}
+
+======================================================================
+FAIL: test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) (background=11, alpha=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_decoration_compositing.py", line 18, in test_rgba_canvas_matches_reference_for_direct_and_chunk_paths
+    self.assertTrue(result['chunk_matches'], result)
+AssertionError: False is not true : {'default_id': 11, 'alpha': 0, 'expected_corner': (11, 20, 147), 'direct_corner': (11, 20, 147), 'chunk_corner': (50, 80, 164), 'direct_matches': True, 'chunk_matches': False, 'opaque_motif_preserved': True}
+
+======================================================================
+FAIL: test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) (background=11, alpha=128)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_decoration_compositing.py", line 18, in test_rgba_canvas_matches_reference_for_direct_and_chunk_paths
+    self.assertTrue(result['chunk_matches'], result)
+AssertionError: False is not true : {'default_id': 11, 'alpha': 128, 'expected_corner': (50, 80, 164), 'direct_corner': (50, 80, 164), 'chunk_corner': (11, 20, 147), 'direct_matches': True, 'chunk_matches': False, 'opaque_motif_preserved': True}
+
+======================================================================
+FAIL: test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) (background=12, alpha=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_decoration_compositing.py", line 18, in test_rgba_canvas_matches_reference_for_direct_and_chunk_paths
+    self.assertTrue(result['chunk_matches'], result)
+AssertionError: False is not true : {'default_id': 12, 'alpha': 0, 'expected_corner': (0, 0, 0), 'direct_corner': (0, 0, 0), 'chunk_corner': (45, 70, 90), 'direct_matches': True, 'chunk_matches': False, 'opaque_motif_preserved': True}
+
+======================================================================
+FAIL: test_rgba_canvas_matches_reference_for_direct_and_chunk_paths (test_decoration_compositing.DecorationCompositingTests) (background=12, alpha=128)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/tests/test_decoration_compositing.py", line 18, in test_rgba_canvas_matches_reference_for_direct_and_chunk_paths
+    self.assertTrue(result['chunk_matches'], result)
+AssertionError: False is not true : {'default_id': 12, 'alpha': 128, 'expected_corner': (45, 70, 90), 'direct_corner': (45, 70, 90), 'chunk_corner': (0, 0, 0), 'direct_matches': True, 'chunk_matches': False, 'opaque_motif_preserved': True}
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.025s
+
+FAILED (failures=5)

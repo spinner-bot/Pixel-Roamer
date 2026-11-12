@@ -8,14 +8,15 @@ from typing import Optional, Tuple, Any
 from block_type import BlockType
 from block_types_data import BLOCK_TYPES
 from game_rect import GameRect
-from pattern import render_block_pattern
+from pattern import render_block_pattern, pattern_has_alpha_canvas
 
 
 # ===================== 性能常量 =====================
 CHUNK_SIZE = 32          # 每个 Chunk 边长（方块数）
-CHUNK_TEX_PX = 10        # Chunk 纹理中每方块的像素（平衡质量与内存）
-MAX_CHUNK_SURFACES = 128
+CHUNK_TEX_PX = 16        # Preserve native 16px terrain without downsampling first.
+MAX_CHUNK_SURFACES = 64  # 64 MiB base textures, plus the separate scaled budget.
 MAX_SCALED_CACHE_BYTES = 64 * 1024 * 1024
+MAX_TERRAIN_TEXTURES = 512
 
 
 # ===================== 地图格子与 World =====================
@@ -85,6 +86,7 @@ class World:
         self._scaled_chunk_cache = OrderedDict()  # 缩放纹理（按字节数限制）
         self._scaled_chunk_cache_bytes = 0
         self._dirty_chunks = set()         # 待重渲染的 Chunk 键
+        self._terrain_textures = OrderedDict()
         self._bulk_loading = False         # 批量加载模式标志
 
     def create_session(self):
@@ -97,6 +99,7 @@ class World:
         session.default_tile = Tile(self.default_tile.type_id, deepcopy(self.default_tile.meta))
         session._solid_index = self._solid_index.copy()
         session._chunk_surfaces = OrderedDict()
+        session._terrain_textures = OrderedDict()
         session._scaled_chunk_cache = OrderedDict()
         session._scaled_chunk_cache_bytes = 0
         session._dirty_chunks = set()
@@ -257,6 +260,10 @@ class World:
                 else:
                     self._solid_index.discard(coord)
                 self._mark_dirty(x, y)
+            else:
+                # Match bulk-load semantics when only portal/interaction data
+                # changes. Metadata does not affect the current terrain raster.
+                old.meta = meta
 
     # ================================================================
     #  碰撞查询（使用实体索引加速）
@@ -291,6 +298,26 @@ class World:
     # ================================================================
     #  绘制（Chunk 缓存 + 增量重渲染）
     # ================================================================
+    def _terrain_texture(self, block_type):
+        """Rasterize a terrain definition once instead of hashing it per tile."""
+        key = block_type.id
+        cached = self._terrain_textures.get(key)
+        if (cached is not None and cached[0] is block_type
+                and cached[1] == tuple(block_type.color)
+                and cached[2] is block_type.pattern):
+            self._terrain_textures.move_to_end(key)
+            return cached[3]
+        flags = pygame.SRCALPHA if pattern_has_alpha_canvas(block_type.pattern) else 0
+        texture = pygame.Surface((CHUNK_TEX_PX, CHUNK_TEX_PX), flags)
+        render_block_pattern(texture, block_type, 0, 0, CHUNK_TEX_PX, CHUNK_TEX_PX,
+                             overdraw=False)
+        self._terrain_textures[key] = (block_type, tuple(block_type.color),
+                                       block_type.pattern, texture)
+        self._terrain_textures.move_to_end(key)
+        while len(self._terrain_textures) > MAX_TERRAIN_TEXTURES:
+            self._terrain_textures.popitem(last=False)
+        return texture
+
     def _render_chunk(self, ck: Tuple[int, int]):
         """将指定 Chunk 渲染到固定尺寸 Surface 并缓存。"""
         cx, cy = ck
@@ -306,12 +333,12 @@ class World:
 
         # 绘制默认方块图案（若有）
         if self._default_bt.pattern is not None:
+            texture = self._terrain_texture(self._default_bt)
             for lx in range(chunk_w):
                 for ly in range(chunk_h):
                     px = lx * CHUNK_TEX_PX
                     py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                    render_block_pattern(surf, self._default_bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
-                                         overdraw=False)
+                    surf.blit(texture, (px, py))
 
         # 覆盖非默认方块
         base_x = cx * CHUNK_SIZE
@@ -342,8 +369,19 @@ class World:
                 px = lx * CHUNK_TEX_PX
                 # Y 轴翻转：世界坐标 y↑，纹理 y↓
                 py = (chunk_h - 1 - ly) * CHUNK_TEX_PX
-                render_block_pattern(surf, bt, px, py, CHUNK_TEX_PX, CHUNK_TEX_PX,
-                                     overdraw=False)
+                surf.blit(self._terrain_texture(bt), (px, py))
+
+        # Nearest scaling can sample one native pixel beyond a rounded world
+        # edge. Extend edge pixels in partial chunks, then clip at world bounds.
+        top_padding = 0 if self.loop_y else max(0, (base_y + chunk_h - self.height) * CHUNK_TEX_PX)
+        if 0 < top_padding < tex_h:
+            for px in range(tex_w):
+                surf.fill(surf.get_at((px, top_padding)), (px, 0, 1, top_padding))
+        valid_width = tex_w if self.loop_x else min(tex_w, (self.width - base_x) * CHUNK_TEX_PX)
+        if 0 < valid_width < tex_w:
+            for py in range(tex_h):
+                surf.fill(surf.get_at((valid_width - 1, py)),
+                          (valid_width, py, tex_w - valid_width, 1))
 
         self._chunk_surfaces[ck] = surf
         self._chunk_surfaces.move_to_end(ck)
@@ -352,6 +390,28 @@ class World:
         self._dirty_chunks.discard(ck)
 
     def draw(self, surface: pygame.Surface, camera):
+        """Respect finite world bounds and preserve the caller's clip."""
+        original = surface.get_clip()
+        visible = original.copy()
+        if not self.loop_x:
+            left = round(camera.world_to_screen(0, 0)[0])
+            right = round(camera.world_to_screen(self.width, 0)[0])
+            visible = visible.clip(pygame.Rect(left, original.y, max(0, right - left), original.h))
+        if not self.loop_y:
+            top = round(camera.world_to_screen(0, self.height)[1])
+            bottom = round(camera.world_to_screen(0, 0)[1])
+            visible = visible.clip(pygame.Rect(original.x, top, original.w, max(0, bottom - top)))
+        if visible != original:
+            surface.fill(self.fill_color)
+        if not visible:
+            return
+        surface.set_clip(visible)
+        try:
+            self._draw_visible_chunks(surface, camera)
+        finally:
+            surface.set_clip(original)
+
+    def _draw_visible_chunks(self, surface: pygame.Surface, camera):
         # 空的双向循环小世界在每格远小于一个屏幕像素时无法分辨纹理细节。
         # 直接填充默认色，避免遍历数百万个重复 chunk。
         if (self.loop_x and self.loop_y and not self.grid
@@ -373,20 +433,15 @@ class World:
         max_cx = end_x // CHUNK_SIZE
         min_cy = start_y // CHUNK_SIZE
         max_cy = end_y // CHUNK_SIZE
+        if not self.loop_x:
+            min_cx, max_cx = max(0, min_cx), min(max_cx, (self.width - 1) // CHUNK_SIZE)
+        if not self.loop_y:
+            min_cy, max_cy = max(0, min_cy), min(max_cy, (self.height - 1) // CHUNK_SIZE)
 
         scale = camera.scale
 
         for cx in range(min_cx, max_cx + 1):
             for cy in range(min_cy, max_cy + 1):
-                # 循环世界：Chunk 索引映射到有效范围
-                wck = self._chunk_wrap(cx, cy) if (self.loop_x or self.loop_y) else (cx, cy)
-                chunk_surf = self._chunk_surfaces.get(wck)
-                if chunk_surf is None or wck in self._dirty_chunks:
-                    self._render_chunk(wck)
-                    chunk_surf = self._chunk_surfaces[wck]
-                else:
-                    self._chunk_surfaces.move_to_end(wck)
-
                 # Chunk 世界坐标左下角
                 chunk_wx = cx * CHUNK_SIZE
                 chunk_wy = cy * CHUNK_SIZE
@@ -396,6 +451,25 @@ class World:
                 bottom = round(sy_top + CHUNK_SIZE * scale)
                 sx, sy_top = round(sx), round(sy_top)
                 blit_w, blit_h = max(1, right - sx), max(1, bottom - sy_top)
+
+                destination = pygame.Rect(sx, sy_top, blit_w, blit_h)
+                if not destination.colliderect(surface.get_clip()):
+                    continue
+
+                # 循环世界：Chunk 索引映射到有效范围
+                wck = self._chunk_wrap(cx, cy) if (self.loop_x or self.loop_y) else (cx, cy)
+                chunk_surf = self._chunk_surfaces.get(wck)
+                if chunk_surf is None or wck in self._dirty_chunks:
+                    self._render_chunk(wck)
+                    chunk_surf = self._chunk_surfaces[wck]
+                else:
+                    self._chunk_surfaces.move_to_end(wck)
+
+                estimated_bytes = blit_w * blit_h * chunk_surf.get_bytesize()
+                if estimated_bytes > MAX_SCALED_CACHE_BYTES:
+                    from chunk_scaling import blit_large_chunk
+                    blit_large_chunk(surface, chunk_surf, destination)
+                    continue
 
                 # 缩放至屏幕尺寸（缓存避免每帧分配巨型临时Surface）
                 need_scale = (blit_w != CHUNK_SIZE * CHUNK_TEX_PX or blit_h != CHUNK_SIZE * CHUNK_TEX_PX)

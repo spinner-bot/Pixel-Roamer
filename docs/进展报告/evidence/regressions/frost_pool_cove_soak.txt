@@ -1,0 +1,1 @@
+{"map_id": 21, "input_seconds": 600.0, "respawns": 2, "errors": []}

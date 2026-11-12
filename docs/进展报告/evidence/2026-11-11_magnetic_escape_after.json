@@ -1,0 +1,313 @@
+{
+  "code_revision": "6789db95cd3fffae62cc4b241c98dfffb3ed6759",
+  "legacy": false,
+  "scope": "isolated magnetic faces; synthetic production session input",
+  "runs": [
+    {
+      "kind": 338,
+      "side": "left",
+      "fps": 30,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 338,
+      "side": "left",
+      "fps": 60,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 338,
+      "side": "left",
+      "fps": 144,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 338,
+      "side": "right",
+      "fps": 30,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 338,
+      "side": "right",
+      "fps": 60,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 338,
+      "side": "right",
+      "fps": 144,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "left",
+      "fps": 30,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "left",
+      "fps": 60,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "left",
+      "fps": 144,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "right",
+      "fps": 30,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "right",
+      "fps": 60,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 386,
+      "side": "right",
+      "fps": 144,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "left",
+      "fps": 30,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "left",
+      "fps": 60,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "left",
+      "fps": 144,
+      "start": [
+        9.6,
+        11
+      ],
+      "after_four_seconds": [
+        0.4,
+        1.9
+      ],
+      "retreat": 9.2,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "right",
+      "fps": 30,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "right",
+      "fps": 60,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    },
+    {
+      "kind": 403,
+      "side": "right",
+      "fps": 144,
+      "start": [
+        11.4,
+        11
+      ],
+      "after_four_seconds": [
+        23.599999999999998,
+        1.9
+      ],
+      "retreat": 12.199999999999998,
+      "escaped": true,
+      "hp": 150.0,
+      "lives_left": 3
+    }
+  ]
+}

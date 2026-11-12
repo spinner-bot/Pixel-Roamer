@@ -1,6 +1,5 @@
 """Reproducible headless stress audit; results are evidence, not a playability proof."""
 import argparse
-import inspect
 import json
 import math
 import os
@@ -20,10 +19,12 @@ sys.path.insert(0, str(ROOT))
 import pygame
 from camera import Camera
 from creature import Player
+from player_factory import create_world_player
 from game_state import resolve_player_death
 from maps import get_map, list_maps
 from world import World, MAX_CHUNK_SURFACES, MAX_SCALED_CACHE_BYTES
 from block_types_data import BLOCK_TYPES
+from simulation import FixedStepClock, SIMULATION_HZ
 
 
 def finite_player(player):
@@ -34,10 +35,7 @@ def finite_player(player):
 def map_audit(map_id, frames):
     started = time.perf_counter()
     world = get_map(map_id)
-    config = world.player_config
-    kwargs = {key: value for key, value in config.items()
-              if key in inspect.signature(Player).parameters}
-    player = Player(0, "audit", *world.spawn_points, {}, **kwargs)
+    player = create_world_player(world, {}, player_name='audit')
     rect = player.get_game_rect()
     overlaps = [(block.x, block.y, kind.id)
                 for block, kind in world.get_nearby_solid_blocks_game(rect)
@@ -58,18 +56,23 @@ def map_audit(map_id, frames):
     physics_ms = []
     draw_ms = []
     respawns = 0
+    clock = FixedStepClock()
+
+    def step(dt):
+        player.tick_buffs(dt)
+        player.refresh_movement_stats()
+        player.update_physics(dt, world)
+        player.collide_with_world(world, dt)
+
     for frame in range(frames):
         if not player.alive:
             resolve_player_death(player, 0, True)
             respawns += 1
         start = time.perf_counter()
-        player.tick_buffs(1 / 60)
-        player.refresh_movement_stats()
         player.move(0.35 if (frame // 240) % 2 == 0 else -0.35)
         if frame % 60 == 0:
             player.jump()
-        player.update_physics(1 / 60, world)
-        player.collide_with_world(world, 1 / 60)
+        clock.advance(1 / 60, step)
         physics_ms.append((time.perf_counter() - start) * 1000)
         if not finite_player(player):
             errors.append(f"nonfinite player state at frame {frame}")
@@ -85,6 +88,7 @@ def map_audit(map_id, frames):
     return {
         "id": map_id, "name": world.name, "frames": len(physics_ms),
         "simulated_seconds": len(physics_ms) / 60, "spawn": world.spawn_points,
+        "player_hp_max": player.hp_max, "player_vertical_drag": player.f_y,
         "spawn_overlaps": overlaps, "respawns_in_stress_run": respawns,
         "score": player.score, "physics_mean_ms": statistics.mean(physics_ms),
         "physics_p95_ms": sorted(physics_ms)[int(len(physics_ms) * 0.95)],
@@ -102,12 +106,17 @@ def block_audit(frames):
         world = World(0, "block", 30, 30, gravity=-6.5, edge_behavior="void")
         world.set_tile(5, 5, tile_id)
         player = Player(0, "block", 5.5, 5.5, {})
+        clock = FixedStepClock()
+
+        def step(dt):
+            player.tick_buffs(dt)
+            player.update_physics(dt, world)
+            player.collide_with_world(world, dt)
+
         started = time.perf_counter()
         try:
             for _ in range(frames):
-                player.tick_buffs(1 / 60)
-                player.update_physics(1 / 60, world)
-                player.collide_with_world(world, 1 / 60)
+                clock.advance(1 / 60, step)
                 if not finite_player(player):
                     raise AssertionError("nonfinite player state")
                 if not player.alive:
@@ -132,6 +141,7 @@ def main():
     pygame.init()
     random.seed(20261111)
     report = {"python": platform.python_version(), "pygame": pygame.version.ver,
+              "simulation_hz": SIMULATION_HZ,
               "video_driver": pygame.display.get_driver(), "seed": 20261111,
               "code_revision": subprocess.check_output(
                   ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),

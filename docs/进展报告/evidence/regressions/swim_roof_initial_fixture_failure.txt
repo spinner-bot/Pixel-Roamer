@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_swim_surface_roof.py", line 114, in <module>
+    main()
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_swim_surface_roof.py", line 97, in main
+    'current': cases()}
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_swim_surface_roof.py", line 81, in cases
+    return [run(fps, height, roof, mode, offset, session_class)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_swim_surface_roof.py", line 81, in <listcomp>
+    return [run(fps, height, roof, mode, offset, session_class)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_swim_surface_roof.py", line 44, in run
+    raise AssertionError(f'illegal/repositioned swimming fixture: {initial} != {expected}')
+AssertionError: illegal/repositioned swimming fixture: (-14.5, -10.030000000000001) != (-14.5, -10.03)
