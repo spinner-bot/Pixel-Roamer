@@ -9,7 +9,7 @@ from pixel_roamer.ui.theme import PALETTE as P, panel, key_hint
 class HelpOverlay:
     def __init__(self):
         path = Path(__file__).resolve().parents[2] / "data/controls.json"
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8"))
         if data.get("schema_version") != 1:
             raise ValueError("unsupported control help version")
         self.controls = data["controls"]
