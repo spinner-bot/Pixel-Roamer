@@ -58,3 +58,11 @@ Buff4首参数单位为跳跃**高度**增加百分比，缺省50、显式0无�
 53风步的加速由`wind_walk.py`处理，首参数缺省读取共享wind_walk默认0.5，显式0不加速；它限制加速上限，不直接改写移动速度倍率。充能计时/速度阈值/总速度上限沿用既有规则；存在有效输入时沿角色实际a_x方向加力（已包含23反向及8/40免疫），没有输入时保持原动量方向。持续刷新不因帧数叠层，暂停、到期和复活按既有生命周期清理充能。
 
 Buff的`cleanup_by`是反向清理关系：例如9声明`cleanup_by=[15]`，15被接受获取或刷新时立即清除活动9；已有15时再获取9同样被拒绝。通用`buff_cleanup.py`消费此关系，无来源方块ID分支，`conflicts`仍表示获取者主动移除的目标。先检查诅咒/免疫/自身cleanup_by等准入条件，再执行主动冲突与反向清理，被拒绝的获取不能清理其他效果；内部仅对仍活动的目标调用移除回调，重复声明和回调连带移除不会重复回调。公共`remove_buff`的其他旧调用语义未在此全局重写。
+
+Buff行为规则可选`control_locks`数组，动作限定horizontal/jump/climb/swim，默认空，严格拒绝重复或未知值，加载后为不可变tuple。`buff_controls.py`统一查询活动Buff；角色主动动作、WorldSession和上岸边界均消费它，重力/碰撞/环境作用和计时继续运行。59冻结配置四项限制、entry接触触发及cleanup_by40，`halt_motion`一次性取消旧速度/加速度、攀爬对齐和上岸过程，不用跳过物理实现冻结。
+
+`data/rules/buff_reactions.json`由`buff_reactions.py`启动验证并缓存，按required_buffs、contact语义和result_buff关联，禁止具体来源方块ID。唯一cold_water规则要求51与真实水接触，2秒base_duration×2倍duration_multiplier产生4秒59。普通水不冻结，寒冷单独/仅蒸汽浸湿/蜂蜜/熔岩/伤害液体不触发。水谓词与原自动浸湿共用，不把can_swim一概当水。
+
+反应每轮曝光仅尝试一次（免疫拒绝也消耗机会），持续接触不续时；必须离开真实水且15浸湿完全结束才重置，防水面抖动或净化后反复冻结。世界切换/复活/飞行清空反应记忆。已有更长/永久结果不被短规则覆盖。规则引用、类型、唯一ID、正数、有限乘积和下溢均验证；显式文件加载不污染运行缓存。新增59在独立buffs_frozen扩展包/新增ID哈希清单登记，原58定义及像素基线保持。
+
+`python3 scripts/build_frozen_buff.py`可重建59与原生像素图标；`python3 scripts/audit_catalog_regeneration.py --output /tmp/regeneration.json`依次重放A80/A84迁移、美术生成与两个扩展生成器，逐步验证目录、规则、审查清单和消费者字节不漂移。运行重建会写目录，应与同时读取目录的测试顺序执行。
