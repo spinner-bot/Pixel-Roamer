@@ -1,5 +1,6 @@
 """Capture initialized GameApp rendering along the actual cold basin input route."""
 import argparse
+from contextlib import nullcontext
 import json
 import os
 from pathlib import Path
@@ -14,17 +15,22 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import pygame
 from pixel_roamer.application import GameApp
+from pixel_roamer import world_view
 from scripts.audit_cove_frost_pool import candidate_world, ice_detour
 from scripts.audit_cove_route import run as cove_route
 from scripts.control_session import terminal_snapshot
 
 
-def run(output, candidate):
+def run(output, candidate, feedback_candidate=False):
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     output = output.resolve()
     captures, apps = [], []
     output.parent.mkdir(parents=True, exist_ok=True)
     prefix = 'A92_cove_frost_' + ('candidate' if candidate else 'production')
+    if feedback_candidate:
+        if hasattr(world_view,'draw_frozen_feedback'):
+            raise ValueError('feedback candidate requires the pre-integration renderer snapshot')
+        prefix = 'A93_cove_frost_feedback_candidate'
 
     def app_factory():
         app = GameApp()
@@ -62,14 +68,25 @@ def run(output, candidate):
         with patch.object(session, 'advance', new=capture_advance):
             return ice_detour(app, session, keys, fps)
 
-    result = cove_route(60, world_hook=candidate_world if candidate else None,
-                        ice_hook=observe_detour, app_factory=app_factory)
-    capture('finish', apps[0], apps[0].session)
+    original_costume = world_view.render_costume_at_feet
+
+    def candidate_costume(*args,**kwargs):
+        result = original_costume(*args,**kwargs)
+        from pixel_roamer.frozen_feedback import draw_frozen_feedback
+        draw_frozen_feedback(args[0],apps[0].player1,apps[0].camera)
+        return result
+
+    context = patch.object(world_view,'render_costume_at_feet',new=candidate_costume) if feedback_candidate else nullcontext()
+    with context:
+        result = cove_route(60, world_hook=candidate_world if candidate else None,
+                            ice_hook=observe_detour, app_factory=app_factory)
+        capture('finish', apps[0], apps[0].session)
     pygame.quit()
     missing = sorted({'frozen', 'thaw', 'shore', 'return', 'finish'} - {r['phase'] for r in captures})
     report = {'code_revision': revision,
               'scope': 'initialized GameApp and real WorldView logical-surface rendering during normal-spawn controls; SDL dummy captures, not physical-device acceptance; capture must preserve simulation',
-              'candidate_geometry': candidate, 'route': result, 'captures': captures,
+              'candidate_geometry': candidate, 'feedback_candidate':feedback_candidate,
+              'route': result, 'captures': captures,
               'missing_captures': missing}
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'win': result['game_win'], 'failure': result['failure'],
@@ -80,6 +97,7 @@ def run(output, candidate):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--candidate', action='store_true')
+    parser.add_argument('--feedback-candidate', action='store_true')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    raise SystemExit(0 if run(args.output, args.candidate) else 1)
+    raise SystemExit(0 if run(args.output, args.candidate,args.feedback_candidate) else 1)
