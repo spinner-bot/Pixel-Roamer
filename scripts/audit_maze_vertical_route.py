@@ -163,7 +163,7 @@ def main():
     if not args.current_only:
         old = ModuleType('legacy_maze_vertical')
         old.__file__ = str(ROOT / 'maps/loop_maze/map.py')
-        source = subprocess.check_output(['git', 'show', '90a106a:maps/loop_maze/map.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', '90a106a:maps/loop_maze/map.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         _apply_config(old.world, 'loop_maze')
         current = get_map(4)

@@ -86,7 +86,7 @@ def main():
     # Execute only the historical local Player module in an isolated namespace;
     # no checkout, merge or modification of the working tree is involved.
     source = subprocess.check_output(["git", "show", f"{args.baseline_ref}:creature.py"],
-                                     cwd=ROOT, text=True)
+                                     cwd=ROOT, text=True, encoding='utf-8')
     legacy = types.ModuleType("precision_baseline")
     exec(compile(source, f"git:{args.baseline_ref}:creature.py", "exec"), legacy.__dict__)
     report = {"baseline_ref": args.baseline_ref,

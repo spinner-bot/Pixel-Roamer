@@ -15,7 +15,7 @@ RESPONSES = {386: 1, 403: 1, 411: -1}
 
 def main():
     relative = 'data/catalogs/blocks.json'
-    original = json.loads(subprocess.check_output(['git', 'show', f'{BASELINE}:{relative}'], cwd=ROOT, text=True))
+    original = json.loads(subprocess.check_output(['git', 'show', f'{BASELINE}:{relative}'], cwd=ROOT, text=True, encoding='utf-8'))
     old = {entry['id']: entry for entry in original['entries']}
     document = json.loads((ROOT / relative).read_text())
     current = {entry['id']: entry for entry in document['entries']}

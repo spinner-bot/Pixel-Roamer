@@ -32,7 +32,7 @@ def run(fps, legacy=False, upper=False, portal=False, finish=False, hall_hook=No
         module = ModuleType('legacy_grand_entrance')
         module.__file__ = str(ROOT / 'maps/grand_journey/map.py')
         source = subprocess.check_output(['git', 'show', ('b93d820' if portal else ('43c16b4' if upper else 'c95354d')) + ':maps/grand_journey/map.py'],
-                                         cwd=ROOT, text=True)
+                                         cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, module.__file__, 'exec'), module.__dict__)
         _apply_config(module.world, 'grand_journey')
         with patch('pixel_roamer.application.get_map', return_value=module.world):

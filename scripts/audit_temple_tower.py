@@ -127,7 +127,7 @@ def main():
     if not args.current_only:
         old = ModuleType('legacy_temple_tower')
         old.__file__ = str(ROOT / 'maps/end_temple/map.py')
-        source = subprocess.check_output(['git', 'show', 'c86b346:maps/end_temple/map.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', 'c86b346:maps/end_temple/map.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         _apply_config(old.world, 'end_temple')
         current = get_map(7)

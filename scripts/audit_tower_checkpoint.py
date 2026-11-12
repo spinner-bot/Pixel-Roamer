@@ -71,7 +71,7 @@ def main():
     args = parser.parse_args()
     old = ModuleType('legacy_tower_checkpoint')
     old.__file__ = str(ROOT / 'maps/pixel_journey/map.py')
-    source = subprocess.check_output(['git', 'show', '1988619:maps/pixel_journey/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', '1988619:maps/pixel_journey/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, old.__file__, 'exec'), old.__dict__)
     _apply_config(old.world, 'pixel_journey')
     current = get_map(3)

@@ -46,7 +46,7 @@ def main():
     args = parser.parse_args()
     module = ModuleType('legacy_collector_placements')
     module.__file__ = str(ROOT / 'maps/collector/map.py')
-    source = subprocess.check_output(['git', 'show', '6b0908f:maps/collector/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', '6b0908f:maps/collector/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                                      text=True).strip(),

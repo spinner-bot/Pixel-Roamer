@@ -25,7 +25,7 @@ BLOCK_IDS = (2, 3, 4, 5, 7, 9, 16, 17, 18, 19, 20, 22)
 
 def original(kind):
     return json.loads(subprocess.check_output(
-        ["git", "show", f"{BASELINE_REF}:data/catalogs/{kind}.json"], cwd=ROOT, text=True))
+        ["git", "show", f"{BASELINE_REF}:data/catalogs/{kind}.json"], cwd=ROOT, text=True, encoding='utf-8'))
 
 
 def pattern_image(pattern, size):
@@ -242,7 +242,7 @@ def main():
             gallery(kind, before, after, PICKUP_IDS, 'pickups_before_after.png')
             gallery(kind, before, after, DECORATION_IDS, 'decorations_before_after.png')
             prior = json.loads(subprocess.check_output(
-                ['git', 'show', f'{COMPARISON_REF}:data/catalogs/blocks.json'], cwd=ROOT, text=True))
+                ['git', 'show', f'{COMPARISON_REF}:data/catalogs/blocks.json'], cwd=ROOT, text=True, encoding='utf-8'))
             prior = {entry['id']: entry for entry in prior['entries']}
             gallery(kind, prior, after, SPRITE_IDS, 'non_solid_sprites_A77.png')
     (ROOT / 'tests/fixtures/catalog_art_overrides.json').write_text(json.dumps(overrides, ensure_ascii=False, indent=2) + '\n')

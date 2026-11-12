@@ -64,7 +64,7 @@ def main():
     args = parser.parse_args()
     old = ModuleType('known_closed_maze')
     old.__file__ = str(ROOT / 'maps/loop_maze/map.py')
-    source = subprocess.check_output(['git', 'show', 'b1e1fb9:maps/loop_maze/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', 'b1e1fb9:maps/loop_maze/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, old.__file__, 'exec'), old.__dict__)
     _apply_config(old.world, 'loop_maze')
     results = [screen(get_map(map_id)) for map_id in sorted(list_maps())]

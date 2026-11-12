@@ -31,7 +31,7 @@ def main():
     args = parser.parse_args()
     world_class = World
     if args.legacy:
-        source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:world.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:world.py'], cwd=ROOT, text=True, encoding='utf-8')
         module = ModuleType('legacy_zoom_world_audit')
         sys.modules[module.__name__] = module
         exec(compile(source, f'git:{LEGACY_REF}:world.py', 'exec'), module.__dict__)

@@ -102,7 +102,7 @@ def main():
     args = parser.parse_args()
     module = ModuleType('legacy_air_jump_creature')
     module.__file__ = str(ROOT / 'creature.py')
-    source = subprocess.check_output(['git', 'show', '444f39a:creature.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', '444f39a:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                                      text=True).strip(),

@@ -101,7 +101,7 @@ def main():
     args = parser.parse_args()
     old = ModuleType('legacy_maze_south')
     old.__file__ = str(ROOT / 'maps/loop_maze/map.py')
-    source = subprocess.check_output(['git', 'show', 'b745778:maps/loop_maze/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', 'b745778:maps/loop_maze/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, old.__file__, 'exec'), old.__dict__)
     _apply_config(old.world, 'loop_maze')
     current = get_map(4)

@@ -71,7 +71,7 @@ def main():
     module = ModuleType('legacy_held_climb_session')
     module.__file__ = str(ROOT / 'pixel_roamer/world_session.py')
     source = subprocess.check_output(['git', 'show', '29ba738:pixel_roamer/world_session.py'],
-                                     cwd=ROOT, text=True)
+                                     cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                                      text=True).strip(),

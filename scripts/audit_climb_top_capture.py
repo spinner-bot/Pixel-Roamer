@@ -107,14 +107,14 @@ def main():
         old = ModuleType('legacy_top_capture_session')
         old.__file__ = str(ROOT / 'pixel_roamer/world_session.py')
         source = subprocess.check_output(['git', 'show', args.legacy_ref + ':pixel_roamer/world_session.py'],
-                                         cwd=ROOT, text=True)
+                                         cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         # Both gameplay modules must match the legacy revision; otherwise new
         # capture admission would hide the old session's solid-overlap failures.
         old_actor = ModuleType('legacy_top_capture_creature')
         old_actor.__file__ = str(ROOT / 'creature.py')
         actor_source = subprocess.check_output(['git', 'show', args.legacy_ref + ':creature.py'],
-                                               cwd=ROOT, text=True)
+                                               cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(actor_source, old_actor.__file__, 'exec'), old_actor.__dict__)
         with patch('player_factory.Player', old_actor.Player):
             report.update(legacy_revision=args.legacy_ref, legacy=cases(old.WorldSession),

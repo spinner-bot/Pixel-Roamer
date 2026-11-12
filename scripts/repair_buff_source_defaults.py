@@ -15,7 +15,7 @@ DEFAULTED_BUFFS = {5, 6, 7, 13, 42, 43, 44, 45, 47, 51, 53, 54, 55}
 
 def main():
     relative = 'data/catalogs/blocks.json'
-    original = json.loads(subprocess.check_output(['git', 'show', f'{BASELINE}:{relative}'], cwd=ROOT, text=True))
+    original = json.loads(subprocess.check_output(['git', 'show', f'{BASELINE}:{relative}'], cwd=ROOT, text=True, encoding='utf-8'))
     current = json.loads((ROOT / relative).read_text())
     by_id = {e['id']: e for e in current['entries']}
     manifest_path = ROOT / 'tests/fixtures/catalog_gameplay_changes.json'

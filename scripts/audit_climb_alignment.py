@@ -88,7 +88,7 @@ def main():
     if not args.current_only:
         old = ModuleType('legacy_climb_alignment_creature')
         old.__file__ = str(ROOT / 'creature.py')
-        source = subprocess.check_output(['git', 'show', '2b2a739:creature.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', '2b2a739:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         report['before'] = cases(old.Player)
     report['after'] = cases()

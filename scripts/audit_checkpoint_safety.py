@@ -59,7 +59,7 @@ def main():
     args = parser.parse_args()
     module = ModuleType('legacy_checkpoint_player')
     module.__file__ = str(ROOT / 'creature.py')
-    source = subprocess.check_output(['git', 'show', 'f783e7c:creature.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', 'f783e7c:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     cases = [(anchor, source, fps) for anchor in (302, 350, 367)
              for source in ('ghost_buff', 'phantom_gate') for fps in (30, 60, 144)]

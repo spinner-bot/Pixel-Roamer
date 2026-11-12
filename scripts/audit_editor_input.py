@@ -25,7 +25,7 @@ def main():
     pygame.init()
     if args.legacy:
         source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:pixel_roamer/ui/map_browser.py'],
-                                         cwd=ROOT, text=True)
+                                         cwd=ROOT, text=True, encoding='utf-8')
         module = ModuleType('legacy_editor_input_audit')
         sys.modules[module.__name__] = module
         exec(compile(source, f'git:{LEGACY_REF}:map_browser.py', 'exec'), module.__dict__)

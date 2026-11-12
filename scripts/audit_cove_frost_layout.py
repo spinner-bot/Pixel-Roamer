@@ -19,7 +19,7 @@ def run():
     module = ModuleType('pre_frost_pool_cove')
     module.__file__ = str(ROOT / 'maps/adventure_cove/map.py')
     source = subprocess.check_output(['git', 'show', BASELINE + ':maps/adventure_cove/map.py'],
-                                     cwd=ROOT, text=True)
+                                     cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     original = module.world
     _apply_config(original, 'adventure_cove')

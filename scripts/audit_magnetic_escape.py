@@ -63,7 +63,7 @@ def main():
     if args.legacy:
         module = ModuleType('legacy_magnetic_creature')
         module.__file__ = str(ROOT / 'creature.py')
-        source = subprocess.check_output(['git', 'show', '783bd52:creature.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', '783bd52:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, module.__file__, 'exec'), module.__dict__)
         player_class = module.Player
     runs = [run(kind, side, fps, player_class) for kind in (338, 386, 403)

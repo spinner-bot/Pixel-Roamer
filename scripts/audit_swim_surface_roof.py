@@ -100,7 +100,7 @@ def main():
         old = ModuleType('legacy_swim_surface_session')
         old.__file__ = str(ROOT / 'pixel_roamer/world_session.py')
         source = subprocess.check_output(['git', 'show', args.legacy_ref + ':pixel_roamer/world_session.py'],
-                                         cwd=ROOT, text=True)
+                                         cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         report.update(legacy_revision=args.legacy_ref, legacy=cases(old.WorldSession))
     args.output.parent.mkdir(parents=True, exist_ok=True)

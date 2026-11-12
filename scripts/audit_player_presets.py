@@ -20,7 +20,7 @@ LEGACY_REF = 'f887d96'
 
 
 def legacy_module(path, name):
-    source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:{path}'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:{path}'], cwd=ROOT, text=True, encoding='utf-8')
     module = ModuleType(name)
     module.__file__ = str(ROOT / path)
     sys.modules[name] = module

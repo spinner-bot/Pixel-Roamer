@@ -176,7 +176,7 @@ def main():
     if not args.current_only:
         old = ModuleType('legacy_large_theme')
         old.__file__ = str(ROOT / 'maps/test_world_2/map.py')
-        source = subprocess.check_output(['git', 'show', 'c6357d6:maps/test_world_2/map.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', 'c6357d6:maps/test_world_2/map.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         _apply_config(old.world, 'test_world_2')
         current = get_map(2)

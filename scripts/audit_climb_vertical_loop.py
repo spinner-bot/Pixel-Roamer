@@ -101,7 +101,7 @@ def main():
     if not args.current_only:
         old = ModuleType('legacy_climb_loop')
         old.__file__ = str(ROOT / 'maps/endless_climb/map.py')
-        source = subprocess.check_output(['git', 'show', '363054d:maps/endless_climb/map.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', '363054d:maps/endless_climb/map.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         _apply_config(old.world, 'endless_climb')
         current = get_map(5)

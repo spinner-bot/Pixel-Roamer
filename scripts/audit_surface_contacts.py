@@ -22,7 +22,7 @@ def main():
     args = parser.parse_args()
     actor_class = Player
     if args.legacy:
-        source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:creature.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', f'{LEGACY_REF}:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
         module = types.ModuleType('legacy_creature_surface_audit')
         sys.modules[module.__name__] = module
         exec(compile(source, f'git:{LEGACY_REF}:creature.py', 'exec'), module.__dict__)

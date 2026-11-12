@@ -97,14 +97,14 @@ def main():
     args = parser.parse_args()
     module = ModuleType('legacy_lake_cove')
     module.__file__ = str(ROOT / 'maps/adventure_cove/map.py')
-    source = subprocess.check_output(['git', 'show', 'e3ba6ec:maps/adventure_cove/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', 'e3ba6ec:maps/adventure_cove/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     _apply_config(module.world, 'adventure_cove')
     # Keep the historical four-cell vine repair comparison exact even after
     # separately reviewed map features are added elsewhere in the same world.
     fixed = ModuleType('fixed_lake_before_frost_pool')
     fixed.__file__ = module.__file__
-    fixed_source = subprocess.check_output(['git','show','dd277a4:maps/adventure_cove/map.py'],cwd=ROOT,text=True)
+    fixed_source = subprocess.check_output(['git','show','dd277a4:maps/adventure_cove/map.py'],cwd=ROOT,text=True, encoding='utf-8')
     exec(compile(fixed_source,fixed.__file__,'exec'),fixed.__dict__)
     _apply_config(fixed.world,'adventure_cove')
     current = get_map(21)

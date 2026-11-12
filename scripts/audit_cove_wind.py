@@ -22,7 +22,7 @@ args = parser.parse_args()
 if args.legacy:
     module = ModuleType('legacy_cove_wind')
     module.__file__ = str(ROOT / 'maps/adventure_cove/map.py')
-    source = subprocess.check_output(['git', 'show', '956158f:maps/adventure_cove/map.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', '956158f:maps/adventure_cove/map.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     w = module.world
     _apply_config(w, 'adventure_cove')

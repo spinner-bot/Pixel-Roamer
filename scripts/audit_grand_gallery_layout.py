@@ -16,7 +16,7 @@ def run():
     baseline = 'a1349ea'
     module = ModuleType('pre_gallery_grand_journey')
     module.__file__ = str(ROOT/'maps/grand_journey/map.py')
-    source = subprocess.check_output(['git','show',baseline+':maps/grand_journey/map.py'],cwd=ROOT,text=True)
+    source = subprocess.check_output(['git','show',baseline+':maps/grand_journey/map.py'],cwd=ROOT,text=True, encoding='utf-8')
     exec(compile(source,module.__file__,'exec'),module.__dict__)
     original = module.world
     _apply_config(original,'grand_journey')

@@ -29,7 +29,7 @@ def run(fps=60, legacy=False):
         module = ModuleType('legacy_cove')
         module.__file__ = str(ROOT / 'maps/adventure_cove/map.py')
         source = subprocess.check_output(['git', 'show', '95b7e45:maps/adventure_cove/map.py'],
-                                         cwd=ROOT, text=True)
+                                         cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, module.__file__, 'exec'), module.__dict__)
         _apply_config(module.world, 'adventure_cove')
         with patch('pixel_roamer.application.get_map', return_value=module.world):

@@ -92,11 +92,11 @@ def main():
     args = parser.parse_args()
     module = ModuleType('legacy_phase_player')
     module.__file__ = str(ROOT / 'creature.py')
-    source = subprocess.check_output(['git', 'show', '1db6cd2:creature.py'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', '1db6cd2:creature.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     session_module = ModuleType('legacy_phase_session')
     session_module.__file__ = str(ROOT / 'pixel_roamer/world_session.py')
-    session_source = subprocess.check_output(['git', 'show', '1db6cd2:pixel_roamer/world_session.py'], cwd=ROOT, text=True)
+    session_source = subprocess.check_output(['git', 'show', '1db6cd2:pixel_roamer/world_session.py'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(session_source, session_module.__file__, 'exec'), session_module.__dict__)
     cases = [(source, direction, fps, wall) for source in ('ghost_buff', 'phantom_gate')
              for direction in (-1, 1) for fps in (30, 60, 144) for wall in ('single_layer', 'thick')]

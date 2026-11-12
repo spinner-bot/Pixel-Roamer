@@ -25,7 +25,7 @@ def main():
     for map_id, legacy_folder, point in CASES:
         old = ModuleType(f'legacy_night_{map_id}')
         old.__file__ = str(ROOT / 'maps' / legacy_folder / 'map.py')
-        source = subprocess.check_output(['git', 'show', f'3e5204b:maps/{legacy_folder}/map.py'], cwd=ROOT, text=True)
+        source = subprocess.check_output(['git', 'show', f'3e5204b:maps/{legacy_folder}/map.py'], cwd=ROOT, text=True, encoding='utf-8')
         exec(compile(source, old.__file__, 'exec'), old.__dict__)
         before, after = old.world, get_map(map_id)
         changes = [{'position': [x, y], 'before': before.get_tile(x, y).type_id,

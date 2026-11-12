@@ -83,7 +83,7 @@ def measure(session_class, case, fps, legacy_phase=None, legacy_player=None):
 def legacy_module(filename, name):
     module = ModuleType(name)
     module.__file__ = str(ROOT / filename)
-    source = subprocess.check_output(['git', 'show', f'913eb87:{filename}'], cwd=ROOT, text=True)
+    source = subprocess.check_output(['git', 'show', f'913eb87:{filename}'], cwd=ROOT, text=True, encoding='utf-8')
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     return module
 
