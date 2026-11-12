@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_pool.py", line 115, in <module>
+    result = cove_route(fps, world_hook=candidate_world if args.candidate else None, ice_hook=ice_detour)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_route.py", line 127, in run
+    ice_extension = ice_hook(app, session, keys, fps)
+  File "/data/Users/zrh/repo/Pixel-Roamer/scripts/audit_cove_frost_pool.py", line 84, in ice_detour
+    'surface': actor._swim_top_y, 'shore': actor._shore_exit_pending,
+AttributeError: 'Player' object has no attribute '_shore_exit_pending'
