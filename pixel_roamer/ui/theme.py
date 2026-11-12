@@ -4,7 +4,7 @@ from pathlib import Path
 import pygame
 import game_text as gt
 
-_DATA = json.loads((Path(__file__).resolve().parents[2] / "data/theme.json").read_text())
+_DATA = json.loads((Path(__file__).resolve().parents[2] / "data/theme.json").read_text(encoding="utf-8"))
 if _DATA.get("schema_version") != 1:
     raise ValueError("unsupported interface theme version")
 PALETTE = {}
