@@ -21,6 +21,13 @@ class CoveLakeTests(unittest.TestCase):
             {'position': [66, 59], 'before': 0, 'after': 10},
             {'position': [66, 60], 'before': 17, 'after': 10},
             {'position': [66, 61], 'before': 17, 'after': 10}])
+        self.assertEqual(report['lake_fix_reference'],'dd277a4')
+        plan=json.loads((root/'maps/adventure_cove/frost_pool.json').read_text())
+        later=[{'position':[x,y],'before':0,'after':bid} for x,y,bid in sorted(plan['points'])]
+        self.assertEqual(len(later),17)
+        self.assertEqual(report['later_map_changes'],later)
+        self.assertEqual(report['all_map_changes'],sorted(report['tile_changes']+later,
+                                                         key=lambda row:row['position']))
         self.assertEqual([r['fps'] for r in report['after']], [30, 60, 144])
         for before, after in zip(report['before'], report['after']):
             with self.subTest(fps=after['fps']):
