@@ -36,8 +36,8 @@ class BuffCleanupTests(unittest.TestCase):
                                   cwd=ROOT,capture_output=True,text=True,timeout=30)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
             report=json.loads(output.read_text())
-        self.assertEqual(len(report['edges']),2)
-        self.assertEqual(len(report['api']),4)
+        self.assertEqual({tuple(edge) for edge in report['edges']},{(9,15),(16,15),(59,40)})
+        self.assertEqual(len(report['api']),2*len(report['edges']))
         self.assertTrue(all(r['relation_satisfied'] for r in report['api']))
         self.assertEqual(len(report['sources']),24)
         for row in report['sources']:
