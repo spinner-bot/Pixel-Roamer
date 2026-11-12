@@ -20,6 +20,8 @@ from scripts.control_session import terminal_snapshot
 
 
 def run(output, candidate):
+    revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    output = output.resolve()
     captures, apps = [], []
     output.parent.mkdir(parents=True, exist_ok=True)
     prefix = 'A92_cove_frost_' + ('candidate' if candidate else 'production')
@@ -37,7 +39,7 @@ def run(output, candidate):
         path = output.parent / 'art' / f'{prefix}_{label}.png'
         path.parent.mkdir(parents=True, exist_ok=True)
         pygame.image.save(app.logic_surface, str(path))
-        captures.append({'phase': label, 'path': str(path.relative_to(ROOT)),
+        captures.append({'phase': label, 'path': str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
                          'state': before, 'buff_sources': [(b.buff_id, b.source) for b in app.player1.buffs]})
 
     def observe_detour(app, session, keys, fps):
@@ -65,7 +67,7 @@ def run(output, candidate):
     capture('finish', apps[0], apps[0].session)
     pygame.quit()
     missing = sorted({'frozen', 'thaw', 'shore', 'return', 'finish'} - {r['phase'] for r in captures})
-    report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+    report = {'code_revision': revision,
               'scope': 'initialized GameApp and real WorldView logical-surface rendering during normal-spawn controls; SDL dummy captures, not physical-device acceptance; capture must preserve simulation',
               'candidate_geometry': candidate, 'route': result, 'captures': captures,
               'missing_captures': missing}
