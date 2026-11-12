@@ -36,7 +36,7 @@ def draw_frozen_feedback(surface, actor, camera):
     duration = effect.duration
     if duration is None:
         text = name
-    elif not math.isfinite(duration) or duration >= 1000:
+    elif duration >= 1000 or not math.isfinite(duration):
         text = name + ' 999+s'
     else:
         # Never claim0.0 while a finite lock still has a physical tick left.
