@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 from types import ModuleType
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -39,7 +40,16 @@ def run():
         return [(coord, tile.type_id, tile.meta) for coord, tile in sorted(world.grid.items())
                 if world.block_types[tile.type_id].special == 'score']
 
+    conflicting_plan_refused = False
+    conflict_module = ModuleType('conflicting_frost_pool_cove')
+    conflict_module.__file__ = module.__file__
+    with patch('maps.placement.load_feature_plan', return_value=(((246,55,7),),frozenset())):
+        try:
+            exec(compile(Path(module.__file__).read_text(),module.__file__,'exec'),conflict_module.__dict__)
+        except ValueError as error:
+            conflicting_plan_refused = 'must not overwrite' in str(error)
     checks = {
+        'nonempty_original_cell_rejected': conflicting_plan_refused,
         'only_seventeen_reviewed_air_cells': len(changes) == len(points) == 17
             and all(row['before'] == 0 and row['before_meta'] is None and row['after_meta'] is None
                     and allowed.get(tuple(row['position'])) == row['after'] for row in changes),
