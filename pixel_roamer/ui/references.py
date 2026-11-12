@@ -21,7 +21,7 @@ class ReferenceBrowser:
         self._detail_scroll = {"block": 0, "buff": 0}
         self._detail_max = {"block": 0, "buff": 0}
         path = Path(__file__).resolve().parents[2] / 'data/effect_descriptions.json'
-        self.effects = json.loads(path.read_text())['effects']
+        self.effects = json.loads(path.read_text(encoding="utf-8"))['effects']
 
     def _state(self, kind, field, value=None, write=False):
         name = f'_dev_{kind}_detail_id' if field == 'detail' else f'_dev_{kind}_browser_{field}'
