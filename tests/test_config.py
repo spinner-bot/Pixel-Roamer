@@ -18,7 +18,8 @@ class ConfigTests(unittest.TestCase):
             folder = root / "fixture"
             folder.mkdir()
             (folder / "map.py").write_text(
-                'MAP_ID = 1\nworld = World(map_id=1, name="原名称", w=20, h=20)\n')
+                'MAP_ID = 1\nworld = World(map_id=1, name="原名称", w=20, h=20)\n',
+                encoding="utf-8")
             with patch.object(maps, "__file__", str(root / "__init__.py")):
                 self.assertEqual(maps.get_map_summary(1)["name"], "原名称")
                 for invalid in ("../outside", "_hidden", "", " name", "..", "bad/name"):
