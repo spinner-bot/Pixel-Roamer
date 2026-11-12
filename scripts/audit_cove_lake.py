@@ -100,14 +100,26 @@ def main():
     source = subprocess.check_output(['git', 'show', 'e3ba6ec:maps/adventure_cove/map.py'], cwd=ROOT, text=True)
     exec(compile(source, module.__file__, 'exec'), module.__dict__)
     _apply_config(module.world, 'adventure_cove')
+    # Keep the historical four-cell vine repair comparison exact even after
+    # separately reviewed map features are added elsewhere in the same world.
+    fixed = ModuleType('fixed_lake_before_frost_pool')
+    fixed.__file__ = module.__file__
+    fixed_source = subprocess.check_output(['git','show','dd277a4:maps/adventure_cove/map.py'],cwd=ROOT,text=True)
+    exec(compile(fixed_source,fixed.__file__,'exec'),fixed.__dict__)
+    _apply_config(fixed.world,'adventure_cove')
     current = get_map(21)
-    changes = [{'position': [x, y], 'before': module.world.get_tile(x, y).type_id,
-                'after': current.get_tile(x, y).type_id}
-               for x, y in sorted(set(module.world.grid) | set(current.grid))
-               if module.world.get_tile(x, y).type_id != current.get_tile(x, y).type_id]
+
+    def changes_between(before,after):
+        return [{'position':[x,y],'before':before.get_tile(x,y).type_id,'after':after.get_tile(x,y).type_id}
+                for x,y in sorted(set(before.grid)|set(after.grid))
+                if before.get_tile(x,y).type_id!=after.get_tile(x,y).type_id]
+
     report = {'code_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'legacy_revision': 'e3ba6ec',
-              'tile_changes': changes,
+              'lake_fix_reference': 'dd277a4',
+              'tile_changes': changes_between(module.world,fixed.world),
+              'later_map_changes': changes_between(fixed.world,current),
+              'all_map_changes': changes_between(module.world,current),
               'scope': 'normal spawn to optional lake island and existing return platform; not formal victory or whole underground coverage',
               'before': [run(fps, module.world.create_session()) for fps in (30, 60, 144)],
               'after': [run(fps) for fps in (30, 60, 144)]}
