@@ -1,0 +1,1 @@
+{"cold_source_calls": {"373": 724, "395": 371, "410": 2286}, "observations": {"freeze_attempts": 44, "new_freezes": 44, "frozen_frames": 14052, "observed_thaws": 44}, "missing_coverage": []}
