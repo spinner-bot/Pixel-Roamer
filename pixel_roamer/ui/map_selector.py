@@ -20,7 +20,7 @@ class MapSelector:
     def __init__(self, app):
         self.app = app
         self.previews = OrderedDict()
-        self.descriptions = json.loads((ROOT / "data/map_descriptions.json").read_text())["maps"]
+        self.descriptions = json.loads((ROOT / "data/map_descriptions.json").read_text(encoding="utf-8"))["maps"]
 
     def _rows(self):
         ids = sorted(list_maps())
