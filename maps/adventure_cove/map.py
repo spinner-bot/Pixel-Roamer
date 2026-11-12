@@ -327,6 +327,16 @@ def generate():
     p(w, 19, 10, 43)
     p(w, 21, 69, 314)  # 将原 (20,64) 的钻石移出返程梯井。
 
+    # Optional cold-water detour: only fill reviewed empty cells, preserving
+    # the original373, every pickup and the main ice pillars.
+    from pathlib import Path
+    from maps.placement import load_feature_plan
+    frost_pool, _ = load_feature_plan(w, Path(__file__).with_name('frost_pool.json'))
+    if any(w.get_tile(gx, gy).type_id != 0 for gx, gy, _ in frost_pool):
+        raise ValueError('frost pool feature must not overwrite original terrain or pickups')
+    for gx, gy, block_id in frost_pool:
+        p(w, gx, gy, block_id)
+
     w.end_bulk_load()
     w.lives = 3
     return w
