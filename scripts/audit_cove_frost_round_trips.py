@@ -22,6 +22,7 @@ def return_to_first(app, session, keys, fps):
     actor, started = app.player1, app._game_timer
     trace, failures, jumped = [], [], False
     arrived = False
+    min_hp, min_stamina = actor.hp, actor.stamina
     for frame in range(15 * fps):
         elapsed = app._game_timer - started
         tx = 245.5
@@ -39,6 +40,7 @@ def return_to_first(app, session, keys, fps):
         with patch('pygame.event.get', return_value=events):
             app._handle_events()
         session.advance(1 / fps)
+        min_hp, min_stamina = min(min_hp, actor.hp), min(min_stamina, actor.stamina)
         if frame % max(1, fps // 10) == 0:
             trace.append({'time': elapsed, 'position': actor.get_center(),
                           'velocity': [actor.v_x, actor.v_y], 'on_ground': actor.on_ground,
@@ -52,6 +54,8 @@ def return_to_first(app, session, keys, fps):
     if not arrived and not failures:
         failures.append('return-to-first pillar time budget exceeded')
     return {'seconds': app._game_timer - started, 'arrived_dry': arrived,
+            'position': actor.get_center(), 'wet': actor.has_buff(15), 'frozen': actor.has_buff(59),
+            'min_hp': min_hp, 'min_stamina': min_stamina,
             'jump_input': jumped, 'failure': '; '.join(failures) if failures else None,
             'trace': trace}
 
@@ -73,8 +77,8 @@ def repeat_detour(app, session, keys, fps, loops):
     return {'seconds': app._game_timer - started, 'phase': 'complete' if not failures else 'failed',
             'failure': '; '.join(failures) if failures else None, 'requested_loops': loops,
             'loops': results, 'dry_returns': returns,
-            'min_hp': min(r['min_hp'] for r in results),
-            'min_stamina': min(r['min_stamina'] for r in results),
+            'min_hp': min(r['min_hp'] for r in (*results,*returns)),
+            'min_stamina': min(r['min_stamina'] for r in (*results,*returns)),
             'touched_types': sorted({bid for r in results for bid in r['touched_types']})}
 
 
