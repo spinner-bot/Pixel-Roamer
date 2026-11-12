@@ -1,0 +1,10 @@
+{
+  "code_revision": "9c32a29afd71e207a2a44d0c039f13a2a5764b13",
+  "scope": "historical map comparison now separates exact four-cell lake repair and all17 later basin additions; no trajectory, physics, pickup or route condition changed",
+  "legacy_routes_identical": true,
+  "current_routes_identical": true,
+  "old_report_all_changes": 21,
+  "original_lake_changes": 4,
+  "later_map_changes": 17,
+  "complete_delta_preserved": true
+}
