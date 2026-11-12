@@ -1,0 +1,32 @@
+{
+  "code_revision": "aa808aab8a90be8642950f66acb043bb6a3664f4",
+  "scope": "initialized GameApp identical normal input route and all five native logical-surface screenshot bytes; render snapshots preserve simulation; not physical-device acceptance",
+  "complete_route_identical": true,
+  "screenshots": {
+    "frozen": {
+      "candidate": "50e8b8c5a92872e6d513ccae072413c432d15c44c1d58d1a76fbb37423804ff7",
+      "production": "50e8b8c5a92872e6d513ccae072413c432d15c44c1d58d1a76fbb37423804ff7",
+      "identical": true
+    },
+    "thaw": {
+      "candidate": "8e9af892ccceb0ebe42dafb9f0b91c4c7fb76e99548b862981a0f4a4e443884c",
+      "production": "8e9af892ccceb0ebe42dafb9f0b91c4c7fb76e99548b862981a0f4a4e443884c",
+      "identical": true
+    },
+    "shore": {
+      "candidate": "9b85a08f5a57aa3ff25416c7fd280bcd3c0c7c0af59d33906a6d39bd15a3d048",
+      "production": "9b85a08f5a57aa3ff25416c7fd280bcd3c0c7c0af59d33906a6d39bd15a3d048",
+      "identical": true
+    },
+    "return": {
+      "candidate": "107fc1fb8be97a59f28dc88dd573c3d4fd395558680b4e5ac298cbfd45fef32d",
+      "production": "107fc1fb8be97a59f28dc88dd573c3d4fd395558680b4e5ac298cbfd45fef32d",
+      "identical": true
+    },
+    "finish": {
+      "candidate": "f3aa956853fdc0a693d4b36ef685824d4f087c65c6f95d3a1f38f4eebc87be12",
+      "production": "f3aa956853fdc0a693d4b36ef685824d4f087c65c6f95d3a1f38f4eebc87be12",
+      "identical": true
+    }
+  }
+}
