@@ -10,6 +10,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class CoveFrostPoolTests(unittest.TestCase):
+    def test_three_actual_dry_return_and_reentry_cycles_then_formal_victory_at_three_rates(self):
+        report = self.probe('scripts/audit_cove_frost_round_trips.py')
+        self.assertEqual(report['requested_loops'],3)
+        self.assertEqual([r['fps'] for r in report['runs']],[30,60,144])
+        for row in report['runs']:
+            with self.subTest(fps=row['fps']):
+                self.assertIsNone(row['failure'])
+                self.assertTrue(row['game_win'])
+                self.assertEqual(row['lives_left'],3)
+                self.assertLess(row['seconds'],160)
+                repeated=row['ice_extension']
+                self.assertEqual(len(repeated['loops']),3)
+                self.assertEqual(len(repeated['dry_returns']),2)
+                self.assertEqual(repeated['min_hp'],150)
+                for route in repeated['loops']:
+                    self.assertEqual(route['phase'],'complete')
+                    self.assertIsNone(route['failure'])
+                    self.assertTrue(route['cold_source373'] and route['freeze_seen'] and route['thawed'])
+                    self.assertAlmostEqual(route['transitions'][1]['time']-route['transitions'][0]['time'],4,places=8)
+                for route in repeated['dry_returns']:
+                    self.assertIsNone(route['failure'])
+                    self.assertTrue(route['arrived_dry'] and route['jump_input'])
+                    self.assertFalse(route['wet'] or route['frozen'])
+                    self.assertAlmostEqual(route['position'][1],63.9)
+
     def probe(self, script):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'report.json'
