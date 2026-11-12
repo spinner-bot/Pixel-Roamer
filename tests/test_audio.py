@@ -32,6 +32,7 @@ class FileMusicTests(unittest.TestCase):
                 self.assertFalse(pygame.mixer.music.get_busy())
             finally:
                 music.stop(fade_out_ms=0)
+                pygame.mixer.music.unload()
                 music.invalidate_cache()
                 music.set_volume(0.5)
 
