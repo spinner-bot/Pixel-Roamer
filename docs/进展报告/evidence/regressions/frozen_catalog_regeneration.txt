@@ -1,0 +1,5 @@
+{"script": "repair_buff_source_defaults.py", "returncode": 0, "changed": []}
+{"script": "repair_magnetic_polarity_sources.py", "returncode": 0, "changed": []}
+{"script": "refine_pixel_art.py", "returncode": 0, "changed": []}
+{"script": "build_magnetic_block.py", "returncode": 0, "changed": []}
+{"script": "build_frozen_buff.py", "returncode": 0, "changed": []}
