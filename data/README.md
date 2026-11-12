@@ -66,3 +66,5 @@ Buff行为规则可选`control_locks`数组，动作限定horizontal/jump/climb/
 反应每轮曝光仅尝试一次（免疫拒绝也消耗机会），持续接触不续时；必须离开真实水且15浸湿完全结束才重置，防水面抖动或净化后反复冻结。世界切换/复活/飞行清空反应记忆。已有更长/永久结果不被短规则覆盖。规则引用、类型、唯一ID、正数、有限乘积和下溢均验证；显式文件加载不污染运行缓存。新增59在独立buffs_frozen扩展包/新增ID哈希清单登记，原58定义及像素基线保持。
 
 `python3 scripts/build_frozen_buff.py`可重建59与原生像素图标；`python3 scripts/audit_catalog_regeneration.py --output /tmp/regeneration.json`依次重放A80/A84迁移、美术生成与两个扩展生成器，逐步验证目录、规则、审查清单和消费者字节不漂移。运行重建会写目录，应与同时读取目录的测试顺序执行。
+
+冒险湾冰池使用`maps/adventure_cove/frost_pool.json`及既有feature plan验证加载，在随机景物生成后填17个原空气格。数据只声明原3/7布局，原373承载51、Buff反应承载59，地图无冻结特殊处理。任何计划目标已非空气即拒绝覆盖；全图对照dd277a4保留所有87原拾取、原来源/柱子和配置。部署前候选补丁开关只适用于原空气快照，现版原图审计不加--candidate。
