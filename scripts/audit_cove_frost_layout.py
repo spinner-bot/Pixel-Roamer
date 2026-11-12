@@ -45,7 +45,8 @@ def run():
     conflict_module.__file__ = module.__file__
     with patch('maps.placement.load_feature_plan', return_value=(((246,55,7),),frozenset())):
         try:
-            exec(compile(Path(module.__file__).read_text(),module.__file__,'exec'),conflict_module.__dict__)
+            exec(compile(Path(module.__file__).read_text(encoding='utf-8'),
+                         module.__file__,'exec'),conflict_module.__dict__)
         except ValueError as error:
             conflicting_plan_refused = 'must not overwrite' in str(error)
     checks = {
